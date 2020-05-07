@@ -1,0 +1,742 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>fontTools.colorLib.builder &mdash; fontTools Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> fontTools
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Library</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../afmLib.html">afmLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../agl.html">agl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cffLib/index.html">cffLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../colorLib/index.html">colorLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cu2qu/index.html">cu2qu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../designspaceLib/index.html">designspaceLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../encodings/index.html">encodings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../feaLib/index.html">feaLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../merge.html">merge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../misc/index.html">misc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../mtiLib.html">mtiLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../otlLib/index.html">otlLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pens/index.html">pens</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../subset/index.html">subset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../svgLib/index.html">svgLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../t1Lib.html">t1Lib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ttLib/index.html">ttLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ttx.html">ttx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ufoLib/index.html">ufoLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../unicode.html">unicode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../unicodedata/index.html">unicodedata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../varLib/index.html">varLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../voltLib.html">voltLib</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">fontTools</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>fontTools.colorLib.builder</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for fontTools.colorLib.builder</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">collections</span>
+<span class="kn">import</span> <span class="nn">copy</span>
+<span class="kn">import</span> <span class="nn">enum</span>
+<span class="kn">from</span> <span class="nn">functools</span> <span class="k">import</span> <span class="n">partial</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="k">import</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">Iterable</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Mapping</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Sequence</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">Union</span>
+<span class="kn">from</span> <span class="nn">fontTools.ttLib.tables</span> <span class="k">import</span> <span class="n">C_O_L_R_</span>
+<span class="kn">from</span> <span class="nn">fontTools.ttLib.tables</span> <span class="k">import</span> <span class="n">C_P_A_L_</span>
+<span class="kn">from</span> <span class="nn">fontTools.ttLib.tables</span> <span class="k">import</span> <span class="n">_n_a_m_e</span>
+<span class="kn">from</span> <span class="nn">fontTools.ttLib.tables</span> <span class="k">import</span> <span class="n">otTables</span> <span class="k">as</span> <span class="n">ot</span>
+<span class="kn">from</span> <span class="nn">fontTools.ttLib.tables.otTables</span> <span class="k">import</span> <span class="p">(</span>
+    <span class="n">ExtendMode</span><span class="p">,</span>
+    <span class="n">VariableValue</span><span class="p">,</span>
+    <span class="n">VariableFloat</span><span class="p">,</span>
+    <span class="n">VariableInt</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">.errors</span> <span class="k">import</span> <span class="n">ColorLibError</span>
+
+
+<span class="c1"># TODO move type aliases to colorLib.types?</span>
+<span class="n">_Kwargs</span> <span class="o">=</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span>
+<span class="n">_PaintInput</span> <span class="o">=</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">_Kwargs</span><span class="p">,</span> <span class="n">ot</span><span class="o">.</span><span class="n">Paint</span><span class="p">]</span>
+<span class="n">_LayerTuple</span> <span class="o">=</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">_PaintInput</span><span class="p">]</span>
+<span class="n">_LayersList</span> <span class="o">=</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">_LayerTuple</span><span class="p">]</span>
+<span class="n">_ColorGlyphsDict</span> <span class="o">=</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">_LayersList</span><span class="p">]</span>
+<span class="n">_ColorGlyphsV0Dict</span> <span class="o">=</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">]]]</span>
+<span class="n">_Number</span> <span class="o">=</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">]</span>
+<span class="n">_ScalarInput</span> <span class="o">=</span> <span class="n">Union</span><span class="p">[</span><span class="n">_Number</span><span class="p">,</span> <span class="n">VariableValue</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">_Number</span><span class="p">,</span> <span class="nb">int</span><span class="p">]]</span>
+<span class="n">_ColorStopTuple</span> <span class="o">=</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">_ScalarInput</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span>
+<span class="n">_ColorStopInput</span> <span class="o">=</span> <span class="n">Union</span><span class="p">[</span><span class="n">_ColorStopTuple</span><span class="p">,</span> <span class="n">_Kwargs</span><span class="p">,</span> <span class="n">ot</span><span class="o">.</span><span class="n">ColorStop</span><span class="p">]</span>
+<span class="n">_ColorStopsList</span> <span class="o">=</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">_ColorStopInput</span><span class="p">]</span>
+<span class="n">_ExtendInput</span> <span class="o">=</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">str</span><span class="p">,</span> <span class="n">ExtendMode</span><span class="p">]</span>
+<span class="n">_ColorLineInput</span> <span class="o">=</span> <span class="n">Union</span><span class="p">[</span><span class="n">_Kwargs</span><span class="p">,</span> <span class="n">ot</span><span class="o">.</span><span class="n">ColorLine</span><span class="p">]</span>
+<span class="n">_PointTuple</span> <span class="o">=</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">_ScalarInput</span><span class="p">,</span> <span class="n">_ScalarInput</span><span class="p">]</span>
+<span class="n">_PointInput</span> <span class="o">=</span> <span class="n">Union</span><span class="p">[</span><span class="n">_PointTuple</span><span class="p">,</span> <span class="n">ot</span><span class="o">.</span><span class="n">Point</span><span class="p">]</span>
+<span class="n">_AffineTuple</span> <span class="o">=</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">_ScalarInput</span><span class="p">,</span> <span class="n">_ScalarInput</span><span class="p">,</span> <span class="n">_ScalarInput</span><span class="p">,</span> <span class="n">_ScalarInput</span><span class="p">]</span>
+<span class="n">_AffineInput</span> <span class="o">=</span> <span class="n">Union</span><span class="p">[</span><span class="n">_AffineTuple</span><span class="p">,</span> <span class="n">ot</span><span class="o">.</span><span class="n">Affine2x2</span><span class="p">]</span>
+
+
+<div class="viewcode-block" id="populateCOLRv0"><a class="viewcode-back" href="../../../colorLib/builder.html#fontTools.colorLib.builder.populateCOLRv0">[docs]</a><span class="k">def</span> <span class="nf">populateCOLRv0</span><span class="p">(</span>
+    <span class="n">table</span><span class="p">:</span> <span class="n">ot</span><span class="o">.</span><span class="n">COLR</span><span class="p">,</span>
+    <span class="n">colorGlyphsV0</span><span class="p">:</span> <span class="n">_ColorGlyphsV0Dict</span><span class="p">,</span>
+    <span class="n">glyphMap</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Build v0 color layers and add to existing COLR table.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        table: a raw otTables.COLR() object (not ttLib&#39;s table_C_O_L_R_).</span>
+<span class="sd">        colorGlyphsV0: map of base glyph names to lists of (layer glyph names,</span>
+<span class="sd">            color palette index) tuples.</span>
+<span class="sd">        glyphMap: a map from glyph names to glyph indices, as returned from</span>
+<span class="sd">            TTFont.getReverseGlyphMap(), to optionally sort base records by GID.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">glyphMap</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">colorGlyphItems</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span>
+            <span class="n">colorGlyphsV0</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">item</span><span class="p">:</span> <span class="n">glyphMap</span><span class="p">[</span><span class="n">item</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+        <span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">colorGlyphItems</span> <span class="o">=</span> <span class="n">colorGlyphsV0</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+    <span class="n">baseGlyphRecords</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">layerRecords</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">baseGlyph</span><span class="p">,</span> <span class="n">layers</span> <span class="ow">in</span> <span class="n">colorGlyphItems</span><span class="p">:</span>
+        <span class="n">baseRec</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">BaseGlyphRecord</span><span class="p">()</span>
+        <span class="n">baseRec</span><span class="o">.</span><span class="n">BaseGlyph</span> <span class="o">=</span> <span class="n">baseGlyph</span>
+        <span class="n">baseRec</span><span class="o">.</span><span class="n">FirstLayerIndex</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">layerRecords</span><span class="p">)</span>
+        <span class="n">baseRec</span><span class="o">.</span><span class="n">NumLayers</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">layers</span><span class="p">)</span>
+        <span class="n">baseGlyphRecords</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">baseRec</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">layerGlyph</span><span class="p">,</span> <span class="n">paletteIndex</span> <span class="ow">in</span> <span class="n">layers</span><span class="p">:</span>
+            <span class="n">layerRec</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">LayerRecord</span><span class="p">()</span>
+            <span class="n">layerRec</span><span class="o">.</span><span class="n">LayerGlyph</span> <span class="o">=</span> <span class="n">layerGlyph</span>
+            <span class="n">layerRec</span><span class="o">.</span><span class="n">PaletteIndex</span> <span class="o">=</span> <span class="n">paletteIndex</span>
+            <span class="n">layerRecords</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">layerRec</span><span class="p">)</span>
+
+    <span class="n">table</span><span class="o">.</span><span class="n">BaseGlyphRecordCount</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">baseGlyphRecords</span><span class="p">)</span>
+    <span class="n">table</span><span class="o">.</span><span class="n">BaseGlyphRecordArray</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">BaseGlyphRecordArray</span><span class="p">()</span>
+    <span class="n">table</span><span class="o">.</span><span class="n">BaseGlyphRecordArray</span><span class="o">.</span><span class="n">BaseGlyphRecord</span> <span class="o">=</span> <span class="n">baseGlyphRecords</span>
+    <span class="n">table</span><span class="o">.</span><span class="n">LayerRecordArray</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">LayerRecordArray</span><span class="p">()</span>
+    <span class="n">table</span><span class="o">.</span><span class="n">LayerRecordArray</span><span class="o">.</span><span class="n">LayerRecord</span> <span class="o">=</span> <span class="n">layerRecords</span>
+    <span class="n">table</span><span class="o">.</span><span class="n">LayerRecordCount</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">layerRecords</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="buildCOLR"><a class="viewcode-back" href="../../../colorLib/builder.html#fontTools.colorLib.builder.buildCOLR">[docs]</a><span class="k">def</span> <span class="nf">buildCOLR</span><span class="p">(</span>
+    <span class="n">colorGlyphs</span><span class="p">:</span> <span class="n">_ColorGlyphsDict</span><span class="p">,</span>
+    <span class="n">version</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">glyphMap</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">varStore</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ot</span><span class="o">.</span><span class="n">VarStore</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">C_O_L_R_</span><span class="o">.</span><span class="n">table_C_O_L_R_</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Build COLR table from color layers mapping.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        colorGlyphs: map of base glyph names to lists of (layer glyph names,</span>
+<span class="sd">            Paint) tuples. For COLRv0, a paint is simply the color palette index</span>
+<span class="sd">            (int); for COLRv1, paint can be either solid colors (with variable</span>
+<span class="sd">            opacity), linear gradients or radial gradients.</span>
+<span class="sd">        version: the version of COLR table. If None, the version is determined</span>
+<span class="sd">            by the presence of gradients or variation data (varStore), which</span>
+<span class="sd">            require version 1; otherwise, if there are only simple colors, version</span>
+<span class="sd">            0 is used.</span>
+<span class="sd">        glyphMap: a map from glyph names to glyph indices, as returned from</span>
+<span class="sd">            TTFont.getReverseGlyphMap(), to optionally sort base records by GID.</span>
+<span class="sd">        varStore: Optional ItemVarationStore for deltas associated with v1 layer.</span>
+
+<span class="sd">    Return:</span>
+<span class="sd">        A new COLR table.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="bp">self</span> <span class="o">=</span> <span class="n">C_O_L_R_</span><span class="o">.</span><span class="n">table_C_O_L_R_</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="n">varStore</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">version</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Can&#39;t add VarStore to COLRv0&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">version</span> <span class="ow">in</span> <span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">varStore</span><span class="p">:</span>
+        <span class="c1"># split color glyphs into v0 and v1 and encode separately</span>
+        <span class="n">colorGlyphsV0</span><span class="p">,</span> <span class="n">colorGlyphsV1</span> <span class="o">=</span> <span class="n">_splitSolidAndGradientGlyphs</span><span class="p">(</span><span class="n">colorGlyphs</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">version</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">colorGlyphsV1</span><span class="p">:</span>
+            <span class="c1"># TODO Derive &quot;average&quot; solid color from gradients?</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Can&#39;t encode gradients in COLRv0&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># unless explicitly requested for v1 or have variations, in which case</span>
+        <span class="c1"># we encode all color glyph as v1</span>
+        <span class="n">colorGlyphsV0</span><span class="p">,</span> <span class="n">colorGlyphsV1</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">colorGlyphs</span>
+
+    <span class="n">colr</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">COLR</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="n">colorGlyphsV0</span><span class="p">:</span>
+        <span class="n">populateCOLRv0</span><span class="p">(</span><span class="n">colr</span><span class="p">,</span> <span class="n">colorGlyphsV0</span><span class="p">,</span> <span class="n">glyphMap</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">colr</span><span class="o">.</span><span class="n">BaseGlyphRecordCount</span> <span class="o">=</span> <span class="n">colr</span><span class="o">.</span><span class="n">LayerRecordCount</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">colr</span><span class="o">.</span><span class="n">BaseGlyphRecordArray</span> <span class="o">=</span> <span class="n">colr</span><span class="o">.</span><span class="n">LayerRecordArray</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">if</span> <span class="n">colorGlyphsV1</span><span class="p">:</span>
+        <span class="n">colr</span><span class="o">.</span><span class="n">BaseGlyphV1Array</span> <span class="o">=</span> <span class="n">buildBaseGlyphV1Array</span><span class="p">(</span><span class="n">colorGlyphsV1</span><span class="p">,</span> <span class="n">glyphMap</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">version</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">version</span> <span class="o">=</span> <span class="mi">1</span> <span class="k">if</span> <span class="p">(</span><span class="n">varStore</span> <span class="ow">or</span> <span class="n">colorGlyphsV1</span><span class="p">)</span> <span class="k">else</span> <span class="mi">0</span>
+    <span class="k">elif</span> <span class="n">version</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="n">version</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">version</span> <span class="o">=</span> <span class="n">colr</span><span class="o">.</span><span class="n">Version</span> <span class="o">=</span> <span class="n">version</span>
+
+    <span class="k">if</span> <span class="n">version</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_fromOTTable</span><span class="p">(</span><span class="n">colr</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">colr</span><span class="o">.</span><span class="n">VarStore</span> <span class="o">=</span> <span class="n">varStore</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">table</span> <span class="o">=</span> <span class="n">colr</span>
+
+    <span class="k">return</span> <span class="bp">self</span></div>
+
+
+<div class="viewcode-block" id="ColorPaletteType"><a class="viewcode-back" href="../../../colorLib/builder.html#fontTools.colorLib.builder.ColorPaletteType">[docs]</a><span class="k">class</span> <span class="nc">ColorPaletteType</span><span class="p">(</span><span class="n">enum</span><span class="o">.</span><span class="n">IntFlag</span><span class="p">):</span>
+    <span class="n">USABLE_WITH_LIGHT_BACKGROUND</span> <span class="o">=</span> <span class="mh">0x0001</span>
+    <span class="n">USABLE_WITH_DARK_BACKGROUND</span> <span class="o">=</span> <span class="mh">0x0002</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">_missing_</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="c1"># enforce reserved bits</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">value</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">value</span> <span class="o">&amp;</span> <span class="mh">0xFFFC</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;</span><span class="si">{value}</span><span class="s2"> is not a valid </span><span class="si">{cls.__name__}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">_missing_</span><span class="p">(</span><span class="n">value</span><span class="p">)</span></div>
+
+
+<span class="c1"># None, &#39;abc&#39; or {&#39;en&#39;: &#39;abc&#39;, &#39;de&#39;: &#39;xyz&#39;}</span>
+<span class="n">_OptionalLocalizedString</span> <span class="o">=</span> <span class="n">Union</span><span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="nb">str</span><span class="p">,</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]</span>
+
+
+<div class="viewcode-block" id="buildPaletteLabels"><a class="viewcode-back" href="../../../colorLib/builder.html#fontTools.colorLib.builder.buildPaletteLabels">[docs]</a><span class="k">def</span> <span class="nf">buildPaletteLabels</span><span class="p">(</span>
+    <span class="n">labels</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">_OptionalLocalizedString</span><span class="p">],</span> <span class="n">nameTable</span><span class="p">:</span> <span class="n">_n_a_m_e</span><span class="o">.</span><span class="n">table__n_a_m_e</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]]:</span>
+    <span class="k">return</span> <span class="p">[</span>
+        <span class="n">nameTable</span><span class="o">.</span><span class="n">addMultilingualName</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="n">mac</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="nb">dict</span><span class="p">)</span>
+        <span class="k">else</span> <span class="n">C_P_A_L_</span><span class="o">.</span><span class="n">table_C_P_A_L_</span><span class="o">.</span><span class="n">NO_NAME_ID</span>
+        <span class="k">if</span> <span class="n">l</span> <span class="ow">is</span> <span class="kc">None</span>
+        <span class="k">else</span> <span class="n">nameTable</span><span class="o">.</span><span class="n">addMultilingualName</span><span class="p">({</span><span class="s2">&quot;en&quot;</span><span class="p">:</span> <span class="n">l</span><span class="p">},</span> <span class="n">mac</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">labels</span>
+    <span class="p">]</span></div>
+
+
+<div class="viewcode-block" id="buildCPAL"><a class="viewcode-back" href="../../../colorLib/builder.html#fontTools.colorLib.builder.buildCPAL">[docs]</a><span class="k">def</span> <span class="nf">buildCPAL</span><span class="p">(</span>
+    <span class="n">palettes</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">Sequence</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">]]],</span>
+    <span class="n">paletteTypes</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Sequence</span><span class="p">[</span><span class="n">ColorPaletteType</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">paletteLabels</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Sequence</span><span class="p">[</span><span class="n">_OptionalLocalizedString</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">paletteEntryLabels</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Sequence</span><span class="p">[</span><span class="n">_OptionalLocalizedString</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">nameTable</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">_n_a_m_e</span><span class="o">.</span><span class="n">table__n_a_m_e</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">C_P_A_L_</span><span class="o">.</span><span class="n">table_C_P_A_L_</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Build CPAL table from list of color palettes.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        palettes: list of lists of colors encoded as tuples of (R, G, B, A) floats</span>
+<span class="sd">            in the range [0..1].</span>
+<span class="sd">        paletteTypes: optional list of ColorPaletteType, one for each palette.</span>
+<span class="sd">        paletteLabels: optional list of palette labels. Each lable can be either:</span>
+<span class="sd">            None (no label), a string (for for default English labels), or a</span>
+<span class="sd">            localized string (as a dict keyed with BCP47 language codes).</span>
+<span class="sd">        paletteEntryLabels: optional list of palette entry labels, one for each</span>
+<span class="sd">            palette entry (see paletteLabels).</span>
+<span class="sd">        nameTable: optional name table where to store palette and palette entry</span>
+<span class="sd">            labels. Required if either paletteLabels or paletteEntryLabels is set.</span>
+
+<span class="sd">    Return:</span>
+<span class="sd">        A new CPAL v0 or v1 table, if custom palette types or labels are specified.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">({</span><span class="nb">len</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">palettes</span><span class="p">})</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">ColorLibError</span><span class="p">(</span><span class="s2">&quot;color palettes have different lengths&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">paletteLabels</span> <span class="ow">or</span> <span class="n">paletteEntryLabels</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">nameTable</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
+            <span class="s2">&quot;nameTable is required if palette or palette entries have labels&quot;</span>
+        <span class="p">)</span>
+
+    <span class="n">cpal</span> <span class="o">=</span> <span class="n">C_P_A_L_</span><span class="o">.</span><span class="n">table_C_P_A_L_</span><span class="p">()</span>
+    <span class="n">cpal</span><span class="o">.</span><span class="n">numPaletteEntries</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">palettes</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+    <span class="n">cpal</span><span class="o">.</span><span class="n">palettes</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">palette</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">palettes</span><span class="p">):</span>
+        <span class="n">colors</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">j</span><span class="p">,</span> <span class="n">color</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">palette</span><span class="p">):</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">color</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="n">color</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">4</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">ColorLibError</span><span class="p">(</span>
+                    <span class="n">f</span><span class="s2">&quot;In palette[</span><span class="si">{i}</span><span class="s2">][</span><span class="si">{j}</span><span class="s2">]: expected (R, G, B, A) tuple, got </span><span class="si">{color!r}</span><span class="s2">&quot;</span>
+                <span class="p">)</span>
+            <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">v</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="ow">or</span> <span class="n">v</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">color</span><span class="p">):</span>
+                <span class="k">raise</span> <span class="n">ColorLibError</span><span class="p">(</span>
+                    <span class="n">f</span><span class="s2">&quot;palette[</span><span class="si">{i}</span><span class="s2">][</span><span class="si">{j}</span><span class="s2">] has invalid out-of-range [0..1] color: </span><span class="si">{color!r}</span><span class="s2">&quot;</span>
+                <span class="p">)</span>
+            <span class="c1"># input colors are RGBA, CPAL encodes them as BGRA</span>
+            <span class="n">red</span><span class="p">,</span> <span class="n">green</span><span class="p">,</span> <span class="n">blue</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="n">color</span>
+            <span class="n">colors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                <span class="n">C_P_A_L_</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span><span class="o">*</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">v</span> <span class="o">*</span> <span class="mi">255</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="p">(</span><span class="n">blue</span><span class="p">,</span> <span class="n">green</span><span class="p">,</span> <span class="n">red</span><span class="p">,</span> <span class="n">alpha</span><span class="p">)))</span>
+            <span class="p">)</span>
+        <span class="n">cpal</span><span class="o">.</span><span class="n">palettes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">colors</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">v</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="p">(</span><span class="n">paletteTypes</span><span class="p">,</span> <span class="n">paletteLabels</span><span class="p">,</span> <span class="n">paletteEntryLabels</span><span class="p">)):</span>
+        <span class="n">cpal</span><span class="o">.</span><span class="n">version</span> <span class="o">=</span> <span class="mi">1</span>
+
+        <span class="k">if</span> <span class="n">paletteTypes</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">paletteTypes</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="n">palettes</span><span class="p">):</span>
+                <span class="k">raise</span> <span class="n">ColorLibError</span><span class="p">(</span>
+                    <span class="n">f</span><span class="s2">&quot;Expected {len(palettes)} paletteTypes, got {len(paletteTypes)}&quot;</span>
+                <span class="p">)</span>
+            <span class="n">cpal</span><span class="o">.</span><span class="n">paletteTypes</span> <span class="o">=</span> <span class="p">[</span><span class="n">ColorPaletteType</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">.</span><span class="n">value</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">paletteTypes</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">cpal</span><span class="o">.</span><span class="n">paletteTypes</span> <span class="o">=</span> <span class="p">[</span><span class="n">C_P_A_L_</span><span class="o">.</span><span class="n">table_C_P_A_L_</span><span class="o">.</span><span class="n">DEFAULT_PALETTE_TYPE</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span>
+                <span class="n">palettes</span>
+            <span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">paletteLabels</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">paletteLabels</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="n">palettes</span><span class="p">):</span>
+                <span class="k">raise</span> <span class="n">ColorLibError</span><span class="p">(</span>
+                    <span class="n">f</span><span class="s2">&quot;Expected {len(palettes)} paletteLabels, got {len(paletteLabels)}&quot;</span>
+                <span class="p">)</span>
+            <span class="n">cpal</span><span class="o">.</span><span class="n">paletteLabels</span> <span class="o">=</span> <span class="n">buildPaletteLabels</span><span class="p">(</span><span class="n">paletteLabels</span><span class="p">,</span> <span class="n">nameTable</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">cpal</span><span class="o">.</span><span class="n">paletteLabels</span> <span class="o">=</span> <span class="p">[</span><span class="n">C_P_A_L_</span><span class="o">.</span><span class="n">table_C_P_A_L_</span><span class="o">.</span><span class="n">NO_NAME_ID</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">palettes</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">paletteEntryLabels</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">paletteEntryLabels</span><span class="p">)</span> <span class="o">!=</span> <span class="n">cpal</span><span class="o">.</span><span class="n">numPaletteEntries</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">ColorLibError</span><span class="p">(</span>
+                    <span class="n">f</span><span class="s2">&quot;Expected </span><span class="si">{cpal.numPaletteEntries}</span><span class="s2"> paletteEntryLabels, &quot;</span>
+                    <span class="n">f</span><span class="s2">&quot;got {len(paletteEntryLabels)}&quot;</span>
+                <span class="p">)</span>
+            <span class="n">cpal</span><span class="o">.</span><span class="n">paletteEntryLabels</span> <span class="o">=</span> <span class="n">buildPaletteLabels</span><span class="p">(</span><span class="n">paletteEntryLabels</span><span class="p">,</span> <span class="n">nameTable</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">cpal</span><span class="o">.</span><span class="n">paletteEntryLabels</span> <span class="o">=</span> <span class="p">[</span>
+                <span class="n">C_P_A_L_</span><span class="o">.</span><span class="n">table_C_P_A_L_</span><span class="o">.</span><span class="n">NO_NAME_ID</span>
+            <span class="p">]</span> <span class="o">*</span> <span class="n">cpal</span><span class="o">.</span><span class="n">numPaletteEntries</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">cpal</span><span class="o">.</span><span class="n">version</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">return</span> <span class="n">cpal</span></div>
+
+
+<span class="c1"># COLR v1 tables</span>
+<span class="c1"># See draft proposal at: https://github.com/googlefonts/colr-gradients-spec</span>
+
+<span class="n">_DEFAULT_TRANSPARENCY</span> <span class="o">=</span> <span class="n">VariableFloat</span><span class="p">(</span><span class="mf">0.0</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">_splitSolidAndGradientGlyphs</span><span class="p">(</span>
+    <span class="n">colorGlyphs</span><span class="p">:</span> <span class="n">_ColorGlyphsDict</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">]]],</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">ot</span><span class="o">.</span><span class="n">Paint</span><span class="p">]]]]:</span>
+    <span class="n">colorGlyphsV0</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">colorGlyphsV1</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">baseGlyph</span><span class="p">,</span> <span class="n">layers</span> <span class="ow">in</span> <span class="n">colorGlyphs</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">newLayers</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">allSolidColors</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">for</span> <span class="n">layerGlyph</span><span class="p">,</span> <span class="n">paint</span> <span class="ow">in</span> <span class="n">layers</span><span class="p">:</span>
+            <span class="n">paint</span> <span class="o">=</span> <span class="n">_to_ot_paint</span><span class="p">(</span><span class="n">paint</span><span class="p">)</span>
+            <span class="k">if</span> <span class="p">(</span>
+                <span class="n">paint</span><span class="o">.</span><span class="n">Format</span> <span class="o">!=</span> <span class="mi">1</span>
+                <span class="ow">or</span> <span class="n">paint</span><span class="o">.</span><span class="n">Color</span><span class="o">.</span><span class="n">Transparency</span><span class="o">.</span><span class="n">value</span> <span class="o">!=</span> <span class="n">_DEFAULT_TRANSPARENCY</span><span class="o">.</span><span class="n">value</span>
+            <span class="p">):</span>
+                <span class="n">allSolidColors</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="n">newLayers</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">layerGlyph</span><span class="p">,</span> <span class="n">paint</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">allSolidColors</span><span class="p">:</span>
+            <span class="n">colorGlyphsV0</span><span class="p">[</span><span class="n">baseGlyph</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+                <span class="p">(</span><span class="n">layerGlyph</span><span class="p">,</span> <span class="n">paint</span><span class="o">.</span><span class="n">Color</span><span class="o">.</span><span class="n">PaletteIndex</span><span class="p">)</span>
+                <span class="k">for</span> <span class="n">layerGlyph</span><span class="p">,</span> <span class="n">paint</span> <span class="ow">in</span> <span class="n">newLayers</span>
+            <span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">colorGlyphsV1</span><span class="p">[</span><span class="n">baseGlyph</span><span class="p">]</span> <span class="o">=</span> <span class="n">newLayers</span>
+
+    <span class="c1"># sanity check</span>
+    <span class="k">assert</span> <span class="nb">set</span><span class="p">(</span><span class="n">colorGlyphs</span><span class="p">)</span> <span class="o">==</span> <span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">colorGlyphsV0</span><span class="p">)</span> <span class="o">|</span> <span class="nb">set</span><span class="p">(</span><span class="n">colorGlyphsV1</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">colorGlyphsV0</span><span class="p">,</span> <span class="n">colorGlyphsV1</span>
+
+
+<span class="k">def</span> <span class="nf">_to_variable_value</span><span class="p">(</span><span class="n">value</span><span class="p">:</span> <span class="n">_ScalarInput</span><span class="p">,</span> <span class="bp">cls</span><span class="o">=</span><span class="n">VariableValue</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">VariableValue</span><span class="p">:</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="bp">cls</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">value</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">it</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>  <span class="c1"># not iterable</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_make</span><span class="p">(</span><span class="n">it</span><span class="p">)</span>
+
+
+<span class="n">_to_variable_float</span> <span class="o">=</span> <span class="n">partial</span><span class="p">(</span><span class="n">_to_variable_value</span><span class="p">,</span> <span class="bp">cls</span><span class="o">=</span><span class="n">VariableFloat</span><span class="p">)</span>
+<span class="n">_to_variable_int</span> <span class="o">=</span> <span class="n">partial</span><span class="p">(</span><span class="n">_to_variable_value</span><span class="p">,</span> <span class="bp">cls</span><span class="o">=</span><span class="n">VariableInt</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="buildColor"><a class="viewcode-back" href="../../../colorLib/builder.html#fontTools.colorLib.builder.buildColor">[docs]</a><span class="k">def</span> <span class="nf">buildColor</span><span class="p">(</span>
+    <span class="n">paletteIndex</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">transparency</span><span class="p">:</span> <span class="n">_ScalarInput</span> <span class="o">=</span> <span class="n">_DEFAULT_TRANSPARENCY</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ot</span><span class="o">.</span><span class="n">Color</span><span class="p">:</span>
+    <span class="bp">self</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Color</span><span class="p">()</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">PaletteIndex</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">paletteIndex</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">Transparency</span> <span class="o">=</span> <span class="n">_to_variable_float</span><span class="p">(</span><span class="n">transparency</span><span class="p">)</span>
+    <span class="k">return</span> <span class="bp">self</span></div>
+
+
+<div class="viewcode-block" id="buildSolidColorPaint"><a class="viewcode-back" href="../../../colorLib/builder.html#fontTools.colorLib.builder.buildSolidColorPaint">[docs]</a><span class="k">def</span> <span class="nf">buildSolidColorPaint</span><span class="p">(</span>
+    <span class="n">paletteIndex</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">transparency</span><span class="p">:</span> <span class="n">_ScalarInput</span> <span class="o">=</span> <span class="n">_DEFAULT_TRANSPARENCY</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ot</span><span class="o">.</span><span class="n">Paint</span><span class="p">:</span>
+    <span class="bp">self</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Paint</span><span class="p">()</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">Format</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">Color</span> <span class="o">=</span> <span class="n">buildColor</span><span class="p">(</span><span class="n">paletteIndex</span><span class="p">,</span> <span class="n">transparency</span><span class="p">)</span>
+    <span class="k">return</span> <span class="bp">self</span></div>
+
+
+<div class="viewcode-block" id="buildColorStop"><a class="viewcode-back" href="../../../colorLib/builder.html#fontTools.colorLib.builder.buildColorStop">[docs]</a><span class="k">def</span> <span class="nf">buildColorStop</span><span class="p">(</span>
+    <span class="n">offset</span><span class="p">:</span> <span class="n">_ScalarInput</span><span class="p">,</span>
+    <span class="n">paletteIndex</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+    <span class="n">transparency</span><span class="p">:</span> <span class="n">_ScalarInput</span> <span class="o">=</span> <span class="n">_DEFAULT_TRANSPARENCY</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ot</span><span class="o">.</span><span class="n">ColorStop</span><span class="p">:</span>
+    <span class="bp">self</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">ColorStop</span><span class="p">()</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">StopOffset</span> <span class="o">=</span> <span class="n">_to_variable_float</span><span class="p">(</span><span class="n">offset</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">Color</span> <span class="o">=</span> <span class="n">buildColor</span><span class="p">(</span><span class="n">paletteIndex</span><span class="p">,</span> <span class="n">transparency</span><span class="p">)</span>
+    <span class="k">return</span> <span class="bp">self</span></div>
+
+
+<span class="k">def</span> <span class="nf">_to_extend_mode</span><span class="p">(</span><span class="n">v</span><span class="p">:</span> <span class="n">_ExtendInput</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ExtendMode</span><span class="p">:</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">ExtendMode</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">v</span>
+    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">ExtendMode</span><span class="p">,</span> <span class="n">v</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
+        <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;</span><span class="si">{v!r}</span><span class="s2"> is not a valid ExtendMode&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">ExtendMode</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="buildColorLine"><a class="viewcode-back" href="../../../colorLib/builder.html#fontTools.colorLib.builder.buildColorLine">[docs]</a><span class="k">def</span> <span class="nf">buildColorLine</span><span class="p">(</span>
+    <span class="n">stops</span><span class="p">:</span> <span class="n">_ColorStopsList</span><span class="p">,</span> <span class="n">extend</span><span class="p">:</span> <span class="n">_ExtendInput</span> <span class="o">=</span> <span class="n">ExtendMode</span><span class="o">.</span><span class="n">PAD</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ot</span><span class="o">.</span><span class="n">ColorLine</span><span class="p">:</span>
+    <span class="bp">self</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">ColorLine</span><span class="p">()</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">Extend</span> <span class="o">=</span> <span class="n">_to_extend_mode</span><span class="p">(</span><span class="n">extend</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">StopCount</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">stops</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">ColorStop</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">stop</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">stop</span><span class="p">,</span> <span class="n">ot</span><span class="o">.</span><span class="n">ColorStop</span><span class="p">)</span>
+        <span class="k">else</span> <span class="n">buildColorStop</span><span class="p">(</span><span class="o">**</span><span class="n">stop</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">stop</span><span class="p">,</span> <span class="n">collections</span><span class="o">.</span><span class="n">abc</span><span class="o">.</span><span class="n">Mapping</span><span class="p">)</span>
+        <span class="k">else</span> <span class="n">buildColorStop</span><span class="p">(</span><span class="o">*</span><span class="n">stop</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">stop</span> <span class="ow">in</span> <span class="n">stops</span>
+    <span class="p">]</span>
+    <span class="k">return</span> <span class="bp">self</span></div>
+
+
+<div class="viewcode-block" id="buildPoint"><a class="viewcode-back" href="../../../colorLib/builder.html#fontTools.colorLib.builder.buildPoint">[docs]</a><span class="k">def</span> <span class="nf">buildPoint</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">_ScalarInput</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">_ScalarInput</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ot</span><span class="o">.</span><span class="n">Point</span><span class="p">:</span>
+    <span class="bp">self</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Point</span><span class="p">()</span>
+    <span class="c1"># positions are encoded as Int16 so round to int</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">_to_variable_int</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">_to_variable_int</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+    <span class="k">return</span> <span class="bp">self</span></div>
+
+
+<span class="k">def</span> <span class="nf">_to_variable_point</span><span class="p">(</span><span class="n">pt</span><span class="p">:</span> <span class="n">_PointInput</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ot</span><span class="o">.</span><span class="n">Point</span><span class="p">:</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">pt</span><span class="p">,</span> <span class="n">ot</span><span class="o">.</span><span class="n">Point</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">pt</span>
+    <span class="k">return</span> <span class="n">buildPoint</span><span class="p">(</span><span class="o">*</span><span class="n">pt</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">_to_color_line</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">ot</span><span class="o">.</span><span class="n">ColorLine</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">obj</span>
+    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">collections</span><span class="o">.</span><span class="n">abc</span><span class="o">.</span><span class="n">Mapping</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">buildColorLine</span><span class="p">(</span><span class="o">**</span><span class="n">obj</span><span class="p">)</span>
+    <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="buildLinearGradientPaint"><a class="viewcode-back" href="../../../colorLib/builder.html#fontTools.colorLib.builder.buildLinearGradientPaint">[docs]</a><span class="k">def</span> <span class="nf">buildLinearGradientPaint</span><span class="p">(</span>
+    <span class="n">colorLine</span><span class="p">:</span> <span class="n">_ColorLineInput</span><span class="p">,</span>
+    <span class="n">p0</span><span class="p">:</span> <span class="n">_PointInput</span><span class="p">,</span>
+    <span class="n">p1</span><span class="p">:</span> <span class="n">_PointInput</span><span class="p">,</span>
+    <span class="n">p2</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">_PointInput</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ot</span><span class="o">.</span><span class="n">Paint</span><span class="p">:</span>
+    <span class="bp">self</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Paint</span><span class="p">()</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">Format</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">ColorLine</span> <span class="o">=</span> <span class="n">_to_color_line</span><span class="p">(</span><span class="n">colorLine</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">p2</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">p2</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">p1</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">pt</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">((</span><span class="n">p0</span><span class="p">,</span> <span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">)):</span>
+        <span class="nb">setattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f</span><span class="s2">&quot;p</span><span class="si">{i}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">_to_variable_point</span><span class="p">(</span><span class="n">pt</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="bp">self</span></div>
+
+
+<div class="viewcode-block" id="buildAffine2x2"><a class="viewcode-back" href="../../../colorLib/builder.html#fontTools.colorLib.builder.buildAffine2x2">[docs]</a><span class="k">def</span> <span class="nf">buildAffine2x2</span><span class="p">(</span>
+    <span class="n">xx</span><span class="p">:</span> <span class="n">_ScalarInput</span><span class="p">,</span> <span class="n">xy</span><span class="p">:</span> <span class="n">_ScalarInput</span><span class="p">,</span> <span class="n">yx</span><span class="p">:</span> <span class="n">_ScalarInput</span><span class="p">,</span> <span class="n">yy</span><span class="p">:</span> <span class="n">_ScalarInput</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ot</span><span class="o">.</span><span class="n">Affine2x2</span><span class="p">:</span>
+    <span class="bp">self</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Affine2x2</span><span class="p">()</span>
+    <span class="n">locs</span> <span class="o">=</span> <span class="nb">locals</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">attr</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;xx&quot;</span><span class="p">,</span> <span class="s2">&quot;xy&quot;</span><span class="p">,</span> <span class="s2">&quot;yx&quot;</span><span class="p">,</span> <span class="s2">&quot;yy&quot;</span><span class="p">):</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="n">locs</span><span class="p">[</span><span class="n">attr</span><span class="p">]</span>
+        <span class="nb">setattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">attr</span><span class="p">,</span> <span class="n">_to_variable_float</span><span class="p">(</span><span class="n">value</span><span class="p">))</span>
+    <span class="k">return</span> <span class="bp">self</span></div>
+
+
+<div class="viewcode-block" id="buildRadialGradientPaint"><a class="viewcode-back" href="../../../colorLib/builder.html#fontTools.colorLib.builder.buildRadialGradientPaint">[docs]</a><span class="k">def</span> <span class="nf">buildRadialGradientPaint</span><span class="p">(</span>
+    <span class="n">colorLine</span><span class="p">:</span> <span class="n">_ColorLineInput</span><span class="p">,</span>
+    <span class="n">c0</span><span class="p">:</span> <span class="n">_PointInput</span><span class="p">,</span>
+    <span class="n">c1</span><span class="p">:</span> <span class="n">_PointInput</span><span class="p">,</span>
+    <span class="n">r0</span><span class="p">:</span> <span class="n">_ScalarInput</span><span class="p">,</span>
+    <span class="n">r1</span><span class="p">:</span> <span class="n">_ScalarInput</span><span class="p">,</span>
+    <span class="n">affine</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">_AffineInput</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ot</span><span class="o">.</span><span class="n">Paint</span><span class="p">:</span>
+
+    <span class="bp">self</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Paint</span><span class="p">()</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">Format</span> <span class="o">=</span> <span class="mi">3</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">ColorLine</span> <span class="o">=</span> <span class="n">_to_color_line</span><span class="p">(</span><span class="n">colorLine</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">pt</span> <span class="ow">in</span> <span class="p">[(</span><span class="mi">0</span><span class="p">,</span> <span class="n">c0</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">c1</span><span class="p">)]:</span>
+        <span class="nb">setattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f</span><span class="s2">&quot;c</span><span class="si">{i}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">_to_variable_point</span><span class="p">(</span><span class="n">pt</span><span class="p">))</span>
+
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">r</span> <span class="ow">in</span> <span class="p">[(</span><span class="mi">0</span><span class="p">,</span> <span class="n">r0</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">r1</span><span class="p">)]:</span>
+        <span class="c1"># distances are encoded as UShort so we round to int</span>
+        <span class="nb">setattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f</span><span class="s2">&quot;r</span><span class="si">{i}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">_to_variable_int</span><span class="p">(</span><span class="n">r</span><span class="p">))</span>
+
+    <span class="k">if</span> <span class="n">affine</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">affine</span><span class="p">,</span> <span class="n">ot</span><span class="o">.</span><span class="n">Affine2x2</span><span class="p">):</span>
+        <span class="n">affine</span> <span class="o">=</span> <span class="n">buildAffine2x2</span><span class="p">(</span><span class="o">*</span><span class="n">affine</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">Affine</span> <span class="o">=</span> <span class="n">affine</span>
+
+    <span class="k">return</span> <span class="bp">self</span></div>
+
+
+<span class="k">def</span> <span class="nf">_to_ot_paint</span><span class="p">(</span><span class="n">paint</span><span class="p">:</span> <span class="n">_PaintInput</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ot</span><span class="o">.</span><span class="n">Paint</span><span class="p">:</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">paint</span><span class="p">,</span> <span class="n">ot</span><span class="o">.</span><span class="n">Paint</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">paint</span>
+    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">paint</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+        <span class="n">paletteIndex</span> <span class="o">=</span> <span class="n">paint</span>
+        <span class="k">return</span> <span class="n">buildSolidColorPaint</span><span class="p">(</span><span class="n">paletteIndex</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">paint</span><span class="p">,</span> <span class="n">collections</span><span class="o">.</span><span class="n">abc</span><span class="o">.</span><span class="n">Mapping</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">buildPaint</span><span class="p">(</span><span class="o">**</span><span class="n">paint</span><span class="p">)</span>
+    <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;expected int, Mapping or ot.Paint, found {type(paint.__name__)}&quot;</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="buildLayerV1Record"><a class="viewcode-back" href="../../../colorLib/builder.html#fontTools.colorLib.builder.buildLayerV1Record">[docs]</a><span class="k">def</span> <span class="nf">buildLayerV1Record</span><span class="p">(</span><span class="n">layerGlyph</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">paint</span><span class="p">:</span> <span class="n">_PaintInput</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ot</span><span class="o">.</span><span class="n">LayerV1Record</span><span class="p">:</span>
+    <span class="bp">self</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">LayerV1Record</span><span class="p">()</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">LayerGlyph</span> <span class="o">=</span> <span class="n">layerGlyph</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">Paint</span> <span class="o">=</span> <span class="n">_to_ot_paint</span><span class="p">(</span><span class="n">paint</span><span class="p">)</span>
+    <span class="k">return</span> <span class="bp">self</span></div>
+
+
+<div class="viewcode-block" id="buildLayerV1Array"><a class="viewcode-back" href="../../../colorLib/builder.html#fontTools.colorLib.builder.buildLayerV1Array">[docs]</a><span class="k">def</span> <span class="nf">buildLayerV1Array</span><span class="p">(</span>
+    <span class="n">layers</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">_LayerTuple</span><span class="p">,</span> <span class="n">ot</span><span class="o">.</span><span class="n">LayerV1Record</span><span class="p">]]</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ot</span><span class="o">.</span><span class="n">LayerV1Array</span><span class="p">:</span>
+    <span class="bp">self</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">LayerV1Array</span><span class="p">()</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">LayerCount</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">layers</span><span class="p">)</span>
+    <span class="n">records</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">layer</span> <span class="ow">in</span> <span class="n">layers</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">layer</span><span class="p">,</span> <span class="n">ot</span><span class="o">.</span><span class="n">LayerV1Record</span><span class="p">):</span>
+            <span class="n">record</span> <span class="o">=</span> <span class="n">layer</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">layerGlyph</span><span class="p">,</span> <span class="n">paint</span> <span class="o">=</span> <span class="n">layer</span>
+            <span class="n">record</span> <span class="o">=</span> <span class="n">buildLayerV1Record</span><span class="p">(</span><span class="n">layerGlyph</span><span class="p">,</span> <span class="n">paint</span><span class="p">)</span>
+        <span class="n">records</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">record</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">LayerV1Record</span> <span class="o">=</span> <span class="n">records</span>
+    <span class="k">return</span> <span class="bp">self</span></div>
+
+
+<div class="viewcode-block" id="buildBaseGlyphV1Record"><a class="viewcode-back" href="../../../colorLib/builder.html#fontTools.colorLib.builder.buildBaseGlyphV1Record">[docs]</a><span class="k">def</span> <span class="nf">buildBaseGlyphV1Record</span><span class="p">(</span>
+    <span class="n">baseGlyph</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">layers</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">_LayersList</span><span class="p">,</span> <span class="n">ot</span><span class="o">.</span><span class="n">LayerV1Array</span><span class="p">]</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ot</span><span class="o">.</span><span class="n">BaseGlyphV1Array</span><span class="p">:</span>
+    <span class="bp">self</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">BaseGlyphV1Record</span><span class="p">()</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">BaseGlyph</span> <span class="o">=</span> <span class="n">baseGlyph</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">layers</span><span class="p">,</span> <span class="n">ot</span><span class="o">.</span><span class="n">LayerV1Array</span><span class="p">):</span>
+        <span class="n">layers</span> <span class="o">=</span> <span class="n">buildLayerV1Array</span><span class="p">(</span><span class="n">layers</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">LayerV1Array</span> <span class="o">=</span> <span class="n">layers</span>
+    <span class="k">return</span> <span class="bp">self</span></div>
+
+
+<div class="viewcode-block" id="buildBaseGlyphV1Array"><a class="viewcode-back" href="../../../colorLib/builder.html#fontTools.colorLib.builder.buildBaseGlyphV1Array">[docs]</a><span class="k">def</span> <span class="nf">buildBaseGlyphV1Array</span><span class="p">(</span>
+    <span class="n">colorGlyphs</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">_ColorGlyphsDict</span><span class="p">,</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">ot</span><span class="o">.</span><span class="n">LayerV1Array</span><span class="p">]],</span>
+    <span class="n">glyphMap</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ot</span><span class="o">.</span><span class="n">BaseGlyphV1Array</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">glyphMap</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">colorGlyphItems</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span>
+            <span class="n">colorGlyphs</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">item</span><span class="p">:</span> <span class="n">glyphMap</span><span class="p">[</span><span class="n">item</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+        <span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">colorGlyphItems</span> <span class="o">=</span> <span class="n">colorGlyphs</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+    <span class="n">records</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">buildBaseGlyphV1Record</span><span class="p">(</span><span class="n">baseGlyph</span><span class="p">,</span> <span class="n">layers</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">baseGlyph</span><span class="p">,</span> <span class="n">layers</span> <span class="ow">in</span> <span class="n">colorGlyphItems</span>
+    <span class="p">]</span>
+    <span class="bp">self</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">BaseGlyphV1Array</span><span class="p">()</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">BaseGlyphCount</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">records</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">BaseGlyphV1Record</span> <span class="o">=</span> <span class="n">records</span>
+    <span class="k">return</span> <span class="bp">self</span></div>
+
+
+<span class="n">_PAINT_BUILDERS</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="mi">1</span><span class="p">:</span> <span class="n">buildSolidColorPaint</span><span class="p">,</span>
+    <span class="mi">2</span><span class="p">:</span> <span class="n">buildLinearGradientPaint</span><span class="p">,</span>
+    <span class="mi">3</span><span class="p">:</span> <span class="n">buildRadialGradientPaint</span><span class="p">,</span>
+<span class="p">}</span>
+
+
+<div class="viewcode-block" id="buildPaint"><a class="viewcode-back" href="../../../colorLib/builder.html#fontTools.colorLib.builder.buildPaint">[docs]</a><span class="k">def</span> <span class="nf">buildPaint</span><span class="p">(</span><span class="nb">format</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ot</span><span class="o">.</span><span class="n">Paint</span><span class="p">:</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">_PAINT_BUILDERS</span><span class="p">[</span><span class="nb">format</span><span class="p">](</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="nb">format</span><span class="p">)</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Just van Rossum, Behdad Esfahbod, and the fontTools Authors. CC BY-SA 4.0
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

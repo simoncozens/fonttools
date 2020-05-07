@@ -1,0 +1,477 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ttFont &mdash; fontTools Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="woff2" href="woff2.html" />
+    <link rel="prev" title="ttCollection" href="ttCollection.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> fontTools
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Library</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../afmLib.html">afmLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../agl.html">agl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cffLib/index.html">cffLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../colorLib/index.html">colorLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cu2qu/index.html">cu2qu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../designspaceLib/index.html">designspaceLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../encodings/index.html">encodings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../feaLib/index.html">feaLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../merge.html">merge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/index.html">misc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mtiLib.html">mtiLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../otlLib/index.html">otlLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pens/index.html">pens</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../subset/index.html">subset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svgLib/index.html">svgLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../t1Lib.html">t1Lib</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">ttLib</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="macUtils.html">macUtils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sfnt.html">sfnt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="standardGlyphOrder.html">standardGlyphOrder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tables.html">tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ttCollection.html">ttCollection</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">ttFont</a></li>
+<li class="toctree-l2"><a class="reference internal" href="woff2.html">woff2</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ttx.html">ttx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ufoLib/index.html">ufoLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unicode.html">unicode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unicodedata/index.html">unicodedata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../varLib/index.html">varLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../voltLib.html">voltLib</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">fontTools</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">ttLib</a> &raquo;</li>
+        
+      <li>ttFont</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/ttLib/ttFont.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-fontTools.ttLib.ttFont">
+<span id="ttfont"></span><h1>ttFont<a class="headerlink" href="#module-fontTools.ttLib.ttFont" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="fontTools.ttLib.ttFont.GlyphOrder">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.ttLib.ttFont.</code><code class="sig-name descname">GlyphOrder</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ttLib/ttFont.html#GlyphOrder"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ttLib.ttFont.GlyphOrder" title="Permalink to this definition">¶</a></dt>
+<dd><p>A pseudo table. The glyph order isn’t in the font as a separate
+table, but it’s nice to present it as such in the TTX format.</p>
+<dl class="py method">
+<dt id="fontTools.ttLib.ttFont.GlyphOrder.fromXML">
+<code class="sig-name descname">fromXML</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">attrs</span></em>, <em class="sig-param"><span class="n">content</span></em>, <em class="sig-param"><span class="n">ttFont</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ttLib/ttFont.html#GlyphOrder.fromXML"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ttLib.ttFont.GlyphOrder.fromXML" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ttLib.ttFont.GlyphOrder.toXML">
+<code class="sig-name descname">toXML</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">writer</span></em>, <em class="sig-param"><span class="n">ttFont</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ttLib/ttFont.html#GlyphOrder.toXML"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ttLib.ttFont.GlyphOrder.toXML" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.ttLib.ttFont.TTFont">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.ttLib.ttFont.</code><code class="sig-name descname">TTFont</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">file</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">res_name_or_index</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">sfntVersion</span><span class="o">=</span><span class="default_value">'\x00\x01\x00\x00'</span></em>, <em class="sig-param"><span class="n">flavor</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">checkChecksums</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">recalcBBoxes</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">allowVID</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">ignoreDecompileErrors</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">recalcTimestamp</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">fontNumber</span><span class="o">=</span><span class="default_value">- 1</span></em>, <em class="sig-param"><span class="n">lazy</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">quiet</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">_tableCache</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ttLib/ttFont.html#TTFont"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ttLib.ttFont.TTFont" title="Permalink to this definition">¶</a></dt>
+<dd><p>The main font object. It manages file input and output, and offers
+a convenient way of accessing tables.
+Tables will be only decompiled when necessary, ie. when they’re actually
+accessed. This means that simple operations can be extremely fast.</p>
+<dl class="py method">
+<dt id="fontTools.ttLib.ttFont.TTFont.close">
+<code class="sig-name descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ttLib/ttFont.html#TTFont.close"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ttLib.ttFont.TTFont.close" title="Permalink to this definition">¶</a></dt>
+<dd><p>If we still have a reader object, close it.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ttLib.ttFont.TTFont.get">
+<code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">default</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ttLib/ttFont.html#TTFont.get"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ttLib.ttFont.TTFont.get" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ttLib.ttFont.TTFont.getBestCmap">
+<code class="sig-name descname">getBestCmap</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">cmapPreferences</span><span class="o">=</span><span class="default_value">3, 10, 0, 6, 0, 4, 3, 1, 0, 3, 0, 2, 0, 1, 0, 0</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ttLib/ttFont.html#TTFont.getBestCmap"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ttLib.ttFont.TTFont.getBestCmap" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the ‘best’ unicode cmap dictionary available in the font,
+or None, if no unicode cmap subtable is available.</p>
+<p>By default it will search for the following (platformID, platEncID)
+pairs:</p>
+<blockquote>
+<div><p>(3, 10), (0, 6), (0, 4), (3, 1), (0, 3), (0, 2), (0, 1), (0, 0)</p>
+</div></blockquote>
+<p>This can be customized via the cmapPreferences argument.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ttLib.ttFont.TTFont.getGlyphID">
+<code class="sig-name descname">getGlyphID</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">glyphName</span></em>, <em class="sig-param"><span class="n">requireReal</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ttLib/ttFont.html#TTFont.getGlyphID"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ttLib.ttFont.TTFont.getGlyphID" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ttLib.ttFont.TTFont.getGlyphName">
+<code class="sig-name descname">getGlyphName</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">glyphID</span></em>, <em class="sig-param"><span class="n">requireReal</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ttLib/ttFont.html#TTFont.getGlyphName"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ttLib.ttFont.TTFont.getGlyphName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ttLib.ttFont.TTFont.getGlyphNames">
+<code class="sig-name descname">getGlyphNames</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ttLib/ttFont.html#TTFont.getGlyphNames"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ttLib.ttFont.TTFont.getGlyphNames" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of glyph names, sorted alphabetically.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ttLib.ttFont.TTFont.getGlyphNames2">
+<code class="sig-name descname">getGlyphNames2</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ttLib/ttFont.html#TTFont.getGlyphNames2"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ttLib.ttFont.TTFont.getGlyphNames2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of glyph names, sorted alphabetically,
+but not case sensitive.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ttLib.ttFont.TTFont.getGlyphOrder">
+<code class="sig-name descname">getGlyphOrder</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ttLib/ttFont.html#TTFont.getGlyphOrder"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ttLib.ttFont.TTFont.getGlyphOrder" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ttLib.ttFont.TTFont.getGlyphSet">
+<code class="sig-name descname">getGlyphSet</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">preferCFF</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ttLib/ttFont.html#TTFont.getGlyphSet"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ttLib.ttFont.TTFont.getGlyphSet" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a generic GlyphSet, which is a dict-like object
+mapping glyph names to glyph objects. The returned glyph objects
+have a .draw() method that supports the Pen protocol, and will
+have an attribute named ‘width’.</p>
+<p>If the font is CFF-based, the outlines will be taken from the ‘CFF ‘ or
+‘CFF2’ tables. Otherwise the outlines will be taken from the ‘glyf’ table.
+If the font contains both a ‘CFF ‘/’CFF2’ and a ‘glyf’ table, you can use
+the ‘preferCFF’ argument to specify which one should be taken. If the
+font contains both a ‘CFF ‘ and a ‘CFF2’ table, the latter is taken.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ttLib.ttFont.TTFont.getReverseGlyphMap">
+<code class="sig-name descname">getReverseGlyphMap</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">rebuild</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ttLib/ttFont.html#TTFont.getReverseGlyphMap"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ttLib.ttFont.TTFont.getReverseGlyphMap" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ttLib.ttFont.TTFont.getTableData">
+<code class="sig-name descname">getTableData</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ttLib/ttFont.html#TTFont.getTableData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ttLib.ttFont.TTFont.getTableData" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns raw table data, whether compiled or directly read from disk.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ttLib.ttFont.TTFont.has_key">
+<code class="sig-name descname">has_key</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ttLib/ttFont.html#TTFont.has_key"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ttLib.ttFont.TTFont.has_key" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ttLib.ttFont.TTFont.importXML">
+<code class="sig-name descname">importXML</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fileOrPath</span></em>, <em class="sig-param"><span class="n">quiet</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ttLib/ttFont.html#TTFont.importXML"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ttLib.ttFont.TTFont.importXML" title="Permalink to this definition">¶</a></dt>
+<dd><p>Import a TTX file (an XML-based text format), so as to recreate
+a font object.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ttLib.ttFont.TTFont.isLoaded">
+<code class="sig-name descname">isLoaded</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ttLib/ttFont.html#TTFont.isLoaded"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ttLib.ttFont.TTFont.isLoaded" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return true if the table identified by ‘tag’ has been
+decompiled and loaded into memory.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ttLib.ttFont.TTFont.keys">
+<code class="sig-name descname">keys</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ttLib/ttFont.html#TTFont.keys"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ttLib.ttFont.TTFont.keys" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ttLib.ttFont.TTFont.save">
+<code class="sig-name descname">save</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">file</span></em>, <em class="sig-param"><span class="n">reorderTables</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ttLib/ttFont.html#TTFont.save"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ttLib.ttFont.TTFont.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save the font to disk. Similarly to the constructor,
+the ‘file’ argument can be either a pathname or a writable
+file object.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ttLib.ttFont.TTFont.saveXML">
+<code class="sig-name descname">saveXML</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fileOrPath</span></em>, <em class="sig-param"><span class="n">newlinestr</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ttLib/ttFont.html#TTFont.saveXML"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ttLib.ttFont.TTFont.saveXML" title="Permalink to this definition">¶</a></dt>
+<dd><p>Export the font as TTX (an XML-based text file), or as a series of text
+files when splitTables is true. In the latter case, the ‘fileOrPath’
+argument should be a path to a directory.
+The ‘tables’ argument must either be false (dump all tables) or a
+list of tables to dump. The ‘skipTables’ argument may be a list of tables
+to skip, but only when the ‘tables’ argument is false.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ttLib.ttFont.TTFont.setGlyphOrder">
+<code class="sig-name descname">setGlyphOrder</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">glyphOrder</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ttLib/ttFont.html#TTFont.setGlyphOrder"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ttLib.ttFont.TTFont.setGlyphOrder" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.ttLib.ttFont.getClassTag">
+<code class="sig-prename descclassname">fontTools.ttLib.ttFont.</code><code class="sig-name descname">getClassTag</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">klass</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ttLib/ttFont.html#getClassTag"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ttLib.ttFont.getClassTag" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fetch the table tag for a class object.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.ttLib.ttFont.getSearchRange">
+<code class="sig-prename descclassname">fontTools.ttLib.ttFont.</code><code class="sig-name descname">getSearchRange</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">n</span></em>, <em class="sig-param"><span class="n">itemSize</span><span class="o">=</span><span class="default_value">16</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ttLib/ttFont.html#getSearchRange"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ttLib.ttFont.getSearchRange" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate searchRange, entrySelector, rangeShift.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.ttLib.ttFont.getTableClass">
+<code class="sig-prename descclassname">fontTools.ttLib.ttFont.</code><code class="sig-name descname">getTableClass</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ttLib/ttFont.html#getTableClass"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ttLib.ttFont.getTableClass" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fetch the packer/unpacker class for a table.
+Return None when no class is found.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.ttLib.ttFont.getTableModule">
+<code class="sig-prename descclassname">fontTools.ttLib.ttFont.</code><code class="sig-name descname">getTableModule</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ttLib/ttFont.html#getTableModule"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ttLib.ttFont.getTableModule" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fetch the packer/unpacker module for a table.
+Return None when no module is found.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.ttLib.ttFont.identifierToTag">
+<code class="sig-prename descclassname">fontTools.ttLib.ttFont.</code><code class="sig-name descname">identifierToTag</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ident</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ttLib/ttFont.html#identifierToTag"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ttLib.ttFont.identifierToTag" title="Permalink to this definition">¶</a></dt>
+<dd><p>the opposite of tagToIdentifier()</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.ttLib.ttFont.maxPowerOfTwo">
+<code class="sig-prename descclassname">fontTools.ttLib.ttFont.</code><code class="sig-name descname">maxPowerOfTwo</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ttLib/ttFont.html#maxPowerOfTwo"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ttLib.ttFont.maxPowerOfTwo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the highest exponent of two, so that
+(2 ** exponent) &lt;= x.  Return 0 if x is 0.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.ttLib.ttFont.newTable">
+<code class="sig-prename descclassname">fontTools.ttLib.ttFont.</code><code class="sig-name descname">newTable</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ttLib/ttFont.html#newTable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ttLib.ttFont.newTable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a new instance of a table.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.ttLib.ttFont.reorderFontTables">
+<code class="sig-prename descclassname">fontTools.ttLib.ttFont.</code><code class="sig-name descname">reorderFontTables</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">inFile</span></em>, <em class="sig-param"><span class="n">outFile</span></em>, <em class="sig-param"><span class="n">tableOrder</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">checkChecksums</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ttLib/ttFont.html#reorderFontTables"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ttLib.ttFont.reorderFontTables" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rewrite a font file, ordering the tables as recommended by the
+OpenType specification 1.4.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.ttLib.ttFont.sortedTagList">
+<code class="sig-prename descclassname">fontTools.ttLib.ttFont.</code><code class="sig-name descname">sortedTagList</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tagList</span></em>, <em class="sig-param"><span class="n">tableOrder</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ttLib/ttFont.html#sortedTagList"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ttLib.ttFont.sortedTagList" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a sorted copy of tagList, sorted according to the OpenType
+specification, or according to a custom tableOrder. If given and not
+None, tableOrder needs to be a list of tag names.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.ttLib.ttFont.tagToIdentifier">
+<code class="sig-prename descclassname">fontTools.ttLib.ttFont.</code><code class="sig-name descname">tagToIdentifier</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ttLib/ttFont.html#tagToIdentifier"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ttLib.ttFont.tagToIdentifier" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert a table tag to a valid (but UGLY) python identifier,
+as well as a filename that’s guaranteed to be unique even on a
+caseless file system. Each character is mapped to two characters.
+Lowercase letters get an underscore before the letter, uppercase
+letters get an underscore after the letter. Trailing spaces are
+trimmed. Illegal characters are escaped as two hex bytes. If the
+result starts with a number (as the result of a hex escape), an
+extra underscore is prepended. Examples:</p>
+<blockquote>
+<div><p>‘glyf’ -&gt; ‘_g_l_y_f’
+‘cvt ‘ -&gt; ‘_c_v_t’
+‘OS/2’ -&gt; ‘O_S_2f_2’</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.ttLib.ttFont.tagToXML">
+<code class="sig-prename descclassname">fontTools.ttLib.ttFont.</code><code class="sig-name descname">tagToXML</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ttLib/ttFont.html#tagToXML"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ttLib.ttFont.tagToXML" title="Permalink to this definition">¶</a></dt>
+<dd><p>Similarly to tagToIdentifier(), this converts a TT tag
+to a valid XML element name. Since XML element names are
+case sensitive, this is a fairly simple/readable translation.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.ttLib.ttFont.xmlToTag">
+<code class="sig-prename descclassname">fontTools.ttLib.ttFont.</code><code class="sig-name descname">xmlToTag</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ttLib/ttFont.html#xmlToTag"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ttLib.ttFont.xmlToTag" title="Permalink to this definition">¶</a></dt>
+<dd><p>The opposite of tagToXML()</p>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="woff2.html" class="btn btn-neutral float-right" title="woff2" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="ttCollection.html" class="btn btn-neutral float-left" title="ttCollection" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Just van Rossum, Behdad Esfahbod, and the fontTools Authors. CC BY-SA 4.0
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

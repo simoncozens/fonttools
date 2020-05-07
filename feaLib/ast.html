@@ -1,0 +1,2065 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ast &mdash; fontTools Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="builder" href="builder.html" />
+    <link rel="prev" title="feaLib" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> fontTools
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Library</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../afmLib.html">afmLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../agl.html">agl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cffLib/index.html">cffLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../colorLib/index.html">colorLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cu2qu/index.html">cu2qu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../designspaceLib/index.html">designspaceLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../encodings/index.html">encodings</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">feaLib</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">ast</a></li>
+<li class="toctree-l2"><a class="reference internal" href="builder.html">builder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="error.html">error</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lexer.html">lexer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="parser.html">parser</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../merge.html">merge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/index.html">misc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mtiLib.html">mtiLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../otlLib/index.html">otlLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pens/index.html">pens</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../subset/index.html">subset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svgLib/index.html">svgLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../t1Lib.html">t1Lib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ttLib/index.html">ttLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ttx.html">ttx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ufoLib/index.html">ufoLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unicode.html">unicode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unicodedata/index.html">unicodedata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../varLib/index.html">varLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../voltLib.html">voltLib</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">fontTools</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">feaLib</a> &raquo;</li>
+        
+      <li>ast</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/feaLib/ast.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-fontTools.feaLib.ast">
+<span id="ast"></span><h1>ast<a class="headerlink" href="#module-fontTools.feaLib.ast" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="fontTools.feaLib.ast.AlternateSubstStatement">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.feaLib.ast.</code><code class="sig-name descname">AlternateSubstStatement</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">prefix</span></em>, <em class="sig-param"><span class="n">glyph</span></em>, <em class="sig-param"><span class="n">suffix</span></em>, <em class="sig-param"><span class="n">replacement</span></em>, <em class="sig-param"><span class="n">location</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#AlternateSubstStatement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.AlternateSubstStatement" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.feaLib.ast.AlternateSubstStatement.asFea">
+<code class="sig-name descname">asFea</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">indent</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#AlternateSubstStatement.asFea"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.AlternateSubstStatement.asFea" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.AlternateSubstStatement.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#AlternateSubstStatement.build"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.AlternateSubstStatement.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.feaLib.ast.Anchor">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.feaLib.ast.</code><code class="sig-name descname">Anchor</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">y</span></em>, <em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">contourpoint</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">xDeviceTable</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">yDeviceTable</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">location</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#Anchor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.Anchor" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.feaLib.ast.Anchor.asFea">
+<code class="sig-name descname">asFea</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">indent</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#Anchor.asFea"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.Anchor.asFea" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.Anchor.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.ast.Anchor.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.feaLib.ast.AnchorDefinition">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.feaLib.ast.</code><code class="sig-name descname">AnchorDefinition</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">y</span></em>, <em class="sig-param"><span class="n">contourpoint</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">location</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#AnchorDefinition"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.AnchorDefinition" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.feaLib.ast.AnchorDefinition.asFea">
+<code class="sig-name descname">asFea</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">indent</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#AnchorDefinition.asFea"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.AnchorDefinition.asFea" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.AnchorDefinition.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.ast.AnchorDefinition.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.feaLib.ast.AnonymousBlock">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.feaLib.ast.</code><code class="sig-name descname">AnonymousBlock</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">content</span></em>, <em class="sig-param"><span class="n">location</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#AnonymousBlock"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.AnonymousBlock" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.feaLib.ast.AnonymousBlock.asFea">
+<code class="sig-name descname">asFea</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">indent</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#AnonymousBlock.asFea"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.AnonymousBlock.asFea" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.AnonymousBlock.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.ast.AnonymousBlock.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.feaLib.ast.AttachStatement">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.feaLib.ast.</code><code class="sig-name descname">AttachStatement</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">glyphs</span></em>, <em class="sig-param"><span class="n">contourPoints</span></em>, <em class="sig-param"><span class="n">location</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#AttachStatement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.AttachStatement" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.feaLib.ast.AttachStatement.asFea">
+<code class="sig-name descname">asFea</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">indent</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#AttachStatement.asFea"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.AttachStatement.asFea" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.AttachStatement.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#AttachStatement.build"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.AttachStatement.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.feaLib.ast.BaseAxis">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.feaLib.ast.</code><code class="sig-name descname">BaseAxis</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">bases</span></em>, <em class="sig-param"><span class="n">scripts</span></em>, <em class="sig-param"><span class="n">vertical</span></em>, <em class="sig-param"><span class="n">location</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#BaseAxis"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.BaseAxis" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.feaLib.ast.BaseAxis.asFea">
+<code class="sig-name descname">asFea</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">indent</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#BaseAxis.asFea"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.BaseAxis.asFea" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.BaseAxis.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#BaseAxis.build"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.BaseAxis.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.feaLib.ast.Block">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.feaLib.ast.</code><code class="sig-name descname">Block</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">location</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#Block"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.Block" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.feaLib.ast.Block.asFea">
+<code class="sig-name descname">asFea</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">indent</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#Block.asFea"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.Block.asFea" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.Block.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#Block.build"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.Block.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.feaLib.ast.BytesIO">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.feaLib.ast.</code><code class="sig-name descname">BytesIO</code><a class="headerlink" href="#fontTools.feaLib.ast.BytesIO" title="Permalink to this definition">¶</a></dt>
+<dd><p>Buffered I/O implementation using an in-memory bytes buffer.</p>
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.BytesIO.close">
+<code class="sig-name descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.ast.BytesIO.close" title="Permalink to this definition">¶</a></dt>
+<dd><p>Disable all I/O operations.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.feaLib.ast.BytesIO.closed">
+<code class="sig-name descname">closed</code><a class="headerlink" href="#fontTools.feaLib.ast.BytesIO.closed" title="Permalink to this definition">¶</a></dt>
+<dd><p>True if the file is closed.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.BytesIO.detach">
+<code class="sig-name descname">detach</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.ast.BytesIO.detach" title="Permalink to this definition">¶</a></dt>
+<dd><p>Disconnect this buffer from its underlying raw stream and return it.</p>
+<p>After the raw stream has been detached, the buffer is in an unusable
+state.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.BytesIO.fileno">
+<code class="sig-name descname">fileno</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.ast.BytesIO.fileno" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns underlying file descriptor if one exists.</p>
+<p>OSError is raised if the IO object does not use a file descriptor.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.BytesIO.flush">
+<code class="sig-name descname">flush</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.ast.BytesIO.flush" title="Permalink to this definition">¶</a></dt>
+<dd><p>Does nothing.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.BytesIO.getbuffer">
+<code class="sig-name descname">getbuffer</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.ast.BytesIO.getbuffer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a read-write view over the contents of the BytesIO object.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.BytesIO.getvalue">
+<code class="sig-name descname">getvalue</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.ast.BytesIO.getvalue" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve the entire contents of the BytesIO object.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.BytesIO.isatty">
+<code class="sig-name descname">isatty</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.ast.BytesIO.isatty" title="Permalink to this definition">¶</a></dt>
+<dd><p>Always returns False.</p>
+<p>BytesIO objects are not connected to a TTY-like device.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.BytesIO.read">
+<code class="sig-name descname">read</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.ast.BytesIO.read" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read at most size bytes, returned as a bytes object.</p>
+<p>If the size argument is negative, read until EOF is reached.
+Return an empty bytes object at EOF.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.BytesIO.read1">
+<code class="sig-name descname">read1</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.ast.BytesIO.read1" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read at most size bytes, returned as a bytes object.</p>
+<p>If the size argument is negative or omitted, read until EOF is reached.
+Return an empty bytes object at EOF.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.BytesIO.readable">
+<code class="sig-name descname">readable</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.ast.BytesIO.readable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns True if the IO object can be read.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.BytesIO.readinto">
+<code class="sig-name descname">readinto</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.ast.BytesIO.readinto" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read bytes into buffer.</p>
+<p>Returns number of bytes read (0 for EOF), or None if the object
+is set not to block and has no data to read.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.BytesIO.readinto1">
+<code class="sig-name descname">readinto1</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.ast.BytesIO.readinto1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.BytesIO.readline">
+<code class="sig-name descname">readline</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.ast.BytesIO.readline" title="Permalink to this definition">¶</a></dt>
+<dd><p>Next line from the file, as a bytes object.</p>
+<p>Retain newline.  A non-negative size argument limits the maximum
+number of bytes to return (an incomplete line may be returned then).
+Return an empty bytes object at EOF.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.BytesIO.readlines">
+<code class="sig-name descname">readlines</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.ast.BytesIO.readlines" title="Permalink to this definition">¶</a></dt>
+<dd><p>List of bytes objects, each a line from the file.</p>
+<p>Call readline() repeatedly and return a list of the lines so read.
+The optional size argument, if given, is an approximate bound on the
+total number of bytes in the lines returned.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.BytesIO.seek">
+<code class="sig-name descname">seek</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.ast.BytesIO.seek" title="Permalink to this definition">¶</a></dt>
+<dd><p>Change stream position.</p>
+<dl class="simple">
+<dt>Seek to byte offset pos relative to position indicated by whence:</dt><dd><p>0  Start of stream (the default).  pos should be &gt;= 0;
+1  Current position - pos may be negative;
+2  End of stream - pos usually negative.</p>
+</dd>
+</dl>
+<p>Returns the new absolute position.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.BytesIO.seekable">
+<code class="sig-name descname">seekable</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.ast.BytesIO.seekable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns True if the IO object can be seeked.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.BytesIO.tell">
+<code class="sig-name descname">tell</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.ast.BytesIO.tell" title="Permalink to this definition">¶</a></dt>
+<dd><p>Current file position, an integer.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.BytesIO.truncate">
+<code class="sig-name descname">truncate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.ast.BytesIO.truncate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Truncate the file to at most size bytes.</p>
+<p>Size defaults to the current file position, as returned by tell().
+The current file position is unchanged.  Returns the new size.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.BytesIO.writable">
+<code class="sig-name descname">writable</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.ast.BytesIO.writable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns True if the IO object can be written.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.BytesIO.write">
+<code class="sig-name descname">write</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.ast.BytesIO.write" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write bytes to file.</p>
+<p>Return the number of bytes written.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.BytesIO.writelines">
+<code class="sig-name descname">writelines</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.ast.BytesIO.writelines" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write lines to the file.</p>
+<p>Note that newlines are not added.  lines can be any iterable object
+producing bytes-like objects. This is equivalent to calling write() for
+each element.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.feaLib.ast.CVParametersNameStatement">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.feaLib.ast.</code><code class="sig-name descname">CVParametersNameStatement</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">nameID</span></em>, <em class="sig-param"><span class="n">platformID</span></em>, <em class="sig-param"><span class="n">platEncID</span></em>, <em class="sig-param"><span class="n">langID</span></em>, <em class="sig-param"><span class="n">string</span></em>, <em class="sig-param"><span class="n">block_name</span></em>, <em class="sig-param"><span class="n">location</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#CVParametersNameStatement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.CVParametersNameStatement" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.feaLib.ast.CVParametersNameStatement.asFea">
+<code class="sig-name descname">asFea</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">indent</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#CVParametersNameStatement.asFea"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.CVParametersNameStatement.asFea" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.CVParametersNameStatement.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#CVParametersNameStatement.build"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.CVParametersNameStatement.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.feaLib.ast.ChainContextPosStatement">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.feaLib.ast.</code><code class="sig-name descname">ChainContextPosStatement</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">prefix</span></em>, <em class="sig-param"><span class="n">glyphs</span></em>, <em class="sig-param"><span class="n">suffix</span></em>, <em class="sig-param"><span class="n">lookups</span></em>, <em class="sig-param"><span class="n">location</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#ChainContextPosStatement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.ChainContextPosStatement" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.feaLib.ast.ChainContextPosStatement.asFea">
+<code class="sig-name descname">asFea</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">indent</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#ChainContextPosStatement.asFea"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.ChainContextPosStatement.asFea" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.ChainContextPosStatement.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#ChainContextPosStatement.build"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.ChainContextPosStatement.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.feaLib.ast.ChainContextSubstStatement">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.feaLib.ast.</code><code class="sig-name descname">ChainContextSubstStatement</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">prefix</span></em>, <em class="sig-param"><span class="n">glyphs</span></em>, <em class="sig-param"><span class="n">suffix</span></em>, <em class="sig-param"><span class="n">lookups</span></em>, <em class="sig-param"><span class="n">location</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#ChainContextSubstStatement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.ChainContextSubstStatement" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.feaLib.ast.ChainContextSubstStatement.asFea">
+<code class="sig-name descname">asFea</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">indent</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#ChainContextSubstStatement.asFea"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.ChainContextSubstStatement.asFea" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.ChainContextSubstStatement.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#ChainContextSubstStatement.build"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.ChainContextSubstStatement.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.feaLib.ast.CharacterStatement">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.feaLib.ast.</code><code class="sig-name descname">CharacterStatement</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">character</span></em>, <em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">location</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#CharacterStatement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.CharacterStatement" title="Permalink to this definition">¶</a></dt>
+<dd><p>Statement used in cvParameters blocks of Character Variant features (cvXX).
+The Unicode value may be written with either decimal or hexadecimal
+notation. The value must be preceded by ‘0x’ if it is a hexadecimal value.
+The largest Unicode value allowed is 0xFFFFFF.</p>
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.CharacterStatement.asFea">
+<code class="sig-name descname">asFea</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">indent</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#CharacterStatement.asFea"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.CharacterStatement.asFea" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.CharacterStatement.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#CharacterStatement.build"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.CharacterStatement.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.feaLib.ast.Comment">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.feaLib.ast.</code><code class="sig-name descname">Comment</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text</span></em>, <em class="sig-param"><span class="n">location</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#Comment"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.Comment" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.feaLib.ast.Comment.asFea">
+<code class="sig-name descname">asFea</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">indent</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#Comment.asFea"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.Comment.asFea" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.Comment.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.ast.Comment.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.feaLib.ast.CursivePosStatement">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.feaLib.ast.</code><code class="sig-name descname">CursivePosStatement</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">glyphclass</span></em>, <em class="sig-param"><span class="n">entryAnchor</span></em>, <em class="sig-param"><span class="n">exitAnchor</span></em>, <em class="sig-param"><span class="n">location</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#CursivePosStatement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.CursivePosStatement" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.feaLib.ast.CursivePosStatement.asFea">
+<code class="sig-name descname">asFea</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">indent</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#CursivePosStatement.asFea"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.CursivePosStatement.asFea" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.CursivePosStatement.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#CursivePosStatement.build"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.CursivePosStatement.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.feaLib.ast.Element">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.feaLib.ast.</code><code class="sig-name descname">Element</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">location</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#Element"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.Element" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.feaLib.ast.Element.asFea">
+<code class="sig-name descname">asFea</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">indent</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#Element.asFea"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.Element.asFea" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.Element.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#Element.build"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.Element.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.feaLib.ast.Expression">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.feaLib.ast.</code><code class="sig-name descname">Expression</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">location</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#Expression"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.Expression" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.feaLib.ast.Expression.asFea">
+<code class="sig-name descname">asFea</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">indent</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.ast.Expression.asFea" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.Expression.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.ast.Expression.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.feaLib.ast.FeatureBlock">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.feaLib.ast.</code><code class="sig-name descname">FeatureBlock</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">use_extension</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">location</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#FeatureBlock"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.FeatureBlock" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.feaLib.ast.FeatureBlock.asFea">
+<code class="sig-name descname">asFea</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">indent</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#FeatureBlock.asFea"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.FeatureBlock.asFea" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.FeatureBlock.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#FeatureBlock.build"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.FeatureBlock.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.feaLib.ast.FeatureFile">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.feaLib.ast.</code><code class="sig-name descname">FeatureFile</code><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#FeatureFile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.FeatureFile" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.feaLib.ast.FeatureFile.asFea">
+<code class="sig-name descname">asFea</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">indent</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#FeatureFile.asFea"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.FeatureFile.asFea" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.FeatureFile.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.ast.FeatureFile.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt id="fontTools.feaLib.ast.FeatureLibError">
+<em class="property">exception </em><code class="sig-prename descclassname">fontTools.feaLib.ast.</code><code class="sig-name descname">FeatureLibError</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">message</span></em>, <em class="sig-param"><span class="n">location</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/error.html#FeatureLibError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.FeatureLibError" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py attribute">
+<dt id="fontTools.feaLib.ast.FeatureLibError.args">
+<code class="sig-name descname">args</code><a class="headerlink" href="#fontTools.feaLib.ast.FeatureLibError.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.FeatureLibError.with_traceback">
+<code class="sig-name descname">with_traceback</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.ast.FeatureLibError.with_traceback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.feaLib.ast.FeatureNameStatement">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.feaLib.ast.</code><code class="sig-name descname">FeatureNameStatement</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">nameID</span></em>, <em class="sig-param"><span class="n">platformID</span></em>, <em class="sig-param"><span class="n">platEncID</span></em>, <em class="sig-param"><span class="n">langID</span></em>, <em class="sig-param"><span class="n">string</span></em>, <em class="sig-param"><span class="n">location</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#FeatureNameStatement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.FeatureNameStatement" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.feaLib.ast.FeatureNameStatement.asFea">
+<code class="sig-name descname">asFea</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">indent</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#FeatureNameStatement.asFea"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.FeatureNameStatement.asFea" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.FeatureNameStatement.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#FeatureNameStatement.build"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.FeatureNameStatement.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.feaLib.ast.FeatureReferenceStatement">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.feaLib.ast.</code><code class="sig-name descname">FeatureReferenceStatement</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">featureName</span></em>, <em class="sig-param"><span class="n">location</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#FeatureReferenceStatement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.FeatureReferenceStatement" title="Permalink to this definition">¶</a></dt>
+<dd><p>Example: feature salt;</p>
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.FeatureReferenceStatement.asFea">
+<code class="sig-name descname">asFea</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">indent</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#FeatureReferenceStatement.asFea"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.FeatureReferenceStatement.asFea" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.FeatureReferenceStatement.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#FeatureReferenceStatement.build"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.FeatureReferenceStatement.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.feaLib.ast.FontRevisionStatement">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.feaLib.ast.</code><code class="sig-name descname">FontRevisionStatement</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">revision</span></em>, <em class="sig-param"><span class="n">location</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#FontRevisionStatement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.FontRevisionStatement" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.feaLib.ast.FontRevisionStatement.asFea">
+<code class="sig-name descname">asFea</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">indent</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#FontRevisionStatement.asFea"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.FontRevisionStatement.asFea" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.FontRevisionStatement.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#FontRevisionStatement.build"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.FontRevisionStatement.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.feaLib.ast.GlyphClass">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.feaLib.ast.</code><code class="sig-name descname">GlyphClass</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">glyphs</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">location</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#GlyphClass"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.GlyphClass" title="Permalink to this definition">¶</a></dt>
+<dd><p>A glyph class, such as [acute cedilla grave].</p>
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.GlyphClass.add_cid_range">
+<code class="sig-name descname">add_cid_range</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">start</span></em>, <em class="sig-param"><span class="n">end</span></em>, <em class="sig-param"><span class="n">glyphs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#GlyphClass.add_cid_range"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.GlyphClass.add_cid_range" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.GlyphClass.add_class">
+<code class="sig-name descname">add_class</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">gc</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#GlyphClass.add_class"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.GlyphClass.add_class" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.GlyphClass.add_range">
+<code class="sig-name descname">add_range</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">start</span></em>, <em class="sig-param"><span class="n">end</span></em>, <em class="sig-param"><span class="n">glyphs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#GlyphClass.add_range"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.GlyphClass.add_range" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.GlyphClass.append">
+<code class="sig-name descname">append</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">glyph</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#GlyphClass.append"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.GlyphClass.append" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.GlyphClass.asFea">
+<code class="sig-name descname">asFea</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">indent</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#GlyphClass.asFea"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.GlyphClass.asFea" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.GlyphClass.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.ast.GlyphClass.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.GlyphClass.extend">
+<code class="sig-name descname">extend</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">glyphs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#GlyphClass.extend"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.GlyphClass.extend" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.GlyphClass.glyphSet">
+<code class="sig-name descname">glyphSet</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#GlyphClass.glyphSet"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.GlyphClass.glyphSet" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.feaLib.ast.GlyphClassDefStatement">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.feaLib.ast.</code><code class="sig-name descname">GlyphClassDefStatement</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">baseGlyphs</span></em>, <em class="sig-param"><span class="n">markGlyphs</span></em>, <em class="sig-param"><span class="n">ligatureGlyphs</span></em>, <em class="sig-param"><span class="n">componentGlyphs</span></em>, <em class="sig-param"><span class="n">location</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#GlyphClassDefStatement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.GlyphClassDefStatement" title="Permalink to this definition">¶</a></dt>
+<dd><p>Example: GlyphClassDef &#64;UPPERCASE, [B], [C], [D];</p>
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.GlyphClassDefStatement.asFea">
+<code class="sig-name descname">asFea</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">indent</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#GlyphClassDefStatement.asFea"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.GlyphClassDefStatement.asFea" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.GlyphClassDefStatement.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#GlyphClassDefStatement.build"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.GlyphClassDefStatement.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.feaLib.ast.GlyphClassDefinition">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.feaLib.ast.</code><code class="sig-name descname">GlyphClassDefinition</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">glyphs</span></em>, <em class="sig-param"><span class="n">location</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#GlyphClassDefinition"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.GlyphClassDefinition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Example: &#64;UPPERCASE = [A-Z];</p>
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.GlyphClassDefinition.asFea">
+<code class="sig-name descname">asFea</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">indent</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#GlyphClassDefinition.asFea"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.GlyphClassDefinition.asFea" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.GlyphClassDefinition.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.ast.GlyphClassDefinition.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.GlyphClassDefinition.glyphSet">
+<code class="sig-name descname">glyphSet</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#GlyphClassDefinition.glyphSet"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.GlyphClassDefinition.glyphSet" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.feaLib.ast.GlyphClassName">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.feaLib.ast.</code><code class="sig-name descname">GlyphClassName</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">glyphclass</span></em>, <em class="sig-param"><span class="n">location</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#GlyphClassName"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.GlyphClassName" title="Permalink to this definition">¶</a></dt>
+<dd><p>A glyph class name, such as &#64;FRENCH_MARKS.</p>
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.GlyphClassName.asFea">
+<code class="sig-name descname">asFea</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">indent</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#GlyphClassName.asFea"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.GlyphClassName.asFea" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.GlyphClassName.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.ast.GlyphClassName.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.GlyphClassName.glyphSet">
+<code class="sig-name descname">glyphSet</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#GlyphClassName.glyphSet"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.GlyphClassName.glyphSet" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.feaLib.ast.GlyphName">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.feaLib.ast.</code><code class="sig-name descname">GlyphName</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">glyph</span></em>, <em class="sig-param"><span class="n">location</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#GlyphName"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.GlyphName" title="Permalink to this definition">¶</a></dt>
+<dd><p>A single glyph name, such as cedilla.</p>
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.GlyphName.asFea">
+<code class="sig-name descname">asFea</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">indent</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#GlyphName.asFea"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.GlyphName.asFea" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.GlyphName.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.ast.GlyphName.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.GlyphName.glyphSet">
+<code class="sig-name descname">glyphSet</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#GlyphName.glyphSet"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.GlyphName.glyphSet" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.feaLib.ast.HheaField">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.feaLib.ast.</code><code class="sig-name descname">HheaField</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">key</span></em>, <em class="sig-param"><span class="n">value</span></em>, <em class="sig-param"><span class="n">location</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#HheaField"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.HheaField" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.feaLib.ast.HheaField.asFea">
+<code class="sig-name descname">asFea</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">indent</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#HheaField.asFea"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.HheaField.asFea" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.HheaField.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#HheaField.build"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.HheaField.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.feaLib.ast.IgnorePosStatement">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.feaLib.ast.</code><code class="sig-name descname">IgnorePosStatement</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">chainContexts</span></em>, <em class="sig-param"><span class="n">location</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#IgnorePosStatement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.IgnorePosStatement" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.feaLib.ast.IgnorePosStatement.asFea">
+<code class="sig-name descname">asFea</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">indent</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#IgnorePosStatement.asFea"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.IgnorePosStatement.asFea" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.IgnorePosStatement.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#IgnorePosStatement.build"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.IgnorePosStatement.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.feaLib.ast.IgnoreSubstStatement">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.feaLib.ast.</code><code class="sig-name descname">IgnoreSubstStatement</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">chainContexts</span></em>, <em class="sig-param"><span class="n">location</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#IgnoreSubstStatement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.IgnoreSubstStatement" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.feaLib.ast.IgnoreSubstStatement.asFea">
+<code class="sig-name descname">asFea</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">indent</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#IgnoreSubstStatement.asFea"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.IgnoreSubstStatement.asFea" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.IgnoreSubstStatement.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#IgnoreSubstStatement.build"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.IgnoreSubstStatement.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.feaLib.ast.IncludeStatement">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.feaLib.ast.</code><code class="sig-name descname">IncludeStatement</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span></em>, <em class="sig-param"><span class="n">location</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#IncludeStatement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.IncludeStatement" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.feaLib.ast.IncludeStatement.asFea">
+<code class="sig-name descname">asFea</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">indent</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#IncludeStatement.asFea"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.IncludeStatement.asFea" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.IncludeStatement.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#IncludeStatement.build"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.IncludeStatement.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.feaLib.ast.LanguageStatement">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.feaLib.ast.</code><code class="sig-name descname">LanguageStatement</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">language</span></em>, <em class="sig-param"><span class="n">include_default</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">required</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">location</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#LanguageStatement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.LanguageStatement" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.feaLib.ast.LanguageStatement.asFea">
+<code class="sig-name descname">asFea</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">indent</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#LanguageStatement.asFea"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.LanguageStatement.asFea" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.LanguageStatement.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#LanguageStatement.build"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.LanguageStatement.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.feaLib.ast.LanguageSystemStatement">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.feaLib.ast.</code><code class="sig-name descname">LanguageSystemStatement</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">script</span></em>, <em class="sig-param"><span class="n">language</span></em>, <em class="sig-param"><span class="n">location</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#LanguageSystemStatement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.LanguageSystemStatement" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.feaLib.ast.LanguageSystemStatement.asFea">
+<code class="sig-name descname">asFea</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">indent</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#LanguageSystemStatement.asFea"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.LanguageSystemStatement.asFea" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.LanguageSystemStatement.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#LanguageSystemStatement.build"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.LanguageSystemStatement.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.feaLib.ast.LigatureCaretByIndexStatement">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.feaLib.ast.</code><code class="sig-name descname">LigatureCaretByIndexStatement</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">glyphs</span></em>, <em class="sig-param"><span class="n">carets</span></em>, <em class="sig-param"><span class="n">location</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#LigatureCaretByIndexStatement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.LigatureCaretByIndexStatement" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.feaLib.ast.LigatureCaretByIndexStatement.asFea">
+<code class="sig-name descname">asFea</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">indent</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#LigatureCaretByIndexStatement.asFea"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.LigatureCaretByIndexStatement.asFea" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.LigatureCaretByIndexStatement.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#LigatureCaretByIndexStatement.build"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.LigatureCaretByIndexStatement.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.feaLib.ast.LigatureCaretByPosStatement">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.feaLib.ast.</code><code class="sig-name descname">LigatureCaretByPosStatement</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">glyphs</span></em>, <em class="sig-param"><span class="n">carets</span></em>, <em class="sig-param"><span class="n">location</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#LigatureCaretByPosStatement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.LigatureCaretByPosStatement" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.feaLib.ast.LigatureCaretByPosStatement.asFea">
+<code class="sig-name descname">asFea</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">indent</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#LigatureCaretByPosStatement.asFea"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.LigatureCaretByPosStatement.asFea" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.LigatureCaretByPosStatement.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#LigatureCaretByPosStatement.build"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.LigatureCaretByPosStatement.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.feaLib.ast.LigatureSubstStatement">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.feaLib.ast.</code><code class="sig-name descname">LigatureSubstStatement</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">prefix</span></em>, <em class="sig-param"><span class="n">glyphs</span></em>, <em class="sig-param"><span class="n">suffix</span></em>, <em class="sig-param"><span class="n">replacement</span></em>, <em class="sig-param"><span class="n">forceChain</span></em>, <em class="sig-param"><span class="n">location</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#LigatureSubstStatement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.LigatureSubstStatement" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.feaLib.ast.LigatureSubstStatement.asFea">
+<code class="sig-name descname">asFea</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">indent</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#LigatureSubstStatement.asFea"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.LigatureSubstStatement.asFea" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.LigatureSubstStatement.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#LigatureSubstStatement.build"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.LigatureSubstStatement.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.feaLib.ast.LookupBlock">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.feaLib.ast.</code><code class="sig-name descname">LookupBlock</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">use_extension</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">location</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#LookupBlock"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.LookupBlock" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.feaLib.ast.LookupBlock.asFea">
+<code class="sig-name descname">asFea</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">indent</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#LookupBlock.asFea"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.LookupBlock.asFea" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.LookupBlock.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#LookupBlock.build"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.LookupBlock.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.feaLib.ast.LookupFlagStatement">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.feaLib.ast.</code><code class="sig-name descname">LookupFlagStatement</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">markAttachment</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">markFilteringSet</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">location</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#LookupFlagStatement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.LookupFlagStatement" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.feaLib.ast.LookupFlagStatement.asFea">
+<code class="sig-name descname">asFea</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">indent</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#LookupFlagStatement.asFea"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.LookupFlagStatement.asFea" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.LookupFlagStatement.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#LookupFlagStatement.build"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.LookupFlagStatement.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.feaLib.ast.LookupReferenceStatement">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.feaLib.ast.</code><code class="sig-name descname">LookupReferenceStatement</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lookup</span></em>, <em class="sig-param"><span class="n">location</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#LookupReferenceStatement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.LookupReferenceStatement" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.feaLib.ast.LookupReferenceStatement.asFea">
+<code class="sig-name descname">asFea</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">indent</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#LookupReferenceStatement.asFea"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.LookupReferenceStatement.asFea" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.LookupReferenceStatement.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#LookupReferenceStatement.build"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.LookupReferenceStatement.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.feaLib.ast.MarkBasePosStatement">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.feaLib.ast.</code><code class="sig-name descname">MarkBasePosStatement</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">base</span></em>, <em class="sig-param"><span class="n">marks</span></em>, <em class="sig-param"><span class="n">location</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#MarkBasePosStatement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.MarkBasePosStatement" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.feaLib.ast.MarkBasePosStatement.asFea">
+<code class="sig-name descname">asFea</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">indent</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#MarkBasePosStatement.asFea"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.MarkBasePosStatement.asFea" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.MarkBasePosStatement.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#MarkBasePosStatement.build"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.MarkBasePosStatement.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.feaLib.ast.MarkClass">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.feaLib.ast.</code><code class="sig-name descname">MarkClass</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#MarkClass"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.MarkClass" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.feaLib.ast.MarkClass.addDefinition">
+<code class="sig-name descname">addDefinition</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">definition</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#MarkClass.addDefinition"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.MarkClass.addDefinition" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.MarkClass.asFea">
+<code class="sig-name descname">asFea</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">indent</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#MarkClass.asFea"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.MarkClass.asFea" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.MarkClass.glyphSet">
+<code class="sig-name descname">glyphSet</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#MarkClass.glyphSet"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.MarkClass.glyphSet" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.feaLib.ast.MarkClassDefinition">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.feaLib.ast.</code><code class="sig-name descname">MarkClassDefinition</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">markClass</span></em>, <em class="sig-param"><span class="n">anchor</span></em>, <em class="sig-param"><span class="n">glyphs</span></em>, <em class="sig-param"><span class="n">location</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#MarkClassDefinition"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.MarkClassDefinition" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.feaLib.ast.MarkClassDefinition.asFea">
+<code class="sig-name descname">asFea</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">indent</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#MarkClassDefinition.asFea"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.MarkClassDefinition.asFea" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.MarkClassDefinition.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.ast.MarkClassDefinition.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.MarkClassDefinition.glyphSet">
+<code class="sig-name descname">glyphSet</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#MarkClassDefinition.glyphSet"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.MarkClassDefinition.glyphSet" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.feaLib.ast.MarkClassName">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.feaLib.ast.</code><code class="sig-name descname">MarkClassName</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">markClass</span></em>, <em class="sig-param"><span class="n">location</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#MarkClassName"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.MarkClassName" title="Permalink to this definition">¶</a></dt>
+<dd><p>A mark class name, such as &#64;FRENCH_MARKS defined with markClass.</p>
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.MarkClassName.asFea">
+<code class="sig-name descname">asFea</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">indent</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#MarkClassName.asFea"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.MarkClassName.asFea" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.MarkClassName.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.ast.MarkClassName.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.MarkClassName.glyphSet">
+<code class="sig-name descname">glyphSet</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#MarkClassName.glyphSet"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.MarkClassName.glyphSet" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.feaLib.ast.MarkLigPosStatement">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.feaLib.ast.</code><code class="sig-name descname">MarkLigPosStatement</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ligatures</span></em>, <em class="sig-param"><span class="n">marks</span></em>, <em class="sig-param"><span class="n">location</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#MarkLigPosStatement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.MarkLigPosStatement" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.feaLib.ast.MarkLigPosStatement.asFea">
+<code class="sig-name descname">asFea</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">indent</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#MarkLigPosStatement.asFea"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.MarkLigPosStatement.asFea" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.MarkLigPosStatement.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#MarkLigPosStatement.build"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.MarkLigPosStatement.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.feaLib.ast.MarkMarkPosStatement">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.feaLib.ast.</code><code class="sig-name descname">MarkMarkPosStatement</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">baseMarks</span></em>, <em class="sig-param"><span class="n">marks</span></em>, <em class="sig-param"><span class="n">location</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#MarkMarkPosStatement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.MarkMarkPosStatement" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.feaLib.ast.MarkMarkPosStatement.asFea">
+<code class="sig-name descname">asFea</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">indent</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#MarkMarkPosStatement.asFea"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.MarkMarkPosStatement.asFea" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.MarkMarkPosStatement.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#MarkMarkPosStatement.build"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.MarkMarkPosStatement.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.feaLib.ast.MultipleSubstStatement">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.feaLib.ast.</code><code class="sig-name descname">MultipleSubstStatement</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">prefix</span></em>, <em class="sig-param"><span class="n">glyph</span></em>, <em class="sig-param"><span class="n">suffix</span></em>, <em class="sig-param"><span class="n">replacement</span></em>, <em class="sig-param"><span class="n">forceChain</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">location</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#MultipleSubstStatement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.MultipleSubstStatement" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.feaLib.ast.MultipleSubstStatement.asFea">
+<code class="sig-name descname">asFea</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">indent</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#MultipleSubstStatement.asFea"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.MultipleSubstStatement.asFea" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.MultipleSubstStatement.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#MultipleSubstStatement.build"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.MultipleSubstStatement.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.feaLib.ast.NameRecord">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.feaLib.ast.</code><code class="sig-name descname">NameRecord</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">nameID</span></em>, <em class="sig-param"><span class="n">platformID</span></em>, <em class="sig-param"><span class="n">platEncID</span></em>, <em class="sig-param"><span class="n">langID</span></em>, <em class="sig-param"><span class="n">string</span></em>, <em class="sig-param"><span class="n">location</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#NameRecord"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.NameRecord" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.feaLib.ast.NameRecord.asFea">
+<code class="sig-name descname">asFea</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">indent</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#NameRecord.asFea"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.NameRecord.asFea" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.NameRecord.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#NameRecord.build"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.NameRecord.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.feaLib.ast.NestedBlock">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.feaLib.ast.</code><code class="sig-name descname">NestedBlock</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">block_name</span></em>, <em class="sig-param"><span class="n">location</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#NestedBlock"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.NestedBlock" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.feaLib.ast.NestedBlock.asFea">
+<code class="sig-name descname">asFea</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">indent</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#NestedBlock.asFea"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.NestedBlock.asFea" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.NestedBlock.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#NestedBlock.build"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.NestedBlock.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.feaLib.ast.OS2Field">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.feaLib.ast.</code><code class="sig-name descname">OS2Field</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">key</span></em>, <em class="sig-param"><span class="n">value</span></em>, <em class="sig-param"><span class="n">location</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#OS2Field"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.OS2Field" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.feaLib.ast.OS2Field.asFea">
+<code class="sig-name descname">asFea</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">indent</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#OS2Field.asFea"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.OS2Field.asFea" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.OS2Field.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#OS2Field.build"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.OS2Field.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.feaLib.ast.OrderedDict">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.feaLib.ast.</code><code class="sig-name descname">OrderedDict</code><a class="reference internal" href="../_modules/collections.html#OrderedDict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.OrderedDict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dictionary that remembers insertion order</p>
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.OrderedDict.clear">
+<code class="sig-name descname">clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; None.  Remove all items from od.<a class="headerlink" href="#fontTools.feaLib.ast.OrderedDict.clear" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.OrderedDict.copy">
+<code class="sig-name descname">copy</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; a shallow copy of od<a class="headerlink" href="#fontTools.feaLib.ast.OrderedDict.copy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.OrderedDict.fromkeys">
+<code class="sig-name descname">fromkeys</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.ast.OrderedDict.fromkeys" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new ordered dictionary with keys from iterable and values set to value.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.OrderedDict.get">
+<code class="sig-name descname">get</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.ast.OrderedDict.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the value for key if key is in the dictionary, else default.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.OrderedDict.items">
+<code class="sig-name descname">items</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; a set-like object providing a view on D’s items<a class="headerlink" href="#fontTools.feaLib.ast.OrderedDict.items" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.OrderedDict.keys">
+<code class="sig-name descname">keys</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; a set-like object providing a view on D’s keys<a class="headerlink" href="#fontTools.feaLib.ast.OrderedDict.keys" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.OrderedDict.move_to_end">
+<code class="sig-name descname">move_to_end</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.ast.OrderedDict.move_to_end" title="Permalink to this definition">¶</a></dt>
+<dd><p>Move an existing element to the end (or beginning if last is false).</p>
+<p>Raise KeyError if the element does not exist.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.OrderedDict.pop">
+<code class="sig-name descname">pop</code><span class="sig-paren">(</span><em class="sig-param">k</em><span class="optional">[</span>, <em class="sig-param">d</em><span class="optional">]</span><span class="sig-paren">)</span> &#x2192; v, remove specified key and return the corresponding<a class="headerlink" href="#fontTools.feaLib.ast.OrderedDict.pop" title="Permalink to this definition">¶</a></dt>
+<dd><p>value.  If key is not found, d is returned if given, otherwise KeyError
+is raised.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.OrderedDict.popitem">
+<code class="sig-name descname">popitem</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.ast.OrderedDict.popitem" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove and return a (key, value) pair from the dictionary.</p>
+<p>Pairs are returned in LIFO order if last is true or FIFO order if false.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.OrderedDict.setdefault">
+<code class="sig-name descname">setdefault</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.ast.OrderedDict.setdefault" title="Permalink to this definition">¶</a></dt>
+<dd><p>Insert key with a value of default if key is not in the dictionary.</p>
+<p>Return the value for key if key is in the dictionary, else default.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.OrderedDict.update">
+<code class="sig-name descname">update</code><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param">E</em>, <span class="optional">]</span><em class="sig-param">**F</em><span class="sig-paren">)</span> &#x2192; None.  Update D from dict/iterable E and F.<a class="headerlink" href="#fontTools.feaLib.ast.OrderedDict.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>If E is present and has a .keys() method, then does:  for k in E: D[k] = E[k]
+If E is present and lacks a .keys() method, then does:  for k, v in E: D[k] = v
+In either case, this is followed by: for k in F:  D[k] = F[k]</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.OrderedDict.values">
+<code class="sig-name descname">values</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; an object providing a view on D’s values<a class="headerlink" href="#fontTools.feaLib.ast.OrderedDict.values" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.feaLib.ast.PairPosStatement">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.feaLib.ast.</code><code class="sig-name descname">PairPosStatement</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">glyphs1</span></em>, <em class="sig-param"><span class="n">valuerecord1</span></em>, <em class="sig-param"><span class="n">glyphs2</span></em>, <em class="sig-param"><span class="n">valuerecord2</span></em>, <em class="sig-param"><span class="n">enumerated</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">location</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#PairPosStatement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.PairPosStatement" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.feaLib.ast.PairPosStatement.asFea">
+<code class="sig-name descname">asFea</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">indent</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#PairPosStatement.asFea"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.PairPosStatement.asFea" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.PairPosStatement.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#PairPosStatement.build"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.PairPosStatement.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt id="fontTools.feaLib.ast.Py23Error">
+<em class="property">exception </em><code class="sig-prename descclassname">fontTools.feaLib.ast.</code><code class="sig-name descname">Py23Error</code><a class="reference internal" href="../_modules/fontTools/misc/py23.html#Py23Error"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.Py23Error" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py attribute">
+<dt id="fontTools.feaLib.ast.Py23Error.args">
+<code class="sig-name descname">args</code><a class="headerlink" href="#fontTools.feaLib.ast.Py23Error.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.Py23Error.with_traceback">
+<code class="sig-name descname">with_traceback</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.ast.Py23Error.with_traceback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.feaLib.ast.ReverseChainSingleSubstStatement">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.feaLib.ast.</code><code class="sig-name descname">ReverseChainSingleSubstStatement</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">old_prefix</span></em>, <em class="sig-param"><span class="n">old_suffix</span></em>, <em class="sig-param"><span class="n">glyphs</span></em>, <em class="sig-param"><span class="n">replacements</span></em>, <em class="sig-param"><span class="n">location</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#ReverseChainSingleSubstStatement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.ReverseChainSingleSubstStatement" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.feaLib.ast.ReverseChainSingleSubstStatement.asFea">
+<code class="sig-name descname">asFea</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">indent</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#ReverseChainSingleSubstStatement.asFea"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.ReverseChainSingleSubstStatement.asFea" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.ReverseChainSingleSubstStatement.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#ReverseChainSingleSubstStatement.build"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.ReverseChainSingleSubstStatement.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.feaLib.ast.ScriptStatement">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.feaLib.ast.</code><code class="sig-name descname">ScriptStatement</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">script</span></em>, <em class="sig-param"><span class="n">location</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#ScriptStatement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.ScriptStatement" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.feaLib.ast.ScriptStatement.asFea">
+<code class="sig-name descname">asFea</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">indent</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#ScriptStatement.asFea"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.ScriptStatement.asFea" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.ScriptStatement.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#ScriptStatement.build"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.ScriptStatement.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.feaLib.ast.SimpleNamespace">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.feaLib.ast.</code><code class="sig-name descname">SimpleNamespace</code><a class="headerlink" href="#fontTools.feaLib.ast.SimpleNamespace" title="Permalink to this definition">¶</a></dt>
+<dd><p>A simple attribute-based namespace.</p>
+<p>SimpleNamespace(<a href="#id1"><span class="problematic" id="id2">**</span></a>kwargs)</p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.feaLib.ast.SinglePosStatement">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.feaLib.ast.</code><code class="sig-name descname">SinglePosStatement</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pos</span></em>, <em class="sig-param"><span class="n">prefix</span></em>, <em class="sig-param"><span class="n">suffix</span></em>, <em class="sig-param"><span class="n">forceChain</span></em>, <em class="sig-param"><span class="n">location</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#SinglePosStatement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.SinglePosStatement" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.feaLib.ast.SinglePosStatement.asFea">
+<code class="sig-name descname">asFea</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">indent</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#SinglePosStatement.asFea"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.SinglePosStatement.asFea" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.SinglePosStatement.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#SinglePosStatement.build"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.SinglePosStatement.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.feaLib.ast.SingleSubstStatement">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.feaLib.ast.</code><code class="sig-name descname">SingleSubstStatement</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">glyphs</span></em>, <em class="sig-param"><span class="n">replace</span></em>, <em class="sig-param"><span class="n">prefix</span></em>, <em class="sig-param"><span class="n">suffix</span></em>, <em class="sig-param"><span class="n">forceChain</span></em>, <em class="sig-param"><span class="n">location</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#SingleSubstStatement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.SingleSubstStatement" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.feaLib.ast.SingleSubstStatement.asFea">
+<code class="sig-name descname">asFea</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">indent</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#SingleSubstStatement.asFea"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.SingleSubstStatement.asFea" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.SingleSubstStatement.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#SingleSubstStatement.build"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.SingleSubstStatement.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.feaLib.ast.SizeParameters">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.feaLib.ast.</code><code class="sig-name descname">SizeParameters</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">DesignSize</span></em>, <em class="sig-param"><span class="n">SubfamilyID</span></em>, <em class="sig-param"><span class="n">RangeStart</span></em>, <em class="sig-param"><span class="n">RangeEnd</span></em>, <em class="sig-param"><span class="n">location</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#SizeParameters"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.SizeParameters" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.feaLib.ast.SizeParameters.asFea">
+<code class="sig-name descname">asFea</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">indent</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#SizeParameters.asFea"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.SizeParameters.asFea" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.SizeParameters.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#SizeParameters.build"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.SizeParameters.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.feaLib.ast.Statement">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.feaLib.ast.</code><code class="sig-name descname">Statement</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">location</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#Statement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.Statement" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.feaLib.ast.Statement.asFea">
+<code class="sig-name descname">asFea</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">indent</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.ast.Statement.asFea" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.Statement.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.ast.Statement.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.feaLib.ast.StringIO">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.feaLib.ast.</code><code class="sig-name descname">StringIO</code><a class="headerlink" href="#fontTools.feaLib.ast.StringIO" title="Permalink to this definition">¶</a></dt>
+<dd><p>Text I/O implementation using an in-memory buffer.</p>
+<p>The initial_value argument sets the value of object.  The newline
+argument is like the one of TextIOWrapper’s constructor.</p>
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.StringIO.close">
+<code class="sig-name descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.ast.StringIO.close" title="Permalink to this definition">¶</a></dt>
+<dd><p>Close the IO object.</p>
+<p>Attempting any further operation after the object is closed
+will raise a ValueError.</p>
+<p>This method has no effect if the file is already closed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.feaLib.ast.StringIO.closed">
+<code class="sig-name descname">closed</code><a class="headerlink" href="#fontTools.feaLib.ast.StringIO.closed" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.StringIO.detach">
+<code class="sig-name descname">detach</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.ast.StringIO.detach" title="Permalink to this definition">¶</a></dt>
+<dd><p>Separate the underlying buffer from the TextIOBase and return it.</p>
+<p>After the underlying buffer has been detached, the TextIO is in an
+unusable state.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.feaLib.ast.StringIO.encoding">
+<code class="sig-name descname">encoding</code><a class="headerlink" href="#fontTools.feaLib.ast.StringIO.encoding" title="Permalink to this definition">¶</a></dt>
+<dd><p>Encoding of the text stream.</p>
+<p>Subclasses should override.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.feaLib.ast.StringIO.errors">
+<code class="sig-name descname">errors</code><a class="headerlink" href="#fontTools.feaLib.ast.StringIO.errors" title="Permalink to this definition">¶</a></dt>
+<dd><p>The error setting of the decoder or encoder.</p>
+<p>Subclasses should override.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.StringIO.fileno">
+<code class="sig-name descname">fileno</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.ast.StringIO.fileno" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns underlying file descriptor if one exists.</p>
+<p>OSError is raised if the IO object does not use a file descriptor.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.StringIO.flush">
+<code class="sig-name descname">flush</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.ast.StringIO.flush" title="Permalink to this definition">¶</a></dt>
+<dd><p>Flush write buffers, if applicable.</p>
+<p>This is not implemented for read-only and non-blocking streams.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.StringIO.getvalue">
+<code class="sig-name descname">getvalue</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.ast.StringIO.getvalue" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve the entire contents of the object.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.StringIO.isatty">
+<code class="sig-name descname">isatty</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.ast.StringIO.isatty" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return whether this is an ‘interactive’ stream.</p>
+<p>Return False if it can’t be determined.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.feaLib.ast.StringIO.line_buffering">
+<code class="sig-name descname">line_buffering</code><a class="headerlink" href="#fontTools.feaLib.ast.StringIO.line_buffering" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.feaLib.ast.StringIO.newlines">
+<code class="sig-name descname">newlines</code><a class="headerlink" href="#fontTools.feaLib.ast.StringIO.newlines" title="Permalink to this definition">¶</a></dt>
+<dd><p>Line endings translated so far.</p>
+<p>Only line endings translated during reading are considered.</p>
+<p>Subclasses should override.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.StringIO.read">
+<code class="sig-name descname">read</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.ast.StringIO.read" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read at most size characters, returned as a string.</p>
+<p>If the argument is negative or omitted, read until EOF
+is reached. Return an empty string at EOF.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.StringIO.readable">
+<code class="sig-name descname">readable</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.ast.StringIO.readable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns True if the IO object can be read.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.StringIO.readline">
+<code class="sig-name descname">readline</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.ast.StringIO.readline" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read until newline or EOF.</p>
+<p>Returns an empty string if EOF is hit immediately.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.StringIO.readlines">
+<code class="sig-name descname">readlines</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.ast.StringIO.readlines" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a list of lines from the stream.</p>
+<p>hint can be specified to control the number of lines read: no more
+lines will be read if the total size (in bytes/characters) of all
+lines so far exceeds hint.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.StringIO.seek">
+<code class="sig-name descname">seek</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.ast.StringIO.seek" title="Permalink to this definition">¶</a></dt>
+<dd><p>Change stream position.</p>
+<dl class="simple">
+<dt>Seek to character offset pos relative to position indicated by whence:</dt><dd><p>0  Start of stream (the default).  pos should be &gt;= 0;
+1  Current position - pos must be 0;
+2  End of stream - pos must be 0.</p>
+</dd>
+</dl>
+<p>Returns the new absolute position.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.StringIO.seekable">
+<code class="sig-name descname">seekable</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.ast.StringIO.seekable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns True if the IO object can be seeked.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.StringIO.tell">
+<code class="sig-name descname">tell</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.ast.StringIO.tell" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tell the current file position.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.StringIO.truncate">
+<code class="sig-name descname">truncate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.ast.StringIO.truncate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Truncate size to pos.</p>
+<p>The pos argument defaults to the current file position, as
+returned by tell().  The current file position is unchanged.
+Returns the new absolute position.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.StringIO.writable">
+<code class="sig-name descname">writable</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.ast.StringIO.writable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns True if the IO object can be written.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.StringIO.write">
+<code class="sig-name descname">write</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.ast.StringIO.write" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write string to file.</p>
+<p>Returns the number of characters written, which is always equal to
+the length of the string.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.StringIO.writelines">
+<code class="sig-name descname">writelines</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.ast.StringIO.writelines" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write a list of lines to stream.</p>
+<p>Line separators are not added, so it is usual for each of the
+lines provided to have a line separator at the end.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.feaLib.ast.SubtableStatement">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.feaLib.ast.</code><code class="sig-name descname">SubtableStatement</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">location</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#SubtableStatement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.SubtableStatement" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.feaLib.ast.SubtableStatement.asFea">
+<code class="sig-name descname">asFea</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">indent</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#SubtableStatement.asFea"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.SubtableStatement.asFea" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.SubtableStatement.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#SubtableStatement.build"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.SubtableStatement.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.feaLib.ast.TableBlock">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.feaLib.ast.</code><code class="sig-name descname">TableBlock</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">location</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#TableBlock"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.TableBlock" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.feaLib.ast.TableBlock.asFea">
+<code class="sig-name descname">asFea</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">indent</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#TableBlock.asFea"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.TableBlock.asFea" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.TableBlock.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.ast.TableBlock.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.feaLib.ast.Tag">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.feaLib.ast.</code><code class="sig-name descname">Tag</code><a class="reference internal" href="../_modules/fontTools/misc/py23.html#Tag"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.Tag" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.feaLib.ast.Tag.capitalize">
+<code class="sig-name descname">capitalize</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.ast.Tag.capitalize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a capitalized version of the string.</p>
+<p>More specifically, make the first character have upper case and the rest lower
+case.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.Tag.casefold">
+<code class="sig-name descname">casefold</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.ast.Tag.casefold" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a version of the string suitable for caseless comparisons.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.Tag.center">
+<code class="sig-name descname">center</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.ast.Tag.center" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a centered string of length width.</p>
+<p>Padding is done using the specified fill character (default is a space).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.Tag.count">
+<code class="sig-name descname">count</code><span class="sig-paren">(</span><em class="sig-param">sub</em><span class="optional">[</span>, <em class="sig-param">start</em><span class="optional">[</span>, <em class="sig-param">end</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span> &#x2192; int<a class="headerlink" href="#fontTools.feaLib.ast.Tag.count" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the number of non-overlapping occurrences of substring sub in
+string S[start:end].  Optional arguments start and end are
+interpreted as in slice notation.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.Tag.encode">
+<code class="sig-name descname">encode</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.ast.Tag.encode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Encode the string using the codec registered for encoding.</p>
+<dl class="simple">
+<dt>encoding</dt><dd><p>The encoding in which to encode the string.</p>
+</dd>
+<dt>errors</dt><dd><p>The error handling scheme to use for encoding errors.
+The default is ‘strict’ meaning that encoding errors raise a
+UnicodeEncodeError.  Other possible values are ‘ignore’, ‘replace’ and
+‘xmlcharrefreplace’ as well as any other name registered with
+codecs.register_error that can handle UnicodeEncodeErrors.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.Tag.endswith">
+<code class="sig-name descname">endswith</code><span class="sig-paren">(</span><em class="sig-param">suffix</em><span class="optional">[</span>, <em class="sig-param">start</em><span class="optional">[</span>, <em class="sig-param">end</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#fontTools.feaLib.ast.Tag.endswith" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return True if S ends with the specified suffix, False otherwise.
+With optional start, test S beginning at that position.
+With optional end, stop comparing S at that position.
+suffix can also be a tuple of strings to try.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.Tag.expandtabs">
+<code class="sig-name descname">expandtabs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.ast.Tag.expandtabs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a copy where all tab characters are expanded using spaces.</p>
+<p>If tabsize is not given, a tab size of 8 characters is assumed.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.Tag.find">
+<code class="sig-name descname">find</code><span class="sig-paren">(</span><em class="sig-param">sub</em><span class="optional">[</span>, <em class="sig-param">start</em><span class="optional">[</span>, <em class="sig-param">end</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span> &#x2192; int<a class="headerlink" href="#fontTools.feaLib.ast.Tag.find" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the lowest index in S where substring sub is found,
+such that sub is contained within S[start:end].  Optional
+arguments start and end are interpreted as in slice notation.</p>
+<p>Return -1 on failure.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.Tag.format">
+<code class="sig-name descname">format</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span> &#x2192; str<a class="headerlink" href="#fontTools.feaLib.ast.Tag.format" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a formatted version of S, using substitutions from args and kwargs.
+The substitutions are identified by braces (‘{‘ and ‘}’).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.Tag.format_map">
+<code class="sig-name descname">format_map</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mapping</span></em><span class="sig-paren">)</span> &#x2192; str<a class="headerlink" href="#fontTools.feaLib.ast.Tag.format_map" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a formatted version of S, using substitutions from mapping.
+The substitutions are identified by braces (‘{‘ and ‘}’).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.Tag.index">
+<code class="sig-name descname">index</code><span class="sig-paren">(</span><em class="sig-param">sub</em><span class="optional">[</span>, <em class="sig-param">start</em><span class="optional">[</span>, <em class="sig-param">end</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span> &#x2192; int<a class="headerlink" href="#fontTools.feaLib.ast.Tag.index" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the lowest index in S where substring sub is found,
+such that sub is contained within S[start:end].  Optional
+arguments start and end are interpreted as in slice notation.</p>
+<p>Raises ValueError when the substring is not found.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.Tag.isalnum">
+<code class="sig-name descname">isalnum</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.ast.Tag.isalnum" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return True if the string is an alpha-numeric string, False otherwise.</p>
+<p>A string is alpha-numeric if all characters in the string are alpha-numeric and
+there is at least one character in the string.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.Tag.isalpha">
+<code class="sig-name descname">isalpha</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.ast.Tag.isalpha" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return True if the string is an alphabetic string, False otherwise.</p>
+<p>A string is alphabetic if all characters in the string are alphabetic and there
+is at least one character in the string.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.Tag.isascii">
+<code class="sig-name descname">isascii</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.ast.Tag.isascii" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return True if all characters in the string are ASCII, False otherwise.</p>
+<p>ASCII characters have code points in the range U+0000-U+007F.
+Empty string is ASCII too.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.Tag.isdecimal">
+<code class="sig-name descname">isdecimal</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.ast.Tag.isdecimal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return True if the string is a decimal string, False otherwise.</p>
+<p>A string is a decimal string if all characters in the string are decimal and
+there is at least one character in the string.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.Tag.isdigit">
+<code class="sig-name descname">isdigit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.ast.Tag.isdigit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return True if the string is a digit string, False otherwise.</p>
+<p>A string is a digit string if all characters in the string are digits and there
+is at least one character in the string.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.Tag.isidentifier">
+<code class="sig-name descname">isidentifier</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.ast.Tag.isidentifier" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return True if the string is a valid Python identifier, False otherwise.</p>
+<p>Use keyword.iskeyword() to test for reserved identifiers such as “def” and
+“class”.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.Tag.islower">
+<code class="sig-name descname">islower</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.ast.Tag.islower" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return True if the string is a lowercase string, False otherwise.</p>
+<p>A string is lowercase if all cased characters in the string are lowercase and
+there is at least one cased character in the string.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.Tag.isnumeric">
+<code class="sig-name descname">isnumeric</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.ast.Tag.isnumeric" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return True if the string is a numeric string, False otherwise.</p>
+<p>A string is numeric if all characters in the string are numeric and there is at
+least one character in the string.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.Tag.isprintable">
+<code class="sig-name descname">isprintable</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.ast.Tag.isprintable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return True if the string is printable, False otherwise.</p>
+<p>A string is printable if all of its characters are considered printable in
+repr() or if it is empty.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.Tag.isspace">
+<code class="sig-name descname">isspace</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.ast.Tag.isspace" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return True if the string is a whitespace string, False otherwise.</p>
+<p>A string is whitespace if all characters in the string are whitespace and there
+is at least one character in the string.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.Tag.istitle">
+<code class="sig-name descname">istitle</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.ast.Tag.istitle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return True if the string is a title-cased string, False otherwise.</p>
+<p>In a title-cased string, upper- and title-case characters may only
+follow uncased characters and lowercase characters only cased ones.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.Tag.isupper">
+<code class="sig-name descname">isupper</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.ast.Tag.isupper" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return True if the string is an uppercase string, False otherwise.</p>
+<p>A string is uppercase if all cased characters in the string are uppercase and
+there is at least one cased character in the string.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.Tag.join">
+<code class="sig-name descname">join</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.ast.Tag.join" title="Permalink to this definition">¶</a></dt>
+<dd><p>Concatenate any number of strings.</p>
+<p>The string whose method is called is inserted in between each given string.
+The result is returned as a new string.</p>
+<p>Example: ‘.’.join([‘ab’, ‘pq’, ‘rs’]) -&gt; ‘ab.pq.rs’</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.Tag.ljust">
+<code class="sig-name descname">ljust</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.ast.Tag.ljust" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a left-justified string of length width.</p>
+<p>Padding is done using the specified fill character (default is a space).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.Tag.lower">
+<code class="sig-name descname">lower</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.ast.Tag.lower" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a copy of the string converted to lowercase.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.Tag.lstrip">
+<code class="sig-name descname">lstrip</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.ast.Tag.lstrip" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a copy of the string with leading whitespace removed.</p>
+<p>If chars is given and not None, remove characters in chars instead.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.Tag.maketrans">
+<em class="property">static </em><code class="sig-name descname">maketrans</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.ast.Tag.maketrans" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a translation table usable for str.translate().</p>
+<p>If there is only one argument, it must be a dictionary mapping Unicode
+ordinals (integers) or characters to Unicode ordinals, strings or None.
+Character keys will be then converted to ordinals.
+If there are two arguments, they must be strings of equal length, and
+in the resulting dictionary, each character in x will be mapped to the
+character at the same position in y. If there is a third argument, it
+must be a string, whose characters will be mapped to None in the result.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.Tag.partition">
+<code class="sig-name descname">partition</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.ast.Tag.partition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Partition the string into three parts using the given separator.</p>
+<p>This will search for the separator in the string.  If the separator is found,
+returns a 3-tuple containing the part before the separator, the separator
+itself, and the part after it.</p>
+<p>If the separator is not found, returns a 3-tuple containing the original string
+and two empty strings.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.Tag.replace">
+<code class="sig-name descname">replace</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.ast.Tag.replace" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a copy with all occurrences of substring old replaced by new.</p>
+<blockquote>
+<div><dl class="simple">
+<dt>count</dt><dd><p>Maximum number of occurrences to replace.
+-1 (the default value) means replace all occurrences.</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>If the optional argument count is given, only the first count occurrences are
+replaced.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.Tag.rfind">
+<code class="sig-name descname">rfind</code><span class="sig-paren">(</span><em class="sig-param">sub</em><span class="optional">[</span>, <em class="sig-param">start</em><span class="optional">[</span>, <em class="sig-param">end</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span> &#x2192; int<a class="headerlink" href="#fontTools.feaLib.ast.Tag.rfind" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the highest index in S where substring sub is found,
+such that sub is contained within S[start:end].  Optional
+arguments start and end are interpreted as in slice notation.</p>
+<p>Return -1 on failure.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.Tag.rindex">
+<code class="sig-name descname">rindex</code><span class="sig-paren">(</span><em class="sig-param">sub</em><span class="optional">[</span>, <em class="sig-param">start</em><span class="optional">[</span>, <em class="sig-param">end</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span> &#x2192; int<a class="headerlink" href="#fontTools.feaLib.ast.Tag.rindex" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the highest index in S where substring sub is found,
+such that sub is contained within S[start:end].  Optional
+arguments start and end are interpreted as in slice notation.</p>
+<p>Raises ValueError when the substring is not found.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.Tag.rjust">
+<code class="sig-name descname">rjust</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.ast.Tag.rjust" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a right-justified string of length width.</p>
+<p>Padding is done using the specified fill character (default is a space).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.Tag.rpartition">
+<code class="sig-name descname">rpartition</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.ast.Tag.rpartition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Partition the string into three parts using the given separator.</p>
+<p>This will search for the separator in the string, starting at the end. If
+the separator is found, returns a 3-tuple containing the part before the
+separator, the separator itself, and the part after it.</p>
+<p>If the separator is not found, returns a 3-tuple containing two empty strings
+and the original string.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.Tag.rsplit">
+<code class="sig-name descname">rsplit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.ast.Tag.rsplit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a list of the words in the string, using sep as the delimiter string.</p>
+<blockquote>
+<div><dl class="simple">
+<dt>sep</dt><dd><p>The delimiter according which to split the string.
+None (the default value) means split according to any whitespace,
+and discard empty strings from the result.</p>
+</dd>
+<dt>maxsplit</dt><dd><p>Maximum number of splits to do.
+-1 (the default value) means no limit.</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>Splits are done starting at the end of the string and working to the front.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.Tag.rstrip">
+<code class="sig-name descname">rstrip</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.ast.Tag.rstrip" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a copy of the string with trailing whitespace removed.</p>
+<p>If chars is given and not None, remove characters in chars instead.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.Tag.split">
+<code class="sig-name descname">split</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.ast.Tag.split" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a list of the words in the string, using sep as the delimiter string.</p>
+<dl class="simple">
+<dt>sep</dt><dd><p>The delimiter according which to split the string.
+None (the default value) means split according to any whitespace,
+and discard empty strings from the result.</p>
+</dd>
+<dt>maxsplit</dt><dd><p>Maximum number of splits to do.
+-1 (the default value) means no limit.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.Tag.splitlines">
+<code class="sig-name descname">splitlines</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.ast.Tag.splitlines" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a list of the lines in the string, breaking at line boundaries.</p>
+<p>Line breaks are not included in the resulting list unless keepends is given and
+true.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.Tag.startswith">
+<code class="sig-name descname">startswith</code><span class="sig-paren">(</span><em class="sig-param">prefix</em><span class="optional">[</span>, <em class="sig-param">start</em><span class="optional">[</span>, <em class="sig-param">end</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#fontTools.feaLib.ast.Tag.startswith" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return True if S starts with the specified prefix, False otherwise.
+With optional start, test S beginning at that position.
+With optional end, stop comparing S at that position.
+prefix can also be a tuple of strings to try.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.Tag.strip">
+<code class="sig-name descname">strip</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.ast.Tag.strip" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a copy of the string with leading and trailing whitespace removed.</p>
+<p>If chars is given and not None, remove characters in chars instead.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.Tag.swapcase">
+<code class="sig-name descname">swapcase</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.ast.Tag.swapcase" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert uppercase characters to lowercase and lowercase characters to uppercase.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.Tag.title">
+<code class="sig-name descname">title</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.ast.Tag.title" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a version of the string where each word is titlecased.</p>
+<p>More specifically, words start with uppercased characters and all remaining
+cased characters have lower case.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.Tag.tobytes">
+<code class="sig-name descname">tobytes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/py23.html#Tag.tobytes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.Tag.tobytes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.Tag.transcode">
+<em class="property">static </em><code class="sig-name descname">transcode</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">blob</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/py23.html#Tag.transcode"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.Tag.transcode" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.Tag.translate">
+<code class="sig-name descname">translate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.ast.Tag.translate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Replace each character in the string using the given translation table.</p>
+<blockquote>
+<div><dl class="simple">
+<dt>table</dt><dd><p>Translation table, which must be a mapping of Unicode ordinals to
+Unicode ordinals, strings, or None.</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>The table must implement lookup/indexing via __getitem__, for instance a
+dictionary or list.  If this operation raises LookupError, the character is
+left untouched.  Characters mapped to None are deleted.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.Tag.upper">
+<code class="sig-name descname">upper</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.ast.Tag.upper" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a copy of the string converted to uppercase.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.Tag.zfill">
+<code class="sig-name descname">zfill</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.ast.Tag.zfill" title="Permalink to this definition">¶</a></dt>
+<dd><p>Pad a numeric string with zeros on the left, to fill a field of the given width.</p>
+<p>The string is never truncated.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.feaLib.ast.UnicodeIO">
+<code class="sig-prename descclassname">fontTools.feaLib.ast.</code><code class="sig-name descname">UnicodeIO</code><a class="headerlink" href="#fontTools.feaLib.ast.UnicodeIO" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">_io.StringIO</span></code></p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.feaLib.ast.ValueRecord">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.feaLib.ast.</code><code class="sig-name descname">ValueRecord</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">xPlacement</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">yPlacement</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">xAdvance</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">yAdvance</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">xPlaDevice</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">yPlaDevice</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">xAdvDevice</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">yAdvDevice</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">vertical</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">location</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#ValueRecord"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.ValueRecord" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.feaLib.ast.ValueRecord.asFea">
+<code class="sig-name descname">asFea</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">indent</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#ValueRecord.asFea"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.ValueRecord.asFea" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.ValueRecord.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.ast.ValueRecord.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.feaLib.ast.ValueRecordDefinition">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.feaLib.ast.</code><code class="sig-name descname">ValueRecordDefinition</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">value</span></em>, <em class="sig-param"><span class="n">location</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#ValueRecordDefinition"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.ValueRecordDefinition" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.feaLib.ast.ValueRecordDefinition.asFea">
+<code class="sig-name descname">asFea</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">indent</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#ValueRecordDefinition.asFea"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.ValueRecordDefinition.asFea" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.ValueRecordDefinition.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.ast.ValueRecordDefinition.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.feaLib.ast.VheaField">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.feaLib.ast.</code><code class="sig-name descname">VheaField</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">key</span></em>, <em class="sig-param"><span class="n">value</span></em>, <em class="sig-param"><span class="n">location</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#VheaField"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.VheaField" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.feaLib.ast.VheaField.asFea">
+<code class="sig-name descname">asFea</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">indent</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#VheaField.asFea"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.VheaField.asFea" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.ast.VheaField.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/ast.html#VheaField.build"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.ast.VheaField.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="builder.html" class="btn btn-neutral float-right" title="builder" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="feaLib" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Just van Rossum, Behdad Esfahbod, and the fontTools Authors. CC BY-SA 4.0
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,1074 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>voltLib &mdash; fontTools Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="varStore" href="varLib/varStore.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> fontTools
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Library</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="afmLib.html">afmLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agl.html">agl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cffLib/index.html">cffLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="colorLib/index.html">colorLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cu2qu/index.html">cu2qu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="designspaceLib/index.html">designspaceLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="encodings/index.html">encodings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="feaLib/index.html">feaLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="merge.html">merge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="misc/index.html">misc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mtiLib.html">mtiLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="otlLib/index.html">otlLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pens/index.html">pens</a></li>
+<li class="toctree-l1"><a class="reference internal" href="subset/index.html">subset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="svgLib/index.html">svgLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="t1Lib.html">t1Lib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ttLib/index.html">ttLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ttx.html">ttx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ufoLib/index.html">ufoLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unicode.html">unicode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unicodedata/index.html">unicodedata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="varLib/index.html">varLib</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">voltLib</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#module-fontTools.voltLib.ast">ast</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-fontTools.voltLib.parser">error</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-fontTools.voltLib.lexer">lexer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-0">parser</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">fontTools</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>voltLib</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/voltLib.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-fontTools.voltLib">
+<span id="voltlib"></span><h1>voltLib<a class="headerlink" href="#module-fontTools.voltLib" title="Permalink to this headline">¶</a></h1>
+<p>fontTools.voltLib – a package for dealing with Visual OpenType Layout Tool
+(VOLT) files.</p>
+<div class="section" id="module-fontTools.voltLib.ast">
+<span id="ast"></span><h2>ast<a class="headerlink" href="#module-fontTools.voltLib.ast" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="fontTools.voltLib.ast.AnchorDefinition">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.voltLib.ast.</code><code class="sig-name descname">AnchorDefinition</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">gid</span></em>, <em class="sig-param"><span class="n">glyph_name</span></em>, <em class="sig-param"><span class="n">component</span></em>, <em class="sig-param"><span class="n">locked</span></em>, <em class="sig-param"><span class="n">pos</span></em>, <em class="sig-param"><span class="n">location</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/ast.html#AnchorDefinition"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.voltLib.ast.AnchorDefinition" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.voltLib.ast.AnchorDefinition.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.voltLib.ast.AnchorDefinition.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.voltLib.ast.Block">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.voltLib.ast.</code><code class="sig-name descname">Block</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">location</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/ast.html#Block"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.voltLib.ast.Block" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.voltLib.ast.Block.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/ast.html#Block.build"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.voltLib.ast.Block.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.voltLib.ast.ContextDefinition">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.voltLib.ast.</code><code class="sig-name descname">ContextDefinition</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ex_or_in</span></em>, <em class="sig-param"><span class="n">left</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">right</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">location</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/ast.html#ContextDefinition"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.voltLib.ast.ContextDefinition" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.voltLib.ast.ContextDefinition.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.voltLib.ast.ContextDefinition.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.voltLib.ast.Enum">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.voltLib.ast.</code><code class="sig-name descname">Enum</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">enum</span></em>, <em class="sig-param"><span class="n">location</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/ast.html#Enum"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.voltLib.ast.Enum" title="Permalink to this definition">¶</a></dt>
+<dd><p>An enum</p>
+<dl class="py method">
+<dt id="fontTools.voltLib.ast.Enum.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.voltLib.ast.Enum.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.voltLib.ast.Enum.glyphSet">
+<code class="sig-name descname">glyphSet</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">groups</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/ast.html#Enum.glyphSet"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.voltLib.ast.Enum.glyphSet" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.voltLib.ast.Expression">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.voltLib.ast.</code><code class="sig-name descname">Expression</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">location</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/ast.html#Expression"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.voltLib.ast.Expression" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.voltLib.ast.Expression.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/ast.html#Expression.build"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.voltLib.ast.Expression.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.voltLib.ast.FeatureDefinition">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.voltLib.ast.</code><code class="sig-name descname">FeatureDefinition</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">lookups</span></em>, <em class="sig-param"><span class="n">location</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/ast.html#FeatureDefinition"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.voltLib.ast.FeatureDefinition" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.voltLib.ast.FeatureDefinition.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.voltLib.ast.FeatureDefinition.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.voltLib.ast.GlyphDefinition">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.voltLib.ast.</code><code class="sig-name descname">GlyphDefinition</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">gid</span></em>, <em class="sig-param"><span class="n">gunicode</span></em>, <em class="sig-param"><span class="n">gtype</span></em>, <em class="sig-param"><span class="n">components</span></em>, <em class="sig-param"><span class="n">location</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/ast.html#GlyphDefinition"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.voltLib.ast.GlyphDefinition" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.voltLib.ast.GlyphDefinition.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.voltLib.ast.GlyphDefinition.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.voltLib.ast.GlyphName">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.voltLib.ast.</code><code class="sig-name descname">GlyphName</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">glyph</span></em>, <em class="sig-param"><span class="n">location</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/ast.html#GlyphName"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.voltLib.ast.GlyphName" title="Permalink to this definition">¶</a></dt>
+<dd><p>A single glyph name, such as cedilla.</p>
+<dl class="py method">
+<dt id="fontTools.voltLib.ast.GlyphName.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.voltLib.ast.GlyphName.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.voltLib.ast.GlyphName.glyphSet">
+<code class="sig-name descname">glyphSet</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/ast.html#GlyphName.glyphSet"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.voltLib.ast.GlyphName.glyphSet" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.voltLib.ast.GroupDefinition">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.voltLib.ast.</code><code class="sig-name descname">GroupDefinition</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">enum</span></em>, <em class="sig-param"><span class="n">location</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/ast.html#GroupDefinition"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.voltLib.ast.GroupDefinition" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.voltLib.ast.GroupDefinition.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.voltLib.ast.GroupDefinition.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.voltLib.ast.GroupDefinition.glyphSet">
+<code class="sig-name descname">glyphSet</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">groups</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/ast.html#GroupDefinition.glyphSet"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.voltLib.ast.GroupDefinition.glyphSet" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.voltLib.ast.GroupName">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.voltLib.ast.</code><code class="sig-name descname">GroupName</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">group</span></em>, <em class="sig-param"><span class="n">parser</span></em>, <em class="sig-param"><span class="n">location</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/ast.html#GroupName"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.voltLib.ast.GroupName" title="Permalink to this definition">¶</a></dt>
+<dd><p>A glyph group</p>
+<dl class="py method">
+<dt id="fontTools.voltLib.ast.GroupName.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.voltLib.ast.GroupName.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.voltLib.ast.GroupName.glyphSet">
+<code class="sig-name descname">glyphSet</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">groups</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/ast.html#GroupName.glyphSet"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.voltLib.ast.GroupName.glyphSet" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.voltLib.ast.LangSysDefinition">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.voltLib.ast.</code><code class="sig-name descname">LangSysDefinition</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">features</span></em>, <em class="sig-param"><span class="n">location</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/ast.html#LangSysDefinition"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.voltLib.ast.LangSysDefinition" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.voltLib.ast.LangSysDefinition.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.voltLib.ast.LangSysDefinition.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.voltLib.ast.LookupBlock">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.voltLib.ast.</code><code class="sig-name descname">LookupBlock</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">location</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/ast.html#LookupBlock"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.voltLib.ast.LookupBlock" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.voltLib.ast.LookupBlock.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/ast.html#LookupBlock.build"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.voltLib.ast.LookupBlock.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.voltLib.ast.LookupDefinition">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.voltLib.ast.</code><code class="sig-name descname">LookupDefinition</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">process_base</span></em>, <em class="sig-param"><span class="n">process_marks</span></em>, <em class="sig-param"><span class="n">mark_glyph_set</span></em>, <em class="sig-param"><span class="n">direction</span></em>, <em class="sig-param"><span class="n">reversal</span></em>, <em class="sig-param"><span class="n">comments</span></em>, <em class="sig-param"><span class="n">context</span></em>, <em class="sig-param"><span class="n">sub</span></em>, <em class="sig-param"><span class="n">pos</span></em>, <em class="sig-param"><span class="n">location</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/ast.html#LookupDefinition"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.voltLib.ast.LookupDefinition" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.voltLib.ast.LookupDefinition.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.voltLib.ast.LookupDefinition.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.voltLib.ast.PositionAdjustPairDefinition">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.voltLib.ast.</code><code class="sig-name descname">PositionAdjustPairDefinition</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">coverages_1</span></em>, <em class="sig-param"><span class="n">coverages_2</span></em>, <em class="sig-param"><span class="n">adjust_pair</span></em>, <em class="sig-param"><span class="n">location</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/ast.html#PositionAdjustPairDefinition"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.voltLib.ast.PositionAdjustPairDefinition" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.voltLib.ast.PositionAdjustPairDefinition.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.voltLib.ast.PositionAdjustPairDefinition.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.voltLib.ast.PositionAdjustSingleDefinition">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.voltLib.ast.</code><code class="sig-name descname">PositionAdjustSingleDefinition</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">adjust_single</span></em>, <em class="sig-param"><span class="n">location</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/ast.html#PositionAdjustSingleDefinition"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.voltLib.ast.PositionAdjustSingleDefinition" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.voltLib.ast.PositionAdjustSingleDefinition.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.voltLib.ast.PositionAdjustSingleDefinition.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.voltLib.ast.PositionAttachCursiveDefinition">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.voltLib.ast.</code><code class="sig-name descname">PositionAttachCursiveDefinition</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">coverages_exit</span></em>, <em class="sig-param"><span class="n">coverages_enter</span></em>, <em class="sig-param"><span class="n">location</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/ast.html#PositionAttachCursiveDefinition"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.voltLib.ast.PositionAttachCursiveDefinition" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.voltLib.ast.PositionAttachCursiveDefinition.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.voltLib.ast.PositionAttachCursiveDefinition.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.voltLib.ast.PositionAttachDefinition">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.voltLib.ast.</code><code class="sig-name descname">PositionAttachDefinition</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">coverage</span></em>, <em class="sig-param"><span class="n">coverage_to</span></em>, <em class="sig-param"><span class="n">location</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/ast.html#PositionAttachDefinition"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.voltLib.ast.PositionAttachDefinition" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.voltLib.ast.PositionAttachDefinition.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.voltLib.ast.PositionAttachDefinition.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.voltLib.ast.Range">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.voltLib.ast.</code><code class="sig-name descname">Range</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">start</span></em>, <em class="sig-param"><span class="n">end</span></em>, <em class="sig-param"><span class="n">parser</span></em>, <em class="sig-param"><span class="n">location</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/ast.html#Range"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.voltLib.ast.Range" title="Permalink to this definition">¶</a></dt>
+<dd><p>A glyph range</p>
+<dl class="py method">
+<dt id="fontTools.voltLib.ast.Range.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.voltLib.ast.Range.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.voltLib.ast.Range.glyphSet">
+<code class="sig-name descname">glyphSet</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/ast.html#Range.glyphSet"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.voltLib.ast.Range.glyphSet" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.voltLib.ast.ScriptDefinition">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.voltLib.ast.</code><code class="sig-name descname">ScriptDefinition</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">langs</span></em>, <em class="sig-param"><span class="n">location</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/ast.html#ScriptDefinition"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.voltLib.ast.ScriptDefinition" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.voltLib.ast.ScriptDefinition.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.voltLib.ast.ScriptDefinition.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.voltLib.ast.SettingDefinition">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.voltLib.ast.</code><code class="sig-name descname">SettingDefinition</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">value</span></em>, <em class="sig-param"><span class="n">location</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/ast.html#SettingDefinition"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.voltLib.ast.SettingDefinition" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.voltLib.ast.SettingDefinition.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.voltLib.ast.SettingDefinition.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.voltLib.ast.Statement">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.voltLib.ast.</code><code class="sig-name descname">Statement</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">location</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/ast.html#Statement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.voltLib.ast.Statement" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.voltLib.ast.Statement.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/ast.html#Statement.build"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.voltLib.ast.Statement.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.voltLib.ast.SubstitutionDefinition">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.voltLib.ast.</code><code class="sig-name descname">SubstitutionDefinition</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mapping</span></em>, <em class="sig-param"><span class="n">location</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/ast.html#SubstitutionDefinition"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.voltLib.ast.SubstitutionDefinition" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.voltLib.ast.SubstitutionDefinition.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.voltLib.ast.SubstitutionDefinition.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.voltLib.ast.SubstitutionLigatureDefinition">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.voltLib.ast.</code><code class="sig-name descname">SubstitutionLigatureDefinition</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mapping</span></em>, <em class="sig-param"><span class="n">location</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/ast.html#SubstitutionLigatureDefinition"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.voltLib.ast.SubstitutionLigatureDefinition" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.voltLib.ast.SubstitutionLigatureDefinition.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.voltLib.ast.SubstitutionLigatureDefinition.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.voltLib.ast.SubstitutionMultipleDefinition">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.voltLib.ast.</code><code class="sig-name descname">SubstitutionMultipleDefinition</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mapping</span></em>, <em class="sig-param"><span class="n">location</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/ast.html#SubstitutionMultipleDefinition"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.voltLib.ast.SubstitutionMultipleDefinition" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.voltLib.ast.SubstitutionMultipleDefinition.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.voltLib.ast.SubstitutionMultipleDefinition.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.voltLib.ast.SubstitutionReverseChainingSingleDefinition">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.voltLib.ast.</code><code class="sig-name descname">SubstitutionReverseChainingSingleDefinition</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mapping</span></em>, <em class="sig-param"><span class="n">location</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/ast.html#SubstitutionReverseChainingSingleDefinition"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.voltLib.ast.SubstitutionReverseChainingSingleDefinition" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.voltLib.ast.SubstitutionReverseChainingSingleDefinition.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.voltLib.ast.SubstitutionReverseChainingSingleDefinition.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.voltLib.ast.SubstitutionSingleDefinition">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.voltLib.ast.</code><code class="sig-name descname">SubstitutionSingleDefinition</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mapping</span></em>, <em class="sig-param"><span class="n">location</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/ast.html#SubstitutionSingleDefinition"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.voltLib.ast.SubstitutionSingleDefinition" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.voltLib.ast.SubstitutionSingleDefinition.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.voltLib.ast.SubstitutionSingleDefinition.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.voltLib.ast.VoltFile">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.voltLib.ast.</code><code class="sig-name descname">VoltFile</code><a class="reference internal" href="_modules/fontTools/voltLib/ast.html#VoltFile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.voltLib.ast.VoltFile" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.voltLib.ast.VoltFile.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.voltLib.ast.VoltFile.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-fontTools.voltLib.parser">
+<span id="error"></span><h2>error<a class="headerlink" href="#module-fontTools.voltLib.parser" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="fontTools.voltLib.parser.OrderedSymbolTable">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.voltLib.parser.</code><code class="sig-name descname">OrderedSymbolTable</code><a class="reference internal" href="_modules/fontTools/voltLib/parser.html#OrderedSymbolTable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.voltLib.parser.OrderedSymbolTable" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.voltLib.parser.OrderedSymbolTable.define">
+<code class="sig-name descname">define</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">item</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.voltLib.parser.OrderedSymbolTable.define" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.voltLib.parser.OrderedSymbolTable.enter_scope">
+<code class="sig-name descname">enter_scope</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/parser.html#OrderedSymbolTable.enter_scope"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.voltLib.parser.OrderedSymbolTable.enter_scope" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.voltLib.parser.OrderedSymbolTable.exit_scope">
+<code class="sig-name descname">exit_scope</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.voltLib.parser.OrderedSymbolTable.exit_scope" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.voltLib.parser.OrderedSymbolTable.range">
+<code class="sig-name descname">range</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">start</span></em>, <em class="sig-param"><span class="n">end</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/parser.html#OrderedSymbolTable.range"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.voltLib.parser.OrderedSymbolTable.range" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.voltLib.parser.OrderedSymbolTable.resolve">
+<code class="sig-name descname">resolve</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">case_insensitive</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/parser.html#OrderedSymbolTable.resolve"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.voltLib.parser.OrderedSymbolTable.resolve" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.voltLib.parser.Parser">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.voltLib.parser.</code><code class="sig-name descname">Parser</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/parser.html#Parser"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.voltLib.parser.Parser" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.voltLib.parser.Parser.advance_lexer_">
+<code class="sig-name descname">advance_lexer_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/parser.html#Parser.advance_lexer_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.voltLib.parser.Parser.advance_lexer_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.voltLib.parser.Parser.expect_keyword_">
+<code class="sig-name descname">expect_keyword_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">keyword</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/parser.html#Parser.expect_keyword_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.voltLib.parser.Parser.expect_keyword_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.voltLib.parser.Parser.expect_name_">
+<code class="sig-name descname">expect_name_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/parser.html#Parser.expect_name_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.voltLib.parser.Parser.expect_name_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.voltLib.parser.Parser.expect_number_">
+<code class="sig-name descname">expect_number_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/parser.html#Parser.expect_number_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.voltLib.parser.Parser.expect_number_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.voltLib.parser.Parser.expect_string_">
+<code class="sig-name descname">expect_string_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/parser.html#Parser.expect_string_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.voltLib.parser.Parser.expect_string_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.voltLib.parser.Parser.glyph_range">
+<code class="sig-name descname">glyph_range</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">start</span></em>, <em class="sig-param"><span class="n">end</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/parser.html#Parser.glyph_range"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.voltLib.parser.Parser.glyph_range" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.voltLib.parser.Parser.is_cur_keyword_">
+<code class="sig-name descname">is_cur_keyword_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">k</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/parser.html#Parser.is_cur_keyword_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.voltLib.parser.Parser.is_cur_keyword_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.voltLib.parser.Parser.make_lexer_">
+<code class="sig-name descname">make_lexer_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">file_or_path</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/parser.html#Parser.make_lexer_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.voltLib.parser.Parser.make_lexer_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.voltLib.parser.Parser.parse">
+<code class="sig-name descname">parse</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/parser.html#Parser.parse"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.voltLib.parser.Parser.parse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.voltLib.parser.Parser.parse_adjust_by_">
+<code class="sig-name descname">parse_adjust_by_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/parser.html#Parser.parse_adjust_by_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.voltLib.parser.Parser.parse_adjust_by_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.voltLib.parser.Parser.parse_adjust_pair_">
+<code class="sig-name descname">parse_adjust_pair_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/parser.html#Parser.parse_adjust_pair_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.voltLib.parser.Parser.parse_adjust_pair_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.voltLib.parser.Parser.parse_adjust_single_">
+<code class="sig-name descname">parse_adjust_single_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/parser.html#Parser.parse_adjust_single_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.voltLib.parser.Parser.parse_adjust_single_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.voltLib.parser.Parser.parse_attach_">
+<code class="sig-name descname">parse_attach_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/parser.html#Parser.parse_attach_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.voltLib.parser.Parser.parse_attach_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.voltLib.parser.Parser.parse_attach_cursive_">
+<code class="sig-name descname">parse_attach_cursive_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/parser.html#Parser.parse_attach_cursive_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.voltLib.parser.Parser.parse_attach_cursive_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.voltLib.parser.Parser.parse_cmap_format">
+<code class="sig-name descname">parse_cmap_format</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/parser.html#Parser.parse_cmap_format"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.voltLib.parser.Parser.parse_cmap_format" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.voltLib.parser.Parser.parse_compiler_flag_">
+<code class="sig-name descname">parse_compiler_flag_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/parser.html#Parser.parse_compiler_flag_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.voltLib.parser.Parser.parse_compiler_flag_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.voltLib.parser.Parser.parse_context_">
+<code class="sig-name descname">parse_context_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/parser.html#Parser.parse_context_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.voltLib.parser.Parser.parse_context_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.voltLib.parser.Parser.parse_coverage_">
+<code class="sig-name descname">parse_coverage_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/parser.html#Parser.parse_coverage_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.voltLib.parser.Parser.parse_coverage_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.voltLib.parser.Parser.parse_def_anchor_">
+<code class="sig-name descname">parse_def_anchor_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/parser.html#Parser.parse_def_anchor_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.voltLib.parser.Parser.parse_def_anchor_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.voltLib.parser.Parser.parse_def_glyph_">
+<code class="sig-name descname">parse_def_glyph_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/parser.html#Parser.parse_def_glyph_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.voltLib.parser.Parser.parse_def_glyph_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.voltLib.parser.Parser.parse_def_group_">
+<code class="sig-name descname">parse_def_group_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/parser.html#Parser.parse_def_group_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.voltLib.parser.Parser.parse_def_group_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.voltLib.parser.Parser.parse_def_lookup_">
+<code class="sig-name descname">parse_def_lookup_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/parser.html#Parser.parse_def_lookup_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.voltLib.parser.Parser.parse_def_lookup_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.voltLib.parser.Parser.parse_def_script_">
+<code class="sig-name descname">parse_def_script_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/parser.html#Parser.parse_def_script_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.voltLib.parser.Parser.parse_def_script_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.voltLib.parser.Parser.parse_enum_">
+<code class="sig-name descname">parse_enum_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/parser.html#Parser.parse_enum_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.voltLib.parser.Parser.parse_enum_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.voltLib.parser.Parser.parse_feature_">
+<code class="sig-name descname">parse_feature_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/parser.html#Parser.parse_feature_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.voltLib.parser.Parser.parse_feature_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.voltLib.parser.Parser.parse_langsys_">
+<code class="sig-name descname">parse_langsys_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/parser.html#Parser.parse_langsys_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.voltLib.parser.Parser.parse_langsys_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.voltLib.parser.Parser.parse_pos_">
+<code class="sig-name descname">parse_pos_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/parser.html#Parser.parse_pos_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.voltLib.parser.Parser.parse_pos_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.voltLib.parser.Parser.parse_position_">
+<code class="sig-name descname">parse_position_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/parser.html#Parser.parse_position_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.voltLib.parser.Parser.parse_position_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.voltLib.parser.Parser.parse_ppem_">
+<code class="sig-name descname">parse_ppem_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/parser.html#Parser.parse_ppem_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.voltLib.parser.Parser.parse_ppem_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.voltLib.parser.Parser.parse_substitution_">
+<code class="sig-name descname">parse_substitution_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">reversal</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/parser.html#Parser.parse_substitution_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.voltLib.parser.Parser.parse_substitution_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.voltLib.parser.Parser.parse_unicode_values_">
+<code class="sig-name descname">parse_unicode_values_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/parser.html#Parser.parse_unicode_values_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.voltLib.parser.Parser.parse_unicode_values_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.voltLib.parser.Parser.resolve_group">
+<code class="sig-name descname">resolve_group</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">group_name</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/parser.html#Parser.resolve_group"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.voltLib.parser.Parser.resolve_group" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.voltLib.parser.SymbolTable">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.voltLib.parser.</code><code class="sig-name descname">SymbolTable</code><a class="reference internal" href="_modules/fontTools/voltLib/parser.html#SymbolTable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.voltLib.parser.SymbolTable" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.voltLib.parser.SymbolTable.define">
+<code class="sig-name descname">define</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">item</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/parser.html#SymbolTable.define"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.voltLib.parser.SymbolTable.define" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.voltLib.parser.SymbolTable.enter_scope">
+<code class="sig-name descname">enter_scope</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/parser.html#SymbolTable.enter_scope"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.voltLib.parser.SymbolTable.enter_scope" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.voltLib.parser.SymbolTable.exit_scope">
+<code class="sig-name descname">exit_scope</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/parser.html#SymbolTable.exit_scope"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.voltLib.parser.SymbolTable.exit_scope" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.voltLib.parser.SymbolTable.resolve">
+<code class="sig-name descname">resolve</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">case_insensitive</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/parser.html#SymbolTable.resolve"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.voltLib.parser.SymbolTable.resolve" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-fontTools.voltLib.lexer">
+<span id="lexer"></span><h2>lexer<a class="headerlink" href="#module-fontTools.voltLib.lexer" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="fontTools.voltLib.lexer.Lexer">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.voltLib.lexer.</code><code class="sig-name descname">Lexer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text</span></em>, <em class="sig-param"><span class="n">filename</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/lexer.html#Lexer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.voltLib.lexer.Lexer" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py attribute">
+<dt id="fontTools.voltLib.lexer.Lexer.CHAR_DIGIT_">
+<code class="sig-name descname">CHAR_DIGIT_</code><em class="property"> = '0123456789'</em><a class="headerlink" href="#fontTools.voltLib.lexer.Lexer.CHAR_DIGIT_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.voltLib.lexer.Lexer.CHAR_LC_LETTER_">
+<code class="sig-name descname">CHAR_LC_LETTER_</code><em class="property"> = 'abcdefghijklmnopqrstuvwxyz'</em><a class="headerlink" href="#fontTools.voltLib.lexer.Lexer.CHAR_LC_LETTER_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.voltLib.lexer.Lexer.CHAR_NAME_CONTINUATION_">
+<code class="sig-name descname">CHAR_NAME_CONTINUATION_</code><em class="property"> = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz._0123456789'</em><a class="headerlink" href="#fontTools.voltLib.lexer.Lexer.CHAR_NAME_CONTINUATION_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.voltLib.lexer.Lexer.CHAR_NAME_START_">
+<code class="sig-name descname">CHAR_NAME_START_</code><em class="property"> = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz._'</em><a class="headerlink" href="#fontTools.voltLib.lexer.Lexer.CHAR_NAME_START_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.voltLib.lexer.Lexer.CHAR_NEWLINE_">
+<code class="sig-name descname">CHAR_NEWLINE_</code><em class="property"> = '\r\n'</em><a class="headerlink" href="#fontTools.voltLib.lexer.Lexer.CHAR_NEWLINE_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.voltLib.lexer.Lexer.CHAR_PERIOD_">
+<code class="sig-name descname">CHAR_PERIOD_</code><em class="property"> = '.'</em><a class="headerlink" href="#fontTools.voltLib.lexer.Lexer.CHAR_PERIOD_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.voltLib.lexer.Lexer.CHAR_UC_LETTER_">
+<code class="sig-name descname">CHAR_UC_LETTER_</code><em class="property"> = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'</em><a class="headerlink" href="#fontTools.voltLib.lexer.Lexer.CHAR_UC_LETTER_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.voltLib.lexer.Lexer.CHAR_UNDERSCORE_">
+<code class="sig-name descname">CHAR_UNDERSCORE_</code><em class="property"> = '_'</em><a class="headerlink" href="#fontTools.voltLib.lexer.Lexer.CHAR_UNDERSCORE_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.voltLib.lexer.Lexer.CHAR_WHITESPACE_">
+<code class="sig-name descname">CHAR_WHITESPACE_</code><em class="property"> = ' \t'</em><a class="headerlink" href="#fontTools.voltLib.lexer.Lexer.CHAR_WHITESPACE_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.voltLib.lexer.Lexer.NAME">
+<code class="sig-name descname">NAME</code><em class="property"> = 'NAME'</em><a class="headerlink" href="#fontTools.voltLib.lexer.Lexer.NAME" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.voltLib.lexer.Lexer.NEWLINE">
+<code class="sig-name descname">NEWLINE</code><em class="property"> = 'NEWLINE'</em><a class="headerlink" href="#fontTools.voltLib.lexer.Lexer.NEWLINE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.voltLib.lexer.Lexer.NUMBER">
+<code class="sig-name descname">NUMBER</code><em class="property"> = 'NUMBER'</em><a class="headerlink" href="#fontTools.voltLib.lexer.Lexer.NUMBER" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.voltLib.lexer.Lexer.STRING">
+<code class="sig-name descname">STRING</code><em class="property"> = 'STRING'</em><a class="headerlink" href="#fontTools.voltLib.lexer.Lexer.STRING" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.voltLib.lexer.Lexer.location_">
+<code class="sig-name descname">location_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/lexer.html#Lexer.location_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.voltLib.lexer.Lexer.location_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.voltLib.lexer.Lexer.next">
+<code class="sig-name descname">next</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/lexer.html#Lexer.next"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.voltLib.lexer.Lexer.next" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.voltLib.lexer.Lexer.next_">
+<code class="sig-name descname">next_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/lexer.html#Lexer.next_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.voltLib.lexer.Lexer.next_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.voltLib.lexer.Lexer.scan_over_">
+<code class="sig-name descname">scan_over_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">valid</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/lexer.html#Lexer.scan_over_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.voltLib.lexer.Lexer.scan_over_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.voltLib.lexer.Lexer.scan_until_">
+<code class="sig-name descname">scan_until_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">stop_at</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/lexer.html#Lexer.scan_until_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.voltLib.lexer.Lexer.scan_until_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-0">
+<span id="parser"></span><h2>parser<a class="headerlink" href="#module-0" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="id0">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.voltLib.parser.</code><code class="sig-name descname">OrderedSymbolTable</code><a class="reference internal" href="_modules/fontTools/voltLib/parser.html#OrderedSymbolTable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#id0" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="id1">
+<code class="sig-name descname">define</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">item</span></em><span class="sig-paren">)</span><a class="headerlink" href="#id1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="id2">
+<code class="sig-name descname">enter_scope</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/parser.html#OrderedSymbolTable.enter_scope"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#id2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="id3">
+<code class="sig-name descname">exit_scope</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#id3" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="id4">
+<code class="sig-name descname">range</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">start</span></em>, <em class="sig-param"><span class="n">end</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/parser.html#OrderedSymbolTable.range"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#id4" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="id5">
+<code class="sig-name descname">resolve</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">case_insensitive</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/parser.html#OrderedSymbolTable.resolve"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#id5" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="id6">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.voltLib.parser.</code><code class="sig-name descname">Parser</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/parser.html#Parser"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#id6" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="id7">
+<code class="sig-name descname">advance_lexer_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/parser.html#Parser.advance_lexer_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#id7" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="id8">
+<code class="sig-name descname">expect_keyword_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">keyword</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/parser.html#Parser.expect_keyword_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#id8" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="id9">
+<code class="sig-name descname">expect_name_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/parser.html#Parser.expect_name_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#id9" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="id10">
+<code class="sig-name descname">expect_number_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/parser.html#Parser.expect_number_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#id10" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="id11">
+<code class="sig-name descname">expect_string_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/parser.html#Parser.expect_string_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#id11" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="id12">
+<code class="sig-name descname">glyph_range</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">start</span></em>, <em class="sig-param"><span class="n">end</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/parser.html#Parser.glyph_range"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#id12" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="id13">
+<code class="sig-name descname">is_cur_keyword_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">k</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/parser.html#Parser.is_cur_keyword_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#id13" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="id14">
+<code class="sig-name descname">make_lexer_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">file_or_path</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/parser.html#Parser.make_lexer_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#id14" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="id15">
+<code class="sig-name descname">parse</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/parser.html#Parser.parse"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#id15" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="id16">
+<code class="sig-name descname">parse_adjust_by_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/parser.html#Parser.parse_adjust_by_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#id16" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="id17">
+<code class="sig-name descname">parse_adjust_pair_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/parser.html#Parser.parse_adjust_pair_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#id17" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="id18">
+<code class="sig-name descname">parse_adjust_single_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/parser.html#Parser.parse_adjust_single_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#id18" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="id19">
+<code class="sig-name descname">parse_attach_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/parser.html#Parser.parse_attach_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#id19" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="id20">
+<code class="sig-name descname">parse_attach_cursive_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/parser.html#Parser.parse_attach_cursive_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#id20" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="id21">
+<code class="sig-name descname">parse_cmap_format</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/parser.html#Parser.parse_cmap_format"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#id21" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="id22">
+<code class="sig-name descname">parse_compiler_flag_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/parser.html#Parser.parse_compiler_flag_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#id22" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="id23">
+<code class="sig-name descname">parse_context_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/parser.html#Parser.parse_context_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#id23" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="id24">
+<code class="sig-name descname">parse_coverage_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/parser.html#Parser.parse_coverage_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#id24" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="id25">
+<code class="sig-name descname">parse_def_anchor_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/parser.html#Parser.parse_def_anchor_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#id25" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="id26">
+<code class="sig-name descname">parse_def_glyph_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/parser.html#Parser.parse_def_glyph_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#id26" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="id27">
+<code class="sig-name descname">parse_def_group_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/parser.html#Parser.parse_def_group_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#id27" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="id28">
+<code class="sig-name descname">parse_def_lookup_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/parser.html#Parser.parse_def_lookup_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#id28" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="id29">
+<code class="sig-name descname">parse_def_script_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/parser.html#Parser.parse_def_script_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#id29" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="id30">
+<code class="sig-name descname">parse_enum_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/parser.html#Parser.parse_enum_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#id30" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="id31">
+<code class="sig-name descname">parse_feature_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/parser.html#Parser.parse_feature_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#id31" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="id32">
+<code class="sig-name descname">parse_langsys_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/parser.html#Parser.parse_langsys_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#id32" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="id33">
+<code class="sig-name descname">parse_pos_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/parser.html#Parser.parse_pos_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#id33" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="id34">
+<code class="sig-name descname">parse_position_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/parser.html#Parser.parse_position_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#id34" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="id35">
+<code class="sig-name descname">parse_ppem_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/parser.html#Parser.parse_ppem_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#id35" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="id36">
+<code class="sig-name descname">parse_substitution_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">reversal</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/parser.html#Parser.parse_substitution_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#id36" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="id37">
+<code class="sig-name descname">parse_unicode_values_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/parser.html#Parser.parse_unicode_values_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#id37" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="id38">
+<code class="sig-name descname">resolve_group</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">group_name</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/parser.html#Parser.resolve_group"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#id38" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="id39">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.voltLib.parser.</code><code class="sig-name descname">SymbolTable</code><a class="reference internal" href="_modules/fontTools/voltLib/parser.html#SymbolTable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#id39" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="id40">
+<code class="sig-name descname">define</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">item</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/parser.html#SymbolTable.define"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#id40" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="id41">
+<code class="sig-name descname">enter_scope</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/parser.html#SymbolTable.enter_scope"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#id41" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="id42">
+<code class="sig-name descname">exit_scope</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/parser.html#SymbolTable.exit_scope"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#id42" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="id43">
+<code class="sig-name descname">resolve</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">case_insensitive</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/voltLib/parser.html#SymbolTable.resolve"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#id43" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="varLib/varStore.html" class="btn btn-neutral float-left" title="varStore" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Just van Rossum, Behdad Esfahbod, and the fontTools Authors. CC BY-SA 4.0
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,665 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>psLib &mdash; fontTools Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="psOperators" href="psOperators.html" />
+    <link rel="prev" title="psCharStrings" href="psCharStrings.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> fontTools
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Library</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../afmLib.html">afmLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../agl.html">agl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cffLib/index.html">cffLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../colorLib/index.html">colorLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cu2qu/index.html">cu2qu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../designspaceLib/index.html">designspaceLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../encodings/index.html">encodings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../feaLib/index.html">feaLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../merge.html">merge</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">misc</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="arrayTools.html">arrayTools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bezierTools.html">bezierTools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classifyTools.html">classifyTools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cliTools.html">cliTools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eexec.html">eexec</a></li>
+<li class="toctree-l2"><a class="reference internal" href="encodingTools.html">encodingTools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="etree.html">etree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="filenames.html">filenames</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fixedTools.html">fixedTools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intTools.html">intTools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="loggingTools.html">loggingTools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="macCreatorType.html">macCreatorType</a></li>
+<li class="toctree-l2"><a class="reference internal" href="macRes.html">macRes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psCharStrings.html">psCharStrings</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">psLib</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psOperators.html">psOperators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="py23.html">py23</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sstruct.html">sstruct</a></li>
+<li class="toctree-l2"><a class="reference internal" href="symfont.html">symfont</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testTools.html">testTools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="textTools.html">textTools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="timeTools.html">timeTools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transform.html">transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xmlReader.html">xmlReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xmlWriter.html">xmlWriter</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../mtiLib.html">mtiLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../otlLib/index.html">otlLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pens/index.html">pens</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../subset/index.html">subset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svgLib/index.html">svgLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../t1Lib.html">t1Lib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ttLib/index.html">ttLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ttx.html">ttx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ufoLib/index.html">ufoLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unicode.html">unicode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unicodedata/index.html">unicodedata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../varLib/index.html">varLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../voltLib.html">voltLib</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">fontTools</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">misc</a> &raquo;</li>
+        
+      <li>psLib</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/misc/psLib.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-fontTools.misc.psLib">
+<span id="pslib"></span><h1>psLib<a class="headerlink" href="#module-fontTools.misc.psLib" title="Permalink to this headline">¶</a></h1>
+<dl class="py exception">
+<dt id="fontTools.misc.psLib.PSError">
+<em class="property">exception </em><code class="sig-prename descclassname">fontTools.misc.psLib.</code><code class="sig-name descname">PSError</code><a class="reference internal" href="../_modules/fontTools/misc/psLib.html#PSError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psLib.PSError" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py attribute">
+<dt id="fontTools.misc.psLib.PSError.args">
+<code class="sig-name descname">args</code><a class="headerlink" href="#fontTools.misc.psLib.PSError.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psLib.PSError.with_traceback">
+<code class="sig-name descname">with_traceback</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psLib.PSError.with_traceback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.misc.psLib.PSInterpreter">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.misc.psLib.</code><code class="sig-name descname">PSInterpreter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">encoding</span><span class="o">=</span><span class="default_value">'ascii'</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psLib.html#PSInterpreter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psLib.PSInterpreter" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.misc.psLib.PSInterpreter.call_procedure">
+<code class="sig-name descname">call_procedure</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">proc</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psLib.html#PSInterpreter.call_procedure"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psLib.PSInterpreter.call_procedure" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psLib.PSInterpreter.close">
+<code class="sig-name descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psLib.html#PSInterpreter.close"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psLib.PSInterpreter.close" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove circular references.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psLib.PSInterpreter.do_comment">
+<code class="sig-name descname">do_comment</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">token</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psLib.html#PSInterpreter.do_comment"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psLib.PSInterpreter.do_comment" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psLib.PSInterpreter.do_hexstring">
+<code class="sig-name descname">do_hexstring</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">token</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psLib.html#PSInterpreter.do_hexstring"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psLib.PSInterpreter.do_hexstring" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psLib.PSInterpreter.do_literal">
+<code class="sig-name descname">do_literal</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">token</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psLib.html#PSInterpreter.do_literal"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psLib.PSInterpreter.do_literal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psLib.PSInterpreter.do_makearray">
+<code class="sig-name descname">do_makearray</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psLib.html#PSInterpreter.do_makearray"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psLib.PSInterpreter.do_makearray" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psLib.PSInterpreter.do_special">
+<code class="sig-name descname">do_special</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">token</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psLib.html#PSInterpreter.do_special"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psLib.PSInterpreter.do_special" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psLib.PSInterpreter.do_string">
+<code class="sig-name descname">do_string</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">token</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psLib.html#PSInterpreter.do_string"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psLib.PSInterpreter.do_string" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psLib.PSInterpreter.do_token">
+<code class="sig-name descname">do_token</code><span class="sig-paren">(</span><em class="sig-param">token</em>, <em class="sig-param">int=&lt;class 'int'&gt;</em>, <em class="sig-param">float=&lt;class 'float'&gt;</em>, <em class="sig-param">ps_name=&lt;class 'fontTools.misc.psOperators.ps_name'&gt;</em>, <em class="sig-param">ps_integer=&lt;class 'fontTools.misc.psOperators.ps_integer'&gt;</em>, <em class="sig-param">ps_real=&lt;class 'fontTools.misc.psOperators.ps_real'&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psLib.html#PSInterpreter.do_token"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psLib.PSInterpreter.do_token" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psLib.PSInterpreter.fillsystemdict">
+<code class="sig-name descname">fillsystemdict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psLib.html#PSInterpreter.fillsystemdict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psLib.PSInterpreter.fillsystemdict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psLib.PSInterpreter.handle_object">
+<code class="sig-name descname">handle_object</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">object</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psLib.html#PSInterpreter.handle_object"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psLib.PSInterpreter.handle_object" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psLib.PSInterpreter.interpret">
+<code class="sig-name descname">interpret</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">getattr=&lt;built-in function getattr&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psLib.html#PSInterpreter.interpret"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psLib.PSInterpreter.interpret" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psLib.PSInterpreter.pop">
+<code class="sig-name descname">pop</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">types</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psLib.html#PSInterpreter.pop"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psLib.PSInterpreter.pop" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psLib.PSInterpreter.proc_bind">
+<code class="sig-name descname">proc_bind</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">proc</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psLib.PSInterpreter.proc_bind" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psLib.PSInterpreter.ps_anchorsearch">
+<code class="sig-name descname">ps_anchorsearch</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psLib.PSInterpreter.ps_anchorsearch" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psLib.PSInterpreter.ps_array">
+<code class="sig-name descname">ps_array</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psLib.PSInterpreter.ps_array" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psLib.PSInterpreter.ps_astore">
+<code class="sig-name descname">ps_astore</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psLib.PSInterpreter.ps_astore" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psLib.PSInterpreter.ps_begin">
+<code class="sig-name descname">ps_begin</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psLib.PSInterpreter.ps_begin" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psLib.PSInterpreter.ps_bind">
+<code class="sig-name descname">ps_bind</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psLib.PSInterpreter.ps_bind" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psLib.PSInterpreter.ps_cleartomark">
+<code class="sig-name descname">ps_cleartomark</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psLib.PSInterpreter.ps_cleartomark" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psLib.PSInterpreter.ps_closefile">
+<code class="sig-name descname">ps_closefile</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psLib.PSInterpreter.ps_closefile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psLib.PSInterpreter.ps_count">
+<code class="sig-name descname">ps_count</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psLib.PSInterpreter.ps_count" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psLib.PSInterpreter.ps_currentdict">
+<code class="sig-name descname">ps_currentdict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psLib.PSInterpreter.ps_currentdict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psLib.PSInterpreter.ps_currentfile">
+<code class="sig-name descname">ps_currentfile</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psLib.PSInterpreter.ps_currentfile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psLib.PSInterpreter.ps_cvn">
+<code class="sig-name descname">ps_cvn</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psLib.PSInterpreter.ps_cvn" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psLib.PSInterpreter.ps_cvx">
+<code class="sig-name descname">ps_cvx</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psLib.PSInterpreter.ps_cvx" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psLib.PSInterpreter.ps_def">
+<code class="sig-name descname">ps_def</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psLib.PSInterpreter.ps_def" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psLib.PSInterpreter.ps_definefont">
+<code class="sig-name descname">ps_definefont</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psLib.PSInterpreter.ps_definefont" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psLib.PSInterpreter.ps_dict">
+<code class="sig-name descname">ps_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psLib.PSInterpreter.ps_dict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psLib.PSInterpreter.ps_dup">
+<code class="sig-name descname">ps_dup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psLib.PSInterpreter.ps_dup" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psLib.PSInterpreter.ps_eexec">
+<code class="sig-name descname">ps_eexec</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psLib.PSInterpreter.ps_eexec" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psLib.PSInterpreter.ps_end">
+<code class="sig-name descname">ps_end</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psLib.PSInterpreter.ps_end" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psLib.PSInterpreter.ps_eq">
+<code class="sig-name descname">ps_eq</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psLib.PSInterpreter.ps_eq" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psLib.PSInterpreter.ps_exch">
+<code class="sig-name descname">ps_exch</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psLib.PSInterpreter.ps_exch" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psLib.PSInterpreter.ps_exec">
+<code class="sig-name descname">ps_exec</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psLib.PSInterpreter.ps_exec" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psLib.PSInterpreter.ps_executeonly">
+<code class="sig-name descname">ps_executeonly</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psLib.PSInterpreter.ps_executeonly" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psLib.PSInterpreter.ps_findfont">
+<code class="sig-name descname">ps_findfont</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psLib.PSInterpreter.ps_findfont" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psLib.PSInterpreter.ps_for">
+<code class="sig-name descname">ps_for</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psLib.PSInterpreter.ps_for" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psLib.PSInterpreter.ps_forall">
+<code class="sig-name descname">ps_forall</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psLib.PSInterpreter.ps_forall" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psLib.PSInterpreter.ps_get">
+<code class="sig-name descname">ps_get</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psLib.PSInterpreter.ps_get" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psLib.PSInterpreter.ps_getinterval">
+<code class="sig-name descname">ps_getinterval</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psLib.PSInterpreter.ps_getinterval" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psLib.PSInterpreter.ps_if">
+<code class="sig-name descname">ps_if</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psLib.PSInterpreter.ps_if" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psLib.PSInterpreter.ps_ifelse">
+<code class="sig-name descname">ps_ifelse</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psLib.PSInterpreter.ps_ifelse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psLib.PSInterpreter.ps_index">
+<code class="sig-name descname">ps_index</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psLib.PSInterpreter.ps_index" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psLib.PSInterpreter.ps_known">
+<code class="sig-name descname">ps_known</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psLib.PSInterpreter.ps_known" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psLib.PSInterpreter.ps_load">
+<code class="sig-name descname">ps_load</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psLib.PSInterpreter.ps_load" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psLib.PSInterpreter.ps_matrix">
+<code class="sig-name descname">ps_matrix</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psLib.PSInterpreter.ps_matrix" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psLib.PSInterpreter.ps_ne">
+<code class="sig-name descname">ps_ne</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psLib.PSInterpreter.ps_ne" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psLib.PSInterpreter.ps_noaccess">
+<code class="sig-name descname">ps_noaccess</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psLib.PSInterpreter.ps_noaccess" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psLib.PSInterpreter.ps_not">
+<code class="sig-name descname">ps_not</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psLib.PSInterpreter.ps_not" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psLib.PSInterpreter.ps_pop">
+<code class="sig-name descname">ps_pop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psLib.PSInterpreter.ps_pop" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psLib.PSInterpreter.ps_print">
+<code class="sig-name descname">ps_print</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psLib.PSInterpreter.ps_print" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psLib.PSInterpreter.ps_put">
+<code class="sig-name descname">ps_put</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psLib.PSInterpreter.ps_put" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psLib.PSInterpreter.ps_putinterval">
+<code class="sig-name descname">ps_putinterval</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psLib.PSInterpreter.ps_putinterval" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psLib.PSInterpreter.ps_readonly">
+<code class="sig-name descname">ps_readonly</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psLib.PSInterpreter.ps_readonly" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psLib.PSInterpreter.ps_readstring">
+<code class="sig-name descname">ps_readstring</code><span class="sig-paren">(</span><em class="sig-param">ps_boolean=&lt;class 'fontTools.misc.psOperators.ps_boolean'&gt;</em>, <em class="sig-param">len=&lt;built-in function len&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psLib.PSInterpreter.ps_readstring" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psLib.PSInterpreter.ps_store">
+<code class="sig-name descname">ps_store</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psLib.PSInterpreter.ps_store" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psLib.PSInterpreter.ps_string">
+<code class="sig-name descname">ps_string</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psLib.PSInterpreter.ps_string" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psLib.PSInterpreter.ps_systemdict">
+<code class="sig-name descname">ps_systemdict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psLib.PSInterpreter.ps_systemdict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psLib.PSInterpreter.ps_type">
+<code class="sig-name descname">ps_type</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psLib.PSInterpreter.ps_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psLib.PSInterpreter.ps_userdict">
+<code class="sig-name descname">ps_userdict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psLib.PSInterpreter.ps_userdict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psLib.PSInterpreter.ps_where">
+<code class="sig-name descname">ps_where</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psLib.PSInterpreter.ps_where" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psLib.PSInterpreter.push">
+<code class="sig-name descname">push</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">object</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psLib.html#PSInterpreter.push"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psLib.PSInterpreter.push" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psLib.PSInterpreter.resolve_name">
+<code class="sig-name descname">resolve_name</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psLib.html#PSInterpreter.resolve_name"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psLib.PSInterpreter.resolve_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psLib.PSInterpreter.suckoperators">
+<code class="sig-name descname">suckoperators</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">systemdict</span></em>, <em class="sig-param"><span class="n">klass</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psLib.html#PSInterpreter.suckoperators"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psLib.PSInterpreter.suckoperators" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt id="fontTools.misc.psLib.PSTokenError">
+<em class="property">exception </em><code class="sig-prename descclassname">fontTools.misc.psLib.</code><code class="sig-name descname">PSTokenError</code><a class="reference internal" href="../_modules/fontTools/misc/psLib.html#PSTokenError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psLib.PSTokenError" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py attribute">
+<dt id="fontTools.misc.psLib.PSTokenError.args">
+<code class="sig-name descname">args</code><a class="headerlink" href="#fontTools.misc.psLib.PSTokenError.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psLib.PSTokenError.with_traceback">
+<code class="sig-name descname">with_traceback</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psLib.PSTokenError.with_traceback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.misc.psLib.PSTokenizer">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.misc.psLib.</code><code class="sig-name descname">PSTokenizer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">buf</span><span class="o">=</span><span class="default_value">b''</span></em>, <em class="sig-param"><span class="n">encoding</span><span class="o">=</span><span class="default_value">'ascii'</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psLib.html#PSTokenizer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psLib.PSTokenizer" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.misc.psLib.PSTokenizer.close">
+<code class="sig-name descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psLib.html#PSTokenizer.close"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psLib.PSTokenizer.close" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psLib.PSTokenizer.getnexttoken">
+<code class="sig-name descname">getnexttoken</code><span class="sig-paren">(</span><em class="sig-param">len=&lt;built-in function len&gt;</em>, <em class="sig-param">ps_special=b'()&lt;&gt;[]{}%'</em>, <em class="sig-param">stringmatch=&lt;built-in method match of re.Pattern object&gt;</em>, <em class="sig-param">hexstringmatch=&lt;built-in method match of re.Pattern object&gt;</em>, <em class="sig-param">commentmatch=&lt;built-in method match of re.Pattern object&gt;</em>, <em class="sig-param">endmatch=&lt;built-in method match of re.Pattern object&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psLib.html#PSTokenizer.getnexttoken"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psLib.PSTokenizer.getnexttoken" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psLib.PSTokenizer.read">
+<code class="sig-name descname">read</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">n</span><span class="o">=</span><span class="default_value">- 1</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psLib.html#PSTokenizer.read"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psLib.PSTokenizer.read" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read at most ‘n’ bytes from the buffer, or less if the read
+hits EOF before obtaining ‘n’ bytes.
+If ‘n’ is negative or omitted, read all data until EOF is reached.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psLib.PSTokenizer.skipwhite">
+<code class="sig-name descname">skipwhite</code><span class="sig-paren">(</span><em class="sig-param">whitematch=&lt;built-in method match of re.Pattern object&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psLib.html#PSTokenizer.skipwhite"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psLib.PSTokenizer.skipwhite" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psLib.PSTokenizer.starteexec">
+<code class="sig-name descname">starteexec</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psLib.html#PSTokenizer.starteexec"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psLib.PSTokenizer.starteexec" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psLib.PSTokenizer.stopeexec">
+<code class="sig-name descname">stopeexec</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psLib.html#PSTokenizer.stopeexec"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psLib.PSTokenizer.stopeexec" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.misc.psLib.suckfont">
+<code class="sig-prename descclassname">fontTools.misc.psLib.</code><code class="sig-name descname">suckfont</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">encoding</span><span class="o">=</span><span class="default_value">'ascii'</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psLib.html#suckfont"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psLib.suckfont" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.misc.psLib.unpack_item">
+<code class="sig-prename descclassname">fontTools.misc.psLib.</code><code class="sig-name descname">unpack_item</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">item</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psLib.html#unpack_item"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psLib.unpack_item" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="psOperators.html" class="btn btn-neutral float-right" title="psOperators" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="psCharStrings.html" class="btn btn-neutral float-left" title="psCharStrings" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Just van Rossum, Behdad Esfahbod, and the fontTools Authors. CC BY-SA 4.0
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

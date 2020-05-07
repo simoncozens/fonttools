@@ -1,0 +1,412 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>featureVars &mdash; fontTools Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="instancer" href="instancer.html" />
+    <link rel="prev" title="errors" href="errors.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> fontTools
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Library</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../afmLib.html">afmLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../agl.html">agl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cffLib/index.html">cffLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../colorLib/index.html">colorLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cu2qu/index.html">cu2qu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../designspaceLib/index.html">designspaceLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../encodings/index.html">encodings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../feaLib/index.html">feaLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../merge.html">merge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/index.html">misc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mtiLib.html">mtiLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../otlLib/index.html">otlLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pens/index.html">pens</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../subset/index.html">subset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svgLib/index.html">svgLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../t1Lib.html">t1Lib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ttLib/index.html">ttLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ttx.html">ttx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ufoLib/index.html">ufoLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unicode.html">unicode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unicodedata/index.html">unicodedata</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">varLib</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="builder.html">builder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cff.html">cff</a></li>
+<li class="toctree-l2"><a class="reference internal" href="errors.html">errors</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">featureVars</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instancer.html">instancer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interpolatable.html">interpolatable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interpolate_layout.html">interpolate_layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iup.html">iup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="merger.html">merger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.html">models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mutator.html">mutator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mvar.html">mvar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plot.html">plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="varStore.html">varStore</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../voltLib.html">voltLib</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">fontTools</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">varLib</a> &raquo;</li>
+        
+      <li>featureVars</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/varLib/featureVars.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-fontTools.varLib.featureVars">
+<span id="featurevars"></span><h1>featureVars<a class="headerlink" href="#module-fontTools.varLib.featureVars" title="Permalink to this headline">¶</a></h1>
+<p>Module to build FeatureVariation tables:
+<a class="reference external" href="https://docs.microsoft.com/en-us/typography/opentype/spec/chapter2#featurevariations-table">https://docs.microsoft.com/en-us/typography/opentype/spec/chapter2#featurevariations-table</a></p>
+<p>NOTE: The API is experimental and subject to change.</p>
+<dl class="py function">
+<dt id="fontTools.varLib.featureVars.addFeatureVariations">
+<code class="sig-prename descclassname">fontTools.varLib.featureVars.</code><code class="sig-name descname">addFeatureVariations</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">font</span></em>, <em class="sig-param"><span class="n">conditionalSubstitutions</span></em>, <em class="sig-param"><span class="n">featureTag</span><span class="o">=</span><span class="default_value">'rvrn'</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/varLib/featureVars.html#addFeatureVariations"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.featureVars.addFeatureVariations" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add conditional substitutions to a Variable Font.</p>
+<p>The <cite>conditionalSubstitutions</cite> argument is a list of (Region, Substitutions)
+tuples.</p>
+<p>A Region is a list of Boxes. A Box is a dict mapping axisTags to
+(minValue, maxValue) tuples. Irrelevant axes may be omitted and they are
+interpretted as extending to end of axis in each direction.  A Box represents
+an orthogonal ‘rectangular’ subset of an N-dimensional design space.
+A Region represents a more complex subset of an N-dimensional design space,
+ie. the union of all the Boxes in the Region.
+For efficiency, Boxes within a Region should ideally not overlap, but
+functionality is not compromised if they do.</p>
+<p>The minimum and maximum values are expressed in normalized coordinates.</p>
+<p>A Substitution is a dict mapping source glyph names to substitute glyph names.</p>
+<p>Example:</p>
+<p># &gt;&gt;&gt; f = TTFont(srcPath)
+# &gt;&gt;&gt; condSubst = [
+# …     # A list of (Region, Substitution) tuples.
+# …     ([{“wdth”: (0.5, 1.0)}], {“cent”: “cent.rvrn”}),
+# …     ([{“wght”: (0.5, 1.0)}], {“dollar”: “dollar.rvrn”}),
+# … ]
+# &gt;&gt;&gt; addFeatureVariations(f, condSubst)
+# &gt;&gt;&gt; f.save(dstPath)</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.varLib.featureVars.addFeatureVariationsRaw">
+<code class="sig-prename descclassname">fontTools.varLib.featureVars.</code><code class="sig-name descname">addFeatureVariationsRaw</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">font</span></em>, <em class="sig-param"><span class="n">conditionalSubstitutions</span></em>, <em class="sig-param"><span class="n">featureTag</span><span class="o">=</span><span class="default_value">'rvrn'</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/varLib/featureVars.html#addFeatureVariationsRaw"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.featureVars.addFeatureVariationsRaw" title="Permalink to this definition">¶</a></dt>
+<dd><p>Low level implementation of addFeatureVariations that directly
+models the possibilities of the FeatureVariations table.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.varLib.featureVars.buildConditionTable">
+<code class="sig-prename descclassname">fontTools.varLib.featureVars.</code><code class="sig-name descname">buildConditionTable</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">axisIndex</span></em>, <em class="sig-param"><span class="n">filterRangeMinValue</span></em>, <em class="sig-param"><span class="n">filterRangeMaxValue</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/varLib/featureVars.html#buildConditionTable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.featureVars.buildConditionTable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Build a ConditionTable.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.varLib.featureVars.buildFeatureRecord">
+<code class="sig-prename descclassname">fontTools.varLib.featureVars.</code><code class="sig-name descname">buildFeatureRecord</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">featureTag</span></em>, <em class="sig-param"><span class="n">lookupListIndices</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/varLib/featureVars.html#buildFeatureRecord"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.featureVars.buildFeatureRecord" title="Permalink to this definition">¶</a></dt>
+<dd><p>Build a FeatureRecord.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.varLib.featureVars.buildFeatureTableSubstitutionRecord">
+<code class="sig-prename descclassname">fontTools.varLib.featureVars.</code><code class="sig-name descname">buildFeatureTableSubstitutionRecord</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">featureIndex</span></em>, <em class="sig-param"><span class="n">lookupListIndices</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/varLib/featureVars.html#buildFeatureTableSubstitutionRecord"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.featureVars.buildFeatureTableSubstitutionRecord" title="Permalink to this definition">¶</a></dt>
+<dd><p>Build a FeatureTableSubstitutionRecord.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.varLib.featureVars.buildFeatureVariationRecord">
+<code class="sig-prename descclassname">fontTools.varLib.featureVars.</code><code class="sig-name descname">buildFeatureVariationRecord</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">conditionTable</span></em>, <em class="sig-param"><span class="n">substitutionRecords</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/varLib/featureVars.html#buildFeatureVariationRecord"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.featureVars.buildFeatureVariationRecord" title="Permalink to this definition">¶</a></dt>
+<dd><p>Build a FeatureVariationRecord.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.varLib.featureVars.buildFeatureVariations">
+<code class="sig-prename descclassname">fontTools.varLib.featureVars.</code><code class="sig-name descname">buildFeatureVariations</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">featureVariationRecords</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/varLib/featureVars.html#buildFeatureVariations"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.featureVars.buildFeatureVariations" title="Permalink to this definition">¶</a></dt>
+<dd><p>Build the FeatureVariations subtable.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.varLib.featureVars.buildGSUB">
+<code class="sig-prename descclassname">fontTools.varLib.featureVars.</code><code class="sig-name descname">buildGSUB</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/varLib/featureVars.html#buildGSUB"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.featureVars.buildGSUB" title="Permalink to this definition">¶</a></dt>
+<dd><p>Build a GSUB table from scratch.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.varLib.featureVars.buildSubstitutionLookups">
+<code class="sig-prename descclassname">fontTools.varLib.featureVars.</code><code class="sig-name descname">buildSubstitutionLookups</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">gsub</span></em>, <em class="sig-param"><span class="n">allSubstitutions</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/varLib/featureVars.html#buildSubstitutionLookups"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.featureVars.buildSubstitutionLookups" title="Permalink to this definition">¶</a></dt>
+<dd><p>Build the lookups for the glyph substitutions, return a dict mapping
+the substitution to lookup indices.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.varLib.featureVars.cleanupBox">
+<code class="sig-prename descclassname">fontTools.varLib.featureVars.</code><code class="sig-name descname">cleanupBox</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">box</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/varLib/featureVars.html#cleanupBox"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.featureVars.cleanupBox" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a sparse copy of <cite>box</cite>, without redundant (default) values.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cleanupBox</span><span class="p">({})</span>
+<span class="go">{}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cleanupBox</span><span class="p">({</span><span class="s1">&#39;wdth&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)})</span>
+<span class="go">{&#39;wdth&#39;: (0.0, 1.0)}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cleanupBox</span><span class="p">({</span><span class="s1">&#39;wdth&#39;</span><span class="p">:</span> <span class="p">(</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)})</span>
+<span class="go">{}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.varLib.featureVars.makeSubstitutionsHashable">
+<code class="sig-prename descclassname">fontTools.varLib.featureVars.</code><code class="sig-name descname">makeSubstitutionsHashable</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">conditionalSubstitutions</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/varLib/featureVars.html#makeSubstitutionsHashable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.featureVars.makeSubstitutionsHashable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Turn all the substitution dictionaries in sorted tuples of tuples so
+they are hashable, to detect duplicates so we don’t write out redundant
+data.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.varLib.featureVars.overlayBox">
+<code class="sig-prename descclassname">fontTools.varLib.featureVars.</code><code class="sig-name descname">overlayBox</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">top</span></em>, <em class="sig-param"><span class="n">bot</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/varLib/featureVars.html#overlayBox"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.featureVars.overlayBox" title="Permalink to this definition">¶</a></dt>
+<dd><p>Overlays <cite>top</cite> box on top of <cite>bot</cite> box.</p>
+<p>Returns two items:
+- Box for intersection of <cite>top</cite> and <cite>bot</cite>, or None if they don’t intersect.
+- Box for remainder of <cite>bot</cite>.  Remainder box might not be exact (since the</p>
+<blockquote>
+<div><p>remainder might not be a simple box), but is inclusive of the exact
+remainder.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.varLib.featureVars.overlayFeatureVariations">
+<code class="sig-prename descclassname">fontTools.varLib.featureVars.</code><code class="sig-name descname">overlayFeatureVariations</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">conditionalSubstitutions</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/varLib/featureVars.html#overlayFeatureVariations"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.featureVars.overlayFeatureVariations" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute overlaps between all conditional substitutions.</p>
+<p>The <cite>conditionalSubstitutions</cite> argument is a list of (Region, Substitutions)
+tuples.</p>
+<p>A Region is a list of Boxes. A Box is a dict mapping axisTags to
+(minValue, maxValue) tuples. Irrelevant axes may be omitted and they are
+interpretted as extending to end of axis in each direction.  A Box represents
+an orthogonal ‘rectangular’ subset of an N-dimensional design space.
+A Region represents a more complex subset of an N-dimensional design space,
+ie. the union of all the Boxes in the Region.
+For efficiency, Boxes within a Region should ideally not overlap, but
+functionality is not compromised if they do.</p>
+<p>The minimum and maximum values are expressed in normalized coordinates.</p>
+<p>A Substitution is a dict mapping source glyph names to substitute glyph names.</p>
+<p>Returns data is in similar but different format.  Overlaps of distinct
+substitution Boxes (<em>not</em> Regions) are explicitly listed as distinct rules,
+and rules with the same Box merged.  The more specific rules appear earlier
+in the resulting list.  Moreover, instead of just a dictionary of substitutions,
+a list of dictionaries is returned for substitutions corresponding to each
+unique space, with each dictionary being identical to one of the input
+substitution dictionaries.  These dictionaries are not merged to allow data
+sharing when they are converted into font tables.</p>
+<p>Example:
+&gt;&gt;&gt; condSubst = [
+…     # A list of (Region, Substitution) tuples.
+…     ([{“wght”: (0.5, 1.0)}], {“dollar”: “dollar.rvrn”}),
+…     ([{“wght”: (0.5, 1.0)}], {“dollar”: “dollar.rvrn”}),
+…     ([{“wdth”: (0.5, 1.0)}], {“cent”: “cent.rvrn”}),
+… ]
+&gt;&gt;&gt; from pprint import pprint
+&gt;&gt;&gt; pprint(overlayFeatureVariations(condSubst))
+[({‘wdth’: (0.5, 1.0), ‘wght’: (0.5, 1.0)},</p>
+<blockquote>
+<div><blockquote>
+<div><p>[{‘dollar’: ‘dollar.rvrn’}, {‘cent’: ‘cent.rvrn’}]),</p>
+</div></blockquote>
+<p>({‘wdth’: (0.5, 1.0)}, [{‘cent’: ‘cent.rvrn’}]),
+({‘wght’: (0.5, 1.0)}, [{‘dollar’: ‘dollar.rvrn’}])]</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.varLib.featureVars.remapFeatures">
+<code class="sig-prename descclassname">fontTools.varLib.featureVars.</code><code class="sig-name descname">remapFeatures</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">table</span></em>, <em class="sig-param"><span class="n">featureRemap</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/varLib/featureVars.html#remapFeatures"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.featureVars.remapFeatures" title="Permalink to this definition">¶</a></dt>
+<dd><p>Go through the scripts list, and remap feature indices.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.varLib.featureVars.sortFeatureList">
+<code class="sig-prename descclassname">fontTools.varLib.featureVars.</code><code class="sig-name descname">sortFeatureList</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">table</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/varLib/featureVars.html#sortFeatureList"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.featureVars.sortFeatureList" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sort the feature list by feature tag, and remap the feature indices
+elsewhere. This is needed after the feature list has been modified.</p>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="instancer.html" class="btn btn-neutral float-right" title="instancer" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="errors.html" class="btn btn-neutral float-left" title="errors" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Just van Rossum, Behdad Esfahbod, and the fontTools Authors. CC BY-SA 4.0
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

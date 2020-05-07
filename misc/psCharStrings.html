@@ -1,0 +1,1843 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>psCharStrings &mdash; fontTools Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="psLib" href="psLib.html" />
+    <link rel="prev" title="macRes" href="macRes.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> fontTools
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Library</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../afmLib.html">afmLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../agl.html">agl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cffLib/index.html">cffLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../colorLib/index.html">colorLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cu2qu/index.html">cu2qu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../designspaceLib/index.html">designspaceLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../encodings/index.html">encodings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../feaLib/index.html">feaLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../merge.html">merge</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">misc</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="arrayTools.html">arrayTools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bezierTools.html">bezierTools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classifyTools.html">classifyTools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cliTools.html">cliTools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eexec.html">eexec</a></li>
+<li class="toctree-l2"><a class="reference internal" href="encodingTools.html">encodingTools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="etree.html">etree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="filenames.html">filenames</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fixedTools.html">fixedTools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intTools.html">intTools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="loggingTools.html">loggingTools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="macCreatorType.html">macCreatorType</a></li>
+<li class="toctree-l2"><a class="reference internal" href="macRes.html">macRes</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">psCharStrings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psLib.html">psLib</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psOperators.html">psOperators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="py23.html">py23</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sstruct.html">sstruct</a></li>
+<li class="toctree-l2"><a class="reference internal" href="symfont.html">symfont</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testTools.html">testTools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="textTools.html">textTools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="timeTools.html">timeTools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transform.html">transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xmlReader.html">xmlReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xmlWriter.html">xmlWriter</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../mtiLib.html">mtiLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../otlLib/index.html">otlLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pens/index.html">pens</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../subset/index.html">subset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svgLib/index.html">svgLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../t1Lib.html">t1Lib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ttLib/index.html">ttLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ttx.html">ttx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ufoLib/index.html">ufoLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unicode.html">unicode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unicodedata/index.html">unicodedata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../varLib/index.html">varLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../voltLib.html">voltLib</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">fontTools</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">misc</a> &raquo;</li>
+        
+      <li>psCharStrings</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/misc/psCharStrings.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-fontTools.misc.psCharStrings">
+<span id="pscharstrings"></span><h1>psCharStrings<a class="headerlink" href="#module-fontTools.misc.psCharStrings" title="Permalink to this headline">¶</a></h1>
+<p>psCharStrings.py – module implementing various kinds of CharStrings:
+CFF dictionary data and Type1/Type2 CharStrings.</p>
+<dl class="py exception">
+<dt id="fontTools.misc.psCharStrings.CharStringCompileError">
+<em class="property">exception </em><code class="sig-prename descclassname">fontTools.misc.psCharStrings.</code><code class="sig-name descname">CharStringCompileError</code><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#CharStringCompileError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.CharStringCompileError" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py attribute">
+<dt id="fontTools.misc.psCharStrings.CharStringCompileError.args">
+<code class="sig-name descname">args</code><a class="headerlink" href="#fontTools.misc.psCharStrings.CharStringCompileError.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.CharStringCompileError.with_traceback">
+<code class="sig-name descname">with_traceback</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.CharStringCompileError.with_traceback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.misc.psCharStrings.DictDecompiler">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.misc.psCharStrings.</code><code class="sig-name descname">DictDecompiler</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">strings</span></em>, <em class="sig-param"><span class="n">parent</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#DictDecompiler"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.DictDecompiler" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.misc.psCharStrings.DictDecompiler.arg_SID">
+<code class="sig-name descname">arg_SID</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#DictDecompiler.arg_SID"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.DictDecompiler.arg_SID" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.DictDecompiler.arg_array">
+<code class="sig-name descname">arg_array</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#DictDecompiler.arg_array"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.DictDecompiler.arg_array" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.DictDecompiler.arg_blendList">
+<code class="sig-name descname">arg_blendList</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#DictDecompiler.arg_blendList"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.DictDecompiler.arg_blendList" title="Permalink to this definition">¶</a></dt>
+<dd><p>There may be non-blend args at the top of the stack. We first calculate
+where the blend args start in the stack. These are the last
+numMasters*numBlends) +1 args.
+The blend args starts with numMasters relative coordinate values, the  BlueValues in the list from the default master font. This is followed by
+numBlends list of values. Each of  value in one of these lists is the
+Variable Font delta for the matching region.</p>
+<p>We re-arrange this to be a list of numMaster entries. Each entry starts with the corresponding default font relative value, and is followed by
+the delta values. We then convert the default values, the first item in each entry, to an absolute value.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.DictDecompiler.arg_blend_number">
+<code class="sig-name descname">arg_blend_number</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#DictDecompiler.arg_blend_number"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.DictDecompiler.arg_blend_number" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.DictDecompiler.arg_delta">
+<code class="sig-name descname">arg_delta</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#DictDecompiler.arg_delta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.DictDecompiler.arg_delta" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.DictDecompiler.arg_number">
+<code class="sig-name descname">arg_number</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#DictDecompiler.arg_number"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.DictDecompiler.arg_number" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.DictDecompiler.decompile">
+<code class="sig-name descname">decompile</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#DictDecompiler.decompile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.DictDecompiler.decompile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.DictDecompiler.getDict">
+<code class="sig-name descname">getDict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#DictDecompiler.getDict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.DictDecompiler.getDict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.DictDecompiler.handle_operator">
+<code class="sig-name descname">handle_operator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">operator</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#DictDecompiler.handle_operator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.DictDecompiler.handle_operator" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.misc.psCharStrings.DictDecompiler.operandEncoding">
+<code class="sig-name descname">operandEncoding</code><em class="property"> = [&lt;function read_operator&gt;, &lt;function read_operator&gt;, &lt;function read_operator&gt;, &lt;function read_operator&gt;, &lt;function read_operator&gt;, &lt;function read_operator&gt;, &lt;function read_operator&gt;, &lt;function read_operator&gt;, &lt;function read_operator&gt;, &lt;function read_operator&gt;, &lt;function read_operator&gt;, &lt;function read_operator&gt;, &lt;function read_operator&gt;, &lt;function read_operator&gt;, &lt;function read_operator&gt;, &lt;function read_operator&gt;, &lt;function read_operator&gt;, &lt;function read_operator&gt;, &lt;function read_operator&gt;, &lt;function read_operator&gt;, &lt;function read_operator&gt;, &lt;function read_operator&gt;, &lt;function read_operator&gt;, &lt;function read_operator&gt;, &lt;function read_operator&gt;, &lt;function read_operator&gt;, &lt;function read_operator&gt;, &lt;function read_operator&gt;, &lt;function read_shortInt&gt;, &lt;function read_longInt&gt;, &lt;function read_realNumber&gt;, &lt;function read_operator&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_smallInt1&gt;, &lt;function read_smallInt1&gt;, &lt;function read_smallInt1&gt;, &lt;function read_smallInt1&gt;, &lt;function read_smallInt2&gt;, &lt;function read_smallInt2&gt;, &lt;function read_smallInt2&gt;, &lt;function read_smallInt2&gt;, &lt;function read_reserved&gt;]</em><a class="headerlink" href="#fontTools.misc.psCharStrings.DictDecompiler.operandEncoding" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.DictDecompiler.pop">
+<code class="sig-name descname">pop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#DictDecompiler.pop"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.DictDecompiler.pop" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.DictDecompiler.popall">
+<code class="sig-name descname">popall</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#DictDecompiler.popall"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.DictDecompiler.popall" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.misc.psCharStrings.SimpleT2Decompiler">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.misc.psCharStrings.</code><code class="sig-name descname">SimpleT2Decompiler</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">localSubrs</span></em>, <em class="sig-param"><span class="n">globalSubrs</span></em>, <em class="sig-param"><span class="n">private</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#SimpleT2Decompiler"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.SimpleT2Decompiler" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.misc.psCharStrings.SimpleT2Decompiler.countHints">
+<code class="sig-name descname">countHints</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#SimpleT2Decompiler.countHints"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.SimpleT2Decompiler.countHints" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.SimpleT2Decompiler.execute">
+<code class="sig-name descname">execute</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">charString</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#SimpleT2Decompiler.execute"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.SimpleT2Decompiler.execute" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.SimpleT2Decompiler.op_abs">
+<code class="sig-name descname">op_abs</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#SimpleT2Decompiler.op_abs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.SimpleT2Decompiler.op_abs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.SimpleT2Decompiler.op_add">
+<code class="sig-name descname">op_add</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#SimpleT2Decompiler.op_add"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.SimpleT2Decompiler.op_add" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.SimpleT2Decompiler.op_and">
+<code class="sig-name descname">op_and</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#SimpleT2Decompiler.op_and"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.SimpleT2Decompiler.op_and" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.SimpleT2Decompiler.op_blend">
+<code class="sig-name descname">op_blend</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#SimpleT2Decompiler.op_blend"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.SimpleT2Decompiler.op_blend" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.SimpleT2Decompiler.op_callgsubr">
+<code class="sig-name descname">op_callgsubr</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#SimpleT2Decompiler.op_callgsubr"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.SimpleT2Decompiler.op_callgsubr" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.SimpleT2Decompiler.op_callsubr">
+<code class="sig-name descname">op_callsubr</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#SimpleT2Decompiler.op_callsubr"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.SimpleT2Decompiler.op_callsubr" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.SimpleT2Decompiler.op_cntrmask">
+<code class="sig-name descname">op_cntrmask</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.SimpleT2Decompiler.op_cntrmask" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.SimpleT2Decompiler.op_div">
+<code class="sig-name descname">op_div</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#SimpleT2Decompiler.op_div"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.SimpleT2Decompiler.op_div" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.SimpleT2Decompiler.op_drop">
+<code class="sig-name descname">op_drop</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#SimpleT2Decompiler.op_drop"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.SimpleT2Decompiler.op_drop" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.SimpleT2Decompiler.op_dup">
+<code class="sig-name descname">op_dup</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#SimpleT2Decompiler.op_dup"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.SimpleT2Decompiler.op_dup" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.SimpleT2Decompiler.op_endchar">
+<code class="sig-name descname">op_endchar</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#SimpleT2Decompiler.op_endchar"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.SimpleT2Decompiler.op_endchar" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.SimpleT2Decompiler.op_eq">
+<code class="sig-name descname">op_eq</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#SimpleT2Decompiler.op_eq"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.SimpleT2Decompiler.op_eq" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.SimpleT2Decompiler.op_exch">
+<code class="sig-name descname">op_exch</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#SimpleT2Decompiler.op_exch"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.SimpleT2Decompiler.op_exch" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.SimpleT2Decompiler.op_get">
+<code class="sig-name descname">op_get</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#SimpleT2Decompiler.op_get"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.SimpleT2Decompiler.op_get" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.SimpleT2Decompiler.op_hintmask">
+<code class="sig-name descname">op_hintmask</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#SimpleT2Decompiler.op_hintmask"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.SimpleT2Decompiler.op_hintmask" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.SimpleT2Decompiler.op_hstem">
+<code class="sig-name descname">op_hstem</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#SimpleT2Decompiler.op_hstem"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.SimpleT2Decompiler.op_hstem" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.SimpleT2Decompiler.op_hstemhm">
+<code class="sig-name descname">op_hstemhm</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#SimpleT2Decompiler.op_hstemhm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.SimpleT2Decompiler.op_hstemhm" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.SimpleT2Decompiler.op_ifelse">
+<code class="sig-name descname">op_ifelse</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#SimpleT2Decompiler.op_ifelse"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.SimpleT2Decompiler.op_ifelse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.SimpleT2Decompiler.op_ignore">
+<code class="sig-name descname">op_ignore</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#SimpleT2Decompiler.op_ignore"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.SimpleT2Decompiler.op_ignore" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.SimpleT2Decompiler.op_index">
+<code class="sig-name descname">op_index</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#SimpleT2Decompiler.op_index"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.SimpleT2Decompiler.op_index" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.SimpleT2Decompiler.op_load">
+<code class="sig-name descname">op_load</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#SimpleT2Decompiler.op_load"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.SimpleT2Decompiler.op_load" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.SimpleT2Decompiler.op_mul">
+<code class="sig-name descname">op_mul</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#SimpleT2Decompiler.op_mul"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.SimpleT2Decompiler.op_mul" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.SimpleT2Decompiler.op_neg">
+<code class="sig-name descname">op_neg</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#SimpleT2Decompiler.op_neg"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.SimpleT2Decompiler.op_neg" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.SimpleT2Decompiler.op_not">
+<code class="sig-name descname">op_not</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#SimpleT2Decompiler.op_not"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.SimpleT2Decompiler.op_not" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.SimpleT2Decompiler.op_or">
+<code class="sig-name descname">op_or</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#SimpleT2Decompiler.op_or"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.SimpleT2Decompiler.op_or" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.SimpleT2Decompiler.op_put">
+<code class="sig-name descname">op_put</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#SimpleT2Decompiler.op_put"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.SimpleT2Decompiler.op_put" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.SimpleT2Decompiler.op_random">
+<code class="sig-name descname">op_random</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#SimpleT2Decompiler.op_random"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.SimpleT2Decompiler.op_random" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.SimpleT2Decompiler.op_return">
+<code class="sig-name descname">op_return</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#SimpleT2Decompiler.op_return"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.SimpleT2Decompiler.op_return" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.SimpleT2Decompiler.op_roll">
+<code class="sig-name descname">op_roll</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#SimpleT2Decompiler.op_roll"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.SimpleT2Decompiler.op_roll" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.SimpleT2Decompiler.op_sqrt">
+<code class="sig-name descname">op_sqrt</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#SimpleT2Decompiler.op_sqrt"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.SimpleT2Decompiler.op_sqrt" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.SimpleT2Decompiler.op_store">
+<code class="sig-name descname">op_store</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#SimpleT2Decompiler.op_store"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.SimpleT2Decompiler.op_store" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.SimpleT2Decompiler.op_sub">
+<code class="sig-name descname">op_sub</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#SimpleT2Decompiler.op_sub"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.SimpleT2Decompiler.op_sub" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.SimpleT2Decompiler.op_vsindex">
+<code class="sig-name descname">op_vsindex</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#SimpleT2Decompiler.op_vsindex"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.SimpleT2Decompiler.op_vsindex" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.SimpleT2Decompiler.op_vstem">
+<code class="sig-name descname">op_vstem</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#SimpleT2Decompiler.op_vstem"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.SimpleT2Decompiler.op_vstem" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.SimpleT2Decompiler.op_vstemhm">
+<code class="sig-name descname">op_vstemhm</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#SimpleT2Decompiler.op_vstemhm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.SimpleT2Decompiler.op_vstemhm" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.SimpleT2Decompiler.pop">
+<code class="sig-name descname">pop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#SimpleT2Decompiler.pop"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.SimpleT2Decompiler.pop" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.SimpleT2Decompiler.popall">
+<code class="sig-name descname">popall</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#SimpleT2Decompiler.popall"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.SimpleT2Decompiler.popall" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.SimpleT2Decompiler.push">
+<code class="sig-name descname">push</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#SimpleT2Decompiler.push"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.SimpleT2Decompiler.push" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.SimpleT2Decompiler.reset">
+<code class="sig-name descname">reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#SimpleT2Decompiler.reset"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.SimpleT2Decompiler.reset" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.misc.psCharStrings.T1CharString">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.misc.psCharStrings.</code><code class="sig-name descname">T1CharString</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">bytecode</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">program</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">subrs</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T1CharString"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T1CharString" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T1CharString.calcBounds">
+<code class="sig-name descname">calcBounds</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">glyphSet</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T1CharString.calcBounds" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T1CharString.compile">
+<code class="sig-name descname">compile</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">isCFF2</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T1CharString.compile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T1CharString.decompile">
+<code class="sig-name descname">decompile</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T1CharString.decompile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T1CharString.decompile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.misc.psCharStrings.T1CharString.decompilerClass">
+<code class="sig-name descname">decompilerClass</code><a class="headerlink" href="#fontTools.misc.psCharStrings.T1CharString.decompilerClass" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#fontTools.misc.psCharStrings.SimpleT2Decompiler" title="fontTools.misc.psCharStrings.SimpleT2Decompiler"><code class="xref py py-class docutils literal notranslate"><span class="pre">SimpleT2Decompiler</span></code></a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T1CharString.draw">
+<code class="sig-name descname">draw</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pen</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T1CharString.draw"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T1CharString.draw" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T1CharString.fromXML">
+<code class="sig-name descname">fromXML</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">attrs</span></em>, <em class="sig-param"><span class="n">content</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T1CharString.fromXML" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T1CharString.getBytes">
+<code class="sig-name descname">getBytes</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em>, <em class="sig-param"><span class="n">nBytes</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T1CharString.getBytes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T1CharString.getFixedEncoder">
+<code class="sig-name descname">getFixedEncoder</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T1CharString.getFixedEncoder"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T1CharString.getFixedEncoder" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T1CharString.getIntEncoder">
+<code class="sig-name descname">getIntEncoder</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T1CharString.getIntEncoder"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T1CharString.getIntEncoder" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T1CharString.getNumRegions">
+<code class="sig-name descname">getNumRegions</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vsindex</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T1CharString.getNumRegions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T1CharString.getToken">
+<code class="sig-name descname">getToken</code><span class="sig-paren">(</span><em class="sig-param">index</em>, <em class="sig-param">len=&lt;built-in function len&gt;</em>, <em class="sig-param">byteord=&lt;function byteord&gt;</em>, <em class="sig-param">basestring=&lt;class 'str'&gt;</em>, <em class="sig-param">isinstance=&lt;built-in function isinstance&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T1CharString.getToken" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T1CharString.handle_operator">
+<code class="sig-name descname">handle_operator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">operator</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T1CharString.handle_operator" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T1CharString.needsDecompilation">
+<code class="sig-name descname">needsDecompilation</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T1CharString.needsDecompilation" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.misc.psCharStrings.T1CharString.opcodes">
+<code class="sig-name descname">opcodes</code><em class="property"> = {'callothersubr': (12, 16), 'callsubr': (10,), 'closepath': (9,), 'div': (12, 12), 'dotsection': (12, 0), 'endchar': (14,), 'hlineto': (6,), 'hmoveto': (22,), 'hsbw': (13,), 'hstem': (1,), 'hstem3': (12, 2), 'hvcurveto': (31,), 'pop': (12, 17), 'return': (11,), 'rlineto': (5,), 'rmoveto': (21,), 'rrcurveto': (8,), 'sbw': (12, 7), 'seac': (12, 6), 'setcurrentpoint': (12, 33), 'vhcurveto': (30,), 'vlineto': (7,), 'vmoveto': (4,), 'vstem': (3,), 'vstem3': (12, 1)}</em><a class="headerlink" href="#fontTools.misc.psCharStrings.T1CharString.opcodes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.misc.psCharStrings.T1CharString.operandEncoding">
+<code class="sig-name descname">operandEncoding</code><em class="property"> = [&lt;function read_operator&gt;, &lt;function read_operator&gt;, &lt;function read_operator&gt;, &lt;function read_operator&gt;, &lt;function read_operator&gt;, &lt;function read_operator&gt;, &lt;function read_operator&gt;, &lt;function read_operator&gt;, &lt;function read_operator&gt;, &lt;function read_operator&gt;, &lt;function read_operator&gt;, &lt;function read_operator&gt;, &lt;function read_operator&gt;, &lt;function read_operator&gt;, &lt;function read_operator&gt;, &lt;function read_operator&gt;, &lt;function read_operator&gt;, &lt;function read_operator&gt;, &lt;function read_operator&gt;, &lt;function read_operator&gt;, &lt;function read_operator&gt;, &lt;function read_operator&gt;, &lt;function read_operator&gt;, &lt;function read_operator&gt;, &lt;function read_operator&gt;, &lt;function read_operator&gt;, &lt;function read_operator&gt;, &lt;function read_operator&gt;, &lt;function read_operator&gt;, &lt;function read_operator&gt;, &lt;function read_operator&gt;, &lt;function read_operator&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_smallInt1&gt;, &lt;function read_smallInt1&gt;, &lt;function read_smallInt1&gt;, &lt;function read_smallInt1&gt;, &lt;function read_smallInt2&gt;, &lt;function read_smallInt2&gt;, &lt;function read_smallInt2&gt;, &lt;function read_smallInt2&gt;, &lt;function read_longInt&gt;]</em><a class="headerlink" href="#fontTools.misc.psCharStrings.T1CharString.operandEncoding" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.misc.psCharStrings.T1CharString.operators">
+<code class="sig-name descname">operators</code><em class="property"> = {1: 'hstem', 3: 'vstem', 4: 'vmoveto', 5: 'rlineto', 6: 'hlineto', 7: 'vlineto', 8: 'rrcurveto', 9: 'closepath', 10: 'callsubr', 11: 'return', 13: 'hsbw', 14: 'endchar', 21: 'rmoveto', 22: 'hmoveto', 30: 'vhcurveto', 31: 'hvcurveto', (12, 0): 'dotsection', (12, 1): 'vstem3', (12, 2): 'hstem3', (12, 6): 'seac', (12, 7): 'sbw', (12, 12): 'div', (12, 16): 'callothersubr', (12, 17): 'pop', (12, 33): 'setcurrentpoint'}</em><a class="headerlink" href="#fontTools.misc.psCharStrings.T1CharString.operators" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.misc.psCharStrings.T1CharString.outlineExtractor">
+<code class="sig-name descname">outlineExtractor</code><a class="headerlink" href="#fontTools.misc.psCharStrings.T1CharString.outlineExtractor" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#fontTools.misc.psCharStrings.T2OutlineExtractor" title="fontTools.misc.psCharStrings.T2OutlineExtractor"><code class="xref py py-class docutils literal notranslate"><span class="pre">T2OutlineExtractor</span></code></a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T1CharString.setBytecode">
+<code class="sig-name descname">setBytecode</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">bytecode</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T1CharString.setBytecode" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T1CharString.setProgram">
+<code class="sig-name descname">setProgram</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">program</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T1CharString.setProgram" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T1CharString.toXML">
+<code class="sig-name descname">toXML</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">xmlWriter</span></em>, <em class="sig-param"><span class="n">ttFont</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T1CharString.toXML" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.misc.psCharStrings.T1OutlineExtractor">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.misc.psCharStrings.</code><code class="sig-name descname">T1OutlineExtractor</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pen</span></em>, <em class="sig-param"><span class="n">subrs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T1OutlineExtractor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T1OutlineExtractor" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T1OutlineExtractor.alternatingLineto">
+<code class="sig-name descname">alternatingLineto</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">isHorizontal</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T1OutlineExtractor.alternatingLineto" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T1OutlineExtractor.closePath">
+<code class="sig-name descname">closePath</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T1OutlineExtractor.closePath" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T1OutlineExtractor.countHints">
+<code class="sig-name descname">countHints</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T1OutlineExtractor.countHints" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T1OutlineExtractor.doFlex">
+<code class="sig-name descname">doFlex</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T1OutlineExtractor.doFlex"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T1OutlineExtractor.doFlex" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T1OutlineExtractor.endPath">
+<code class="sig-name descname">endPath</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T1OutlineExtractor.endPath"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T1OutlineExtractor.endPath" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T1OutlineExtractor.exch">
+<code class="sig-name descname">exch</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T1OutlineExtractor.exch"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T1OutlineExtractor.exch" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T1OutlineExtractor.execute">
+<code class="sig-name descname">execute</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">charString</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T1OutlineExtractor.execute" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T1OutlineExtractor.hcurveto">
+<code class="sig-name descname">hcurveto</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T1OutlineExtractor.hcurveto" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T1OutlineExtractor.op_abs">
+<code class="sig-name descname">op_abs</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T1OutlineExtractor.op_abs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T1OutlineExtractor.op_add">
+<code class="sig-name descname">op_add</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T1OutlineExtractor.op_add" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T1OutlineExtractor.op_and">
+<code class="sig-name descname">op_and</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T1OutlineExtractor.op_and" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T1OutlineExtractor.op_blend">
+<code class="sig-name descname">op_blend</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T1OutlineExtractor.op_blend" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T1OutlineExtractor.op_callgsubr">
+<code class="sig-name descname">op_callgsubr</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T1OutlineExtractor.op_callgsubr" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T1OutlineExtractor.op_callothersubr">
+<code class="sig-name descname">op_callothersubr</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T1OutlineExtractor.op_callothersubr"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T1OutlineExtractor.op_callothersubr" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T1OutlineExtractor.op_callsubr">
+<code class="sig-name descname">op_callsubr</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T1OutlineExtractor.op_callsubr"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T1OutlineExtractor.op_callsubr" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T1OutlineExtractor.op_closepath">
+<code class="sig-name descname">op_closepath</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T1OutlineExtractor.op_closepath"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T1OutlineExtractor.op_closepath" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T1OutlineExtractor.op_cntrmask">
+<code class="sig-name descname">op_cntrmask</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T1OutlineExtractor.op_cntrmask" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T1OutlineExtractor.op_div">
+<code class="sig-name descname">op_div</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T1OutlineExtractor.op_div" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T1OutlineExtractor.op_dotsection">
+<code class="sig-name descname">op_dotsection</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T1OutlineExtractor.op_dotsection"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T1OutlineExtractor.op_dotsection" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T1OutlineExtractor.op_drop">
+<code class="sig-name descname">op_drop</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T1OutlineExtractor.op_drop" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T1OutlineExtractor.op_dup">
+<code class="sig-name descname">op_dup</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T1OutlineExtractor.op_dup" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T1OutlineExtractor.op_endchar">
+<code class="sig-name descname">op_endchar</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T1OutlineExtractor.op_endchar"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T1OutlineExtractor.op_endchar" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T1OutlineExtractor.op_eq">
+<code class="sig-name descname">op_eq</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T1OutlineExtractor.op_eq" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T1OutlineExtractor.op_exch">
+<code class="sig-name descname">op_exch</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T1OutlineExtractor.op_exch" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T1OutlineExtractor.op_flex">
+<code class="sig-name descname">op_flex</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T1OutlineExtractor.op_flex" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T1OutlineExtractor.op_flex1">
+<code class="sig-name descname">op_flex1</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T1OutlineExtractor.op_flex1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T1OutlineExtractor.op_get">
+<code class="sig-name descname">op_get</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T1OutlineExtractor.op_get" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T1OutlineExtractor.op_hflex">
+<code class="sig-name descname">op_hflex</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T1OutlineExtractor.op_hflex" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T1OutlineExtractor.op_hflex1">
+<code class="sig-name descname">op_hflex1</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T1OutlineExtractor.op_hflex1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T1OutlineExtractor.op_hhcurveto">
+<code class="sig-name descname">op_hhcurveto</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T1OutlineExtractor.op_hhcurveto" title="Permalink to this definition">¶</a></dt>
+<dd><p>dy1? {dxa dxb dyb dxc}+ hhcurveto</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T1OutlineExtractor.op_hintmask">
+<code class="sig-name descname">op_hintmask</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T1OutlineExtractor.op_hintmask" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T1OutlineExtractor.op_hlineto">
+<code class="sig-name descname">op_hlineto</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T1OutlineExtractor.op_hlineto" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T1OutlineExtractor.op_hmoveto">
+<code class="sig-name descname">op_hmoveto</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T1OutlineExtractor.op_hmoveto"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T1OutlineExtractor.op_hmoveto" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T1OutlineExtractor.op_hsbw">
+<code class="sig-name descname">op_hsbw</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T1OutlineExtractor.op_hsbw"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T1OutlineExtractor.op_hsbw" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T1OutlineExtractor.op_hstem">
+<code class="sig-name descname">op_hstem</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T1OutlineExtractor.op_hstem" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T1OutlineExtractor.op_hstem3">
+<code class="sig-name descname">op_hstem3</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T1OutlineExtractor.op_hstem3"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T1OutlineExtractor.op_hstem3" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T1OutlineExtractor.op_hstemhm">
+<code class="sig-name descname">op_hstemhm</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T1OutlineExtractor.op_hstemhm" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T1OutlineExtractor.op_hvcurveto">
+<code class="sig-name descname">op_hvcurveto</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T1OutlineExtractor.op_hvcurveto" title="Permalink to this definition">¶</a></dt>
+<dd><p>dx1 dx2 dy2 dy3 {dya dxb dyb dxc dxd dxe dye dyf}* dxf?
+{dxa dxb dyb dyc dyd dxe dye dxf}+ dyf?</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T1OutlineExtractor.op_ifelse">
+<code class="sig-name descname">op_ifelse</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T1OutlineExtractor.op_ifelse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T1OutlineExtractor.op_ignore">
+<code class="sig-name descname">op_ignore</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T1OutlineExtractor.op_ignore" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T1OutlineExtractor.op_index">
+<code class="sig-name descname">op_index</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T1OutlineExtractor.op_index" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T1OutlineExtractor.op_load">
+<code class="sig-name descname">op_load</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T1OutlineExtractor.op_load" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T1OutlineExtractor.op_mul">
+<code class="sig-name descname">op_mul</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T1OutlineExtractor.op_mul" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T1OutlineExtractor.op_neg">
+<code class="sig-name descname">op_neg</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T1OutlineExtractor.op_neg" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T1OutlineExtractor.op_not">
+<code class="sig-name descname">op_not</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T1OutlineExtractor.op_not" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T1OutlineExtractor.op_or">
+<code class="sig-name descname">op_or</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T1OutlineExtractor.op_or" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T1OutlineExtractor.op_pop">
+<code class="sig-name descname">op_pop</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T1OutlineExtractor.op_pop"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T1OutlineExtractor.op_pop" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T1OutlineExtractor.op_put">
+<code class="sig-name descname">op_put</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T1OutlineExtractor.op_put" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T1OutlineExtractor.op_random">
+<code class="sig-name descname">op_random</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T1OutlineExtractor.op_random" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T1OutlineExtractor.op_rcurveline">
+<code class="sig-name descname">op_rcurveline</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T1OutlineExtractor.op_rcurveline" title="Permalink to this definition">¶</a></dt>
+<dd><p>{dxa dya dxb dyb dxc dyc}+ dxd dyd rcurveline</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T1OutlineExtractor.op_return">
+<code class="sig-name descname">op_return</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T1OutlineExtractor.op_return" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T1OutlineExtractor.op_rlinecurve">
+<code class="sig-name descname">op_rlinecurve</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T1OutlineExtractor.op_rlinecurve" title="Permalink to this definition">¶</a></dt>
+<dd><p>{dxa dya}+ dxb dyb dxc dyc dxd dyd rlinecurve</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T1OutlineExtractor.op_rlineto">
+<code class="sig-name descname">op_rlineto</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T1OutlineExtractor.op_rlineto" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T1OutlineExtractor.op_rmoveto">
+<code class="sig-name descname">op_rmoveto</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T1OutlineExtractor.op_rmoveto"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T1OutlineExtractor.op_rmoveto" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T1OutlineExtractor.op_roll">
+<code class="sig-name descname">op_roll</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T1OutlineExtractor.op_roll" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T1OutlineExtractor.op_rrcurveto">
+<code class="sig-name descname">op_rrcurveto</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T1OutlineExtractor.op_rrcurveto" title="Permalink to this definition">¶</a></dt>
+<dd><p>{dxa dya dxb dyb dxc dyc}+ rrcurveto</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T1OutlineExtractor.op_sbw">
+<code class="sig-name descname">op_sbw</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T1OutlineExtractor.op_sbw"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T1OutlineExtractor.op_sbw" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T1OutlineExtractor.op_seac">
+<code class="sig-name descname">op_seac</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T1OutlineExtractor.op_seac"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T1OutlineExtractor.op_seac" title="Permalink to this definition">¶</a></dt>
+<dd><p>asb adx ady bchar achar seac</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T1OutlineExtractor.op_setcurrentpoint">
+<code class="sig-name descname">op_setcurrentpoint</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T1OutlineExtractor.op_setcurrentpoint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T1OutlineExtractor.op_setcurrentpoint" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T1OutlineExtractor.op_sqrt">
+<code class="sig-name descname">op_sqrt</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T1OutlineExtractor.op_sqrt" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T1OutlineExtractor.op_store">
+<code class="sig-name descname">op_store</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T1OutlineExtractor.op_store" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T1OutlineExtractor.op_sub">
+<code class="sig-name descname">op_sub</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T1OutlineExtractor.op_sub" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T1OutlineExtractor.op_vhcurveto">
+<code class="sig-name descname">op_vhcurveto</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T1OutlineExtractor.op_vhcurveto" title="Permalink to this definition">¶</a></dt>
+<dd><p>dy1 dx2 dy2 dx3 {dxa dxb dyb dyc dyd dxe dye dxf}* dyf? vhcurveto (30)
+{dya dxb dyb dxc dxd dxe dye dyf}+ dxf? vhcurveto</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T1OutlineExtractor.op_vlineto">
+<code class="sig-name descname">op_vlineto</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T1OutlineExtractor.op_vlineto" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T1OutlineExtractor.op_vmoveto">
+<code class="sig-name descname">op_vmoveto</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T1OutlineExtractor.op_vmoveto"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T1OutlineExtractor.op_vmoveto" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T1OutlineExtractor.op_vsindex">
+<code class="sig-name descname">op_vsindex</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T1OutlineExtractor.op_vsindex" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T1OutlineExtractor.op_vstem">
+<code class="sig-name descname">op_vstem</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T1OutlineExtractor.op_vstem" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T1OutlineExtractor.op_vstem3">
+<code class="sig-name descname">op_vstem3</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T1OutlineExtractor.op_vstem3"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T1OutlineExtractor.op_vstem3" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T1OutlineExtractor.op_vstemhm">
+<code class="sig-name descname">op_vstemhm</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T1OutlineExtractor.op_vstemhm" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T1OutlineExtractor.op_vvcurveto">
+<code class="sig-name descname">op_vvcurveto</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T1OutlineExtractor.op_vvcurveto" title="Permalink to this definition">¶</a></dt>
+<dd><p>dx1? {dya dxb dyb dyc}+ vvcurveto</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T1OutlineExtractor.pop">
+<code class="sig-name descname">pop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T1OutlineExtractor.pop" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T1OutlineExtractor.popall">
+<code class="sig-name descname">popall</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T1OutlineExtractor.popall" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T1OutlineExtractor.popallWidth">
+<code class="sig-name descname">popallWidth</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">evenOdd</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T1OutlineExtractor.popallWidth"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T1OutlineExtractor.popallWidth" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T1OutlineExtractor.push">
+<code class="sig-name descname">push</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T1OutlineExtractor.push" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T1OutlineExtractor.rCurveTo">
+<code class="sig-name descname">rCurveTo</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pt1</span></em>, <em class="sig-param"><span class="n">pt2</span></em>, <em class="sig-param"><span class="n">pt3</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T1OutlineExtractor.rCurveTo" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T1OutlineExtractor.rLineTo">
+<code class="sig-name descname">rLineTo</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">point</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T1OutlineExtractor.rLineTo" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T1OutlineExtractor.rMoveTo">
+<code class="sig-name descname">rMoveTo</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">point</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T1OutlineExtractor.rMoveTo" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T1OutlineExtractor.reset">
+<code class="sig-name descname">reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T1OutlineExtractor.reset"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T1OutlineExtractor.reset" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T1OutlineExtractor.vcurveto">
+<code class="sig-name descname">vcurveto</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T1OutlineExtractor.vcurveto" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.misc.psCharStrings.T2CharString">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.misc.psCharStrings.</code><code class="sig-name descname">T2CharString</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">bytecode</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">program</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">private</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">globalSubrs</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T2CharString"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T2CharString" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2CharString.calcBounds">
+<code class="sig-name descname">calcBounds</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">glyphSet</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T2CharString.calcBounds"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T2CharString.calcBounds" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2CharString.compile">
+<code class="sig-name descname">compile</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">isCFF2</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T2CharString.compile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T2CharString.compile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2CharString.decompile">
+<code class="sig-name descname">decompile</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T2CharString.decompile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T2CharString.decompile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.misc.psCharStrings.T2CharString.decompilerClass">
+<code class="sig-name descname">decompilerClass</code><a class="headerlink" href="#fontTools.misc.psCharStrings.T2CharString.decompilerClass" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#fontTools.misc.psCharStrings.SimpleT2Decompiler" title="fontTools.misc.psCharStrings.SimpleT2Decompiler"><code class="xref py py-class docutils literal notranslate"><span class="pre">SimpleT2Decompiler</span></code></a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2CharString.draw">
+<code class="sig-name descname">draw</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pen</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T2CharString.draw"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T2CharString.draw" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2CharString.fromXML">
+<code class="sig-name descname">fromXML</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">attrs</span></em>, <em class="sig-param"><span class="n">content</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T2CharString.fromXML"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T2CharString.fromXML" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2CharString.getBytes">
+<code class="sig-name descname">getBytes</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em>, <em class="sig-param"><span class="n">nBytes</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T2CharString.getBytes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T2CharString.getBytes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2CharString.getFixedEncoder">
+<code class="sig-name descname">getFixedEncoder</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T2CharString.getFixedEncoder"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T2CharString.getFixedEncoder" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2CharString.getIntEncoder">
+<code class="sig-name descname">getIntEncoder</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T2CharString.getIntEncoder"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T2CharString.getIntEncoder" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2CharString.getNumRegions">
+<code class="sig-name descname">getNumRegions</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vsindex</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T2CharString.getNumRegions"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T2CharString.getNumRegions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2CharString.getToken">
+<code class="sig-name descname">getToken</code><span class="sig-paren">(</span><em class="sig-param">index</em>, <em class="sig-param">len=&lt;built-in function len&gt;</em>, <em class="sig-param">byteord=&lt;function byteord&gt;</em>, <em class="sig-param">basestring=&lt;class 'str'&gt;</em>, <em class="sig-param">isinstance=&lt;built-in function isinstance&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T2CharString.getToken"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T2CharString.getToken" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2CharString.handle_operator">
+<code class="sig-name descname">handle_operator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">operator</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T2CharString.handle_operator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T2CharString.handle_operator" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2CharString.needsDecompilation">
+<code class="sig-name descname">needsDecompilation</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T2CharString.needsDecompilation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T2CharString.needsDecompilation" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.misc.psCharStrings.T2CharString.opcodes">
+<code class="sig-name descname">opcodes</code><em class="property"> = {'abs': (12, 9), 'add': (12, 10), 'and': (12, 3), 'blend': (16,), 'callgsubr': (29,), 'callsubr': (10,), 'cntrmask': (20,), 'div': (12, 12), 'drop': (12, 18), 'dup': (12, 27), 'endchar': (14,), 'eq': (12, 15), 'exch': (12, 28), 'flex': (12, 35), 'flex1': (12, 37), 'get': (12, 21), 'hflex': (12, 34), 'hflex1': (12, 36), 'hhcurveto': (27,), 'hintmask': (19,), 'hlineto': (6,), 'hmoveto': (22,), 'hstem': (1,), 'hstemhm': (18,), 'hvcurveto': (31,), 'ifelse': (12, 22), 'ignore': (12, 0), 'index': (12, 29), 'load': (12, 13), 'mul': (12, 24), 'neg': (12, 14), 'not': (12, 5), 'or': (12, 4), 'put': (12, 20), 'random': (12, 23), 'rcurveline': (24,), 'return': (11,), 'rlinecurve': (25,), 'rlineto': (5,), 'rmoveto': (21,), 'roll': (12, 30), 'rrcurveto': (8,), 'sqrt': (12, 26), 'store': (12, 8), 'sub': (12, 11), 'vhcurveto': (30,), 'vlineto': (7,), 'vmoveto': (4,), 'vsindex': (15,), 'vstem': (3,), 'vstemhm': (23,), 'vvcurveto': (26,)}</em><a class="headerlink" href="#fontTools.misc.psCharStrings.T2CharString.opcodes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.misc.psCharStrings.T2CharString.operandEncoding">
+<code class="sig-name descname">operandEncoding</code><em class="property"> = [&lt;function read_operator&gt;, &lt;function read_operator&gt;, &lt;function read_operator&gt;, &lt;function read_operator&gt;, &lt;function read_operator&gt;, &lt;function read_operator&gt;, &lt;function read_operator&gt;, &lt;function read_operator&gt;, &lt;function read_operator&gt;, &lt;function read_operator&gt;, &lt;function read_operator&gt;, &lt;function read_operator&gt;, &lt;function read_operator&gt;, &lt;function read_operator&gt;, &lt;function read_operator&gt;, &lt;function read_operator&gt;, &lt;function read_operator&gt;, &lt;function read_operator&gt;, &lt;function read_operator&gt;, &lt;function read_operator&gt;, &lt;function read_operator&gt;, &lt;function read_operator&gt;, &lt;function read_operator&gt;, &lt;function read_operator&gt;, &lt;function read_operator&gt;, &lt;function read_operator&gt;, &lt;function read_operator&gt;, &lt;function read_operator&gt;, &lt;function read_shortInt&gt;, &lt;function read_operator&gt;, &lt;function read_operator&gt;, &lt;function read_operator&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_byte&gt;, &lt;function read_smallInt1&gt;, &lt;function read_smallInt1&gt;, &lt;function read_smallInt1&gt;, &lt;function read_smallInt1&gt;, &lt;function read_smallInt2&gt;, &lt;function read_smallInt2&gt;, &lt;function read_smallInt2&gt;, &lt;function read_smallInt2&gt;, &lt;function read_fixed1616&gt;]</em><a class="headerlink" href="#fontTools.misc.psCharStrings.T2CharString.operandEncoding" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.misc.psCharStrings.T2CharString.operators">
+<code class="sig-name descname">operators</code><em class="property"> = {1: 'hstem', 3: 'vstem', 4: 'vmoveto', 5: 'rlineto', 6: 'hlineto', 7: 'vlineto', 8: 'rrcurveto', 10: 'callsubr', 11: 'return', 14: 'endchar', 15: 'vsindex', 16: 'blend', 18: 'hstemhm', 19: 'hintmask', 20: 'cntrmask', 21: 'rmoveto', 22: 'hmoveto', 23: 'vstemhm', 24: 'rcurveline', 25: 'rlinecurve', 26: 'vvcurveto', 27: 'hhcurveto', 29: 'callgsubr', 30: 'vhcurveto', 31: 'hvcurveto', (12, 0): 'ignore', (12, 3): 'and', (12, 4): 'or', (12, 5): 'not', (12, 8): 'store', (12, 9): 'abs', (12, 10): 'add', (12, 11): 'sub', (12, 12): 'div', (12, 13): 'load', (12, 14): 'neg', (12, 15): 'eq', (12, 18): 'drop', (12, 20): 'put', (12, 21): 'get', (12, 22): 'ifelse', (12, 23): 'random', (12, 24): 'mul', (12, 26): 'sqrt', (12, 27): 'dup', (12, 28): 'exch', (12, 29): 'index', (12, 30): 'roll', (12, 34): 'hflex', (12, 35): 'flex', (12, 36): 'hflex1', (12, 37): 'flex1'}</em><a class="headerlink" href="#fontTools.misc.psCharStrings.T2CharString.operators" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.misc.psCharStrings.T2CharString.outlineExtractor">
+<code class="sig-name descname">outlineExtractor</code><a class="headerlink" href="#fontTools.misc.psCharStrings.T2CharString.outlineExtractor" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#fontTools.misc.psCharStrings.T2OutlineExtractor" title="fontTools.misc.psCharStrings.T2OutlineExtractor"><code class="xref py py-class docutils literal notranslate"><span class="pre">T2OutlineExtractor</span></code></a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2CharString.setBytecode">
+<code class="sig-name descname">setBytecode</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">bytecode</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T2CharString.setBytecode"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T2CharString.setBytecode" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2CharString.setProgram">
+<code class="sig-name descname">setProgram</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">program</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T2CharString.setProgram"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T2CharString.setProgram" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2CharString.toXML">
+<code class="sig-name descname">toXML</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">xmlWriter</span></em>, <em class="sig-param"><span class="n">ttFont</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T2CharString.toXML"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T2CharString.toXML" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.misc.psCharStrings.T2OutlineExtractor">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.misc.psCharStrings.</code><code class="sig-name descname">T2OutlineExtractor</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pen</span></em>, <em class="sig-param"><span class="n">localSubrs</span></em>, <em class="sig-param"><span class="n">globalSubrs</span></em>, <em class="sig-param"><span class="n">nominalWidthX</span></em>, <em class="sig-param"><span class="n">defaultWidthX</span></em>, <em class="sig-param"><span class="n">private</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T2OutlineExtractor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T2OutlineExtractor" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2OutlineExtractor.alternatingLineto">
+<code class="sig-name descname">alternatingLineto</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">isHorizontal</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T2OutlineExtractor.alternatingLineto"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T2OutlineExtractor.alternatingLineto" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2OutlineExtractor.closePath">
+<code class="sig-name descname">closePath</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T2OutlineExtractor.closePath"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T2OutlineExtractor.closePath" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2OutlineExtractor.countHints">
+<code class="sig-name descname">countHints</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T2OutlineExtractor.countHints" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2OutlineExtractor.endPath">
+<code class="sig-name descname">endPath</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T2OutlineExtractor.endPath"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T2OutlineExtractor.endPath" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2OutlineExtractor.execute">
+<code class="sig-name descname">execute</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">charString</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T2OutlineExtractor.execute" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2OutlineExtractor.hcurveto">
+<code class="sig-name descname">hcurveto</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">args</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T2OutlineExtractor.hcurveto"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T2OutlineExtractor.hcurveto" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2OutlineExtractor.op_abs">
+<code class="sig-name descname">op_abs</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T2OutlineExtractor.op_abs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T2OutlineExtractor.op_abs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2OutlineExtractor.op_add">
+<code class="sig-name descname">op_add</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T2OutlineExtractor.op_add"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T2OutlineExtractor.op_add" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2OutlineExtractor.op_and">
+<code class="sig-name descname">op_and</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T2OutlineExtractor.op_and"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T2OutlineExtractor.op_and" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2OutlineExtractor.op_blend">
+<code class="sig-name descname">op_blend</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T2OutlineExtractor.op_blend" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2OutlineExtractor.op_callgsubr">
+<code class="sig-name descname">op_callgsubr</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T2OutlineExtractor.op_callgsubr" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2OutlineExtractor.op_callsubr">
+<code class="sig-name descname">op_callsubr</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T2OutlineExtractor.op_callsubr" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2OutlineExtractor.op_cntrmask">
+<code class="sig-name descname">op_cntrmask</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T2OutlineExtractor.op_cntrmask" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2OutlineExtractor.op_div">
+<code class="sig-name descname">op_div</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T2OutlineExtractor.op_div"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T2OutlineExtractor.op_div" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2OutlineExtractor.op_drop">
+<code class="sig-name descname">op_drop</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T2OutlineExtractor.op_drop"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T2OutlineExtractor.op_drop" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2OutlineExtractor.op_dup">
+<code class="sig-name descname">op_dup</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T2OutlineExtractor.op_dup"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T2OutlineExtractor.op_dup" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2OutlineExtractor.op_endchar">
+<code class="sig-name descname">op_endchar</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T2OutlineExtractor.op_endchar"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T2OutlineExtractor.op_endchar" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2OutlineExtractor.op_eq">
+<code class="sig-name descname">op_eq</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T2OutlineExtractor.op_eq"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T2OutlineExtractor.op_eq" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2OutlineExtractor.op_exch">
+<code class="sig-name descname">op_exch</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T2OutlineExtractor.op_exch"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T2OutlineExtractor.op_exch" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2OutlineExtractor.op_flex">
+<code class="sig-name descname">op_flex</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T2OutlineExtractor.op_flex"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T2OutlineExtractor.op_flex" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2OutlineExtractor.op_flex1">
+<code class="sig-name descname">op_flex1</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T2OutlineExtractor.op_flex1"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T2OutlineExtractor.op_flex1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2OutlineExtractor.op_get">
+<code class="sig-name descname">op_get</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T2OutlineExtractor.op_get"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T2OutlineExtractor.op_get" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2OutlineExtractor.op_hflex">
+<code class="sig-name descname">op_hflex</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T2OutlineExtractor.op_hflex"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T2OutlineExtractor.op_hflex" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2OutlineExtractor.op_hflex1">
+<code class="sig-name descname">op_hflex1</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T2OutlineExtractor.op_hflex1"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T2OutlineExtractor.op_hflex1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2OutlineExtractor.op_hhcurveto">
+<code class="sig-name descname">op_hhcurveto</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T2OutlineExtractor.op_hhcurveto"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T2OutlineExtractor.op_hhcurveto" title="Permalink to this definition">¶</a></dt>
+<dd><p>dy1? {dxa dxb dyb dxc}+ hhcurveto</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2OutlineExtractor.op_hintmask">
+<code class="sig-name descname">op_hintmask</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T2OutlineExtractor.op_hintmask" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2OutlineExtractor.op_hlineto">
+<code class="sig-name descname">op_hlineto</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T2OutlineExtractor.op_hlineto"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T2OutlineExtractor.op_hlineto" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2OutlineExtractor.op_hmoveto">
+<code class="sig-name descname">op_hmoveto</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T2OutlineExtractor.op_hmoveto"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T2OutlineExtractor.op_hmoveto" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2OutlineExtractor.op_hstem">
+<code class="sig-name descname">op_hstem</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T2OutlineExtractor.op_hstem" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2OutlineExtractor.op_hstemhm">
+<code class="sig-name descname">op_hstemhm</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T2OutlineExtractor.op_hstemhm" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2OutlineExtractor.op_hvcurveto">
+<code class="sig-name descname">op_hvcurveto</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T2OutlineExtractor.op_hvcurveto"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T2OutlineExtractor.op_hvcurveto" title="Permalink to this definition">¶</a></dt>
+<dd><p>dx1 dx2 dy2 dy3 {dya dxb dyb dxc dxd dxe dye dyf}* dxf?
+{dxa dxb dyb dyc dyd dxe dye dxf}+ dyf?</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2OutlineExtractor.op_ifelse">
+<code class="sig-name descname">op_ifelse</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T2OutlineExtractor.op_ifelse"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T2OutlineExtractor.op_ifelse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2OutlineExtractor.op_ignore">
+<code class="sig-name descname">op_ignore</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T2OutlineExtractor.op_ignore" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2OutlineExtractor.op_index">
+<code class="sig-name descname">op_index</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T2OutlineExtractor.op_index"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T2OutlineExtractor.op_index" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2OutlineExtractor.op_load">
+<code class="sig-name descname">op_load</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T2OutlineExtractor.op_load"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T2OutlineExtractor.op_load" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2OutlineExtractor.op_mul">
+<code class="sig-name descname">op_mul</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T2OutlineExtractor.op_mul"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T2OutlineExtractor.op_mul" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2OutlineExtractor.op_neg">
+<code class="sig-name descname">op_neg</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T2OutlineExtractor.op_neg"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T2OutlineExtractor.op_neg" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2OutlineExtractor.op_not">
+<code class="sig-name descname">op_not</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T2OutlineExtractor.op_not"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T2OutlineExtractor.op_not" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2OutlineExtractor.op_or">
+<code class="sig-name descname">op_or</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T2OutlineExtractor.op_or"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T2OutlineExtractor.op_or" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2OutlineExtractor.op_put">
+<code class="sig-name descname">op_put</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T2OutlineExtractor.op_put"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T2OutlineExtractor.op_put" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2OutlineExtractor.op_random">
+<code class="sig-name descname">op_random</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T2OutlineExtractor.op_random"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T2OutlineExtractor.op_random" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2OutlineExtractor.op_rcurveline">
+<code class="sig-name descname">op_rcurveline</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T2OutlineExtractor.op_rcurveline"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T2OutlineExtractor.op_rcurveline" title="Permalink to this definition">¶</a></dt>
+<dd><p>{dxa dya dxb dyb dxc dyc}+ dxd dyd rcurveline</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2OutlineExtractor.op_return">
+<code class="sig-name descname">op_return</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T2OutlineExtractor.op_return" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2OutlineExtractor.op_rlinecurve">
+<code class="sig-name descname">op_rlinecurve</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T2OutlineExtractor.op_rlinecurve"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T2OutlineExtractor.op_rlinecurve" title="Permalink to this definition">¶</a></dt>
+<dd><p>{dxa dya}+ dxb dyb dxc dyc dxd dyd rlinecurve</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2OutlineExtractor.op_rlineto">
+<code class="sig-name descname">op_rlineto</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T2OutlineExtractor.op_rlineto"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T2OutlineExtractor.op_rlineto" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2OutlineExtractor.op_rmoveto">
+<code class="sig-name descname">op_rmoveto</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T2OutlineExtractor.op_rmoveto"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T2OutlineExtractor.op_rmoveto" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2OutlineExtractor.op_roll">
+<code class="sig-name descname">op_roll</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T2OutlineExtractor.op_roll"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T2OutlineExtractor.op_roll" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2OutlineExtractor.op_rrcurveto">
+<code class="sig-name descname">op_rrcurveto</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T2OutlineExtractor.op_rrcurveto"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T2OutlineExtractor.op_rrcurveto" title="Permalink to this definition">¶</a></dt>
+<dd><p>{dxa dya dxb dyb dxc dyc}+ rrcurveto</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2OutlineExtractor.op_sqrt">
+<code class="sig-name descname">op_sqrt</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T2OutlineExtractor.op_sqrt"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T2OutlineExtractor.op_sqrt" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2OutlineExtractor.op_store">
+<code class="sig-name descname">op_store</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T2OutlineExtractor.op_store"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T2OutlineExtractor.op_store" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2OutlineExtractor.op_sub">
+<code class="sig-name descname">op_sub</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T2OutlineExtractor.op_sub"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T2OutlineExtractor.op_sub" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2OutlineExtractor.op_vhcurveto">
+<code class="sig-name descname">op_vhcurveto</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T2OutlineExtractor.op_vhcurveto"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T2OutlineExtractor.op_vhcurveto" title="Permalink to this definition">¶</a></dt>
+<dd><p>dy1 dx2 dy2 dx3 {dxa dxb dyb dyc dyd dxe dye dxf}* dyf? vhcurveto (30)
+{dya dxb dyb dxc dxd dxe dye dyf}+ dxf? vhcurveto</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2OutlineExtractor.op_vlineto">
+<code class="sig-name descname">op_vlineto</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T2OutlineExtractor.op_vlineto"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T2OutlineExtractor.op_vlineto" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2OutlineExtractor.op_vmoveto">
+<code class="sig-name descname">op_vmoveto</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T2OutlineExtractor.op_vmoveto"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T2OutlineExtractor.op_vmoveto" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2OutlineExtractor.op_vsindex">
+<code class="sig-name descname">op_vsindex</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T2OutlineExtractor.op_vsindex" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2OutlineExtractor.op_vstem">
+<code class="sig-name descname">op_vstem</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T2OutlineExtractor.op_vstem" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2OutlineExtractor.op_vstemhm">
+<code class="sig-name descname">op_vstemhm</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T2OutlineExtractor.op_vstemhm" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2OutlineExtractor.op_vvcurveto">
+<code class="sig-name descname">op_vvcurveto</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T2OutlineExtractor.op_vvcurveto"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T2OutlineExtractor.op_vvcurveto" title="Permalink to this definition">¶</a></dt>
+<dd><p>dx1? {dya dxb dyb dyc}+ vvcurveto</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2OutlineExtractor.pop">
+<code class="sig-name descname">pop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T2OutlineExtractor.pop" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2OutlineExtractor.popall">
+<code class="sig-name descname">popall</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T2OutlineExtractor.popall" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2OutlineExtractor.popallWidth">
+<code class="sig-name descname">popallWidth</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">evenOdd</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T2OutlineExtractor.popallWidth" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2OutlineExtractor.push">
+<code class="sig-name descname">push</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T2OutlineExtractor.push" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2OutlineExtractor.rCurveTo">
+<code class="sig-name descname">rCurveTo</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pt1</span></em>, <em class="sig-param"><span class="n">pt2</span></em>, <em class="sig-param"><span class="n">pt3</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T2OutlineExtractor.rCurveTo"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T2OutlineExtractor.rCurveTo" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2OutlineExtractor.rLineTo">
+<code class="sig-name descname">rLineTo</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">point</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T2OutlineExtractor.rLineTo"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T2OutlineExtractor.rLineTo" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2OutlineExtractor.rMoveTo">
+<code class="sig-name descname">rMoveTo</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">point</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T2OutlineExtractor.rMoveTo"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T2OutlineExtractor.rMoveTo" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2OutlineExtractor.reset">
+<code class="sig-name descname">reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T2OutlineExtractor.reset"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T2OutlineExtractor.reset" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2OutlineExtractor.vcurveto">
+<code class="sig-name descname">vcurveto</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">args</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T2OutlineExtractor.vcurveto"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T2OutlineExtractor.vcurveto" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.misc.psCharStrings.T2WidthExtractor">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.misc.psCharStrings.</code><code class="sig-name descname">T2WidthExtractor</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">localSubrs</span></em>, <em class="sig-param"><span class="n">globalSubrs</span></em>, <em class="sig-param"><span class="n">nominalWidthX</span></em>, <em class="sig-param"><span class="n">defaultWidthX</span></em>, <em class="sig-param"><span class="n">private</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T2WidthExtractor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T2WidthExtractor" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2WidthExtractor.countHints">
+<code class="sig-name descname">countHints</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T2WidthExtractor.countHints"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T2WidthExtractor.countHints" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2WidthExtractor.execute">
+<code class="sig-name descname">execute</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">charString</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T2WidthExtractor.execute" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2WidthExtractor.op_abs">
+<code class="sig-name descname">op_abs</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T2WidthExtractor.op_abs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2WidthExtractor.op_add">
+<code class="sig-name descname">op_add</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T2WidthExtractor.op_add" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2WidthExtractor.op_and">
+<code class="sig-name descname">op_and</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T2WidthExtractor.op_and" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2WidthExtractor.op_blend">
+<code class="sig-name descname">op_blend</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T2WidthExtractor.op_blend" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2WidthExtractor.op_callgsubr">
+<code class="sig-name descname">op_callgsubr</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T2WidthExtractor.op_callgsubr" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2WidthExtractor.op_callsubr">
+<code class="sig-name descname">op_callsubr</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T2WidthExtractor.op_callsubr" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2WidthExtractor.op_cntrmask">
+<code class="sig-name descname">op_cntrmask</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T2WidthExtractor.op_cntrmask" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2WidthExtractor.op_div">
+<code class="sig-name descname">op_div</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T2WidthExtractor.op_div" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2WidthExtractor.op_drop">
+<code class="sig-name descname">op_drop</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T2WidthExtractor.op_drop" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2WidthExtractor.op_dup">
+<code class="sig-name descname">op_dup</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T2WidthExtractor.op_dup" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2WidthExtractor.op_endchar">
+<code class="sig-name descname">op_endchar</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T2WidthExtractor.op_endchar"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T2WidthExtractor.op_endchar" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2WidthExtractor.op_eq">
+<code class="sig-name descname">op_eq</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T2WidthExtractor.op_eq" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2WidthExtractor.op_exch">
+<code class="sig-name descname">op_exch</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T2WidthExtractor.op_exch" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2WidthExtractor.op_get">
+<code class="sig-name descname">op_get</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T2WidthExtractor.op_get" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2WidthExtractor.op_hintmask">
+<code class="sig-name descname">op_hintmask</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T2WidthExtractor.op_hintmask" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2WidthExtractor.op_hmoveto">
+<code class="sig-name descname">op_hmoveto</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T2WidthExtractor.op_hmoveto"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T2WidthExtractor.op_hmoveto" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2WidthExtractor.op_hstem">
+<code class="sig-name descname">op_hstem</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T2WidthExtractor.op_hstem" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2WidthExtractor.op_hstemhm">
+<code class="sig-name descname">op_hstemhm</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T2WidthExtractor.op_hstemhm" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2WidthExtractor.op_ifelse">
+<code class="sig-name descname">op_ifelse</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T2WidthExtractor.op_ifelse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2WidthExtractor.op_ignore">
+<code class="sig-name descname">op_ignore</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T2WidthExtractor.op_ignore" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2WidthExtractor.op_index">
+<code class="sig-name descname">op_index</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T2WidthExtractor.op_index" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2WidthExtractor.op_load">
+<code class="sig-name descname">op_load</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T2WidthExtractor.op_load" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2WidthExtractor.op_mul">
+<code class="sig-name descname">op_mul</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T2WidthExtractor.op_mul" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2WidthExtractor.op_neg">
+<code class="sig-name descname">op_neg</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T2WidthExtractor.op_neg" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2WidthExtractor.op_not">
+<code class="sig-name descname">op_not</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T2WidthExtractor.op_not" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2WidthExtractor.op_or">
+<code class="sig-name descname">op_or</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T2WidthExtractor.op_or" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2WidthExtractor.op_put">
+<code class="sig-name descname">op_put</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T2WidthExtractor.op_put" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2WidthExtractor.op_random">
+<code class="sig-name descname">op_random</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T2WidthExtractor.op_random" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2WidthExtractor.op_return">
+<code class="sig-name descname">op_return</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T2WidthExtractor.op_return" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2WidthExtractor.op_rmoveto">
+<code class="sig-name descname">op_rmoveto</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T2WidthExtractor.op_rmoveto"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T2WidthExtractor.op_rmoveto" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2WidthExtractor.op_roll">
+<code class="sig-name descname">op_roll</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T2WidthExtractor.op_roll" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2WidthExtractor.op_sqrt">
+<code class="sig-name descname">op_sqrt</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T2WidthExtractor.op_sqrt" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2WidthExtractor.op_store">
+<code class="sig-name descname">op_store</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T2WidthExtractor.op_store" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2WidthExtractor.op_sub">
+<code class="sig-name descname">op_sub</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T2WidthExtractor.op_sub" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2WidthExtractor.op_vmoveto">
+<code class="sig-name descname">op_vmoveto</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T2WidthExtractor.op_vmoveto"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T2WidthExtractor.op_vmoveto" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2WidthExtractor.op_vsindex">
+<code class="sig-name descname">op_vsindex</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T2WidthExtractor.op_vsindex" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2WidthExtractor.op_vstem">
+<code class="sig-name descname">op_vstem</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T2WidthExtractor.op_vstem" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2WidthExtractor.op_vstemhm">
+<code class="sig-name descname">op_vstemhm</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T2WidthExtractor.op_vstemhm" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2WidthExtractor.pop">
+<code class="sig-name descname">pop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T2WidthExtractor.pop" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2WidthExtractor.popall">
+<code class="sig-name descname">popall</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T2WidthExtractor.popall" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2WidthExtractor.popallWidth">
+<code class="sig-name descname">popallWidth</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">evenOdd</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T2WidthExtractor.popallWidth"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T2WidthExtractor.popallWidth" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2WidthExtractor.push">
+<code class="sig-name descname">push</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.T2WidthExtractor.push" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.psCharStrings.T2WidthExtractor.reset">
+<code class="sig-name descname">reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#T2WidthExtractor.reset"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.T2WidthExtractor.reset" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.misc.psCharStrings.buildOperatorDict">
+<code class="sig-prename descclassname">fontTools.misc.psCharStrings.</code><code class="sig-name descname">buildOperatorDict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">operatorList</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#buildOperatorDict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.buildOperatorDict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.misc.psCharStrings.calcSubrBias">
+<code class="sig-prename descclassname">fontTools.misc.psCharStrings.</code><code class="sig-name descname">calcSubrBias</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">subrs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#calcSubrBias"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.calcSubrBias" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.misc.psCharStrings.encodeFixed">
+<code class="sig-prename descclassname">fontTools.misc.psCharStrings.</code><code class="sig-name descname">encodeFixed</code><span class="sig-paren">(</span><em class="sig-param">f</em>, <em class="sig-param">pack=&lt;built-in function pack&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#encodeFixed"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.encodeFixed" title="Permalink to this definition">¶</a></dt>
+<dd><p>For T2 only</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.misc.psCharStrings.encodeFloat">
+<code class="sig-prename descclassname">fontTools.misc.psCharStrings.</code><code class="sig-name descname">encodeFloat</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">f</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#encodeFloat"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.encodeFloat" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.misc.psCharStrings.encodeIntCFF">
+<code class="sig-prename descclassname">fontTools.misc.psCharStrings.</code><code class="sig-name descname">encodeIntCFF</code><span class="sig-paren">(</span><em class="sig-param">value</em>, <em class="sig-param">fourByteOp=b'\x1d'</em>, <em class="sig-param">bytechr=&lt;function bytechr&gt;</em>, <em class="sig-param">pack=&lt;built-in function pack&gt;</em>, <em class="sig-param">unpack=&lt;built-in function unpack&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.encodeIntCFF" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.misc.psCharStrings.encodeIntT1">
+<code class="sig-prename descclassname">fontTools.misc.psCharStrings.</code><code class="sig-name descname">encodeIntT1</code><span class="sig-paren">(</span><em class="sig-param">value</em>, <em class="sig-param">fourByteOp=b'\xff'</em>, <em class="sig-param">bytechr=&lt;function bytechr&gt;</em>, <em class="sig-param">pack=&lt;built-in function pack&gt;</em>, <em class="sig-param">unpack=&lt;built-in function unpack&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.encodeIntT1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.misc.psCharStrings.encodeIntT2">
+<code class="sig-prename descclassname">fontTools.misc.psCharStrings.</code><code class="sig-name descname">encodeIntT2</code><span class="sig-paren">(</span><em class="sig-param">value</em>, <em class="sig-param">fourByteOp=None</em>, <em class="sig-param">bytechr=&lt;function bytechr&gt;</em>, <em class="sig-param">pack=&lt;built-in function pack&gt;</em>, <em class="sig-param">unpack=&lt;built-in function unpack&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.psCharStrings.encodeIntT2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.misc.psCharStrings.getIntEncoder">
+<code class="sig-prename descclassname">fontTools.misc.psCharStrings.</code><code class="sig-name descname">getIntEncoder</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">format</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#getIntEncoder"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.getIntEncoder" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.misc.psCharStrings.read_byte">
+<code class="sig-prename descclassname">fontTools.misc.psCharStrings.</code><code class="sig-name descname">read_byte</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">b0</span></em>, <em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#read_byte"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.read_byte" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.misc.psCharStrings.read_fixed1616">
+<code class="sig-prename descclassname">fontTools.misc.psCharStrings.</code><code class="sig-name descname">read_fixed1616</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">b0</span></em>, <em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#read_fixed1616"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.read_fixed1616" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.misc.psCharStrings.read_longInt">
+<code class="sig-prename descclassname">fontTools.misc.psCharStrings.</code><code class="sig-name descname">read_longInt</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">b0</span></em>, <em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#read_longInt"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.read_longInt" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.misc.psCharStrings.read_operator">
+<code class="sig-prename descclassname">fontTools.misc.psCharStrings.</code><code class="sig-name descname">read_operator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">b0</span></em>, <em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#read_operator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.read_operator" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.misc.psCharStrings.read_realNumber">
+<code class="sig-prename descclassname">fontTools.misc.psCharStrings.</code><code class="sig-name descname">read_realNumber</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">b0</span></em>, <em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#read_realNumber"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.read_realNumber" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.misc.psCharStrings.read_reserved">
+<code class="sig-prename descclassname">fontTools.misc.psCharStrings.</code><code class="sig-name descname">read_reserved</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">b0</span></em>, <em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#read_reserved"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.read_reserved" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.misc.psCharStrings.read_shortInt">
+<code class="sig-prename descclassname">fontTools.misc.psCharStrings.</code><code class="sig-name descname">read_shortInt</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">b0</span></em>, <em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#read_shortInt"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.read_shortInt" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.misc.psCharStrings.read_smallInt1">
+<code class="sig-prename descclassname">fontTools.misc.psCharStrings.</code><code class="sig-name descname">read_smallInt1</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">b0</span></em>, <em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#read_smallInt1"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.read_smallInt1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.misc.psCharStrings.read_smallInt2">
+<code class="sig-prename descclassname">fontTools.misc.psCharStrings.</code><code class="sig-name descname">read_smallInt2</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">b0</span></em>, <em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/psCharStrings.html#read_smallInt2"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.psCharStrings.read_smallInt2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="psLib.html" class="btn btn-neutral float-right" title="psLib" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="macRes.html" class="btn btn-neutral float-left" title="macRes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Just van Rossum, Behdad Esfahbod, and the fontTools Authors. CC BY-SA 4.0
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

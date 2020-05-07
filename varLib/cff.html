@@ -1,0 +1,1188 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>cff &mdash; fontTools Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="errors" href="errors.html" />
+    <link rel="prev" title="builder" href="builder.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> fontTools
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Library</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../afmLib.html">afmLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../agl.html">agl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cffLib/index.html">cffLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../colorLib/index.html">colorLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cu2qu/index.html">cu2qu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../designspaceLib/index.html">designspaceLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../encodings/index.html">encodings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../feaLib/index.html">feaLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../merge.html">merge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/index.html">misc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mtiLib.html">mtiLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../otlLib/index.html">otlLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pens/index.html">pens</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../subset/index.html">subset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svgLib/index.html">svgLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../t1Lib.html">t1Lib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ttLib/index.html">ttLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ttx.html">ttx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ufoLib/index.html">ufoLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unicode.html">unicode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unicodedata/index.html">unicodedata</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">varLib</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="builder.html">builder</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">cff</a></li>
+<li class="toctree-l2"><a class="reference internal" href="errors.html">errors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="featureVars.html">featureVars</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instancer.html">instancer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interpolatable.html">interpolatable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interpolate_layout.html">interpolate_layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iup.html">iup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="merger.html">merger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.html">models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mutator.html">mutator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mvar.html">mvar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plot.html">plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="varStore.html">varStore</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../voltLib.html">voltLib</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">fontTools</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">varLib</a> &raquo;</li>
+        
+      <li>cff</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/varLib/cff.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-fontTools.varLib.cff">
+<span id="cff"></span><h1>cff<a class="headerlink" href="#module-fontTools.varLib.cff" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="fontTools.varLib.cff.CFF2CharStringMergePen">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.varLib.cff.</code><code class="sig-name descname">CFF2CharStringMergePen</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">default_commands</span></em>, <em class="sig-param"><span class="n">glyphName</span></em>, <em class="sig-param"><span class="n">num_masters</span></em>, <em class="sig-param"><span class="n">master_idx</span></em>, <em class="sig-param"><span class="n">roundTolerance</span><span class="o">=</span><span class="default_value">0.5</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/varLib/cff.html#CFF2CharStringMergePen"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.cff.CFF2CharStringMergePen" title="Permalink to this definition">¶</a></dt>
+<dd><p>Pen to merge Type 2 CharStrings.</p>
+<dl class="py method">
+<dt id="fontTools.varLib.cff.CFF2CharStringMergePen.addComponent">
+<code class="sig-name descname">addComponent</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">glyphName</span></em>, <em class="sig-param"><span class="n">transformation</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.CFF2CharStringMergePen.addComponent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Transform the points of the base glyph and draw it onto self.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.CFF2CharStringMergePen.add_hint">
+<code class="sig-name descname">add_hint</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">hint_type</span></em>, <em class="sig-param"><span class="n">args</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/varLib/cff.html#CFF2CharStringMergePen.add_hint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.cff.CFF2CharStringMergePen.add_hint" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.CFF2CharStringMergePen.add_hintmask">
+<code class="sig-name descname">add_hintmask</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">hint_type</span></em>, <em class="sig-param"><span class="n">abs_args</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/varLib/cff.html#CFF2CharStringMergePen.add_hintmask"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.cff.CFF2CharStringMergePen.add_hintmask" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.CFF2CharStringMergePen.add_point">
+<code class="sig-name descname">add_point</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">point_type</span></em>, <em class="sig-param"><span class="n">pt_coords</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/varLib/cff.html#CFF2CharStringMergePen.add_point"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.cff.CFF2CharStringMergePen.add_point" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.CFF2CharStringMergePen.closePath">
+<code class="sig-name descname">closePath</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.CFF2CharStringMergePen.closePath" title="Permalink to this definition">¶</a></dt>
+<dd><p>Close the current sub path. You must call either pen.closePath()
+or pen.endPath() after each sub path.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.CFF2CharStringMergePen.curveTo">
+<code class="sig-name descname">curveTo</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">points</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.CFF2CharStringMergePen.curveTo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draw a cubic bezier with an arbitrary number of control points.</p>
+<p>The last point specified is on-curve, all others are off-curve
+(control) points. If the number of control points is &gt; 2, the
+segment is split into multiple bezier segments. This works
+like this:</p>
+<p>Let n be the number of control points (which is the number of
+arguments to this call minus 1). If n==2, a plain vanilla cubic
+bezier is drawn. If n==1, we fall back to a quadratic segment and
+if n==0 we draw a straight line. It gets interesting when n&gt;2:
+n-1 PostScript-style cubic segments will be drawn as if it were
+one curve. See decomposeSuperBezierSegment().</p>
+<p>The conversion algorithm used for n&gt;2 is inspired by NURB
+splines, and is conceptually equivalent to the TrueType “implied
+points” principle. See also decomposeQuadraticSegment().</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.CFF2CharStringMergePen.endPath">
+<code class="sig-name descname">endPath</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.CFF2CharStringMergePen.endPath" title="Permalink to this definition">¶</a></dt>
+<dd><p>End the current sub path, but don’t close it. You must call
+either pen.closePath() or pen.endPath() after each sub path.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.CFF2CharStringMergePen.getCharString">
+<code class="sig-name descname">getCharString</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">private</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">globalSubrs</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">var_model</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">optimize</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/varLib/cff.html#CFF2CharStringMergePen.getCharString"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.cff.CFF2CharStringMergePen.getCharString" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.CFF2CharStringMergePen.getCommands">
+<code class="sig-name descname">getCommands</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/varLib/cff.html#CFF2CharStringMergePen.getCommands"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.cff.CFF2CharStringMergePen.getCommands" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.CFF2CharStringMergePen.lineTo">
+<code class="sig-name descname">lineTo</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.CFF2CharStringMergePen.lineTo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draw a straight line from the current point to ‘pt’.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.CFF2CharStringMergePen.log">
+<em class="property">property </em><code class="sig-name descname">log</code><a class="headerlink" href="#fontTools.varLib.cff.CFF2CharStringMergePen.log" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.CFF2CharStringMergePen.moveTo">
+<code class="sig-name descname">moveTo</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.CFF2CharStringMergePen.moveTo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Begin a new sub path, set the current point to ‘pt’. You must
+end each sub path with a call to pen.closePath() or pen.endPath().</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.CFF2CharStringMergePen.qCurveTo">
+<code class="sig-name descname">qCurveTo</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">points</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.CFF2CharStringMergePen.qCurveTo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draw a whole string of quadratic curve segments.</p>
+<p>The last point specified is on-curve, all others are off-curve
+points.</p>
+<p>This method implements TrueType-style curves, breaking up curves
+using ‘implied points’: between each two consequtive off-curve points,
+there is one implied point exactly in the middle between them. See
+also decomposeQuadraticSegment().</p>
+<p>The last argument (normally the on-curve point) may be None.
+This is to support contours that have NO on-curve points (a rarely
+seen feature of TrueType outlines).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.CFF2CharStringMergePen.reorder_blend_args">
+<code class="sig-name descname">reorder_blend_args</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">commands</span></em>, <em class="sig-param"><span class="n">get_delta_func</span></em>, <em class="sig-param"><span class="n">round_func</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/varLib/cff.html#CFF2CharStringMergePen.reorder_blend_args"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.cff.CFF2CharStringMergePen.reorder_blend_args" title="Permalink to this definition">¶</a></dt>
+<dd><p>We first re-order the master coordinate values.
+For a moveto to lineto, the args are now arranged as:</p>
+<blockquote>
+<div><p>[ [master_0 x,y], [master_1 x,y], [master_2 x,y] ]</p>
+</div></blockquote>
+<p>We re-arrange this to
+[       [master_0 x, master_1 x, master_2 x],</p>
+<blockquote>
+<div><p>[master_0 y, master_1 y, master_2 y]</p>
+</div></blockquote>
+<p>]
+If the master values are all the same, we collapse the list to
+as single value instead of a list.</p>
+<p>We then convert this to:
+[ [master_0 x] + [x delta tuple] + [numBlends=1]</p>
+<blockquote>
+<div><p>[master_0 y] + [y delta tuple] + [numBlends=1]</p>
+</div></blockquote>
+<p>]</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.CFF2CharStringMergePen.restart">
+<code class="sig-name descname">restart</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">region_idx</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/varLib/cff.html#CFF2CharStringMergePen.restart"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.cff.CFF2CharStringMergePen.restart" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.varLib.cff.CFF2CharStringMergePen.skipMissingComponents">
+<code class="sig-name descname">skipMissingComponents</code><em class="property"> = True</em><a class="headerlink" href="#fontTools.varLib.cff.CFF2CharStringMergePen.skipMissingComponents" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.varLib.cff.CFFToCFF2OutlineExtractor">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.varLib.cff.</code><code class="sig-name descname">CFFToCFF2OutlineExtractor</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pen</span></em>, <em class="sig-param"><span class="n">localSubrs</span></em>, <em class="sig-param"><span class="n">globalSubrs</span></em>, <em class="sig-param"><span class="n">nominalWidthX</span></em>, <em class="sig-param"><span class="n">defaultWidthX</span></em>, <em class="sig-param"><span class="n">private</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/varLib/cff.html#CFFToCFF2OutlineExtractor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.cff.CFFToCFF2OutlineExtractor" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class is used to remove the initial width from the CFF
+charstring without trying to add the width to self.nominalWidthX,
+which is None.</p>
+<dl class="py method">
+<dt id="fontTools.varLib.cff.CFFToCFF2OutlineExtractor.alternatingLineto">
+<code class="sig-name descname">alternatingLineto</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">isHorizontal</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.CFFToCFF2OutlineExtractor.alternatingLineto" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.CFFToCFF2OutlineExtractor.closePath">
+<code class="sig-name descname">closePath</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.CFFToCFF2OutlineExtractor.closePath" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.CFFToCFF2OutlineExtractor.countHints">
+<code class="sig-name descname">countHints</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.CFFToCFF2OutlineExtractor.countHints" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.CFFToCFF2OutlineExtractor.endPath">
+<code class="sig-name descname">endPath</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.CFFToCFF2OutlineExtractor.endPath" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.CFFToCFF2OutlineExtractor.execute">
+<code class="sig-name descname">execute</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">charString</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.CFFToCFF2OutlineExtractor.execute" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.CFFToCFF2OutlineExtractor.hcurveto">
+<code class="sig-name descname">hcurveto</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.CFFToCFF2OutlineExtractor.hcurveto" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_abs">
+<code class="sig-name descname">op_abs</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_abs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_add">
+<code class="sig-name descname">op_add</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_add" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_and">
+<code class="sig-name descname">op_and</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_and" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_blend">
+<code class="sig-name descname">op_blend</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_blend" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_callgsubr">
+<code class="sig-name descname">op_callgsubr</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_callgsubr" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_callsubr">
+<code class="sig-name descname">op_callsubr</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_callsubr" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_cntrmask">
+<code class="sig-name descname">op_cntrmask</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_cntrmask" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_div">
+<code class="sig-name descname">op_div</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_div" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_drop">
+<code class="sig-name descname">op_drop</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_drop" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_dup">
+<code class="sig-name descname">op_dup</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_dup" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_endchar">
+<code class="sig-name descname">op_endchar</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_endchar" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_eq">
+<code class="sig-name descname">op_eq</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_eq" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_exch">
+<code class="sig-name descname">op_exch</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_exch" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_flex">
+<code class="sig-name descname">op_flex</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_flex" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_flex1">
+<code class="sig-name descname">op_flex1</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_flex1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_get">
+<code class="sig-name descname">op_get</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_get" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_hflex">
+<code class="sig-name descname">op_hflex</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_hflex" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_hflex1">
+<code class="sig-name descname">op_hflex1</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_hflex1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_hhcurveto">
+<code class="sig-name descname">op_hhcurveto</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_hhcurveto" title="Permalink to this definition">¶</a></dt>
+<dd><p>dy1? {dxa dxb dyb dxc}+ hhcurveto</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_hintmask">
+<code class="sig-name descname">op_hintmask</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_hintmask" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_hlineto">
+<code class="sig-name descname">op_hlineto</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_hlineto" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_hmoveto">
+<code class="sig-name descname">op_hmoveto</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_hmoveto" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_hstem">
+<code class="sig-name descname">op_hstem</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_hstem" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_hstemhm">
+<code class="sig-name descname">op_hstemhm</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_hstemhm" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_hvcurveto">
+<code class="sig-name descname">op_hvcurveto</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_hvcurveto" title="Permalink to this definition">¶</a></dt>
+<dd><p>dx1 dx2 dy2 dy3 {dya dxb dyb dxc dxd dxe dye dyf}* dxf?
+{dxa dxb dyb dyc dyd dxe dye dxf}+ dyf?</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_ifelse">
+<code class="sig-name descname">op_ifelse</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_ifelse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_ignore">
+<code class="sig-name descname">op_ignore</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_ignore" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_index">
+<code class="sig-name descname">op_index</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_index" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_load">
+<code class="sig-name descname">op_load</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_load" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_mul">
+<code class="sig-name descname">op_mul</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_mul" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_neg">
+<code class="sig-name descname">op_neg</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_neg" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_not">
+<code class="sig-name descname">op_not</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_not" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_or">
+<code class="sig-name descname">op_or</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_or" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_put">
+<code class="sig-name descname">op_put</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_put" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_random">
+<code class="sig-name descname">op_random</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_random" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_rcurveline">
+<code class="sig-name descname">op_rcurveline</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_rcurveline" title="Permalink to this definition">¶</a></dt>
+<dd><p>{dxa dya dxb dyb dxc dyc}+ dxd dyd rcurveline</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_return">
+<code class="sig-name descname">op_return</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_return" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_rlinecurve">
+<code class="sig-name descname">op_rlinecurve</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_rlinecurve" title="Permalink to this definition">¶</a></dt>
+<dd><p>{dxa dya}+ dxb dyb dxc dyc dxd dyd rlinecurve</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_rlineto">
+<code class="sig-name descname">op_rlineto</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_rlineto" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_rmoveto">
+<code class="sig-name descname">op_rmoveto</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_rmoveto" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_roll">
+<code class="sig-name descname">op_roll</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_roll" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_rrcurveto">
+<code class="sig-name descname">op_rrcurveto</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_rrcurveto" title="Permalink to this definition">¶</a></dt>
+<dd><p>{dxa dya dxb dyb dxc dyc}+ rrcurveto</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_sqrt">
+<code class="sig-name descname">op_sqrt</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_sqrt" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_store">
+<code class="sig-name descname">op_store</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_store" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_sub">
+<code class="sig-name descname">op_sub</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_sub" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_vhcurveto">
+<code class="sig-name descname">op_vhcurveto</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_vhcurveto" title="Permalink to this definition">¶</a></dt>
+<dd><p>dy1 dx2 dy2 dx3 {dxa dxb dyb dyc dyd dxe dye dxf}* dyf? vhcurveto (30)
+{dya dxb dyb dxc dxd dxe dye dyf}+ dxf? vhcurveto</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_vlineto">
+<code class="sig-name descname">op_vlineto</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_vlineto" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_vmoveto">
+<code class="sig-name descname">op_vmoveto</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_vmoveto" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_vsindex">
+<code class="sig-name descname">op_vsindex</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_vsindex" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_vstem">
+<code class="sig-name descname">op_vstem</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_vstem" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_vstemhm">
+<code class="sig-name descname">op_vstemhm</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_vstemhm" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_vvcurveto">
+<code class="sig-name descname">op_vvcurveto</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.CFFToCFF2OutlineExtractor.op_vvcurveto" title="Permalink to this definition">¶</a></dt>
+<dd><p>dx1? {dya dxb dyb dyc}+ vvcurveto</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.CFFToCFF2OutlineExtractor.pop">
+<code class="sig-name descname">pop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.CFFToCFF2OutlineExtractor.pop" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.CFFToCFF2OutlineExtractor.popall">
+<code class="sig-name descname">popall</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.CFFToCFF2OutlineExtractor.popall" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.CFFToCFF2OutlineExtractor.popallWidth">
+<code class="sig-name descname">popallWidth</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">evenOdd</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/varLib/cff.html#CFFToCFF2OutlineExtractor.popallWidth"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.cff.CFFToCFF2OutlineExtractor.popallWidth" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.CFFToCFF2OutlineExtractor.push">
+<code class="sig-name descname">push</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.CFFToCFF2OutlineExtractor.push" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.CFFToCFF2OutlineExtractor.rCurveTo">
+<code class="sig-name descname">rCurveTo</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pt1</span></em>, <em class="sig-param"><span class="n">pt2</span></em>, <em class="sig-param"><span class="n">pt3</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.CFFToCFF2OutlineExtractor.rCurveTo" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.CFFToCFF2OutlineExtractor.rLineTo">
+<code class="sig-name descname">rLineTo</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">point</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.CFFToCFF2OutlineExtractor.rLineTo" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.CFFToCFF2OutlineExtractor.rMoveTo">
+<code class="sig-name descname">rMoveTo</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">point</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.CFFToCFF2OutlineExtractor.rMoveTo" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.CFFToCFF2OutlineExtractor.reset">
+<code class="sig-name descname">reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.CFFToCFF2OutlineExtractor.reset" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.CFFToCFF2OutlineExtractor.vcurveto">
+<code class="sig-name descname">vcurveto</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.CFFToCFF2OutlineExtractor.vcurveto" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.varLib.cff.CVarData">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.varLib.cff.</code><code class="sig-name descname">CVarData</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">varDataList</span></em>, <em class="sig-param"><span class="n">masterSupports</span></em>, <em class="sig-param"><span class="n">vsindex_dict</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.CVarData" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.varLib.cff.CVarData.count">
+<code class="sig-name descname">count</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.CVarData.count" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return number of occurrences of value.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.CVarData.index">
+<code class="sig-name descname">index</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.CVarData.index" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return first index of value.</p>
+<p>Raises ValueError if the value is not present.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.CVarData.masterSupports">
+<em class="property">property </em><code class="sig-name descname">masterSupports</code><a class="headerlink" href="#fontTools.varLib.cff.CVarData.masterSupports" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 1</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.CVarData.varDataList">
+<em class="property">property </em><code class="sig-name descname">varDataList</code><a class="headerlink" href="#fontTools.varLib.cff.CVarData.varDataList" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 0</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.CVarData.vsindex_dict">
+<em class="property">property </em><code class="sig-name descname">vsindex_dict</code><a class="headerlink" href="#fontTools.varLib.cff.CVarData.vsindex_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 2</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.varLib.cff.MergeOutlineExtractor">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.varLib.cff.</code><code class="sig-name descname">MergeOutlineExtractor</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pen</span></em>, <em class="sig-param"><span class="n">localSubrs</span></em>, <em class="sig-param"><span class="n">globalSubrs</span></em>, <em class="sig-param"><span class="n">nominalWidthX</span></em>, <em class="sig-param"><span class="n">defaultWidthX</span></em>, <em class="sig-param"><span class="n">private</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/varLib/cff.html#MergeOutlineExtractor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.cff.MergeOutlineExtractor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Used to extract the charstring commands - including hints - from a
+CFF charstring in order to merge it as another set of region data
+into a CFF2 variable font charstring.</p>
+<dl class="py method">
+<dt id="fontTools.varLib.cff.MergeOutlineExtractor.alternatingLineto">
+<code class="sig-name descname">alternatingLineto</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">isHorizontal</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.MergeOutlineExtractor.alternatingLineto" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.MergeOutlineExtractor.closePath">
+<code class="sig-name descname">closePath</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.MergeOutlineExtractor.closePath" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.MergeOutlineExtractor.countHints">
+<code class="sig-name descname">countHints</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/varLib/cff.html#MergeOutlineExtractor.countHints"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.cff.MergeOutlineExtractor.countHints" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.MergeOutlineExtractor.endPath">
+<code class="sig-name descname">endPath</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.MergeOutlineExtractor.endPath" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.MergeOutlineExtractor.execute">
+<code class="sig-name descname">execute</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">charString</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.MergeOutlineExtractor.execute" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.MergeOutlineExtractor.hcurveto">
+<code class="sig-name descname">hcurveto</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.MergeOutlineExtractor.hcurveto" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.MergeOutlineExtractor.op_abs">
+<code class="sig-name descname">op_abs</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.MergeOutlineExtractor.op_abs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.MergeOutlineExtractor.op_add">
+<code class="sig-name descname">op_add</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.MergeOutlineExtractor.op_add" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.MergeOutlineExtractor.op_and">
+<code class="sig-name descname">op_and</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.MergeOutlineExtractor.op_and" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.MergeOutlineExtractor.op_blend">
+<code class="sig-name descname">op_blend</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.MergeOutlineExtractor.op_blend" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.MergeOutlineExtractor.op_callgsubr">
+<code class="sig-name descname">op_callgsubr</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.MergeOutlineExtractor.op_callgsubr" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.MergeOutlineExtractor.op_callsubr">
+<code class="sig-name descname">op_callsubr</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.MergeOutlineExtractor.op_callsubr" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.MergeOutlineExtractor.op_cntrmask">
+<code class="sig-name descname">op_cntrmask</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/varLib/cff.html#MergeOutlineExtractor.op_cntrmask"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.cff.MergeOutlineExtractor.op_cntrmask" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.MergeOutlineExtractor.op_div">
+<code class="sig-name descname">op_div</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.MergeOutlineExtractor.op_div" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.MergeOutlineExtractor.op_drop">
+<code class="sig-name descname">op_drop</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.MergeOutlineExtractor.op_drop" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.MergeOutlineExtractor.op_dup">
+<code class="sig-name descname">op_dup</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.MergeOutlineExtractor.op_dup" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.MergeOutlineExtractor.op_endchar">
+<code class="sig-name descname">op_endchar</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.MergeOutlineExtractor.op_endchar" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.MergeOutlineExtractor.op_eq">
+<code class="sig-name descname">op_eq</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.MergeOutlineExtractor.op_eq" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.MergeOutlineExtractor.op_exch">
+<code class="sig-name descname">op_exch</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.MergeOutlineExtractor.op_exch" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.MergeOutlineExtractor.op_flex">
+<code class="sig-name descname">op_flex</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.MergeOutlineExtractor.op_flex" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.MergeOutlineExtractor.op_flex1">
+<code class="sig-name descname">op_flex1</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.MergeOutlineExtractor.op_flex1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.MergeOutlineExtractor.op_get">
+<code class="sig-name descname">op_get</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.MergeOutlineExtractor.op_get" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.MergeOutlineExtractor.op_hflex">
+<code class="sig-name descname">op_hflex</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.MergeOutlineExtractor.op_hflex" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.MergeOutlineExtractor.op_hflex1">
+<code class="sig-name descname">op_hflex1</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.MergeOutlineExtractor.op_hflex1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.MergeOutlineExtractor.op_hhcurveto">
+<code class="sig-name descname">op_hhcurveto</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.MergeOutlineExtractor.op_hhcurveto" title="Permalink to this definition">¶</a></dt>
+<dd><p>dy1? {dxa dxb dyb dxc}+ hhcurveto</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.MergeOutlineExtractor.op_hintmask">
+<code class="sig-name descname">op_hintmask</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/varLib/cff.html#MergeOutlineExtractor.op_hintmask"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.cff.MergeOutlineExtractor.op_hintmask" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.MergeOutlineExtractor.op_hlineto">
+<code class="sig-name descname">op_hlineto</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.MergeOutlineExtractor.op_hlineto" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.MergeOutlineExtractor.op_hmoveto">
+<code class="sig-name descname">op_hmoveto</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.MergeOutlineExtractor.op_hmoveto" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.MergeOutlineExtractor.op_hstem">
+<code class="sig-name descname">op_hstem</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/varLib/cff.html#MergeOutlineExtractor.op_hstem"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.cff.MergeOutlineExtractor.op_hstem" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.MergeOutlineExtractor.op_hstemhm">
+<code class="sig-name descname">op_hstemhm</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/varLib/cff.html#MergeOutlineExtractor.op_hstemhm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.cff.MergeOutlineExtractor.op_hstemhm" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.MergeOutlineExtractor.op_hvcurveto">
+<code class="sig-name descname">op_hvcurveto</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.MergeOutlineExtractor.op_hvcurveto" title="Permalink to this definition">¶</a></dt>
+<dd><p>dx1 dx2 dy2 dy3 {dya dxb dyb dxc dxd dxe dye dyf}* dxf?
+{dxa dxb dyb dyc dyd dxe dye dxf}+ dyf?</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.MergeOutlineExtractor.op_ifelse">
+<code class="sig-name descname">op_ifelse</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.MergeOutlineExtractor.op_ifelse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.MergeOutlineExtractor.op_ignore">
+<code class="sig-name descname">op_ignore</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.MergeOutlineExtractor.op_ignore" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.MergeOutlineExtractor.op_index">
+<code class="sig-name descname">op_index</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.MergeOutlineExtractor.op_index" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.MergeOutlineExtractor.op_load">
+<code class="sig-name descname">op_load</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.MergeOutlineExtractor.op_load" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.MergeOutlineExtractor.op_mul">
+<code class="sig-name descname">op_mul</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.MergeOutlineExtractor.op_mul" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.MergeOutlineExtractor.op_neg">
+<code class="sig-name descname">op_neg</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.MergeOutlineExtractor.op_neg" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.MergeOutlineExtractor.op_not">
+<code class="sig-name descname">op_not</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.MergeOutlineExtractor.op_not" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.MergeOutlineExtractor.op_or">
+<code class="sig-name descname">op_or</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.MergeOutlineExtractor.op_or" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.MergeOutlineExtractor.op_put">
+<code class="sig-name descname">op_put</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.MergeOutlineExtractor.op_put" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.MergeOutlineExtractor.op_random">
+<code class="sig-name descname">op_random</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.MergeOutlineExtractor.op_random" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.MergeOutlineExtractor.op_rcurveline">
+<code class="sig-name descname">op_rcurveline</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.MergeOutlineExtractor.op_rcurveline" title="Permalink to this definition">¶</a></dt>
+<dd><p>{dxa dya dxb dyb dxc dyc}+ dxd dyd rcurveline</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.MergeOutlineExtractor.op_return">
+<code class="sig-name descname">op_return</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.MergeOutlineExtractor.op_return" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.MergeOutlineExtractor.op_rlinecurve">
+<code class="sig-name descname">op_rlinecurve</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.MergeOutlineExtractor.op_rlinecurve" title="Permalink to this definition">¶</a></dt>
+<dd><p>{dxa dya}+ dxb dyb dxc dyc dxd dyd rlinecurve</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.MergeOutlineExtractor.op_rlineto">
+<code class="sig-name descname">op_rlineto</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.MergeOutlineExtractor.op_rlineto" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.MergeOutlineExtractor.op_rmoveto">
+<code class="sig-name descname">op_rmoveto</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.MergeOutlineExtractor.op_rmoveto" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.MergeOutlineExtractor.op_roll">
+<code class="sig-name descname">op_roll</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.MergeOutlineExtractor.op_roll" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.MergeOutlineExtractor.op_rrcurveto">
+<code class="sig-name descname">op_rrcurveto</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.MergeOutlineExtractor.op_rrcurveto" title="Permalink to this definition">¶</a></dt>
+<dd><p>{dxa dya dxb dyb dxc dyc}+ rrcurveto</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.MergeOutlineExtractor.op_sqrt">
+<code class="sig-name descname">op_sqrt</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.MergeOutlineExtractor.op_sqrt" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.MergeOutlineExtractor.op_store">
+<code class="sig-name descname">op_store</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.MergeOutlineExtractor.op_store" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.MergeOutlineExtractor.op_sub">
+<code class="sig-name descname">op_sub</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.MergeOutlineExtractor.op_sub" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.MergeOutlineExtractor.op_vhcurveto">
+<code class="sig-name descname">op_vhcurveto</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.MergeOutlineExtractor.op_vhcurveto" title="Permalink to this definition">¶</a></dt>
+<dd><p>dy1 dx2 dy2 dx3 {dxa dxb dyb dyc dyd dxe dye dxf}* dyf? vhcurveto (30)
+{dya dxb dyb dxc dxd dxe dye dyf}+ dxf? vhcurveto</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.MergeOutlineExtractor.op_vlineto">
+<code class="sig-name descname">op_vlineto</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.MergeOutlineExtractor.op_vlineto" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.MergeOutlineExtractor.op_vmoveto">
+<code class="sig-name descname">op_vmoveto</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.MergeOutlineExtractor.op_vmoveto" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.MergeOutlineExtractor.op_vsindex">
+<code class="sig-name descname">op_vsindex</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.MergeOutlineExtractor.op_vsindex" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.MergeOutlineExtractor.op_vstem">
+<code class="sig-name descname">op_vstem</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/varLib/cff.html#MergeOutlineExtractor.op_vstem"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.cff.MergeOutlineExtractor.op_vstem" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.MergeOutlineExtractor.op_vstemhm">
+<code class="sig-name descname">op_vstemhm</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/varLib/cff.html#MergeOutlineExtractor.op_vstemhm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.cff.MergeOutlineExtractor.op_vstemhm" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.MergeOutlineExtractor.op_vvcurveto">
+<code class="sig-name descname">op_vvcurveto</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.MergeOutlineExtractor.op_vvcurveto" title="Permalink to this definition">¶</a></dt>
+<dd><p>dx1? {dya dxb dyb dyc}+ vvcurveto</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.MergeOutlineExtractor.pop">
+<code class="sig-name descname">pop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.MergeOutlineExtractor.pop" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.MergeOutlineExtractor.popall">
+<code class="sig-name descname">popall</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.MergeOutlineExtractor.popall" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.MergeOutlineExtractor.popallWidth">
+<code class="sig-name descname">popallWidth</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">evenOdd</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.MergeOutlineExtractor.popallWidth" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.MergeOutlineExtractor.push">
+<code class="sig-name descname">push</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.MergeOutlineExtractor.push" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.MergeOutlineExtractor.rCurveTo">
+<code class="sig-name descname">rCurveTo</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pt1</span></em>, <em class="sig-param"><span class="n">pt2</span></em>, <em class="sig-param"><span class="n">pt3</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.MergeOutlineExtractor.rCurveTo" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.MergeOutlineExtractor.rLineTo">
+<code class="sig-name descname">rLineTo</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">point</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.MergeOutlineExtractor.rLineTo" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.MergeOutlineExtractor.rMoveTo">
+<code class="sig-name descname">rMoveTo</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">point</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.MergeOutlineExtractor.rMoveTo" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.MergeOutlineExtractor.reset">
+<code class="sig-name descname">reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.MergeOutlineExtractor.reset" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.cff.MergeOutlineExtractor.vcurveto">
+<code class="sig-name descname">vcurveto</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.cff.MergeOutlineExtractor.vcurveto" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.varLib.cff.addCFFVarStore">
+<code class="sig-prename descclassname">fontTools.varLib.cff.</code><code class="sig-name descname">addCFFVarStore</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">varFont</span></em>, <em class="sig-param"><span class="n">varModel</span></em>, <em class="sig-param"><span class="n">varDataList</span></em>, <em class="sig-param"><span class="n">masterSupports</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/varLib/cff.html#addCFFVarStore"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.cff.addCFFVarStore" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.varLib.cff.conv_to_int">
+<code class="sig-prename descclassname">fontTools.varLib.cff.</code><code class="sig-name descname">conv_to_int</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">num</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/varLib/cff.html#conv_to_int"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.cff.conv_to_int" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.varLib.cff.convertCFFtoCFF2">
+<code class="sig-prename descclassname">fontTools.varLib.cff.</code><code class="sig-name descname">convertCFFtoCFF2</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">varFont</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/varLib/cff.html#convertCFFtoCFF2"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.cff.convertCFFtoCFF2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.varLib.cff.get_private">
+<code class="sig-prename descclassname">fontTools.varLib.cff.</code><code class="sig-name descname">get_private</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">regionFDArrays</span></em>, <em class="sig-param"><span class="n">fd_index</span></em>, <em class="sig-param"><span class="n">ri</span></em>, <em class="sig-param"><span class="n">fd_map</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/varLib/cff.html#get_private"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.cff.get_private" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.varLib.cff.getfd_map">
+<code class="sig-prename descclassname">fontTools.varLib.cff.</code><code class="sig-name descname">getfd_map</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">varFont</span></em>, <em class="sig-param"><span class="n">fonts_list</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/varLib/cff.html#getfd_map"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.cff.getfd_map" title="Permalink to this definition">¶</a></dt>
+<dd><p>Since a subset source font may have fewer FontDicts in their
+FDArray than the default font, we have to match up the FontDicts in
+the different fonts . We do this with the FDSelect array, and by
+assuming that the same glyph will reference  matching FontDicts in
+each source font. We return a mapping from fdIndex in the default
+font to a dictionary which maps each master list index of each
+region font to the equivalent fdIndex in the region font.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.varLib.cff.lib_convertCFFToCFF2">
+<code class="sig-prename descclassname">fontTools.varLib.cff.</code><code class="sig-name descname">lib_convertCFFToCFF2</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">cff</span></em>, <em class="sig-param"><span class="n">otFont</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/varLib/cff.html#lib_convertCFFToCFF2"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.cff.lib_convertCFFToCFF2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.varLib.cff.makeRoundNumberFunc">
+<code class="sig-prename descclassname">fontTools.varLib.cff.</code><code class="sig-name descname">makeRoundNumberFunc</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tolerance</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/varLib/cff.html#makeRoundNumberFunc"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.cff.makeRoundNumberFunc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.varLib.cff.merge_PrivateDicts">
+<code class="sig-prename descclassname">fontTools.varLib.cff.</code><code class="sig-name descname">merge_PrivateDicts</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">top_dicts</span></em>, <em class="sig-param"><span class="n">vsindex_dict</span></em>, <em class="sig-param"><span class="n">var_model</span></em>, <em class="sig-param"><span class="n">fd_map</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/varLib/cff.html#merge_PrivateDicts"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.cff.merge_PrivateDicts" title="Permalink to this definition">¶</a></dt>
+<dd><p>I step through the FontDicts in the FDArray of the varfont TopDict.
+For each varfont FontDict:</p>
+<blockquote>
+<div><p>step through each key in FontDict.Private.
+For each key, step through each relevant source font Private dict, and
+build a list of values to blend.</p>
+</div></blockquote>
+<p>The ‘relevant’ source fonts are selected by first getting the right
+submodel using vsindex_dict[vsindex]. The indices of the
+subModel.locations are mapped to source font list indices by
+assuming the latter order is the same as the order of the
+var_model.locations. I can then get the index of each subModel
+location in the list of var_model.locations.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.varLib.cff.merge_charstrings">
+<code class="sig-prename descclassname">fontTools.varLib.cff.</code><code class="sig-name descname">merge_charstrings</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">glyphOrder</span></em>, <em class="sig-param"><span class="n">num_masters</span></em>, <em class="sig-param"><span class="n">top_dicts</span></em>, <em class="sig-param"><span class="n">masterModel</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/varLib/cff.html#merge_charstrings"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.cff.merge_charstrings" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.varLib.cff.merge_region_fonts">
+<code class="sig-prename descclassname">fontTools.varLib.cff.</code><code class="sig-name descname">merge_region_fonts</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">varFont</span></em>, <em class="sig-param"><span class="n">model</span></em>, <em class="sig-param"><span class="n">ordered_fonts_list</span></em>, <em class="sig-param"><span class="n">glyphOrder</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/varLib/cff.html#merge_region_fonts"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.cff.merge_region_fonts" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="errors.html" class="btn btn-neutral float-right" title="errors" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="builder.html" class="btn btn-neutral float-left" title="builder" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Just van Rossum, Behdad Esfahbod, and the fontTools Authors. CC BY-SA 4.0
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

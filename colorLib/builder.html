@@ -1,0 +1,383 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>builder &mdash; fontTools Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="errors" href="errors.html" />
+    <link rel="prev" title="colorLib" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> fontTools
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Library</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../afmLib.html">afmLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../agl.html">agl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cffLib/index.html">cffLib</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">colorLib</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">builder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="errors.html">errors</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../cu2qu/index.html">cu2qu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../designspaceLib/index.html">designspaceLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../encodings/index.html">encodings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../feaLib/index.html">feaLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../merge.html">merge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/index.html">misc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mtiLib.html">mtiLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../otlLib/index.html">otlLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pens/index.html">pens</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../subset/index.html">subset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svgLib/index.html">svgLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../t1Lib.html">t1Lib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ttLib/index.html">ttLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ttx.html">ttx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ufoLib/index.html">ufoLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unicode.html">unicode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unicodedata/index.html">unicodedata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../varLib/index.html">varLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../voltLib.html">voltLib</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">fontTools</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">colorLib</a> &raquo;</li>
+        
+      <li>builder</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/colorLib/builder.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-fontTools.colorLib.builder">
+<span id="builder"></span><h1>builder<a class="headerlink" href="#module-fontTools.colorLib.builder" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="fontTools.colorLib.builder.ColorPaletteType">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.colorLib.builder.</code><code class="sig-name descname">ColorPaletteType</code><a class="reference internal" href="../_modules/fontTools/colorLib/builder.html#ColorPaletteType"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.colorLib.builder.ColorPaletteType" title="Permalink to this definition">¶</a></dt>
+<dd><p>An enumeration.</p>
+<dl class="py attribute">
+<dt id="fontTools.colorLib.builder.ColorPaletteType.USABLE_WITH_DARK_BACKGROUND">
+<code class="sig-name descname">USABLE_WITH_DARK_BACKGROUND</code><em class="property"> = 2</em><a class="headerlink" href="#fontTools.colorLib.builder.ColorPaletteType.USABLE_WITH_DARK_BACKGROUND" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.colorLib.builder.ColorPaletteType.USABLE_WITH_LIGHT_BACKGROUND">
+<code class="sig-name descname">USABLE_WITH_LIGHT_BACKGROUND</code><em class="property"> = 1</em><a class="headerlink" href="#fontTools.colorLib.builder.ColorPaletteType.USABLE_WITH_LIGHT_BACKGROUND" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.colorLib.builder.buildAffine2x2">
+<code class="sig-prename descclassname">fontTools.colorLib.builder.</code><code class="sig-name descname">buildAffine2x2</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">xx</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>int<span class="p">, </span>float<span class="p">, </span><a class="reference internal" href="../ttLib/tables.html#fontTools.ttLib.tables.otTables.VariableValue" title="fontTools.ttLib.tables.otTables.VariableValue">fontTools.ttLib.tables.otTables.VariableValue</a><span class="p">, </span>Tuple<span class="p">[</span>Union<span class="p">[</span>int<span class="p">, </span>float<span class="p">]</span><span class="p">, </span>int<span class="p">]</span><span class="p">]</span></span></em>, <em class="sig-param"><span class="n">xy</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>int<span class="p">, </span>float<span class="p">, </span><a class="reference internal" href="../ttLib/tables.html#fontTools.ttLib.tables.otTables.VariableValue" title="fontTools.ttLib.tables.otTables.VariableValue">fontTools.ttLib.tables.otTables.VariableValue</a><span class="p">, </span>Tuple<span class="p">[</span>Union<span class="p">[</span>int<span class="p">, </span>float<span class="p">]</span><span class="p">, </span>int<span class="p">]</span><span class="p">]</span></span></em>, <em class="sig-param"><span class="n">yx</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>int<span class="p">, </span>float<span class="p">, </span><a class="reference internal" href="../ttLib/tables.html#fontTools.ttLib.tables.otTables.VariableValue" title="fontTools.ttLib.tables.otTables.VariableValue">fontTools.ttLib.tables.otTables.VariableValue</a><span class="p">, </span>Tuple<span class="p">[</span>Union<span class="p">[</span>int<span class="p">, </span>float<span class="p">]</span><span class="p">, </span>int<span class="p">]</span><span class="p">]</span></span></em>, <em class="sig-param"><span class="n">yy</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>int<span class="p">, </span>float<span class="p">, </span><a class="reference internal" href="../ttLib/tables.html#fontTools.ttLib.tables.otTables.VariableValue" title="fontTools.ttLib.tables.otTables.VariableValue">fontTools.ttLib.tables.otTables.VariableValue</a><span class="p">, </span>Tuple<span class="p">[</span>Union<span class="p">[</span>int<span class="p">, </span>float<span class="p">]</span><span class="p">, </span>int<span class="p">]</span><span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="../ttLib/tables.html#fontTools.ttLib.tables.otTables.Affine2x2" title="fontTools.ttLib.tables.otTables.Affine2x2">fontTools.ttLib.tables.otTables.Affine2x2</a><a class="reference internal" href="../_modules/fontTools/colorLib/builder.html#buildAffine2x2"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.colorLib.builder.buildAffine2x2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.colorLib.builder.buildBaseGlyphV1Array">
+<code class="sig-prename descclassname">fontTools.colorLib.builder.</code><code class="sig-name descname">buildBaseGlyphV1Array</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">colorGlyphs</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>Dict<span class="p">[</span>str<span class="p">, </span>Sequence<span class="p">[</span>Tuple<span class="p">[</span>str<span class="p">, </span>Union<span class="p">[</span>int<span class="p">, </span>Mapping<span class="p">[</span>str<span class="p">, </span>Any<span class="p">]</span><span class="p">, </span><a class="reference internal" href="../ttLib/tables.html#fontTools.ttLib.tables.otTables.Paint" title="fontTools.ttLib.tables.otTables.Paint">fontTools.ttLib.tables.otTables.Paint</a><span class="p">]</span><span class="p">]</span><span class="p">]</span><span class="p">]</span><span class="p">, </span>Dict<span class="p">[</span>str<span class="p">, </span><a class="reference internal" href="../ttLib/tables.html#fontTools.ttLib.tables.otTables.LayerV1Array" title="fontTools.ttLib.tables.otTables.LayerV1Array">fontTools.ttLib.tables.otTables.LayerV1Array</a><span class="p">]</span><span class="p">]</span></span></em>, <em class="sig-param"><span class="n">glyphMap</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>Mapping<span class="p">[</span>str<span class="p">, </span>int<span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="../ttLib/tables.html#fontTools.ttLib.tables.otTables.BaseGlyphV1Array" title="fontTools.ttLib.tables.otTables.BaseGlyphV1Array">fontTools.ttLib.tables.otTables.BaseGlyphV1Array</a><a class="reference internal" href="../_modules/fontTools/colorLib/builder.html#buildBaseGlyphV1Array"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.colorLib.builder.buildBaseGlyphV1Array" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.colorLib.builder.buildBaseGlyphV1Record">
+<code class="sig-prename descclassname">fontTools.colorLib.builder.</code><code class="sig-name descname">buildBaseGlyphV1Record</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">baseGlyph</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">layers</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>Sequence<span class="p">[</span>Tuple<span class="p">[</span>str<span class="p">, </span>Union<span class="p">[</span>int<span class="p">, </span>Mapping<span class="p">[</span>str<span class="p">, </span>Any<span class="p">]</span><span class="p">, </span><a class="reference internal" href="../ttLib/tables.html#fontTools.ttLib.tables.otTables.Paint" title="fontTools.ttLib.tables.otTables.Paint">fontTools.ttLib.tables.otTables.Paint</a><span class="p">]</span><span class="p">]</span><span class="p">]</span><span class="p">, </span><a class="reference internal" href="../ttLib/tables.html#fontTools.ttLib.tables.otTables.LayerV1Array" title="fontTools.ttLib.tables.otTables.LayerV1Array">fontTools.ttLib.tables.otTables.LayerV1Array</a><span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="../ttLib/tables.html#fontTools.ttLib.tables.otTables.BaseGlyphV1Array" title="fontTools.ttLib.tables.otTables.BaseGlyphV1Array">fontTools.ttLib.tables.otTables.BaseGlyphV1Array</a><a class="reference internal" href="../_modules/fontTools/colorLib/builder.html#buildBaseGlyphV1Record"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.colorLib.builder.buildBaseGlyphV1Record" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.colorLib.builder.buildCOLR">
+<code class="sig-prename descclassname">fontTools.colorLib.builder.</code><code class="sig-name descname">buildCOLR</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">colorGlyphs</span><span class="p">:</span> <span class="n">Dict<span class="p">[</span>str<span class="p">, </span>Sequence<span class="p">[</span>Tuple<span class="p">[</span>str<span class="p">, </span>Union<span class="p">[</span>int<span class="p">, </span>Mapping<span class="p">[</span>str<span class="p">, </span>Any<span class="p">]</span><span class="p">, </span><a class="reference internal" href="../ttLib/tables.html#fontTools.ttLib.tables.otTables.Paint" title="fontTools.ttLib.tables.otTables.Paint">fontTools.ttLib.tables.otTables.Paint</a><span class="p">]</span><span class="p">]</span><span class="p">]</span><span class="p">]</span></span></em>, <em class="sig-param"><span class="n">version</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>int<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">glyphMap</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>Mapping<span class="p">[</span>str<span class="p">, </span>int<span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">varStore</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span><a class="reference internal" href="../ttLib/tables.html#fontTools.ttLib.tables.otTables.VarStore" title="fontTools.ttLib.tables.otTables.VarStore">fontTools.ttLib.tables.otTables.VarStore</a><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="../ttLib/tables.html#fontTools.ttLib.tables.C_O_L_R_.table_C_O_L_R_" title="fontTools.ttLib.tables.C_O_L_R_.table_C_O_L_R_">fontTools.ttLib.tables.C_O_L_R_.table_C_O_L_R_</a><a class="reference internal" href="../_modules/fontTools/colorLib/builder.html#buildCOLR"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.colorLib.builder.buildCOLR" title="Permalink to this definition">¶</a></dt>
+<dd><p>Build COLR table from color layers mapping.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>colorGlyphs</strong> – map of base glyph names to lists of (layer glyph names,
+Paint) tuples. For COLRv0, a paint is simply the color palette index
+(int); for COLRv1, paint can be either solid colors (with variable
+opacity), linear gradients or radial gradients.</p></li>
+<li><p><strong>version</strong> – the version of COLR table. If None, the version is determined
+by the presence of gradients or variation data (varStore), which
+require version 1; otherwise, if there are only simple colors, version
+0 is used.</p></li>
+<li><p><strong>glyphMap</strong> – a map from glyph names to glyph indices, as returned from
+TTFont.getReverseGlyphMap(), to optionally sort base records by GID.</p></li>
+<li><p><strong>varStore</strong> – Optional ItemVarationStore for deltas associated with v1 layer.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A new COLR table.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.colorLib.builder.buildCPAL">
+<code class="sig-prename descclassname">fontTools.colorLib.builder.</code><code class="sig-name descname">buildCPAL</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">palettes</span><span class="p">:</span> <span class="n">Sequence<span class="p">[</span>Sequence<span class="p">[</span>Tuple<span class="p">[</span>float<span class="p">, </span>float<span class="p">, </span>float<span class="p">, </span>float<span class="p">]</span><span class="p">]</span><span class="p">]</span></span></em>, <em class="sig-param"><span class="n">paletteTypes</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>Sequence<span class="p">[</span><a class="reference internal" href="#fontTools.colorLib.builder.ColorPaletteType" title="fontTools.colorLib.builder.ColorPaletteType">fontTools.colorLib.builder.ColorPaletteType</a><span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">paletteLabels</span><span class="p">:</span> <span class="n">Optional[Sequence[Union[None, str, Dict[str, str]]]]</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">paletteEntryLabels</span><span class="p">:</span> <span class="n">Optional[Sequence[Union[None, str, Dict[str, str]]]]</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">nameTable</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span><a class="reference internal" href="../ttLib/tables.html#fontTools.ttLib.tables._n_a_m_e.table__n_a_m_e" title="fontTools.ttLib.tables._n_a_m_e.table__n_a_m_e">fontTools.ttLib.tables._n_a_m_e.table__n_a_m_e</a><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="../ttLib/tables.html#fontTools.ttLib.tables.C_P_A_L_.table_C_P_A_L_" title="fontTools.ttLib.tables.C_P_A_L_.table_C_P_A_L_">fontTools.ttLib.tables.C_P_A_L_.table_C_P_A_L_</a><a class="reference internal" href="../_modules/fontTools/colorLib/builder.html#buildCPAL"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.colorLib.builder.buildCPAL" title="Permalink to this definition">¶</a></dt>
+<dd><p>Build CPAL table from list of color palettes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>palettes</strong> – list of lists of colors encoded as tuples of (R, G, B, A) floats
+in the range [0..1].</p></li>
+<li><p><strong>paletteTypes</strong> – optional list of ColorPaletteType, one for each palette.</p></li>
+<li><p><strong>paletteLabels</strong> – optional list of palette labels. Each lable can be either:
+None (no label), a string (for for default English labels), or a
+localized string (as a dict keyed with BCP47 language codes).</p></li>
+<li><p><strong>paletteEntryLabels</strong> – optional list of palette entry labels, one for each
+palette entry (see paletteLabels).</p></li>
+<li><p><strong>nameTable</strong> – optional name table where to store palette and palette entry
+labels. Required if either paletteLabels or paletteEntryLabels is set.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A new CPAL v0 or v1 table, if custom palette types or labels are specified.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.colorLib.builder.buildColor">
+<code class="sig-prename descclassname">fontTools.colorLib.builder.</code><code class="sig-name descname">buildColor</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">paletteIndex</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">transparency</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>int<span class="p">, </span>float<span class="p">, </span><a class="reference internal" href="../ttLib/tables.html#fontTools.ttLib.tables.otTables.VariableValue" title="fontTools.ttLib.tables.otTables.VariableValue">fontTools.ttLib.tables.otTables.VariableValue</a><span class="p">, </span>Tuple<span class="p">[</span>Union<span class="p">[</span>int<span class="p">, </span>float<span class="p">]</span><span class="p">, </span>int<span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">VariableFloat(value=0.0, varIdx=0)</span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="../ttLib/tables.html#fontTools.ttLib.tables.otTables.Color" title="fontTools.ttLib.tables.otTables.Color">fontTools.ttLib.tables.otTables.Color</a><a class="reference internal" href="../_modules/fontTools/colorLib/builder.html#buildColor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.colorLib.builder.buildColor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.colorLib.builder.buildColorLine">
+<code class="sig-prename descclassname">fontTools.colorLib.builder.</code><code class="sig-name descname">buildColorLine</code><span class="sig-paren">(</span><em class="sig-param">stops: Sequence[Union[Tuple[Union[int, float, fontTools.ttLib.tables.otTables.VariableValue, Tuple[Union[int, float], int]], int], Mapping[str, Any], fontTools.ttLib.tables.otTables.ColorStop]], extend: Union[int, str, fontTools.ttLib.tables.otTables.ExtendMode] = &lt;ExtendMode.PAD: 0&gt;</em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="../ttLib/tables.html#fontTools.ttLib.tables.otTables.ColorLine" title="fontTools.ttLib.tables.otTables.ColorLine">fontTools.ttLib.tables.otTables.ColorLine</a><a class="reference internal" href="../_modules/fontTools/colorLib/builder.html#buildColorLine"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.colorLib.builder.buildColorLine" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.colorLib.builder.buildColorStop">
+<code class="sig-prename descclassname">fontTools.colorLib.builder.</code><code class="sig-name descname">buildColorStop</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">offset</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>int<span class="p">, </span>float<span class="p">, </span><a class="reference internal" href="../ttLib/tables.html#fontTools.ttLib.tables.otTables.VariableValue" title="fontTools.ttLib.tables.otTables.VariableValue">fontTools.ttLib.tables.otTables.VariableValue</a><span class="p">, </span>Tuple<span class="p">[</span>Union<span class="p">[</span>int<span class="p">, </span>float<span class="p">]</span><span class="p">, </span>int<span class="p">]</span><span class="p">]</span></span></em>, <em class="sig-param"><span class="n">paletteIndex</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">transparency</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>int<span class="p">, </span>float<span class="p">, </span><a class="reference internal" href="../ttLib/tables.html#fontTools.ttLib.tables.otTables.VariableValue" title="fontTools.ttLib.tables.otTables.VariableValue">fontTools.ttLib.tables.otTables.VariableValue</a><span class="p">, </span>Tuple<span class="p">[</span>Union<span class="p">[</span>int<span class="p">, </span>float<span class="p">]</span><span class="p">, </span>int<span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">VariableFloat(value=0.0, varIdx=0)</span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="../ttLib/tables.html#fontTools.ttLib.tables.otTables.ColorStop" title="fontTools.ttLib.tables.otTables.ColorStop">fontTools.ttLib.tables.otTables.ColorStop</a><a class="reference internal" href="../_modules/fontTools/colorLib/builder.html#buildColorStop"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.colorLib.builder.buildColorStop" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.colorLib.builder.buildLayerV1Array">
+<code class="sig-prename descclassname">fontTools.colorLib.builder.</code><code class="sig-name descname">buildLayerV1Array</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">layers</span><span class="p">:</span> <span class="n">Sequence<span class="p">[</span>Union<span class="p">[</span>Tuple<span class="p">[</span>str<span class="p">, </span>Union<span class="p">[</span>int<span class="p">, </span>Mapping<span class="p">[</span>str<span class="p">, </span>Any<span class="p">]</span><span class="p">, </span><a class="reference internal" href="../ttLib/tables.html#fontTools.ttLib.tables.otTables.Paint" title="fontTools.ttLib.tables.otTables.Paint">fontTools.ttLib.tables.otTables.Paint</a><span class="p">]</span><span class="p">]</span><span class="p">, </span><a class="reference internal" href="../ttLib/tables.html#fontTools.ttLib.tables.otTables.LayerV1Record" title="fontTools.ttLib.tables.otTables.LayerV1Record">fontTools.ttLib.tables.otTables.LayerV1Record</a><span class="p">]</span><span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="../ttLib/tables.html#fontTools.ttLib.tables.otTables.LayerV1Array" title="fontTools.ttLib.tables.otTables.LayerV1Array">fontTools.ttLib.tables.otTables.LayerV1Array</a><a class="reference internal" href="../_modules/fontTools/colorLib/builder.html#buildLayerV1Array"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.colorLib.builder.buildLayerV1Array" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.colorLib.builder.buildLayerV1Record">
+<code class="sig-prename descclassname">fontTools.colorLib.builder.</code><code class="sig-name descname">buildLayerV1Record</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">layerGlyph</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">paint</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>int<span class="p">, </span>Mapping<span class="p">[</span>str<span class="p">, </span>Any<span class="p">]</span><span class="p">, </span><a class="reference internal" href="../ttLib/tables.html#fontTools.ttLib.tables.otTables.Paint" title="fontTools.ttLib.tables.otTables.Paint">fontTools.ttLib.tables.otTables.Paint</a><span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="../ttLib/tables.html#fontTools.ttLib.tables.otTables.LayerV1Record" title="fontTools.ttLib.tables.otTables.LayerV1Record">fontTools.ttLib.tables.otTables.LayerV1Record</a><a class="reference internal" href="../_modules/fontTools/colorLib/builder.html#buildLayerV1Record"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.colorLib.builder.buildLayerV1Record" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.colorLib.builder.buildLinearGradientPaint">
+<code class="sig-prename descclassname">fontTools.colorLib.builder.</code><code class="sig-name descname">buildLinearGradientPaint</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">colorLine</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>Mapping<span class="p">[</span>str<span class="p">, </span>Any<span class="p">]</span><span class="p">, </span><a class="reference internal" href="../ttLib/tables.html#fontTools.ttLib.tables.otTables.ColorLine" title="fontTools.ttLib.tables.otTables.ColorLine">fontTools.ttLib.tables.otTables.ColorLine</a><span class="p">]</span></span></em>, <em class="sig-param"><span class="n">p0</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>Tuple<span class="p">[</span>Union<span class="p">[</span>int<span class="p">, </span>float<span class="p">, </span><a class="reference internal" href="../ttLib/tables.html#fontTools.ttLib.tables.otTables.VariableValue" title="fontTools.ttLib.tables.otTables.VariableValue">fontTools.ttLib.tables.otTables.VariableValue</a><span class="p">, </span>Tuple<span class="p">[</span>Union<span class="p">[</span>int<span class="p">, </span>float<span class="p">]</span><span class="p">, </span>int<span class="p">]</span><span class="p">]</span><span class="p">, </span>Union<span class="p">[</span>int<span class="p">, </span>float<span class="p">, </span><a class="reference internal" href="../ttLib/tables.html#fontTools.ttLib.tables.otTables.VariableValue" title="fontTools.ttLib.tables.otTables.VariableValue">fontTools.ttLib.tables.otTables.VariableValue</a><span class="p">, </span>Tuple<span class="p">[</span>Union<span class="p">[</span>int<span class="p">, </span>float<span class="p">]</span><span class="p">, </span>int<span class="p">]</span><span class="p">]</span><span class="p">]</span><span class="p">, </span><a class="reference internal" href="../ttLib/tables.html#fontTools.ttLib.tables.otTables.Point" title="fontTools.ttLib.tables.otTables.Point">fontTools.ttLib.tables.otTables.Point</a><span class="p">]</span></span></em>, <em class="sig-param"><span class="n">p1</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>Tuple<span class="p">[</span>Union<span class="p">[</span>int<span class="p">, </span>float<span class="p">, </span><a class="reference internal" href="../ttLib/tables.html#fontTools.ttLib.tables.otTables.VariableValue" title="fontTools.ttLib.tables.otTables.VariableValue">fontTools.ttLib.tables.otTables.VariableValue</a><span class="p">, </span>Tuple<span class="p">[</span>Union<span class="p">[</span>int<span class="p">, </span>float<span class="p">]</span><span class="p">, </span>int<span class="p">]</span><span class="p">]</span><span class="p">, </span>Union<span class="p">[</span>int<span class="p">, </span>float<span class="p">, </span><a class="reference internal" href="../ttLib/tables.html#fontTools.ttLib.tables.otTables.VariableValue" title="fontTools.ttLib.tables.otTables.VariableValue">fontTools.ttLib.tables.otTables.VariableValue</a><span class="p">, </span>Tuple<span class="p">[</span>Union<span class="p">[</span>int<span class="p">, </span>float<span class="p">]</span><span class="p">, </span>int<span class="p">]</span><span class="p">]</span><span class="p">]</span><span class="p">, </span><a class="reference internal" href="../ttLib/tables.html#fontTools.ttLib.tables.otTables.Point" title="fontTools.ttLib.tables.otTables.Point">fontTools.ttLib.tables.otTables.Point</a><span class="p">]</span></span></em>, <em class="sig-param"><span class="n">p2</span><span class="p">:</span> <span class="n">Union[Tuple[Union[int, float, fontTools.ttLib.tables.otTables.VariableValue, Tuple[Union[int, float], int]], Union[int, float, fontTools.ttLib.tables.otTables.VariableValue, Tuple[Union[int, float], int]]], fontTools.ttLib.tables.otTables.Point, None]</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="../ttLib/tables.html#fontTools.ttLib.tables.otTables.Paint" title="fontTools.ttLib.tables.otTables.Paint">fontTools.ttLib.tables.otTables.Paint</a><a class="reference internal" href="../_modules/fontTools/colorLib/builder.html#buildLinearGradientPaint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.colorLib.builder.buildLinearGradientPaint" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.colorLib.builder.buildPaint">
+<code class="sig-prename descclassname">fontTools.colorLib.builder.</code><code class="sig-name descname">buildPaint</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">format</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="../ttLib/tables.html#fontTools.ttLib.tables.otTables.Paint" title="fontTools.ttLib.tables.otTables.Paint">fontTools.ttLib.tables.otTables.Paint</a><a class="reference internal" href="../_modules/fontTools/colorLib/builder.html#buildPaint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.colorLib.builder.buildPaint" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.colorLib.builder.buildPaletteLabels">
+<code class="sig-prename descclassname">fontTools.colorLib.builder.</code><code class="sig-name descname">buildPaletteLabels</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">labels</span><span class="p">:</span> <span class="n">Iterable[Union[None, str, Dict[str, str]]]</span></em>, <em class="sig-param"><span class="n">nameTable</span><span class="p">:</span> <span class="n"><a class="reference internal" href="../ttLib/tables.html#fontTools.ttLib.tables._n_a_m_e.table__n_a_m_e" title="fontTools.ttLib.tables._n_a_m_e.table__n_a_m_e">fontTools.ttLib.tables._n_a_m_e.table__n_a_m_e</a></span></em><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>Optional<span class="p">[</span>int<span class="p">]</span><span class="p">]</span><a class="reference internal" href="../_modules/fontTools/colorLib/builder.html#buildPaletteLabels"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.colorLib.builder.buildPaletteLabels" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.colorLib.builder.buildPoint">
+<code class="sig-prename descclassname">fontTools.colorLib.builder.</code><code class="sig-name descname">buildPoint</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>int<span class="p">, </span>float<span class="p">, </span><a class="reference internal" href="../ttLib/tables.html#fontTools.ttLib.tables.otTables.VariableValue" title="fontTools.ttLib.tables.otTables.VariableValue">fontTools.ttLib.tables.otTables.VariableValue</a><span class="p">, </span>Tuple<span class="p">[</span>Union<span class="p">[</span>int<span class="p">, </span>float<span class="p">]</span><span class="p">, </span>int<span class="p">]</span><span class="p">]</span></span></em>, <em class="sig-param"><span class="n">y</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>int<span class="p">, </span>float<span class="p">, </span><a class="reference internal" href="../ttLib/tables.html#fontTools.ttLib.tables.otTables.VariableValue" title="fontTools.ttLib.tables.otTables.VariableValue">fontTools.ttLib.tables.otTables.VariableValue</a><span class="p">, </span>Tuple<span class="p">[</span>Union<span class="p">[</span>int<span class="p">, </span>float<span class="p">]</span><span class="p">, </span>int<span class="p">]</span><span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="../ttLib/tables.html#fontTools.ttLib.tables.otTables.Point" title="fontTools.ttLib.tables.otTables.Point">fontTools.ttLib.tables.otTables.Point</a><a class="reference internal" href="../_modules/fontTools/colorLib/builder.html#buildPoint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.colorLib.builder.buildPoint" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.colorLib.builder.buildRadialGradientPaint">
+<code class="sig-prename descclassname">fontTools.colorLib.builder.</code><code class="sig-name descname">buildRadialGradientPaint</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">colorLine</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>Mapping<span class="p">[</span>str<span class="p">, </span>Any<span class="p">]</span><span class="p">, </span><a class="reference internal" href="../ttLib/tables.html#fontTools.ttLib.tables.otTables.ColorLine" title="fontTools.ttLib.tables.otTables.ColorLine">fontTools.ttLib.tables.otTables.ColorLine</a><span class="p">]</span></span></em>, <em class="sig-param"><span class="n">c0</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>Tuple<span class="p">[</span>Union<span class="p">[</span>int<span class="p">, </span>float<span class="p">, </span><a class="reference internal" href="../ttLib/tables.html#fontTools.ttLib.tables.otTables.VariableValue" title="fontTools.ttLib.tables.otTables.VariableValue">fontTools.ttLib.tables.otTables.VariableValue</a><span class="p">, </span>Tuple<span class="p">[</span>Union<span class="p">[</span>int<span class="p">, </span>float<span class="p">]</span><span class="p">, </span>int<span class="p">]</span><span class="p">]</span><span class="p">, </span>Union<span class="p">[</span>int<span class="p">, </span>float<span class="p">, </span><a class="reference internal" href="../ttLib/tables.html#fontTools.ttLib.tables.otTables.VariableValue" title="fontTools.ttLib.tables.otTables.VariableValue">fontTools.ttLib.tables.otTables.VariableValue</a><span class="p">, </span>Tuple<span class="p">[</span>Union<span class="p">[</span>int<span class="p">, </span>float<span class="p">]</span><span class="p">, </span>int<span class="p">]</span><span class="p">]</span><span class="p">]</span><span class="p">, </span><a class="reference internal" href="../ttLib/tables.html#fontTools.ttLib.tables.otTables.Point" title="fontTools.ttLib.tables.otTables.Point">fontTools.ttLib.tables.otTables.Point</a><span class="p">]</span></span></em>, <em class="sig-param"><span class="n">c1</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>Tuple<span class="p">[</span>Union<span class="p">[</span>int<span class="p">, </span>float<span class="p">, </span><a class="reference internal" href="../ttLib/tables.html#fontTools.ttLib.tables.otTables.VariableValue" title="fontTools.ttLib.tables.otTables.VariableValue">fontTools.ttLib.tables.otTables.VariableValue</a><span class="p">, </span>Tuple<span class="p">[</span>Union<span class="p">[</span>int<span class="p">, </span>float<span class="p">]</span><span class="p">, </span>int<span class="p">]</span><span class="p">]</span><span class="p">, </span>Union<span class="p">[</span>int<span class="p">, </span>float<span class="p">, </span><a class="reference internal" href="../ttLib/tables.html#fontTools.ttLib.tables.otTables.VariableValue" title="fontTools.ttLib.tables.otTables.VariableValue">fontTools.ttLib.tables.otTables.VariableValue</a><span class="p">, </span>Tuple<span class="p">[</span>Union<span class="p">[</span>int<span class="p">, </span>float<span class="p">]</span><span class="p">, </span>int<span class="p">]</span><span class="p">]</span><span class="p">]</span><span class="p">, </span><a class="reference internal" href="../ttLib/tables.html#fontTools.ttLib.tables.otTables.Point" title="fontTools.ttLib.tables.otTables.Point">fontTools.ttLib.tables.otTables.Point</a><span class="p">]</span></span></em>, <em class="sig-param"><span class="n">r0</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>int<span class="p">, </span>float<span class="p">, </span><a class="reference internal" href="../ttLib/tables.html#fontTools.ttLib.tables.otTables.VariableValue" title="fontTools.ttLib.tables.otTables.VariableValue">fontTools.ttLib.tables.otTables.VariableValue</a><span class="p">, </span>Tuple<span class="p">[</span>Union<span class="p">[</span>int<span class="p">, </span>float<span class="p">]</span><span class="p">, </span>int<span class="p">]</span><span class="p">]</span></span></em>, <em class="sig-param"><span class="n">r1</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>int<span class="p">, </span>float<span class="p">, </span><a class="reference internal" href="../ttLib/tables.html#fontTools.ttLib.tables.otTables.VariableValue" title="fontTools.ttLib.tables.otTables.VariableValue">fontTools.ttLib.tables.otTables.VariableValue</a><span class="p">, </span>Tuple<span class="p">[</span>Union<span class="p">[</span>int<span class="p">, </span>float<span class="p">]</span><span class="p">, </span>int<span class="p">]</span><span class="p">]</span></span></em>, <em class="sig-param"><span class="n">affine</span><span class="p">:</span> <span class="n">Union[Tuple[Union[int, float, fontTools.ttLib.tables.otTables.VariableValue, Tuple[Union[int, float], int]], Union[int, float, fontTools.ttLib.tables.otTables.VariableValue, Tuple[Union[int, float], int]], Union[int, float, fontTools.ttLib.tables.otTables.VariableValue, Tuple[Union[int, float], int]], Union[int, float, fontTools.ttLib.tables.otTables.VariableValue, Tuple[Union[int, float], int]]], fontTools.ttLib.tables.otTables.Affine2x2, None]</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="../ttLib/tables.html#fontTools.ttLib.tables.otTables.Paint" title="fontTools.ttLib.tables.otTables.Paint">fontTools.ttLib.tables.otTables.Paint</a><a class="reference internal" href="../_modules/fontTools/colorLib/builder.html#buildRadialGradientPaint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.colorLib.builder.buildRadialGradientPaint" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.colorLib.builder.buildSolidColorPaint">
+<code class="sig-prename descclassname">fontTools.colorLib.builder.</code><code class="sig-name descname">buildSolidColorPaint</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">paletteIndex</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">transparency</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>int<span class="p">, </span>float<span class="p">, </span><a class="reference internal" href="../ttLib/tables.html#fontTools.ttLib.tables.otTables.VariableValue" title="fontTools.ttLib.tables.otTables.VariableValue">fontTools.ttLib.tables.otTables.VariableValue</a><span class="p">, </span>Tuple<span class="p">[</span>Union<span class="p">[</span>int<span class="p">, </span>float<span class="p">]</span><span class="p">, </span>int<span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">VariableFloat(value=0.0, varIdx=0)</span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="../ttLib/tables.html#fontTools.ttLib.tables.otTables.Paint" title="fontTools.ttLib.tables.otTables.Paint">fontTools.ttLib.tables.otTables.Paint</a><a class="reference internal" href="../_modules/fontTools/colorLib/builder.html#buildSolidColorPaint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.colorLib.builder.buildSolidColorPaint" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.colorLib.builder.populateCOLRv0">
+<code class="sig-prename descclassname">fontTools.colorLib.builder.</code><code class="sig-name descname">populateCOLRv0</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">table</span><span class="p">:</span> <span class="n"><a class="reference internal" href="../ttLib/tables.html#fontTools.ttLib.tables.otTables.COLR" title="fontTools.ttLib.tables.otTables.COLR">fontTools.ttLib.tables.otTables.COLR</a></span></em>, <em class="sig-param"><span class="n">colorGlyphsV0</span><span class="p">:</span> <span class="n">Dict<span class="p">[</span>str<span class="p">, </span>Sequence<span class="p">[</span>Tuple<span class="p">[</span>str<span class="p">, </span>int<span class="p">]</span><span class="p">]</span><span class="p">]</span></span></em>, <em class="sig-param"><span class="n">glyphMap</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>Mapping<span class="p">[</span>str<span class="p">, </span>int<span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/colorLib/builder.html#populateCOLRv0"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.colorLib.builder.populateCOLRv0" title="Permalink to this definition">¶</a></dt>
+<dd><p>Build v0 color layers and add to existing COLR table.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>table</strong> – a raw otTables.COLR() object (not ttLib’s <a href="#id1"><span class="problematic" id="id2">table_C_O_L_R_</span></a>).</p></li>
+<li><p><strong>colorGlyphsV0</strong> – map of base glyph names to lists of (layer glyph names,
+color palette index) tuples.</p></li>
+<li><p><strong>glyphMap</strong> – a map from glyph names to glyph indices, as returned from
+TTFont.getReverseGlyphMap(), to optionally sort base records by GID.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="errors.html" class="btn btn-neutral float-right" title="errors" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="colorLib" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Just van Rossum, Behdad Esfahbod, and the fontTools Authors. CC BY-SA 4.0
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,510 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>recordingPen &mdash; fontTools Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="reportLabPen" href="reportLabPen.html" />
+    <link rel="prev" title="qtPen" href="qtPen.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> fontTools
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Library</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../afmLib.html">afmLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../agl.html">agl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cffLib/index.html">cffLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../colorLib/index.html">colorLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cu2qu/index.html">cu2qu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../designspaceLib/index.html">designspaceLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../encodings/index.html">encodings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../feaLib/index.html">feaLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../merge.html">merge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/index.html">misc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mtiLib.html">mtiLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../otlLib/index.html">otlLib</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">pens</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="areaPen.html">areaPen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basePen.html">basePen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="boundsPen.html">boundsPen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cocoaPen.html">cocoaPen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cu2quPen.html">cu2quPen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="filterPen.html">filterPen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="momentsPen.html">momentsPen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="perimeterPen.html">perimeterPen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pointInsidePen.html">pointInsidePen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pointPen.html">pointPen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qtPen.html">qtPen</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">recordingPen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reportLabPen.html">reportLabPen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reverseContourPen.html">reverseContourPen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="roundingPen.html">roundingPen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="statisticsPen.html">statisticsPen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="svgPathPen.html">svgPathPen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="t2CharStringPen.html">t2CharStringPen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="teePen.html">teePen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transformPen.html">transformPen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ttGlyphPen.html">ttGlyphPen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wxPen.html">wxPen</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../subset/index.html">subset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svgLib/index.html">svgLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../t1Lib.html">t1Lib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ttLib/index.html">ttLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ttx.html">ttx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ufoLib/index.html">ufoLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unicode.html">unicode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unicodedata/index.html">unicodedata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../varLib/index.html">varLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../voltLib.html">voltLib</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">fontTools</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">pens</a> &raquo;</li>
+        
+      <li>recordingPen</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/pens/recordingPen.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-fontTools.pens.recordingPen">
+<span id="recordingpen"></span><h1>recordingPen<a class="headerlink" href="#module-fontTools.pens.recordingPen" title="Permalink to this headline">¶</a></h1>
+<p>Pen recording operations that can be accessed or replayed.</p>
+<dl class="py function">
+<dt id="fontTools.pens.recordingPen.replayRecording">
+<code class="sig-prename descclassname">fontTools.pens.recordingPen.</code><code class="sig-name descname">replayRecording</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">recording</span></em>, <em class="sig-param"><span class="n">pen</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/pens/recordingPen.html#replayRecording"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.pens.recordingPen.replayRecording" title="Permalink to this definition">¶</a></dt>
+<dd><p>Replay a recording, as produced by RecordingPen or DecomposingRecordingPen,
+to a pen.</p>
+<p>Note that recording does not have to be produced by those pens.
+It can be any iterable of tuples of method name and tuple-of-arguments.
+Likewise, pen can be any objects receiving those method calls.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.pens.recordingPen.RecordingPen">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.pens.recordingPen.</code><code class="sig-name descname">RecordingPen</code><a class="reference internal" href="../_modules/fontTools/pens/recordingPen.html#RecordingPen"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.pens.recordingPen.RecordingPen" title="Permalink to this definition">¶</a></dt>
+<dd><p>Pen recording operations that can be accessed or replayed.</p>
+<p>The recording can be accessed as pen.value; or replayed using
+pen.replay(otherPen).</p>
+<p>from fontTools.ttLib import TTFont
+from fontTools.pens.recordingPen import RecordingPen</p>
+<p>glyph_name = ‘dollar’
+font_path = ‘MyFont.otf’</p>
+<p>font = TTFont(font_path)
+glyphset = font.getGlyphSet()
+glyph = glyphset[glyph_name]</p>
+<p>pen = RecordingPen()
+glyph.draw(pen)
+print(pen.value)</p>
+<dl class="py method">
+<dt id="fontTools.pens.recordingPen.RecordingPen.addComponent">
+<code class="sig-name descname">addComponent</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">glyphName</span></em>, <em class="sig-param"><span class="n">transformation</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/pens/recordingPen.html#RecordingPen.addComponent"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.pens.recordingPen.RecordingPen.addComponent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a sub glyph. The ‘transformation’ argument must be a 6-tuple
+containing an affine transformation, or a Transform object from the
+fontTools.misc.transform module. More precisely: it should be a
+sequence containing 6 numbers.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.pens.recordingPen.RecordingPen.closePath">
+<code class="sig-name descname">closePath</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/pens/recordingPen.html#RecordingPen.closePath"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.pens.recordingPen.RecordingPen.closePath" title="Permalink to this definition">¶</a></dt>
+<dd><p>Close the current sub path. You must call either pen.closePath()
+or pen.endPath() after each sub path.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.pens.recordingPen.RecordingPen.curveTo">
+<code class="sig-name descname">curveTo</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">points</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/pens/recordingPen.html#RecordingPen.curveTo"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.pens.recordingPen.RecordingPen.curveTo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draw a cubic bezier with an arbitrary number of control points.</p>
+<p>The last point specified is on-curve, all others are off-curve
+(control) points. If the number of control points is &gt; 2, the
+segment is split into multiple bezier segments. This works
+like this:</p>
+<p>Let n be the number of control points (which is the number of
+arguments to this call minus 1). If n==2, a plain vanilla cubic
+bezier is drawn. If n==1, we fall back to a quadratic segment and
+if n==0 we draw a straight line. It gets interesting when n&gt;2:
+n-1 PostScript-style cubic segments will be drawn as if it were
+one curve. See decomposeSuperBezierSegment().</p>
+<p>The conversion algorithm used for n&gt;2 is inspired by NURB
+splines, and is conceptually equivalent to the TrueType “implied
+points” principle. See also decomposeQuadraticSegment().</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.pens.recordingPen.RecordingPen.endPath">
+<code class="sig-name descname">endPath</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/pens/recordingPen.html#RecordingPen.endPath"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.pens.recordingPen.RecordingPen.endPath" title="Permalink to this definition">¶</a></dt>
+<dd><p>End the current sub path, but don’t close it. You must call
+either pen.closePath() or pen.endPath() after each sub path.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.pens.recordingPen.RecordingPen.lineTo">
+<code class="sig-name descname">lineTo</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">p1</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/pens/recordingPen.html#RecordingPen.lineTo"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.pens.recordingPen.RecordingPen.lineTo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draw a straight line from the current point to ‘pt’.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.pens.recordingPen.RecordingPen.moveTo">
+<code class="sig-name descname">moveTo</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">p0</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/pens/recordingPen.html#RecordingPen.moveTo"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.pens.recordingPen.RecordingPen.moveTo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Begin a new sub path, set the current point to ‘pt’. You must
+end each sub path with a call to pen.closePath() or pen.endPath().</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.pens.recordingPen.RecordingPen.qCurveTo">
+<code class="sig-name descname">qCurveTo</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">points</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/pens/recordingPen.html#RecordingPen.qCurveTo"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.pens.recordingPen.RecordingPen.qCurveTo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draw a whole string of quadratic curve segments.</p>
+<p>The last point specified is on-curve, all others are off-curve
+points.</p>
+<p>This method implements TrueType-style curves, breaking up curves
+using ‘implied points’: between each two consequtive off-curve points,
+there is one implied point exactly in the middle between them. See
+also decomposeQuadraticSegment().</p>
+<p>The last argument (normally the on-curve point) may be None.
+This is to support contours that have NO on-curve points (a rarely
+seen feature of TrueType outlines).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.pens.recordingPen.RecordingPen.replay">
+<code class="sig-name descname">replay</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pen</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/pens/recordingPen.html#RecordingPen.replay"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.pens.recordingPen.RecordingPen.replay" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.pens.recordingPen.DecomposingRecordingPen">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.pens.recordingPen.</code><code class="sig-name descname">DecomposingRecordingPen</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">glyphSet</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/pens/recordingPen.html#DecomposingRecordingPen"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.pens.recordingPen.DecomposingRecordingPen" title="Permalink to this definition">¶</a></dt>
+<dd><p>Same as RecordingPen, except that it doesn’t keep components
+as references, but draws them decomposed as regular contours.</p>
+<p>The constructor takes a single ‘glyphSet’ positional argument,
+a dictionary of glyph objects (i.e. with a ‘draw’ method) keyed
+by thir name.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">SimpleGlyph</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="k">def</span> <span class="nf">draw</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pen</span><span class="p">):</span>
+<span class="gp">... </span>        <span class="n">pen</span><span class="o">.</span><span class="n">moveTo</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="gp">... </span>        <span class="n">pen</span><span class="o">.</span><span class="n">curveTo</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="gp">... </span>        <span class="n">pen</span><span class="o">.</span><span class="n">closePath</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">CompositeGlyph</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="k">def</span> <span class="nf">draw</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pen</span><span class="p">):</span>
+<span class="gp">... </span>        <span class="n">pen</span><span class="o">.</span><span class="n">addComponent</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">glyphSet</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="n">SimpleGlyph</span><span class="p">(),</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="n">CompositeGlyph</span><span class="p">()}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">glyph</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">glyphSet</span><span class="o">.</span><span class="n">items</span><span class="p">()):</span>
+<span class="gp">... </span>    <span class="n">pen</span> <span class="o">=</span> <span class="n">DecomposingRecordingPen</span><span class="p">(</span><span class="n">glyphSet</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="n">glyph</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">pen</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">pen</span><span class="o">.</span><span class="n">value</span><span class="p">))</span>
+<span class="go">a: [(&#39;moveTo&#39;, ((0, 0),)), (&#39;curveTo&#39;, ((1, 1), (2, 2), (3, 3))), (&#39;closePath&#39;, ())]</span>
+<span class="go">b: [(&#39;moveTo&#39;, ((-1, 1),)), (&#39;curveTo&#39;, ((0, 2), (1, 3), (2, 4))), (&#39;closePath&#39;, ())]</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt id="fontTools.pens.recordingPen.DecomposingRecordingPen.addComponent">
+<code class="sig-name descname">addComponent</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">glyphName</span></em>, <em class="sig-param"><span class="n">transformation</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.pens.recordingPen.DecomposingRecordingPen.addComponent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Transform the points of the base glyph and draw it onto self.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.pens.recordingPen.DecomposingRecordingPen.closePath">
+<code class="sig-name descname">closePath</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.pens.recordingPen.DecomposingRecordingPen.closePath" title="Permalink to this definition">¶</a></dt>
+<dd><p>Close the current sub path. You must call either pen.closePath()
+or pen.endPath() after each sub path.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.pens.recordingPen.DecomposingRecordingPen.curveTo">
+<code class="sig-name descname">curveTo</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">points</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.pens.recordingPen.DecomposingRecordingPen.curveTo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draw a cubic bezier with an arbitrary number of control points.</p>
+<p>The last point specified is on-curve, all others are off-curve
+(control) points. If the number of control points is &gt; 2, the
+segment is split into multiple bezier segments. This works
+like this:</p>
+<p>Let n be the number of control points (which is the number of
+arguments to this call minus 1). If n==2, a plain vanilla cubic
+bezier is drawn. If n==1, we fall back to a quadratic segment and
+if n==0 we draw a straight line. It gets interesting when n&gt;2:
+n-1 PostScript-style cubic segments will be drawn as if it were
+one curve. See decomposeSuperBezierSegment().</p>
+<p>The conversion algorithm used for n&gt;2 is inspired by NURB
+splines, and is conceptually equivalent to the TrueType “implied
+points” principle. See also decomposeQuadraticSegment().</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.pens.recordingPen.DecomposingRecordingPen.endPath">
+<code class="sig-name descname">endPath</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.pens.recordingPen.DecomposingRecordingPen.endPath" title="Permalink to this definition">¶</a></dt>
+<dd><p>End the current sub path, but don’t close it. You must call
+either pen.closePath() or pen.endPath() after each sub path.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.pens.recordingPen.DecomposingRecordingPen.lineTo">
+<code class="sig-name descname">lineTo</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">p1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.pens.recordingPen.DecomposingRecordingPen.lineTo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draw a straight line from the current point to ‘pt’.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.pens.recordingPen.DecomposingRecordingPen.log">
+<em class="property">property </em><code class="sig-name descname">log</code><a class="headerlink" href="#fontTools.pens.recordingPen.DecomposingRecordingPen.log" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.pens.recordingPen.DecomposingRecordingPen.moveTo">
+<code class="sig-name descname">moveTo</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">p0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.pens.recordingPen.DecomposingRecordingPen.moveTo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Begin a new sub path, set the current point to ‘pt’. You must
+end each sub path with a call to pen.closePath() or pen.endPath().</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.pens.recordingPen.DecomposingRecordingPen.qCurveTo">
+<code class="sig-name descname">qCurveTo</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">points</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.pens.recordingPen.DecomposingRecordingPen.qCurveTo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draw a whole string of quadratic curve segments.</p>
+<p>The last point specified is on-curve, all others are off-curve
+points.</p>
+<p>This method implements TrueType-style curves, breaking up curves
+using ‘implied points’: between each two consequtive off-curve points,
+there is one implied point exactly in the middle between them. See
+also decomposeQuadraticSegment().</p>
+<p>The last argument (normally the on-curve point) may be None.
+This is to support contours that have NO on-curve points (a rarely
+seen feature of TrueType outlines).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.pens.recordingPen.DecomposingRecordingPen.replay">
+<code class="sig-name descname">replay</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pen</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.pens.recordingPen.DecomposingRecordingPen.replay" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.pens.recordingPen.DecomposingRecordingPen.skipMissingComponents">
+<code class="sig-name descname">skipMissingComponents</code><em class="property"> = False</em><a class="headerlink" href="#fontTools.pens.recordingPen.DecomposingRecordingPen.skipMissingComponents" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.pens.recordingPen.RecordingPointPen">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.pens.recordingPen.</code><code class="sig-name descname">RecordingPointPen</code><a class="reference internal" href="../_modules/fontTools/pens/recordingPen.html#RecordingPointPen"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.pens.recordingPen.RecordingPointPen" title="Permalink to this definition">¶</a></dt>
+<dd><p>PointPen recording operations that can be accessed or replayed.</p>
+<p>The recording can be accessed as pen.value; or replayed using
+pointPen.replay(otherPointPen).</p>
+<p>from defcon import Font
+from fontTools.pens.recordingPen import RecordingPointPen</p>
+<p>glyph_name = ‘a’
+font_path = ‘MyFont.ufo’</p>
+<p>font = Font(font_path)
+glyph = font[glyph_name]</p>
+<p>pen = RecordingPointPen()
+glyph.drawPoints(pen)
+print(pen.value)</p>
+<p>new_glyph = font.newGlyph(‘b’)
+pen.replay(new_glyph.getPointPen())</p>
+<dl class="py method">
+<dt id="fontTools.pens.recordingPen.RecordingPointPen.addComponent">
+<code class="sig-name descname">addComponent</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">baseGlyphName</span></em>, <em class="sig-param"><span class="n">transformation</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/pens/recordingPen.html#RecordingPointPen.addComponent"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.pens.recordingPen.RecordingPointPen.addComponent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a sub glyph.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.pens.recordingPen.RecordingPointPen.addPoint">
+<code class="sig-name descname">addPoint</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pt</span></em>, <em class="sig-param"><span class="n">segmentType</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">smooth</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/pens/recordingPen.html#RecordingPointPen.addPoint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.pens.recordingPen.RecordingPointPen.addPoint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a point to the current sub path.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.pens.recordingPen.RecordingPointPen.beginPath">
+<code class="sig-name descname">beginPath</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/pens/recordingPen.html#RecordingPointPen.beginPath"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.pens.recordingPen.RecordingPointPen.beginPath" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start a new sub path.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.pens.recordingPen.RecordingPointPen.endPath">
+<code class="sig-name descname">endPath</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/pens/recordingPen.html#RecordingPointPen.endPath"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.pens.recordingPen.RecordingPointPen.endPath" title="Permalink to this definition">¶</a></dt>
+<dd><p>End the current sub path.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.pens.recordingPen.RecordingPointPen.replay">
+<code class="sig-name descname">replay</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pointPen</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/pens/recordingPen.html#RecordingPointPen.replay"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.pens.recordingPen.RecordingPointPen.replay" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="reportLabPen.html" class="btn btn-neutral float-right" title="reportLabPen" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="qtPen.html" class="btn btn-neutral float-left" title="qtPen" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Just van Rossum, Behdad Esfahbod, and the fontTools Authors. CC BY-SA 4.0
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

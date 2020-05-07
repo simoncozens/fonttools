@@ -1,0 +1,364 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>fontTools.ttLib.tables.C_O_L_R_ &mdash; fontTools Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> fontTools
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Library</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../afmLib.html">afmLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../agl.html">agl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../cffLib/index.html">cffLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../colorLib/index.html">colorLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../cu2qu/index.html">cu2qu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../designspaceLib/index.html">designspaceLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../encodings/index.html">encodings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../feaLib/index.html">feaLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../merge.html">merge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../misc/index.html">misc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../mtiLib.html">mtiLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../otlLib/index.html">otlLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../pens/index.html">pens</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../subset/index.html">subset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../svgLib/index.html">svgLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../t1Lib.html">t1Lib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../ttLib/index.html">ttLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../ttx.html">ttx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../ufoLib/index.html">ufoLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../unicode.html">unicode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../unicodedata/index.html">unicodedata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../varLib/index.html">varLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../voltLib.html">voltLib</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">fontTools</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../../ttLib.html">fontTools.ttLib</a> &raquo;</li>
+        
+      <li>fontTools.ttLib.tables.C_O_L_R_</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for fontTools.ttLib.tables.C_O_L_R_</h1><div class="highlight"><pre>
+<span></span><span class="c1"># Copyright 2013 Google, Inc. All Rights Reserved.</span>
+<span class="c1">#</span>
+<span class="c1"># Google Author(s): Behdad Esfahbod</span>
+
+<span class="kn">from</span> <span class="nn">fontTools.misc.py23</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">fontTools.misc.textTools</span> <span class="k">import</span> <span class="n">safeEval</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="k">import</span> <span class="n">DefaultTable</span>
+
+
+<div class="viewcode-block" id="table_C_O_L_R_"><a class="viewcode-back" href="../../../../ttLib/tables.html#fontTools.ttLib.tables.C_O_L_R_.table_C_O_L_R_">[docs]</a><span class="k">class</span> <span class="nc">table_C_O_L_R_</span><span class="p">(</span><span class="n">DefaultTable</span><span class="o">.</span><span class="n">DefaultTable</span><span class="p">):</span>
+
+	<span class="sd">&quot;&quot;&quot; This table is structured so that you can treat it like a dictionary keyed by glyph name.</span>
+<span class="sd">	ttFont[&#39;COLR&#39;][&lt;glyphName&gt;] will return the color layers for any glyph</span>
+<span class="sd">	ttFont[&#39;COLR&#39;][&lt;glyphName&gt;] = &lt;value&gt; will set the color layers for any glyph.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+
+	<span class="k">def</span> <span class="nf">_fromOTTable</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">table</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">version</span> <span class="o">=</span> <span class="mi">0</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">ColorLayers</span> <span class="o">=</span> <span class="n">colorLayerLists</span> <span class="o">=</span> <span class="p">{}</span>
+		<span class="n">layerRecords</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">LayerRecordArray</span><span class="o">.</span><span class="n">LayerRecord</span>
+		<span class="n">numLayerRecords</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">layerRecords</span><span class="p">)</span>
+		<span class="k">for</span> <span class="n">baseRec</span> <span class="ow">in</span> <span class="n">table</span><span class="o">.</span><span class="n">BaseGlyphRecordArray</span><span class="o">.</span><span class="n">BaseGlyphRecord</span><span class="p">:</span>
+			<span class="n">baseGlyph</span> <span class="o">=</span> <span class="n">baseRec</span><span class="o">.</span><span class="n">BaseGlyph</span>
+			<span class="n">firstLayerIndex</span> <span class="o">=</span> <span class="n">baseRec</span><span class="o">.</span><span class="n">FirstLayerIndex</span>
+			<span class="n">numLayers</span> <span class="o">=</span> <span class="n">baseRec</span><span class="o">.</span><span class="n">NumLayers</span>
+			<span class="k">assert</span> <span class="p">(</span><span class="n">firstLayerIndex</span> <span class="o">+</span> <span class="n">numLayers</span> <span class="o">&lt;=</span> <span class="n">numLayerRecords</span><span class="p">)</span>
+			<span class="n">layers</span> <span class="o">=</span> <span class="p">[]</span>
+			<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">firstLayerIndex</span><span class="p">,</span> <span class="n">firstLayerIndex</span><span class="o">+</span><span class="n">numLayers</span><span class="p">):</span>
+				<span class="n">layerRec</span> <span class="o">=</span> <span class="n">layerRecords</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+				<span class="n">layers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+					<span class="n">LayerRecord</span><span class="p">(</span><span class="n">layerRec</span><span class="o">.</span><span class="n">LayerGlyph</span><span class="p">,</span> <span class="n">layerRec</span><span class="o">.</span><span class="n">PaletteIndex</span><span class="p">)</span>
+				<span class="p">)</span>
+			<span class="n">colorLayerLists</span><span class="p">[</span><span class="n">baseGlyph</span><span class="p">]</span> <span class="o">=</span> <span class="n">layers</span>
+
+	<span class="k">def</span> <span class="nf">_toOTTable</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ttFont</span><span class="p">):</span>
+		<span class="kn">from</span> <span class="nn">.</span> <span class="k">import</span> <span class="n">otTables</span>
+		<span class="kn">from</span> <span class="nn">fontTools.colorLib.builder</span> <span class="k">import</span> <span class="n">populateCOLRv0</span>
+
+		<span class="n">tableClass</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">otTables</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">tableTag</span><span class="p">)</span>
+		<span class="n">table</span> <span class="o">=</span> <span class="n">tableClass</span><span class="p">()</span>
+		<span class="n">table</span><span class="o">.</span><span class="n">Version</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">version</span>
+
+		<span class="n">populateCOLRv0</span><span class="p">(</span>
+			<span class="n">table</span><span class="p">,</span>
+			<span class="p">{</span>
+				<span class="n">baseGlyph</span><span class="p">:</span> <span class="p">[(</span><span class="n">layer</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">layer</span><span class="o">.</span><span class="n">colorID</span><span class="p">)</span> <span class="k">for</span> <span class="n">layer</span> <span class="ow">in</span> <span class="n">layers</span><span class="p">]</span>
+				<span class="k">for</span> <span class="n">baseGlyph</span><span class="p">,</span> <span class="n">layers</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">ColorLayers</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+			<span class="p">},</span>
+			<span class="n">glyphMap</span><span class="o">=</span><span class="n">ttFont</span><span class="o">.</span><span class="n">getReverseGlyphMap</span><span class="p">(</span><span class="n">rebuild</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+		<span class="p">)</span>
+		<span class="k">return</span> <span class="n">table</span>
+
+<div class="viewcode-block" id="table_C_O_L_R_.decompile"><a class="viewcode-back" href="../../../../ttLib/tables.html#fontTools.ttLib.tables.C_O_L_R_.table_C_O_L_R_.decompile">[docs]</a>	<span class="k">def</span> <span class="nf">decompile</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">ttFont</span><span class="p">):</span>
+		<span class="kn">from</span> <span class="nn">.otBase</span> <span class="k">import</span> <span class="n">OTTableReader</span>
+		<span class="kn">from</span> <span class="nn">.</span> <span class="k">import</span> <span class="n">otTables</span>
+
+		<span class="c1"># We use otData to decompile, but we adapt the decompiled otTables to the</span>
+		<span class="c1"># existing COLR v0 API for backward compatibility.</span>
+		<span class="n">reader</span> <span class="o">=</span> <span class="n">OTTableReader</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">tableTag</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">tableTag</span><span class="p">)</span>
+		<span class="n">tableClass</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">otTables</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">tableTag</span><span class="p">)</span>
+		<span class="n">table</span> <span class="o">=</span> <span class="n">tableClass</span><span class="p">()</span>
+		<span class="n">table</span><span class="o">.</span><span class="n">decompile</span><span class="p">(</span><span class="n">reader</span><span class="p">,</span> <span class="n">ttFont</span><span class="p">)</span>
+
+		<span class="k">if</span> <span class="n">table</span><span class="o">.</span><span class="n">Version</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_fromOTTable</span><span class="p">(</span><span class="n">table</span><span class="p">)</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="c1"># for new versions, keep the raw otTables around</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">table</span> <span class="o">=</span> <span class="n">table</span></div>
+
+<div class="viewcode-block" id="table_C_O_L_R_.compile"><a class="viewcode-back" href="../../../../ttLib/tables.html#fontTools.ttLib.tables.C_O_L_R_.table_C_O_L_R_.compile">[docs]</a>	<span class="k">def</span> <span class="nf">compile</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ttFont</span><span class="p">):</span>
+		<span class="kn">from</span> <span class="nn">.otBase</span> <span class="k">import</span> <span class="n">OTTableWriter</span>
+
+		<span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;table&quot;</span><span class="p">):</span>
+			<span class="n">table</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">table</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="n">table</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_toOTTable</span><span class="p">(</span><span class="n">ttFont</span><span class="p">)</span>
+
+		<span class="n">writer</span> <span class="o">=</span> <span class="n">OTTableWriter</span><span class="p">(</span><span class="n">tableTag</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">tableTag</span><span class="p">)</span>
+		<span class="n">table</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">writer</span><span class="p">,</span> <span class="n">ttFont</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">writer</span><span class="o">.</span><span class="n">getAllData</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="table_C_O_L_R_.toXML"><a class="viewcode-back" href="../../../../ttLib/tables.html#fontTools.ttLib.tables.C_O_L_R_.table_C_O_L_R_.toXML">[docs]</a>	<span class="k">def</span> <span class="nf">toXML</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">writer</span><span class="p">,</span> <span class="n">ttFont</span><span class="p">):</span>
+		<span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;table&quot;</span><span class="p">):</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">table</span><span class="o">.</span><span class="n">toXML2</span><span class="p">(</span><span class="n">writer</span><span class="p">,</span> <span class="n">ttFont</span><span class="p">)</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="n">writer</span><span class="o">.</span><span class="n">simpletag</span><span class="p">(</span><span class="s2">&quot;version&quot;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">version</span><span class="p">)</span>
+			<span class="n">writer</span><span class="o">.</span><span class="n">newline</span><span class="p">()</span>
+			<span class="k">for</span> <span class="n">baseGlyph</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ColorLayers</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="n">ttFont</span><span class="o">.</span><span class="n">getGlyphID</span><span class="p">):</span>
+				<span class="n">writer</span><span class="o">.</span><span class="n">begintag</span><span class="p">(</span><span class="s2">&quot;ColorGlyph&quot;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">baseGlyph</span><span class="p">)</span>
+				<span class="n">writer</span><span class="o">.</span><span class="n">newline</span><span class="p">()</span>
+				<span class="k">for</span> <span class="n">layer</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">ColorLayers</span><span class="p">[</span><span class="n">baseGlyph</span><span class="p">]:</span>
+					<span class="n">layer</span><span class="o">.</span><span class="n">toXML</span><span class="p">(</span><span class="n">writer</span><span class="p">,</span> <span class="n">ttFont</span><span class="p">)</span>
+				<span class="n">writer</span><span class="o">.</span><span class="n">endtag</span><span class="p">(</span><span class="s2">&quot;ColorGlyph&quot;</span><span class="p">)</span>
+				<span class="n">writer</span><span class="o">.</span><span class="n">newline</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="table_C_O_L_R_.fromXML"><a class="viewcode-back" href="../../../../ttLib/tables.html#fontTools.ttLib.tables.C_O_L_R_.table_C_O_L_R_.fromXML">[docs]</a>	<span class="k">def</span> <span class="nf">fromXML</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">attrs</span><span class="p">,</span> <span class="n">content</span><span class="p">,</span> <span class="n">ttFont</span><span class="p">):</span>
+		<span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;version&quot;</span><span class="p">:</span>  <span class="c1"># old COLR v0 API</span>
+			<span class="nb">setattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">safeEval</span><span class="p">(</span><span class="n">attrs</span><span class="p">[</span><span class="s2">&quot;value&quot;</span><span class="p">]))</span>
+		<span class="k">elif</span> <span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;ColorGlyph&quot;</span><span class="p">:</span>
+			<span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;ColorLayers&quot;</span><span class="p">):</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">ColorLayers</span> <span class="o">=</span> <span class="p">{}</span>
+			<span class="n">glyphName</span> <span class="o">=</span> <span class="n">attrs</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span>
+			<span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">content</span><span class="p">:</span>
+				<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="n">basestring</span><span class="p">):</span>
+					<span class="k">continue</span>
+			<span class="n">layers</span> <span class="o">=</span> <span class="p">[]</span>
+			<span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">content</span><span class="p">:</span>
+				<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="n">basestring</span><span class="p">):</span>
+					<span class="k">continue</span>
+				<span class="n">layer</span> <span class="o">=</span> <span class="n">LayerRecord</span><span class="p">()</span>
+				<span class="n">layer</span><span class="o">.</span><span class="n">fromXML</span><span class="p">(</span><span class="n">element</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">element</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">element</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">ttFont</span><span class="p">)</span>
+				<span class="n">layers</span><span class="o">.</span><span class="n">append</span> <span class="p">(</span><span class="n">layer</span><span class="p">)</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">ColorLayers</span><span class="p">[</span><span class="n">glyphName</span><span class="p">]</span> <span class="o">=</span> <span class="n">layers</span>
+		<span class="k">else</span><span class="p">:</span>  <span class="c1"># new COLR v1 API</span>
+			<span class="kn">from</span> <span class="nn">.</span> <span class="k">import</span> <span class="n">otTables</span>
+
+			<span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;table&quot;</span><span class="p">):</span>
+				<span class="n">tableClass</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">otTables</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">tableTag</span><span class="p">)</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">table</span> <span class="o">=</span> <span class="n">tableClass</span><span class="p">()</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">table</span><span class="o">.</span><span class="n">fromXML</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">attrs</span><span class="p">,</span> <span class="n">content</span><span class="p">,</span> <span class="n">ttFont</span><span class="p">)</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">table</span><span class="o">.</span><span class="n">populateDefaults</span><span class="p">()</span></div>
+
+	<span class="k">def</span> <span class="nf">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">glyphName</span><span class="p">):</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">glyphName</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+			<span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;expected str, found {type(glyphName).__name__}&quot;</span><span class="p">)</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">ColorLayers</span><span class="p">[</span><span class="n">glyphName</span><span class="p">]</span>
+
+	<span class="k">def</span> <span class="nf">__setitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">glyphName</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">glyphName</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+			<span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;expected str, found {type(glyphName).__name__}&quot;</span><span class="p">)</span>
+		<span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">ColorLayers</span><span class="p">[</span><span class="n">glyphName</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+		<span class="k">elif</span> <span class="n">glyphName</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">ColorLayers</span><span class="p">:</span>
+			<span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">ColorLayers</span><span class="p">[</span><span class="n">glyphName</span><span class="p">]</span>
+
+	<span class="k">def</span> <span class="nf">__delitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">glyphName</span><span class="p">):</span>
+		<span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">ColorLayers</span><span class="p">[</span><span class="n">glyphName</span><span class="p">]</span></div>
+
+<div class="viewcode-block" id="LayerRecord"><a class="viewcode-back" href="../../../../ttLib/tables.html#fontTools.ttLib.tables.C_O_L_R_.LayerRecord">[docs]</a><span class="k">class</span> <span class="nc">LayerRecord</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">colorID</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">colorID</span> <span class="o">=</span> <span class="n">colorID</span>
+
+<div class="viewcode-block" id="LayerRecord.toXML"><a class="viewcode-back" href="../../../../ttLib/tables.html#fontTools.ttLib.tables.C_O_L_R_.LayerRecord.toXML">[docs]</a>	<span class="k">def</span> <span class="nf">toXML</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">writer</span><span class="p">,</span> <span class="n">ttFont</span><span class="p">):</span>
+		<span class="n">writer</span><span class="o">.</span><span class="n">simpletag</span><span class="p">(</span><span class="s2">&quot;layer&quot;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">colorID</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">colorID</span><span class="p">)</span>
+		<span class="n">writer</span><span class="o">.</span><span class="n">newline</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="LayerRecord.fromXML"><a class="viewcode-back" href="../../../../ttLib/tables.html#fontTools.ttLib.tables.C_O_L_R_.LayerRecord.fromXML">[docs]</a>	<span class="k">def</span> <span class="nf">fromXML</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">eltname</span><span class="p">,</span> <span class="n">attrs</span><span class="p">,</span> <span class="n">content</span><span class="p">,</span> <span class="n">ttFont</span><span class="p">):</span>
+		<span class="k">for</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="ow">in</span> <span class="n">attrs</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+			<span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;name&quot;</span><span class="p">:</span>
+				<span class="nb">setattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="nb">setattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">safeEval</span><span class="p">(</span><span class="n">value</span><span class="p">))</span></div></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Just van Rossum, Behdad Esfahbod, and the fontTools Authors. CC BY-SA 4.0
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

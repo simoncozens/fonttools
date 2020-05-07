@@ -1,0 +1,747 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>fontTools.misc.psOperators &mdash; fontTools Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> fontTools
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Library</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../afmLib.html">afmLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../agl.html">agl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cffLib/index.html">cffLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../colorLib/index.html">colorLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cu2qu/index.html">cu2qu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../designspaceLib/index.html">designspaceLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../encodings/index.html">encodings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../feaLib/index.html">feaLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../merge.html">merge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../misc/index.html">misc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../mtiLib.html">mtiLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../otlLib/index.html">otlLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pens/index.html">pens</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../subset/index.html">subset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../svgLib/index.html">svgLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../t1Lib.html">t1Lib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ttLib/index.html">ttLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ttx.html">ttx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ufoLib/index.html">ufoLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../unicode.html">unicode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../unicodedata/index.html">unicodedata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../varLib/index.html">varLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../voltLib.html">voltLib</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">fontTools</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>fontTools.misc.psOperators</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for fontTools.misc.psOperators</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">fontTools.misc.py23</span> <span class="k">import</span> <span class="o">*</span>
+
+<span class="n">_accessstrings</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span> <span class="s2">&quot;readonly&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="s2">&quot;executeonly&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">:</span> <span class="s2">&quot;noaccess&quot;</span><span class="p">}</span>
+
+
+<div class="viewcode-block" id="ps_object"><a class="viewcode-back" href="../../../misc/psOperators.html#fontTools.misc.psLib.ps_object">[docs]</a><span class="k">class</span> <span class="nc">ps_object</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+	<span class="n">literal</span> <span class="o">=</span> <span class="mi">1</span>
+	<span class="n">access</span> <span class="o">=</span> <span class="mi">0</span>
+	<span class="n">value</span> <span class="o">=</span> <span class="kc">None</span>
+
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">value</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">type</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="p">[</span><span class="mi">3</span><span class="p">:]</span> <span class="o">+</span> <span class="s2">&quot;type&quot;</span>
+
+	<span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="s2">&quot;&lt;</span><span class="si">%s</span><span class="s2"> </span><span class="si">%s</span><span class="s2">&gt;&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="p">[</span><span class="mi">3</span><span class="p">:],</span> <span class="nb">repr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="p">))</span></div>
+
+
+<div class="viewcode-block" id="ps_operator"><a class="viewcode-back" href="../../../misc/psOperators.html#fontTools.misc.psLib.ps_operator">[docs]</a><span class="k">class</span> <span class="nc">ps_operator</span><span class="p">(</span><span class="n">ps_object</span><span class="p">):</span>
+
+	<span class="n">literal</span> <span class="o">=</span> <span class="mi">0</span>
+
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">function</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">function</span> <span class="o">=</span> <span class="n">function</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">type</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="p">[</span><span class="mi">3</span><span class="p">:]</span> <span class="o">+</span> <span class="s2">&quot;type&quot;</span>
+	<span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="s2">&quot;&lt;operator </span><span class="si">%s</span><span class="s2">&gt;&quot;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span></div>
+
+<div class="viewcode-block" id="ps_procedure"><a class="viewcode-back" href="../../../misc/psOperators.html#fontTools.misc.psLib.ps_procedure">[docs]</a><span class="k">class</span> <span class="nc">ps_procedure</span><span class="p">(</span><span class="n">ps_object</span><span class="p">):</span>
+	<span class="n">literal</span> <span class="o">=</span> <span class="mi">0</span>
+	<span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="s2">&quot;&lt;procedure&gt;&quot;</span>
+	<span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">psstring</span> <span class="o">=</span> <span class="s1">&#39;{&#39;</span>
+		<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="p">)):</span>
+			<span class="k">if</span> <span class="n">i</span><span class="p">:</span>
+				<span class="n">psstring</span> <span class="o">=</span> <span class="n">psstring</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="n">psstring</span> <span class="o">=</span> <span class="n">psstring</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+		<span class="k">return</span> <span class="n">psstring</span> <span class="o">+</span> <span class="s1">&#39;}&#39;</span></div>
+
+<div class="viewcode-block" id="ps_name"><a class="viewcode-back" href="../../../misc/psOperators.html#fontTools.misc.psLib.ps_name">[docs]</a><span class="k">class</span> <span class="nc">ps_name</span><span class="p">(</span><span class="n">ps_object</span><span class="p">):</span>
+	<span class="n">literal</span> <span class="o">=</span> <span class="mi">0</span>
+	<span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">literal</span><span class="p">:</span>
+			<span class="k">return</span> <span class="s1">&#39;/&#39;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span></div>
+
+<div class="viewcode-block" id="ps_literal"><a class="viewcode-back" href="../../../misc/psOperators.html#fontTools.misc.psLib.ps_literal">[docs]</a><span class="k">class</span> <span class="nc">ps_literal</span><span class="p">(</span><span class="n">ps_object</span><span class="p">):</span>
+	<span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="s1">&#39;/&#39;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span></div>
+
+<div class="viewcode-block" id="ps_array"><a class="viewcode-back" href="../../../misc/psOperators.html#fontTools.misc.psLib.ps_array">[docs]</a><span class="k">class</span> <span class="nc">ps_array</span><span class="p">(</span><span class="n">ps_object</span><span class="p">):</span>
+	<span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">psstring</span> <span class="o">=</span> <span class="s1">&#39;[&#39;</span>
+		<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="p">)):</span>
+			<span class="n">item</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+			<span class="n">access</span> <span class="o">=</span> <span class="n">_accessstrings</span><span class="p">[</span><span class="n">item</span><span class="o">.</span><span class="n">access</span><span class="p">]</span>
+			<span class="k">if</span> <span class="n">access</span><span class="p">:</span>
+				<span class="n">access</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="n">access</span>
+			<span class="k">if</span> <span class="n">i</span><span class="p">:</span>
+				<span class="n">psstring</span> <span class="o">=</span> <span class="n">psstring</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">item</span><span class="p">)</span> <span class="o">+</span> <span class="n">access</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="n">psstring</span> <span class="o">=</span> <span class="n">psstring</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">item</span><span class="p">)</span> <span class="o">+</span> <span class="n">access</span>
+		<span class="k">return</span> <span class="n">psstring</span> <span class="o">+</span> <span class="s1">&#39;]&#39;</span>
+	<span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="s2">&quot;&lt;array&gt;&quot;</span></div>
+
+<span class="n">_type1_pre_eexec_order</span> <span class="o">=</span> <span class="p">[</span>
+		<span class="s2">&quot;FontInfo&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;FontName&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;Encoding&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;PaintType&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;FontType&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;FontMatrix&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;FontBBox&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;UniqueID&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;Metrics&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;StrokeWidth&quot;</span>
+	<span class="p">]</span>
+
+<span class="n">_type1_fontinfo_order</span> <span class="o">=</span> <span class="p">[</span>
+		<span class="s2">&quot;version&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;Notice&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;FullName&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;FamilyName&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;Weight&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;ItalicAngle&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;isFixedPitch&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;UnderlinePosition&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;UnderlineThickness&quot;</span>
+	<span class="p">]</span>
+
+<span class="n">_type1_post_eexec_order</span> <span class="o">=</span> <span class="p">[</span>
+		<span class="s2">&quot;Private&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;CharStrings&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;FID&quot;</span>
+	<span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">_type1_item_repr</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+	<span class="n">psstring</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+	<span class="n">access</span> <span class="o">=</span> <span class="n">_accessstrings</span><span class="p">[</span><span class="n">value</span><span class="o">.</span><span class="n">access</span><span class="p">]</span>
+	<span class="k">if</span> <span class="n">access</span><span class="p">:</span>
+		<span class="n">access</span> <span class="o">=</span> <span class="n">access</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span>
+	<span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="s1">&#39;CharStrings&#39;</span><span class="p">:</span>
+		<span class="n">psstring</span> <span class="o">=</span> <span class="n">psstring</span> <span class="o">+</span> <span class="s2">&quot;/</span><span class="si">%s</span><span class="s2"> </span><span class="si">%s</span><span class="s2"> def</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">_type1_CharString_repr</span><span class="p">(</span><span class="n">value</span><span class="o">.</span><span class="n">value</span><span class="p">))</span>
+	<span class="k">elif</span> <span class="n">key</span> <span class="o">==</span> <span class="s1">&#39;Encoding&#39;</span><span class="p">:</span>
+		<span class="n">psstring</span> <span class="o">=</span> <span class="n">psstring</span> <span class="o">+</span> <span class="n">_type1_Encoding_repr</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">access</span><span class="p">)</span>
+	<span class="k">else</span><span class="p">:</span>
+		<span class="n">psstring</span> <span class="o">=</span> <span class="n">psstring</span> <span class="o">+</span> <span class="s2">&quot;/</span><span class="si">%s</span><span class="s2"> </span><span class="si">%s</span><span class="s2"> </span><span class="si">%s</span><span class="s2">def</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">key</span><span class="p">),</span> <span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="p">),</span> <span class="n">access</span><span class="p">)</span>
+	<span class="k">return</span> <span class="n">psstring</span>
+
+<span class="k">def</span> <span class="nf">_type1_Encoding_repr</span><span class="p">(</span><span class="n">encoding</span><span class="p">,</span> <span class="n">access</span><span class="p">):</span>
+	<span class="n">encoding</span> <span class="o">=</span> <span class="n">encoding</span><span class="o">.</span><span class="n">value</span>
+	<span class="n">psstring</span> <span class="o">=</span> <span class="s2">&quot;/Encoding 256 array</span><span class="se">\n</span><span class="s2">0 1 255 {1 index exch /.notdef put} for</span><span class="se">\n</span><span class="s2">&quot;</span>
+	<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">256</span><span class="p">):</span>
+		<span class="n">name</span> <span class="o">=</span> <span class="n">encoding</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">value</span>
+		<span class="k">if</span> <span class="n">name</span> <span class="o">!=</span> <span class="s1">&#39;.notdef&#39;</span><span class="p">:</span>
+			<span class="n">psstring</span> <span class="o">=</span> <span class="n">psstring</span> <span class="o">+</span> <span class="s2">&quot;dup </span><span class="si">%d</span><span class="s2"> /</span><span class="si">%s</span><span class="s2"> put</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+	<span class="k">return</span> <span class="n">psstring</span> <span class="o">+</span> <span class="n">access</span> <span class="o">+</span> <span class="s2">&quot;def</span><span class="se">\n</span><span class="s2">&quot;</span>
+
+<span class="k">def</span> <span class="nf">_type1_CharString_repr</span><span class="p">(</span><span class="n">charstrings</span><span class="p">):</span>
+	<span class="n">items</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">charstrings</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
+	<span class="k">return</span> <span class="s1">&#39;xxx&#39;</span>
+
+<div class="viewcode-block" id="ps_font"><a class="viewcode-back" href="../../../misc/psOperators.html#fontTools.misc.psLib.ps_font">[docs]</a><span class="k">class</span> <span class="nc">ps_font</span><span class="p">(</span><span class="n">ps_object</span><span class="p">):</span>
+	<span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">psstring</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%d</span><span class="s2"> dict dup begin</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+		<span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">_type1_pre_eexec_order</span><span class="p">:</span>
+			<span class="k">try</span><span class="p">:</span>
+				<span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+			<span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+				<span class="k">pass</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="n">psstring</span> <span class="o">=</span> <span class="n">psstring</span> <span class="o">+</span> <span class="n">_type1_item_repr</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+		<span class="n">items</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
+		<span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">items</span><span class="p">:</span>
+			<span class="k">if</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">_type1_pre_eexec_order</span> <span class="o">+</span> <span class="n">_type1_post_eexec_order</span><span class="p">:</span>
+				<span class="n">psstring</span> <span class="o">=</span> <span class="n">psstring</span> <span class="o">+</span> <span class="n">_type1_item_repr</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+		<span class="n">psstring</span> <span class="o">=</span> <span class="n">psstring</span> <span class="o">+</span> <span class="s2">&quot;currentdict end</span><span class="se">\n</span><span class="s2">currentfile eexec</span><span class="se">\n</span><span class="s2">dup &quot;</span>
+		<span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">_type1_post_eexec_order</span><span class="p">:</span>
+			<span class="k">try</span><span class="p">:</span>
+				<span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+			<span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+				<span class="k">pass</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="n">psstring</span> <span class="o">=</span> <span class="n">psstring</span> <span class="o">+</span> <span class="n">_type1_item_repr</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">psstring</span> <span class="o">+</span> <span class="s1">&#39;dup/FontName get exch definefont pop</span><span class="se">\n</span><span class="s1">mark currentfile closefile</span><span class="se">\n</span><span class="s1">&#39;</span> <span class="o">+</span> \
+				<span class="mi">8</span> <span class="o">*</span> <span class="p">(</span><span class="mi">64</span> <span class="o">*</span> <span class="s1">&#39;0&#39;</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;cleartomark&#39;</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span>
+	<span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="s1">&#39;&lt;font&gt;&#39;</span></div>
+
+<div class="viewcode-block" id="ps_file"><a class="viewcode-back" href="../../../misc/psOperators.html#fontTools.misc.psLib.ps_file">[docs]</a><span class="k">class</span> <span class="nc">ps_file</span><span class="p">(</span><span class="n">ps_object</span><span class="p">):</span>
+	<span class="k">pass</span></div>
+
+<div class="viewcode-block" id="ps_dict"><a class="viewcode-back" href="../../../misc/psOperators.html#fontTools.misc.psLib.ps_dict">[docs]</a><span class="k">class</span> <span class="nc">ps_dict</span><span class="p">(</span><span class="n">ps_object</span><span class="p">):</span>
+	<span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">psstring</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%d</span><span class="s2"> dict dup begin</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+		<span class="n">items</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
+		<span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">items</span><span class="p">:</span>
+			<span class="n">access</span> <span class="o">=</span> <span class="n">_accessstrings</span><span class="p">[</span><span class="n">value</span><span class="o">.</span><span class="n">access</span><span class="p">]</span>
+			<span class="k">if</span> <span class="n">access</span><span class="p">:</span>
+				<span class="n">access</span> <span class="o">=</span> <span class="n">access</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span>
+			<span class="n">psstring</span> <span class="o">=</span> <span class="n">psstring</span> <span class="o">+</span> <span class="s2">&quot;/</span><span class="si">%s</span><span class="s2"> </span><span class="si">%s</span><span class="s2"> </span><span class="si">%s</span><span class="s2">def</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">key</span><span class="p">),</span> <span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="p">),</span> <span class="n">access</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">psstring</span> <span class="o">+</span> <span class="s1">&#39;end &#39;</span>
+	<span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="s2">&quot;&lt;dict&gt;&quot;</span></div>
+
+<div class="viewcode-block" id="ps_mark"><a class="viewcode-back" href="../../../misc/psOperators.html#fontTools.misc.psLib.ps_mark">[docs]</a><span class="k">class</span> <span class="nc">ps_mark</span><span class="p">(</span><span class="n">ps_object</span><span class="p">):</span>
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="s1">&#39;mark&#39;</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">type</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="p">[</span><span class="mi">3</span><span class="p">:]</span> <span class="o">+</span> <span class="s2">&quot;type&quot;</span></div>
+
+<div class="viewcode-block" id="ps_procmark"><a class="viewcode-back" href="../../../misc/psOperators.html#fontTools.misc.psLib.ps_procmark">[docs]</a><span class="k">class</span> <span class="nc">ps_procmark</span><span class="p">(</span><span class="n">ps_object</span><span class="p">):</span>
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="s1">&#39;procmark&#39;</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">type</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="p">[</span><span class="mi">3</span><span class="p">:]</span> <span class="o">+</span> <span class="s2">&quot;type&quot;</span></div>
+
+<div class="viewcode-block" id="ps_null"><a class="viewcode-back" href="../../../misc/psOperators.html#fontTools.misc.psLib.ps_null">[docs]</a><span class="k">class</span> <span class="nc">ps_null</span><span class="p">(</span><span class="n">ps_object</span><span class="p">):</span>
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">type</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="p">[</span><span class="mi">3</span><span class="p">:]</span> <span class="o">+</span> <span class="s2">&quot;type&quot;</span></div>
+
+<div class="viewcode-block" id="ps_boolean"><a class="viewcode-back" href="../../../misc/psOperators.html#fontTools.misc.psLib.ps_boolean">[docs]</a><span class="k">class</span> <span class="nc">ps_boolean</span><span class="p">(</span><span class="n">ps_object</span><span class="p">):</span>
+	<span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="p">:</span>
+			<span class="k">return</span> <span class="s1">&#39;true&#39;</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="k">return</span> <span class="s1">&#39;false&#39;</span></div>
+
+<div class="viewcode-block" id="ps_string"><a class="viewcode-back" href="../../../misc/psOperators.html#fontTools.misc.psLib.ps_string">[docs]</a><span class="k">class</span> <span class="nc">ps_string</span><span class="p">(</span><span class="n">ps_object</span><span class="p">):</span>
+	<span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="s2">&quot;(</span><span class="si">%s</span><span class="s2">)&quot;</span> <span class="o">%</span> <span class="nb">repr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="p">)[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span></div>
+
+<div class="viewcode-block" id="ps_integer"><a class="viewcode-back" href="../../../misc/psOperators.html#fontTools.misc.psLib.ps_integer">[docs]</a><span class="k">class</span> <span class="nc">ps_integer</span><span class="p">(</span><span class="n">ps_object</span><span class="p">):</span>
+	<span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="nb">repr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="ps_real"><a class="viewcode-back" href="../../../misc/psOperators.html#fontTools.misc.psLib.ps_real">[docs]</a><span class="k">class</span> <span class="nc">ps_real</span><span class="p">(</span><span class="n">ps_object</span><span class="p">):</span>
+	<span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="nb">repr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="PSOperators"><a class="viewcode-back" href="../../../misc/psOperators.html#fontTools.misc.psLib.PSOperators">[docs]</a><span class="k">class</span> <span class="nc">PSOperators</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+<div class="viewcode-block" id="PSOperators.ps_def"><a class="viewcode-back" href="../../../misc/psOperators.html#fontTools.misc.psLib.PSOperators.ps_def">[docs]</a>	<span class="k">def</span> <span class="nf">ps_def</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">obj</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+		<span class="n">name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">dictstack</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">name</span><span class="o">.</span><span class="n">value</span><span class="p">]</span> <span class="o">=</span> <span class="n">obj</span></div>
+
+<div class="viewcode-block" id="PSOperators.ps_bind"><a class="viewcode-back" href="../../../misc/psOperators.html#fontTools.misc.psLib.PSOperators.ps_bind">[docs]</a>	<span class="k">def</span> <span class="nf">ps_bind</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">proc</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;proceduretype&#39;</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">proc_bind</span><span class="p">(</span><span class="n">proc</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">proc</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="PSOperators.proc_bind"><a class="viewcode-back" href="../../../misc/psOperators.html#fontTools.misc.psLib.PSOperators.proc_bind">[docs]</a>	<span class="k">def</span> <span class="nf">proc_bind</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">proc</span><span class="p">):</span>
+		<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">proc</span><span class="o">.</span><span class="n">value</span><span class="p">)):</span>
+			<span class="n">item</span> <span class="o">=</span> <span class="n">proc</span><span class="o">.</span><span class="n">value</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+			<span class="k">if</span> <span class="n">item</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="s1">&#39;proceduretype&#39;</span><span class="p">:</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">proc_bind</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="k">if</span> <span class="ow">not</span> <span class="n">item</span><span class="o">.</span><span class="n">literal</span><span class="p">:</span>
+					<span class="k">try</span><span class="p">:</span>
+						<span class="n">obj</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">resolve_name</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+					<span class="k">except</span><span class="p">:</span>
+						<span class="k">pass</span>
+					<span class="k">else</span><span class="p">:</span>
+						<span class="k">if</span> <span class="n">obj</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="s1">&#39;operatortype&#39;</span><span class="p">:</span>
+							<span class="n">proc</span><span class="o">.</span><span class="n">value</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">obj</span></div>
+
+<div class="viewcode-block" id="PSOperators.ps_exch"><a class="viewcode-back" href="../../../misc/psOperators.html#fontTools.misc.psLib.PSOperators.ps_exch">[docs]</a>	<span class="k">def</span> <span class="nf">ps_exch</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">stack</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+			<span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s1">&#39;stack underflow&#39;</span><span class="p">)</span>
+		<span class="n">obj1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+		<span class="n">obj2</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">obj1</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">obj2</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="PSOperators.ps_dup"><a class="viewcode-back" href="../../../misc/psOperators.html#fontTools.misc.psLib.PSOperators.ps_dup">[docs]</a>	<span class="k">def</span> <span class="nf">ps_dup</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">stack</span><span class="p">:</span>
+			<span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s1">&#39;stack underflow&#39;</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">stack</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span></div>
+
+<div class="viewcode-block" id="PSOperators.ps_exec"><a class="viewcode-back" href="../../../misc/psOperators.html#fontTools.misc.psLib.PSOperators.ps_exec">[docs]</a>	<span class="k">def</span> <span class="nf">ps_exec</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">obj</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+		<span class="k">if</span> <span class="n">obj</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="s1">&#39;proceduretype&#39;</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">call_procedure</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">handle_object</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="PSOperators.ps_count"><a class="viewcode-back" href="../../../misc/psOperators.html#fontTools.misc.psLib.PSOperators.ps_count">[docs]</a>	<span class="k">def</span> <span class="nf">ps_count</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">ps_integer</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">stack</span><span class="p">)))</span></div>
+
+<div class="viewcode-block" id="PSOperators.ps_eq"><a class="viewcode-back" href="../../../misc/psOperators.html#fontTools.misc.psLib.PSOperators.ps_eq">[docs]</a>	<span class="k">def</span> <span class="nf">ps_eq</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">any1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+		<span class="n">any2</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">ps_boolean</span><span class="p">(</span><span class="n">any1</span><span class="o">.</span><span class="n">value</span> <span class="o">==</span> <span class="n">any2</span><span class="o">.</span><span class="n">value</span><span class="p">))</span></div>
+
+<div class="viewcode-block" id="PSOperators.ps_ne"><a class="viewcode-back" href="../../../misc/psOperators.html#fontTools.misc.psLib.PSOperators.ps_ne">[docs]</a>	<span class="k">def</span> <span class="nf">ps_ne</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">any1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+		<span class="n">any2</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">ps_boolean</span><span class="p">(</span><span class="n">any1</span><span class="o">.</span><span class="n">value</span> <span class="o">!=</span> <span class="n">any2</span><span class="o">.</span><span class="n">value</span><span class="p">))</span></div>
+
+<div class="viewcode-block" id="PSOperators.ps_cvx"><a class="viewcode-back" href="../../../misc/psOperators.html#fontTools.misc.psLib.PSOperators.ps_cvx">[docs]</a>	<span class="k">def</span> <span class="nf">ps_cvx</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">obj</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+		<span class="n">obj</span><span class="o">.</span><span class="n">literal</span> <span class="o">=</span> <span class="mi">0</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="PSOperators.ps_matrix"><a class="viewcode-back" href="../../../misc/psOperators.html#fontTools.misc.psLib.PSOperators.ps_matrix">[docs]</a>	<span class="k">def</span> <span class="nf">ps_matrix</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">matrix</span> <span class="o">=</span> <span class="p">[</span><span class="n">ps_real</span><span class="p">(</span><span class="mf">1.0</span><span class="p">),</span> <span class="n">ps_integer</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="n">ps_integer</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="n">ps_real</span><span class="p">(</span><span class="mf">1.0</span><span class="p">),</span> <span class="n">ps_integer</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="n">ps_integer</span><span class="p">(</span><span class="mi">0</span><span class="p">)]</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">ps_array</span><span class="p">(</span><span class="n">matrix</span><span class="p">))</span></div>
+
+<div class="viewcode-block" id="PSOperators.ps_string"><a class="viewcode-back" href="../../../misc/psOperators.html#fontTools.misc.psLib.PSOperators.ps_string">[docs]</a>	<span class="k">def</span> <span class="nf">ps_string</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">num</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;integertype&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">value</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">ps_string</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\0</span><span class="s1">&#39;</span> <span class="o">*</span> <span class="n">num</span><span class="p">))</span></div>
+
+<div class="viewcode-block" id="PSOperators.ps_type"><a class="viewcode-back" href="../../../misc/psOperators.html#fontTools.misc.psLib.PSOperators.ps_type">[docs]</a>	<span class="k">def</span> <span class="nf">ps_type</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">obj</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">ps_string</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">type</span><span class="p">))</span></div>
+
+<div class="viewcode-block" id="PSOperators.ps_store"><a class="viewcode-back" href="../../../misc/psOperators.html#fontTools.misc.psLib.PSOperators.ps_store">[docs]</a>	<span class="k">def</span> <span class="nf">ps_store</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+		<span class="n">key</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+		<span class="n">name</span> <span class="o">=</span> <span class="n">key</span><span class="o">.</span><span class="n">value</span>
+		<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dictstack</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+			<span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">dictstack</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">dictstack</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+				<span class="k">break</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">dictstack</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span></div>
+
+<div class="viewcode-block" id="PSOperators.ps_where"><a class="viewcode-back" href="../../../misc/psOperators.html#fontTools.misc.psLib.PSOperators.ps_where">[docs]</a>	<span class="k">def</span> <span class="nf">ps_where</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+		<span class="c1"># XXX</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">ps_boolean</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span></div>
+
+<div class="viewcode-block" id="PSOperators.ps_systemdict"><a class="viewcode-back" href="../../../misc/psOperators.html#fontTools.misc.psLib.PSOperators.ps_systemdict">[docs]</a>	<span class="k">def</span> <span class="nf">ps_systemdict</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">ps_dict</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dictstack</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span></div>
+
+<div class="viewcode-block" id="PSOperators.ps_userdict"><a class="viewcode-back" href="../../../misc/psOperators.html#fontTools.misc.psLib.PSOperators.ps_userdict">[docs]</a>	<span class="k">def</span> <span class="nf">ps_userdict</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">ps_dict</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dictstack</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span></div>
+
+<div class="viewcode-block" id="PSOperators.ps_currentdict"><a class="viewcode-back" href="../../../misc/psOperators.html#fontTools.misc.psLib.PSOperators.ps_currentdict">[docs]</a>	<span class="k">def</span> <span class="nf">ps_currentdict</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">ps_dict</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dictstack</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span></div>
+
+<div class="viewcode-block" id="PSOperators.ps_currentfile"><a class="viewcode-back" href="../../../misc/psOperators.html#fontTools.misc.psLib.PSOperators.ps_currentfile">[docs]</a>	<span class="k">def</span> <span class="nf">ps_currentfile</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">ps_file</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tokenizer</span><span class="p">))</span></div>
+
+<div class="viewcode-block" id="PSOperators.ps_eexec"><a class="viewcode-back" href="../../../misc/psOperators.html#fontTools.misc.psLib.PSOperators.ps_eexec">[docs]</a>	<span class="k">def</span> <span class="nf">ps_eexec</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;filetype&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">value</span>
+		<span class="n">f</span><span class="o">.</span><span class="n">starteexec</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="PSOperators.ps_closefile"><a class="viewcode-back" href="../../../misc/psOperators.html#fontTools.misc.psLib.PSOperators.ps_closefile">[docs]</a>	<span class="k">def</span> <span class="nf">ps_closefile</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;filetype&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">value</span>
+		<span class="n">f</span><span class="o">.</span><span class="n">skipwhite</span><span class="p">()</span>
+		<span class="n">f</span><span class="o">.</span><span class="n">stopeexec</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="PSOperators.ps_cleartomark"><a class="viewcode-back" href="../../../misc/psOperators.html#fontTools.misc.psLib.PSOperators.ps_cleartomark">[docs]</a>	<span class="k">def</span> <span class="nf">ps_cleartomark</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">obj</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+		<span class="k">while</span> <span class="n">obj</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mark</span><span class="p">:</span>
+			<span class="n">obj</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="PSOperators.ps_readstring"><a class="viewcode-back" href="../../../misc/psOperators.html#fontTools.misc.psLib.PSOperators.ps_readstring">[docs]</a>	<span class="k">def</span> <span class="nf">ps_readstring</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+			<span class="n">ps_boolean</span><span class="o">=</span><span class="n">ps_boolean</span><span class="p">,</span>
+			<span class="nb">len</span><span class="o">=</span><span class="nb">len</span><span class="p">):</span>
+		<span class="n">s</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;stringtype&#39;</span><span class="p">)</span>
+		<span class="n">oldstr</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">value</span>
+		<span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;filetype&#39;</span><span class="p">)</span>
+		<span class="c1">#pad = file.value.read(1)</span>
+		<span class="c1"># for StringIO, this is faster</span>
+		<span class="n">f</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">pos</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">pos</span> <span class="o">+</span> <span class="mi">1</span>
+		<span class="n">newstr</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">oldstr</span><span class="p">))</span>
+		<span class="n">s</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">newstr</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">ps_boolean</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">oldstr</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">newstr</span><span class="p">)))</span></div>
+
+<div class="viewcode-block" id="PSOperators.ps_known"><a class="viewcode-back" href="../../../misc/psOperators.html#fontTools.misc.psLib.PSOperators.ps_known">[docs]</a>	<span class="k">def</span> <span class="nf">ps_known</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">key</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+		<span class="n">d</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;dicttype&#39;</span><span class="p">,</span> <span class="s1">&#39;fonttype&#39;</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">ps_boolean</span><span class="p">(</span><span class="n">key</span><span class="o">.</span><span class="n">value</span> <span class="ow">in</span> <span class="n">d</span><span class="o">.</span><span class="n">value</span><span class="p">))</span></div>
+
+<div class="viewcode-block" id="PSOperators.ps_if"><a class="viewcode-back" href="../../../misc/psOperators.html#fontTools.misc.psLib.PSOperators.ps_if">[docs]</a>	<span class="k">def</span> <span class="nf">ps_if</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">proc</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;proceduretype&#39;</span><span class="p">)</span>
+		<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;booleantype&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">value</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">call_procedure</span><span class="p">(</span><span class="n">proc</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="PSOperators.ps_ifelse"><a class="viewcode-back" href="../../../misc/psOperators.html#fontTools.misc.psLib.PSOperators.ps_ifelse">[docs]</a>	<span class="k">def</span> <span class="nf">ps_ifelse</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">proc2</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;proceduretype&#39;</span><span class="p">)</span>
+		<span class="n">proc1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;proceduretype&#39;</span><span class="p">)</span>
+		<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;booleantype&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">value</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">call_procedure</span><span class="p">(</span><span class="n">proc1</span><span class="p">)</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">call_procedure</span><span class="p">(</span><span class="n">proc2</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="PSOperators.ps_readonly"><a class="viewcode-back" href="../../../misc/psOperators.html#fontTools.misc.psLib.PSOperators.ps_readonly">[docs]</a>	<span class="k">def</span> <span class="nf">ps_readonly</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">obj</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+		<span class="k">if</span> <span class="n">obj</span><span class="o">.</span><span class="n">access</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+			<span class="n">obj</span><span class="o">.</span><span class="n">access</span> <span class="o">=</span> <span class="mi">1</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="PSOperators.ps_executeonly"><a class="viewcode-back" href="../../../misc/psOperators.html#fontTools.misc.psLib.PSOperators.ps_executeonly">[docs]</a>	<span class="k">def</span> <span class="nf">ps_executeonly</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">obj</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+		<span class="k">if</span> <span class="n">obj</span><span class="o">.</span><span class="n">access</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+			<span class="n">obj</span><span class="o">.</span><span class="n">access</span> <span class="o">=</span> <span class="mi">2</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="PSOperators.ps_noaccess"><a class="viewcode-back" href="../../../misc/psOperators.html#fontTools.misc.psLib.PSOperators.ps_noaccess">[docs]</a>	<span class="k">def</span> <span class="nf">ps_noaccess</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">obj</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+		<span class="k">if</span> <span class="n">obj</span><span class="o">.</span><span class="n">access</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span>
+			<span class="n">obj</span><span class="o">.</span><span class="n">access</span> <span class="o">=</span> <span class="mi">3</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="PSOperators.ps_not"><a class="viewcode-back" href="../../../misc/psOperators.html#fontTools.misc.psLib.PSOperators.ps_not">[docs]</a>	<span class="k">def</span> <span class="nf">ps_not</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">obj</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;booleantype&#39;</span><span class="p">,</span> <span class="s1">&#39;integertype&#39;</span><span class="p">)</span>
+		<span class="k">if</span> <span class="n">obj</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="s1">&#39;booleantype&#39;</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">ps_boolean</span><span class="p">(</span><span class="ow">not</span> <span class="n">obj</span><span class="o">.</span><span class="n">value</span><span class="p">))</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">ps_integer</span><span class="p">(</span><span class="o">~</span><span class="n">obj</span><span class="o">.</span><span class="n">value</span><span class="p">))</span></div>
+
+<div class="viewcode-block" id="PSOperators.ps_print"><a class="viewcode-back" href="../../../misc/psOperators.html#fontTools.misc.psLib.PSOperators.ps_print">[docs]</a>	<span class="k">def</span> <span class="nf">ps_print</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="nb">str</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;stringtype&#39;</span><span class="p">)</span>
+		<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;PS output ---&gt;&#39;</span><span class="p">,</span> <span class="nb">str</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="PSOperators.ps_anchorsearch"><a class="viewcode-back" href="../../../misc/psOperators.html#fontTools.misc.psLib.PSOperators.ps_anchorsearch">[docs]</a>	<span class="k">def</span> <span class="nf">ps_anchorsearch</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">seek</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;stringtype&#39;</span><span class="p">)</span>
+		<span class="n">s</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;stringtype&#39;</span><span class="p">)</span>
+		<span class="n">seeklen</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">seek</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+		<span class="k">if</span> <span class="n">s</span><span class="o">.</span><span class="n">value</span><span class="p">[:</span><span class="n">seeklen</span><span class="p">]</span> <span class="o">==</span> <span class="n">seek</span><span class="o">.</span><span class="n">value</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">ps_string</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">value</span><span class="p">[</span><span class="n">seeklen</span><span class="p">:]))</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">seek</span><span class="p">)</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">ps_boolean</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">ps_boolean</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span></div>
+
+<div class="viewcode-block" id="PSOperators.ps_array"><a class="viewcode-back" href="../../../misc/psOperators.html#fontTools.misc.psLib.PSOperators.ps_array">[docs]</a>	<span class="k">def</span> <span class="nf">ps_array</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">num</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;integertype&#39;</span><span class="p">)</span>
+		<span class="n">array</span> <span class="o">=</span> <span class="n">ps_array</span><span class="p">([</span><span class="kc">None</span><span class="p">]</span> <span class="o">*</span> <span class="n">num</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">array</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="PSOperators.ps_astore"><a class="viewcode-back" href="../../../misc/psOperators.html#fontTools.misc.psLib.PSOperators.ps_astore">[docs]</a>	<span class="k">def</span> <span class="nf">ps_astore</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">array</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;arraytype&#39;</span><span class="p">)</span>
+		<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">array</span><span class="o">.</span><span class="n">value</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+			<span class="n">array</span><span class="o">.</span><span class="n">value</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">array</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="PSOperators.ps_load"><a class="viewcode-back" href="../../../misc/psOperators.html#fontTools.misc.psLib.PSOperators.ps_load">[docs]</a>	<span class="k">def</span> <span class="nf">ps_load</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">resolve_name</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">value</span><span class="p">))</span></div>
+
+<div class="viewcode-block" id="PSOperators.ps_put"><a class="viewcode-back" href="../../../misc/psOperators.html#fontTools.misc.psLib.PSOperators.ps_put">[docs]</a>	<span class="k">def</span> <span class="nf">ps_put</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">obj1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+		<span class="n">obj2</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+		<span class="n">obj3</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;arraytype&#39;</span><span class="p">,</span> <span class="s1">&#39;dicttype&#39;</span><span class="p">,</span> <span class="s1">&#39;stringtype&#39;</span><span class="p">,</span> <span class="s1">&#39;proceduretype&#39;</span><span class="p">)</span>
+		<span class="n">tp</span> <span class="o">=</span> <span class="n">obj3</span><span class="o">.</span><span class="n">type</span>
+		<span class="k">if</span> <span class="n">tp</span> <span class="o">==</span> <span class="s1">&#39;arraytype&#39;</span> <span class="ow">or</span> <span class="n">tp</span> <span class="o">==</span> <span class="s1">&#39;proceduretype&#39;</span><span class="p">:</span>
+			<span class="n">obj3</span><span class="o">.</span><span class="n">value</span><span class="p">[</span><span class="n">obj2</span><span class="o">.</span><span class="n">value</span><span class="p">]</span> <span class="o">=</span> <span class="n">obj1</span>
+		<span class="k">elif</span> <span class="n">tp</span> <span class="o">==</span> <span class="s1">&#39;dicttype&#39;</span><span class="p">:</span>
+			<span class="n">obj3</span><span class="o">.</span><span class="n">value</span><span class="p">[</span><span class="n">obj2</span><span class="o">.</span><span class="n">value</span><span class="p">]</span> <span class="o">=</span> <span class="n">obj1</span>
+		<span class="k">elif</span> <span class="n">tp</span> <span class="o">==</span> <span class="s1">&#39;stringtype&#39;</span><span class="p">:</span>
+			<span class="n">index</span> <span class="o">=</span> <span class="n">obj2</span><span class="o">.</span><span class="n">value</span>
+			<span class="n">obj3</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">obj3</span><span class="o">.</span><span class="n">value</span><span class="p">[:</span><span class="n">index</span><span class="p">]</span> <span class="o">+</span> <span class="nb">chr</span><span class="p">(</span><span class="n">obj1</span><span class="o">.</span><span class="n">value</span><span class="p">)</span> <span class="o">+</span> <span class="n">obj3</span><span class="o">.</span><span class="n">value</span><span class="p">[</span><span class="n">index</span><span class="o">+</span><span class="mi">1</span><span class="p">:]</span></div>
+
+<div class="viewcode-block" id="PSOperators.ps_get"><a class="viewcode-back" href="../../../misc/psOperators.html#fontTools.misc.psLib.PSOperators.ps_get">[docs]</a>	<span class="k">def</span> <span class="nf">ps_get</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">obj1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+		<span class="k">if</span> <span class="n">obj1</span><span class="o">.</span><span class="n">value</span> <span class="o">==</span> <span class="s2">&quot;Encoding&quot;</span><span class="p">:</span>
+			<span class="k">pass</span>
+		<span class="n">obj2</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;arraytype&#39;</span><span class="p">,</span> <span class="s1">&#39;dicttype&#39;</span><span class="p">,</span> <span class="s1">&#39;stringtype&#39;</span><span class="p">,</span> <span class="s1">&#39;proceduretype&#39;</span><span class="p">,</span> <span class="s1">&#39;fonttype&#39;</span><span class="p">)</span>
+		<span class="n">tp</span> <span class="o">=</span> <span class="n">obj2</span><span class="o">.</span><span class="n">type</span>
+		<span class="k">if</span> <span class="n">tp</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;arraytype&#39;</span><span class="p">,</span> <span class="s1">&#39;proceduretype&#39;</span><span class="p">):</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">obj2</span><span class="o">.</span><span class="n">value</span><span class="p">[</span><span class="n">obj1</span><span class="o">.</span><span class="n">value</span><span class="p">])</span>
+		<span class="k">elif</span> <span class="n">tp</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;dicttype&#39;</span><span class="p">,</span> <span class="s1">&#39;fonttype&#39;</span><span class="p">):</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">obj2</span><span class="o">.</span><span class="n">value</span><span class="p">[</span><span class="n">obj1</span><span class="o">.</span><span class="n">value</span><span class="p">])</span>
+		<span class="k">elif</span> <span class="n">tp</span> <span class="o">==</span> <span class="s1">&#39;stringtype&#39;</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">ps_integer</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="n">obj2</span><span class="o">.</span><span class="n">value</span><span class="p">[</span><span class="n">obj1</span><span class="o">.</span><span class="n">value</span><span class="p">])))</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="k">assert</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;shouldn&#39;t get here&quot;</span></div>
+
+<div class="viewcode-block" id="PSOperators.ps_getinterval"><a class="viewcode-back" href="../../../misc/psOperators.html#fontTools.misc.psLib.PSOperators.ps_getinterval">[docs]</a>	<span class="k">def</span> <span class="nf">ps_getinterval</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">obj1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;integertype&#39;</span><span class="p">)</span>
+		<span class="n">obj2</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;integertype&#39;</span><span class="p">)</span>
+		<span class="n">obj3</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;arraytype&#39;</span><span class="p">,</span> <span class="s1">&#39;stringtype&#39;</span><span class="p">)</span>
+		<span class="n">tp</span> <span class="o">=</span> <span class="n">obj3</span><span class="o">.</span><span class="n">type</span>
+		<span class="k">if</span> <span class="n">tp</span> <span class="o">==</span> <span class="s1">&#39;arraytype&#39;</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">ps_array</span><span class="p">(</span><span class="n">obj3</span><span class="o">.</span><span class="n">value</span><span class="p">[</span><span class="n">obj2</span><span class="o">.</span><span class="n">value</span><span class="p">:</span><span class="n">obj2</span><span class="o">.</span><span class="n">value</span> <span class="o">+</span> <span class="n">obj1</span><span class="o">.</span><span class="n">value</span><span class="p">]))</span>
+		<span class="k">elif</span> <span class="n">tp</span> <span class="o">==</span> <span class="s1">&#39;stringtype&#39;</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">ps_string</span><span class="p">(</span><span class="n">obj3</span><span class="o">.</span><span class="n">value</span><span class="p">[</span><span class="n">obj2</span><span class="o">.</span><span class="n">value</span><span class="p">:</span><span class="n">obj2</span><span class="o">.</span><span class="n">value</span> <span class="o">+</span> <span class="n">obj1</span><span class="o">.</span><span class="n">value</span><span class="p">]))</span></div>
+
+<div class="viewcode-block" id="PSOperators.ps_putinterval"><a class="viewcode-back" href="../../../misc/psOperators.html#fontTools.misc.psLib.PSOperators.ps_putinterval">[docs]</a>	<span class="k">def</span> <span class="nf">ps_putinterval</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">obj1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;arraytype&#39;</span><span class="p">,</span> <span class="s1">&#39;stringtype&#39;</span><span class="p">)</span>
+		<span class="n">obj2</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;integertype&#39;</span><span class="p">)</span>
+		<span class="n">obj3</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;arraytype&#39;</span><span class="p">,</span> <span class="s1">&#39;stringtype&#39;</span><span class="p">)</span>
+		<span class="n">tp</span> <span class="o">=</span> <span class="n">obj3</span><span class="o">.</span><span class="n">type</span>
+		<span class="k">if</span> <span class="n">tp</span> <span class="o">==</span> <span class="s1">&#39;arraytype&#39;</span><span class="p">:</span>
+			<span class="n">obj3</span><span class="o">.</span><span class="n">value</span><span class="p">[</span><span class="n">obj2</span><span class="o">.</span><span class="n">value</span><span class="p">:</span><span class="n">obj2</span><span class="o">.</span><span class="n">value</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">obj1</span><span class="o">.</span><span class="n">value</span><span class="p">)]</span> <span class="o">=</span> <span class="n">obj1</span><span class="o">.</span><span class="n">value</span>
+		<span class="k">elif</span> <span class="n">tp</span> <span class="o">==</span> <span class="s1">&#39;stringtype&#39;</span><span class="p">:</span>
+			<span class="n">newstr</span> <span class="o">=</span> <span class="n">obj3</span><span class="o">.</span><span class="n">value</span><span class="p">[:</span><span class="n">obj2</span><span class="o">.</span><span class="n">value</span><span class="p">]</span>
+			<span class="n">newstr</span> <span class="o">=</span> <span class="n">newstr</span> <span class="o">+</span> <span class="n">obj1</span><span class="o">.</span><span class="n">value</span>
+			<span class="n">newstr</span> <span class="o">=</span> <span class="n">newstr</span> <span class="o">+</span> <span class="n">obj3</span><span class="o">.</span><span class="n">value</span><span class="p">[</span><span class="n">obj2</span><span class="o">.</span><span class="n">value</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">obj1</span><span class="o">.</span><span class="n">value</span><span class="p">):]</span>
+			<span class="n">obj3</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">newstr</span></div>
+
+<div class="viewcode-block" id="PSOperators.ps_cvn"><a class="viewcode-back" href="../../../misc/psOperators.html#fontTools.misc.psLib.PSOperators.ps_cvn">[docs]</a>	<span class="k">def</span> <span class="nf">ps_cvn</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">ps_name</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;stringtype&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">value</span><span class="p">))</span></div>
+
+<div class="viewcode-block" id="PSOperators.ps_index"><a class="viewcode-back" href="../../../misc/psOperators.html#fontTools.misc.psLib.PSOperators.ps_index">[docs]</a>	<span class="k">def</span> <span class="nf">ps_index</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">n</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;integertype&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">value</span>
+		<span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+			<span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s1">&#39;index may not be negative&#39;</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">stack</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="n">n</span><span class="p">])</span></div>
+
+<div class="viewcode-block" id="PSOperators.ps_for"><a class="viewcode-back" href="../../../misc/psOperators.html#fontTools.misc.psLib.PSOperators.ps_for">[docs]</a>	<span class="k">def</span> <span class="nf">ps_for</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">proc</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;proceduretype&#39;</span><span class="p">)</span>
+		<span class="n">limit</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;integertype&#39;</span><span class="p">,</span> <span class="s1">&#39;realtype&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">value</span>
+		<span class="n">increment</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;integertype&#39;</span><span class="p">,</span> <span class="s1">&#39;realtype&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">value</span>
+		<span class="n">i</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;integertype&#39;</span><span class="p">,</span> <span class="s1">&#39;realtype&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">value</span>
+		<span class="k">while</span> <span class="mi">1</span><span class="p">:</span>
+			<span class="k">if</span> <span class="n">increment</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+				<span class="k">if</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="n">limit</span><span class="p">:</span>
+					<span class="k">break</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">limit</span><span class="p">:</span>
+					<span class="k">break</span>
+			<span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">==</span> <span class="nb">type</span><span class="p">(</span><span class="mf">0.0</span><span class="p">):</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">ps_real</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">ps_integer</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">call_procedure</span><span class="p">(</span><span class="n">proc</span><span class="p">)</span>
+			<span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="n">increment</span></div>
+
+<div class="viewcode-block" id="PSOperators.ps_forall"><a class="viewcode-back" href="../../../misc/psOperators.html#fontTools.misc.psLib.PSOperators.ps_forall">[docs]</a>	<span class="k">def</span> <span class="nf">ps_forall</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">proc</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;proceduretype&#39;</span><span class="p">)</span>
+		<span class="n">obj</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;arraytype&#39;</span><span class="p">,</span> <span class="s1">&#39;stringtype&#39;</span><span class="p">,</span> <span class="s1">&#39;dicttype&#39;</span><span class="p">)</span>
+		<span class="n">tp</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">type</span>
+		<span class="k">if</span> <span class="n">tp</span> <span class="o">==</span> <span class="s1">&#39;arraytype&#39;</span><span class="p">:</span>
+			<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">obj</span><span class="o">.</span><span class="n">value</span><span class="p">:</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">call_procedure</span><span class="p">(</span><span class="n">proc</span><span class="p">)</span>
+		<span class="k">elif</span> <span class="n">tp</span> <span class="o">==</span> <span class="s1">&#39;stringtype&#39;</span><span class="p">:</span>
+			<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">obj</span><span class="o">.</span><span class="n">value</span><span class="p">:</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">ps_integer</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="n">item</span><span class="p">)))</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">call_procedure</span><span class="p">(</span><span class="n">proc</span><span class="p">)</span>
+		<span class="k">elif</span> <span class="n">tp</span> <span class="o">==</span> <span class="s1">&#39;dicttype&#39;</span><span class="p">:</span>
+			<span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">obj</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">ps_name</span><span class="p">(</span><span class="n">key</span><span class="p">))</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">call_procedure</span><span class="p">(</span><span class="n">proc</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="PSOperators.ps_definefont"><a class="viewcode-back" href="../../../misc/psOperators.html#fontTools.misc.psLib.PSOperators.ps_definefont">[docs]</a>	<span class="k">def</span> <span class="nf">ps_definefont</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">font</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;dicttype&#39;</span><span class="p">)</span>
+		<span class="n">name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+		<span class="n">font</span> <span class="o">=</span> <span class="n">ps_font</span><span class="p">(</span><span class="n">font</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">dictstack</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;FontDirectory&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value</span><span class="p">[</span><span class="n">name</span><span class="o">.</span><span class="n">value</span><span class="p">]</span> <span class="o">=</span> <span class="n">font</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">font</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="PSOperators.ps_findfont"><a class="viewcode-back" href="../../../misc/psOperators.html#fontTools.misc.psLib.PSOperators.ps_findfont">[docs]</a>	<span class="k">def</span> <span class="nf">ps_findfont</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+		<span class="n">font</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dictstack</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;FontDirectory&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value</span><span class="p">[</span><span class="n">name</span><span class="o">.</span><span class="n">value</span><span class="p">]</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">font</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="PSOperators.ps_pop"><a class="viewcode-back" href="../../../misc/psOperators.html#fontTools.misc.psLib.PSOperators.ps_pop">[docs]</a>	<span class="k">def</span> <span class="nf">ps_pop</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="PSOperators.ps_dict"><a class="viewcode-back" href="../../../misc/psOperators.html#fontTools.misc.psLib.PSOperators.ps_dict">[docs]</a>	<span class="k">def</span> <span class="nf">ps_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;integertype&#39;</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">ps_dict</span><span class="p">({}))</span></div>
+
+<div class="viewcode-block" id="PSOperators.ps_begin"><a class="viewcode-back" href="../../../misc/psOperators.html#fontTools.misc.psLib.PSOperators.ps_begin">[docs]</a>	<span class="k">def</span> <span class="nf">ps_begin</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">dictstack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;dicttype&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="PSOperators.ps_end"><a class="viewcode-back" href="../../../misc/psOperators.html#fontTools.misc.psLib.PSOperators.ps_end">[docs]</a>	<span class="k">def</span> <span class="nf">ps_end</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dictstack</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">:</span>
+			<span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">dictstack</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s1">&#39;dictstack underflow&#39;</span><span class="p">)</span></div></div>
+
+<span class="n">notdef</span> <span class="o">=</span> <span class="s1">&#39;.notdef&#39;</span>
+<span class="kn">from</span> <span class="nn">fontTools.encodings.StandardEncoding</span> <span class="k">import</span> <span class="n">StandardEncoding</span>
+<span class="n">ps_StandardEncoding</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">ps_name</span><span class="p">,</span> <span class="n">StandardEncoding</span><span class="p">))</span>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Just van Rossum, Behdad Esfahbod, and the fontTools Authors. CC BY-SA 4.0
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

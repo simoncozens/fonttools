@@ -1,0 +1,1319 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>fontTools.varLib &mdash; fontTools Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> fontTools
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Library</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../afmLib.html">afmLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../agl.html">agl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cffLib/index.html">cffLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../colorLib/index.html">colorLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cu2qu/index.html">cu2qu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../designspaceLib/index.html">designspaceLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../encodings/index.html">encodings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../feaLib/index.html">feaLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../merge.html">merge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../misc/index.html">misc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mtiLib.html">mtiLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../otlLib/index.html">otlLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pens/index.html">pens</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../subset/index.html">subset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../svgLib/index.html">svgLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../t1Lib.html">t1Lib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ttLib/index.html">ttLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ttx.html">ttx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ufoLib/index.html">ufoLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../unicode.html">unicode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../unicodedata/index.html">unicodedata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../varLib/index.html">varLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../voltLib.html">voltLib</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">fontTools</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+      <li>fontTools.varLib</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for fontTools.varLib</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Module for dealing with &#39;gvar&#39;-style font variations, also known as run-time</span>
+<span class="sd">interpolation.</span>
+
+<span class="sd">The ideas here are very similar to MutatorMath.  There is even code to read</span>
+<span class="sd">MutatorMath .designspace files in the varLib.designspace module.</span>
+
+<span class="sd">For now, if you run this file on a designspace file, it tries to find</span>
+<span class="sd">ttf-interpolatable files for the masters and build a variable-font from</span>
+<span class="sd">them.  Such ttf-interpolatable and designspace files can be generated from</span>
+<span class="sd">a Glyphs source, eg., using noto-source as an example:</span>
+
+<span class="sd">	$ fontmake -o ttf-interpolatable -g NotoSansArabic-MM.glyphs</span>
+
+<span class="sd">Then you can make a variable-font this way:</span>
+
+<span class="sd">	$ fonttools varLib master_ufo/NotoSansArabic.designspace</span>
+
+<span class="sd">API *will* change in near future.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">fontTools.misc.py23</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">fontTools.misc.fixedTools</span> <span class="k">import</span> <span class="n">otRound</span>
+<span class="kn">from</span> <span class="nn">fontTools.misc.arrayTools</span> <span class="k">import</span> <span class="n">Vector</span>
+<span class="kn">from</span> <span class="nn">fontTools.ttLib</span> <span class="k">import</span> <span class="n">TTFont</span><span class="p">,</span> <span class="n">newTable</span>
+<span class="kn">from</span> <span class="nn">fontTools.ttLib.tables._f_v_a_r</span> <span class="k">import</span> <span class="n">Axis</span><span class="p">,</span> <span class="n">NamedInstance</span>
+<span class="kn">from</span> <span class="nn">fontTools.ttLib.tables._g_l_y_f</span> <span class="k">import</span> <span class="n">GlyphCoordinates</span>
+<span class="kn">from</span> <span class="nn">fontTools.ttLib.tables.ttProgram</span> <span class="k">import</span> <span class="n">Program</span>
+<span class="kn">from</span> <span class="nn">fontTools.ttLib.tables.TupleVariation</span> <span class="k">import</span> <span class="n">TupleVariation</span>
+<span class="kn">from</span> <span class="nn">fontTools.ttLib.tables</span> <span class="k">import</span> <span class="n">otTables</span> <span class="k">as</span> <span class="n">ot</span>
+<span class="kn">from</span> <span class="nn">fontTools.ttLib.tables.otBase</span> <span class="k">import</span> <span class="n">OTTableWriter</span>
+<span class="kn">from</span> <span class="nn">fontTools.varLib</span> <span class="k">import</span> <span class="n">builder</span><span class="p">,</span> <span class="n">models</span><span class="p">,</span> <span class="n">varStore</span>
+<span class="kn">from</span> <span class="nn">fontTools.varLib.merger</span> <span class="k">import</span> <span class="n">VariationMerger</span>
+<span class="kn">from</span> <span class="nn">fontTools.varLib.mvar</span> <span class="k">import</span> <span class="n">MVAR_ENTRIES</span>
+<span class="kn">from</span> <span class="nn">fontTools.varLib.iup</span> <span class="k">import</span> <span class="n">iup_delta_optimize</span>
+<span class="kn">from</span> <span class="nn">fontTools.varLib.featureVars</span> <span class="k">import</span> <span class="n">addFeatureVariations</span>
+<span class="kn">from</span> <span class="nn">fontTools.designspaceLib</span> <span class="k">import</span> <span class="n">DesignSpaceDocument</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="k">import</span> <span class="n">OrderedDict</span><span class="p">,</span> <span class="n">namedtuple</span>
+<span class="kn">import</span> <span class="nn">os.path</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">from</span> <span class="nn">copy</span> <span class="k">import</span> <span class="n">deepcopy</span>
+<span class="kn">from</span> <span class="nn">pprint</span> <span class="k">import</span> <span class="n">pformat</span>
+<span class="kn">from</span> <span class="nn">.errors</span> <span class="k">import</span> <span class="n">VarLibError</span><span class="p">,</span> <span class="n">VarLibValidationError</span>
+
+<span class="n">log</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s2">&quot;fontTools.varLib&quot;</span><span class="p">)</span>
+
+
+<span class="c1">#</span>
+<span class="c1"># Creation routines</span>
+<span class="c1">#</span>
+
+<span class="k">def</span> <span class="nf">_add_fvar</span><span class="p">(</span><span class="n">font</span><span class="p">,</span> <span class="n">axes</span><span class="p">,</span> <span class="n">instances</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	Add &#39;fvar&#39; table to font.</span>
+
+<span class="sd">	axes is an ordered dictionary of DesignspaceAxis objects.</span>
+
+<span class="sd">	instances is list of dictionary objects with &#39;location&#39;, &#39;stylename&#39;,</span>
+<span class="sd">	and possibly &#39;postscriptfontname&#39; entries.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+
+	<span class="k">assert</span> <span class="n">axes</span>
+	<span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">axes</span><span class="p">,</span> <span class="n">OrderedDict</span><span class="p">)</span>
+
+	<span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Generating fvar&quot;</span><span class="p">)</span>
+
+	<span class="n">fvar</span> <span class="o">=</span> <span class="n">newTable</span><span class="p">(</span><span class="s1">&#39;fvar&#39;</span><span class="p">)</span>
+	<span class="n">nameTable</span> <span class="o">=</span> <span class="n">font</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span>
+
+	<span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">axes</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+		<span class="n">axis</span> <span class="o">=</span> <span class="n">Axis</span><span class="p">()</span>
+		<span class="n">axis</span><span class="o">.</span><span class="n">axisTag</span> <span class="o">=</span> <span class="n">Tag</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">tag</span><span class="p">)</span>
+		<span class="c1"># TODO Skip axes that have no variation.</span>
+		<span class="n">axis</span><span class="o">.</span><span class="n">minValue</span><span class="p">,</span> <span class="n">axis</span><span class="o">.</span><span class="n">defaultValue</span><span class="p">,</span> <span class="n">axis</span><span class="o">.</span><span class="n">maxValue</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">minimum</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">default</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">maximum</span>
+		<span class="n">axis</span><span class="o">.</span><span class="n">axisNameID</span> <span class="o">=</span> <span class="n">nameTable</span><span class="o">.</span><span class="n">addMultilingualName</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">labelNames</span><span class="p">,</span> <span class="n">font</span><span class="p">)</span>
+		<span class="n">axis</span><span class="o">.</span><span class="n">flags</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">hidden</span><span class="p">)</span>
+		<span class="n">fvar</span><span class="o">.</span><span class="n">axes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">axis</span><span class="p">)</span>
+
+	<span class="k">for</span> <span class="n">instance</span> <span class="ow">in</span> <span class="n">instances</span><span class="p">:</span>
+		<span class="n">coordinates</span> <span class="o">=</span> <span class="n">instance</span><span class="o">.</span><span class="n">location</span>
+
+		<span class="k">if</span> <span class="s2">&quot;en&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">instance</span><span class="o">.</span><span class="n">localisedStyleName</span><span class="p">:</span>
+			<span class="k">if</span> <span class="ow">not</span> <span class="n">instance</span><span class="o">.</span><span class="n">styleName</span><span class="p">:</span>
+				<span class="k">raise</span> <span class="n">VarLibValidationError</span><span class="p">(</span>
+					<span class="n">f</span><span class="s2">&quot;Instance at location &#39;</span><span class="si">{coordinates}</span><span class="s2">&#39; must have a default English &quot;</span>
+					<span class="s2">&quot;style name (&#39;stylename&#39; attribute on the instance element or a &quot;</span>
+					<span class="s2">&quot;stylename element with an &#39;xml:lang=</span><span class="se">\&quot;</span><span class="s2">en</span><span class="se">\&quot;</span><span class="s2">&#39; attribute).&quot;</span>
+				<span class="p">)</span>
+			<span class="n">localisedStyleName</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">instance</span><span class="o">.</span><span class="n">localisedStyleName</span><span class="p">)</span>
+			<span class="n">localisedStyleName</span><span class="p">[</span><span class="s2">&quot;en&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">tounicode</span><span class="p">(</span><span class="n">instance</span><span class="o">.</span><span class="n">styleName</span><span class="p">)</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="n">localisedStyleName</span> <span class="o">=</span> <span class="n">instance</span><span class="o">.</span><span class="n">localisedStyleName</span>
+
+		<span class="n">psname</span> <span class="o">=</span> <span class="n">instance</span><span class="o">.</span><span class="n">postScriptFontName</span>
+
+		<span class="n">inst</span> <span class="o">=</span> <span class="n">NamedInstance</span><span class="p">()</span>
+		<span class="n">inst</span><span class="o">.</span><span class="n">subfamilyNameID</span> <span class="o">=</span> <span class="n">nameTable</span><span class="o">.</span><span class="n">addMultilingualName</span><span class="p">(</span><span class="n">localisedStyleName</span><span class="p">)</span>
+		<span class="k">if</span> <span class="n">psname</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="n">psname</span> <span class="o">=</span> <span class="n">tounicode</span><span class="p">(</span><span class="n">psname</span><span class="p">)</span>
+			<span class="n">inst</span><span class="o">.</span><span class="n">postscriptNameID</span> <span class="o">=</span> <span class="n">nameTable</span><span class="o">.</span><span class="n">addName</span><span class="p">(</span><span class="n">psname</span><span class="p">)</span>
+		<span class="n">inst</span><span class="o">.</span><span class="n">coordinates</span> <span class="o">=</span> <span class="p">{</span><span class="n">axes</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">.</span><span class="n">tag</span><span class="p">:</span><span class="n">axes</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">.</span><span class="n">map_backward</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">coordinates</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+		<span class="c1">#inst.coordinates = {axes[k].tag:v for k,v in coordinates.items()}</span>
+		<span class="n">fvar</span><span class="o">.</span><span class="n">instances</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">inst</span><span class="p">)</span>
+
+	<span class="k">assert</span> <span class="s2">&quot;fvar&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">font</span>
+	<span class="n">font</span><span class="p">[</span><span class="s1">&#39;fvar&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">fvar</span>
+
+	<span class="k">return</span> <span class="n">fvar</span>
+
+<span class="k">def</span> <span class="nf">_add_avar</span><span class="p">(</span><span class="n">font</span><span class="p">,</span> <span class="n">axes</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	Add &#39;avar&#39; table to font.</span>
+
+<span class="sd">	axes is an ordered dictionary of AxisDescriptor objects.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+
+	<span class="k">assert</span> <span class="n">axes</span>
+	<span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">axes</span><span class="p">,</span> <span class="n">OrderedDict</span><span class="p">)</span>
+
+	<span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Generating avar&quot;</span><span class="p">)</span>
+
+	<span class="n">avar</span> <span class="o">=</span> <span class="n">newTable</span><span class="p">(</span><span class="s1">&#39;avar&#39;</span><span class="p">)</span>
+
+	<span class="n">interesting</span> <span class="o">=</span> <span class="kc">False</span>
+	<span class="k">for</span> <span class="n">axis</span> <span class="ow">in</span> <span class="n">axes</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+		<span class="c1"># Currently, some rasterizers require that the default value maps</span>
+		<span class="c1"># (-1 to -1, 0 to 0, and 1 to 1) be present for all the segment</span>
+		<span class="c1"># maps, even when the default normalization mapping for the axis</span>
+		<span class="c1"># was not modified.</span>
+		<span class="c1"># https://github.com/googlei18n/fontmake/issues/295</span>
+		<span class="c1"># https://github.com/fonttools/fonttools/issues/1011</span>
+		<span class="c1"># TODO(anthrotype) revert this (and 19c4b37) when issue is fixed</span>
+		<span class="n">curve</span> <span class="o">=</span> <span class="n">avar</span><span class="o">.</span><span class="n">segments</span><span class="p">[</span><span class="n">axis</span><span class="o">.</span><span class="n">tag</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="o">-</span><span class="mf">1.0</span><span class="p">:</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">}</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="n">axis</span><span class="o">.</span><span class="n">map</span><span class="p">:</span>
+			<span class="k">continue</span>
+
+		<span class="n">items</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">axis</span><span class="o">.</span><span class="n">map</span><span class="p">)</span>
+		<span class="n">keys</span> <span class="o">=</span> <span class="p">[</span><span class="n">item</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">items</span><span class="p">]</span>
+		<span class="n">vals</span> <span class="o">=</span> <span class="p">[</span><span class="n">item</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">items</span><span class="p">]</span>
+
+		<span class="c1"># Current avar requirements.  We don&#39;t have to enforce</span>
+		<span class="c1"># these on the designer and can deduce some ourselves,</span>
+		<span class="c1"># but for now just enforce them.</span>
+		<span class="k">if</span> <span class="n">axis</span><span class="o">.</span><span class="n">minimum</span> <span class="o">!=</span> <span class="nb">min</span><span class="p">(</span><span class="n">keys</span><span class="p">):</span>
+			<span class="k">raise</span> <span class="n">VarLibValidationError</span><span class="p">(</span>
+				<span class="n">f</span><span class="s2">&quot;Axis &#39;</span><span class="si">{axis.name}</span><span class="s2">&#39;: there must be a mapping for the axis minimum &quot;</span>
+				<span class="n">f</span><span class="s2">&quot;value </span><span class="si">{axis.minimum}</span><span class="s2"> and it must be the lowest input mapping value.&quot;</span>
+			<span class="p">)</span>
+		<span class="k">if</span> <span class="n">axis</span><span class="o">.</span><span class="n">maximum</span> <span class="o">!=</span> <span class="nb">max</span><span class="p">(</span><span class="n">keys</span><span class="p">):</span>
+			<span class="k">raise</span> <span class="n">VarLibValidationError</span><span class="p">(</span>
+				<span class="n">f</span><span class="s2">&quot;Axis &#39;</span><span class="si">{axis.name}</span><span class="s2">&#39;: there must be a mapping for the axis maximum &quot;</span>
+				<span class="n">f</span><span class="s2">&quot;value </span><span class="si">{axis.maximum}</span><span class="s2"> and it must be the highest input mapping value.&quot;</span>
+			<span class="p">)</span>
+		<span class="k">if</span> <span class="n">axis</span><span class="o">.</span><span class="n">default</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">keys</span><span class="p">:</span>
+			<span class="k">raise</span> <span class="n">VarLibValidationError</span><span class="p">(</span>
+				<span class="n">f</span><span class="s2">&quot;Axis &#39;</span><span class="si">{axis.name}</span><span class="s2">&#39;: there must be a mapping for the axis default &quot;</span>
+				<span class="n">f</span><span class="s2">&quot;value </span><span class="si">{axis.default}</span><span class="s2">.&quot;</span>
+			<span class="p">)</span>
+		<span class="c1"># No duplicate input values (output values can be &gt;= their preceeding value).</span>
+		<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">keys</span><span class="p">))</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="n">keys</span><span class="p">):</span>
+			<span class="k">raise</span> <span class="n">VarLibValidationError</span><span class="p">(</span>
+				<span class="n">f</span><span class="s2">&quot;Axis &#39;</span><span class="si">{axis.name}</span><span class="s2">&#39;: All axis mapping input=&#39;...&#39; values must be &quot;</span>
+				<span class="s2">&quot;unique, but we found duplicates.&quot;</span>
+			<span class="p">)</span>
+		<span class="c1"># Ascending values</span>
+		<span class="k">if</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">vals</span><span class="p">)</span> <span class="o">!=</span> <span class="n">vals</span><span class="p">:</span>
+			<span class="k">raise</span> <span class="n">VarLibValidationError</span><span class="p">(</span>
+				<span class="n">f</span><span class="s2">&quot;Axis &#39;</span><span class="si">{axis.name}</span><span class="s2">&#39;: mapping output values must be in ascending order.&quot;</span>
+			<span class="p">)</span>
+
+		<span class="n">keys_triple</span> <span class="o">=</span> <span class="p">(</span><span class="n">axis</span><span class="o">.</span><span class="n">minimum</span><span class="p">,</span> <span class="n">axis</span><span class="o">.</span><span class="n">default</span><span class="p">,</span> <span class="n">axis</span><span class="o">.</span><span class="n">maximum</span><span class="p">)</span>
+		<span class="n">vals_triple</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">axis</span><span class="o">.</span><span class="n">map_forward</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">keys_triple</span><span class="p">)</span>
+
+		<span class="n">keys</span> <span class="o">=</span> <span class="p">[</span><span class="n">models</span><span class="o">.</span><span class="n">normalizeValue</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">keys_triple</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">keys</span><span class="p">]</span>
+		<span class="n">vals</span> <span class="o">=</span> <span class="p">[</span><span class="n">models</span><span class="o">.</span><span class="n">normalizeValue</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">vals_triple</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">vals</span><span class="p">]</span>
+
+		<span class="k">if</span> <span class="nb">all</span><span class="p">(</span><span class="n">k</span> <span class="o">==</span> <span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">keys</span><span class="p">,</span> <span class="n">vals</span><span class="p">)):</span>
+			<span class="k">continue</span>
+		<span class="n">interesting</span> <span class="o">=</span> <span class="kc">True</span>
+
+		<span class="n">curve</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">keys</span><span class="p">,</span> <span class="n">vals</span><span class="p">))</span>
+
+		<span class="k">assert</span> <span class="mf">0.0</span> <span class="ow">in</span> <span class="n">curve</span> <span class="ow">and</span> <span class="n">curve</span><span class="p">[</span><span class="mf">0.0</span><span class="p">]</span> <span class="o">==</span> <span class="mf">0.0</span>
+		<span class="k">assert</span> <span class="o">-</span><span class="mf">1.0</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">curve</span> <span class="ow">or</span> <span class="n">curve</span><span class="p">[</span><span class="o">-</span><span class="mf">1.0</span><span class="p">]</span> <span class="o">==</span> <span class="o">-</span><span class="mf">1.0</span>
+		<span class="k">assert</span> <span class="o">+</span><span class="mf">1.0</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">curve</span> <span class="ow">or</span> <span class="n">curve</span><span class="p">[</span><span class="o">+</span><span class="mf">1.0</span><span class="p">]</span> <span class="o">==</span> <span class="o">+</span><span class="mf">1.0</span>
+		<span class="c1"># curve.update({-1.0: -1.0, 0.0: 0.0, 1.0: 1.0})</span>
+
+	<span class="k">assert</span> <span class="s2">&quot;avar&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">font</span>
+	<span class="k">if</span> <span class="ow">not</span> <span class="n">interesting</span><span class="p">:</span>
+		<span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;No need for avar&quot;</span><span class="p">)</span>
+		<span class="n">avar</span> <span class="o">=</span> <span class="kc">None</span>
+	<span class="k">else</span><span class="p">:</span>
+		<span class="n">font</span><span class="p">[</span><span class="s1">&#39;avar&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">avar</span>
+
+	<span class="k">return</span> <span class="n">avar</span>
+
+<span class="k">def</span> <span class="nf">_add_stat</span><span class="p">(</span><span class="n">font</span><span class="p">,</span> <span class="n">axes</span><span class="p">):</span>
+	<span class="c1"># for now we just get the axis tags and nameIDs from the fvar,</span>
+	<span class="c1"># so we can reuse the same nameIDs which were defined in there.</span>
+	<span class="c1"># TODO make use of &#39;axes&#39; once it adds style attributes info:</span>
+	<span class="c1"># https://github.com/LettError/designSpaceDocument/issues/8</span>
+
+	<span class="k">if</span> <span class="s2">&quot;STAT&quot;</span> <span class="ow">in</span> <span class="n">font</span><span class="p">:</span>
+		<span class="k">return</span>
+
+	<span class="n">fvarTable</span> <span class="o">=</span> <span class="n">font</span><span class="p">[</span><span class="s1">&#39;fvar&#39;</span><span class="p">]</span>
+
+	<span class="n">STAT</span> <span class="o">=</span> <span class="n">font</span><span class="p">[</span><span class="s2">&quot;STAT&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">newTable</span><span class="p">(</span><span class="s1">&#39;STAT&#39;</span><span class="p">)</span>
+	<span class="n">stat</span> <span class="o">=</span> <span class="n">STAT</span><span class="o">.</span><span class="n">table</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">STAT</span><span class="p">()</span>
+	<span class="n">stat</span><span class="o">.</span><span class="n">Version</span> <span class="o">=</span> <span class="mh">0x00010001</span>
+
+	<span class="n">axisRecords</span> <span class="o">=</span> <span class="p">[]</span>
+	<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">a</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">fvarTable</span><span class="o">.</span><span class="n">axes</span><span class="p">):</span>
+		<span class="n">axis</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">AxisRecord</span><span class="p">()</span>
+		<span class="n">axis</span><span class="o">.</span><span class="n">AxisTag</span> <span class="o">=</span> <span class="n">Tag</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">axisTag</span><span class="p">)</span>
+		<span class="n">axis</span><span class="o">.</span><span class="n">AxisNameID</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">axisNameID</span>
+		<span class="n">axis</span><span class="o">.</span><span class="n">AxisOrdering</span> <span class="o">=</span> <span class="n">i</span>
+		<span class="n">axisRecords</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">axis</span><span class="p">)</span>
+
+	<span class="n">axisRecordArray</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">AxisRecordArray</span><span class="p">()</span>
+	<span class="n">axisRecordArray</span><span class="o">.</span><span class="n">Axis</span> <span class="o">=</span> <span class="n">axisRecords</span>
+	<span class="c1"># XXX these should not be hard-coded but computed automatically</span>
+	<span class="n">stat</span><span class="o">.</span><span class="n">DesignAxisRecordSize</span> <span class="o">=</span> <span class="mi">8</span>
+	<span class="n">stat</span><span class="o">.</span><span class="n">DesignAxisCount</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">axisRecords</span><span class="p">)</span>
+	<span class="n">stat</span><span class="o">.</span><span class="n">DesignAxisRecord</span> <span class="o">=</span> <span class="n">axisRecordArray</span>
+
+	<span class="c1"># for the elided fallback name, we default to the base style name.</span>
+	<span class="c1"># TODO make this user-configurable via designspace document</span>
+	<span class="n">stat</span><span class="o">.</span><span class="n">ElidedFallbackNameID</span> <span class="o">=</span> <span class="mi">2</span>
+
+
+<span class="k">def</span> <span class="nf">_add_gvar</span><span class="p">(</span><span class="n">font</span><span class="p">,</span> <span class="n">masterModel</span><span class="p">,</span> <span class="n">master_ttfs</span><span class="p">,</span> <span class="n">tolerance</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">optimize</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+	<span class="k">if</span> <span class="n">tolerance</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+		<span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;`tolerance` must be a positive number.&quot;</span><span class="p">)</span>
+
+	<span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Generating gvar&quot;</span><span class="p">)</span>
+	<span class="k">assert</span> <span class="s2">&quot;gvar&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">font</span>
+	<span class="n">gvar</span> <span class="o">=</span> <span class="n">font</span><span class="p">[</span><span class="s2">&quot;gvar&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">newTable</span><span class="p">(</span><span class="s1">&#39;gvar&#39;</span><span class="p">)</span>
+	<span class="n">glyf</span> <span class="o">=</span> <span class="n">font</span><span class="p">[</span><span class="s1">&#39;glyf&#39;</span><span class="p">]</span>
+
+	<span class="c1"># use hhea.ascent of base master as default vertical origin when vmtx is missing</span>
+	<span class="n">baseAscent</span> <span class="o">=</span> <span class="n">font</span><span class="p">[</span><span class="s1">&#39;hhea&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">ascent</span>
+	<span class="k">for</span> <span class="n">glyph</span> <span class="ow">in</span> <span class="n">font</span><span class="o">.</span><span class="n">getGlyphOrder</span><span class="p">():</span>
+
+		<span class="n">isComposite</span> <span class="o">=</span> <span class="n">glyf</span><span class="p">[</span><span class="n">glyph</span><span class="p">]</span><span class="o">.</span><span class="n">isComposite</span><span class="p">()</span>
+
+		<span class="n">allData</span> <span class="o">=</span> <span class="p">[</span>
+			<span class="n">m</span><span class="p">[</span><span class="s2">&quot;glyf&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">getCoordinatesAndControls</span><span class="p">(</span><span class="n">glyph</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">defaultVerticalOrigin</span><span class="o">=</span><span class="n">baseAscent</span><span class="p">)</span>
+			<span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">master_ttfs</span>
+		<span class="p">]</span>
+		<span class="n">model</span><span class="p">,</span> <span class="n">allData</span> <span class="o">=</span> <span class="n">masterModel</span><span class="o">.</span><span class="n">getSubModel</span><span class="p">(</span><span class="n">allData</span><span class="p">)</span>
+
+		<span class="n">allCoords</span> <span class="o">=</span> <span class="p">[</span><span class="n">d</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">allData</span><span class="p">]</span>
+		<span class="n">allControls</span> <span class="o">=</span> <span class="p">[</span><span class="n">d</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">allData</span><span class="p">]</span>
+		<span class="n">control</span> <span class="o">=</span> <span class="n">allControls</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="n">models</span><span class="o">.</span><span class="n">allEqual</span><span class="p">(</span><span class="n">allControls</span><span class="p">):</span>
+			<span class="n">log</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;glyph </span><span class="si">%s</span><span class="s2"> has incompatible masters; skipping&quot;</span> <span class="o">%</span> <span class="n">glyph</span><span class="p">)</span>
+			<span class="k">continue</span>
+		<span class="k">del</span> <span class="n">allControls</span>
+
+		<span class="c1"># Update gvar</span>
+		<span class="n">gvar</span><span class="o">.</span><span class="n">variations</span><span class="p">[</span><span class="n">glyph</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+		<span class="n">deltas</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">getDeltas</span><span class="p">(</span><span class="n">allCoords</span><span class="p">)</span>
+		<span class="n">supports</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">supports</span>
+		<span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">deltas</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">supports</span><span class="p">)</span>
+
+		<span class="c1"># Prepare for IUP optimization</span>
+		<span class="n">origCoords</span> <span class="o">=</span> <span class="n">deltas</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+		<span class="n">endPts</span> <span class="o">=</span> <span class="n">control</span><span class="o">.</span><span class="n">endPts</span>
+
+		<span class="k">for</span> <span class="n">i</span><span class="p">,(</span><span class="n">delta</span><span class="p">,</span><span class="n">support</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">deltas</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">supports</span><span class="p">[</span><span class="mi">1</span><span class="p">:])):</span>
+			<span class="k">if</span> <span class="nb">all</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">tolerance</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">delta</span><span class="o">.</span><span class="n">array</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">isComposite</span><span class="p">:</span>
+				<span class="k">continue</span>
+			<span class="n">var</span> <span class="o">=</span> <span class="n">TupleVariation</span><span class="p">(</span><span class="n">support</span><span class="p">,</span> <span class="n">delta</span><span class="p">)</span>
+			<span class="k">if</span> <span class="n">optimize</span><span class="p">:</span>
+				<span class="n">delta_opt</span> <span class="o">=</span> <span class="n">iup_delta_optimize</span><span class="p">(</span><span class="n">delta</span><span class="p">,</span> <span class="n">origCoords</span><span class="p">,</span> <span class="n">endPts</span><span class="p">,</span> <span class="n">tolerance</span><span class="o">=</span><span class="n">tolerance</span><span class="p">)</span>
+
+				<span class="k">if</span> <span class="kc">None</span> <span class="ow">in</span> <span class="n">delta_opt</span><span class="p">:</span>
+					<span class="sd">&quot;&quot;&quot;In composite glyphs, there should be one 0 entry</span>
+<span class="sd">					to make sure the gvar entry is written to the font.</span>
+
+<span class="sd">					This is to work around an issue with macOS 10.14 and can be</span>
+<span class="sd">					removed once the behaviour of macOS is changed.</span>
+
+<span class="sd">					https://github.com/fonttools/fonttools/issues/1381</span>
+<span class="sd">					&quot;&quot;&quot;</span>
+					<span class="k">if</span> <span class="nb">all</span><span class="p">(</span><span class="n">d</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">delta_opt</span><span class="p">):</span>
+						<span class="n">delta_opt</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)]</span> <span class="o">+</span> <span class="p">[</span><span class="kc">None</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">delta_opt</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+					<span class="c1"># Use &quot;optimized&quot; version only if smaller...</span>
+					<span class="n">var_opt</span> <span class="o">=</span> <span class="n">TupleVariation</span><span class="p">(</span><span class="n">support</span><span class="p">,</span> <span class="n">delta_opt</span><span class="p">)</span>
+
+					<span class="n">axis_tags</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">support</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span> <span class="c1"># Shouldn&#39;t matter that this is different from fvar...?</span>
+					<span class="n">tupleData</span><span class="p">,</span> <span class="n">auxData</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">var</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">axis_tags</span><span class="p">,</span> <span class="p">[],</span> <span class="kc">None</span><span class="p">)</span>
+					<span class="n">unoptimized_len</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">tupleData</span><span class="p">)</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">auxData</span><span class="p">)</span>
+					<span class="n">tupleData</span><span class="p">,</span> <span class="n">auxData</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">var_opt</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">axis_tags</span><span class="p">,</span> <span class="p">[],</span> <span class="kc">None</span><span class="p">)</span>
+					<span class="n">optimized_len</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">tupleData</span><span class="p">)</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">auxData</span><span class="p">)</span>
+
+					<span class="k">if</span> <span class="n">optimized_len</span> <span class="o">&lt;</span> <span class="n">unoptimized_len</span><span class="p">:</span>
+						<span class="n">var</span> <span class="o">=</span> <span class="n">var_opt</span>
+
+			<span class="n">gvar</span><span class="o">.</span><span class="n">variations</span><span class="p">[</span><span class="n">glyph</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">var</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">_remove_TTHinting</span><span class="p">(</span><span class="n">font</span><span class="p">):</span>
+	<span class="k">for</span> <span class="n">tag</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;cvar&quot;</span><span class="p">,</span> <span class="s2">&quot;cvt &quot;</span><span class="p">,</span> <span class="s2">&quot;fpgm&quot;</span><span class="p">,</span> <span class="s2">&quot;prep&quot;</span><span class="p">):</span>
+		<span class="k">if</span> <span class="n">tag</span> <span class="ow">in</span> <span class="n">font</span><span class="p">:</span>
+			<span class="k">del</span> <span class="n">font</span><span class="p">[</span><span class="n">tag</span><span class="p">]</span>
+	<span class="k">for</span> <span class="n">attr</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;maxTwilightPoints&quot;</span><span class="p">,</span> <span class="s2">&quot;maxStorage&quot;</span><span class="p">,</span> <span class="s2">&quot;maxFunctionDefs&quot;</span><span class="p">,</span> <span class="s2">&quot;maxInstructionDefs&quot;</span><span class="p">,</span> <span class="s2">&quot;maxStackElements&quot;</span><span class="p">,</span> <span class="s2">&quot;maxSizeOfInstructions&quot;</span><span class="p">):</span>
+		<span class="nb">setattr</span><span class="p">(</span><span class="n">font</span><span class="p">[</span><span class="s2">&quot;maxp&quot;</span><span class="p">],</span> <span class="n">attr</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+	<span class="n">font</span><span class="p">[</span><span class="s2">&quot;maxp&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">maxZones</span> <span class="o">=</span> <span class="mi">1</span>
+	<span class="n">font</span><span class="p">[</span><span class="s2">&quot;glyf&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">removeHinting</span><span class="p">()</span>
+	<span class="c1"># TODO: Modify gasp table to deactivate gridfitting for all ranges?</span>
+
+<span class="k">def</span> <span class="nf">_merge_TTHinting</span><span class="p">(</span><span class="n">font</span><span class="p">,</span> <span class="n">masterModel</span><span class="p">,</span> <span class="n">master_ttfs</span><span class="p">,</span> <span class="n">tolerance</span><span class="o">=</span><span class="mf">0.5</span><span class="p">):</span>
+
+	<span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Merging TT hinting&quot;</span><span class="p">)</span>
+	<span class="k">assert</span> <span class="s2">&quot;cvar&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">font</span>
+
+	<span class="c1"># Check that the existing hinting is compatible</span>
+
+	<span class="c1"># fpgm and prep table</span>
+
+	<span class="k">for</span> <span class="n">tag</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;fpgm&quot;</span><span class="p">,</span> <span class="s2">&quot;prep&quot;</span><span class="p">):</span>
+		<span class="n">all_pgms</span> <span class="o">=</span> <span class="p">[</span><span class="n">m</span><span class="p">[</span><span class="n">tag</span><span class="p">]</span><span class="o">.</span><span class="n">program</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">master_ttfs</span> <span class="k">if</span> <span class="n">tag</span> <span class="ow">in</span> <span class="n">m</span><span class="p">]</span>
+		<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">all_pgms</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+			<span class="k">continue</span>
+		<span class="k">if</span> <span class="n">tag</span> <span class="ow">in</span> <span class="n">font</span><span class="p">:</span>
+			<span class="n">font_pgm</span> <span class="o">=</span> <span class="n">font</span><span class="p">[</span><span class="n">tag</span><span class="p">]</span><span class="o">.</span><span class="n">program</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="n">font_pgm</span> <span class="o">=</span> <span class="n">Program</span><span class="p">()</span>
+		<span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">pgm</span> <span class="o">!=</span> <span class="n">font_pgm</span> <span class="k">for</span> <span class="n">pgm</span> <span class="ow">in</span> <span class="n">all_pgms</span><span class="p">):</span>
+			<span class="n">log</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;Masters have incompatible </span><span class="si">%s</span><span class="s2"> tables, hinting is discarded.&quot;</span> <span class="o">%</span> <span class="n">tag</span><span class="p">)</span>
+			<span class="n">_remove_TTHinting</span><span class="p">(</span><span class="n">font</span><span class="p">)</span>
+			<span class="k">return</span>
+
+	<span class="c1"># glyf table</span>
+
+	<span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">glyph</span> <span class="ow">in</span> <span class="n">font</span><span class="p">[</span><span class="s2">&quot;glyf&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">glyphs</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+		<span class="n">all_pgms</span> <span class="o">=</span> <span class="p">[</span>
+			<span class="n">m</span><span class="p">[</span><span class="s2">&quot;glyf&quot;</span><span class="p">][</span><span class="n">name</span><span class="p">]</span><span class="o">.</span><span class="n">program</span>
+			<span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">master_ttfs</span>
+			<span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">m</span><span class="p">[</span><span class="s1">&#39;glyf&#39;</span><span class="p">]</span> <span class="ow">and</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">m</span><span class="p">[</span><span class="s2">&quot;glyf&quot;</span><span class="p">][</span><span class="n">name</span><span class="p">],</span> <span class="s2">&quot;program&quot;</span><span class="p">)</span>
+		<span class="p">]</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="nb">any</span><span class="p">(</span><span class="n">all_pgms</span><span class="p">):</span>
+			<span class="k">continue</span>
+		<span class="n">glyph</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="n">font</span><span class="p">[</span><span class="s2">&quot;glyf&quot;</span><span class="p">])</span>
+		<span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">glyph</span><span class="p">,</span> <span class="s2">&quot;program&quot;</span><span class="p">):</span>
+			<span class="n">font_pgm</span> <span class="o">=</span> <span class="n">glyph</span><span class="o">.</span><span class="n">program</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="n">font_pgm</span> <span class="o">=</span> <span class="n">Program</span><span class="p">()</span>
+		<span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">pgm</span> <span class="o">!=</span> <span class="n">font_pgm</span> <span class="k">for</span> <span class="n">pgm</span> <span class="ow">in</span> <span class="n">all_pgms</span> <span class="k">if</span> <span class="n">pgm</span><span class="p">):</span>
+			<span class="n">log</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;Masters have incompatible glyph programs in glyph &#39;</span><span class="si">%s</span><span class="s2">&#39;, hinting is discarded.&quot;</span> <span class="o">%</span> <span class="n">name</span><span class="p">)</span>
+			<span class="c1"># TODO Only drop hinting from this glyph.</span>
+			<span class="n">_remove_TTHinting</span><span class="p">(</span><span class="n">font</span><span class="p">)</span>
+			<span class="k">return</span>
+
+	<span class="c1"># cvt table</span>
+
+	<span class="n">all_cvs</span> <span class="o">=</span> <span class="p">[</span><span class="n">Vector</span><span class="p">(</span><span class="n">m</span><span class="p">[</span><span class="s2">&quot;cvt &quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">)</span> <span class="k">if</span> <span class="s1">&#39;cvt &#39;</span> <span class="ow">in</span> <span class="n">m</span> <span class="k">else</span> <span class="kc">None</span>
+		   <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">master_ttfs</span><span class="p">]</span>
+
+	<span class="n">nonNone_cvs</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">nonNone</span><span class="p">(</span><span class="n">all_cvs</span><span class="p">)</span>
+	<span class="k">if</span> <span class="ow">not</span> <span class="n">nonNone_cvs</span><span class="p">:</span>
+		<span class="c1"># There is no cvt table to make a cvar table from, we&#39;re done here.</span>
+		<span class="k">return</span>
+
+	<span class="k">if</span> <span class="ow">not</span> <span class="n">models</span><span class="o">.</span><span class="n">allEqual</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">nonNone_cvs</span><span class="p">):</span>
+		<span class="n">log</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;Masters have incompatible cvt tables, hinting is discarded.&quot;</span><span class="p">)</span>
+		<span class="n">_remove_TTHinting</span><span class="p">(</span><span class="n">font</span><span class="p">)</span>
+		<span class="k">return</span>
+
+	<span class="n">variations</span> <span class="o">=</span> <span class="p">[]</span>
+	<span class="n">deltas</span><span class="p">,</span> <span class="n">supports</span> <span class="o">=</span> <span class="n">masterModel</span><span class="o">.</span><span class="n">getDeltasAndSupports</span><span class="p">(</span><span class="n">all_cvs</span><span class="p">)</span>
+	<span class="k">for</span> <span class="n">i</span><span class="p">,(</span><span class="n">delta</span><span class="p">,</span><span class="n">support</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">deltas</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">supports</span><span class="p">[</span><span class="mi">1</span><span class="p">:])):</span>
+		<span class="n">delta</span> <span class="o">=</span> <span class="p">[</span><span class="n">otRound</span><span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">delta</span><span class="p">]</span>
+		<span class="k">if</span> <span class="nb">all</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">tolerance</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">delta</span><span class="p">):</span>
+			<span class="k">continue</span>
+		<span class="n">var</span> <span class="o">=</span> <span class="n">TupleVariation</span><span class="p">(</span><span class="n">support</span><span class="p">,</span> <span class="n">delta</span><span class="p">)</span>
+		<span class="n">variations</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">var</span><span class="p">)</span>
+
+	<span class="c1"># We can build the cvar table now.</span>
+	<span class="k">if</span> <span class="n">variations</span><span class="p">:</span>
+		<span class="n">cvar</span> <span class="o">=</span> <span class="n">font</span><span class="p">[</span><span class="s2">&quot;cvar&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">newTable</span><span class="p">(</span><span class="s1">&#39;cvar&#39;</span><span class="p">)</span>
+		<span class="n">cvar</span><span class="o">.</span><span class="n">version</span> <span class="o">=</span> <span class="mi">1</span>
+		<span class="n">cvar</span><span class="o">.</span><span class="n">variations</span> <span class="o">=</span> <span class="n">variations</span>
+
+
+<span class="n">_MetricsFields</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span><span class="s1">&#39;_MetricsFields&#39;</span><span class="p">,</span>
+	<span class="p">[</span><span class="s1">&#39;tableTag&#39;</span><span class="p">,</span> <span class="s1">&#39;metricsTag&#39;</span><span class="p">,</span> <span class="s1">&#39;sb1&#39;</span><span class="p">,</span> <span class="s1">&#39;sb2&#39;</span><span class="p">,</span> <span class="s1">&#39;advMapping&#39;</span><span class="p">,</span> <span class="s1">&#39;vOrigMapping&#39;</span><span class="p">])</span>
+
+<span class="n">HVAR_FIELDS</span> <span class="o">=</span> <span class="n">_MetricsFields</span><span class="p">(</span><span class="n">tableTag</span><span class="o">=</span><span class="s1">&#39;HVAR&#39;</span><span class="p">,</span> <span class="n">metricsTag</span><span class="o">=</span><span class="s1">&#39;hmtx&#39;</span><span class="p">,</span> <span class="n">sb1</span><span class="o">=</span><span class="s1">&#39;LsbMap&#39;</span><span class="p">,</span>
+	<span class="n">sb2</span><span class="o">=</span><span class="s1">&#39;RsbMap&#39;</span><span class="p">,</span> <span class="n">advMapping</span><span class="o">=</span><span class="s1">&#39;AdvWidthMap&#39;</span><span class="p">,</span> <span class="n">vOrigMapping</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+
+<span class="n">VVAR_FIELDS</span> <span class="o">=</span> <span class="n">_MetricsFields</span><span class="p">(</span><span class="n">tableTag</span><span class="o">=</span><span class="s1">&#39;VVAR&#39;</span><span class="p">,</span> <span class="n">metricsTag</span><span class="o">=</span><span class="s1">&#39;vmtx&#39;</span><span class="p">,</span> <span class="n">sb1</span><span class="o">=</span><span class="s1">&#39;TsbMap&#39;</span><span class="p">,</span>
+	<span class="n">sb2</span><span class="o">=</span><span class="s1">&#39;BsbMap&#39;</span><span class="p">,</span> <span class="n">advMapping</span><span class="o">=</span><span class="s1">&#39;AdvHeightMap&#39;</span><span class="p">,</span> <span class="n">vOrigMapping</span><span class="o">=</span><span class="s1">&#39;VOrgMap&#39;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">_add_HVAR</span><span class="p">(</span><span class="n">font</span><span class="p">,</span> <span class="n">masterModel</span><span class="p">,</span> <span class="n">master_ttfs</span><span class="p">,</span> <span class="n">axisTags</span><span class="p">):</span>
+	<span class="n">_add_VHVAR</span><span class="p">(</span><span class="n">font</span><span class="p">,</span> <span class="n">masterModel</span><span class="p">,</span> <span class="n">master_ttfs</span><span class="p">,</span> <span class="n">axisTags</span><span class="p">,</span> <span class="n">HVAR_FIELDS</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">_add_VVAR</span><span class="p">(</span><span class="n">font</span><span class="p">,</span> <span class="n">masterModel</span><span class="p">,</span> <span class="n">master_ttfs</span><span class="p">,</span> <span class="n">axisTags</span><span class="p">):</span>
+	<span class="n">_add_VHVAR</span><span class="p">(</span><span class="n">font</span><span class="p">,</span> <span class="n">masterModel</span><span class="p">,</span> <span class="n">master_ttfs</span><span class="p">,</span> <span class="n">axisTags</span><span class="p">,</span> <span class="n">VVAR_FIELDS</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">_add_VHVAR</span><span class="p">(</span><span class="n">font</span><span class="p">,</span> <span class="n">masterModel</span><span class="p">,</span> <span class="n">master_ttfs</span><span class="p">,</span> <span class="n">axisTags</span><span class="p">,</span> <span class="n">tableFields</span><span class="p">):</span>
+
+	<span class="n">tableTag</span> <span class="o">=</span> <span class="n">tableFields</span><span class="o">.</span><span class="n">tableTag</span>
+	<span class="k">assert</span> <span class="n">tableTag</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">font</span>
+	<span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Generating &quot;</span> <span class="o">+</span> <span class="n">tableTag</span><span class="p">)</span>
+	<span class="n">VHVAR</span> <span class="o">=</span> <span class="n">newTable</span><span class="p">(</span><span class="n">tableTag</span><span class="p">)</span>
+	<span class="n">tableClass</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">ot</span><span class="p">,</span> <span class="n">tableTag</span><span class="p">)</span>
+	<span class="n">vhvar</span> <span class="o">=</span> <span class="n">VHVAR</span><span class="o">.</span><span class="n">table</span> <span class="o">=</span> <span class="n">tableClass</span><span class="p">()</span>
+	<span class="n">vhvar</span><span class="o">.</span><span class="n">Version</span> <span class="o">=</span> <span class="mh">0x00010000</span>
+
+	<span class="n">glyphOrder</span> <span class="o">=</span> <span class="n">font</span><span class="o">.</span><span class="n">getGlyphOrder</span><span class="p">()</span>
+
+	<span class="c1"># Build list of source font advance widths for each glyph</span>
+	<span class="n">metricsTag</span> <span class="o">=</span> <span class="n">tableFields</span><span class="o">.</span><span class="n">metricsTag</span>
+	<span class="n">advMetricses</span> <span class="o">=</span> <span class="p">[</span><span class="n">m</span><span class="p">[</span><span class="n">metricsTag</span><span class="p">]</span><span class="o">.</span><span class="n">metrics</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">master_ttfs</span><span class="p">]</span>
+
+	<span class="c1"># Build list of source font vertical origin coords for each glyph</span>
+	<span class="k">if</span> <span class="n">tableTag</span> <span class="o">==</span> <span class="s1">&#39;VVAR&#39;</span> <span class="ow">and</span> <span class="s1">&#39;VORG&#39;</span> <span class="ow">in</span> <span class="n">master_ttfs</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+		<span class="n">vOrigMetricses</span> <span class="o">=</span> <span class="p">[</span><span class="n">m</span><span class="p">[</span><span class="s1">&#39;VORG&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">VOriginRecords</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">master_ttfs</span><span class="p">]</span>
+		<span class="n">defaultYOrigs</span> <span class="o">=</span> <span class="p">[</span><span class="n">m</span><span class="p">[</span><span class="s1">&#39;VORG&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">defaultVertOriginY</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">master_ttfs</span><span class="p">]</span>
+		<span class="n">vOrigMetricses</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">vOrigMetricses</span><span class="p">,</span> <span class="n">defaultYOrigs</span><span class="p">))</span>
+	<span class="k">else</span><span class="p">:</span>
+		<span class="n">vOrigMetricses</span> <span class="o">=</span> <span class="kc">None</span>
+
+	<span class="n">metricsStore</span><span class="p">,</span> <span class="n">advanceMapping</span><span class="p">,</span> <span class="n">vOrigMapping</span> <span class="o">=</span> <span class="n">_get_advance_metrics</span><span class="p">(</span><span class="n">font</span><span class="p">,</span>
+		<span class="n">masterModel</span><span class="p">,</span> <span class="n">master_ttfs</span><span class="p">,</span> <span class="n">axisTags</span><span class="p">,</span> <span class="n">glyphOrder</span><span class="p">,</span> <span class="n">advMetricses</span><span class="p">,</span>
+		<span class="n">vOrigMetricses</span><span class="p">)</span>
+
+	<span class="n">vhvar</span><span class="o">.</span><span class="n">VarStore</span> <span class="o">=</span> <span class="n">metricsStore</span>
+	<span class="k">if</span> <span class="n">advanceMapping</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+		<span class="nb">setattr</span><span class="p">(</span><span class="n">vhvar</span><span class="p">,</span> <span class="n">tableFields</span><span class="o">.</span><span class="n">advMapping</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+	<span class="k">else</span><span class="p">:</span>
+		<span class="nb">setattr</span><span class="p">(</span><span class="n">vhvar</span><span class="p">,</span> <span class="n">tableFields</span><span class="o">.</span><span class="n">advMapping</span><span class="p">,</span> <span class="n">advanceMapping</span><span class="p">)</span>
+	<span class="k">if</span> <span class="n">vOrigMapping</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+		<span class="nb">setattr</span><span class="p">(</span><span class="n">vhvar</span><span class="p">,</span> <span class="n">tableFields</span><span class="o">.</span><span class="n">vOrigMapping</span><span class="p">,</span> <span class="n">vOrigMapping</span><span class="p">)</span>
+	<span class="nb">setattr</span><span class="p">(</span><span class="n">vhvar</span><span class="p">,</span> <span class="n">tableFields</span><span class="o">.</span><span class="n">sb1</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+	<span class="nb">setattr</span><span class="p">(</span><span class="n">vhvar</span><span class="p">,</span> <span class="n">tableFields</span><span class="o">.</span><span class="n">sb2</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+
+	<span class="n">font</span><span class="p">[</span><span class="n">tableTag</span><span class="p">]</span> <span class="o">=</span> <span class="n">VHVAR</span>
+	<span class="k">return</span>
+
+<span class="k">def</span> <span class="nf">_get_advance_metrics</span><span class="p">(</span><span class="n">font</span><span class="p">,</span> <span class="n">masterModel</span><span class="p">,</span> <span class="n">master_ttfs</span><span class="p">,</span>
+		<span class="n">axisTags</span><span class="p">,</span> <span class="n">glyphOrder</span><span class="p">,</span> <span class="n">advMetricses</span><span class="p">,</span> <span class="n">vOrigMetricses</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+
+	<span class="n">vhAdvanceDeltasAndSupports</span> <span class="o">=</span> <span class="p">{}</span>
+	<span class="n">vOrigDeltasAndSupports</span> <span class="o">=</span> <span class="p">{}</span>
+	<span class="k">for</span> <span class="n">glyph</span> <span class="ow">in</span> <span class="n">glyphOrder</span><span class="p">:</span>
+		<span class="n">vhAdvances</span> <span class="o">=</span> <span class="p">[</span><span class="n">metrics</span><span class="p">[</span><span class="n">glyph</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="n">glyph</span> <span class="ow">in</span> <span class="n">metrics</span> <span class="k">else</span> <span class="kc">None</span> <span class="k">for</span> <span class="n">metrics</span> <span class="ow">in</span> <span class="n">advMetricses</span><span class="p">]</span>
+		<span class="n">vhAdvanceDeltasAndSupports</span><span class="p">[</span><span class="n">glyph</span><span class="p">]</span> <span class="o">=</span> <span class="n">masterModel</span><span class="o">.</span><span class="n">getDeltasAndSupports</span><span class="p">(</span><span class="n">vhAdvances</span><span class="p">)</span>
+
+	<span class="n">singleModel</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">allEqual</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">vhAdvanceDeltasAndSupports</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+
+	<span class="k">if</span> <span class="n">vOrigMetricses</span><span class="p">:</span>
+		<span class="n">singleModel</span> <span class="o">=</span> <span class="kc">False</span>
+		<span class="k">for</span> <span class="n">glyph</span> <span class="ow">in</span> <span class="n">glyphOrder</span><span class="p">:</span>
+			<span class="c1"># We need to supply a vOrigs tuple with non-None default values</span>
+			<span class="c1"># for each glyph. vOrigMetricses contains values only for those</span>
+			<span class="c1"># glyphs which have a non-default vOrig.</span>
+			<span class="n">vOrigs</span> <span class="o">=</span> <span class="p">[</span><span class="n">metrics</span><span class="p">[</span><span class="n">glyph</span><span class="p">]</span> <span class="k">if</span> <span class="n">glyph</span> <span class="ow">in</span> <span class="n">metrics</span> <span class="k">else</span> <span class="n">defaultVOrig</span>
+				<span class="k">for</span> <span class="n">metrics</span><span class="p">,</span> <span class="n">defaultVOrig</span> <span class="ow">in</span> <span class="n">vOrigMetricses</span><span class="p">]</span>
+			<span class="n">vOrigDeltasAndSupports</span><span class="p">[</span><span class="n">glyph</span><span class="p">]</span> <span class="o">=</span> <span class="n">masterModel</span><span class="o">.</span><span class="n">getDeltasAndSupports</span><span class="p">(</span><span class="n">vOrigs</span><span class="p">)</span>
+
+	<span class="n">directStore</span> <span class="o">=</span> <span class="kc">None</span>
+	<span class="k">if</span> <span class="n">singleModel</span><span class="p">:</span>
+		<span class="c1"># Build direct mapping</span>
+		<span class="n">supports</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="nb">iter</span><span class="p">(</span><span class="n">vhAdvanceDeltasAndSupports</span><span class="o">.</span><span class="n">values</span><span class="p">()))[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">:]</span>
+		<span class="n">varTupleList</span> <span class="o">=</span> <span class="n">builder</span><span class="o">.</span><span class="n">buildVarRegionList</span><span class="p">(</span><span class="n">supports</span><span class="p">,</span> <span class="n">axisTags</span><span class="p">)</span>
+		<span class="n">varTupleIndexes</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">supports</span><span class="p">)))</span>
+		<span class="n">varData</span> <span class="o">=</span> <span class="n">builder</span><span class="o">.</span><span class="n">buildVarData</span><span class="p">(</span><span class="n">varTupleIndexes</span><span class="p">,</span> <span class="p">[],</span> <span class="n">optimize</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+		<span class="k">for</span> <span class="n">glyphName</span> <span class="ow">in</span> <span class="n">glyphOrder</span><span class="p">:</span>
+			<span class="n">varData</span><span class="o">.</span><span class="n">addItem</span><span class="p">(</span><span class="n">vhAdvanceDeltasAndSupports</span><span class="p">[</span><span class="n">glyphName</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+		<span class="n">varData</span><span class="o">.</span><span class="n">optimize</span><span class="p">()</span>
+		<span class="n">directStore</span> <span class="o">=</span> <span class="n">builder</span><span class="o">.</span><span class="n">buildVarStore</span><span class="p">(</span><span class="n">varTupleList</span><span class="p">,</span> <span class="p">[</span><span class="n">varData</span><span class="p">])</span>
+
+	<span class="c1"># Build optimized indirect mapping</span>
+	<span class="n">storeBuilder</span> <span class="o">=</span> <span class="n">varStore</span><span class="o">.</span><span class="n">OnlineVarStoreBuilder</span><span class="p">(</span><span class="n">axisTags</span><span class="p">)</span>
+	<span class="n">advMapping</span> <span class="o">=</span> <span class="p">{}</span>
+	<span class="k">for</span> <span class="n">glyphName</span> <span class="ow">in</span> <span class="n">glyphOrder</span><span class="p">:</span>
+		<span class="n">deltas</span><span class="p">,</span> <span class="n">supports</span> <span class="o">=</span> <span class="n">vhAdvanceDeltasAndSupports</span><span class="p">[</span><span class="n">glyphName</span><span class="p">]</span>
+		<span class="n">storeBuilder</span><span class="o">.</span><span class="n">setSupports</span><span class="p">(</span><span class="n">supports</span><span class="p">)</span>
+		<span class="n">advMapping</span><span class="p">[</span><span class="n">glyphName</span><span class="p">]</span> <span class="o">=</span> <span class="n">storeBuilder</span><span class="o">.</span><span class="n">storeDeltas</span><span class="p">(</span><span class="n">deltas</span><span class="p">)</span>
+
+	<span class="k">if</span> <span class="n">vOrigMetricses</span><span class="p">:</span>
+		<span class="n">vOrigMap</span> <span class="o">=</span> <span class="p">{}</span>
+		<span class="k">for</span> <span class="n">glyphName</span> <span class="ow">in</span> <span class="n">glyphOrder</span><span class="p">:</span>
+			<span class="n">deltas</span><span class="p">,</span> <span class="n">supports</span> <span class="o">=</span> <span class="n">vOrigDeltasAndSupports</span><span class="p">[</span><span class="n">glyphName</span><span class="p">]</span>
+			<span class="n">storeBuilder</span><span class="o">.</span><span class="n">setSupports</span><span class="p">(</span><span class="n">supports</span><span class="p">)</span>
+			<span class="n">vOrigMap</span><span class="p">[</span><span class="n">glyphName</span><span class="p">]</span> <span class="o">=</span> <span class="n">storeBuilder</span><span class="o">.</span><span class="n">storeDeltas</span><span class="p">(</span><span class="n">deltas</span><span class="p">)</span>
+
+	<span class="n">indirectStore</span> <span class="o">=</span> <span class="n">storeBuilder</span><span class="o">.</span><span class="n">finish</span><span class="p">()</span>
+	<span class="n">mapping2</span> <span class="o">=</span> <span class="n">indirectStore</span><span class="o">.</span><span class="n">optimize</span><span class="p">()</span>
+	<span class="n">advMapping</span> <span class="o">=</span> <span class="p">[</span><span class="n">mapping2</span><span class="p">[</span><span class="n">advMapping</span><span class="p">[</span><span class="n">g</span><span class="p">]]</span> <span class="k">for</span> <span class="n">g</span> <span class="ow">in</span> <span class="n">glyphOrder</span><span class="p">]</span>
+	<span class="n">advanceMapping</span> <span class="o">=</span> <span class="n">builder</span><span class="o">.</span><span class="n">buildVarIdxMap</span><span class="p">(</span><span class="n">advMapping</span><span class="p">,</span> <span class="n">glyphOrder</span><span class="p">)</span>
+
+	<span class="k">if</span> <span class="n">vOrigMetricses</span><span class="p">:</span>
+		<span class="n">vOrigMap</span> <span class="o">=</span> <span class="p">[</span><span class="n">mapping2</span><span class="p">[</span><span class="n">vOrigMap</span><span class="p">[</span><span class="n">g</span><span class="p">]]</span> <span class="k">for</span> <span class="n">g</span> <span class="ow">in</span> <span class="n">glyphOrder</span><span class="p">]</span>
+
+	<span class="n">useDirect</span> <span class="o">=</span> <span class="kc">False</span>
+	<span class="n">vOrigMapping</span> <span class="o">=</span> <span class="kc">None</span>
+	<span class="k">if</span> <span class="n">directStore</span><span class="p">:</span>
+		<span class="c1"># Compile both, see which is more compact</span>
+
+		<span class="n">writer</span> <span class="o">=</span> <span class="n">OTTableWriter</span><span class="p">()</span>
+		<span class="n">directStore</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">writer</span><span class="p">,</span> <span class="n">font</span><span class="p">)</span>
+		<span class="n">directSize</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">writer</span><span class="o">.</span><span class="n">getAllData</span><span class="p">())</span>
+
+		<span class="n">writer</span> <span class="o">=</span> <span class="n">OTTableWriter</span><span class="p">()</span>
+		<span class="n">indirectStore</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">writer</span><span class="p">,</span> <span class="n">font</span><span class="p">)</span>
+		<span class="n">advanceMapping</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">writer</span><span class="p">,</span> <span class="n">font</span><span class="p">)</span>
+		<span class="n">indirectSize</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">writer</span><span class="o">.</span><span class="n">getAllData</span><span class="p">())</span>
+
+		<span class="n">useDirect</span> <span class="o">=</span> <span class="n">directSize</span> <span class="o">&lt;</span> <span class="n">indirectSize</span>
+
+	<span class="k">if</span> <span class="n">useDirect</span><span class="p">:</span>
+		<span class="n">metricsStore</span> <span class="o">=</span> <span class="n">directStore</span>
+		<span class="n">advanceMapping</span> <span class="o">=</span> <span class="kc">None</span>
+	<span class="k">else</span><span class="p">:</span>
+		<span class="n">metricsStore</span> <span class="o">=</span> <span class="n">indirectStore</span>
+		<span class="k">if</span> <span class="n">vOrigMetricses</span><span class="p">:</span>
+			<span class="n">vOrigMapping</span> <span class="o">=</span> <span class="n">builder</span><span class="o">.</span><span class="n">buildVarIdxMap</span><span class="p">(</span><span class="n">vOrigMap</span><span class="p">,</span> <span class="n">glyphOrder</span><span class="p">)</span>
+
+	<span class="k">return</span> <span class="n">metricsStore</span><span class="p">,</span> <span class="n">advanceMapping</span><span class="p">,</span> <span class="n">vOrigMapping</span>
+
+<span class="k">def</span> <span class="nf">_add_MVAR</span><span class="p">(</span><span class="n">font</span><span class="p">,</span> <span class="n">masterModel</span><span class="p">,</span> <span class="n">master_ttfs</span><span class="p">,</span> <span class="n">axisTags</span><span class="p">):</span>
+
+	<span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Generating MVAR&quot;</span><span class="p">)</span>
+
+	<span class="n">store_builder</span> <span class="o">=</span> <span class="n">varStore</span><span class="o">.</span><span class="n">OnlineVarStoreBuilder</span><span class="p">(</span><span class="n">axisTags</span><span class="p">)</span>
+
+	<span class="n">records</span> <span class="o">=</span> <span class="p">[]</span>
+	<span class="n">lastTableTag</span> <span class="o">=</span> <span class="kc">None</span>
+	<span class="n">fontTable</span> <span class="o">=</span> <span class="kc">None</span>
+	<span class="n">tables</span> <span class="o">=</span> <span class="kc">None</span>
+	<span class="c1"># HACK: we need to special-case post.underlineThickness and .underlinePosition</span>
+	<span class="c1"># and unilaterally/arbitrarily define a sentinel value to distinguish the case</span>
+	<span class="c1"># when a post table is present in a given master simply because that&#39;s where</span>
+	<span class="c1"># the glyph names in TrueType must be stored, but the underline values are not</span>
+	<span class="c1"># meant to be used for building MVAR&#39;s deltas. The value of -0x8000 (-36768)</span>
+	<span class="c1"># the minimum FWord (int16) value, was chosen for its unlikelyhood to appear</span>
+	<span class="c1"># in real-world underline position/thickness values.</span>
+	<span class="n">specialTags</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;unds&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mh">0x8000</span><span class="p">,</span> <span class="s2">&quot;undo&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mh">0x8000</span><span class="p">}</span>
+
+	<span class="k">for</span> <span class="n">tag</span><span class="p">,</span> <span class="p">(</span><span class="n">tableTag</span><span class="p">,</span> <span class="n">itemName</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">MVAR_ENTRIES</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">kv</span><span class="p">:</span> <span class="n">kv</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
+		<span class="c1"># For each tag, fetch the associated table from all fonts (or not when we are</span>
+		<span class="c1"># still looking at a tag from the same tables) and set up the variation model</span>
+		<span class="c1"># for them.</span>
+		<span class="k">if</span> <span class="n">tableTag</span> <span class="o">!=</span> <span class="n">lastTableTag</span><span class="p">:</span>
+			<span class="n">tables</span> <span class="o">=</span> <span class="n">fontTable</span> <span class="o">=</span> <span class="kc">None</span>
+			<span class="k">if</span> <span class="n">tableTag</span> <span class="ow">in</span> <span class="n">font</span><span class="p">:</span>
+				<span class="n">fontTable</span> <span class="o">=</span> <span class="n">font</span><span class="p">[</span><span class="n">tableTag</span><span class="p">]</span>
+				<span class="n">tables</span> <span class="o">=</span> <span class="p">[]</span>
+				<span class="k">for</span> <span class="n">master</span> <span class="ow">in</span> <span class="n">master_ttfs</span><span class="p">:</span>
+					<span class="k">if</span> <span class="n">tableTag</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">master</span> <span class="ow">or</span> <span class="p">(</span>
+						<span class="n">tag</span> <span class="ow">in</span> <span class="n">specialTags</span>
+						<span class="ow">and</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">master</span><span class="p">[</span><span class="n">tableTag</span><span class="p">],</span> <span class="n">itemName</span><span class="p">)</span> <span class="o">==</span> <span class="n">specialTags</span><span class="p">[</span><span class="n">tag</span><span class="p">]</span>
+					<span class="p">):</span>
+						<span class="n">tables</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+					<span class="k">else</span><span class="p">:</span>
+						<span class="n">tables</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">master</span><span class="p">[</span><span class="n">tableTag</span><span class="p">])</span>
+				<span class="n">model</span><span class="p">,</span> <span class="n">tables</span> <span class="o">=</span> <span class="n">masterModel</span><span class="o">.</span><span class="n">getSubModel</span><span class="p">(</span><span class="n">tables</span><span class="p">)</span>
+				<span class="n">store_builder</span><span class="o">.</span><span class="n">setModel</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+			<span class="n">lastTableTag</span> <span class="o">=</span> <span class="n">tableTag</span>
+
+		<span class="k">if</span> <span class="n">tables</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>  <span class="c1"># Tag not applicable to the master font.</span>
+			<span class="k">continue</span>
+
+		<span class="c1"># TODO support gasp entries</span>
+
+		<span class="n">master_values</span> <span class="o">=</span> <span class="p">[</span><span class="nb">getattr</span><span class="p">(</span><span class="n">table</span><span class="p">,</span> <span class="n">itemName</span><span class="p">)</span> <span class="k">for</span> <span class="n">table</span> <span class="ow">in</span> <span class="n">tables</span><span class="p">]</span>
+		<span class="k">if</span> <span class="n">models</span><span class="o">.</span><span class="n">allEqual</span><span class="p">(</span><span class="n">master_values</span><span class="p">):</span>
+			<span class="n">base</span><span class="p">,</span> <span class="n">varIdx</span> <span class="o">=</span> <span class="n">master_values</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="kc">None</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="n">base</span><span class="p">,</span> <span class="n">varIdx</span> <span class="o">=</span> <span class="n">store_builder</span><span class="o">.</span><span class="n">storeMasters</span><span class="p">(</span><span class="n">master_values</span><span class="p">)</span>
+		<span class="nb">setattr</span><span class="p">(</span><span class="n">fontTable</span><span class="p">,</span> <span class="n">itemName</span><span class="p">,</span> <span class="n">base</span><span class="p">)</span>
+
+		<span class="k">if</span> <span class="n">varIdx</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="k">continue</span>
+		<span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;	</span><span class="si">%s</span><span class="s1">: </span><span class="si">%s</span><span class="s1">.</span><span class="si">%s</span><span class="s1">	</span><span class="si">%s</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">tag</span><span class="p">,</span> <span class="n">tableTag</span><span class="p">,</span> <span class="n">itemName</span><span class="p">,</span> <span class="n">master_values</span><span class="p">)</span>
+		<span class="n">rec</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">MetricsValueRecord</span><span class="p">()</span>
+		<span class="n">rec</span><span class="o">.</span><span class="n">ValueTag</span> <span class="o">=</span> <span class="n">tag</span>
+		<span class="n">rec</span><span class="o">.</span><span class="n">VarIdx</span> <span class="o">=</span> <span class="n">varIdx</span>
+		<span class="n">records</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rec</span><span class="p">)</span>
+
+	<span class="k">assert</span> <span class="s2">&quot;MVAR&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">font</span>
+	<span class="k">if</span> <span class="n">records</span><span class="p">:</span>
+		<span class="n">store</span> <span class="o">=</span> <span class="n">store_builder</span><span class="o">.</span><span class="n">finish</span><span class="p">()</span>
+		<span class="c1"># Optimize</span>
+		<span class="n">mapping</span> <span class="o">=</span> <span class="n">store</span><span class="o">.</span><span class="n">optimize</span><span class="p">()</span>
+		<span class="k">for</span> <span class="n">rec</span> <span class="ow">in</span> <span class="n">records</span><span class="p">:</span>
+			<span class="n">rec</span><span class="o">.</span><span class="n">VarIdx</span> <span class="o">=</span> <span class="n">mapping</span><span class="p">[</span><span class="n">rec</span><span class="o">.</span><span class="n">VarIdx</span><span class="p">]</span>
+
+		<span class="n">MVAR</span> <span class="o">=</span> <span class="n">font</span><span class="p">[</span><span class="s2">&quot;MVAR&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">newTable</span><span class="p">(</span><span class="s1">&#39;MVAR&#39;</span><span class="p">)</span>
+		<span class="n">mvar</span> <span class="o">=</span> <span class="n">MVAR</span><span class="o">.</span><span class="n">table</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">MVAR</span><span class="p">()</span>
+		<span class="n">mvar</span><span class="o">.</span><span class="n">Version</span> <span class="o">=</span> <span class="mh">0x00010000</span>
+		<span class="n">mvar</span><span class="o">.</span><span class="n">Reserved</span> <span class="o">=</span> <span class="mi">0</span>
+		<span class="n">mvar</span><span class="o">.</span><span class="n">VarStore</span> <span class="o">=</span> <span class="n">store</span>
+		<span class="c1"># XXX these should not be hard-coded but computed automatically</span>
+		<span class="n">mvar</span><span class="o">.</span><span class="n">ValueRecordSize</span> <span class="o">=</span> <span class="mi">8</span>
+		<span class="n">mvar</span><span class="o">.</span><span class="n">ValueRecordCount</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">records</span><span class="p">)</span>
+		<span class="n">mvar</span><span class="o">.</span><span class="n">ValueRecord</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">records</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">r</span><span class="p">:</span> <span class="n">r</span><span class="o">.</span><span class="n">ValueTag</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">_add_BASE</span><span class="p">(</span><span class="n">font</span><span class="p">,</span> <span class="n">masterModel</span><span class="p">,</span> <span class="n">master_ttfs</span><span class="p">,</span> <span class="n">axisTags</span><span class="p">):</span>
+
+	<span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Generating BASE&quot;</span><span class="p">)</span>
+
+	<span class="n">merger</span> <span class="o">=</span> <span class="n">VariationMerger</span><span class="p">(</span><span class="n">masterModel</span><span class="p">,</span> <span class="n">axisTags</span><span class="p">,</span> <span class="n">font</span><span class="p">)</span>
+	<span class="n">merger</span><span class="o">.</span><span class="n">mergeTables</span><span class="p">(</span><span class="n">font</span><span class="p">,</span> <span class="n">master_ttfs</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;BASE&#39;</span><span class="p">])</span>
+	<span class="n">store</span> <span class="o">=</span> <span class="n">merger</span><span class="o">.</span><span class="n">store_builder</span><span class="o">.</span><span class="n">finish</span><span class="p">()</span>
+
+	<span class="k">if</span> <span class="ow">not</span> <span class="n">store</span><span class="o">.</span><span class="n">VarData</span><span class="p">:</span>
+		<span class="k">return</span>
+	<span class="n">base</span> <span class="o">=</span> <span class="n">font</span><span class="p">[</span><span class="s1">&#39;BASE&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">table</span>
+	<span class="k">assert</span> <span class="n">base</span><span class="o">.</span><span class="n">Version</span> <span class="o">==</span> <span class="mh">0x00010000</span>
+	<span class="n">base</span><span class="o">.</span><span class="n">Version</span> <span class="o">=</span> <span class="mh">0x00010001</span>
+	<span class="n">base</span><span class="o">.</span><span class="n">VarStore</span> <span class="o">=</span> <span class="n">store</span>
+
+
+<span class="k">def</span> <span class="nf">_merge_OTL</span><span class="p">(</span><span class="n">font</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">master_fonts</span><span class="p">,</span> <span class="n">axisTags</span><span class="p">):</span>
+
+	<span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Merging OpenType Layout tables&quot;</span><span class="p">)</span>
+	<span class="n">merger</span> <span class="o">=</span> <span class="n">VariationMerger</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">axisTags</span><span class="p">,</span> <span class="n">font</span><span class="p">)</span>
+
+	<span class="n">merger</span><span class="o">.</span><span class="n">mergeTables</span><span class="p">(</span><span class="n">font</span><span class="p">,</span> <span class="n">master_fonts</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;GSUB&#39;</span><span class="p">,</span> <span class="s1">&#39;GDEF&#39;</span><span class="p">,</span> <span class="s1">&#39;GPOS&#39;</span><span class="p">])</span>
+	<span class="n">store</span> <span class="o">=</span> <span class="n">merger</span><span class="o">.</span><span class="n">store_builder</span><span class="o">.</span><span class="n">finish</span><span class="p">()</span>
+	<span class="k">if</span> <span class="ow">not</span> <span class="n">store</span><span class="o">.</span><span class="n">VarData</span><span class="p">:</span>
+		<span class="k">return</span>
+	<span class="k">try</span><span class="p">:</span>
+		<span class="n">GDEF</span> <span class="o">=</span> <span class="n">font</span><span class="p">[</span><span class="s1">&#39;GDEF&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">table</span>
+		<span class="k">assert</span> <span class="n">GDEF</span><span class="o">.</span><span class="n">Version</span> <span class="o">&lt;=</span> <span class="mh">0x00010002</span>
+	<span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+		<span class="n">font</span><span class="p">[</span><span class="s1">&#39;GDEF&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">newTable</span><span class="p">(</span><span class="s1">&#39;GDEF&#39;</span><span class="p">)</span>
+		<span class="n">GDEFTable</span> <span class="o">=</span> <span class="n">font</span><span class="p">[</span><span class="s2">&quot;GDEF&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">newTable</span><span class="p">(</span><span class="s1">&#39;GDEF&#39;</span><span class="p">)</span>
+		<span class="n">GDEF</span> <span class="o">=</span> <span class="n">GDEFTable</span><span class="o">.</span><span class="n">table</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">GDEF</span><span class="p">()</span>
+		<span class="n">GDEF</span><span class="o">.</span><span class="n">GlyphClassDef</span> <span class="o">=</span> <span class="kc">None</span>
+		<span class="n">GDEF</span><span class="o">.</span><span class="n">AttachList</span> <span class="o">=</span> <span class="kc">None</span>
+		<span class="n">GDEF</span><span class="o">.</span><span class="n">LigCaretList</span> <span class="o">=</span> <span class="kc">None</span>
+		<span class="n">GDEF</span><span class="o">.</span><span class="n">MarkAttachClassDef</span> <span class="o">=</span> <span class="kc">None</span>
+		<span class="n">GDEF</span><span class="o">.</span><span class="n">MarkGlyphSetsDef</span> <span class="o">=</span> <span class="kc">None</span>
+
+	<span class="n">GDEF</span><span class="o">.</span><span class="n">Version</span> <span class="o">=</span> <span class="mh">0x00010003</span>
+	<span class="n">GDEF</span><span class="o">.</span><span class="n">VarStore</span> <span class="o">=</span> <span class="n">store</span>
+
+	<span class="c1"># Optimize</span>
+	<span class="n">varidx_map</span> <span class="o">=</span> <span class="n">store</span><span class="o">.</span><span class="n">optimize</span><span class="p">()</span>
+	<span class="n">GDEF</span><span class="o">.</span><span class="n">remap_device_varidxes</span><span class="p">(</span><span class="n">varidx_map</span><span class="p">)</span>
+	<span class="k">if</span> <span class="s1">&#39;GPOS&#39;</span> <span class="ow">in</span> <span class="n">font</span><span class="p">:</span>
+		<span class="n">font</span><span class="p">[</span><span class="s1">&#39;GPOS&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">table</span><span class="o">.</span><span class="n">remap_device_varidxes</span><span class="p">(</span><span class="n">varidx_map</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">_add_GSUB_feature_variations</span><span class="p">(</span><span class="n">font</span><span class="p">,</span> <span class="n">axes</span><span class="p">,</span> <span class="n">internal_axis_supports</span><span class="p">,</span> <span class="n">rules</span><span class="p">,</span> <span class="n">rulesProcessingLast</span><span class="p">):</span>
+
+	<span class="k">def</span> <span class="nf">normalize</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="k">return</span> <span class="n">models</span><span class="o">.</span><span class="n">normalizeLocation</span><span class="p">(</span>
+			<span class="p">{</span><span class="n">name</span><span class="p">:</span> <span class="n">value</span><span class="p">},</span> <span class="n">internal_axis_supports</span>
+		<span class="p">)[</span><span class="n">name</span><span class="p">]</span>
+
+	<span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Generating GSUB FeatureVariations&quot;</span><span class="p">)</span>
+
+	<span class="n">axis_tags</span> <span class="o">=</span> <span class="p">{</span><span class="n">name</span><span class="p">:</span> <span class="n">axis</span><span class="o">.</span><span class="n">tag</span> <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">axis</span> <span class="ow">in</span> <span class="n">axes</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+
+	<span class="n">conditional_subs</span> <span class="o">=</span> <span class="p">[]</span>
+	<span class="k">for</span> <span class="n">rule</span> <span class="ow">in</span> <span class="n">rules</span><span class="p">:</span>
+
+		<span class="n">region</span> <span class="o">=</span> <span class="p">[]</span>
+		<span class="k">for</span> <span class="n">conditions</span> <span class="ow">in</span> <span class="n">rule</span><span class="o">.</span><span class="n">conditionSets</span><span class="p">:</span>
+			<span class="n">space</span> <span class="o">=</span> <span class="p">{}</span>
+			<span class="k">for</span> <span class="n">condition</span> <span class="ow">in</span> <span class="n">conditions</span><span class="p">:</span>
+				<span class="n">axis_name</span> <span class="o">=</span> <span class="n">condition</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span>
+				<span class="k">if</span> <span class="n">condition</span><span class="p">[</span><span class="s2">&quot;minimum&quot;</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+					<span class="n">minimum</span> <span class="o">=</span> <span class="n">normalize</span><span class="p">(</span><span class="n">axis_name</span><span class="p">,</span> <span class="n">condition</span><span class="p">[</span><span class="s2">&quot;minimum&quot;</span><span class="p">])</span>
+				<span class="k">else</span><span class="p">:</span>
+					<span class="n">minimum</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.0</span>
+				<span class="k">if</span> <span class="n">condition</span><span class="p">[</span><span class="s2">&quot;maximum&quot;</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+					<span class="n">maximum</span> <span class="o">=</span> <span class="n">normalize</span><span class="p">(</span><span class="n">axis_name</span><span class="p">,</span> <span class="n">condition</span><span class="p">[</span><span class="s2">&quot;maximum&quot;</span><span class="p">])</span>
+				<span class="k">else</span><span class="p">:</span>
+					<span class="n">maximum</span> <span class="o">=</span> <span class="mf">1.0</span>
+				<span class="n">tag</span> <span class="o">=</span> <span class="n">axis_tags</span><span class="p">[</span><span class="n">axis_name</span><span class="p">]</span>
+				<span class="n">space</span><span class="p">[</span><span class="n">tag</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">minimum</span><span class="p">,</span> <span class="n">maximum</span><span class="p">)</span>
+			<span class="n">region</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">space</span><span class="p">)</span>
+
+		<span class="n">subs</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">rule</span><span class="o">.</span><span class="n">subs</span><span class="p">}</span>
+
+		<span class="n">conditional_subs</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">region</span><span class="p">,</span> <span class="n">subs</span><span class="p">))</span>
+
+	<span class="k">if</span> <span class="n">rulesProcessingLast</span><span class="p">:</span>
+		<span class="n">featureTag</span> <span class="o">=</span> <span class="s1">&#39;rclt&#39;</span>
+	<span class="k">else</span><span class="p">:</span>
+		<span class="n">featureTag</span> <span class="o">=</span> <span class="s1">&#39;rvrn&#39;</span>
+	<span class="n">addFeatureVariations</span><span class="p">(</span><span class="n">font</span><span class="p">,</span> <span class="n">conditional_subs</span><span class="p">,</span> <span class="n">featureTag</span><span class="p">)</span>
+
+
+<span class="n">_DesignSpaceData</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span>
+	<span class="s2">&quot;_DesignSpaceData&quot;</span><span class="p">,</span>
+	<span class="p">[</span>
+		<span class="s2">&quot;axes&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;internal_axis_supports&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;base_idx&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;normalized_master_locs&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;masters&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;instances&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;rules&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;rulesProcessingLast&quot;</span><span class="p">,</span>
+	<span class="p">],</span>
+<span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">_add_CFF2</span><span class="p">(</span><span class="n">varFont</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">master_fonts</span><span class="p">):</span>
+	<span class="kn">from</span> <span class="nn">.cff</span> <span class="k">import</span> <span class="n">merge_region_fonts</span>
+	<span class="n">glyphOrder</span> <span class="o">=</span> <span class="n">varFont</span><span class="o">.</span><span class="n">getGlyphOrder</span><span class="p">()</span>
+	<span class="k">if</span> <span class="s2">&quot;CFF2&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">varFont</span><span class="p">:</span>
+		<span class="kn">from</span> <span class="nn">.cff</span> <span class="k">import</span> <span class="n">convertCFFtoCFF2</span>
+		<span class="n">convertCFFtoCFF2</span><span class="p">(</span><span class="n">varFont</span><span class="p">)</span>
+	<span class="n">ordered_fonts_list</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">reorderMasters</span><span class="p">(</span><span class="n">master_fonts</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">reverseMapping</span><span class="p">)</span>
+	<span class="c1"># re-ordering the master list simplifies building the CFF2 data item lists.</span>
+	<span class="n">merge_region_fonts</span><span class="p">(</span><span class="n">varFont</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">ordered_fonts_list</span><span class="p">,</span> <span class="n">glyphOrder</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="load_designspace"><a class="viewcode-back" href="../../varLib/index.html#fontTools.varLib.load_designspace">[docs]</a><span class="k">def</span> <span class="nf">load_designspace</span><span class="p">(</span><span class="n">designspace</span><span class="p">):</span>
+	<span class="c1"># TODO: remove this and always assume &#39;designspace&#39; is a DesignSpaceDocument,</span>
+	<span class="c1"># never a file path, as that&#39;s already handled by caller</span>
+	<span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">designspace</span><span class="p">,</span> <span class="s2">&quot;sources&quot;</span><span class="p">):</span>  <span class="c1"># Assume a DesignspaceDocument</span>
+		<span class="n">ds</span> <span class="o">=</span> <span class="n">designspace</span>
+	<span class="k">else</span><span class="p">:</span>  <span class="c1"># Assume a file path</span>
+		<span class="n">ds</span> <span class="o">=</span> <span class="n">DesignSpaceDocument</span><span class="o">.</span><span class="n">fromfile</span><span class="p">(</span><span class="n">designspace</span><span class="p">)</span>
+
+	<span class="n">masters</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">sources</span>
+	<span class="k">if</span> <span class="ow">not</span> <span class="n">masters</span><span class="p">:</span>
+		<span class="k">raise</span> <span class="n">VarLibValidationError</span><span class="p">(</span><span class="s2">&quot;Designspace must have at least one source.&quot;</span><span class="p">)</span>
+	<span class="n">instances</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">instances</span>
+
+	<span class="c1"># TODO: Use fontTools.designspaceLib.tagForAxisName instead.</span>
+	<span class="n">standard_axis_map</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">([</span>
+		<span class="p">(</span><span class="s1">&#39;weight&#39;</span><span class="p">,</span>  <span class="p">(</span><span class="s1">&#39;wght&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;en&#39;</span><span class="p">:</span> <span class="sa">u</span><span class="s1">&#39;Weight&#39;</span><span class="p">})),</span>
+		<span class="p">(</span><span class="s1">&#39;width&#39;</span><span class="p">,</span>   <span class="p">(</span><span class="s1">&#39;wdth&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;en&#39;</span><span class="p">:</span> <span class="sa">u</span><span class="s1">&#39;Width&#39;</span><span class="p">})),</span>
+		<span class="p">(</span><span class="s1">&#39;slant&#39;</span><span class="p">,</span>   <span class="p">(</span><span class="s1">&#39;slnt&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;en&#39;</span><span class="p">:</span> <span class="sa">u</span><span class="s1">&#39;Slant&#39;</span><span class="p">})),</span>
+		<span class="p">(</span><span class="s1">&#39;optical&#39;</span><span class="p">,</span> <span class="p">(</span><span class="s1">&#39;opsz&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;en&#39;</span><span class="p">:</span> <span class="sa">u</span><span class="s1">&#39;Optical Size&#39;</span><span class="p">})),</span>
+		<span class="p">(</span><span class="s1">&#39;italic&#39;</span><span class="p">,</span>  <span class="p">(</span><span class="s1">&#39;ital&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;en&#39;</span><span class="p">:</span> <span class="sa">u</span><span class="s1">&#39;Italic&#39;</span><span class="p">})),</span>
+		<span class="p">])</span>
+
+	<span class="c1"># Setup axes</span>
+	<span class="k">if</span> <span class="ow">not</span> <span class="n">ds</span><span class="o">.</span><span class="n">axes</span><span class="p">:</span>
+		<span class="k">raise</span> <span class="n">VarLibValidationError</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;Designspace must have at least one axis.&quot;</span><span class="p">)</span>
+
+	<span class="n">axes</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">()</span>
+	<span class="k">for</span> <span class="n">axis_index</span><span class="p">,</span> <span class="n">axis</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">axes</span><span class="p">):</span>
+		<span class="n">axis_name</span> <span class="o">=</span> <span class="n">axis</span><span class="o">.</span><span class="n">name</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="n">axis_name</span><span class="p">:</span>
+			<span class="k">if</span> <span class="ow">not</span> <span class="n">axis</span><span class="o">.</span><span class="n">tag</span><span class="p">:</span>
+				<span class="k">raise</span> <span class="n">VarLibValidationError</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;Axis at index </span><span class="si">{axis_index}</span><span class="s2"> needs a tag.&quot;</span><span class="p">)</span>
+			<span class="n">axis_name</span> <span class="o">=</span> <span class="n">axis</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">axis</span><span class="o">.</span><span class="n">tag</span>
+
+		<span class="k">if</span> <span class="n">axis_name</span> <span class="ow">in</span> <span class="n">standard_axis_map</span><span class="p">:</span>
+			<span class="k">if</span> <span class="n">axis</span><span class="o">.</span><span class="n">tag</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+				<span class="n">axis</span><span class="o">.</span><span class="n">tag</span> <span class="o">=</span> <span class="n">standard_axis_map</span><span class="p">[</span><span class="n">axis_name</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+			<span class="k">if</span> <span class="ow">not</span> <span class="n">axis</span><span class="o">.</span><span class="n">labelNames</span><span class="p">:</span>
+				<span class="n">axis</span><span class="o">.</span><span class="n">labelNames</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">standard_axis_map</span><span class="p">[</span><span class="n">axis_name</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="k">if</span> <span class="ow">not</span> <span class="n">axis</span><span class="o">.</span><span class="n">tag</span><span class="p">:</span>
+				<span class="k">raise</span> <span class="n">VarLibValidationError</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;Axis at index </span><span class="si">{axis_index}</span><span class="s2"> needs a tag.&quot;</span><span class="p">)</span>
+			<span class="k">if</span> <span class="ow">not</span> <span class="n">axis</span><span class="o">.</span><span class="n">labelNames</span><span class="p">:</span>
+				<span class="n">axis</span><span class="o">.</span><span class="n">labelNames</span><span class="p">[</span><span class="s2">&quot;en&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">tounicode</span><span class="p">(</span><span class="n">axis_name</span><span class="p">)</span>
+
+		<span class="n">axes</span><span class="p">[</span><span class="n">axis_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">axis</span>
+	<span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Axes:</span><span class="se">\n</span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">pformat</span><span class="p">([</span><span class="n">axis</span><span class="o">.</span><span class="n">asdict</span><span class="p">()</span> <span class="k">for</span> <span class="n">axis</span> <span class="ow">in</span> <span class="n">axes</span><span class="o">.</span><span class="n">values</span><span class="p">()]))</span>
+
+	<span class="c1"># Check all master and instance locations are valid and fill in defaults</span>
+	<span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="n">masters</span><span class="o">+</span><span class="n">instances</span><span class="p">:</span>
+		<span class="n">obj_name</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">name</span> <span class="ow">or</span> <span class="n">obj</span><span class="o">.</span><span class="n">styleName</span> <span class="ow">or</span> <span class="s1">&#39;&#39;</span>
+		<span class="n">loc</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">location</span>
+		<span class="k">if</span> <span class="n">loc</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="k">raise</span> <span class="n">VarLibValidationError</span><span class="p">(</span>
+				<span class="n">f</span><span class="s2">&quot;Source or instance &#39;</span><span class="si">{obj_name}</span><span class="s2">&#39; has no location.&quot;</span>
+			<span class="p">)</span>
+		<span class="k">for</span> <span class="n">axis_name</span> <span class="ow">in</span> <span class="n">loc</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+			<span class="k">if</span> <span class="n">axis_name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">axes</span><span class="p">:</span>
+				<span class="k">raise</span> <span class="n">VarLibValidationError</span><span class="p">(</span>
+					<span class="n">f</span><span class="s2">&quot;Location axis &#39;</span><span class="si">{axis_name}</span><span class="s2">&#39; unknown for &#39;</span><span class="si">{obj_name}</span><span class="s2">&#39;.&quot;</span>
+				<span class="p">)</span>
+		<span class="k">for</span> <span class="n">axis_name</span><span class="p">,</span><span class="n">axis</span> <span class="ow">in</span> <span class="n">axes</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+			<span class="k">if</span> <span class="n">axis_name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">loc</span><span class="p">:</span>
+				<span class="c1"># NOTE: `axis.default` is always user-space, but `obj.location` always design-space.</span>
+				<span class="n">loc</span><span class="p">[</span><span class="n">axis_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">axis</span><span class="o">.</span><span class="n">map_forward</span><span class="p">(</span><span class="n">axis</span><span class="o">.</span><span class="n">default</span><span class="p">)</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="n">v</span> <span class="o">=</span> <span class="n">axis</span><span class="o">.</span><span class="n">map_backward</span><span class="p">(</span><span class="n">loc</span><span class="p">[</span><span class="n">axis_name</span><span class="p">])</span>
+				<span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">axis</span><span class="o">.</span><span class="n">minimum</span> <span class="o">&lt;=</span> <span class="n">v</span> <span class="o">&lt;=</span> <span class="n">axis</span><span class="o">.</span><span class="n">maximum</span><span class="p">):</span>
+					<span class="k">raise</span> <span class="n">VarLibValidationError</span><span class="p">(</span>
+						<span class="n">f</span><span class="s2">&quot;Source or instance &#39;</span><span class="si">{obj_name}</span><span class="s2">&#39; has out-of-range location &quot;</span>
+						<span class="n">f</span><span class="s2">&quot;for axis &#39;</span><span class="si">{axis_name}</span><span class="s2">&#39;: is mapped to </span><span class="si">{v}</span><span class="s2"> but must be in &quot;</span>
+						<span class="n">f</span><span class="s2">&quot;mapped range [</span><span class="si">{axis.minimum}</span><span class="s2">..</span><span class="si">{axis.maximum}</span><span class="s2">] (NOTE: all &quot;</span>
+						<span class="s2">&quot;values are in user-space).&quot;</span>
+					<span class="p">)</span>
+
+	<span class="c1"># Normalize master locations</span>
+
+	<span class="n">internal_master_locs</span> <span class="o">=</span> <span class="p">[</span><span class="n">o</span><span class="o">.</span><span class="n">location</span> <span class="k">for</span> <span class="n">o</span> <span class="ow">in</span> <span class="n">masters</span><span class="p">]</span>
+	<span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Internal master locations:</span><span class="se">\n</span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">pformat</span><span class="p">(</span><span class="n">internal_master_locs</span><span class="p">))</span>
+
+	<span class="c1"># TODO This mapping should ideally be moved closer to logic in _add_fvar/avar</span>
+	<span class="n">internal_axis_supports</span> <span class="o">=</span> <span class="p">{}</span>
+	<span class="k">for</span> <span class="n">axis</span> <span class="ow">in</span> <span class="n">axes</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+		<span class="n">triple</span> <span class="o">=</span> <span class="p">(</span><span class="n">axis</span><span class="o">.</span><span class="n">minimum</span><span class="p">,</span> <span class="n">axis</span><span class="o">.</span><span class="n">default</span><span class="p">,</span> <span class="n">axis</span><span class="o">.</span><span class="n">maximum</span><span class="p">)</span>
+		<span class="n">internal_axis_supports</span><span class="p">[</span><span class="n">axis</span><span class="o">.</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">axis</span><span class="o">.</span><span class="n">map_forward</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">triple</span><span class="p">]</span>
+	<span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Internal axis supports:</span><span class="se">\n</span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">pformat</span><span class="p">(</span><span class="n">internal_axis_supports</span><span class="p">))</span>
+
+	<span class="n">normalized_master_locs</span> <span class="o">=</span> <span class="p">[</span><span class="n">models</span><span class="o">.</span><span class="n">normalizeLocation</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">internal_axis_supports</span><span class="p">)</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">internal_master_locs</span><span class="p">]</span>
+	<span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Normalized master locations:</span><span class="se">\n</span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">pformat</span><span class="p">(</span><span class="n">normalized_master_locs</span><span class="p">))</span>
+
+	<span class="c1"># Find base master</span>
+	<span class="n">base_idx</span> <span class="o">=</span> <span class="kc">None</span>
+	<span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">m</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">normalized_master_locs</span><span class="p">):</span>
+		<span class="k">if</span> <span class="nb">all</span><span class="p">(</span><span class="n">v</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">m</span><span class="o">.</span><span class="n">values</span><span class="p">()):</span>
+			<span class="k">if</span> <span class="n">base_idx</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+				<span class="k">raise</span> <span class="n">VarLibValidationError</span><span class="p">(</span>
+					<span class="s2">&quot;More than one base master found in Designspace.&quot;</span>
+				<span class="p">)</span>
+			<span class="n">base_idx</span> <span class="o">=</span> <span class="n">i</span>
+	<span class="k">if</span> <span class="n">base_idx</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+		<span class="k">raise</span> <span class="n">VarLibValidationError</span><span class="p">(</span>
+			<span class="s2">&quot;Base master not found; no master at default location?&quot;</span>
+		<span class="p">)</span>
+	<span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Index of base master: </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">base_idx</span><span class="p">)</span>
+
+	<span class="k">return</span> <span class="n">_DesignSpaceData</span><span class="p">(</span>
+		<span class="n">axes</span><span class="p">,</span>
+		<span class="n">internal_axis_supports</span><span class="p">,</span>
+		<span class="n">base_idx</span><span class="p">,</span>
+		<span class="n">normalized_master_locs</span><span class="p">,</span>
+		<span class="n">masters</span><span class="p">,</span>
+		<span class="n">instances</span><span class="p">,</span>
+		<span class="n">ds</span><span class="o">.</span><span class="n">rules</span><span class="p">,</span>
+		<span class="n">ds</span><span class="o">.</span><span class="n">rulesProcessingLast</span><span class="p">,</span>
+	<span class="p">)</span></div>
+
+
+<span class="c1"># https://docs.microsoft.com/en-us/typography/opentype/spec/os2#uswidthclass</span>
+<span class="n">WDTH_VALUE_TO_OS2_WIDTH_CLASS</span> <span class="o">=</span> <span class="p">{</span>
+	<span class="mi">50</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+	<span class="mf">62.5</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+	<span class="mi">75</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+	<span class="mf">87.5</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+	<span class="mi">100</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+	<span class="mf">112.5</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
+	<span class="mi">125</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span>
+	<span class="mi">150</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
+	<span class="mi">200</span><span class="p">:</span> <span class="mi">9</span><span class="p">,</span>
+<span class="p">}</span>
+
+
+<div class="viewcode-block" id="set_default_weight_width_slant"><a class="viewcode-back" href="../../varLib/index.html#fontTools.varLib.set_default_weight_width_slant">[docs]</a><span class="k">def</span> <span class="nf">set_default_weight_width_slant</span><span class="p">(</span><span class="n">font</span><span class="p">,</span> <span class="n">location</span><span class="p">):</span>
+	<span class="k">if</span> <span class="s2">&quot;OS/2&quot;</span> <span class="ow">in</span> <span class="n">font</span><span class="p">:</span>
+		<span class="k">if</span> <span class="s2">&quot;wght&quot;</span> <span class="ow">in</span> <span class="n">location</span><span class="p">:</span>
+			<span class="n">weight_class</span> <span class="o">=</span> <span class="n">otRound</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">min</span><span class="p">(</span><span class="n">location</span><span class="p">[</span><span class="s2">&quot;wght&quot;</span><span class="p">],</span> <span class="mi">1000</span><span class="p">)))</span>
+			<span class="k">if</span> <span class="n">font</span><span class="p">[</span><span class="s2">&quot;OS/2&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">usWeightClass</span> <span class="o">!=</span> <span class="n">weight_class</span><span class="p">:</span>
+				<span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Setting OS/2.usWeightClass = </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">weight_class</span><span class="p">)</span>
+				<span class="n">font</span><span class="p">[</span><span class="s2">&quot;OS/2&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">usWeightClass</span> <span class="o">=</span> <span class="n">weight_class</span>
+
+		<span class="k">if</span> <span class="s2">&quot;wdth&quot;</span> <span class="ow">in</span> <span class="n">location</span><span class="p">:</span>
+			<span class="c1"># map &#39;wdth&#39; axis (50..200) to OS/2.usWidthClass (1..9), rounding to closest</span>
+			<span class="n">widthValue</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">location</span><span class="p">[</span><span class="s2">&quot;wdth&quot;</span><span class="p">],</span> <span class="mi">50</span><span class="p">),</span> <span class="mi">200</span><span class="p">)</span>
+			<span class="n">widthClass</span> <span class="o">=</span> <span class="n">otRound</span><span class="p">(</span>
+				<span class="n">models</span><span class="o">.</span><span class="n">piecewiseLinearMap</span><span class="p">(</span><span class="n">widthValue</span><span class="p">,</span> <span class="n">WDTH_VALUE_TO_OS2_WIDTH_CLASS</span><span class="p">)</span>
+			<span class="p">)</span>
+			<span class="k">if</span> <span class="n">font</span><span class="p">[</span><span class="s2">&quot;OS/2&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">usWidthClass</span> <span class="o">!=</span> <span class="n">widthClass</span><span class="p">:</span>
+				<span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Setting OS/2.usWidthClass = </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">widthClass</span><span class="p">)</span>
+				<span class="n">font</span><span class="p">[</span><span class="s2">&quot;OS/2&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">usWidthClass</span> <span class="o">=</span> <span class="n">widthClass</span>
+
+	<span class="k">if</span> <span class="s2">&quot;slnt&quot;</span> <span class="ow">in</span> <span class="n">location</span> <span class="ow">and</span> <span class="s2">&quot;post&quot;</span> <span class="ow">in</span> <span class="n">font</span><span class="p">:</span>
+		<span class="n">italicAngle</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="o">-</span><span class="mi">90</span><span class="p">,</span> <span class="nb">min</span><span class="p">(</span><span class="n">location</span><span class="p">[</span><span class="s2">&quot;slnt&quot;</span><span class="p">],</span> <span class="mi">90</span><span class="p">))</span>
+		<span class="k">if</span> <span class="n">font</span><span class="p">[</span><span class="s2">&quot;post&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">italicAngle</span> <span class="o">!=</span> <span class="n">italicAngle</span><span class="p">:</span>
+			<span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Setting post.italicAngle = </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">italicAngle</span><span class="p">)</span>
+			<span class="n">font</span><span class="p">[</span><span class="s2">&quot;post&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">italicAngle</span> <span class="o">=</span> <span class="n">italicAngle</span></div>
+
+
+<div class="viewcode-block" id="build"><a class="viewcode-back" href="../../varLib/index.html#fontTools.varLib.build">[docs]</a><span class="k">def</span> <span class="nf">build</span><span class="p">(</span><span class="n">designspace</span><span class="p">,</span> <span class="n">master_finder</span><span class="o">=</span><span class="k">lambda</span> <span class="n">s</span><span class="p">:</span><span class="n">s</span><span class="p">,</span> <span class="n">exclude</span><span class="o">=</span><span class="p">[],</span> <span class="n">optimize</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	Build variation font from a designspace file.</span>
+
+<span class="sd">	If master_finder is set, it should be a callable that takes master</span>
+<span class="sd">	filename as found in designspace file and map it to master font</span>
+<span class="sd">	binary as to be opened (eg. .ttf or .otf).</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">designspace</span><span class="p">,</span> <span class="s2">&quot;sources&quot;</span><span class="p">):</span>  <span class="c1"># Assume a DesignspaceDocument</span>
+		<span class="k">pass</span>
+	<span class="k">else</span><span class="p">:</span>  <span class="c1"># Assume a file path</span>
+		<span class="n">designspace</span> <span class="o">=</span> <span class="n">DesignSpaceDocument</span><span class="o">.</span><span class="n">fromfile</span><span class="p">(</span><span class="n">designspace</span><span class="p">)</span>
+
+	<span class="n">ds</span> <span class="o">=</span> <span class="n">load_designspace</span><span class="p">(</span><span class="n">designspace</span><span class="p">)</span>
+	<span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Building variable font&quot;</span><span class="p">)</span>
+
+	<span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Loading master fonts&quot;</span><span class="p">)</span>
+	<span class="n">master_fonts</span> <span class="o">=</span> <span class="n">load_masters</span><span class="p">(</span><span class="n">designspace</span><span class="p">,</span> <span class="n">master_finder</span><span class="p">)</span>
+
+	<span class="c1"># TODO: &#39;master_ttfs&#39; is unused except for return value, remove later</span>
+	<span class="n">master_ttfs</span> <span class="o">=</span> <span class="p">[]</span>
+	<span class="k">for</span> <span class="n">master</span> <span class="ow">in</span> <span class="n">master_fonts</span><span class="p">:</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="n">master_ttfs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">master</span><span class="o">.</span><span class="n">reader</span><span class="o">.</span><span class="n">file</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+		<span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+			<span class="n">master_ttfs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>  <span class="c1"># in-memory fonts have no path</span>
+
+	<span class="c1"># Copy the base master to work from it</span>
+	<span class="n">vf</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="n">master_fonts</span><span class="p">[</span><span class="n">ds</span><span class="o">.</span><span class="n">base_idx</span><span class="p">])</span>
+
+	<span class="c1"># TODO append masters as named-instances as well; needs .designspace change.</span>
+	<span class="n">fvar</span> <span class="o">=</span> <span class="n">_add_fvar</span><span class="p">(</span><span class="n">vf</span><span class="p">,</span> <span class="n">ds</span><span class="o">.</span><span class="n">axes</span><span class="p">,</span> <span class="n">ds</span><span class="o">.</span><span class="n">instances</span><span class="p">)</span>
+	<span class="k">if</span> <span class="s1">&#39;STAT&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">exclude</span><span class="p">:</span>
+		<span class="n">_add_stat</span><span class="p">(</span><span class="n">vf</span><span class="p">,</span> <span class="n">ds</span><span class="o">.</span><span class="n">axes</span><span class="p">)</span>
+	<span class="k">if</span> <span class="s1">&#39;avar&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">exclude</span><span class="p">:</span>
+		<span class="n">_add_avar</span><span class="p">(</span><span class="n">vf</span><span class="p">,</span> <span class="n">ds</span><span class="o">.</span><span class="n">axes</span><span class="p">)</span>
+
+	<span class="c1"># Map from axis names to axis tags...</span>
+	<span class="n">normalized_master_locs</span> <span class="o">=</span> <span class="p">[</span>
+		<span class="p">{</span><span class="n">ds</span><span class="o">.</span><span class="n">axes</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">.</span><span class="n">tag</span><span class="p">:</span> <span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">loc</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span> <span class="k">for</span> <span class="n">loc</span> <span class="ow">in</span> <span class="n">ds</span><span class="o">.</span><span class="n">normalized_master_locs</span>
+	<span class="p">]</span>
+	<span class="c1"># From here on, we use fvar axes only</span>
+	<span class="n">axisTags</span> <span class="o">=</span> <span class="p">[</span><span class="n">axis</span><span class="o">.</span><span class="n">axisTag</span> <span class="k">for</span> <span class="n">axis</span> <span class="ow">in</span> <span class="n">fvar</span><span class="o">.</span><span class="n">axes</span><span class="p">]</span>
+
+	<span class="c1"># Assume single-model for now.</span>
+	<span class="n">model</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">VariationModel</span><span class="p">(</span><span class="n">normalized_master_locs</span><span class="p">,</span> <span class="n">axisOrder</span><span class="o">=</span><span class="n">axisTags</span><span class="p">)</span>
+	<span class="k">assert</span> <span class="mi">0</span> <span class="o">==</span> <span class="n">model</span><span class="o">.</span><span class="n">mapping</span><span class="p">[</span><span class="n">ds</span><span class="o">.</span><span class="n">base_idx</span><span class="p">]</span>
+
+	<span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Building variations tables&quot;</span><span class="p">)</span>
+	<span class="k">if</span> <span class="s1">&#39;BASE&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">exclude</span> <span class="ow">and</span> <span class="s1">&#39;BASE&#39;</span> <span class="ow">in</span> <span class="n">vf</span><span class="p">:</span>
+		<span class="n">_add_BASE</span><span class="p">(</span><span class="n">vf</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">master_fonts</span><span class="p">,</span> <span class="n">axisTags</span><span class="p">)</span>
+	<span class="k">if</span> <span class="s1">&#39;MVAR&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">exclude</span><span class="p">:</span>
+		<span class="n">_add_MVAR</span><span class="p">(</span><span class="n">vf</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">master_fonts</span><span class="p">,</span> <span class="n">axisTags</span><span class="p">)</span>
+	<span class="k">if</span> <span class="s1">&#39;HVAR&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">exclude</span><span class="p">:</span>
+		<span class="n">_add_HVAR</span><span class="p">(</span><span class="n">vf</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">master_fonts</span><span class="p">,</span> <span class="n">axisTags</span><span class="p">)</span>
+	<span class="k">if</span> <span class="s1">&#39;VVAR&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">exclude</span> <span class="ow">and</span> <span class="s1">&#39;vmtx&#39;</span> <span class="ow">in</span> <span class="n">vf</span><span class="p">:</span>
+		<span class="n">_add_VVAR</span><span class="p">(</span><span class="n">vf</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">master_fonts</span><span class="p">,</span> <span class="n">axisTags</span><span class="p">)</span>
+	<span class="k">if</span> <span class="s1">&#39;GDEF&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">exclude</span> <span class="ow">or</span> <span class="s1">&#39;GPOS&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">exclude</span><span class="p">:</span>
+		<span class="n">_merge_OTL</span><span class="p">(</span><span class="n">vf</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">master_fonts</span><span class="p">,</span> <span class="n">axisTags</span><span class="p">)</span>
+	<span class="k">if</span> <span class="s1">&#39;gvar&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">exclude</span> <span class="ow">and</span> <span class="s1">&#39;glyf&#39;</span> <span class="ow">in</span> <span class="n">vf</span><span class="p">:</span>
+		<span class="n">_add_gvar</span><span class="p">(</span><span class="n">vf</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">master_fonts</span><span class="p">,</span> <span class="n">optimize</span><span class="o">=</span><span class="n">optimize</span><span class="p">)</span>
+	<span class="k">if</span> <span class="s1">&#39;cvar&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">exclude</span> <span class="ow">and</span> <span class="s1">&#39;glyf&#39;</span> <span class="ow">in</span> <span class="n">vf</span><span class="p">:</span>
+		<span class="n">_merge_TTHinting</span><span class="p">(</span><span class="n">vf</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">master_fonts</span><span class="p">)</span>
+	<span class="k">if</span> <span class="s1">&#39;GSUB&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">exclude</span> <span class="ow">and</span> <span class="n">ds</span><span class="o">.</span><span class="n">rules</span><span class="p">:</span>
+		<span class="n">_add_GSUB_feature_variations</span><span class="p">(</span><span class="n">vf</span><span class="p">,</span> <span class="n">ds</span><span class="o">.</span><span class="n">axes</span><span class="p">,</span> <span class="n">ds</span><span class="o">.</span><span class="n">internal_axis_supports</span><span class="p">,</span> <span class="n">ds</span><span class="o">.</span><span class="n">rules</span><span class="p">,</span> <span class="n">ds</span><span class="o">.</span><span class="n">rulesProcessingLast</span><span class="p">)</span>
+	<span class="k">if</span> <span class="s1">&#39;CFF2&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">exclude</span> <span class="ow">and</span> <span class="p">(</span><span class="s1">&#39;CFF &#39;</span> <span class="ow">in</span> <span class="n">vf</span> <span class="ow">or</span> <span class="s1">&#39;CFF2&#39;</span> <span class="ow">in</span> <span class="n">vf</span><span class="p">):</span>
+		<span class="n">_add_CFF2</span><span class="p">(</span><span class="n">vf</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">master_fonts</span><span class="p">)</span>
+		<span class="k">if</span> <span class="s2">&quot;post&quot;</span> <span class="ow">in</span> <span class="n">vf</span><span class="p">:</span>
+			<span class="c1"># set &#39;post&#39; to format 2 to keep the glyph names dropped from CFF2</span>
+			<span class="n">post</span> <span class="o">=</span> <span class="n">vf</span><span class="p">[</span><span class="s2">&quot;post&quot;</span><span class="p">]</span>
+			<span class="k">if</span> <span class="n">post</span><span class="o">.</span><span class="n">formatType</span> <span class="o">!=</span> <span class="mf">2.0</span><span class="p">:</span>
+				<span class="n">post</span><span class="o">.</span><span class="n">formatType</span> <span class="o">=</span> <span class="mf">2.0</span>
+				<span class="n">post</span><span class="o">.</span><span class="n">extraNames</span> <span class="o">=</span> <span class="p">[]</span>
+				<span class="n">post</span><span class="o">.</span><span class="n">mapping</span> <span class="o">=</span> <span class="p">{}</span>
+
+	<span class="n">set_default_weight_width_slant</span><span class="p">(</span>
+		<span class="n">vf</span><span class="p">,</span> <span class="n">location</span><span class="o">=</span><span class="p">{</span><span class="n">axis</span><span class="o">.</span><span class="n">axisTag</span><span class="p">:</span> <span class="n">axis</span><span class="o">.</span><span class="n">defaultValue</span> <span class="k">for</span> <span class="n">axis</span> <span class="ow">in</span> <span class="n">vf</span><span class="p">[</span><span class="s2">&quot;fvar&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">axes</span><span class="p">}</span>
+	<span class="p">)</span>
+
+	<span class="k">for</span> <span class="n">tag</span> <span class="ow">in</span> <span class="n">exclude</span><span class="p">:</span>
+		<span class="k">if</span> <span class="n">tag</span> <span class="ow">in</span> <span class="n">vf</span><span class="p">:</span>
+			<span class="k">del</span> <span class="n">vf</span><span class="p">[</span><span class="n">tag</span><span class="p">]</span>
+
+	<span class="c1"># TODO: Only return vf for 4.0+, the rest is unused.</span>
+	<span class="k">return</span> <span class="n">vf</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">master_ttfs</span></div>
+
+
+<span class="k">def</span> <span class="nf">_open_font</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">master_finder</span><span class="o">=</span><span class="k">lambda</span> <span class="n">s</span><span class="p">:</span> <span class="n">s</span><span class="p">):</span>
+	<span class="c1"># load TTFont masters from given &#39;path&#39;: this can be either a .TTX or an</span>
+	<span class="c1"># OpenType binary font; or if neither of these, try use the &#39;master_finder&#39;</span>
+	<span class="c1"># callable to resolve the path to a valid .TTX or OpenType font binary.</span>
+	<span class="kn">from</span> <span class="nn">fontTools.ttx</span> <span class="k">import</span> <span class="n">guessFileType</span>
+
+	<span class="n">master_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">normpath</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+	<span class="n">tp</span> <span class="o">=</span> <span class="n">guessFileType</span><span class="p">(</span><span class="n">master_path</span><span class="p">)</span>
+	<span class="k">if</span> <span class="n">tp</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+		<span class="c1"># not an OpenType binary/ttx, fall back to the master finder.</span>
+		<span class="n">master_path</span> <span class="o">=</span> <span class="n">master_finder</span><span class="p">(</span><span class="n">master_path</span><span class="p">)</span>
+		<span class="n">tp</span> <span class="o">=</span> <span class="n">guessFileType</span><span class="p">(</span><span class="n">master_path</span><span class="p">)</span>
+	<span class="k">if</span> <span class="n">tp</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;TTX&quot;</span><span class="p">,</span> <span class="s2">&quot;OTX&quot;</span><span class="p">):</span>
+		<span class="n">font</span> <span class="o">=</span> <span class="n">TTFont</span><span class="p">()</span>
+		<span class="n">font</span><span class="o">.</span><span class="n">importXML</span><span class="p">(</span><span class="n">master_path</span><span class="p">)</span>
+	<span class="k">elif</span> <span class="n">tp</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;TTF&quot;</span><span class="p">,</span> <span class="s2">&quot;OTF&quot;</span><span class="p">,</span> <span class="s2">&quot;WOFF&quot;</span><span class="p">,</span> <span class="s2">&quot;WOFF2&quot;</span><span class="p">):</span>
+		<span class="n">font</span> <span class="o">=</span> <span class="n">TTFont</span><span class="p">(</span><span class="n">master_path</span><span class="p">)</span>
+	<span class="k">else</span><span class="p">:</span>
+		<span class="k">raise</span> <span class="n">VarLibValidationError</span><span class="p">(</span><span class="s2">&quot;Invalid master path: </span><span class="si">%r</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">master_path</span><span class="p">)</span>
+	<span class="k">return</span> <span class="n">font</span>
+
+
+<div class="viewcode-block" id="load_masters"><a class="viewcode-back" href="../../varLib/index.html#fontTools.varLib.load_masters">[docs]</a><span class="k">def</span> <span class="nf">load_masters</span><span class="p">(</span><span class="n">designspace</span><span class="p">,</span> <span class="n">master_finder</span><span class="o">=</span><span class="k">lambda</span> <span class="n">s</span><span class="p">:</span> <span class="n">s</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Ensure that all SourceDescriptor.font attributes have an appropriate TTFont</span>
+<span class="sd">	object loaded, or else open TTFont objects from the SourceDescriptor.path</span>
+<span class="sd">	attributes.</span>
+
+<span class="sd">	The paths can point to either an OpenType font, a TTX file, or a UFO. In the</span>
+<span class="sd">	latter case, use the provided master_finder callable to map from UFO paths to</span>
+<span class="sd">	the respective master font binaries (e.g. .ttf, .otf or .ttx).</span>
+
+<span class="sd">	Return list of master TTFont objects in the same order they are listed in the</span>
+<span class="sd">	DesignSpaceDocument.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="k">for</span> <span class="n">master</span> <span class="ow">in</span> <span class="n">designspace</span><span class="o">.</span><span class="n">sources</span><span class="p">:</span>
+		<span class="c1"># If a SourceDescriptor has a layer name, demand that the compiled TTFont</span>
+		<span class="c1"># be supplied by the caller. This spares us from modifying MasterFinder.</span>
+		<span class="k">if</span> <span class="n">master</span><span class="o">.</span><span class="n">layerName</span> <span class="ow">and</span> <span class="n">master</span><span class="o">.</span><span class="n">font</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="k">raise</span> <span class="n">VarLibValidationError</span><span class="p">(</span>
+				<span class="n">f</span><span class="s2">&quot;Designspace source &#39;{master.name or &#39;&lt;Unknown&gt;&#39;}&#39; specified a &quot;</span>
+				<span class="s2">&quot;layer name but lacks the required TTFont object in the &#39;font&#39; &quot;</span>
+				<span class="s2">&quot;attribute.&quot;</span>
+			<span class="p">)</span>
+
+	<span class="k">return</span> <span class="n">designspace</span><span class="o">.</span><span class="n">loadSourceFonts</span><span class="p">(</span><span class="n">_open_font</span><span class="p">,</span> <span class="n">master_finder</span><span class="o">=</span><span class="n">master_finder</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="MasterFinder"><a class="viewcode-back" href="../../varLib/index.html#fontTools.varLib.MasterFinder">[docs]</a><span class="k">class</span> <span class="nc">MasterFinder</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">template</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">template</span> <span class="o">=</span> <span class="n">template</span>
+
+	<span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">src_path</span><span class="p">):</span>
+		<span class="n">fullname</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">src_path</span><span class="p">)</span>
+		<span class="n">dirname</span><span class="p">,</span> <span class="n">basename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">fullname</span><span class="p">)</span>
+		<span class="n">stem</span><span class="p">,</span> <span class="n">ext</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">basename</span><span class="p">)</span>
+		<span class="n">path</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">template</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+			<span class="n">fullname</span><span class="o">=</span><span class="n">fullname</span><span class="p">,</span>
+			<span class="n">dirname</span><span class="o">=</span><span class="n">dirname</span><span class="p">,</span>
+			<span class="n">basename</span><span class="o">=</span><span class="n">basename</span><span class="p">,</span>
+			<span class="n">stem</span><span class="o">=</span><span class="n">stem</span><span class="p">,</span>
+			<span class="n">ext</span><span class="o">=</span><span class="n">ext</span><span class="p">,</span>
+		<span class="p">)</span>
+		<span class="k">return</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">normpath</span><span class="p">(</span><span class="n">path</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="main"><a class="viewcode-back" href="../../varLib/index.html#fontTools.varLib.main">[docs]</a><span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="n">args</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+	<span class="kn">from</span> <span class="nn">argparse</span> <span class="k">import</span> <span class="n">ArgumentParser</span>
+	<span class="kn">from</span> <span class="nn">fontTools</span> <span class="k">import</span> <span class="n">configLogger</span>
+
+	<span class="n">parser</span> <span class="o">=</span> <span class="n">ArgumentParser</span><span class="p">(</span><span class="n">prog</span><span class="o">=</span><span class="s1">&#39;varLib&#39;</span><span class="p">)</span>
+	<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;designspace&#39;</span><span class="p">)</span>
+	<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+		<span class="s1">&#39;-o&#39;</span><span class="p">,</span>
+		<span class="n">metavar</span><span class="o">=</span><span class="s1">&#39;OUTPUTFILE&#39;</span><span class="p">,</span>
+		<span class="n">dest</span><span class="o">=</span><span class="s1">&#39;outfile&#39;</span><span class="p">,</span>
+		<span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+		<span class="n">help</span><span class="o">=</span><span class="s1">&#39;output file&#39;</span>
+	<span class="p">)</span>
+	<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+		<span class="s1">&#39;-x&#39;</span><span class="p">,</span>
+		<span class="n">metavar</span><span class="o">=</span><span class="s1">&#39;TAG&#39;</span><span class="p">,</span>
+		<span class="n">dest</span><span class="o">=</span><span class="s1">&#39;exclude&#39;</span><span class="p">,</span>
+		<span class="n">action</span><span class="o">=</span><span class="s1">&#39;append&#39;</span><span class="p">,</span>
+		<span class="n">default</span><span class="o">=</span><span class="p">[],</span>
+		<span class="n">help</span><span class="o">=</span><span class="s1">&#39;exclude table&#39;</span>
+	<span class="p">)</span>
+	<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+		<span class="s1">&#39;--disable-iup&#39;</span><span class="p">,</span>
+		<span class="n">dest</span><span class="o">=</span><span class="s1">&#39;optimize&#39;</span><span class="p">,</span>
+		<span class="n">action</span><span class="o">=</span><span class="s1">&#39;store_false&#39;</span><span class="p">,</span>
+		<span class="n">help</span><span class="o">=</span><span class="s1">&#39;do not perform IUP optimization&#39;</span>
+	<span class="p">)</span>
+	<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+		<span class="s1">&#39;--master-finder&#39;</span><span class="p">,</span>
+		<span class="n">default</span><span class="o">=</span><span class="s1">&#39;master_ttf_interpolatable/</span><span class="si">{stem}</span><span class="s1">.ttf&#39;</span><span class="p">,</span>
+		<span class="n">help</span><span class="o">=</span><span class="p">(</span>
+			<span class="s1">&#39;templated string used for finding binary font &#39;</span>
+			<span class="s1">&#39;files given the source file names defined in the &#39;</span>
+			<span class="s1">&#39;designspace document. The following special strings &#39;</span>
+			<span class="s1">&#39;are defined: </span><span class="si">{fullname}</span><span class="s1"> is the absolute source file &#39;</span>
+			<span class="s1">&#39;name; </span><span class="si">{basename}</span><span class="s1"> is the file name without its &#39;</span>
+			<span class="s1">&#39;directory; </span><span class="si">{stem}</span><span class="s1"> is the basename without the file &#39;</span>
+			<span class="s1">&#39;extension; </span><span class="si">{ext}</span><span class="s1"> is the source file extension; &#39;</span>
+			<span class="s1">&#39;</span><span class="si">{dirname}</span><span class="s1"> is the directory of the absolute file &#39;</span>
+			<span class="s1">&#39;name. The default value is &quot;</span><span class="si">%(default)s</span><span class="s1">&quot;.&#39;</span>
+		<span class="p">)</span>
+	<span class="p">)</span>
+	<span class="n">logging_group</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">add_mutually_exclusive_group</span><span class="p">(</span><span class="n">required</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+	<span class="n">logging_group</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+		<span class="s2">&quot;-v&quot;</span><span class="p">,</span> <span class="s2">&quot;--verbose&quot;</span><span class="p">,</span>
+                <span class="n">action</span><span class="o">=</span><span class="s2">&quot;store_true&quot;</span><span class="p">,</span>
+                <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Run more verbosely.&quot;</span><span class="p">)</span>
+	<span class="n">logging_group</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+		<span class="s2">&quot;-q&quot;</span><span class="p">,</span> <span class="s2">&quot;--quiet&quot;</span><span class="p">,</span>
+                <span class="n">action</span><span class="o">=</span><span class="s2">&quot;store_true&quot;</span><span class="p">,</span>
+                <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Turn verbosity off.&quot;</span><span class="p">)</span>
+	<span class="n">options</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+
+	<span class="n">configLogger</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="p">(</span>
+		<span class="s2">&quot;DEBUG&quot;</span> <span class="k">if</span> <span class="n">options</span><span class="o">.</span><span class="n">verbose</span> <span class="k">else</span>
+		<span class="s2">&quot;ERROR&quot;</span> <span class="k">if</span> <span class="n">options</span><span class="o">.</span><span class="n">quiet</span> <span class="k">else</span>
+		<span class="s2">&quot;INFO&quot;</span><span class="p">))</span>
+
+	<span class="n">designspace_filename</span> <span class="o">=</span> <span class="n">options</span><span class="o">.</span><span class="n">designspace</span>
+	<span class="n">finder</span> <span class="o">=</span> <span class="n">MasterFinder</span><span class="p">(</span><span class="n">options</span><span class="o">.</span><span class="n">master_finder</span><span class="p">)</span>
+
+	<span class="n">vf</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">build</span><span class="p">(</span>
+		<span class="n">designspace_filename</span><span class="p">,</span>
+		<span class="n">finder</span><span class="p">,</span>
+		<span class="n">exclude</span><span class="o">=</span><span class="n">options</span><span class="o">.</span><span class="n">exclude</span><span class="p">,</span>
+		<span class="n">optimize</span><span class="o">=</span><span class="n">options</span><span class="o">.</span><span class="n">optimize</span>
+	<span class="p">)</span>
+
+	<span class="n">outfile</span> <span class="o">=</span> <span class="n">options</span><span class="o">.</span><span class="n">outfile</span>
+	<span class="k">if</span> <span class="n">outfile</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+		<span class="n">ext</span> <span class="o">=</span> <span class="s2">&quot;otf&quot;</span> <span class="k">if</span> <span class="n">vf</span><span class="o">.</span><span class="n">sfntVersion</span> <span class="o">==</span> <span class="s2">&quot;OTTO&quot;</span> <span class="k">else</span> <span class="s2">&quot;ttf&quot;</span>
+		<span class="n">outfile</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">designspace_filename</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;-VF.&#39;</span> <span class="o">+</span> <span class="n">ext</span>
+
+	<span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Saving variation font </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">outfile</span><span class="p">)</span>
+	<span class="n">vf</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">outfile</span><span class="p">)</span></div>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+	<span class="kn">import</span> <span class="nn">sys</span>
+	<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+		<span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
+	<span class="kn">import</span> <span class="nn">doctest</span>
+	<span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="n">doctest</span><span class="o">.</span><span class="n">testmod</span><span class="p">()</span><span class="o">.</span><span class="n">failed</span><span class="p">)</span>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Just van Rossum, Behdad Esfahbod, and the fontTools Authors. CC BY-SA 4.0
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

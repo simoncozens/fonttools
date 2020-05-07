@@ -1,0 +1,328 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>fontTools.ttLib.tables.sbixGlyph &mdash; fontTools Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> fontTools
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Library</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../afmLib.html">afmLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../agl.html">agl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../cffLib/index.html">cffLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../colorLib/index.html">colorLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../cu2qu/index.html">cu2qu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../designspaceLib/index.html">designspaceLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../encodings/index.html">encodings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../feaLib/index.html">feaLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../merge.html">merge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../misc/index.html">misc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../mtiLib.html">mtiLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../otlLib/index.html">otlLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../pens/index.html">pens</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../subset/index.html">subset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../svgLib/index.html">svgLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../t1Lib.html">t1Lib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../ttLib/index.html">ttLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../ttx.html">ttx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../ufoLib/index.html">ufoLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../unicode.html">unicode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../unicodedata/index.html">unicodedata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../varLib/index.html">varLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../voltLib.html">voltLib</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">fontTools</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../../ttLib.html">fontTools.ttLib</a> &raquo;</li>
+        
+      <li>fontTools.ttLib.tables.sbixGlyph</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for fontTools.ttLib.tables.sbixGlyph</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">fontTools.misc.py23</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">fontTools.misc</span> <span class="k">import</span> <span class="n">sstruct</span>
+<span class="kn">from</span> <span class="nn">fontTools.misc.textTools</span> <span class="k">import</span> <span class="n">readHex</span><span class="p">,</span> <span class="n">safeEval</span>
+<span class="kn">import</span> <span class="nn">struct</span>
+
+
+<span class="n">sbixGlyphHeaderFormat</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">	&gt;</span>
+<span class="s2">	originOffsetX: h	# The x-value of the point in the glyph relative to its</span>
+<span class="s2">						# lower-left corner which corresponds to the origin of</span>
+<span class="s2">						# the glyph on the screen, that is the point on the</span>
+<span class="s2">						# baseline at the left edge of the glyph.</span>
+<span class="s2">	originOffsetY: h	# The y-value of the point in the glyph relative to its</span>
+<span class="s2">						# lower-left corner which corresponds to the origin of</span>
+<span class="s2">						# the glyph on the screen, that is the point on the</span>
+<span class="s2">						# baseline at the left edge of the glyph.</span>
+<span class="s2">	graphicType:  4s	# e.g. &quot;png &quot;</span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+<span class="n">sbixGlyphHeaderFormatSize</span> <span class="o">=</span> <span class="n">sstruct</span><span class="o">.</span><span class="n">calcsize</span><span class="p">(</span><span class="n">sbixGlyphHeaderFormat</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="Glyph"><a class="viewcode-back" href="../../../../ttLib/tables.html#fontTools.ttLib.tables.sbixGlyph.Glyph">[docs]</a><span class="k">class</span> <span class="nc">Glyph</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">glyphName</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">referenceGlyphName</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">originOffsetX</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">originOffsetY</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">graphicType</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">imageData</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">rawdata</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">gid</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">gid</span> <span class="o">=</span> <span class="n">gid</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">glyphName</span> <span class="o">=</span> <span class="n">glyphName</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">referenceGlyphName</span> <span class="o">=</span> <span class="n">referenceGlyphName</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">originOffsetX</span> <span class="o">=</span> <span class="n">originOffsetX</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">originOffsetY</span> <span class="o">=</span> <span class="n">originOffsetY</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">rawdata</span> <span class="o">=</span> <span class="n">rawdata</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">graphicType</span> <span class="o">=</span> <span class="n">graphicType</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">imageData</span> <span class="o">=</span> <span class="n">imageData</span>
+
+		<span class="c1"># fix self.graphicType if it is null terminated or too short</span>
+		<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">graphicType</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">graphicType</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;</span><span class="se">\0</span><span class="s2">&quot;</span><span class="p">:</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">graphicType</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">graphicType</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+			<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">graphicType</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">4</span><span class="p">:</span>
+				<span class="kn">from</span> <span class="nn">fontTools</span> <span class="k">import</span> <span class="n">ttLib</span>
+				<span class="k">raise</span> <span class="n">ttLib</span><span class="o">.</span><span class="n">TTLibError</span><span class="p">(</span><span class="s2">&quot;Glyph.graphicType must not be longer than 4 characters.&quot;</span><span class="p">)</span>
+			<span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">graphicType</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">4</span><span class="p">:</span>
+				<span class="c1"># pad with spaces</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">graphicType</span> <span class="o">+=</span> <span class="s2">&quot;    &quot;</span><span class="p">[:(</span><span class="mi">4</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">graphicType</span><span class="p">))]</span>
+
+<div class="viewcode-block" id="Glyph.decompile"><a class="viewcode-back" href="../../../../ttLib/tables.html#fontTools.ttLib.tables.sbixGlyph.Glyph.decompile">[docs]</a>	<span class="k">def</span> <span class="nf">decompile</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ttFont</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">glyphName</span> <span class="o">=</span> <span class="n">ttFont</span><span class="o">.</span><span class="n">getGlyphName</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">gid</span><span class="p">)</span>
+		<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">rawdata</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="kn">from</span> <span class="nn">fontTools</span> <span class="k">import</span> <span class="n">ttLib</span>
+			<span class="k">raise</span> <span class="n">ttLib</span><span class="o">.</span><span class="n">TTLibError</span><span class="p">(</span><span class="s2">&quot;No table data to decompile&quot;</span><span class="p">)</span>
+		<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rawdata</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+			<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rawdata</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">sbixGlyphHeaderFormatSize</span><span class="p">:</span>
+				<span class="kn">from</span> <span class="nn">fontTools</span> <span class="k">import</span> <span class="n">ttLib</span>
+				<span class="c1">#print &quot;Glyph %i header too short: Expected %x, got %x.&quot; % (self.gid, sbixGlyphHeaderFormatSize, len(self.rawdata))</span>
+				<span class="k">raise</span> <span class="n">ttLib</span><span class="o">.</span><span class="n">TTLibError</span><span class="p">(</span><span class="s2">&quot;Glyph header too short.&quot;</span><span class="p">)</span>
+
+			<span class="n">sstruct</span><span class="o">.</span><span class="n">unpack</span><span class="p">(</span><span class="n">sbixGlyphHeaderFormat</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">rawdata</span><span class="p">[:</span><span class="n">sbixGlyphHeaderFormatSize</span><span class="p">],</span> <span class="bp">self</span><span class="p">)</span>
+
+			<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">graphicType</span> <span class="o">==</span> <span class="s2">&quot;dupe&quot;</span><span class="p">:</span>
+				<span class="c1"># this glyph is a reference to another glyph&#39;s image data</span>
+				<span class="n">gid</span><span class="p">,</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">unpack</span><span class="p">(</span><span class="s2">&quot;&gt;H&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">rawdata</span><span class="p">[</span><span class="n">sbixGlyphHeaderFormatSize</span><span class="p">:])</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">referenceGlyphName</span> <span class="o">=</span> <span class="n">ttFont</span><span class="o">.</span><span class="n">getGlyphName</span><span class="p">(</span><span class="n">gid</span><span class="p">)</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">imageData</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rawdata</span><span class="p">[</span><span class="n">sbixGlyphHeaderFormatSize</span><span class="p">:]</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">referenceGlyphName</span> <span class="o">=</span> <span class="kc">None</span>
+		<span class="c1"># clean up</span>
+		<span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">rawdata</span>
+		<span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">gid</span></div>
+
+<div class="viewcode-block" id="Glyph.compile"><a class="viewcode-back" href="../../../../ttLib/tables.html#fontTools.ttLib.tables.sbixGlyph.Glyph.compile">[docs]</a>	<span class="k">def</span> <span class="nf">compile</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ttFont</span><span class="p">):</span>
+		<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">glyphName</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="kn">from</span> <span class="nn">fontTools</span> <span class="k">import</span> <span class="n">ttLib</span>
+			<span class="k">raise</span> <span class="n">ttLib</span><span class="o">.</span><span class="n">TTLibError</span><span class="p">(</span><span class="s2">&quot;Can&#39;t compile Glyph without glyph name&quot;</span><span class="p">)</span>
+			<span class="c1"># TODO: if ttFont has no maxp, cmap etc., ignore glyph names and compile by index?</span>
+			<span class="c1"># (needed if you just want to compile the sbix table on its own)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">gid</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="s2">&quot;&gt;H&quot;</span><span class="p">,</span> <span class="n">ttFont</span><span class="o">.</span><span class="n">getGlyphID</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">glyphName</span><span class="p">))</span>
+		<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">graphicType</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">rawdata</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;&quot;</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">rawdata</span> <span class="o">=</span> <span class="n">sstruct</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">sbixGlyphHeaderFormat</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">imageData</span></div>
+
+<div class="viewcode-block" id="Glyph.toXML"><a class="viewcode-back" href="../../../../ttLib/tables.html#fontTools.ttLib.tables.sbixGlyph.Glyph.toXML">[docs]</a>	<span class="k">def</span> <span class="nf">toXML</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xmlWriter</span><span class="p">,</span> <span class="n">ttFont</span><span class="p">):</span>
+		<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">graphicType</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="c1"># TODO: ignore empty glyphs?</span>
+			<span class="c1"># a glyph data entry is required for each glyph,</span>
+			<span class="c1"># but empty ones can be calculated at compile time</span>
+			<span class="n">xmlWriter</span><span class="o">.</span><span class="n">simpletag</span><span class="p">(</span><span class="s2">&quot;glyph&quot;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">glyphName</span><span class="p">)</span>
+			<span class="n">xmlWriter</span><span class="o">.</span><span class="n">newline</span><span class="p">()</span>
+			<span class="k">return</span>
+		<span class="n">xmlWriter</span><span class="o">.</span><span class="n">begintag</span><span class="p">(</span><span class="s2">&quot;glyph&quot;</span><span class="p">,</span>
+			<span class="n">graphicType</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">graphicType</span><span class="p">,</span>
+			<span class="n">name</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">glyphName</span><span class="p">,</span>
+			<span class="n">originOffsetX</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">originOffsetX</span><span class="p">,</span>
+			<span class="n">originOffsetY</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">originOffsetY</span><span class="p">,</span>
+		<span class="p">)</span>
+		<span class="n">xmlWriter</span><span class="o">.</span><span class="n">newline</span><span class="p">()</span>
+		<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">graphicType</span> <span class="o">==</span> <span class="s2">&quot;dupe&quot;</span><span class="p">:</span>
+			<span class="c1"># graphicType == &quot;dupe&quot; is a reference to another glyph id.</span>
+			<span class="n">xmlWriter</span><span class="o">.</span><span class="n">simpletag</span><span class="p">(</span><span class="s2">&quot;ref&quot;</span><span class="p">,</span> <span class="n">glyphname</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">referenceGlyphName</span><span class="p">)</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="n">xmlWriter</span><span class="o">.</span><span class="n">begintag</span><span class="p">(</span><span class="s2">&quot;hexdata&quot;</span><span class="p">)</span>
+			<span class="n">xmlWriter</span><span class="o">.</span><span class="n">newline</span><span class="p">()</span>
+			<span class="n">xmlWriter</span><span class="o">.</span><span class="n">dumphex</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">imageData</span><span class="p">)</span>
+			<span class="n">xmlWriter</span><span class="o">.</span><span class="n">endtag</span><span class="p">(</span><span class="s2">&quot;hexdata&quot;</span><span class="p">)</span>
+		<span class="n">xmlWriter</span><span class="o">.</span><span class="n">newline</span><span class="p">()</span>
+		<span class="n">xmlWriter</span><span class="o">.</span><span class="n">endtag</span><span class="p">(</span><span class="s2">&quot;glyph&quot;</span><span class="p">)</span>
+		<span class="n">xmlWriter</span><span class="o">.</span><span class="n">newline</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="Glyph.fromXML"><a class="viewcode-back" href="../../../../ttLib/tables.html#fontTools.ttLib.tables.sbixGlyph.Glyph.fromXML">[docs]</a>	<span class="k">def</span> <span class="nf">fromXML</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">attrs</span><span class="p">,</span> <span class="n">content</span><span class="p">,</span> <span class="n">ttFont</span><span class="p">):</span>
+		<span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;ref&quot;</span><span class="p">:</span>
+			<span class="c1"># glyph is a &quot;dupe&quot;, i.e. a reference to another glyph&#39;s image data.</span>
+			<span class="c1"># in this case imageData contains the glyph id of the reference glyph</span>
+			<span class="c1"># get glyph id from glyphname</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">imageData</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="s2">&quot;&gt;H&quot;</span><span class="p">,</span> <span class="n">ttFont</span><span class="o">.</span><span class="n">getGlyphID</span><span class="p">(</span><span class="n">safeEval</span><span class="p">(</span><span class="s2">&quot;&#39;&#39;&#39;&quot;</span> <span class="o">+</span> <span class="n">attrs</span><span class="p">[</span><span class="s2">&quot;glyphname&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;&#39;&#39;&#39;&quot;</span><span class="p">)))</span>
+		<span class="k">elif</span> <span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;hexdata&quot;</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">imageData</span> <span class="o">=</span> <span class="n">readHex</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="kn">from</span> <span class="nn">fontTools</span> <span class="k">import</span> <span class="n">ttLib</span>
+			<span class="k">raise</span> <span class="n">ttLib</span><span class="o">.</span><span class="n">TTLibError</span><span class="p">(</span><span class="s2">&quot;can&#39;t handle &#39;</span><span class="si">%s</span><span class="s2">&#39; element&quot;</span> <span class="o">%</span> <span class="n">name</span><span class="p">)</span></div></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Just van Rossum, Behdad Esfahbod, and the fontTools Authors. CC BY-SA 4.0
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

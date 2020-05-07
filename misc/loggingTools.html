@@ -1,0 +1,730 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>loggingTools &mdash; fontTools Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="macCreatorType" href="macCreatorType.html" />
+    <link rel="prev" title="intTools" href="intTools.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> fontTools
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Library</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../afmLib.html">afmLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../agl.html">agl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cffLib/index.html">cffLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../colorLib/index.html">colorLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cu2qu/index.html">cu2qu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../designspaceLib/index.html">designspaceLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../encodings/index.html">encodings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../feaLib/index.html">feaLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../merge.html">merge</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">misc</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="arrayTools.html">arrayTools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bezierTools.html">bezierTools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classifyTools.html">classifyTools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cliTools.html">cliTools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eexec.html">eexec</a></li>
+<li class="toctree-l2"><a class="reference internal" href="encodingTools.html">encodingTools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="etree.html">etree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="filenames.html">filenames</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fixedTools.html">fixedTools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intTools.html">intTools</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">loggingTools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="macCreatorType.html">macCreatorType</a></li>
+<li class="toctree-l2"><a class="reference internal" href="macRes.html">macRes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psCharStrings.html">psCharStrings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psLib.html">psLib</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psOperators.html">psOperators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="py23.html">py23</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sstruct.html">sstruct</a></li>
+<li class="toctree-l2"><a class="reference internal" href="symfont.html">symfont</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testTools.html">testTools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="textTools.html">textTools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="timeTools.html">timeTools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transform.html">transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xmlReader.html">xmlReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xmlWriter.html">xmlWriter</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../mtiLib.html">mtiLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../otlLib/index.html">otlLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pens/index.html">pens</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../subset/index.html">subset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svgLib/index.html">svgLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../t1Lib.html">t1Lib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ttLib/index.html">ttLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ttx.html">ttx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ufoLib/index.html">ufoLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unicode.html">unicode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unicodedata/index.html">unicodedata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../varLib/index.html">varLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../voltLib.html">voltLib</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">fontTools</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">misc</a> &raquo;</li>
+        
+      <li>loggingTools</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/misc/loggingTools.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-fontTools.misc.loggingTools">
+<span id="loggingtools"></span><h1>loggingTools<a class="headerlink" href="#module-fontTools.misc.loggingTools" title="Permalink to this headline">¶</a></h1>
+<p>fontTools.misc.loggingTools.py – tools for interfacing with the Python
+logging package.</p>
+<dl class="py class">
+<dt id="fontTools.misc.loggingTools.CapturingLogHandler">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.misc.loggingTools.</code><code class="sig-name descname">CapturingLogHandler</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">logger</span></em>, <em class="sig-param"><span class="n">level</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/loggingTools.html#CapturingLogHandler"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.loggingTools.CapturingLogHandler" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.misc.loggingTools.CapturingLogHandler.acquire">
+<code class="sig-name descname">acquire</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.loggingTools.CapturingLogHandler.acquire" title="Permalink to this definition">¶</a></dt>
+<dd><p>Acquire the I/O thread lock.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.loggingTools.CapturingLogHandler.addFilter">
+<code class="sig-name descname">addFilter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filter</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.loggingTools.CapturingLogHandler.addFilter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add the specified filter to this handler.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.loggingTools.CapturingLogHandler.assertRegex">
+<code class="sig-name descname">assertRegex</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">regexp</span></em>, <em class="sig-param"><span class="n">msg</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/loggingTools.html#CapturingLogHandler.assertRegex"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.loggingTools.CapturingLogHandler.assertRegex" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.loggingTools.CapturingLogHandler.close">
+<code class="sig-name descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.loggingTools.CapturingLogHandler.close" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tidy up any resources used by the handler.</p>
+<p>This version removes the handler from an internal map of handlers,
+_handlers, which is used for handler lookup by name. Subclasses
+should ensure that this gets called from overridden close()
+methods.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.loggingTools.CapturingLogHandler.createLock">
+<code class="sig-name descname">createLock</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.loggingTools.CapturingLogHandler.createLock" title="Permalink to this definition">¶</a></dt>
+<dd><p>Acquire a thread lock for serializing access to the underlying I/O.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.loggingTools.CapturingLogHandler.emit">
+<code class="sig-name descname">emit</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">record</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/loggingTools.html#CapturingLogHandler.emit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.loggingTools.CapturingLogHandler.emit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Do whatever it takes to actually log the specified logging record.</p>
+<p>This version is intended to be implemented by subclasses and so
+raises a NotImplementedError.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.loggingTools.CapturingLogHandler.filter">
+<code class="sig-name descname">filter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">record</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.loggingTools.CapturingLogHandler.filter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determine if a record is loggable by consulting all the filters.</p>
+<p>The default is to allow the record to be logged; any filter can veto
+this and the record is then dropped. Returns a zero value if a record
+is to be dropped, else non-zero.</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 3.2: </span>Allow filters to be just callables.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.loggingTools.CapturingLogHandler.flush">
+<code class="sig-name descname">flush</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.loggingTools.CapturingLogHandler.flush" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ensure all logging output has been flushed.</p>
+<p>This version does nothing and is intended to be implemented by
+subclasses.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.loggingTools.CapturingLogHandler.format">
+<code class="sig-name descname">format</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">record</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.loggingTools.CapturingLogHandler.format" title="Permalink to this definition">¶</a></dt>
+<dd><p>Format the specified record.</p>
+<p>If a formatter is set, use it. Otherwise, use the default formatter
+for the module.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.loggingTools.CapturingLogHandler.get_name">
+<code class="sig-name descname">get_name</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.loggingTools.CapturingLogHandler.get_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.loggingTools.CapturingLogHandler.handle">
+<code class="sig-name descname">handle</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">record</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.loggingTools.CapturingLogHandler.handle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Conditionally emit the specified logging record.</p>
+<p>Emission depends on filters which may have been added to the handler.
+Wrap the actual emission of the record with acquisition/release of
+the I/O thread lock. Returns whether the filter passed the record for
+emission.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.loggingTools.CapturingLogHandler.handleError">
+<code class="sig-name descname">handleError</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">record</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.loggingTools.CapturingLogHandler.handleError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Handle errors which occur during an emit() call.</p>
+<p>This method should be called from handlers when an exception is
+encountered during an emit() call. If raiseExceptions is false,
+exceptions get silently ignored. This is what is mostly wanted
+for a logging system - most users will not care about errors in
+the logging system, they are more interested in application errors.
+You could, however, replace this with a custom handler if you wish.
+The record which was being processed is passed in to this method.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.loggingTools.CapturingLogHandler.name">
+<em class="property">property </em><code class="sig-name descname">name</code><a class="headerlink" href="#fontTools.misc.loggingTools.CapturingLogHandler.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.loggingTools.CapturingLogHandler.release">
+<code class="sig-name descname">release</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.loggingTools.CapturingLogHandler.release" title="Permalink to this definition">¶</a></dt>
+<dd><p>Release the I/O thread lock.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.loggingTools.CapturingLogHandler.removeFilter">
+<code class="sig-name descname">removeFilter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filter</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.loggingTools.CapturingLogHandler.removeFilter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove the specified filter from this handler.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.loggingTools.CapturingLogHandler.setFormatter">
+<code class="sig-name descname">setFormatter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fmt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.loggingTools.CapturingLogHandler.setFormatter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the formatter for this handler.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.loggingTools.CapturingLogHandler.setLevel">
+<code class="sig-name descname">setLevel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">level</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.loggingTools.CapturingLogHandler.setLevel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the logging level of this handler.  level must be an int or a str.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.loggingTools.CapturingLogHandler.set_name">
+<code class="sig-name descname">set_name</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.loggingTools.CapturingLogHandler.set_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.misc.loggingTools.ChannelsFilter">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.misc.loggingTools.</code><code class="sig-name descname">ChannelsFilter</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">names</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/loggingTools.html#ChannelsFilter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.loggingTools.ChannelsFilter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filter out records emitted from a list of enabled channel names,
+including their children. It works the same as the logging.Filter class,
+but allows to specify multiple channel names.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">sys</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">handler</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">StreamHandler</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">handler</span><span class="o">.</span><span class="n">setFormatter</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">Formatter</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%(message)s</span><span class="s2">&quot;</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">filter</span> <span class="o">=</span> <span class="n">ChannelsFilter</span><span class="p">(</span><span class="s2">&quot;A.B&quot;</span><span class="p">,</span> <span class="s2">&quot;C.D&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">handler</span><span class="o">.</span><span class="n">addFilter</span><span class="p">(</span><span class="nb">filter</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">root</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">root</span><span class="o">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">handler</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">root</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s1">&#39;A.B&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;this record passes through&#39;</span><span class="p">)</span>
+<span class="go">this record passes through</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s1">&#39;A.B.C&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;records from children also pass&#39;</span><span class="p">)</span>
+<span class="go">records from children also pass</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s1">&#39;C.D&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;this one as well&#39;</span><span class="p">)</span>
+<span class="go">this one as well</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s1">&#39;A.B.&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;also this one&#39;</span><span class="p">)</span>
+<span class="go">also this one</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s1">&#39;A.F&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;but this one does not!&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s1">&#39;C.DE&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;neither this one!&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt id="fontTools.misc.loggingTools.ChannelsFilter.filter">
+<code class="sig-name descname">filter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">record</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/loggingTools.html#ChannelsFilter.filter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.loggingTools.ChannelsFilter.filter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determine if the specified record is to be logged.</p>
+<p>Is the specified record to be logged? Returns 0 for no, nonzero for
+yes. If deemed appropriate, the record may be modified in-place.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.misc.loggingTools.LevelFormatter">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.misc.loggingTools.</code><code class="sig-name descname">LevelFormatter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fmt</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">datefmt</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">style</span><span class="o">=</span><span class="default_value">'%'</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/loggingTools.html#LevelFormatter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.loggingTools.LevelFormatter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Formatter class which optionally takes a dict of logging levels to
+format strings, allowing to customise the log records appearance for
+specific levels.
+The ‘*’ key identifies the default format string.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">sys</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">handler</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">StreamHandler</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">formatter</span> <span class="o">=</span> <span class="n">LevelFormatter</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">fmt</span><span class="o">=</span><span class="p">{</span>
+<span class="gp">... </span>        <span class="s1">&#39;*&#39;</span><span class="p">:</span>     <span class="s1">&#39;[</span><span class="si">%(levelname)s</span><span class="s1">] </span><span class="si">%(message)s</span><span class="s1">&#39;</span><span class="p">,</span>
+<span class="gp">... </span>        <span class="s1">&#39;DEBUG&#39;</span><span class="p">:</span> <span class="s1">&#39;</span><span class="si">%(name)s</span><span class="s1"> [</span><span class="si">%(levelname)s</span><span class="s1">] </span><span class="si">%(message)s</span><span class="s1">&#39;</span><span class="p">,</span>
+<span class="gp">... </span>        <span class="s1">&#39;INFO&#39;</span><span class="p">:</span>  <span class="s1">&#39;</span><span class="si">%(message)s</span><span class="s1">&#39;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="p">})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">handler</span><span class="o">.</span><span class="n">setFormatter</span><span class="p">(</span><span class="n">formatter</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">log</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s1">&#39;test&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">log</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">log</span><span class="o">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">handler</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;this uses a custom format string&#39;</span><span class="p">)</span>
+<span class="go">test [DEBUG] this uses a custom format string</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;this also uses a custom format string&#39;</span><span class="p">)</span>
+<span class="go">this also uses a custom format string</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">log</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;this one uses the default format string&quot;</span><span class="p">)</span>
+<span class="go">[WARNING] this one uses the default format string</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt id="fontTools.misc.loggingTools.LevelFormatter.converter">
+<code class="sig-name descname">converter</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.loggingTools.LevelFormatter.converter" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>localtime([seconds]) -&gt; (tm_year,tm_mon,tm_mday,tm_hour,tm_min,</dt><dd><p>tm_sec,tm_wday,tm_yday,tm_isdst)</p>
+</dd>
+</dl>
+<p>Convert seconds since the Epoch to a time tuple expressing local time.
+When ‘seconds’ is not passed in, convert the current time instead.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.misc.loggingTools.LevelFormatter.default_msec_format">
+<code class="sig-name descname">default_msec_format</code><em class="property"> = '%s,%03d'</em><a class="headerlink" href="#fontTools.misc.loggingTools.LevelFormatter.default_msec_format" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.misc.loggingTools.LevelFormatter.default_time_format">
+<code class="sig-name descname">default_time_format</code><em class="property"> = '%Y-%m-%d %H:%M:%S'</em><a class="headerlink" href="#fontTools.misc.loggingTools.LevelFormatter.default_time_format" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.loggingTools.LevelFormatter.format">
+<code class="sig-name descname">format</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">record</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/loggingTools.html#LevelFormatter.format"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.loggingTools.LevelFormatter.format" title="Permalink to this definition">¶</a></dt>
+<dd><p>Format the specified record as text.</p>
+<p>The record’s attribute dictionary is used as the operand to a
+string formatting operation which yields the returned string.
+Before formatting the dictionary, a couple of preparatory steps
+are carried out. The message attribute of the record is computed
+using LogRecord.getMessage(). If the formatting string uses the
+time (as determined by a call to usesTime(), formatTime() is
+called to format the event time. If there is exception information,
+it is formatted using formatException() and appended to the message.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.loggingTools.LevelFormatter.formatException">
+<code class="sig-name descname">formatException</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ei</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.loggingTools.LevelFormatter.formatException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Format and return the specified exception information as a string.</p>
+<p>This default implementation just uses
+traceback.print_exception()</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.loggingTools.LevelFormatter.formatMessage">
+<code class="sig-name descname">formatMessage</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">record</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.loggingTools.LevelFormatter.formatMessage" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.loggingTools.LevelFormatter.formatStack">
+<code class="sig-name descname">formatStack</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">stack_info</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.loggingTools.LevelFormatter.formatStack" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method is provided as an extension point for specialized
+formatting of stack information.</p>
+<p>The input data is a string as returned from a call to
+<code class="xref py py-func docutils literal notranslate"><span class="pre">traceback.print_stack()</span></code>, but with the last trailing newline
+removed.</p>
+<p>The base implementation just returns the value passed in.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.loggingTools.LevelFormatter.formatTime">
+<code class="sig-name descname">formatTime</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">record</span></em>, <em class="sig-param"><span class="n">datefmt</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.loggingTools.LevelFormatter.formatTime" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the creation time of the specified LogRecord as formatted text.</p>
+<p>This method should be called from format() by a formatter which
+wants to make use of a formatted time. This method can be overridden
+in formatters to provide for any specific requirement, but the
+basic behaviour is as follows: if datefmt (a string) is specified,
+it is used with time.strftime() to format the creation time of the
+record. Otherwise, an ISO8601-like (or RFC 3339-like) format is used.
+The resulting string is returned. This function uses a user-configurable
+function to convert the creation time to a tuple. By default,
+time.localtime() is used; to change this for a particular formatter
+instance, set the ‘converter’ attribute to a function with the same
+signature as time.localtime() or time.gmtime(). To change it for all
+formatters, for example if you want all logging times to be shown in GMT,
+set the ‘converter’ attribute in the Formatter class.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.loggingTools.LevelFormatter.usesTime">
+<code class="sig-name descname">usesTime</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.loggingTools.LevelFormatter.usesTime" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if the format uses the creation time of the record.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.misc.loggingTools.LogMixin">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.misc.loggingTools.</code><code class="sig-name descname">LogMixin</code><a class="reference internal" href="../_modules/fontTools/misc/loggingTools.html#LogMixin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.loggingTools.LogMixin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mixin class that adds logging functionality to another class.
+You can define a new class that subclasses from LogMixin as well as
+other base classes through multiple inheritance.
+All instances of that class will have a ‘log’ property that returns
+a logging.Logger named after their respective &lt;module&gt;.&lt;class&gt;.
+For example:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">BaseClass</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="k">pass</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">MyClass</span><span class="p">(</span><span class="n">LogMixin</span><span class="p">,</span> <span class="n">BaseClass</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="k">pass</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">MyClass</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">isinstance</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">log</span><span class="p">,</span> <span class="n">logging</span><span class="o">.</span><span class="n">Logger</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">log</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+<span class="go">fontTools.misc.loggingTools.MyClass</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">AnotherClass</span><span class="p">(</span><span class="n">MyClass</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="k">pass</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">AnotherClass</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">isinstance</span><span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">log</span><span class="p">,</span> <span class="n">logging</span><span class="o">.</span><span class="n">Logger</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">log</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+<span class="go">fontTools.misc.loggingTools.AnotherClass</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt id="fontTools.misc.loggingTools.LogMixin.log">
+<em class="property">property </em><code class="sig-name descname">log</code><a class="headerlink" href="#fontTools.misc.loggingTools.LogMixin.log" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.misc.loggingTools.Timer">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.misc.loggingTools.</code><code class="sig-name descname">Timer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">logger</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">msg</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">level</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">start</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/loggingTools.html#Timer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.loggingTools.Timer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Keeps track of overall time and split/lap times.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">time</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">timer</span> <span class="o">=</span> <span class="n">Timer</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.01</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;First lap:&quot;</span><span class="p">,</span> <span class="n">timer</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+<span class="go">First lap: ...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.02</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Second lap:&quot;</span><span class="p">,</span> <span class="n">timer</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+<span class="go">Second lap: ...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Overall time:&quot;</span><span class="p">,</span> <span class="n">timer</span><span class="o">.</span><span class="n">time</span><span class="p">())</span>
+<span class="go">Overall time: ...</span>
+</pre></div>
+</div>
+<p>Can be used as a context manager inside with-statements.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">Timer</span><span class="p">()</span> <span class="k">as</span> <span class="n">t</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.01</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%0.3f</span><span class="s2"> seconds&quot;</span> <span class="o">%</span> <span class="n">t</span><span class="o">.</span><span class="n">elapsed</span><span class="p">)</span>
+<span class="go">0... seconds</span>
+</pre></div>
+</div>
+<p>If initialised with a logger, it can log the elapsed time automatically
+upon exiting the with-statement.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">logging</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">log</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s2">&quot;my-fancy-timer-logger&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">configLogger</span><span class="p">(</span><span class="n">logger</span><span class="o">=</span><span class="n">log</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="s2">&quot;DEBUG&quot;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">%(message)s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">stream</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">Timer</span><span class="p">(</span><span class="n">log</span><span class="p">,</span> <span class="s1">&#39;do something&#39;</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.01</span><span class="p">)</span>
+<span class="go">Took ... to do something</span>
+</pre></div>
+</div>
+<p>The same Timer instance, holding a reference to a logger, can be reused
+in multiple with-statements, optionally with different messages or levels.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">timer</span> <span class="o">=</span> <span class="n">Timer</span><span class="p">(</span><span class="n">log</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">timer</span><span class="p">():</span>
+<span class="gp">... </span>    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.01</span><span class="p">)</span>
+<span class="go">elapsed time: ...s</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">timer</span><span class="p">(</span><span class="s1">&#39;redo it&#39;</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.02</span><span class="p">)</span>
+<span class="go">Took ... to redo it</span>
+</pre></div>
+</div>
+<p>It can also be used as a function decorator to log the time elapsed to run
+the decorated function.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nd">@timer</span><span class="p">()</span>
+<span class="gp">... </span><span class="k">def</span> <span class="nf">test1</span><span class="p">():</span>
+<span class="gp">... </span>   <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.01</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nd">@timer</span><span class="p">(</span><span class="s1">&#39;run test 2&#39;</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
+<span class="gp">... </span><span class="k">def</span> <span class="nf">test2</span><span class="p">():</span>
+<span class="gp">... </span>   <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.02</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">test1</span><span class="p">()</span>
+<span class="go">Took ... to run &#39;test1&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">test2</span><span class="p">()</span>
+<span class="go">Took ... to run test 2</span>
+</pre></div>
+</div>
+<dl class="py attribute">
+<dt id="fontTools.misc.loggingTools.Timer.default_format">
+<code class="sig-name descname">default_format</code><em class="property"> = 'Took %(time).3fs to %(msg)s'</em><a class="headerlink" href="#fontTools.misc.loggingTools.Timer.default_format" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.misc.loggingTools.Timer.default_msg">
+<code class="sig-name descname">default_msg</code><em class="property"> = 'elapsed time: %(time).3fs'</em><a class="headerlink" href="#fontTools.misc.loggingTools.Timer.default_msg" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.loggingTools.Timer.formatTime">
+<code class="sig-name descname">formatTime</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">msg</span></em>, <em class="sig-param"><span class="n">time</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/loggingTools.html#Timer.formatTime"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.loggingTools.Timer.formatTime" title="Permalink to this definition">¶</a></dt>
+<dd><p>Format ‘time’ value in ‘msg’ and return formatted string.
+If ‘msg’ contains a ‘%(time)’ format string, try to use that.
+Otherwise, use the predefined ‘default_format’.
+If ‘msg’ is empty or None, fall back to ‘default_msg’.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.loggingTools.Timer.reset">
+<code class="sig-name descname">reset</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">start</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/loggingTools.html#Timer.reset"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.loggingTools.Timer.reset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reset timer to ‘start_time’ or the current time.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.loggingTools.Timer.split">
+<code class="sig-name descname">split</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/loggingTools.html#Timer.split"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.loggingTools.Timer.split" title="Permalink to this definition">¶</a></dt>
+<dd><p>Split and return the lap time (in seconds) in between splits.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.loggingTools.Timer.time">
+<code class="sig-name descname">time</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/loggingTools.html#Timer.time"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.loggingTools.Timer.time" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the overall time (in seconds) since the timer started.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.misc.loggingTools.configLogger">
+<code class="sig-prename descclassname">fontTools.misc.loggingTools.</code><code class="sig-name descname">configLogger</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/loggingTools.html#configLogger"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.loggingTools.configLogger" title="Permalink to this definition">¶</a></dt>
+<dd><p>Do basic configuration for the logging system. This is more or less
+the same as logging.basicConfig with some additional options and defaults.</p>
+<p>The default behaviour is to create a StreamHandler which writes to
+sys.stderr, set a formatter using the DEFAULT_FORMATS strings, and add
+the handler to the top-level library logger (“fontTools”).</p>
+<p>A number of optional keyword arguments may be specified, which can alter
+the default behaviour.</p>
+<dl class="simple">
+<dt>logger    Specifies the logger name or a Logger instance to be configured.</dt><dd><p>(it defaults to “fontTools” logger). Unlike basicConfig, this
+function can be called multiple times to reconfigure a logger.
+If the logger or any of its children already exists before the
+call is made, they will be reset before the new configuration
+is applied.</p>
+</dd>
+<dt>filename  Specifies that a FileHandler be created, using the specified</dt><dd><p>filename, rather than a StreamHandler.</p>
+</dd>
+<dt>filemode  Specifies the mode to open the file, if filename is specified</dt><dd><p>(if filemode is unspecified, it defaults to ‘a’).</p>
+</dd>
+<dt>format    Use the specified format string for the handler. This argument</dt><dd><p>also accepts a dictionary of format strings keyed by level name,
+to allow customising the records appearance for specific levels.
+The special ‘*’ key is for ‘any other’ level.</p>
+</dd>
+</dl>
+<p>datefmt   Use the specified date/time format.
+level     Set the logger level to the specified level.
+stream    Use the specified stream to initialize the StreamHandler. Note</p>
+<blockquote>
+<div><p>that this argument is incompatible with ‘filename’ - if both
+are present, ‘stream’ is ignored.</p>
+</div></blockquote>
+<dl class="simple">
+<dt>handlers  If specified, this should be an iterable of already created</dt><dd><p>handlers, which will be added to the logger. Any handler
+in the list which does not have a formatter assigned will be
+assigned the formatter created in this function.</p>
+</dd>
+<dt>filters   If specified, this should be an iterable of already created</dt><dd><p>filters, which will be added to the handler(s), if the latter
+do(es) not already have filters assigned.</p>
+</dd>
+<dt>propagate All loggers have a “propagate” attribute initially set to True,</dt><dd><p>which determines whether to continue searching for handlers up
+the logging hierarchy. By default, this arguments sets the
+“propagate” attribute to False.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.misc.loggingTools.deprecateArgument">
+<code class="sig-prename descclassname">fontTools.misc.loggingTools.</code><code class="sig-name descname">deprecateArgument</code><span class="sig-paren">(</span><em class="sig-param">name</em>, <em class="sig-param">msg</em>, <em class="sig-param">category=&lt;class 'UserWarning'&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/loggingTools.html#deprecateArgument"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.loggingTools.deprecateArgument" title="Permalink to this definition">¶</a></dt>
+<dd><p>Raise a warning about deprecated function argument ‘name’.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.misc.loggingTools.deprecateFunction">
+<code class="sig-prename descclassname">fontTools.misc.loggingTools.</code><code class="sig-name descname">deprecateFunction</code><span class="sig-paren">(</span><em class="sig-param">msg</em>, <em class="sig-param">category=&lt;class 'UserWarning'&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/loggingTools.html#deprecateFunction"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.loggingTools.deprecateFunction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decorator to raise a warning when a deprecated function is called.</p>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="macCreatorType.html" class="btn btn-neutral float-right" title="macCreatorType" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="intTools.html" class="btn btn-neutral float-left" title="intTools" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Just van Rossum, Behdad Esfahbod, and the fontTools Authors. CC BY-SA 4.0
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

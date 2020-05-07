@@ -1,0 +1,424 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>interpolatable &mdash; fontTools Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="interpolate_layout" href="interpolate_layout.html" />
+    <link rel="prev" title="instancer" href="instancer.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> fontTools
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Library</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../afmLib.html">afmLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../agl.html">agl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cffLib/index.html">cffLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../colorLib/index.html">colorLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cu2qu/index.html">cu2qu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../designspaceLib/index.html">designspaceLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../encodings/index.html">encodings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../feaLib/index.html">feaLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../merge.html">merge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/index.html">misc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mtiLib.html">mtiLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../otlLib/index.html">otlLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pens/index.html">pens</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../subset/index.html">subset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svgLib/index.html">svgLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../t1Lib.html">t1Lib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ttLib/index.html">ttLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ttx.html">ttx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ufoLib/index.html">ufoLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unicode.html">unicode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unicodedata/index.html">unicodedata</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">varLib</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="builder.html">builder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cff.html">cff</a></li>
+<li class="toctree-l2"><a class="reference internal" href="errors.html">errors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="featureVars.html">featureVars</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instancer.html">instancer</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">interpolatable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interpolate_layout.html">interpolate_layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iup.html">iup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="merger.html">merger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.html">models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mutator.html">mutator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mvar.html">mvar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plot.html">plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="varStore.html">varStore</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../voltLib.html">voltLib</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">fontTools</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">varLib</a> &raquo;</li>
+        
+      <li>interpolatable</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/varLib/interpolatable.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-fontTools.varLib.interpolatable">
+<span id="interpolatable"></span><h1>interpolatable<a class="headerlink" href="#module-fontTools.varLib.interpolatable" title="Permalink to this headline">¶</a></h1>
+<p>Tool to find wrong contour order between different masters, and
+other interpolatability (or lack thereof) issues.</p>
+<p>Call as:
+$ fonttools varLib.interpolatable font1 font2 …</p>
+<dl class="py class">
+<dt id="fontTools.varLib.interpolatable.PerContourOrComponentPen">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.varLib.interpolatable.</code><code class="sig-name descname">PerContourOrComponentPen</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">Pen</span></em>, <em class="sig-param"><span class="n">glyphset</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/varLib/interpolatable.html#PerContourOrComponentPen"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.interpolatable.PerContourOrComponentPen" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.varLib.interpolatable.PerContourOrComponentPen.addComponent">
+<code class="sig-name descname">addComponent</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">glyphName</span></em>, <em class="sig-param"><span class="n">transformation</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/varLib/interpolatable.html#PerContourOrComponentPen.addComponent"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.interpolatable.PerContourOrComponentPen.addComponent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Transform the points of the base glyph and draw it onto self.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.interpolatable.PerContourOrComponentPen.closePath">
+<code class="sig-name descname">closePath</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.interpolatable.PerContourOrComponentPen.closePath" title="Permalink to this definition">¶</a></dt>
+<dd><p>Close the current sub path. You must call either pen.closePath()
+or pen.endPath() after each sub path.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.interpolatable.PerContourOrComponentPen.curveTo">
+<code class="sig-name descname">curveTo</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">points</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.interpolatable.PerContourOrComponentPen.curveTo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draw a cubic bezier with an arbitrary number of control points.</p>
+<p>The last point specified is on-curve, all others are off-curve
+(control) points. If the number of control points is &gt; 2, the
+segment is split into multiple bezier segments. This works
+like this:</p>
+<p>Let n be the number of control points (which is the number of
+arguments to this call minus 1). If n==2, a plain vanilla cubic
+bezier is drawn. If n==1, we fall back to a quadratic segment and
+if n==0 we draw a straight line. It gets interesting when n&gt;2:
+n-1 PostScript-style cubic segments will be drawn as if it were
+one curve. See decomposeSuperBezierSegment().</p>
+<p>The conversion algorithm used for n&gt;2 is inspired by NURB
+splines, and is conceptually equivalent to the TrueType “implied
+points” principle. See also decomposeQuadraticSegment().</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.interpolatable.PerContourOrComponentPen.endPath">
+<code class="sig-name descname">endPath</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.interpolatable.PerContourOrComponentPen.endPath" title="Permalink to this definition">¶</a></dt>
+<dd><p>End the current sub path, but don’t close it. You must call
+either pen.closePath() or pen.endPath() after each sub path.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.interpolatable.PerContourOrComponentPen.lineTo">
+<code class="sig-name descname">lineTo</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.interpolatable.PerContourOrComponentPen.lineTo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draw a straight line from the current point to ‘pt’.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.interpolatable.PerContourOrComponentPen.log">
+<em class="property">property </em><code class="sig-name descname">log</code><a class="headerlink" href="#fontTools.varLib.interpolatable.PerContourOrComponentPen.log" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.interpolatable.PerContourOrComponentPen.moveTo">
+<code class="sig-name descname">moveTo</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.interpolatable.PerContourOrComponentPen.moveTo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Begin a new sub path, set the current point to ‘pt’. You must
+end each sub path with a call to pen.closePath() or pen.endPath().</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.interpolatable.PerContourOrComponentPen.qCurveTo">
+<code class="sig-name descname">qCurveTo</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">points</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.interpolatable.PerContourOrComponentPen.qCurveTo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draw a whole string of quadratic curve segments.</p>
+<p>The last point specified is on-curve, all others are off-curve
+points.</p>
+<p>This method implements TrueType-style curves, breaking up curves
+using ‘implied points’: between each two consequtive off-curve points,
+there is one implied point exactly in the middle between them. See
+also decomposeQuadraticSegment().</p>
+<p>The last argument (normally the on-curve point) may be None.
+This is to support contours that have NO on-curve points (a rarely
+seen feature of TrueType outlines).</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.varLib.interpolatable.PerContourOrComponentPen.skipMissingComponents">
+<code class="sig-name descname">skipMissingComponents</code><em class="property"> = True</em><a class="headerlink" href="#fontTools.varLib.interpolatable.PerContourOrComponentPen.skipMissingComponents" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.varLib.interpolatable.PerContourPen">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.varLib.interpolatable.</code><code class="sig-name descname">PerContourPen</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">Pen</span></em>, <em class="sig-param"><span class="n">glyphset</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/varLib/interpolatable.html#PerContourPen"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.interpolatable.PerContourPen" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.varLib.interpolatable.PerContourPen.addComponent">
+<code class="sig-name descname">addComponent</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">glyphName</span></em>, <em class="sig-param"><span class="n">transformation</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.interpolatable.PerContourPen.addComponent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Transform the points of the base glyph and draw it onto self.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.interpolatable.PerContourPen.closePath">
+<code class="sig-name descname">closePath</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.interpolatable.PerContourPen.closePath" title="Permalink to this definition">¶</a></dt>
+<dd><p>Close the current sub path. You must call either pen.closePath()
+or pen.endPath() after each sub path.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.interpolatable.PerContourPen.curveTo">
+<code class="sig-name descname">curveTo</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">points</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.interpolatable.PerContourPen.curveTo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draw a cubic bezier with an arbitrary number of control points.</p>
+<p>The last point specified is on-curve, all others are off-curve
+(control) points. If the number of control points is &gt; 2, the
+segment is split into multiple bezier segments. This works
+like this:</p>
+<p>Let n be the number of control points (which is the number of
+arguments to this call minus 1). If n==2, a plain vanilla cubic
+bezier is drawn. If n==1, we fall back to a quadratic segment and
+if n==0 we draw a straight line. It gets interesting when n&gt;2:
+n-1 PostScript-style cubic segments will be drawn as if it were
+one curve. See decomposeSuperBezierSegment().</p>
+<p>The conversion algorithm used for n&gt;2 is inspired by NURB
+splines, and is conceptually equivalent to the TrueType “implied
+points” principle. See also decomposeQuadraticSegment().</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.interpolatable.PerContourPen.endPath">
+<code class="sig-name descname">endPath</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.interpolatable.PerContourPen.endPath" title="Permalink to this definition">¶</a></dt>
+<dd><p>End the current sub path, but don’t close it. You must call
+either pen.closePath() or pen.endPath() after each sub path.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.interpolatable.PerContourPen.lineTo">
+<code class="sig-name descname">lineTo</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.interpolatable.PerContourPen.lineTo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draw a straight line from the current point to ‘pt’.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.interpolatable.PerContourPen.log">
+<em class="property">property </em><code class="sig-name descname">log</code><a class="headerlink" href="#fontTools.varLib.interpolatable.PerContourPen.log" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.interpolatable.PerContourPen.moveTo">
+<code class="sig-name descname">moveTo</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.interpolatable.PerContourPen.moveTo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Begin a new sub path, set the current point to ‘pt’. You must
+end each sub path with a call to pen.closePath() or pen.endPath().</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.interpolatable.PerContourPen.qCurveTo">
+<code class="sig-name descname">qCurveTo</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">points</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.interpolatable.PerContourPen.qCurveTo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draw a whole string of quadratic curve segments.</p>
+<p>The last point specified is on-curve, all others are off-curve
+points.</p>
+<p>This method implements TrueType-style curves, breaking up curves
+using ‘implied points’: between each two consequtive off-curve points,
+there is one implied point exactly in the middle between them. See
+also decomposeQuadraticSegment().</p>
+<p>The last argument (normally the on-curve point) may be None.
+This is to support contours that have NO on-curve points (a rarely
+seen feature of TrueType outlines).</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.varLib.interpolatable.PerContourPen.skipMissingComponents">
+<code class="sig-name descname">skipMissingComponents</code><em class="property"> = True</em><a class="headerlink" href="#fontTools.varLib.interpolatable.PerContourPen.skipMissingComponents" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.varLib.interpolatable.main">
+<code class="sig-prename descclassname">fontTools.varLib.interpolatable.</code><code class="sig-name descname">main</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">args</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/varLib/interpolatable.html#main"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.interpolatable.main" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.varLib.interpolatable.min_cost_perfect_bipartite_matching">
+<code class="sig-prename descclassname">fontTools.varLib.interpolatable.</code><code class="sig-name descname">min_cost_perfect_bipartite_matching</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">G</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/varLib/interpolatable.html#min_cost_perfect_bipartite_matching"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.interpolatable.min_cost_perfect_bipartite_matching" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.varLib.interpolatable.test">
+<code class="sig-prename descclassname">fontTools.varLib.interpolatable.</code><code class="sig-name descname">test</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">glyphsets</span></em>, <em class="sig-param"><span class="n">glyphs</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">names</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/varLib/interpolatable.html#test"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.interpolatable.test" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="interpolate_layout.html" class="btn btn-neutral float-right" title="interpolate_layout" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="instancer.html" class="btn btn-neutral float-left" title="instancer" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Just van Rossum, Behdad Esfahbod, and the fontTools Authors. CC BY-SA 4.0
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

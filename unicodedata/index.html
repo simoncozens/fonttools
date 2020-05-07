@@ -1,0 +1,415 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>unicodedata &mdash; fontTools Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Blocks" href="Blocks.html" />
+    <link rel="prev" title="unicode" href="../unicode.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> fontTools
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Library</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../afmLib.html">afmLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../agl.html">agl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cffLib/index.html">cffLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../colorLib/index.html">colorLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cu2qu/index.html">cu2qu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../designspaceLib/index.html">designspaceLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../encodings/index.html">encodings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../feaLib/index.html">feaLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../merge.html">merge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/index.html">misc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mtiLib.html">mtiLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../otlLib/index.html">otlLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pens/index.html">pens</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../subset/index.html">subset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svgLib/index.html">svgLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../t1Lib.html">t1Lib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ttLib/index.html">ttLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ttx.html">ttx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ufoLib/index.html">ufoLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unicode.html">unicode</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">unicodedata</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Blocks.html">Blocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OTTags.html">OTTags</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ScriptExtensions.html">ScriptExtensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Scripts.html">Scripts</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../varLib/index.html">varLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../voltLib.html">voltLib</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">fontTools</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>unicodedata</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/unicodedata/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="unicodedata">
+<h1>unicodedata<a class="headerlink" href="#unicodedata" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Blocks.html">Blocks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OTTags.html">OTTags</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ScriptExtensions.html">ScriptExtensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Scripts.html">Scripts</a></li>
+</ul>
+</div>
+<span class="target" id="module-fontTools.unicodedata"></span><dl class="py function">
+<dt id="fontTools.unicodedata.lookup">
+<code class="sig-prename descclassname">fontTools.unicodedata.</code><code class="sig-name descname">lookup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.unicodedata.lookup" title="Permalink to this definition">¶</a></dt>
+<dd><p>Look up character by name.</p>
+<p>If a character with the given name is found, return the
+corresponding character.  If not found, KeyError is raised.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.unicodedata.name">
+<code class="sig-prename descclassname">fontTools.unicodedata.</code><code class="sig-name descname">name</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.unicodedata.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the name assigned to the character chr as a string.</p>
+<p>If no name is defined, default is returned, or, if not given,
+ValueError is raised.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.unicodedata.decimal">
+<code class="sig-prename descclassname">fontTools.unicodedata.</code><code class="sig-name descname">decimal</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.unicodedata.decimal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts a Unicode character into its equivalent decimal value.</p>
+<p>Returns the decimal value assigned to the character chr as integer.
+If no such value is defined, default is returned, or, if not given,
+ValueError is raised.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.unicodedata.digit">
+<code class="sig-prename descclassname">fontTools.unicodedata.</code><code class="sig-name descname">digit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.unicodedata.digit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts a Unicode character into its equivalent digit value.</p>
+<p>Returns the digit value assigned to the character chr as integer.
+If no such value is defined, default is returned, or, if not given,
+ValueError is raised.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.unicodedata.numeric">
+<code class="sig-prename descclassname">fontTools.unicodedata.</code><code class="sig-name descname">numeric</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.unicodedata.numeric" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts a Unicode character into its equivalent numeric value.</p>
+<p>Returns the numeric value assigned to the character chr as float.
+If no such value is defined, default is returned, or, if not given,
+ValueError is raised.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.unicodedata.category">
+<code class="sig-prename descclassname">fontTools.unicodedata.</code><code class="sig-name descname">category</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.unicodedata.category" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the general category assigned to the character chr as string.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.unicodedata.bidirectional">
+<code class="sig-prename descclassname">fontTools.unicodedata.</code><code class="sig-name descname">bidirectional</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.unicodedata.bidirectional" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the bidirectional class assigned to the character chr as string.</p>
+<p>If no such value is defined, an empty string is returned.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.unicodedata.combining">
+<code class="sig-prename descclassname">fontTools.unicodedata.</code><code class="sig-name descname">combining</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.unicodedata.combining" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the canonical combining class assigned to the character chr as integer.</p>
+<p>Returns 0 if no combining class is defined.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.unicodedata.east_asian_width">
+<code class="sig-prename descclassname">fontTools.unicodedata.</code><code class="sig-name descname">east_asian_width</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.unicodedata.east_asian_width" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the east asian width assigned to the character chr as string.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.unicodedata.mirrored">
+<code class="sig-prename descclassname">fontTools.unicodedata.</code><code class="sig-name descname">mirrored</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.unicodedata.mirrored" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the mirrored property assigned to the character chr as integer.</p>
+<p>Returns 1 if the character has been identified as a “mirrored”
+character in bidirectional text, 0 otherwise.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.unicodedata.decomposition">
+<code class="sig-prename descclassname">fontTools.unicodedata.</code><code class="sig-name descname">decomposition</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.unicodedata.decomposition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the character decomposition mapping assigned to the character chr as string.</p>
+<p>An empty string is returned in case no such mapping is defined.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.unicodedata.normalize">
+<code class="sig-prename descclassname">fontTools.unicodedata.</code><code class="sig-name descname">normalize</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.unicodedata.normalize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the normal form ‘form’ for the Unicode string unistr.</p>
+<p>Valid values for form are ‘NFC’, ‘NFKC’, ‘NFD’, and ‘NFKD’.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.unicodedata.block">
+<code class="sig-prename descclassname">fontTools.unicodedata.</code><code class="sig-name descname">block</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">char</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/unicodedata.html#block"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.unicodedata.block" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the block property assigned to the Unicode character ‘char’
+as a string.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">block</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">)</span>
+<span class="go">&#39;Basic Latin&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">block</span><span class="p">(</span><span class="n">unichr</span><span class="p">(</span><span class="mh">0x060C</span><span class="p">))</span>
+<span class="go">&#39;Arabic&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">block</span><span class="p">(</span><span class="n">unichr</span><span class="p">(</span><span class="mh">0xEFFFF</span><span class="p">))</span>
+<span class="go">&#39;No_Block&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.unicodedata.script">
+<code class="sig-prename descclassname">fontTools.unicodedata.</code><code class="sig-name descname">script</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">char</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/unicodedata.html#script"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.unicodedata.script" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the four-letter script code assigned to the Unicode character
+‘char’ as string.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">script</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">)</span>
+<span class="go">&#39;Latn&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">script</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
+<span class="go">&#39;Zyyy&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">script</span><span class="p">(</span><span class="n">unichr</span><span class="p">(</span><span class="mh">0x10FFFF</span><span class="p">))</span>
+<span class="go">&#39;Zzzz&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.unicodedata.script_extension">
+<code class="sig-prename descclassname">fontTools.unicodedata.</code><code class="sig-name descname">script_extension</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">char</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/unicodedata.html#script_extension"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.unicodedata.script_extension" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the script extension property assigned to the Unicode character
+‘char’ as a set of string.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">script_extension</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="p">{</span><span class="s1">&#39;Latn&#39;</span><span class="p">}</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">script_extension</span><span class="p">(</span><span class="n">unichr</span><span class="p">(</span><span class="mh">0x060C</span><span class="p">))</span> <span class="o">==</span> <span class="p">{</span><span class="s1">&#39;Rohg&#39;</span><span class="p">,</span> <span class="s1">&#39;Syrc&#39;</span><span class="p">,</span> <span class="s1">&#39;Yezi&#39;</span><span class="p">,</span> <span class="s1">&#39;Arab&#39;</span><span class="p">,</span> <span class="s1">&#39;Thaa&#39;</span><span class="p">}</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">script_extension</span><span class="p">(</span><span class="n">unichr</span><span class="p">(</span><span class="mh">0x10FFFF</span><span class="p">))</span> <span class="o">==</span> <span class="p">{</span><span class="s1">&#39;Zzzz&#39;</span><span class="p">}</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.unicodedata.script_name">
+<code class="sig-prename descclassname">fontTools.unicodedata.</code><code class="sig-name descname">script_name</code><span class="sig-paren">(</span><em class="sig-param">code</em>, <em class="sig-param">default=&lt;class 'KeyError'&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/unicodedata.html#script_name"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.unicodedata.script_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the long, human-readable script name given a four-letter
+Unicode script code.</p>
+<p>If no matching name is found, a KeyError is raised by default.</p>
+<p>You can use the ‘default’ argument to return a fallback value (e.g.
+‘Unknown’ or None) instead of throwing an error.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.unicodedata.script_code">
+<code class="sig-prename descclassname">fontTools.unicodedata.</code><code class="sig-name descname">script_code</code><span class="sig-paren">(</span><em class="sig-param">script_name</em>, <em class="sig-param">default=&lt;class 'KeyError'&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/unicodedata.html#script_code"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.unicodedata.script_code" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the four-letter Unicode script code from its long name</p>
+<p>If no matching script code is found, a KeyError is raised by default.</p>
+<p>You can use the ‘default’ argument to return a fallback string (e.g.
+‘Zzzz’ or None) instead of throwing an error.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.unicodedata.script_horizontal_direction">
+<code class="sig-prename descclassname">fontTools.unicodedata.</code><code class="sig-name descname">script_horizontal_direction</code><span class="sig-paren">(</span><em class="sig-param">script_code</em>, <em class="sig-param">default=&lt;class 'KeyError'&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/unicodedata.html#script_horizontal_direction"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.unicodedata.script_horizontal_direction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return “RTL” for scripts that contain right-to-left characters
+according to the Bidi_Class property. Otherwise return “LTR”.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.unicodedata.ot_tags_from_script">
+<code class="sig-prename descclassname">fontTools.unicodedata.</code><code class="sig-name descname">ot_tags_from_script</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">script_code</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/unicodedata.html#ot_tags_from_script"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.unicodedata.ot_tags_from_script" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a list of OpenType script tags associated with a given
+Unicode script code.
+Return [‘DFLT’] script tag for invalid/unknown script codes.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.unicodedata.ot_tag_to_script">
+<code class="sig-prename descclassname">fontTools.unicodedata.</code><code class="sig-name descname">ot_tag_to_script</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/unicodedata.html#ot_tag_to_script"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.unicodedata.ot_tag_to_script" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the Unicode script code for the given OpenType script tag, or
+None for “DFLT” tag or if there is no Unicode script associated with it.
+Raises ValueError if the tag is invalid.</p>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Blocks.html" class="btn btn-neutral float-right" title="Blocks" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../unicode.html" class="btn btn-neutral float-left" title="unicode" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Just van Rossum, Behdad Esfahbod, and the fontTools Authors. CC BY-SA 4.0
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

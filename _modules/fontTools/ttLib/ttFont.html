@@ -1,0 +1,1224 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>fontTools.ttLib.ttFont &mdash; fontTools Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> fontTools
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Library</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../afmLib.html">afmLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../agl.html">agl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cffLib/index.html">cffLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../colorLib/index.html">colorLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cu2qu/index.html">cu2qu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../designspaceLib/index.html">designspaceLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../encodings/index.html">encodings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../feaLib/index.html">feaLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../merge.html">merge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../misc/index.html">misc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../mtiLib.html">mtiLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../otlLib/index.html">otlLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pens/index.html">pens</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../subset/index.html">subset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../svgLib/index.html">svgLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../t1Lib.html">t1Lib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ttLib/index.html">ttLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ttx.html">ttx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ufoLib/index.html">ufoLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../unicode.html">unicode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../unicodedata/index.html">unicodedata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../varLib/index.html">varLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../voltLib.html">voltLib</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">fontTools</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../ttLib.html">fontTools.ttLib</a> &raquo;</li>
+        
+      <li>fontTools.ttLib.ttFont</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for fontTools.ttLib.ttFont</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">fontTools.misc</span> <span class="k">import</span> <span class="n">xmlWriter</span>
+<span class="kn">from</span> <span class="nn">fontTools.misc.py23</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">fontTools.misc.loggingTools</span> <span class="k">import</span> <span class="n">deprecateArgument</span>
+<span class="kn">from</span> <span class="nn">fontTools.ttLib</span> <span class="k">import</span> <span class="n">TTLibError</span>
+<span class="kn">from</span> <span class="nn">fontTools.ttLib.sfnt</span> <span class="k">import</span> <span class="n">SFNTReader</span><span class="p">,</span> <span class="n">SFNTWriter</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">import</span> <span class="nn">itertools</span>
+
+<span class="n">log</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+<div class="viewcode-block" id="TTFont"><a class="viewcode-back" href="../../../ttLib/ttFont.html#fontTools.ttLib.ttFont.TTFont">[docs]</a><span class="k">class</span> <span class="nc">TTFont</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+	<span class="sd">&quot;&quot;&quot;The main font object. It manages file input and output, and offers</span>
+<span class="sd">	a convenient way of accessing tables.</span>
+<span class="sd">	Tables will be only decompiled when necessary, ie. when they&#39;re actually</span>
+<span class="sd">	accessed. This means that simple operations can be extremely fast.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">res_name_or_index</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+			<span class="n">sfntVersion</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\000\001\000\000</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">flavor</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">checkChecksums</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+			<span class="n">verbose</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">recalcBBoxes</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">allowVID</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">ignoreDecompileErrors</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+			<span class="n">recalcTimestamp</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">fontNumber</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">lazy</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">quiet</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+			<span class="n">_tableCache</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+
+		<span class="sd">&quot;&quot;&quot;The constructor can be called with a few different arguments.</span>
+<span class="sd">		When reading a font from disk, &#39;file&#39; should be either a pathname</span>
+<span class="sd">		pointing to a file, or a readable file object.</span>
+
+<span class="sd">		It we&#39;re running on a Macintosh, &#39;res_name_or_index&#39; maybe an sfnt</span>
+<span class="sd">		resource name or an sfnt resource index number or zero. The latter</span>
+<span class="sd">		case will cause TTLib to autodetect whether the file is a flat file</span>
+<span class="sd">		or a suitcase. (If it&#39;s a suitcase, only the first &#39;sfnt&#39; resource</span>
+<span class="sd">		will be read!)</span>
+
+<span class="sd">		The &#39;checkChecksums&#39; argument is used to specify how sfnt</span>
+<span class="sd">		checksums are treated upon reading a file from disk:</span>
+<span class="sd">			0: don&#39;t check (default)</span>
+<span class="sd">			1: check, print warnings if a wrong checksum is found</span>
+<span class="sd">			2: check, raise an exception if a wrong checksum is found.</span>
+
+<span class="sd">		The TTFont constructor can also be called without a &#39;file&#39;</span>
+<span class="sd">		argument: this is the way to create a new empty font.</span>
+<span class="sd">		In this case you can optionally supply the &#39;sfntVersion&#39; argument,</span>
+<span class="sd">		and a &#39;flavor&#39; which can be None, &#39;woff&#39;, or &#39;woff2&#39;.</span>
+
+<span class="sd">		If the recalcBBoxes argument is false, a number of things will *not*</span>
+<span class="sd">		be recalculated upon save/compile:</span>
+<span class="sd">			1) &#39;glyf&#39; glyph bounding boxes</span>
+<span class="sd">			2) &#39;CFF &#39; font bounding box</span>
+<span class="sd">			3) &#39;head&#39; font bounding box</span>
+<span class="sd">			4) &#39;hhea&#39; min/max values</span>
+<span class="sd">			5) &#39;vhea&#39; min/max values</span>
+<span class="sd">		(1) is needed for certain kinds of CJK fonts (ask Werner Lemberg ;-).</span>
+<span class="sd">		Additionally, upon importing an TTX file, this option cause glyphs</span>
+<span class="sd">		to be compiled right away. This should reduce memory consumption</span>
+<span class="sd">		greatly, and therefore should have some impact on the time needed</span>
+<span class="sd">		to parse/compile large fonts.</span>
+
+<span class="sd">		If the recalcTimestamp argument is false, the modified timestamp in the</span>
+<span class="sd">		&#39;head&#39; table will *not* be recalculated upon save/compile.</span>
+
+<span class="sd">		If the allowVID argument is set to true, then virtual GID&#39;s are</span>
+<span class="sd">		supported. Asking for a glyph ID with a glyph name or GID that is not in</span>
+<span class="sd">		the font will return a virtual GID.   This is valid for GSUB and cmap</span>
+<span class="sd">		tables. For SING glyphlets, the cmap table is used to specify Unicode</span>
+<span class="sd">		values for virtual GI&#39;s used in GSUB/GPOS rules. If the gid N is requested</span>
+<span class="sd">		and does not exist in the font, or the glyphname has the form glyphN</span>
+<span class="sd">		and does not exist in the font, then N is used as the virtual GID.</span>
+<span class="sd">		Else, the first virtual GID is assigned as 0x1000 -1; for subsequent new</span>
+<span class="sd">		virtual GIDs, the next is one less than the previous.</span>
+
+<span class="sd">		If ignoreDecompileErrors is set to True, exceptions raised in</span>
+<span class="sd">		individual tables during decompilation will be ignored, falling</span>
+<span class="sd">		back to the DefaultTable implementation, which simply keeps the</span>
+<span class="sd">		binary data.</span>
+
+<span class="sd">		If lazy is set to True, many data structures are loaded lazily, upon</span>
+<span class="sd">		access only.  If it is set to False, many data structures are loaded</span>
+<span class="sd">		immediately.  The default is lazy=None which is somewhere in between.</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+
+		<span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;verbose&quot;</span><span class="p">,</span> <span class="s2">&quot;quiet&quot;</span><span class="p">):</span>
+			<span class="n">val</span> <span class="o">=</span> <span class="nb">locals</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+			<span class="k">if</span> <span class="n">val</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+				<span class="n">deprecateArgument</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="s2">&quot;configure logging instead&quot;</span><span class="p">)</span>
+			<span class="nb">setattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">val</span><span class="p">)</span>
+
+		<span class="bp">self</span><span class="o">.</span><span class="n">lazy</span> <span class="o">=</span> <span class="n">lazy</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">recalcBBoxes</span> <span class="o">=</span> <span class="n">recalcBBoxes</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">recalcTimestamp</span> <span class="o">=</span> <span class="n">recalcTimestamp</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">tables</span> <span class="o">=</span> <span class="p">{}</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">reader</span> <span class="o">=</span> <span class="kc">None</span>
+
+		<span class="c1"># Permit the user to reference glyphs that are not int the font.</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">last_vid</span> <span class="o">=</span> <span class="mh">0xFFFE</span> <span class="c1"># Can&#39;t make it be 0xFFFF, as the world is full unsigned short integer counters that get incremented after the last seen GID value.</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">reverseVIDDict</span> <span class="o">=</span> <span class="p">{}</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">VIDDict</span> <span class="o">=</span> <span class="p">{}</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">allowVID</span> <span class="o">=</span> <span class="n">allowVID</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">ignoreDecompileErrors</span> <span class="o">=</span> <span class="n">ignoreDecompileErrors</span>
+
+		<span class="k">if</span> <span class="ow">not</span> <span class="n">file</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">sfntVersion</span> <span class="o">=</span> <span class="n">sfntVersion</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">flavor</span> <span class="o">=</span> <span class="n">flavor</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">flavorData</span> <span class="o">=</span> <span class="kc">None</span>
+			<span class="k">return</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="s2">&quot;read&quot;</span><span class="p">):</span>
+			<span class="n">closeStream</span> <span class="o">=</span> <span class="kc">True</span>
+			<span class="c1"># assume file is a string</span>
+			<span class="k">if</span> <span class="n">res_name_or_index</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+				<span class="c1"># see if it contains &#39;sfnt&#39; resources in the resource or data fork</span>
+				<span class="kn">from</span> <span class="nn">.</span> <span class="k">import</span> <span class="n">macUtils</span>
+				<span class="k">if</span> <span class="n">res_name_or_index</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+					<span class="k">if</span> <span class="n">macUtils</span><span class="o">.</span><span class="n">getSFNTResIndices</span><span class="p">(</span><span class="n">file</span><span class="p">):</span>
+						<span class="c1"># get the first available sfnt font.</span>
+						<span class="n">file</span> <span class="o">=</span> <span class="n">macUtils</span><span class="o">.</span><span class="n">SFNTResourceReader</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+					<span class="k">else</span><span class="p">:</span>
+						<span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span>
+				<span class="k">else</span><span class="p">:</span>
+					<span class="n">file</span> <span class="o">=</span> <span class="n">macUtils</span><span class="o">.</span><span class="n">SFNTResourceReader</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">res_name_or_index</span><span class="p">)</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="c1"># assume &quot;file&quot; is a readable file object</span>
+			<span class="n">closeStream</span> <span class="o">=</span> <span class="kc">False</span>
+			<span class="n">file</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+		<span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">lazy</span><span class="p">:</span>
+			<span class="c1"># read input file in memory and wrap a stream around it to allow overwriting</span>
+			<span class="n">file</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+			<span class="n">tmp</span> <span class="o">=</span> <span class="n">BytesIO</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+			<span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">):</span>
+				<span class="c1"># save reference to input file name</span>
+				<span class="n">tmp</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">name</span>
+			<span class="k">if</span> <span class="n">closeStream</span><span class="p">:</span>
+				<span class="n">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+			<span class="n">file</span> <span class="o">=</span> <span class="n">tmp</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_tableCache</span> <span class="o">=</span> <span class="n">_tableCache</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">reader</span> <span class="o">=</span> <span class="n">SFNTReader</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">checkChecksums</span><span class="p">,</span> <span class="n">fontNumber</span><span class="o">=</span><span class="n">fontNumber</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">sfntVersion</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">reader</span><span class="o">.</span><span class="n">sfntVersion</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">flavor</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">reader</span><span class="o">.</span><span class="n">flavor</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">flavorData</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">reader</span><span class="o">.</span><span class="n">flavorData</span>
+
+	<span class="k">def</span> <span class="nf">__enter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span>
+
+	<span class="k">def</span> <span class="nf">__exit__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">traceback</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<div class="viewcode-block" id="TTFont.close"><a class="viewcode-back" href="../../../ttLib/ttFont.html#fontTools.ttLib.ttFont.TTFont.close">[docs]</a>	<span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;If we still have a reader object, close it.&quot;&quot;&quot;</span>
+		<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">reader</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">reader</span><span class="o">.</span><span class="n">close</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="TTFont.save"><a class="viewcode-back" href="../../../ttLib/ttFont.html#fontTools.ttLib.ttFont.TTFont.save">[docs]</a>	<span class="k">def</span> <span class="nf">save</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">reorderTables</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Save the font to disk. Similarly to the constructor,</span>
+<span class="sd">		the &#39;file&#39; argument can be either a pathname or a writable</span>
+<span class="sd">		file object.</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="s2">&quot;write&quot;</span><span class="p">):</span>
+			<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">lazy</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">reader</span><span class="o">.</span><span class="n">file</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="n">file</span><span class="p">:</span>
+				<span class="k">raise</span> <span class="n">TTLibError</span><span class="p">(</span>
+					<span class="s2">&quot;Can&#39;t overwrite TTFont when &#39;lazy&#39; attribute is True&quot;</span><span class="p">)</span>
+			<span class="n">closeStream</span> <span class="o">=</span> <span class="kc">True</span>
+			<span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="c1"># assume &quot;file&quot; is a writable file object</span>
+			<span class="n">closeStream</span> <span class="o">=</span> <span class="kc">False</span>
+
+		<span class="n">tmp</span> <span class="o">=</span> <span class="n">BytesIO</span><span class="p">()</span>
+
+		<span class="n">writer_reordersTables</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_save</span><span class="p">(</span><span class="n">tmp</span><span class="p">)</span>
+
+		<span class="k">if</span> <span class="p">(</span><span class="n">reorderTables</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">writer_reordersTables</span> <span class="ow">or</span>
+				<span class="p">(</span><span class="n">reorderTables</span> <span class="ow">is</span> <span class="kc">False</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">reader</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">)):</span>
+			<span class="c1"># don&#39;t reorder tables and save as is</span>
+			<span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">tmp</span><span class="o">.</span><span class="n">getvalue</span><span class="p">())</span>
+			<span class="n">tmp</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="k">if</span> <span class="n">reorderTables</span> <span class="ow">is</span> <span class="kc">False</span><span class="p">:</span>
+				<span class="c1"># sort tables using the original font&#39;s order</span>
+				<span class="n">tableOrder</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">reader</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="c1"># use the recommended order from the OpenType specification</span>
+				<span class="n">tableOrder</span> <span class="o">=</span> <span class="kc">None</span>
+			<span class="n">tmp</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
+			<span class="n">tmp2</span> <span class="o">=</span> <span class="n">BytesIO</span><span class="p">()</span>
+			<span class="n">reorderFontTables</span><span class="p">(</span><span class="n">tmp</span><span class="p">,</span> <span class="n">tmp2</span><span class="p">,</span> <span class="n">tableOrder</span><span class="p">)</span>
+			<span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">tmp2</span><span class="o">.</span><span class="n">getvalue</span><span class="p">())</span>
+			<span class="n">tmp</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+			<span class="n">tmp2</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+		<span class="k">if</span> <span class="n">closeStream</span><span class="p">:</span>
+			<span class="n">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span></div>
+
+	<span class="k">def</span> <span class="nf">_save</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">tableCache</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Internal function, to be shared by save() and TTCollection.save()&quot;&quot;&quot;</span>
+
+		<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">recalcTimestamp</span> <span class="ow">and</span> <span class="s1">&#39;head&#39;</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
+			<span class="bp">self</span><span class="p">[</span><span class="s1">&#39;head&#39;</span><span class="p">]</span>  <span class="c1"># make sure &#39;head&#39; is loaded so the recalculation is actually done</span>
+
+		<span class="n">tags</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+		<span class="k">if</span> <span class="s2">&quot;GlyphOrder&quot;</span> <span class="ow">in</span> <span class="n">tags</span><span class="p">:</span>
+			<span class="n">tags</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s2">&quot;GlyphOrder&quot;</span><span class="p">)</span>
+		<span class="n">numTables</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">tags</span><span class="p">)</span>
+		<span class="c1"># write to a temporary stream to allow saving to unseekable streams</span>
+		<span class="n">writer</span> <span class="o">=</span> <span class="n">SFNTWriter</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">numTables</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">sfntVersion</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">flavor</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">flavorData</span><span class="p">)</span>
+
+		<span class="n">done</span> <span class="o">=</span> <span class="p">[]</span>
+		<span class="k">for</span> <span class="n">tag</span> <span class="ow">in</span> <span class="n">tags</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_writeTable</span><span class="p">(</span><span class="n">tag</span><span class="p">,</span> <span class="n">writer</span><span class="p">,</span> <span class="n">done</span><span class="p">,</span> <span class="n">tableCache</span><span class="p">)</span>
+
+		<span class="n">writer</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+		<span class="k">return</span> <span class="n">writer</span><span class="o">.</span><span class="n">reordersTables</span><span class="p">()</span>
+
+<div class="viewcode-block" id="TTFont.saveXML"><a class="viewcode-back" href="../../../ttLib/ttFont.html#fontTools.ttLib.ttFont.TTFont.saveXML">[docs]</a>	<span class="k">def</span> <span class="nf">saveXML</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fileOrPath</span><span class="p">,</span> <span class="n">newlinestr</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Export the font as TTX (an XML-based text file), or as a series of text</span>
+<span class="sd">		files when splitTables is true. In the latter case, the &#39;fileOrPath&#39;</span>
+<span class="sd">		argument should be a path to a directory.</span>
+<span class="sd">		The &#39;tables&#39; argument must either be false (dump all tables) or a</span>
+<span class="sd">		list of tables to dump. The &#39;skipTables&#39; argument may be a list of tables</span>
+<span class="sd">		to skip, but only when the &#39;tables&#39; argument is false.</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+
+		<span class="n">writer</span> <span class="o">=</span> <span class="n">xmlWriter</span><span class="o">.</span><span class="n">XMLWriter</span><span class="p">(</span><span class="n">fileOrPath</span><span class="p">,</span> <span class="n">newlinestr</span><span class="o">=</span><span class="n">newlinestr</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_saveXML</span><span class="p">(</span><span class="n">writer</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+		<span class="n">writer</span><span class="o">.</span><span class="n">close</span><span class="p">()</span></div>
+
+	<span class="k">def</span> <span class="nf">_saveXML</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">writer</span><span class="p">,</span>
+		     <span class="n">writeVersion</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+		     <span class="n">quiet</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">tables</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">skipTables</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">splitTables</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+		     <span class="n">splitGlyphs</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">disassembleInstructions</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+		     <span class="n">bitmapGlyphDataFormat</span><span class="o">=</span><span class="s1">&#39;raw&#39;</span><span class="p">):</span>
+
+		<span class="k">if</span> <span class="n">quiet</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="n">deprecateArgument</span><span class="p">(</span><span class="s2">&quot;quiet&quot;</span><span class="p">,</span> <span class="s2">&quot;configure logging instead&quot;</span><span class="p">)</span>
+
+		<span class="bp">self</span><span class="o">.</span><span class="n">disassembleInstructions</span> <span class="o">=</span> <span class="n">disassembleInstructions</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">bitmapGlyphDataFormat</span> <span class="o">=</span> <span class="n">bitmapGlyphDataFormat</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="n">tables</span><span class="p">:</span>
+			<span class="n">tables</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+			<span class="k">if</span> <span class="s2">&quot;GlyphOrder&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">tables</span><span class="p">:</span>
+				<span class="n">tables</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;GlyphOrder&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="n">tables</span>
+			<span class="k">if</span> <span class="n">skipTables</span><span class="p">:</span>
+				<span class="k">for</span> <span class="n">tag</span> <span class="ow">in</span> <span class="n">skipTables</span><span class="p">:</span>
+					<span class="k">if</span> <span class="n">tag</span> <span class="ow">in</span> <span class="n">tables</span><span class="p">:</span>
+						<span class="n">tables</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">tag</span><span class="p">)</span>
+		<span class="n">numTables</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">tables</span><span class="p">)</span>
+
+		<span class="k">if</span> <span class="n">writeVersion</span><span class="p">:</span>
+			<span class="kn">from</span> <span class="nn">fontTools</span> <span class="k">import</span> <span class="n">version</span>
+			<span class="n">version</span> <span class="o">=</span> <span class="s2">&quot;.&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">version</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)[:</span><span class="mi">2</span><span class="p">])</span>
+			<span class="n">writer</span><span class="o">.</span><span class="n">begintag</span><span class="p">(</span><span class="s2">&quot;ttFont&quot;</span><span class="p">,</span> <span class="n">sfntVersion</span><span class="o">=</span><span class="nb">repr</span><span class="p">(</span><span class="n">tostr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">sfntVersion</span><span class="p">))[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span>
+					<span class="n">ttLibVersion</span><span class="o">=</span><span class="n">version</span><span class="p">)</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="n">writer</span><span class="o">.</span><span class="n">begintag</span><span class="p">(</span><span class="s2">&quot;ttFont&quot;</span><span class="p">,</span> <span class="n">sfntVersion</span><span class="o">=</span><span class="nb">repr</span><span class="p">(</span><span class="n">tostr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">sfntVersion</span><span class="p">))[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+		<span class="n">writer</span><span class="o">.</span><span class="n">newline</span><span class="p">()</span>
+
+		<span class="c1"># always splitTables if splitGlyphs is enabled</span>
+		<span class="n">splitTables</span> <span class="o">=</span> <span class="n">splitTables</span> <span class="ow">or</span> <span class="n">splitGlyphs</span>
+
+		<span class="k">if</span> <span class="ow">not</span> <span class="n">splitTables</span><span class="p">:</span>
+			<span class="n">writer</span><span class="o">.</span><span class="n">newline</span><span class="p">()</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="n">path</span><span class="p">,</span> <span class="n">ext</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">writer</span><span class="o">.</span><span class="n">filename</span><span class="p">)</span>
+			<span class="n">fileNameTemplate</span> <span class="o">=</span> <span class="n">path</span> <span class="o">+</span> <span class="s2">&quot;.</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="n">ext</span>
+
+		<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">numTables</span><span class="p">):</span>
+			<span class="n">tag</span> <span class="o">=</span> <span class="n">tables</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+			<span class="k">if</span> <span class="n">splitTables</span><span class="p">:</span>
+				<span class="n">tablePath</span> <span class="o">=</span> <span class="n">fileNameTemplate</span> <span class="o">%</span> <span class="n">tagToIdentifier</span><span class="p">(</span><span class="n">tag</span><span class="p">)</span>
+				<span class="n">tableWriter</span> <span class="o">=</span> <span class="n">xmlWriter</span><span class="o">.</span><span class="n">XMLWriter</span><span class="p">(</span><span class="n">tablePath</span><span class="p">,</span>
+						<span class="n">newlinestr</span><span class="o">=</span><span class="n">writer</span><span class="o">.</span><span class="n">newlinestr</span><span class="p">)</span>
+				<span class="n">tableWriter</span><span class="o">.</span><span class="n">begintag</span><span class="p">(</span><span class="s2">&quot;ttFont&quot;</span><span class="p">,</span> <span class="n">ttLibVersion</span><span class="o">=</span><span class="n">version</span><span class="p">)</span>
+				<span class="n">tableWriter</span><span class="o">.</span><span class="n">newline</span><span class="p">()</span>
+				<span class="n">tableWriter</span><span class="o">.</span><span class="n">newline</span><span class="p">()</span>
+				<span class="n">writer</span><span class="o">.</span><span class="n">simpletag</span><span class="p">(</span><span class="n">tagToXML</span><span class="p">(</span><span class="n">tag</span><span class="p">),</span> <span class="n">src</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">tablePath</span><span class="p">))</span>
+				<span class="n">writer</span><span class="o">.</span><span class="n">newline</span><span class="p">()</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="n">tableWriter</span> <span class="o">=</span> <span class="n">writer</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_tableToXML</span><span class="p">(</span><span class="n">tableWriter</span><span class="p">,</span> <span class="n">tag</span><span class="p">,</span> <span class="n">splitGlyphs</span><span class="o">=</span><span class="n">splitGlyphs</span><span class="p">)</span>
+			<span class="k">if</span> <span class="n">splitTables</span><span class="p">:</span>
+				<span class="n">tableWriter</span><span class="o">.</span><span class="n">endtag</span><span class="p">(</span><span class="s2">&quot;ttFont&quot;</span><span class="p">)</span>
+				<span class="n">tableWriter</span><span class="o">.</span><span class="n">newline</span><span class="p">()</span>
+				<span class="n">tableWriter</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+		<span class="n">writer</span><span class="o">.</span><span class="n">endtag</span><span class="p">(</span><span class="s2">&quot;ttFont&quot;</span><span class="p">)</span>
+		<span class="n">writer</span><span class="o">.</span><span class="n">newline</span><span class="p">()</span>
+
+	<span class="k">def</span> <span class="nf">_tableToXML</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">writer</span><span class="p">,</span> <span class="n">tag</span><span class="p">,</span> <span class="n">quiet</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">splitGlyphs</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+		<span class="k">if</span> <span class="n">quiet</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="n">deprecateArgument</span><span class="p">(</span><span class="s2">&quot;quiet&quot;</span><span class="p">,</span> <span class="s2">&quot;configure logging instead&quot;</span><span class="p">)</span>
+		<span class="k">if</span> <span class="n">tag</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
+			<span class="n">table</span> <span class="o">=</span> <span class="bp">self</span><span class="p">[</span><span class="n">tag</span><span class="p">]</span>
+			<span class="n">report</span> <span class="o">=</span> <span class="s2">&quot;Dumping &#39;</span><span class="si">%s</span><span class="s2">&#39; table...&quot;</span> <span class="o">%</span> <span class="n">tag</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="n">report</span> <span class="o">=</span> <span class="s2">&quot;No &#39;</span><span class="si">%s</span><span class="s2">&#39; table found.&quot;</span> <span class="o">%</span> <span class="n">tag</span>
+		<span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">report</span><span class="p">)</span>
+		<span class="k">if</span> <span class="n">tag</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
+			<span class="k">return</span>
+		<span class="n">xmlTag</span> <span class="o">=</span> <span class="n">tagToXML</span><span class="p">(</span><span class="n">tag</span><span class="p">)</span>
+		<span class="n">attrs</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+		<span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">table</span><span class="p">,</span> <span class="s2">&quot;ERROR&quot;</span><span class="p">):</span>
+			<span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;ERROR&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;decompilation error&quot;</span>
+		<span class="kn">from</span> <span class="nn">.tables.DefaultTable</span> <span class="k">import</span> <span class="n">DefaultTable</span>
+		<span class="k">if</span> <span class="n">table</span><span class="o">.</span><span class="vm">__class__</span> <span class="o">==</span> <span class="n">DefaultTable</span><span class="p">:</span>
+			<span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;raw&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+		<span class="n">writer</span><span class="o">.</span><span class="n">begintag</span><span class="p">(</span><span class="n">xmlTag</span><span class="p">,</span> <span class="o">**</span><span class="n">attrs</span><span class="p">)</span>
+		<span class="n">writer</span><span class="o">.</span><span class="n">newline</span><span class="p">()</span>
+		<span class="k">if</span> <span class="n">tag</span> <span class="o">==</span> <span class="s2">&quot;glyf&quot;</span><span class="p">:</span>
+			<span class="n">table</span><span class="o">.</span><span class="n">toXML</span><span class="p">(</span><span class="n">writer</span><span class="p">,</span> <span class="bp">self</span><span class="p">,</span> <span class="n">splitGlyphs</span><span class="o">=</span><span class="n">splitGlyphs</span><span class="p">)</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="n">table</span><span class="o">.</span><span class="n">toXML</span><span class="p">(</span><span class="n">writer</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
+		<span class="n">writer</span><span class="o">.</span><span class="n">endtag</span><span class="p">(</span><span class="n">xmlTag</span><span class="p">)</span>
+		<span class="n">writer</span><span class="o">.</span><span class="n">newline</span><span class="p">()</span>
+		<span class="n">writer</span><span class="o">.</span><span class="n">newline</span><span class="p">()</span>
+
+<div class="viewcode-block" id="TTFont.importXML"><a class="viewcode-back" href="../../../ttLib/ttFont.html#fontTools.ttLib.ttFont.TTFont.importXML">[docs]</a>	<span class="k">def</span> <span class="nf">importXML</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fileOrPath</span><span class="p">,</span> <span class="n">quiet</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Import a TTX file (an XML-based text format), so as to recreate</span>
+<span class="sd">		a font object.</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="k">if</span> <span class="n">quiet</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="n">deprecateArgument</span><span class="p">(</span><span class="s2">&quot;quiet&quot;</span><span class="p">,</span> <span class="s2">&quot;configure logging instead&quot;</span><span class="p">)</span>
+
+		<span class="k">if</span> <span class="s2">&quot;maxp&quot;</span> <span class="ow">in</span> <span class="bp">self</span> <span class="ow">and</span> <span class="s2">&quot;post&quot;</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
+			<span class="c1"># Make sure the glyph order is loaded, as it otherwise gets</span>
+			<span class="c1"># lost if the XML doesn&#39;t contain the glyph order, yet does</span>
+			<span class="c1"># contain the table which was originally used to extract the</span>
+			<span class="c1"># glyph names from (ie. &#39;post&#39;, &#39;cmap&#39; or &#39;CFF &#39;).</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">getGlyphOrder</span><span class="p">()</span>
+
+		<span class="kn">from</span> <span class="nn">fontTools.misc</span> <span class="k">import</span> <span class="n">xmlReader</span>
+
+		<span class="n">reader</span> <span class="o">=</span> <span class="n">xmlReader</span><span class="o">.</span><span class="n">XMLReader</span><span class="p">(</span><span class="n">fileOrPath</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
+		<span class="n">reader</span><span class="o">.</span><span class="n">read</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="TTFont.isLoaded"><a class="viewcode-back" href="../../../ttLib/ttFont.html#fontTools.ttLib.ttFont.TTFont.isLoaded">[docs]</a>	<span class="k">def</span> <span class="nf">isLoaded</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tag</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Return true if the table identified by &#39;tag&#39; has been</span>
+<span class="sd">		decompiled and loaded into memory.&quot;&quot;&quot;</span>
+		<span class="k">return</span> <span class="n">tag</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">tables</span></div>
+
+<div class="viewcode-block" id="TTFont.has_key"><a class="viewcode-back" href="../../../ttLib/ttFont.html#fontTools.ttLib.ttFont.TTFont.has_key">[docs]</a>	<span class="k">def</span> <span class="nf">has_key</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tag</span><span class="p">):</span>
+		<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">isLoaded</span><span class="p">(</span><span class="n">tag</span><span class="p">):</span>
+			<span class="k">return</span> <span class="kc">True</span>
+		<span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">reader</span> <span class="ow">and</span> <span class="n">tag</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">reader</span><span class="p">:</span>
+			<span class="k">return</span> <span class="kc">True</span>
+		<span class="k">elif</span> <span class="n">tag</span> <span class="o">==</span> <span class="s2">&quot;GlyphOrder&quot;</span><span class="p">:</span>
+			<span class="k">return</span> <span class="kc">True</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="k">return</span> <span class="kc">False</span></div>
+
+	<span class="fm">__contains__</span> <span class="o">=</span> <span class="n">has_key</span>
+
+<div class="viewcode-block" id="TTFont.keys"><a class="viewcode-back" href="../../../ttLib/ttFont.html#fontTools.ttLib.ttFont.TTFont.keys">[docs]</a>	<span class="k">def</span> <span class="nf">keys</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">keys</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tables</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+		<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">reader</span><span class="p">:</span>
+			<span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">reader</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
+				<span class="k">if</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">keys</span><span class="p">:</span>
+					<span class="n">keys</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+
+		<span class="k">if</span> <span class="s2">&quot;GlyphOrder&quot;</span> <span class="ow">in</span> <span class="n">keys</span><span class="p">:</span>
+			<span class="n">keys</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s2">&quot;GlyphOrder&quot;</span><span class="p">)</span>
+		<span class="n">keys</span> <span class="o">=</span> <span class="n">sortedTagList</span><span class="p">(</span><span class="n">keys</span><span class="p">)</span>
+		<span class="k">return</span> <span class="p">[</span><span class="s2">&quot;GlyphOrder&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="n">keys</span></div>
+
+	<span class="k">def</span> <span class="nf">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">keys</span><span class="p">()))</span>
+
+	<span class="k">def</span> <span class="nf">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tag</span><span class="p">):</span>
+		<span class="n">tag</span> <span class="o">=</span> <span class="n">Tag</span><span class="p">(</span><span class="n">tag</span><span class="p">)</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">tables</span><span class="p">[</span><span class="n">tag</span><span class="p">]</span>
+		<span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+			<span class="k">if</span> <span class="n">tag</span> <span class="o">==</span> <span class="s2">&quot;GlyphOrder&quot;</span><span class="p">:</span>
+				<span class="n">table</span> <span class="o">=</span> <span class="n">GlyphOrder</span><span class="p">(</span><span class="n">tag</span><span class="p">)</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">tables</span><span class="p">[</span><span class="n">tag</span><span class="p">]</span> <span class="o">=</span> <span class="n">table</span>
+				<span class="k">return</span> <span class="n">table</span>
+			<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">reader</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+				<span class="kn">import</span> <span class="nn">traceback</span>
+				<span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Reading &#39;</span><span class="si">%s</span><span class="s2">&#39; table from disk&quot;</span><span class="p">,</span> <span class="n">tag</span><span class="p">)</span>
+				<span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">reader</span><span class="p">[</span><span class="n">tag</span><span class="p">]</span>
+				<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tableCache</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+					<span class="n">table</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tableCache</span><span class="o">.</span><span class="n">get</span><span class="p">((</span><span class="n">Tag</span><span class="p">(</span><span class="n">tag</span><span class="p">),</span> <span class="n">data</span><span class="p">))</span>
+					<span class="k">if</span> <span class="n">table</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+						<span class="k">return</span> <span class="n">table</span>
+				<span class="n">tableClass</span> <span class="o">=</span> <span class="n">getTableClass</span><span class="p">(</span><span class="n">tag</span><span class="p">)</span>
+				<span class="n">table</span> <span class="o">=</span> <span class="n">tableClass</span><span class="p">(</span><span class="n">tag</span><span class="p">)</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">tables</span><span class="p">[</span><span class="n">tag</span><span class="p">]</span> <span class="o">=</span> <span class="n">table</span>
+				<span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Decompiling &#39;</span><span class="si">%s</span><span class="s2">&#39; table&quot;</span><span class="p">,</span> <span class="n">tag</span><span class="p">)</span>
+				<span class="k">try</span><span class="p">:</span>
+					<span class="n">table</span><span class="o">.</span><span class="n">decompile</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
+				<span class="k">except</span><span class="p">:</span>
+					<span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">ignoreDecompileErrors</span><span class="p">:</span>
+						<span class="k">raise</span>
+					<span class="c1"># fall back to DefaultTable, retaining the binary table data</span>
+					<span class="n">log</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span>
+						<span class="s2">&quot;An exception occurred during the decompilation of the &#39;</span><span class="si">%s</span><span class="s2">&#39; table&quot;</span><span class="p">,</span> <span class="n">tag</span><span class="p">)</span>
+					<span class="kn">from</span> <span class="nn">.tables.DefaultTable</span> <span class="k">import</span> <span class="n">DefaultTable</span>
+					<span class="n">file</span> <span class="o">=</span> <span class="n">StringIO</span><span class="p">()</span>
+					<span class="n">traceback</span><span class="o">.</span><span class="n">print_exc</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="n">file</span><span class="p">)</span>
+					<span class="n">table</span> <span class="o">=</span> <span class="n">DefaultTable</span><span class="p">(</span><span class="n">tag</span><span class="p">)</span>
+					<span class="n">table</span><span class="o">.</span><span class="n">ERROR</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">getvalue</span><span class="p">()</span>
+					<span class="bp">self</span><span class="o">.</span><span class="n">tables</span><span class="p">[</span><span class="n">tag</span><span class="p">]</span> <span class="o">=</span> <span class="n">table</span>
+					<span class="n">table</span><span class="o">.</span><span class="n">decompile</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
+				<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tableCache</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+					<span class="bp">self</span><span class="o">.</span><span class="n">_tableCache</span><span class="p">[(</span><span class="n">Tag</span><span class="p">(</span><span class="n">tag</span><span class="p">),</span> <span class="n">data</span><span class="p">)]</span> <span class="o">=</span> <span class="n">table</span>
+				<span class="k">return</span> <span class="n">table</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="s2">&quot;&#39;</span><span class="si">%s</span><span class="s2">&#39; table not found&quot;</span> <span class="o">%</span> <span class="n">tag</span><span class="p">)</span>
+
+	<span class="k">def</span> <span class="nf">__setitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tag</span><span class="p">,</span> <span class="n">table</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">tables</span><span class="p">[</span><span class="n">Tag</span><span class="p">(</span><span class="n">tag</span><span class="p">)]</span> <span class="o">=</span> <span class="n">table</span>
+
+	<span class="k">def</span> <span class="nf">__delitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tag</span><span class="p">):</span>
+		<span class="k">if</span> <span class="n">tag</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
+			<span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="s2">&quot;&#39;</span><span class="si">%s</span><span class="s2">&#39; table not found&quot;</span> <span class="o">%</span> <span class="n">tag</span><span class="p">)</span>
+		<span class="k">if</span> <span class="n">tag</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">tables</span><span class="p">:</span>
+			<span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">tables</span><span class="p">[</span><span class="n">tag</span><span class="p">]</span>
+		<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">reader</span> <span class="ow">and</span> <span class="n">tag</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">reader</span><span class="p">:</span>
+			<span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">reader</span><span class="p">[</span><span class="n">tag</span><span class="p">]</span>
+
+<div class="viewcode-block" id="TTFont.get"><a class="viewcode-back" href="../../../ttLib/ttFont.html#fontTools.ttLib.ttFont.TTFont.get">[docs]</a>	<span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tag</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="k">return</span> <span class="bp">self</span><span class="p">[</span><span class="n">tag</span><span class="p">]</span>
+		<span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+			<span class="k">return</span> <span class="n">default</span></div>
+
+<div class="viewcode-block" id="TTFont.setGlyphOrder"><a class="viewcode-back" href="../../../ttLib/ttFont.html#fontTools.ttLib.ttFont.TTFont.setGlyphOrder">[docs]</a>	<span class="k">def</span> <span class="nf">setGlyphOrder</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">glyphOrder</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">glyphOrder</span> <span class="o">=</span> <span class="n">glyphOrder</span></div>
+
+<div class="viewcode-block" id="TTFont.getGlyphOrder"><a class="viewcode-back" href="../../../ttLib/ttFont.html#fontTools.ttLib.ttFont.TTFont.getGlyphOrder">[docs]</a>	<span class="k">def</span> <span class="nf">getGlyphOrder</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">glyphOrder</span>
+		<span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+			<span class="k">pass</span>
+		<span class="k">if</span> <span class="s1">&#39;CFF &#39;</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
+			<span class="n">cff</span> <span class="o">=</span> <span class="bp">self</span><span class="p">[</span><span class="s1">&#39;CFF &#39;</span><span class="p">]</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">glyphOrder</span> <span class="o">=</span> <span class="n">cff</span><span class="o">.</span><span class="n">getGlyphOrder</span><span class="p">()</span>
+		<span class="k">elif</span> <span class="s1">&#39;post&#39;</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
+			<span class="c1"># TrueType font</span>
+			<span class="n">glyphOrder</span> <span class="o">=</span> <span class="bp">self</span><span class="p">[</span><span class="s1">&#39;post&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">getGlyphOrder</span><span class="p">()</span>
+			<span class="k">if</span> <span class="n">glyphOrder</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+				<span class="c1">#</span>
+				<span class="c1"># No names found in the &#39;post&#39; table.</span>
+				<span class="c1"># Try to create glyph names from the unicode cmap (if available)</span>
+				<span class="c1"># in combination with the Adobe Glyph List (AGL).</span>
+				<span class="c1">#</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">_getGlyphNamesFromCmap</span><span class="p">()</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">glyphOrder</span> <span class="o">=</span> <span class="n">glyphOrder</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_getGlyphNamesFromCmap</span><span class="p">()</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">glyphOrder</span></div>
+
+	<span class="k">def</span> <span class="nf">_getGlyphNamesFromCmap</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="c1">#</span>
+		<span class="c1"># This is rather convoluted, but then again, it&#39;s an interesting problem:</span>
+		<span class="c1"># - we need to use the unicode values found in the cmap table to</span>
+		<span class="c1">#   build glyph names (eg. because there is only a minimal post table,</span>
+		<span class="c1">#   or none at all).</span>
+		<span class="c1"># - but the cmap parser also needs glyph names to work with...</span>
+		<span class="c1"># So here&#39;s what we do:</span>
+		<span class="c1"># - make up glyph names based on glyphID</span>
+		<span class="c1"># - load a temporary cmap table based on those names</span>
+		<span class="c1"># - extract the unicode values, build the &quot;real&quot; glyph names</span>
+		<span class="c1"># - unload the temporary cmap table</span>
+		<span class="c1">#</span>
+		<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">isLoaded</span><span class="p">(</span><span class="s2">&quot;cmap&quot;</span><span class="p">):</span>
+			<span class="c1"># Bootstrapping: we&#39;re getting called by the cmap parser</span>
+			<span class="c1"># itself. This means self.tables[&#39;cmap&#39;] contains a partially</span>
+			<span class="c1"># loaded cmap, making it impossible to get at a unicode</span>
+			<span class="c1"># subtable here. We remove the partially loaded cmap and</span>
+			<span class="c1"># restore it later.</span>
+			<span class="c1"># This only happens if the cmap table is loaded before any</span>
+			<span class="c1"># other table that does f.getGlyphOrder()  or f.getGlyphName().</span>
+			<span class="n">cmapLoading</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">tables</span><span class="p">[</span><span class="s1">&#39;cmap&#39;</span><span class="p">]</span>
+			<span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">tables</span><span class="p">[</span><span class="s1">&#39;cmap&#39;</span><span class="p">]</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="n">cmapLoading</span> <span class="o">=</span> <span class="kc">None</span>
+		<span class="c1"># Make up glyph names based on glyphID, which will be used by the</span>
+		<span class="c1"># temporary cmap and by the real cmap in case we don&#39;t find a unicode</span>
+		<span class="c1"># cmap.</span>
+		<span class="n">numGlyphs</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="p">[</span><span class="s1">&#39;maxp&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">numGlyphs</span><span class="p">)</span>
+		<span class="n">glyphOrder</span> <span class="o">=</span> <span class="p">[</span><span class="kc">None</span><span class="p">]</span> <span class="o">*</span> <span class="n">numGlyphs</span>
+		<span class="n">glyphOrder</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;.notdef&quot;</span>
+		<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">numGlyphs</span><span class="p">):</span>
+			<span class="n">glyphOrder</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;glyph</span><span class="si">%.5d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">i</span>
+		<span class="c1"># Set the glyph order, so the cmap parser has something</span>
+		<span class="c1"># to work with (so we don&#39;t get called recursively).</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">glyphOrder</span> <span class="o">=</span> <span class="n">glyphOrder</span>
+
+		<span class="c1"># Make up glyph names based on the reversed cmap table. Because some</span>
+		<span class="c1"># glyphs (eg. ligatures or alternates) may not be reachable via cmap,</span>
+		<span class="c1"># this naming table will usually not cover all glyphs in the font.</span>
+		<span class="c1"># If the font has no Unicode cmap table, reversecmap will be empty.</span>
+		<span class="k">if</span> <span class="s1">&#39;cmap&#39;</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
+			<span class="n">reversecmap</span> <span class="o">=</span> <span class="bp">self</span><span class="p">[</span><span class="s1">&#39;cmap&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">buildReversed</span><span class="p">()</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="n">reversecmap</span> <span class="o">=</span> <span class="p">{}</span>
+		<span class="n">useCount</span> <span class="o">=</span> <span class="p">{}</span>
+		<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">numGlyphs</span><span class="p">):</span>
+			<span class="n">tempName</span> <span class="o">=</span> <span class="n">glyphOrder</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+			<span class="k">if</span> <span class="n">tempName</span> <span class="ow">in</span> <span class="n">reversecmap</span><span class="p">:</span>
+				<span class="c1"># If a font maps both U+0041 LATIN CAPITAL LETTER A and</span>
+				<span class="c1"># U+0391 GREEK CAPITAL LETTER ALPHA to the same glyph,</span>
+				<span class="c1"># we prefer naming the glyph as &quot;A&quot;.</span>
+				<span class="n">glyphName</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_makeGlyphName</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">reversecmap</span><span class="p">[</span><span class="n">tempName</span><span class="p">]))</span>
+				<span class="n">numUses</span> <span class="o">=</span> <span class="n">useCount</span><span class="p">[</span><span class="n">glyphName</span><span class="p">]</span> <span class="o">=</span> <span class="n">useCount</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">glyphName</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+				<span class="k">if</span> <span class="n">numUses</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+					<span class="n">glyphName</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">.alt</span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">glyphName</span><span class="p">,</span> <span class="n">numUses</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+				<span class="n">glyphOrder</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">glyphName</span>
+
+		<span class="k">if</span> <span class="s1">&#39;cmap&#39;</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
+			<span class="c1"># Delete the temporary cmap table from the cache, so it can</span>
+			<span class="c1"># be parsed again with the right names.</span>
+			<span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">tables</span><span class="p">[</span><span class="s1">&#39;cmap&#39;</span><span class="p">]</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">glyphOrder</span> <span class="o">=</span> <span class="n">glyphOrder</span>
+			<span class="k">if</span> <span class="n">cmapLoading</span><span class="p">:</span>
+				<span class="c1"># restore partially loaded cmap, so it can continue loading</span>
+				<span class="c1"># using the proper names.</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">tables</span><span class="p">[</span><span class="s1">&#39;cmap&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">cmapLoading</span>
+
+	<span class="nd">@staticmethod</span>
+	<span class="k">def</span> <span class="nf">_makeGlyphName</span><span class="p">(</span><span class="n">codepoint</span><span class="p">):</span>
+		<span class="kn">from</span> <span class="nn">fontTools</span> <span class="k">import</span> <span class="n">agl</span>  <span class="c1"># Adobe Glyph List</span>
+		<span class="k">if</span> <span class="n">codepoint</span> <span class="ow">in</span> <span class="n">agl</span><span class="o">.</span><span class="n">UV2AGL</span><span class="p">:</span>
+			<span class="k">return</span> <span class="n">agl</span><span class="o">.</span><span class="n">UV2AGL</span><span class="p">[</span><span class="n">codepoint</span><span class="p">]</span>
+		<span class="k">elif</span> <span class="n">codepoint</span> <span class="o">&lt;=</span> <span class="mh">0xFFFF</span><span class="p">:</span>
+			<span class="k">return</span> <span class="s2">&quot;uni</span><span class="si">%04X</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">codepoint</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="k">return</span> <span class="s2">&quot;u</span><span class="si">%X</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">codepoint</span>
+
+<div class="viewcode-block" id="TTFont.getGlyphNames"><a class="viewcode-back" href="../../../ttLib/ttFont.html#fontTools.ttLib.ttFont.TTFont.getGlyphNames">[docs]</a>	<span class="k">def</span> <span class="nf">getGlyphNames</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Get a list of glyph names, sorted alphabetically.&quot;&quot;&quot;</span>
+		<span class="n">glyphNames</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">getGlyphOrder</span><span class="p">())</span>
+		<span class="k">return</span> <span class="n">glyphNames</span></div>
+
+<div class="viewcode-block" id="TTFont.getGlyphNames2"><a class="viewcode-back" href="../../../ttLib/ttFont.html#fontTools.ttLib.ttFont.TTFont.getGlyphNames2">[docs]</a>	<span class="k">def</span> <span class="nf">getGlyphNames2</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Get a list of glyph names, sorted alphabetically,</span>
+<span class="sd">		but not case sensitive.</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="kn">from</span> <span class="nn">fontTools.misc</span> <span class="k">import</span> <span class="n">textTools</span>
+		<span class="k">return</span> <span class="n">textTools</span><span class="o">.</span><span class="n">caselessSort</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">getGlyphOrder</span><span class="p">())</span></div>
+
+<div class="viewcode-block" id="TTFont.getGlyphName"><a class="viewcode-back" href="../../../ttLib/ttFont.html#fontTools.ttLib.ttFont.TTFont.getGlyphName">[docs]</a>	<span class="k">def</span> <span class="nf">getGlyphName</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">glyphID</span><span class="p">,</span> <span class="n">requireReal</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getGlyphOrder</span><span class="p">()[</span><span class="n">glyphID</span><span class="p">]</span>
+		<span class="k">except</span> <span class="ne">IndexError</span><span class="p">:</span>
+			<span class="k">if</span> <span class="n">requireReal</span> <span class="ow">or</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">allowVID</span><span class="p">:</span>
+				<span class="c1"># XXX The ??.W8.otf font that ships with OSX uses higher glyphIDs in</span>
+				<span class="c1"># the cmap table than there are glyphs. I don&#39;t think it&#39;s legal...</span>
+				<span class="k">return</span> <span class="s2">&quot;glyph</span><span class="si">%.5d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">glyphID</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="c1"># user intends virtual GID support</span>
+				<span class="k">try</span><span class="p">:</span>
+					<span class="n">glyphName</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">VIDDict</span><span class="p">[</span><span class="n">glyphID</span><span class="p">]</span>
+				<span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+					<span class="n">glyphName</span>  <span class="o">=</span><span class="s2">&quot;glyph</span><span class="si">%.5d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">glyphID</span>
+					<span class="bp">self</span><span class="o">.</span><span class="n">last_vid</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">glyphID</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">last_vid</span> <span class="p">)</span>
+					<span class="bp">self</span><span class="o">.</span><span class="n">reverseVIDDict</span><span class="p">[</span><span class="n">glyphName</span><span class="p">]</span> <span class="o">=</span> <span class="n">glyphID</span>
+					<span class="bp">self</span><span class="o">.</span><span class="n">VIDDict</span><span class="p">[</span><span class="n">glyphID</span><span class="p">]</span> <span class="o">=</span> <span class="n">glyphName</span>
+				<span class="k">return</span> <span class="n">glyphName</span></div>
+
+<div class="viewcode-block" id="TTFont.getGlyphID"><a class="viewcode-back" href="../../../ttLib/ttFont.html#fontTools.ttLib.ttFont.TTFont.getGlyphID">[docs]</a>	<span class="k">def</span> <span class="nf">getGlyphID</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">glyphName</span><span class="p">,</span> <span class="n">requireReal</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;_reverseGlyphOrderDict&quot;</span><span class="p">):</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_buildReverseGlyphOrderDict</span><span class="p">()</span>
+		<span class="n">glyphOrder</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">getGlyphOrder</span><span class="p">()</span>
+		<span class="n">d</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_reverseGlyphOrderDict</span>
+		<span class="k">if</span> <span class="n">glyphName</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">d</span><span class="p">:</span>
+			<span class="k">if</span> <span class="n">glyphName</span> <span class="ow">in</span> <span class="n">glyphOrder</span><span class="p">:</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">_buildReverseGlyphOrderDict</span><span class="p">()</span>
+				<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getGlyphID</span><span class="p">(</span><span class="n">glyphName</span><span class="p">)</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="k">if</span> <span class="n">requireReal</span><span class="p">:</span>
+					<span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="n">glyphName</span><span class="p">)</span>
+				<span class="k">elif</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">allowVID</span><span class="p">:</span>
+					<span class="c1"># Handle glyphXXX only</span>
+					<span class="k">if</span> <span class="n">glyphName</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;glyph&quot;</span><span class="p">:</span>
+						<span class="k">try</span><span class="p">:</span>
+							<span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">glyphName</span><span class="p">[</span><span class="mi">5</span><span class="p">:])</span>
+						<span class="k">except</span> <span class="p">(</span><span class="ne">NameError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">):</span>
+							<span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="n">glyphName</span><span class="p">)</span>
+				<span class="k">else</span><span class="p">:</span>
+					<span class="c1"># user intends virtual GID support</span>
+					<span class="k">try</span><span class="p">:</span>
+						<span class="n">glyphID</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">reverseVIDDict</span><span class="p">[</span><span class="n">glyphName</span><span class="p">]</span>
+					<span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+						<span class="c1"># if name is in glyphXXX format, use the specified name.</span>
+						<span class="k">if</span> <span class="n">glyphName</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;glyph&quot;</span><span class="p">:</span>
+							<span class="k">try</span><span class="p">:</span>
+								<span class="n">glyphID</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">glyphName</span><span class="p">[</span><span class="mi">5</span><span class="p">:])</span>
+							<span class="k">except</span> <span class="p">(</span><span class="ne">NameError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">):</span>
+								<span class="n">glyphID</span> <span class="o">=</span> <span class="kc">None</span>
+						<span class="k">if</span> <span class="n">glyphID</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+							<span class="n">glyphID</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">last_vid</span> <span class="o">-</span><span class="mi">1</span>
+							<span class="bp">self</span><span class="o">.</span><span class="n">last_vid</span> <span class="o">=</span> <span class="n">glyphID</span>
+						<span class="bp">self</span><span class="o">.</span><span class="n">reverseVIDDict</span><span class="p">[</span><span class="n">glyphName</span><span class="p">]</span> <span class="o">=</span> <span class="n">glyphID</span>
+						<span class="bp">self</span><span class="o">.</span><span class="n">VIDDict</span><span class="p">[</span><span class="n">glyphID</span><span class="p">]</span> <span class="o">=</span> <span class="n">glyphName</span>
+					<span class="k">return</span> <span class="n">glyphID</span>
+
+		<span class="n">glyphID</span> <span class="o">=</span> <span class="n">d</span><span class="p">[</span><span class="n">glyphName</span><span class="p">]</span>
+		<span class="k">if</span> <span class="n">glyphName</span> <span class="o">!=</span> <span class="n">glyphOrder</span><span class="p">[</span><span class="n">glyphID</span><span class="p">]:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_buildReverseGlyphOrderDict</span><span class="p">()</span>
+			<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getGlyphID</span><span class="p">(</span><span class="n">glyphName</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">glyphID</span></div>
+
+<div class="viewcode-block" id="TTFont.getReverseGlyphMap"><a class="viewcode-back" href="../../../ttLib/ttFont.html#fontTools.ttLib.ttFont.TTFont.getReverseGlyphMap">[docs]</a>	<span class="k">def</span> <span class="nf">getReverseGlyphMap</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rebuild</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+		<span class="k">if</span> <span class="n">rebuild</span> <span class="ow">or</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;_reverseGlyphOrderDict&quot;</span><span class="p">):</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_buildReverseGlyphOrderDict</span><span class="p">()</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_reverseGlyphOrderDict</span></div>
+
+	<span class="k">def</span> <span class="nf">_buildReverseGlyphOrderDict</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_reverseGlyphOrderDict</span> <span class="o">=</span> <span class="n">d</span> <span class="o">=</span> <span class="p">{}</span>
+		<span class="n">glyphOrder</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">getGlyphOrder</span><span class="p">()</span>
+		<span class="k">for</span> <span class="n">glyphID</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">glyphOrder</span><span class="p">)):</span>
+			<span class="n">d</span><span class="p">[</span><span class="n">glyphOrder</span><span class="p">[</span><span class="n">glyphID</span><span class="p">]]</span> <span class="o">=</span> <span class="n">glyphID</span>
+
+	<span class="k">def</span> <span class="nf">_writeTable</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tag</span><span class="p">,</span> <span class="n">writer</span><span class="p">,</span> <span class="n">done</span><span class="p">,</span> <span class="n">tableCache</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Internal helper function for self.save(). Keeps track of</span>
+<span class="sd">		inter-table dependencies.</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="k">if</span> <span class="n">tag</span> <span class="ow">in</span> <span class="n">done</span><span class="p">:</span>
+			<span class="k">return</span>
+		<span class="n">tableClass</span> <span class="o">=</span> <span class="n">getTableClass</span><span class="p">(</span><span class="n">tag</span><span class="p">)</span>
+		<span class="k">for</span> <span class="n">masterTable</span> <span class="ow">in</span> <span class="n">tableClass</span><span class="o">.</span><span class="n">dependencies</span><span class="p">:</span>
+			<span class="k">if</span> <span class="n">masterTable</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">done</span><span class="p">:</span>
+				<span class="k">if</span> <span class="n">masterTable</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
+					<span class="bp">self</span><span class="o">.</span><span class="n">_writeTable</span><span class="p">(</span><span class="n">masterTable</span><span class="p">,</span> <span class="n">writer</span><span class="p">,</span> <span class="n">done</span><span class="p">,</span> <span class="n">tableCache</span><span class="p">)</span>
+				<span class="k">else</span><span class="p">:</span>
+					<span class="n">done</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">masterTable</span><span class="p">)</span>
+		<span class="n">done</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tag</span><span class="p">)</span>
+		<span class="n">tabledata</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">getTableData</span><span class="p">(</span><span class="n">tag</span><span class="p">)</span>
+		<span class="k">if</span> <span class="n">tableCache</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="n">entry</span> <span class="o">=</span> <span class="n">tableCache</span><span class="o">.</span><span class="n">get</span><span class="p">((</span><span class="n">Tag</span><span class="p">(</span><span class="n">tag</span><span class="p">),</span> <span class="n">tabledata</span><span class="p">))</span>
+			<span class="k">if</span> <span class="n">entry</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+				<span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;reusing &#39;</span><span class="si">%s</span><span class="s2">&#39; table&quot;</span><span class="p">,</span> <span class="n">tag</span><span class="p">)</span>
+				<span class="n">writer</span><span class="o">.</span><span class="n">setEntry</span><span class="p">(</span><span class="n">tag</span><span class="p">,</span> <span class="n">entry</span><span class="p">)</span>
+				<span class="k">return</span>
+		<span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;writing &#39;</span><span class="si">%s</span><span class="s2">&#39; table to disk&quot;</span><span class="p">,</span> <span class="n">tag</span><span class="p">)</span>
+		<span class="n">writer</span><span class="p">[</span><span class="n">tag</span><span class="p">]</span> <span class="o">=</span> <span class="n">tabledata</span>
+		<span class="k">if</span> <span class="n">tableCache</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="n">tableCache</span><span class="p">[(</span><span class="n">Tag</span><span class="p">(</span><span class="n">tag</span><span class="p">),</span> <span class="n">tabledata</span><span class="p">)]</span> <span class="o">=</span> <span class="n">writer</span><span class="p">[</span><span class="n">tag</span><span class="p">]</span>
+
+<div class="viewcode-block" id="TTFont.getTableData"><a class="viewcode-back" href="../../../ttLib/ttFont.html#fontTools.ttLib.ttFont.TTFont.getTableData">[docs]</a>	<span class="k">def</span> <span class="nf">getTableData</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tag</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Returns raw table data, whether compiled or directly read from disk.</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="n">tag</span> <span class="o">=</span> <span class="n">Tag</span><span class="p">(</span><span class="n">tag</span><span class="p">)</span>
+		<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">isLoaded</span><span class="p">(</span><span class="n">tag</span><span class="p">):</span>
+			<span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;compiling &#39;</span><span class="si">%s</span><span class="s2">&#39; table&quot;</span><span class="p">,</span> <span class="n">tag</span><span class="p">)</span>
+			<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">tables</span><span class="p">[</span><span class="n">tag</span><span class="p">]</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+		<span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">reader</span> <span class="ow">and</span> <span class="n">tag</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">reader</span><span class="p">:</span>
+			<span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Reading &#39;</span><span class="si">%s</span><span class="s2">&#39; table from disk&quot;</span><span class="p">,</span> <span class="n">tag</span><span class="p">)</span>
+			<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">reader</span><span class="p">[</span><span class="n">tag</span><span class="p">]</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="n">tag</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="TTFont.getGlyphSet"><a class="viewcode-back" href="../../../ttLib/ttFont.html#fontTools.ttLib.ttFont.TTFont.getGlyphSet">[docs]</a>	<span class="k">def</span> <span class="nf">getGlyphSet</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">preferCFF</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Return a generic GlyphSet, which is a dict-like object</span>
+<span class="sd">		mapping glyph names to glyph objects. The returned glyph objects</span>
+<span class="sd">		have a .draw() method that supports the Pen protocol, and will</span>
+<span class="sd">		have an attribute named &#39;width&#39;.</span>
+
+<span class="sd">		If the font is CFF-based, the outlines will be taken from the &#39;CFF &#39; or</span>
+<span class="sd">		&#39;CFF2&#39; tables. Otherwise the outlines will be taken from the &#39;glyf&#39; table.</span>
+<span class="sd">		If the font contains both a &#39;CFF &#39;/&#39;CFF2&#39; and a &#39;glyf&#39; table, you can use</span>
+<span class="sd">		the &#39;preferCFF&#39; argument to specify which one should be taken. If the</span>
+<span class="sd">		font contains both a &#39;CFF &#39; and a &#39;CFF2&#39; table, the latter is taken.</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="n">glyphs</span> <span class="o">=</span> <span class="kc">None</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">preferCFF</span> <span class="ow">and</span> <span class="nb">any</span><span class="p">(</span><span class="n">tb</span> <span class="ow">in</span> <span class="bp">self</span> <span class="k">for</span> <span class="n">tb</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;CFF &quot;</span><span class="p">,</span> <span class="s2">&quot;CFF2&quot;</span><span class="p">])</span> <span class="ow">or</span>
+		   <span class="p">(</span><span class="s2">&quot;glyf&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span> <span class="ow">and</span> <span class="nb">any</span><span class="p">(</span><span class="n">tb</span> <span class="ow">in</span> <span class="bp">self</span> <span class="k">for</span> <span class="n">tb</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;CFF &quot;</span><span class="p">,</span> <span class="s2">&quot;CFF2&quot;</span><span class="p">]))):</span>
+			<span class="n">table_tag</span> <span class="o">=</span> <span class="s2">&quot;CFF2&quot;</span> <span class="k">if</span> <span class="s2">&quot;CFF2&quot;</span> <span class="ow">in</span> <span class="bp">self</span> <span class="k">else</span> <span class="s2">&quot;CFF &quot;</span>
+			<span class="n">glyphs</span> <span class="o">=</span> <span class="n">_TTGlyphSet</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+			    <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="p">[</span><span class="n">table_tag</span><span class="p">]</span><span class="o">.</span><span class="n">cff</span><span class="o">.</span><span class="n">values</span><span class="p">())[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">CharStrings</span><span class="p">,</span> <span class="n">_TTGlyphCFF</span><span class="p">)</span>
+
+		<span class="k">if</span> <span class="n">glyphs</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="s2">&quot;glyf&quot;</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
+			<span class="n">glyphs</span> <span class="o">=</span> <span class="n">_TTGlyphSet</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="bp">self</span><span class="p">[</span><span class="s2">&quot;glyf&quot;</span><span class="p">],</span> <span class="n">_TTGlyphGlyf</span><span class="p">)</span>
+
+		<span class="k">if</span> <span class="n">glyphs</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="k">raise</span> <span class="n">TTLibError</span><span class="p">(</span><span class="s2">&quot;Font contains no outlines&quot;</span><span class="p">)</span>
+
+		<span class="k">return</span> <span class="n">glyphs</span></div>
+
+<div class="viewcode-block" id="TTFont.getBestCmap"><a class="viewcode-back" href="../../../ttLib/ttFont.html#fontTools.ttLib.ttFont.TTFont.getBestCmap">[docs]</a>	<span class="k">def</span> <span class="nf">getBestCmap</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cmapPreferences</span><span class="o">=</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))):</span>
+		<span class="sd">&quot;&quot;&quot;Return the &#39;best&#39; unicode cmap dictionary available in the font,</span>
+<span class="sd">		or None, if no unicode cmap subtable is available.</span>
+
+<span class="sd">		By default it will search for the following (platformID, platEncID)</span>
+<span class="sd">		pairs:</span>
+<span class="sd">			(3, 10), (0, 6), (0, 4), (3, 1), (0, 3), (0, 2), (0, 1), (0, 0)</span>
+<span class="sd">		This can be customized via the cmapPreferences argument.</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="p">[</span><span class="s2">&quot;cmap&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">getBestCmap</span><span class="p">(</span><span class="n">cmapPreferences</span><span class="o">=</span><span class="n">cmapPreferences</span><span class="p">)</span></div></div>
+
+
+<span class="k">class</span> <span class="nc">_TTGlyphSet</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+	<span class="sd">&quot;&quot;&quot;Generic dict-like GlyphSet class that pulls metrics from hmtx and</span>
+<span class="sd">	glyph shape from TrueType or CFF.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ttFont</span><span class="p">,</span> <span class="n">glyphs</span><span class="p">,</span> <span class="n">glyphType</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_glyphs</span> <span class="o">=</span> <span class="n">glyphs</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_hmtx</span> <span class="o">=</span> <span class="n">ttFont</span><span class="p">[</span><span class="s1">&#39;hmtx&#39;</span><span class="p">]</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_vmtx</span> <span class="o">=</span> <span class="n">ttFont</span><span class="p">[</span><span class="s1">&#39;vmtx&#39;</span><span class="p">]</span> <span class="k">if</span> <span class="s1">&#39;vmtx&#39;</span> <span class="ow">in</span> <span class="n">ttFont</span> <span class="k">else</span> <span class="kc">None</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_glyphType</span> <span class="o">=</span> <span class="n">glyphType</span>
+
+	<span class="k">def</span> <span class="nf">keys</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_glyphs</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+
+	<span class="k">def</span> <span class="nf">has_key</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">glyphName</span><span class="p">):</span>
+		<span class="k">return</span> <span class="n">glyphName</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_glyphs</span>
+
+	<span class="fm">__contains__</span> <span class="o">=</span> <span class="n">has_key</span>
+
+	<span class="k">def</span> <span class="nf">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">glyphName</span><span class="p">):</span>
+		<span class="n">horizontalMetrics</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_hmtx</span><span class="p">[</span><span class="n">glyphName</span><span class="p">]</span>
+		<span class="n">verticalMetrics</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_vmtx</span><span class="p">[</span><span class="n">glyphName</span><span class="p">]</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_vmtx</span> <span class="k">else</span> <span class="kc">None</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_glyphType</span><span class="p">(</span>
+			<span class="bp">self</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_glyphs</span><span class="p">[</span><span class="n">glyphName</span><span class="p">],</span> <span class="n">horizontalMetrics</span><span class="p">,</span> <span class="n">verticalMetrics</span><span class="p">)</span>
+
+	<span class="k">def</span> <span class="nf">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_glyphs</span><span class="p">)</span>
+
+	<span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">glyphName</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="k">return</span> <span class="bp">self</span><span class="p">[</span><span class="n">glyphName</span><span class="p">]</span>
+		<span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+			<span class="k">return</span> <span class="n">default</span>
+
+<span class="k">class</span> <span class="nc">_TTGlyph</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+	<span class="sd">&quot;&quot;&quot;Wrapper for a TrueType glyph that supports the Pen protocol, meaning</span>
+<span class="sd">	that it has .draw() and .drawPoints() methods that take a pen object as</span>
+<span class="sd">	their only argument. Additionally there are &#39;width&#39; and &#39;lsb&#39; attributes,</span>
+<span class="sd">	read from the &#39;hmtx&#39; table.</span>
+
+<span class="sd">	If the font contains a &#39;vmtx&#39; table, there will also be &#39;height&#39; and &#39;tsb&#39;</span>
+<span class="sd">	attributes.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">glyphset</span><span class="p">,</span> <span class="n">glyph</span><span class="p">,</span> <span class="n">horizontalMetrics</span><span class="p">,</span> <span class="n">verticalMetrics</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_glyphset</span> <span class="o">=</span> <span class="n">glyphset</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_glyph</span> <span class="o">=</span> <span class="n">glyph</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">lsb</span> <span class="o">=</span> <span class="n">horizontalMetrics</span>
+		<span class="k">if</span> <span class="n">verticalMetrics</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">height</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">tsb</span> <span class="o">=</span> <span class="n">verticalMetrics</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">height</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">tsb</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span>
+
+	<span class="k">def</span> <span class="nf">draw</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pen</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Draw the glyph onto Pen. See fontTools.pens.basePen for details</span>
+<span class="sd">		how that works.</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_glyph</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">pen</span><span class="p">)</span>
+
+	<span class="k">def</span> <span class="nf">drawPoints</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pen</span><span class="p">):</span>
+		<span class="c1"># drawPoints is only implemented for _TTGlyphGlyf at this time.</span>
+		<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+
+<span class="k">class</span> <span class="nc">_TTGlyphCFF</span><span class="p">(</span><span class="n">_TTGlyph</span><span class="p">):</span>
+	<span class="k">pass</span>
+
+<span class="k">class</span> <span class="nc">_TTGlyphGlyf</span><span class="p">(</span><span class="n">_TTGlyph</span><span class="p">):</span>
+
+	<span class="k">def</span> <span class="nf">draw</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pen</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Draw the glyph onto Pen. See fontTools.pens.basePen for details</span>
+<span class="sd">		how that works.</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="n">glyfTable</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_glyphset</span><span class="o">.</span><span class="n">_glyphs</span>
+		<span class="n">glyph</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_glyph</span>
+		<span class="n">offset</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">lsb</span> <span class="o">-</span> <span class="n">glyph</span><span class="o">.</span><span class="n">xMin</span> <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">glyph</span><span class="p">,</span> <span class="s2">&quot;xMin&quot;</span><span class="p">)</span> <span class="k">else</span> <span class="mi">0</span>
+		<span class="n">glyph</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">pen</span><span class="p">,</span> <span class="n">glyfTable</span><span class="p">,</span> <span class="n">offset</span><span class="p">)</span>
+
+	<span class="k">def</span> <span class="nf">drawPoints</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pen</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Draw the glyph onto PointPen. See fontTools.pens.pointPen</span>
+<span class="sd">		for details how that works.</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="n">glyfTable</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_glyphset</span><span class="o">.</span><span class="n">_glyphs</span>
+		<span class="n">glyph</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_glyph</span>
+		<span class="n">offset</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">lsb</span> <span class="o">-</span> <span class="n">glyph</span><span class="o">.</span><span class="n">xMin</span> <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">glyph</span><span class="p">,</span> <span class="s2">&quot;xMin&quot;</span><span class="p">)</span> <span class="k">else</span> <span class="mi">0</span>
+		<span class="n">glyph</span><span class="o">.</span><span class="n">drawPoints</span><span class="p">(</span><span class="n">pen</span><span class="p">,</span> <span class="n">glyfTable</span><span class="p">,</span> <span class="n">offset</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="GlyphOrder"><a class="viewcode-back" href="../../../ttLib/ttFont.html#fontTools.ttLib.ttFont.GlyphOrder">[docs]</a><span class="k">class</span> <span class="nc">GlyphOrder</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+	<span class="sd">&quot;&quot;&quot;A pseudo table. The glyph order isn&#39;t in the font as a separate</span>
+<span class="sd">	table, but it&#39;s nice to present it as such in the TTX format.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tag</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+		<span class="k">pass</span>
+
+<div class="viewcode-block" id="GlyphOrder.toXML"><a class="viewcode-back" href="../../../ttLib/ttFont.html#fontTools.ttLib.ttFont.GlyphOrder.toXML">[docs]</a>	<span class="k">def</span> <span class="nf">toXML</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">writer</span><span class="p">,</span> <span class="n">ttFont</span><span class="p">):</span>
+		<span class="n">glyphOrder</span> <span class="o">=</span> <span class="n">ttFont</span><span class="o">.</span><span class="n">getGlyphOrder</span><span class="p">()</span>
+		<span class="n">writer</span><span class="o">.</span><span class="n">comment</span><span class="p">(</span><span class="s2">&quot;The &#39;id&#39; attribute is only for humans; &quot;</span>
+				<span class="s2">&quot;it is ignored when parsed.&quot;</span><span class="p">)</span>
+		<span class="n">writer</span><span class="o">.</span><span class="n">newline</span><span class="p">()</span>
+		<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">glyphOrder</span><span class="p">)):</span>
+			<span class="n">glyphName</span> <span class="o">=</span> <span class="n">glyphOrder</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+			<span class="n">writer</span><span class="o">.</span><span class="n">simpletag</span><span class="p">(</span><span class="s2">&quot;GlyphID&quot;</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="n">i</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">glyphName</span><span class="p">)</span>
+			<span class="n">writer</span><span class="o">.</span><span class="n">newline</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="GlyphOrder.fromXML"><a class="viewcode-back" href="../../../ttLib/ttFont.html#fontTools.ttLib.ttFont.GlyphOrder.fromXML">[docs]</a>	<span class="k">def</span> <span class="nf">fromXML</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">attrs</span><span class="p">,</span> <span class="n">content</span><span class="p">,</span> <span class="n">ttFont</span><span class="p">):</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;glyphOrder&quot;</span><span class="p">):</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">glyphOrder</span> <span class="o">=</span> <span class="p">[]</span>
+			<span class="n">ttFont</span><span class="o">.</span><span class="n">setGlyphOrder</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">glyphOrder</span><span class="p">)</span>
+		<span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;GlyphID&quot;</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">glyphOrder</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">attrs</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">])</span></div></div>
+
+
+<div class="viewcode-block" id="getTableModule"><a class="viewcode-back" href="../../../ttLib/ttFont.html#fontTools.ttLib.ttFont.getTableModule">[docs]</a><span class="k">def</span> <span class="nf">getTableModule</span><span class="p">(</span><span class="n">tag</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Fetch the packer/unpacker module for a table.</span>
+<span class="sd">	Return None when no module is found.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="kn">from</span> <span class="nn">.</span> <span class="k">import</span> <span class="n">tables</span>
+	<span class="n">pyTag</span> <span class="o">=</span> <span class="n">tagToIdentifier</span><span class="p">(</span><span class="n">tag</span><span class="p">)</span>
+	<span class="k">try</span><span class="p">:</span>
+		<span class="nb">__import__</span><span class="p">(</span><span class="s2">&quot;fontTools.ttLib.tables.&quot;</span> <span class="o">+</span> <span class="n">pyTag</span><span class="p">)</span>
+	<span class="k">except</span> <span class="ne">ImportError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+		<span class="c1"># If pyTag is found in the ImportError message,</span>
+		<span class="c1"># means table is not implemented.  If it&#39;s not</span>
+		<span class="c1"># there, then some other module is missing, don&#39;t</span>
+		<span class="c1"># suppress the error.</span>
+		<span class="k">if</span> <span class="nb">str</span><span class="p">(</span><span class="n">err</span><span class="p">)</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">pyTag</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+			<span class="k">return</span> <span class="kc">None</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="k">raise</span> <span class="n">err</span>
+	<span class="k">else</span><span class="p">:</span>
+		<span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">tables</span><span class="p">,</span> <span class="n">pyTag</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="getTableClass"><a class="viewcode-back" href="../../../ttLib/ttFont.html#fontTools.ttLib.ttFont.getTableClass">[docs]</a><span class="k">def</span> <span class="nf">getTableClass</span><span class="p">(</span><span class="n">tag</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Fetch the packer/unpacker class for a table.</span>
+<span class="sd">	Return None when no class is found.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="n">module</span> <span class="o">=</span> <span class="n">getTableModule</span><span class="p">(</span><span class="n">tag</span><span class="p">)</span>
+	<span class="k">if</span> <span class="n">module</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+		<span class="kn">from</span> <span class="nn">.tables.DefaultTable</span> <span class="k">import</span> <span class="n">DefaultTable</span>
+		<span class="k">return</span> <span class="n">DefaultTable</span>
+	<span class="n">pyTag</span> <span class="o">=</span> <span class="n">tagToIdentifier</span><span class="p">(</span><span class="n">tag</span><span class="p">)</span>
+	<span class="n">tableClass</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="s2">&quot;table_&quot;</span> <span class="o">+</span> <span class="n">pyTag</span><span class="p">)</span>
+	<span class="k">return</span> <span class="n">tableClass</span></div>
+
+
+<div class="viewcode-block" id="getClassTag"><a class="viewcode-back" href="../../../ttLib/ttFont.html#fontTools.ttLib.ttFont.getClassTag">[docs]</a><span class="k">def</span> <span class="nf">getClassTag</span><span class="p">(</span><span class="n">klass</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Fetch the table tag for a class object.&quot;&quot;&quot;</span>
+	<span class="n">name</span> <span class="o">=</span> <span class="n">klass</span><span class="o">.</span><span class="vm">__name__</span>
+	<span class="k">assert</span> <span class="n">name</span><span class="p">[:</span><span class="mi">6</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;table_&#39;</span>
+	<span class="n">name</span> <span class="o">=</span> <span class="n">name</span><span class="p">[</span><span class="mi">6</span><span class="p">:]</span> <span class="c1"># Chop &#39;table_&#39;</span>
+	<span class="k">return</span> <span class="n">identifierToTag</span><span class="p">(</span><span class="n">name</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="newTable"><a class="viewcode-back" href="../../../ttLib/ttFont.html#fontTools.ttLib.ttFont.newTable">[docs]</a><span class="k">def</span> <span class="nf">newTable</span><span class="p">(</span><span class="n">tag</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Return a new instance of a table.&quot;&quot;&quot;</span>
+	<span class="n">tableClass</span> <span class="o">=</span> <span class="n">getTableClass</span><span class="p">(</span><span class="n">tag</span><span class="p">)</span>
+	<span class="k">return</span> <span class="n">tableClass</span><span class="p">(</span><span class="n">tag</span><span class="p">)</span></div>
+
+
+<span class="k">def</span> <span class="nf">_escapechar</span><span class="p">(</span><span class="n">c</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Helper function for tagToIdentifier()&quot;&quot;&quot;</span>
+	<span class="kn">import</span> <span class="nn">re</span>
+	<span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s2">&quot;[a-z0-9]&quot;</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
+		<span class="k">return</span> <span class="s2">&quot;_&quot;</span> <span class="o">+</span> <span class="n">c</span>
+	<span class="k">elif</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s2">&quot;[A-Z]&quot;</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
+		<span class="k">return</span> <span class="n">c</span> <span class="o">+</span> <span class="s2">&quot;_&quot;</span>
+	<span class="k">else</span><span class="p">:</span>
+		<span class="k">return</span> <span class="nb">hex</span><span class="p">(</span><span class="n">byteord</span><span class="p">(</span><span class="n">c</span><span class="p">))[</span><span class="mi">2</span><span class="p">:]</span>
+
+
+<div class="viewcode-block" id="tagToIdentifier"><a class="viewcode-back" href="../../../ttLib/ttFont.html#fontTools.ttLib.ttFont.tagToIdentifier">[docs]</a><span class="k">def</span> <span class="nf">tagToIdentifier</span><span class="p">(</span><span class="n">tag</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Convert a table tag to a valid (but UGLY) python identifier,</span>
+<span class="sd">	as well as a filename that&#39;s guaranteed to be unique even on a</span>
+<span class="sd">	caseless file system. Each character is mapped to two characters.</span>
+<span class="sd">	Lowercase letters get an underscore before the letter, uppercase</span>
+<span class="sd">	letters get an underscore after the letter. Trailing spaces are</span>
+<span class="sd">	trimmed. Illegal characters are escaped as two hex bytes. If the</span>
+<span class="sd">	result starts with a number (as the result of a hex escape), an</span>
+<span class="sd">	extra underscore is prepended. Examples:</span>
+<span class="sd">		&#39;glyf&#39; -&gt; &#39;_g_l_y_f&#39;</span>
+<span class="sd">		&#39;cvt &#39; -&gt; &#39;_c_v_t&#39;</span>
+<span class="sd">		&#39;OS/2&#39; -&gt; &#39;O_S_2f_2&#39;</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="kn">import</span> <span class="nn">re</span>
+	<span class="n">tag</span> <span class="o">=</span> <span class="n">Tag</span><span class="p">(</span><span class="n">tag</span><span class="p">)</span>
+	<span class="k">if</span> <span class="n">tag</span> <span class="o">==</span> <span class="s2">&quot;GlyphOrder&quot;</span><span class="p">:</span>
+		<span class="k">return</span> <span class="n">tag</span>
+	<span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">tag</span><span class="p">)</span> <span class="o">==</span> <span class="mi">4</span><span class="p">,</span> <span class="s2">&quot;tag should be 4 characters long&quot;</span>
+	<span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">tag</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">tag</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39; &#39;</span><span class="p">:</span>
+		<span class="n">tag</span> <span class="o">=</span> <span class="n">tag</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+	<span class="n">ident</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+	<span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">tag</span><span class="p">:</span>
+		<span class="n">ident</span> <span class="o">=</span> <span class="n">ident</span> <span class="o">+</span> <span class="n">_escapechar</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+	<span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s2">&quot;[0-9]&quot;</span><span class="p">,</span> <span class="n">ident</span><span class="p">):</span>
+		<span class="n">ident</span> <span class="o">=</span> <span class="s2">&quot;_&quot;</span> <span class="o">+</span> <span class="n">ident</span>
+	<span class="k">return</span> <span class="n">ident</span></div>
+
+
+<div class="viewcode-block" id="identifierToTag"><a class="viewcode-back" href="../../../ttLib/ttFont.html#fontTools.ttLib.ttFont.identifierToTag">[docs]</a><span class="k">def</span> <span class="nf">identifierToTag</span><span class="p">(</span><span class="n">ident</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;the opposite of tagToIdentifier()&quot;&quot;&quot;</span>
+	<span class="k">if</span> <span class="n">ident</span> <span class="o">==</span> <span class="s2">&quot;GlyphOrder&quot;</span><span class="p">:</span>
+		<span class="k">return</span> <span class="n">ident</span>
+	<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">ident</span><span class="p">)</span> <span class="o">%</span> <span class="mi">2</span> <span class="ow">and</span> <span class="n">ident</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;_&quot;</span><span class="p">:</span>
+		<span class="n">ident</span> <span class="o">=</span> <span class="n">ident</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+	<span class="k">assert</span> <span class="ow">not</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ident</span><span class="p">)</span> <span class="o">%</span> <span class="mi">2</span><span class="p">)</span>
+	<span class="n">tag</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+	<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">ident</span><span class="p">),</span> <span class="mi">2</span><span class="p">):</span>
+		<span class="k">if</span> <span class="n">ident</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;_&quot;</span><span class="p">:</span>
+			<span class="n">tag</span> <span class="o">=</span> <span class="n">tag</span> <span class="o">+</span> <span class="n">ident</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
+		<span class="k">elif</span> <span class="n">ident</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;_&quot;</span><span class="p">:</span>
+			<span class="n">tag</span> <span class="o">=</span> <span class="n">tag</span> <span class="o">+</span> <span class="n">ident</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="c1"># assume hex</span>
+			<span class="n">tag</span> <span class="o">=</span> <span class="n">tag</span> <span class="o">+</span> <span class="nb">chr</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">ident</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="mi">2</span><span class="p">],</span> <span class="mi">16</span><span class="p">))</span>
+	<span class="c1"># append trailing spaces</span>
+	<span class="n">tag</span> <span class="o">=</span> <span class="n">tag</span> <span class="o">+</span> <span class="p">(</span><span class="mi">4</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">tag</span><span class="p">))</span> <span class="o">*</span> <span class="s1">&#39; &#39;</span>
+	<span class="k">return</span> <span class="n">Tag</span><span class="p">(</span><span class="n">tag</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="tagToXML"><a class="viewcode-back" href="../../../ttLib/ttFont.html#fontTools.ttLib.ttFont.tagToXML">[docs]</a><span class="k">def</span> <span class="nf">tagToXML</span><span class="p">(</span><span class="n">tag</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Similarly to tagToIdentifier(), this converts a TT tag</span>
+<span class="sd">	to a valid XML element name. Since XML element names are</span>
+<span class="sd">	case sensitive, this is a fairly simple/readable translation.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="kn">import</span> <span class="nn">re</span>
+	<span class="n">tag</span> <span class="o">=</span> <span class="n">Tag</span><span class="p">(</span><span class="n">tag</span><span class="p">)</span>
+	<span class="k">if</span> <span class="n">tag</span> <span class="o">==</span> <span class="s2">&quot;OS/2&quot;</span><span class="p">:</span>
+		<span class="k">return</span> <span class="s2">&quot;OS_2&quot;</span>
+	<span class="k">elif</span> <span class="n">tag</span> <span class="o">==</span> <span class="s2">&quot;GlyphOrder&quot;</span><span class="p">:</span>
+		<span class="k">return</span> <span class="n">tag</span>
+	<span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s2">&quot;[A-Za-z_][A-Za-z_0-9]* *$&quot;</span><span class="p">,</span> <span class="n">tag</span><span class="p">):</span>
+		<span class="k">return</span> <span class="n">tag</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+	<span class="k">else</span><span class="p">:</span>
+		<span class="k">return</span> <span class="n">tagToIdentifier</span><span class="p">(</span><span class="n">tag</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="xmlToTag"><a class="viewcode-back" href="../../../ttLib/ttFont.html#fontTools.ttLib.ttFont.xmlToTag">[docs]</a><span class="k">def</span> <span class="nf">xmlToTag</span><span class="p">(</span><span class="n">tag</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;The opposite of tagToXML()&quot;&quot;&quot;</span>
+	<span class="k">if</span> <span class="n">tag</span> <span class="o">==</span> <span class="s2">&quot;OS_2&quot;</span><span class="p">:</span>
+		<span class="k">return</span> <span class="n">Tag</span><span class="p">(</span><span class="s2">&quot;OS/2&quot;</span><span class="p">)</span>
+	<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">tag</span><span class="p">)</span> <span class="o">==</span> <span class="mi">8</span><span class="p">:</span>
+		<span class="k">return</span> <span class="n">identifierToTag</span><span class="p">(</span><span class="n">tag</span><span class="p">)</span>
+	<span class="k">else</span><span class="p">:</span>
+		<span class="k">return</span> <span class="n">Tag</span><span class="p">(</span><span class="n">tag</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">*</span> <span class="p">(</span><span class="mi">4</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">tag</span><span class="p">)))</span></div>
+
+
+
+<span class="c1"># Table order as recommended in the OpenType specification 1.4</span>
+<span class="n">TTFTableOrder</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;head&quot;</span><span class="p">,</span> <span class="s2">&quot;hhea&quot;</span><span class="p">,</span> <span class="s2">&quot;maxp&quot;</span><span class="p">,</span> <span class="s2">&quot;OS/2&quot;</span><span class="p">,</span> <span class="s2">&quot;hmtx&quot;</span><span class="p">,</span> <span class="s2">&quot;LTSH&quot;</span><span class="p">,</span> <span class="s2">&quot;VDMX&quot;</span><span class="p">,</span>
+				<span class="s2">&quot;hdmx&quot;</span><span class="p">,</span> <span class="s2">&quot;cmap&quot;</span><span class="p">,</span> <span class="s2">&quot;fpgm&quot;</span><span class="p">,</span> <span class="s2">&quot;prep&quot;</span><span class="p">,</span> <span class="s2">&quot;cvt &quot;</span><span class="p">,</span> <span class="s2">&quot;loca&quot;</span><span class="p">,</span> <span class="s2">&quot;glyf&quot;</span><span class="p">,</span>
+				<span class="s2">&quot;kern&quot;</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;post&quot;</span><span class="p">,</span> <span class="s2">&quot;gasp&quot;</span><span class="p">,</span> <span class="s2">&quot;PCLT&quot;</span><span class="p">]</span>
+
+<span class="n">OTFTableOrder</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;head&quot;</span><span class="p">,</span> <span class="s2">&quot;hhea&quot;</span><span class="p">,</span> <span class="s2">&quot;maxp&quot;</span><span class="p">,</span> <span class="s2">&quot;OS/2&quot;</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;cmap&quot;</span><span class="p">,</span> <span class="s2">&quot;post&quot;</span><span class="p">,</span>
+				<span class="s2">&quot;CFF &quot;</span><span class="p">]</span>
+
+<div class="viewcode-block" id="sortedTagList"><a class="viewcode-back" href="../../../ttLib/ttFont.html#fontTools.ttLib.ttFont.sortedTagList">[docs]</a><span class="k">def</span> <span class="nf">sortedTagList</span><span class="p">(</span><span class="n">tagList</span><span class="p">,</span> <span class="n">tableOrder</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Return a sorted copy of tagList, sorted according to the OpenType</span>
+<span class="sd">	specification, or according to a custom tableOrder. If given and not</span>
+<span class="sd">	None, tableOrder needs to be a list of tag names.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="n">tagList</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">tagList</span><span class="p">)</span>
+	<span class="k">if</span> <span class="n">tableOrder</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+		<span class="k">if</span> <span class="s2">&quot;DSIG&quot;</span> <span class="ow">in</span> <span class="n">tagList</span><span class="p">:</span>
+			<span class="c1"># DSIG should be last (XXX spec reference?)</span>
+			<span class="n">tagList</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s2">&quot;DSIG&quot;</span><span class="p">)</span>
+			<span class="n">tagList</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;DSIG&quot;</span><span class="p">)</span>
+		<span class="k">if</span> <span class="s2">&quot;CFF &quot;</span> <span class="ow">in</span> <span class="n">tagList</span><span class="p">:</span>
+			<span class="n">tableOrder</span> <span class="o">=</span> <span class="n">OTFTableOrder</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="n">tableOrder</span> <span class="o">=</span> <span class="n">TTFTableOrder</span>
+	<span class="n">orderedTables</span> <span class="o">=</span> <span class="p">[]</span>
+	<span class="k">for</span> <span class="n">tag</span> <span class="ow">in</span> <span class="n">tableOrder</span><span class="p">:</span>
+		<span class="k">if</span> <span class="n">tag</span> <span class="ow">in</span> <span class="n">tagList</span><span class="p">:</span>
+			<span class="n">orderedTables</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tag</span><span class="p">)</span>
+			<span class="n">tagList</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">tag</span><span class="p">)</span>
+	<span class="n">orderedTables</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">tagList</span><span class="p">)</span>
+	<span class="k">return</span> <span class="n">orderedTables</span></div>
+
+
+<div class="viewcode-block" id="reorderFontTables"><a class="viewcode-back" href="../../../ttLib/ttFont.html#fontTools.ttLib.ttFont.reorderFontTables">[docs]</a><span class="k">def</span> <span class="nf">reorderFontTables</span><span class="p">(</span><span class="n">inFile</span><span class="p">,</span> <span class="n">outFile</span><span class="p">,</span> <span class="n">tableOrder</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">checkChecksums</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Rewrite a font file, ordering the tables as recommended by the</span>
+<span class="sd">	OpenType specification 1.4.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="n">inFile</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+	<span class="n">outFile</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+	<span class="n">reader</span> <span class="o">=</span> <span class="n">SFNTReader</span><span class="p">(</span><span class="n">inFile</span><span class="p">,</span> <span class="n">checkChecksums</span><span class="o">=</span><span class="n">checkChecksums</span><span class="p">)</span>
+	<span class="n">writer</span> <span class="o">=</span> <span class="n">SFNTWriter</span><span class="p">(</span><span class="n">outFile</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">reader</span><span class="o">.</span><span class="n">tables</span><span class="p">),</span> <span class="n">reader</span><span class="o">.</span><span class="n">sfntVersion</span><span class="p">,</span> <span class="n">reader</span><span class="o">.</span><span class="n">flavor</span><span class="p">,</span> <span class="n">reader</span><span class="o">.</span><span class="n">flavorData</span><span class="p">)</span>
+	<span class="n">tables</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">reader</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+	<span class="k">for</span> <span class="n">tag</span> <span class="ow">in</span> <span class="n">sortedTagList</span><span class="p">(</span><span class="n">tables</span><span class="p">,</span> <span class="n">tableOrder</span><span class="p">):</span>
+		<span class="n">writer</span><span class="p">[</span><span class="n">tag</span><span class="p">]</span> <span class="o">=</span> <span class="n">reader</span><span class="p">[</span><span class="n">tag</span><span class="p">]</span>
+	<span class="n">writer</span><span class="o">.</span><span class="n">close</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="maxPowerOfTwo"><a class="viewcode-back" href="../../../ttLib/ttFont.html#fontTools.ttLib.ttFont.maxPowerOfTwo">[docs]</a><span class="k">def</span> <span class="nf">maxPowerOfTwo</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Return the highest exponent of two, so that</span>
+<span class="sd">	(2 ** exponent) &lt;= x.  Return 0 if x is 0.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="n">exponent</span> <span class="o">=</span> <span class="mi">0</span>
+	<span class="k">while</span> <span class="n">x</span><span class="p">:</span>
+		<span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span>
+		<span class="n">exponent</span> <span class="o">=</span> <span class="n">exponent</span> <span class="o">+</span> <span class="mi">1</span>
+	<span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="n">exponent</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="getSearchRange"><a class="viewcode-back" href="../../../ttLib/ttFont.html#fontTools.ttLib.ttFont.getSearchRange">[docs]</a><span class="k">def</span> <span class="nf">getSearchRange</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">itemSize</span><span class="o">=</span><span class="mi">16</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Calculate searchRange, entrySelector, rangeShift.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="c1"># itemSize defaults to 16, for backward compatibility</span>
+	<span class="c1"># with upstream fonttools.</span>
+	<span class="n">exponent</span> <span class="o">=</span> <span class="n">maxPowerOfTwo</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+	<span class="n">searchRange</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span> <span class="o">**</span> <span class="n">exponent</span><span class="p">)</span> <span class="o">*</span> <span class="n">itemSize</span>
+	<span class="n">entrySelector</span> <span class="o">=</span> <span class="n">exponent</span>
+	<span class="n">rangeShift</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span> <span class="o">*</span> <span class="n">itemSize</span> <span class="o">-</span> <span class="n">searchRange</span><span class="p">)</span>
+	<span class="k">return</span> <span class="n">searchRange</span><span class="p">,</span> <span class="n">entrySelector</span><span class="p">,</span> <span class="n">rangeShift</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Just van Rossum, Behdad Esfahbod, and the fontTools Authors. CC BY-SA 4.0
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

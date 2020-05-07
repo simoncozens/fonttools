@@ -1,0 +1,743 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>mtiLib &mdash; fontTools Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="otlLib" href="otlLib/index.html" />
+    <link rel="prev" title="xmlWriter" href="misc/xmlWriter.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> fontTools
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Library</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="afmLib.html">afmLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agl.html">agl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cffLib/index.html">cffLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="colorLib/index.html">colorLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cu2qu/index.html">cu2qu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="designspaceLib/index.html">designspaceLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="encodings/index.html">encodings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="feaLib/index.html">feaLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="merge.html">merge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="misc/index.html">misc</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">mtiLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="otlLib/index.html">otlLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pens/index.html">pens</a></li>
+<li class="toctree-l1"><a class="reference internal" href="subset/index.html">subset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="svgLib/index.html">svgLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="t1Lib.html">t1Lib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ttLib/index.html">ttLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ttx.html">ttx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ufoLib/index.html">ufoLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unicode.html">unicode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unicodedata/index.html">unicodedata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="varLib/index.html">varLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="voltLib.html">voltLib</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">fontTools</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>mtiLib</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/mtiLib.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-fontTools.mtiLib">
+<span id="mtilib"></span><h1>mtiLib<a class="headerlink" href="#module-fontTools.mtiLib" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="fontTools.mtiLib.ContextHelper">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.mtiLib.</code><code class="sig-name descname">ContextHelper</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">klassName</span></em>, <em class="sig-param"><span class="n">Format</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/mtiLib.html#ContextHelper"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.mtiLib.ContextHelper" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.mtiLib.DeferredMapping">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.mtiLib.</code><code class="sig-name descname">DeferredMapping</code><a class="reference internal" href="_modules/fontTools/mtiLib.html#DeferredMapping"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.mtiLib.DeferredMapping" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.mtiLib.DeferredMapping.addDeferredMapping">
+<code class="sig-name descname">addDeferredMapping</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">setter</span></em>, <em class="sig-param"><span class="n">sym</span></em>, <em class="sig-param"><span class="n">e</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/mtiLib.html#DeferredMapping.addDeferredMapping"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.mtiLib.DeferredMapping.addDeferredMapping" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.mtiLib.DeferredMapping.applyDeferredMappings">
+<code class="sig-name descname">applyDeferredMappings</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/mtiLib.html#DeferredMapping.applyDeferredMappings"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.mtiLib.DeferredMapping.applyDeferredMappings" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.mtiLib.DeferredMapping.clear">
+<code class="sig-name descname">clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; None.  Remove all items from D.<a class="headerlink" href="#fontTools.mtiLib.DeferredMapping.clear" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.mtiLib.DeferredMapping.copy">
+<code class="sig-name descname">copy</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; a shallow copy of D<a class="headerlink" href="#fontTools.mtiLib.DeferredMapping.copy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.mtiLib.DeferredMapping.fromkeys">
+<code class="sig-name descname">fromkeys</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.mtiLib.DeferredMapping.fromkeys" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new dictionary with keys from iterable and values set to value.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.mtiLib.DeferredMapping.get">
+<code class="sig-name descname">get</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.mtiLib.DeferredMapping.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the value for key if key is in the dictionary, else default.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.mtiLib.DeferredMapping.items">
+<code class="sig-name descname">items</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; a set-like object providing a view on D’s items<a class="headerlink" href="#fontTools.mtiLib.DeferredMapping.items" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.mtiLib.DeferredMapping.keys">
+<code class="sig-name descname">keys</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; a set-like object providing a view on D’s keys<a class="headerlink" href="#fontTools.mtiLib.DeferredMapping.keys" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.mtiLib.DeferredMapping.pop">
+<code class="sig-name descname">pop</code><span class="sig-paren">(</span><em class="sig-param">k</em><span class="optional">[</span>, <em class="sig-param">d</em><span class="optional">]</span><span class="sig-paren">)</span> &#x2192; v, remove specified key and return the corresponding value.<a class="headerlink" href="#fontTools.mtiLib.DeferredMapping.pop" title="Permalink to this definition">¶</a></dt>
+<dd><p>If key is not found, d is returned if given, otherwise KeyError is raised</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.mtiLib.DeferredMapping.popitem">
+<code class="sig-name descname">popitem</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; (k, v), remove and return some (key, value) pair as a<a class="headerlink" href="#fontTools.mtiLib.DeferredMapping.popitem" title="Permalink to this definition">¶</a></dt>
+<dd><p>2-tuple; but raise KeyError if D is empty.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.mtiLib.DeferredMapping.setdefault">
+<code class="sig-name descname">setdefault</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.mtiLib.DeferredMapping.setdefault" title="Permalink to this definition">¶</a></dt>
+<dd><p>Insert key with a value of default if key is not in the dictionary.</p>
+<p>Return the value for key if key is in the dictionary, else default.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.mtiLib.DeferredMapping.update">
+<code class="sig-name descname">update</code><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param">E</em>, <span class="optional">]</span><em class="sig-param">**F</em><span class="sig-paren">)</span> &#x2192; None.  Update D from dict/iterable E and F.<a class="headerlink" href="#fontTools.mtiLib.DeferredMapping.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>If E is present and has a .keys() method, then does:  for k in E: D[k] = E[k]
+If E is present and lacks a .keys() method, then does:  for k, v in E: D[k] = v
+In either case, this is followed by: for k in F:  D[k] = F[k]</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.mtiLib.DeferredMapping.values">
+<code class="sig-name descname">values</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; an object providing a view on D’s values<a class="headerlink" href="#fontTools.mtiLib.DeferredMapping.values" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt id="fontTools.mtiLib.FeatureNotFoundError">
+<em class="property">exception </em><code class="sig-prename descclassname">fontTools.mtiLib.</code><code class="sig-name descname">FeatureNotFoundError</code><a class="reference internal" href="_modules/fontTools/mtiLib.html#FeatureNotFoundError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.mtiLib.FeatureNotFoundError" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py attribute">
+<dt id="fontTools.mtiLib.FeatureNotFoundError.args">
+<code class="sig-name descname">args</code><a class="headerlink" href="#fontTools.mtiLib.FeatureNotFoundError.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.mtiLib.FeatureNotFoundError.with_traceback">
+<code class="sig-name descname">with_traceback</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.mtiLib.FeatureNotFoundError.with_traceback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt id="fontTools.mtiLib.LookupNotFoundError">
+<em class="property">exception </em><code class="sig-prename descclassname">fontTools.mtiLib.</code><code class="sig-name descname">LookupNotFoundError</code><a class="reference internal" href="_modules/fontTools/mtiLib.html#LookupNotFoundError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.mtiLib.LookupNotFoundError" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py attribute">
+<dt id="fontTools.mtiLib.LookupNotFoundError.args">
+<code class="sig-name descname">args</code><a class="headerlink" href="#fontTools.mtiLib.LookupNotFoundError.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.mtiLib.LookupNotFoundError.with_traceback">
+<code class="sig-name descname">with_traceback</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.mtiLib.LookupNotFoundError.with_traceback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.mtiLib.MarkHelper">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.mtiLib.</code><code class="sig-name descname">MarkHelper</code><a class="reference internal" href="_modules/fontTools/mtiLib.html#MarkHelper"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.mtiLib.MarkHelper" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.mtiLib.MarkToBaseHelper">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.mtiLib.</code><code class="sig-name descname">MarkToBaseHelper</code><a class="reference internal" href="_modules/fontTools/mtiLib.html#MarkToBaseHelper"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.mtiLib.MarkToBaseHelper" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py attribute">
+<dt id="fontTools.mtiLib.MarkToBaseHelper.Base">
+<code class="sig-name descname">Base</code><em class="property"> = 'Base'</em><a class="headerlink" href="#fontTools.mtiLib.MarkToBaseHelper.Base" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.mtiLib.MarkToBaseHelper.Mark">
+<code class="sig-name descname">Mark</code><em class="property"> = 'Mark'</em><a class="headerlink" href="#fontTools.mtiLib.MarkToBaseHelper.Mark" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.mtiLib.MarkToBaseHelper.Type">
+<code class="sig-name descname">Type</code><a class="headerlink" href="#fontTools.mtiLib.MarkToBaseHelper.Type" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="ttLib/tables.html#fontTools.ttLib.tables.otTables.MarkBasePos" title="fontTools.ttLib.tables.otTables.MarkBasePos"><code class="xref py py-class docutils literal notranslate"><span class="pre">fontTools.ttLib.tables.otTables.MarkBasePos</span></code></a></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.mtiLib.MarkToLigatureHelper">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.mtiLib.</code><code class="sig-name descname">MarkToLigatureHelper</code><a class="reference internal" href="_modules/fontTools/mtiLib.html#MarkToLigatureHelper"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.mtiLib.MarkToLigatureHelper" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py attribute">
+<dt id="fontTools.mtiLib.MarkToLigatureHelper.Base">
+<code class="sig-name descname">Base</code><em class="property"> = 'Ligature'</em><a class="headerlink" href="#fontTools.mtiLib.MarkToLigatureHelper.Base" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.mtiLib.MarkToLigatureHelper.Mark">
+<code class="sig-name descname">Mark</code><em class="property"> = 'Mark'</em><a class="headerlink" href="#fontTools.mtiLib.MarkToLigatureHelper.Mark" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.mtiLib.MarkToLigatureHelper.Type">
+<code class="sig-name descname">Type</code><a class="headerlink" href="#fontTools.mtiLib.MarkToLigatureHelper.Type" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="ttLib/tables.html#fontTools.ttLib.tables.otTables.MarkLigPos" title="fontTools.ttLib.tables.otTables.MarkLigPos"><code class="xref py py-class docutils literal notranslate"><span class="pre">fontTools.ttLib.tables.otTables.MarkLigPos</span></code></a></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.mtiLib.MarkToMarkHelper">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.mtiLib.</code><code class="sig-name descname">MarkToMarkHelper</code><a class="reference internal" href="_modules/fontTools/mtiLib.html#MarkToMarkHelper"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.mtiLib.MarkToMarkHelper" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py attribute">
+<dt id="fontTools.mtiLib.MarkToMarkHelper.Base">
+<code class="sig-name descname">Base</code><em class="property"> = 'Mark2'</em><a class="headerlink" href="#fontTools.mtiLib.MarkToMarkHelper.Base" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.mtiLib.MarkToMarkHelper.Mark">
+<code class="sig-name descname">Mark</code><em class="property"> = 'Mark1'</em><a class="headerlink" href="#fontTools.mtiLib.MarkToMarkHelper.Mark" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.mtiLib.MarkToMarkHelper.Type">
+<code class="sig-name descname">Type</code><a class="headerlink" href="#fontTools.mtiLib.MarkToMarkHelper.Type" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="ttLib/tables.html#fontTools.ttLib.tables.otTables.MarkMarkPos" title="fontTools.ttLib.tables.otTables.MarkMarkPos"><code class="xref py py-class docutils literal notranslate"><span class="pre">fontTools.ttLib.tables.otTables.MarkMarkPos</span></code></a></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt id="fontTools.mtiLib.MtiLibError">
+<em class="property">exception </em><code class="sig-prename descclassname">fontTools.mtiLib.</code><code class="sig-name descname">MtiLibError</code><a class="reference internal" href="_modules/fontTools/mtiLib.html#MtiLibError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.mtiLib.MtiLibError" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py attribute">
+<dt id="fontTools.mtiLib.MtiLibError.args">
+<code class="sig-name descname">args</code><a class="headerlink" href="#fontTools.mtiLib.MtiLibError.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.mtiLib.MtiLibError.with_traceback">
+<code class="sig-name descname">with_traceback</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.mtiLib.MtiLibError.with_traceback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt id="fontTools.mtiLib.ReferenceNotFoundError">
+<em class="property">exception </em><code class="sig-prename descclassname">fontTools.mtiLib.</code><code class="sig-name descname">ReferenceNotFoundError</code><a class="reference internal" href="_modules/fontTools/mtiLib.html#ReferenceNotFoundError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.mtiLib.ReferenceNotFoundError" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py attribute">
+<dt id="fontTools.mtiLib.ReferenceNotFoundError.args">
+<code class="sig-name descname">args</code><a class="headerlink" href="#fontTools.mtiLib.ReferenceNotFoundError.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.mtiLib.ReferenceNotFoundError.with_traceback">
+<code class="sig-name descname">with_traceback</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.mtiLib.ReferenceNotFoundError.with_traceback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.mtiLib.Tokenizer">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.mtiLib.</code><code class="sig-name descname">Tokenizer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">f</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/mtiLib.html#Tokenizer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.mtiLib.Tokenizer" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.mtiLib.Tokenizer.between">
+<code class="sig-name descname">between</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/mtiLib.html#Tokenizer.between"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.mtiLib.Tokenizer.between" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.mtiLib.Tokenizer.expect">
+<code class="sig-name descname">expect</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">s</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/mtiLib.html#Tokenizer.expect"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.mtiLib.Tokenizer.expect" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.mtiLib.Tokenizer.expectendswith">
+<code class="sig-name descname">expectendswith</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">s</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/mtiLib.html#Tokenizer.expectendswith"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.mtiLib.Tokenizer.expectendswith" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.mtiLib.Tokenizer.next">
+<code class="sig-name descname">next</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/mtiLib.html#Tokenizer.next"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.mtiLib.Tokenizer.next" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.mtiLib.Tokenizer.peek">
+<code class="sig-name descname">peek</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/mtiLib.html#Tokenizer.peek"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.mtiLib.Tokenizer.peek" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.mtiLib.Tokenizer.peeks">
+<code class="sig-name descname">peeks</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/mtiLib.html#Tokenizer.peeks"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.mtiLib.Tokenizer.peeks" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.mtiLib.Tokenizer.until">
+<code class="sig-name descname">until</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tags</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/mtiLib.html#Tokenizer.until"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.mtiLib.Tokenizer.until" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.mtiLib.bucketizeRules">
+<code class="sig-prename descclassname">fontTools.mtiLib.</code><code class="sig-name descname">bucketizeRules</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">c</span></em>, <em class="sig-param"><span class="n">rules</span></em>, <em class="sig-param"><span class="n">bucketKeys</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/mtiLib.html#bucketizeRules"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.mtiLib.bucketizeRules" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.mtiLib.build">
+<code class="sig-prename descclassname">fontTools.mtiLib.</code><code class="sig-name descname">build</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">f</span></em>, <em class="sig-param"><span class="n">font</span></em>, <em class="sig-param"><span class="n">tableTag</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/mtiLib.html#build"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.mtiLib.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.mtiLib.intSplitComma">
+<code class="sig-prename descclassname">fontTools.mtiLib.</code><code class="sig-name descname">intSplitComma</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">line</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/mtiLib.html#intSplitComma"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.mtiLib.intSplitComma" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.mtiLib.main">
+<code class="sig-prename descclassname">fontTools.mtiLib.</code><code class="sig-name descname">main</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">args</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">font</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/mtiLib.html#main"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.mtiLib.main" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.mtiLib.makeAnchor">
+<code class="sig-prename descclassname">fontTools.mtiLib.</code><code class="sig-name descname">makeAnchor</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">klass=&lt;class 'fontTools.ttLib.tables.otTables.Anchor'&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/mtiLib.html#makeAnchor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.mtiLib.makeAnchor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.mtiLib.makeBaseRecords">
+<code class="sig-prename descclassname">fontTools.mtiLib.</code><code class="sig-name descname">makeBaseRecords</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">coverage</span></em>, <em class="sig-param"><span class="n">c</span></em>, <em class="sig-param"><span class="n">classCount</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/mtiLib.html#makeBaseRecords"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.mtiLib.makeBaseRecords" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.mtiLib.makeClassDef">
+<code class="sig-prename descclassname">fontTools.mtiLib.</code><code class="sig-name descname">makeClassDef</code><span class="sig-paren">(</span><em class="sig-param">classDefs</em>, <em class="sig-param">font</em>, <em class="sig-param">klass=&lt;class 'fontTools.ttLib.tables.otTables.Coverage'&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/mtiLib.html#makeClassDef"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.mtiLib.makeClassDef" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.mtiLib.makeCoverage">
+<code class="sig-prename descclassname">fontTools.mtiLib.</code><code class="sig-name descname">makeCoverage</code><span class="sig-paren">(</span><em class="sig-param">glyphs</em>, <em class="sig-param">font</em>, <em class="sig-param">klass=&lt;class 'fontTools.ttLib.tables.otTables.Coverage'&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/mtiLib.html#makeCoverage"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.mtiLib.makeCoverage" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.mtiLib.makeGlyph">
+<code class="sig-prename descclassname">fontTools.mtiLib.</code><code class="sig-name descname">makeGlyph</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">s</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/mtiLib.html#makeGlyph"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.mtiLib.makeGlyph" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.mtiLib.makeGlyphs">
+<code class="sig-prename descclassname">fontTools.mtiLib.</code><code class="sig-name descname">makeGlyphs</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">l</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/mtiLib.html#makeGlyphs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.mtiLib.makeGlyphs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.mtiLib.makeLigatureRecords">
+<code class="sig-prename descclassname">fontTools.mtiLib.</code><code class="sig-name descname">makeLigatureRecords</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">coverage</span></em>, <em class="sig-param"><span class="n">c</span></em>, <em class="sig-param"><span class="n">classCount</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/mtiLib.html#makeLigatureRecords"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.mtiLib.makeLigatureRecords" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.mtiLib.makeMarkFilteringSets">
+<code class="sig-prename descclassname">fontTools.mtiLib.</code><code class="sig-name descname">makeMarkFilteringSets</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sets</span></em>, <em class="sig-param"><span class="n">font</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/mtiLib.html#makeMarkFilteringSets"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.mtiLib.makeMarkFilteringSets" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.mtiLib.makeMarkRecords">
+<code class="sig-prename descclassname">fontTools.mtiLib.</code><code class="sig-name descname">makeMarkRecords</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">coverage</span></em>, <em class="sig-param"><span class="n">c</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/mtiLib.html#makeMarkRecords"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.mtiLib.makeMarkRecords" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.mtiLib.mapFeature">
+<code class="sig-prename descclassname">fontTools.mtiLib.</code><code class="sig-name descname">mapFeature</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sym</span></em>, <em class="sig-param"><span class="n">mapping</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/mtiLib.html#mapFeature"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.mtiLib.mapFeature" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.mtiLib.mapLookup">
+<code class="sig-prename descclassname">fontTools.mtiLib.</code><code class="sig-name descname">mapLookup</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sym</span></em>, <em class="sig-param"><span class="n">mapping</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/mtiLib.html#mapLookup"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.mtiLib.mapLookup" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.mtiLib.parseAlternate">
+<code class="sig-prename descclassname">fontTools.mtiLib.</code><code class="sig-name descname">parseAlternate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lines</span></em>, <em class="sig-param"><span class="n">font</span></em>, <em class="sig-param"><span class="n">_lookupMap</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/mtiLib.html#parseAlternate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.mtiLib.parseAlternate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.mtiLib.parseAttachList">
+<code class="sig-prename descclassname">fontTools.mtiLib.</code><code class="sig-name descname">parseAttachList</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lines</span></em>, <em class="sig-param"><span class="n">font</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/mtiLib.html#parseAttachList"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.mtiLib.parseAttachList" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.mtiLib.parseCaretList">
+<code class="sig-prename descclassname">fontTools.mtiLib.</code><code class="sig-name descname">parseCaretList</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lines</span></em>, <em class="sig-param"><span class="n">font</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/mtiLib.html#parseCaretList"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.mtiLib.parseCaretList" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.mtiLib.parseChainedPos">
+<code class="sig-prename descclassname">fontTools.mtiLib.</code><code class="sig-name descname">parseChainedPos</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lines</span></em>, <em class="sig-param"><span class="n">font</span></em>, <em class="sig-param"><span class="n">lookupMap</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/mtiLib.html#parseChainedPos"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.mtiLib.parseChainedPos" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.mtiLib.parseChainedSubst">
+<code class="sig-prename descclassname">fontTools.mtiLib.</code><code class="sig-name descname">parseChainedSubst</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lines</span></em>, <em class="sig-param"><span class="n">font</span></em>, <em class="sig-param"><span class="n">lookupMap</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/mtiLib.html#parseChainedSubst"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.mtiLib.parseChainedSubst" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.mtiLib.parseClassDef">
+<code class="sig-prename descclassname">fontTools.mtiLib.</code><code class="sig-name descname">parseClassDef</code><span class="sig-paren">(</span><em class="sig-param">lines</em>, <em class="sig-param">font</em>, <em class="sig-param">klass=&lt;class 'fontTools.ttLib.tables.otTables.ClassDef'&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/mtiLib.html#parseClassDef"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.mtiLib.parseClassDef" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.mtiLib.parseCmap">
+<code class="sig-prename descclassname">fontTools.mtiLib.</code><code class="sig-name descname">parseCmap</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lines</span></em>, <em class="sig-param"><span class="n">font</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/mtiLib.html#parseCmap"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.mtiLib.parseCmap" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.mtiLib.parseCmapId">
+<code class="sig-prename descclassname">fontTools.mtiLib.</code><code class="sig-name descname">parseCmapId</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lines</span></em>, <em class="sig-param"><span class="n">field</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/mtiLib.html#parseCmapId"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.mtiLib.parseCmapId" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.mtiLib.parseContext">
+<code class="sig-prename descclassname">fontTools.mtiLib.</code><code class="sig-name descname">parseContext</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lines</span></em>, <em class="sig-param"><span class="n">font</span></em>, <em class="sig-param"><span class="n">Type</span></em>, <em class="sig-param"><span class="n">lookupMap</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/mtiLib.html#parseContext"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.mtiLib.parseContext" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.mtiLib.parseContextPos">
+<code class="sig-prename descclassname">fontTools.mtiLib.</code><code class="sig-name descname">parseContextPos</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lines</span></em>, <em class="sig-param"><span class="n">font</span></em>, <em class="sig-param"><span class="n">lookupMap</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/mtiLib.html#parseContextPos"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.mtiLib.parseContextPos" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.mtiLib.parseContextSubst">
+<code class="sig-prename descclassname">fontTools.mtiLib.</code><code class="sig-name descname">parseContextSubst</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lines</span></em>, <em class="sig-param"><span class="n">font</span></em>, <em class="sig-param"><span class="n">lookupMap</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/mtiLib.html#parseContextSubst"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.mtiLib.parseContextSubst" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.mtiLib.parseCoverage">
+<code class="sig-prename descclassname">fontTools.mtiLib.</code><code class="sig-name descname">parseCoverage</code><span class="sig-paren">(</span><em class="sig-param">lines</em>, <em class="sig-param">font</em>, <em class="sig-param">klass=&lt;class 'fontTools.ttLib.tables.otTables.Coverage'&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/mtiLib.html#parseCoverage"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.mtiLib.parseCoverage" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.mtiLib.parseCursive">
+<code class="sig-prename descclassname">fontTools.mtiLib.</code><code class="sig-name descname">parseCursive</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lines</span></em>, <em class="sig-param"><span class="n">font</span></em>, <em class="sig-param"><span class="n">_lookupMap</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/mtiLib.html#parseCursive"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.mtiLib.parseCursive" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.mtiLib.parseFeatureList">
+<code class="sig-prename descclassname">fontTools.mtiLib.</code><code class="sig-name descname">parseFeatureList</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lines</span></em>, <em class="sig-param"><span class="n">lookupMap</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">featureMap</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/mtiLib.html#parseFeatureList"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.mtiLib.parseFeatureList" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.mtiLib.parseGDEF">
+<code class="sig-prename descclassname">fontTools.mtiLib.</code><code class="sig-name descname">parseGDEF</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lines</span></em>, <em class="sig-param"><span class="n">font</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/mtiLib.html#parseGDEF"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.mtiLib.parseGDEF" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.mtiLib.parseGPOS">
+<code class="sig-prename descclassname">fontTools.mtiLib.</code><code class="sig-name descname">parseGPOS</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lines</span></em>, <em class="sig-param"><span class="n">font</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/mtiLib.html#parseGPOS"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.mtiLib.parseGPOS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.mtiLib.parseGSUB">
+<code class="sig-prename descclassname">fontTools.mtiLib.</code><code class="sig-name descname">parseGSUB</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lines</span></em>, <em class="sig-param"><span class="n">font</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/mtiLib.html#parseGSUB"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.mtiLib.parseGSUB" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.mtiLib.parseGSUBGPOS">
+<code class="sig-prename descclassname">fontTools.mtiLib.</code><code class="sig-name descname">parseGSUBGPOS</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lines</span></em>, <em class="sig-param"><span class="n">font</span></em>, <em class="sig-param"><span class="n">tableTag</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/mtiLib.html#parseGSUBGPOS"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.mtiLib.parseGSUBGPOS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.mtiLib.parseKernset">
+<code class="sig-prename descclassname">fontTools.mtiLib.</code><code class="sig-name descname">parseKernset</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lines</span></em>, <em class="sig-param"><span class="n">font</span></em>, <em class="sig-param"><span class="n">_lookupMap</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/mtiLib.html#parseKernset"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.mtiLib.parseKernset" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.mtiLib.parseLigature">
+<code class="sig-prename descclassname">fontTools.mtiLib.</code><code class="sig-name descname">parseLigature</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lines</span></em>, <em class="sig-param"><span class="n">font</span></em>, <em class="sig-param"><span class="n">_lookupMap</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/mtiLib.html#parseLigature"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.mtiLib.parseLigature" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.mtiLib.parseLookup">
+<code class="sig-prename descclassname">fontTools.mtiLib.</code><code class="sig-name descname">parseLookup</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lines</span></em>, <em class="sig-param"><span class="n">tableTag</span></em>, <em class="sig-param"><span class="n">font</span></em>, <em class="sig-param"><span class="n">lookupMap</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/mtiLib.html#parseLookup"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.mtiLib.parseLookup" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.mtiLib.parseLookupFlags">
+<code class="sig-prename descclassname">fontTools.mtiLib.</code><code class="sig-name descname">parseLookupFlags</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lines</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/mtiLib.html#parseLookupFlags"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.mtiLib.parseLookupFlags" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.mtiLib.parseLookupRecords">
+<code class="sig-prename descclassname">fontTools.mtiLib.</code><code class="sig-name descname">parseLookupRecords</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">items</span></em>, <em class="sig-param"><span class="n">klassName</span></em>, <em class="sig-param"><span class="n">lookupMap</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/mtiLib.html#parseLookupRecords"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.mtiLib.parseLookupRecords" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.mtiLib.parseMarkFilteringSets">
+<code class="sig-prename descclassname">fontTools.mtiLib.</code><code class="sig-name descname">parseMarkFilteringSets</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lines</span></em>, <em class="sig-param"><span class="n">font</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/mtiLib.html#parseMarkFilteringSets"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.mtiLib.parseMarkFilteringSets" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.mtiLib.parseMarkToBase">
+<code class="sig-prename descclassname">fontTools.mtiLib.</code><code class="sig-name descname">parseMarkToBase</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lines</span></em>, <em class="sig-param"><span class="n">font</span></em>, <em class="sig-param"><span class="n">_lookupMap</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/mtiLib.html#parseMarkToBase"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.mtiLib.parseMarkToBase" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.mtiLib.parseMarkToLigature">
+<code class="sig-prename descclassname">fontTools.mtiLib.</code><code class="sig-name descname">parseMarkToLigature</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lines</span></em>, <em class="sig-param"><span class="n">font</span></em>, <em class="sig-param"><span class="n">_lookupMap</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/mtiLib.html#parseMarkToLigature"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.mtiLib.parseMarkToLigature" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.mtiLib.parseMarkToMark">
+<code class="sig-prename descclassname">fontTools.mtiLib.</code><code class="sig-name descname">parseMarkToMark</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lines</span></em>, <em class="sig-param"><span class="n">font</span></em>, <em class="sig-param"><span class="n">_lookupMap</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/mtiLib.html#parseMarkToMark"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.mtiLib.parseMarkToMark" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.mtiLib.parseMarkToSomething">
+<code class="sig-prename descclassname">fontTools.mtiLib.</code><code class="sig-name descname">parseMarkToSomething</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lines</span></em>, <em class="sig-param"><span class="n">font</span></em>, <em class="sig-param"><span class="n">c</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/mtiLib.html#parseMarkToSomething"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.mtiLib.parseMarkToSomething" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.mtiLib.parseMultiple">
+<code class="sig-prename descclassname">fontTools.mtiLib.</code><code class="sig-name descname">parseMultiple</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lines</span></em>, <em class="sig-param"><span class="n">font</span></em>, <em class="sig-param"><span class="n">_lookupMap</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/mtiLib.html#parseMultiple"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.mtiLib.parseMultiple" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.mtiLib.parsePair">
+<code class="sig-prename descclassname">fontTools.mtiLib.</code><code class="sig-name descname">parsePair</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lines</span></em>, <em class="sig-param"><span class="n">font</span></em>, <em class="sig-param"><span class="n">_lookupMap</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/mtiLib.html#parsePair"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.mtiLib.parsePair" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.mtiLib.parseReverseChainedSubst">
+<code class="sig-prename descclassname">fontTools.mtiLib.</code><code class="sig-name descname">parseReverseChainedSubst</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lines</span></em>, <em class="sig-param"><span class="n">font</span></em>, <em class="sig-param"><span class="n">_lookupMap</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/mtiLib.html#parseReverseChainedSubst"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.mtiLib.parseReverseChainedSubst" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.mtiLib.parseScriptList">
+<code class="sig-prename descclassname">fontTools.mtiLib.</code><code class="sig-name descname">parseScriptList</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lines</span></em>, <em class="sig-param"><span class="n">featureMap</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/mtiLib.html#parseScriptList"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.mtiLib.parseScriptList" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.mtiLib.parseSinglePos">
+<code class="sig-prename descclassname">fontTools.mtiLib.</code><code class="sig-name descname">parseSinglePos</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lines</span></em>, <em class="sig-param"><span class="n">font</span></em>, <em class="sig-param"><span class="n">_lookupMap</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/mtiLib.html#parseSinglePos"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.mtiLib.parseSinglePos" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.mtiLib.parseSingleSubst">
+<code class="sig-prename descclassname">fontTools.mtiLib.</code><code class="sig-name descname">parseSingleSubst</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lines</span></em>, <em class="sig-param"><span class="n">font</span></em>, <em class="sig-param"><span class="n">_lookupMap</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/mtiLib.html#parseSingleSubst"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.mtiLib.parseSingleSubst" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.mtiLib.parseTable">
+<code class="sig-prename descclassname">fontTools.mtiLib.</code><code class="sig-name descname">parseTable</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lines</span></em>, <em class="sig-param"><span class="n">font</span></em>, <em class="sig-param"><span class="n">tableTag</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/mtiLib.html#parseTable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.mtiLib.parseTable" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.mtiLib.setReference">
+<code class="sig-prename descclassname">fontTools.mtiLib.</code><code class="sig-name descname">setReference</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mapper</span></em>, <em class="sig-param"><span class="n">mapping</span></em>, <em class="sig-param"><span class="n">sym</span></em>, <em class="sig-param"><span class="n">setter</span></em>, <em class="sig-param"><span class="n">collection</span></em>, <em class="sig-param"><span class="n">key</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/mtiLib.html#setReference"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.mtiLib.setReference" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.mtiLib.stripSplitComma">
+<code class="sig-prename descclassname">fontTools.mtiLib.</code><code class="sig-name descname">stripSplitComma</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">line</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/mtiLib.html#stripSplitComma"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.mtiLib.stripSplitComma" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="otlLib/index.html" class="btn btn-neutral float-right" title="otlLib" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="misc/xmlWriter.html" class="btn btn-neutral float-left" title="xmlWriter" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Just van Rossum, Behdad Esfahbod, and the fontTools Authors. CC BY-SA 4.0
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

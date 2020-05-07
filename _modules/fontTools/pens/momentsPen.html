@@ -1,0 +1,501 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>fontTools.pens.momentsPen &mdash; fontTools Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> fontTools
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Library</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../afmLib.html">afmLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../agl.html">agl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cffLib/index.html">cffLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../colorLib/index.html">colorLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cu2qu/index.html">cu2qu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../designspaceLib/index.html">designspaceLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../encodings/index.html">encodings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../feaLib/index.html">feaLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../merge.html">merge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../misc/index.html">misc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../mtiLib.html">mtiLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../otlLib/index.html">otlLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pens/index.html">pens</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../subset/index.html">subset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../svgLib/index.html">svgLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../t1Lib.html">t1Lib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ttLib/index.html">ttLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ttx.html">ttx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ufoLib/index.html">ufoLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../unicode.html">unicode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../unicodedata/index.html">unicodedata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../varLib/index.html">varLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../voltLib.html">voltLib</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">fontTools</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>fontTools.pens.momentsPen</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for fontTools.pens.momentsPen</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;Pen calculating 0th, 1st, and 2nd moments of area of glyph shapes.</span>
+<span class="sd">This is low-level, autogenerated pen. Use statisticsPen instead.&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">fontTools.misc.py23</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">fontTools.pens.basePen</span> <span class="k">import</span> <span class="n">BasePen</span>
+
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;MomentsPen&quot;</span><span class="p">]</span>
+
+
+<div class="viewcode-block" id="MomentsPen"><a class="viewcode-back" href="../../../pens/momentsPen.html#fontTools.pens.momentsPen.MomentsPen">[docs]</a><span class="k">class</span> <span class="nc">MomentsPen</span><span class="p">(</span><span class="n">BasePen</span><span class="p">):</span>
+
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">glyphset</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+		<span class="n">BasePen</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">glyphset</span><span class="p">)</span>
+
+		<span class="bp">self</span><span class="o">.</span><span class="n">area</span> <span class="o">=</span> <span class="mi">0</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">momentX</span> <span class="o">=</span> <span class="mi">0</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">momentY</span> <span class="o">=</span> <span class="mi">0</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">momentXX</span> <span class="o">=</span> <span class="mi">0</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">momentXY</span> <span class="o">=</span> <span class="mi">0</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">momentYY</span> <span class="o">=</span> <span class="mi">0</span>
+
+	<span class="k">def</span> <span class="nf">_moveTo</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">p0</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">__startPoint</span> <span class="o">=</span> <span class="n">p0</span>
+
+	<span class="k">def</span> <span class="nf">_closePath</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">p0</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_getCurrentPoint</span><span class="p">()</span>
+		<span class="k">if</span> <span class="n">p0</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__startPoint</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_lineTo</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__startPoint</span><span class="p">)</span>
+
+	<span class="k">def</span> <span class="nf">_endPath</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">p0</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_getCurrentPoint</span><span class="p">()</span>
+		<span class="k">if</span> <span class="n">p0</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__startPoint</span><span class="p">:</span>
+			<span class="c1"># Green theorem is not defined on open contours.</span>
+			<span class="k">raise</span> <span class="ne">NotImplementedError</span>
+
+	<span class="k">def</span> <span class="nf">_lineTo</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">p1</span><span class="p">):</span>
+		<span class="n">x0</span><span class="p">,</span><span class="n">y0</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_getCurrentPoint</span><span class="p">()</span>
+		<span class="n">x1</span><span class="p">,</span><span class="n">y1</span> <span class="o">=</span> <span class="n">p1</span>
+
+		<span class="n">r0</span> <span class="o">=</span> <span class="n">x1</span><span class="o">*</span><span class="n">y0</span>
+		<span class="n">r1</span> <span class="o">=</span> <span class="n">x1</span><span class="o">*</span><span class="n">y1</span>
+		<span class="n">r2</span> <span class="o">=</span> <span class="n">x1</span><span class="o">**</span><span class="mi">2</span>
+		<span class="n">r3</span> <span class="o">=</span> <span class="n">x0</span><span class="o">**</span><span class="mi">2</span>
+		<span class="n">r4</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">y0</span>
+		<span class="n">r5</span> <span class="o">=</span> <span class="n">y0</span> <span class="o">-</span> <span class="n">y1</span>
+		<span class="n">r6</span> <span class="o">=</span> <span class="n">r5</span><span class="o">*</span><span class="n">x0</span>
+		<span class="n">r7</span> <span class="o">=</span> <span class="n">y0</span><span class="o">**</span><span class="mi">2</span>
+		<span class="n">r8</span> <span class="o">=</span> <span class="n">y1</span><span class="o">**</span><span class="mi">2</span>
+		<span class="n">r9</span> <span class="o">=</span> <span class="n">x1</span><span class="o">**</span><span class="mi">3</span>
+		<span class="n">r10</span> <span class="o">=</span> <span class="n">r4</span><span class="o">*</span><span class="n">y1</span>
+		<span class="n">r11</span> <span class="o">=</span> <span class="n">y0</span><span class="o">**</span><span class="mi">3</span>
+		<span class="n">r12</span> <span class="o">=</span> <span class="n">y1</span><span class="o">**</span><span class="mi">3</span>
+
+		<span class="bp">self</span><span class="o">.</span><span class="n">area</span> <span class="o">+=</span> <span class="o">-</span><span class="n">r0</span><span class="o">/</span><span class="mi">2</span> <span class="o">-</span> <span class="n">r1</span><span class="o">/</span><span class="mi">2</span> <span class="o">+</span> <span class="n">x0</span><span class="o">*</span><span class="p">(</span><span class="n">y0</span> <span class="o">+</span> <span class="n">y1</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">momentX</span> <span class="o">+=</span> <span class="o">-</span><span class="n">r2</span><span class="o">*</span><span class="n">y0</span><span class="o">/</span><span class="mi">6</span> <span class="o">-</span> <span class="n">r2</span><span class="o">*</span><span class="n">y1</span><span class="o">/</span><span class="mi">3</span> <span class="o">+</span> <span class="n">r3</span><span class="o">*</span><span class="p">(</span><span class="n">r4</span> <span class="o">+</span> <span class="n">y1</span><span class="p">)</span><span class="o">/</span><span class="mi">6</span> <span class="o">-</span> <span class="n">r6</span><span class="o">*</span><span class="n">x1</span><span class="o">/</span><span class="mi">6</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">momentY</span> <span class="o">+=</span> <span class="o">-</span><span class="n">r0</span><span class="o">*</span><span class="n">y1</span><span class="o">/</span><span class="mi">6</span> <span class="o">-</span> <span class="n">r7</span><span class="o">*</span><span class="n">x1</span><span class="o">/</span><span class="mi">6</span> <span class="o">-</span> <span class="n">r8</span><span class="o">*</span><span class="n">x1</span><span class="o">/</span><span class="mi">6</span> <span class="o">+</span> <span class="n">x0</span><span class="o">*</span><span class="p">(</span><span class="n">r7</span> <span class="o">+</span> <span class="n">r8</span> <span class="o">+</span> <span class="n">y0</span><span class="o">*</span><span class="n">y1</span><span class="p">)</span><span class="o">/</span><span class="mi">6</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">momentXX</span> <span class="o">+=</span> <span class="o">-</span><span class="n">r2</span><span class="o">*</span><span class="n">r6</span><span class="o">/</span><span class="mi">12</span> <span class="o">-</span> <span class="n">r3</span><span class="o">*</span><span class="n">r5</span><span class="o">*</span><span class="n">x1</span><span class="o">/</span><span class="mi">12</span> <span class="o">-</span> <span class="n">r9</span><span class="o">*</span><span class="n">y0</span><span class="o">/</span><span class="mi">12</span> <span class="o">-</span> <span class="n">r9</span><span class="o">*</span><span class="n">y1</span><span class="o">/</span><span class="mi">4</span> <span class="o">+</span> <span class="n">x0</span><span class="o">**</span><span class="mi">3</span><span class="o">*</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">y0</span> <span class="o">+</span> <span class="n">y1</span><span class="p">)</span><span class="o">/</span><span class="mi">12</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">momentXY</span> <span class="o">+=</span> <span class="o">-</span><span class="n">r10</span><span class="o">*</span><span class="n">r2</span><span class="o">/</span><span class="mi">24</span> <span class="o">-</span> <span class="n">r2</span><span class="o">*</span><span class="n">r7</span><span class="o">/</span><span class="mi">24</span> <span class="o">-</span> <span class="n">r2</span><span class="o">*</span><span class="n">r8</span><span class="o">/</span><span class="mi">8</span> <span class="o">+</span> <span class="n">r3</span><span class="o">*</span><span class="p">(</span><span class="n">r10</span> <span class="o">+</span> <span class="mi">3</span><span class="o">*</span><span class="n">r7</span> <span class="o">+</span> <span class="n">r8</span><span class="p">)</span><span class="o">/</span><span class="mi">24</span> <span class="o">-</span> <span class="n">x0</span><span class="o">*</span><span class="n">x1</span><span class="o">*</span><span class="p">(</span><span class="n">r7</span> <span class="o">-</span> <span class="n">r8</span><span class="p">)</span><span class="o">/</span><span class="mi">12</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">momentYY</span> <span class="o">+=</span> <span class="o">-</span><span class="n">r0</span><span class="o">*</span><span class="n">r8</span><span class="o">/</span><span class="mi">12</span> <span class="o">-</span> <span class="n">r1</span><span class="o">*</span><span class="n">r7</span><span class="o">/</span><span class="mi">12</span> <span class="o">-</span> <span class="n">r11</span><span class="o">*</span><span class="n">x1</span><span class="o">/</span><span class="mi">12</span> <span class="o">-</span> <span class="n">r12</span><span class="o">*</span><span class="n">x1</span><span class="o">/</span><span class="mi">12</span> <span class="o">+</span> <span class="n">x0</span><span class="o">*</span><span class="p">(</span><span class="n">r11</span> <span class="o">+</span> <span class="n">r12</span> <span class="o">+</span> <span class="n">r7</span><span class="o">*</span><span class="n">y1</span> <span class="o">+</span> <span class="n">r8</span><span class="o">*</span><span class="n">y0</span><span class="p">)</span><span class="o">/</span><span class="mi">12</span>
+
+	<span class="k">def</span> <span class="nf">_qCurveToOne</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">):</span>
+		<span class="n">x0</span><span class="p">,</span><span class="n">y0</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_getCurrentPoint</span><span class="p">()</span>
+		<span class="n">x1</span><span class="p">,</span><span class="n">y1</span> <span class="o">=</span> <span class="n">p1</span>
+		<span class="n">x2</span><span class="p">,</span><span class="n">y2</span> <span class="o">=</span> <span class="n">p2</span>
+
+		<span class="n">r0</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">x1</span>
+		<span class="n">r1</span> <span class="o">=</span> <span class="n">r0</span><span class="o">*</span><span class="n">y2</span>
+		<span class="n">r2</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">y1</span>
+		<span class="n">r3</span> <span class="o">=</span> <span class="n">r2</span><span class="o">*</span><span class="n">x2</span>
+		<span class="n">r4</span> <span class="o">=</span> <span class="mi">3</span><span class="o">*</span><span class="n">y2</span>
+		<span class="n">r5</span> <span class="o">=</span> <span class="n">r4</span><span class="o">*</span><span class="n">x2</span>
+		<span class="n">r6</span> <span class="o">=</span> <span class="mi">3</span><span class="o">*</span><span class="n">y0</span>
+		<span class="n">r7</span> <span class="o">=</span> <span class="n">x1</span><span class="o">**</span><span class="mi">2</span>
+		<span class="n">r8</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">y2</span>
+		<span class="n">r9</span> <span class="o">=</span> <span class="n">x2</span><span class="o">**</span><span class="mi">2</span>
+		<span class="n">r10</span> <span class="o">=</span> <span class="mi">4</span><span class="o">*</span><span class="n">y1</span>
+		<span class="n">r11</span> <span class="o">=</span> <span class="mi">10</span><span class="o">*</span><span class="n">y2</span>
+		<span class="n">r12</span> <span class="o">=</span> <span class="n">r0</span><span class="o">*</span><span class="n">x2</span>
+		<span class="n">r13</span> <span class="o">=</span> <span class="n">x0</span><span class="o">**</span><span class="mi">2</span>
+		<span class="n">r14</span> <span class="o">=</span> <span class="mi">10</span><span class="o">*</span><span class="n">y0</span>
+		<span class="n">r15</span> <span class="o">=</span> <span class="n">x2</span><span class="o">*</span><span class="n">y2</span>
+		<span class="n">r16</span> <span class="o">=</span> <span class="n">r0</span><span class="o">*</span><span class="n">y1</span> <span class="o">+</span> <span class="n">r15</span>
+		<span class="n">r17</span> <span class="o">=</span> <span class="mi">4</span><span class="o">*</span><span class="n">x1</span>
+		<span class="n">r18</span> <span class="o">=</span> <span class="n">x2</span><span class="o">*</span><span class="n">y0</span>
+		<span class="n">r19</span> <span class="o">=</span> <span class="n">r10</span><span class="o">*</span><span class="n">r15</span>
+		<span class="n">r20</span> <span class="o">=</span> <span class="n">y1</span><span class="o">**</span><span class="mi">2</span>
+		<span class="n">r21</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">r20</span>
+		<span class="n">r22</span> <span class="o">=</span> <span class="n">y2</span><span class="o">**</span><span class="mi">2</span>
+		<span class="n">r23</span> <span class="o">=</span> <span class="n">r22</span><span class="o">*</span><span class="n">x2</span>
+		<span class="n">r24</span> <span class="o">=</span> <span class="mi">5</span><span class="o">*</span><span class="n">r23</span>
+		<span class="n">r25</span> <span class="o">=</span> <span class="n">y0</span><span class="o">**</span><span class="mi">2</span>
+		<span class="n">r26</span> <span class="o">=</span> <span class="n">y0</span><span class="o">*</span><span class="n">y2</span>
+		<span class="n">r27</span> <span class="o">=</span> <span class="mi">5</span><span class="o">*</span><span class="n">r25</span>
+		<span class="n">r28</span> <span class="o">=</span> <span class="mi">8</span><span class="o">*</span><span class="n">x1</span><span class="o">**</span><span class="mi">3</span>
+		<span class="n">r29</span> <span class="o">=</span> <span class="n">x2</span><span class="o">**</span><span class="mi">3</span>
+		<span class="n">r30</span> <span class="o">=</span> <span class="mi">30</span><span class="o">*</span><span class="n">y1</span>
+		<span class="n">r31</span> <span class="o">=</span> <span class="mi">6</span><span class="o">*</span><span class="n">y1</span>
+		<span class="n">r32</span> <span class="o">=</span> <span class="mi">10</span><span class="o">*</span><span class="n">r9</span><span class="o">*</span><span class="n">x1</span>
+		<span class="n">r33</span> <span class="o">=</span> <span class="mi">4</span><span class="o">*</span><span class="n">r7</span>
+		<span class="n">r34</span> <span class="o">=</span> <span class="mi">5</span><span class="o">*</span><span class="n">y2</span>
+		<span class="n">r35</span> <span class="o">=</span> <span class="mi">12</span><span class="o">*</span><span class="n">r7</span>
+		<span class="n">r36</span> <span class="o">=</span> <span class="n">r5</span> <span class="o">+</span> <span class="mi">20</span><span class="o">*</span><span class="n">x1</span><span class="o">*</span><span class="n">y1</span>
+		<span class="n">r37</span> <span class="o">=</span> <span class="mi">30</span><span class="o">*</span><span class="n">x1</span>
+		<span class="n">r38</span> <span class="o">=</span> <span class="mi">12</span><span class="o">*</span><span class="n">x1</span>
+		<span class="n">r39</span> <span class="o">=</span> <span class="mi">20</span><span class="o">*</span><span class="n">r7</span>
+		<span class="n">r40</span> <span class="o">=</span> <span class="mi">8</span><span class="o">*</span><span class="n">r7</span><span class="o">*</span><span class="n">y1</span>
+		<span class="n">r41</span> <span class="o">=</span> <span class="n">r34</span><span class="o">*</span><span class="n">r9</span>
+		<span class="n">r42</span> <span class="o">=</span> <span class="mi">60</span><span class="o">*</span><span class="n">y1</span>
+		<span class="n">r43</span> <span class="o">=</span> <span class="mi">20</span><span class="o">*</span><span class="n">r20</span>
+		<span class="n">r44</span> <span class="o">=</span> <span class="mi">4</span><span class="o">*</span><span class="n">r20</span>
+		<span class="n">r45</span> <span class="o">=</span> <span class="mi">15</span><span class="o">*</span><span class="n">r22</span>
+		<span class="n">r46</span> <span class="o">=</span> <span class="n">r38</span><span class="o">*</span><span class="n">x2</span>
+		<span class="n">r47</span> <span class="o">=</span> <span class="n">y1</span><span class="o">*</span><span class="n">y2</span>
+		<span class="n">r48</span> <span class="o">=</span> <span class="mi">8</span><span class="o">*</span><span class="n">r20</span><span class="o">*</span><span class="n">x1</span> <span class="o">+</span> <span class="n">r24</span>
+		<span class="n">r49</span> <span class="o">=</span> <span class="mi">6</span><span class="o">*</span><span class="n">x1</span>
+		<span class="n">r50</span> <span class="o">=</span> <span class="mi">8</span><span class="o">*</span><span class="n">y1</span><span class="o">**</span><span class="mi">3</span>
+		<span class="n">r51</span> <span class="o">=</span> <span class="n">y2</span><span class="o">**</span><span class="mi">3</span>
+		<span class="n">r52</span> <span class="o">=</span> <span class="n">y0</span><span class="o">**</span><span class="mi">3</span>
+		<span class="n">r53</span> <span class="o">=</span> <span class="mi">10</span><span class="o">*</span><span class="n">y1</span>
+		<span class="n">r54</span> <span class="o">=</span> <span class="mi">12</span><span class="o">*</span><span class="n">y1</span>
+		<span class="n">r55</span> <span class="o">=</span> <span class="mi">12</span><span class="o">*</span><span class="n">r20</span>
+
+		<span class="bp">self</span><span class="o">.</span><span class="n">area</span> <span class="o">+=</span> <span class="n">r1</span><span class="o">/</span><span class="mi">6</span> <span class="o">-</span> <span class="n">r3</span><span class="o">/</span><span class="mi">6</span> <span class="o">-</span> <span class="n">r5</span><span class="o">/</span><span class="mi">6</span> <span class="o">+</span> <span class="n">x0</span><span class="o">*</span><span class="p">(</span><span class="n">r2</span> <span class="o">+</span> <span class="n">r6</span> <span class="o">+</span> <span class="n">y2</span><span class="p">)</span><span class="o">/</span><span class="mi">6</span> <span class="o">-</span> <span class="n">y0</span><span class="o">*</span><span class="p">(</span><span class="n">r0</span> <span class="o">+</span> <span class="n">x2</span><span class="p">)</span><span class="o">/</span><span class="mi">6</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">momentX</span> <span class="o">+=</span> <span class="o">-</span><span class="n">r10</span><span class="o">*</span><span class="n">r9</span><span class="o">/</span><span class="mi">30</span> <span class="o">-</span> <span class="n">r11</span><span class="o">*</span><span class="n">r9</span><span class="o">/</span><span class="mi">30</span> <span class="o">-</span> <span class="n">r12</span><span class="o">*</span><span class="p">(</span><span class="o">-</span><span class="n">r8</span> <span class="o">+</span> <span class="n">y1</span><span class="p">)</span><span class="o">/</span><span class="mi">30</span> <span class="o">+</span> <span class="n">r13</span><span class="o">*</span><span class="p">(</span><span class="n">r10</span> <span class="o">+</span> <span class="n">r14</span> <span class="o">+</span> <span class="n">y2</span><span class="p">)</span><span class="o">/</span><span class="mi">30</span> <span class="o">+</span> <span class="n">r7</span><span class="o">*</span><span class="n">r8</span><span class="o">/</span><span class="mi">30</span> <span class="o">+</span> <span class="n">x0</span><span class="o">*</span><span class="p">(</span><span class="n">r1</span> <span class="o">+</span> <span class="n">r16</span> <span class="o">-</span> <span class="n">r17</span><span class="o">*</span><span class="n">y0</span> <span class="o">-</span> <span class="n">r18</span><span class="p">)</span><span class="o">/</span><span class="mi">30</span> <span class="o">-</span> <span class="n">y0</span><span class="o">*</span><span class="p">(</span><span class="n">r12</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">r7</span> <span class="o">+</span> <span class="n">r9</span><span class="p">)</span><span class="o">/</span><span class="mi">30</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">momentY</span> <span class="o">+=</span> <span class="n">r1</span><span class="o">*</span><span class="p">(</span><span class="n">r8</span> <span class="o">+</span> <span class="n">y1</span><span class="p">)</span><span class="o">/</span><span class="mi">30</span> <span class="o">-</span> <span class="n">r19</span><span class="o">/</span><span class="mi">30</span> <span class="o">-</span> <span class="n">r21</span><span class="o">*</span><span class="n">x2</span><span class="o">/</span><span class="mi">30</span> <span class="o">-</span> <span class="n">r24</span><span class="o">/</span><span class="mi">30</span> <span class="o">-</span> <span class="n">r25</span><span class="o">*</span><span class="p">(</span><span class="n">r17</span> <span class="o">+</span> <span class="n">x2</span><span class="p">)</span><span class="o">/</span><span class="mi">30</span> <span class="o">+</span> <span class="n">x0</span><span class="o">*</span><span class="p">(</span><span class="n">r10</span><span class="o">*</span><span class="n">y0</span> <span class="o">+</span> <span class="n">r2</span><span class="o">*</span><span class="n">y2</span> <span class="o">+</span> <span class="n">r21</span> <span class="o">+</span> <span class="n">r22</span> <span class="o">+</span> <span class="n">r26</span> <span class="o">+</span> <span class="n">r27</span><span class="p">)</span><span class="o">/</span><span class="mi">30</span> <span class="o">-</span> <span class="n">y0</span><span class="o">*</span><span class="p">(</span><span class="n">r16</span> <span class="o">+</span> <span class="n">r3</span><span class="p">)</span><span class="o">/</span><span class="mi">30</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">momentXX</span> <span class="o">+=</span> <span class="n">r13</span><span class="o">*</span><span class="p">(</span><span class="n">r11</span><span class="o">*</span><span class="n">x1</span> <span class="o">-</span> <span class="mi">5</span><span class="o">*</span><span class="n">r18</span> <span class="o">+</span> <span class="n">r3</span> <span class="o">+</span> <span class="n">r36</span> <span class="o">-</span> <span class="n">r37</span><span class="o">*</span><span class="n">y0</span><span class="p">)</span><span class="o">/</span><span class="mi">420</span> <span class="o">+</span> <span class="n">r28</span><span class="o">*</span><span class="n">y2</span><span class="o">/</span><span class="mi">420</span> <span class="o">-</span> <span class="n">r29</span><span class="o">*</span><span class="n">r30</span><span class="o">/</span><span class="mi">420</span> <span class="o">-</span> <span class="n">r29</span><span class="o">*</span><span class="n">y2</span><span class="o">/</span><span class="mi">4</span> <span class="o">-</span> <span class="n">r32</span><span class="o">*</span><span class="p">(</span><span class="n">r2</span> <span class="o">-</span> <span class="n">r4</span><span class="p">)</span><span class="o">/</span><span class="mi">420</span> <span class="o">-</span> <span class="n">r33</span><span class="o">*</span><span class="n">x2</span><span class="o">*</span><span class="p">(</span><span class="n">r2</span> <span class="o">-</span> <span class="n">r34</span><span class="p">)</span><span class="o">/</span><span class="mi">420</span> <span class="o">+</span> <span class="n">x0</span><span class="o">**</span><span class="mi">3</span><span class="o">*</span><span class="p">(</span><span class="n">r31</span> <span class="o">+</span> <span class="mi">21</span><span class="o">*</span><span class="n">y0</span> <span class="o">+</span> <span class="n">y2</span><span class="p">)</span><span class="o">/</span><span class="mi">84</span> <span class="o">-</span> <span class="n">x0</span><span class="o">*</span><span class="p">(</span><span class="o">-</span><span class="n">r15</span><span class="o">*</span><span class="n">r38</span> <span class="o">+</span> <span class="n">r18</span><span class="o">*</span><span class="n">r38</span> <span class="o">+</span> <span class="n">r2</span><span class="o">*</span><span class="n">r9</span> <span class="o">-</span> <span class="n">r35</span><span class="o">*</span><span class="n">y2</span> <span class="o">+</span> <span class="n">r39</span><span class="o">*</span><span class="n">y0</span> <span class="o">-</span> <span class="n">r40</span> <span class="o">-</span> <span class="n">r41</span> <span class="o">+</span> <span class="n">r6</span><span class="o">*</span><span class="n">r9</span><span class="p">)</span><span class="o">/</span><span class="mi">420</span> <span class="o">-</span> <span class="n">y0</span><span class="o">*</span><span class="p">(</span><span class="n">r28</span> <span class="o">+</span> <span class="mi">5</span><span class="o">*</span><span class="n">r29</span> <span class="o">+</span> <span class="n">r32</span> <span class="o">+</span> <span class="n">r35</span><span class="o">*</span><span class="n">x2</span><span class="p">)</span><span class="o">/</span><span class="mi">420</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">momentXY</span> <span class="o">+=</span> <span class="n">r13</span><span class="o">*</span><span class="p">(</span><span class="n">r14</span><span class="o">*</span><span class="n">y2</span> <span class="o">+</span> <span class="mi">3</span><span class="o">*</span><span class="n">r22</span> <span class="o">+</span> <span class="mi">105</span><span class="o">*</span><span class="n">r25</span> <span class="o">+</span> <span class="n">r42</span><span class="o">*</span><span class="n">y0</span> <span class="o">+</span> <span class="n">r43</span> <span class="o">+</span> <span class="mi">12</span><span class="o">*</span><span class="n">r47</span><span class="p">)</span><span class="o">/</span><span class="mi">840</span> <span class="o">-</span> <span class="n">r17</span><span class="o">*</span><span class="n">x2</span><span class="o">*</span><span class="p">(</span><span class="n">r44</span> <span class="o">-</span> <span class="n">r45</span><span class="p">)</span><span class="o">/</span><span class="mi">840</span> <span class="o">-</span> <span class="n">r22</span><span class="o">*</span><span class="n">r9</span><span class="o">/</span><span class="mi">8</span> <span class="o">-</span> <span class="n">r25</span><span class="o">*</span><span class="p">(</span><span class="n">r39</span> <span class="o">+</span> <span class="n">r46</span> <span class="o">+</span> <span class="mi">3</span><span class="o">*</span><span class="n">r9</span><span class="p">)</span><span class="o">/</span><span class="mi">840</span> <span class="o">+</span> <span class="n">r33</span><span class="o">*</span><span class="n">y2</span><span class="o">*</span><span class="p">(</span><span class="n">r10</span> <span class="o">+</span> <span class="n">r34</span><span class="p">)</span><span class="o">/</span><span class="mi">840</span> <span class="o">-</span> <span class="n">r42</span><span class="o">*</span><span class="n">r9</span><span class="o">*</span><span class="n">y2</span><span class="o">/</span><span class="mi">840</span> <span class="o">-</span> <span class="n">r43</span><span class="o">*</span><span class="n">r9</span><span class="o">/</span><span class="mi">840</span> <span class="o">+</span> <span class="n">x0</span><span class="o">*</span><span class="p">(</span><span class="o">-</span><span class="n">r10</span><span class="o">*</span><span class="n">r18</span> <span class="o">+</span> <span class="n">r17</span><span class="o">*</span><span class="n">r26</span> <span class="o">+</span> <span class="n">r19</span> <span class="o">+</span> <span class="n">r22</span><span class="o">*</span><span class="n">r49</span> <span class="o">-</span> <span class="n">r25</span><span class="o">*</span><span class="n">r37</span> <span class="o">-</span> <span class="n">r27</span><span class="o">*</span><span class="n">x2</span> <span class="o">+</span> <span class="n">r38</span><span class="o">*</span><span class="n">r47</span> <span class="o">+</span> <span class="n">r48</span><span class="p">)</span><span class="o">/</span><span class="mi">420</span> <span class="o">-</span> <span class="n">y0</span><span class="o">*</span><span class="p">(</span><span class="n">r15</span><span class="o">*</span><span class="n">r17</span> <span class="o">+</span> <span class="n">r31</span><span class="o">*</span><span class="n">r9</span> <span class="o">+</span> <span class="n">r40</span> <span class="o">+</span> <span class="n">r41</span> <span class="o">+</span> <span class="n">r46</span><span class="o">*</span><span class="n">y1</span><span class="p">)</span><span class="o">/</span><span class="mi">420</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">momentYY</span> <span class="o">+=</span> <span class="n">r1</span><span class="o">*</span><span class="p">(</span><span class="n">r11</span><span class="o">*</span><span class="n">y1</span> <span class="o">+</span> <span class="n">r44</span> <span class="o">+</span> <span class="n">r45</span><span class="p">)</span><span class="o">/</span><span class="mi">420</span> <span class="o">-</span> <span class="n">r15</span><span class="o">*</span><span class="n">r43</span><span class="o">/</span><span class="mi">420</span> <span class="o">-</span> <span class="n">r23</span><span class="o">*</span><span class="n">r30</span><span class="o">/</span><span class="mi">420</span> <span class="o">-</span> <span class="n">r25</span><span class="o">*</span><span class="p">(</span><span class="n">r1</span> <span class="o">+</span> <span class="n">r36</span> <span class="o">+</span> <span class="n">r53</span><span class="o">*</span><span class="n">x2</span><span class="p">)</span><span class="o">/</span><span class="mi">420</span> <span class="o">-</span> <span class="n">r50</span><span class="o">*</span><span class="n">x2</span><span class="o">/</span><span class="mi">420</span> <span class="o">-</span> <span class="n">r51</span><span class="o">*</span><span class="n">x2</span><span class="o">/</span><span class="mi">12</span> <span class="o">-</span> <span class="n">r52</span><span class="o">*</span><span class="p">(</span><span class="n">r49</span> <span class="o">+</span> <span class="n">x2</span><span class="p">)</span><span class="o">/</span><span class="mi">84</span> <span class="o">+</span> <span class="n">x0</span><span class="o">*</span><span class="p">(</span><span class="n">r22</span><span class="o">*</span><span class="n">r53</span> <span class="o">+</span> <span class="n">r22</span><span class="o">*</span><span class="n">r6</span> <span class="o">+</span> <span class="n">r25</span><span class="o">*</span><span class="n">r30</span> <span class="o">+</span> <span class="n">r25</span><span class="o">*</span><span class="n">r34</span> <span class="o">+</span> <span class="n">r26</span><span class="o">*</span><span class="n">r54</span> <span class="o">+</span> <span class="n">r43</span><span class="o">*</span><span class="n">y0</span> <span class="o">+</span> <span class="n">r50</span> <span class="o">+</span> <span class="mi">5</span><span class="o">*</span><span class="n">r51</span> <span class="o">+</span> <span class="mi">35</span><span class="o">*</span><span class="n">r52</span> <span class="o">+</span> <span class="n">r55</span><span class="o">*</span><span class="n">y2</span><span class="p">)</span><span class="o">/</span><span class="mi">420</span> <span class="o">-</span> <span class="n">y0</span><span class="o">*</span><span class="p">(</span><span class="o">-</span><span class="n">r0</span><span class="o">*</span><span class="n">r22</span> <span class="o">+</span> <span class="n">r15</span><span class="o">*</span><span class="n">r54</span> <span class="o">+</span> <span class="n">r48</span> <span class="o">+</span> <span class="n">r55</span><span class="o">*</span><span class="n">x2</span><span class="p">)</span><span class="o">/</span><span class="mi">420</span>
+
+	<span class="k">def</span> <span class="nf">_curveToOne</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="n">p3</span><span class="p">):</span>
+		<span class="n">x0</span><span class="p">,</span><span class="n">y0</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_getCurrentPoint</span><span class="p">()</span>
+		<span class="n">x1</span><span class="p">,</span><span class="n">y1</span> <span class="o">=</span> <span class="n">p1</span>
+		<span class="n">x2</span><span class="p">,</span><span class="n">y2</span> <span class="o">=</span> <span class="n">p2</span>
+		<span class="n">x3</span><span class="p">,</span><span class="n">y3</span> <span class="o">=</span> <span class="n">p3</span>
+
+		<span class="n">r0</span> <span class="o">=</span> <span class="mi">6</span><span class="o">*</span><span class="n">x2</span>
+		<span class="n">r1</span> <span class="o">=</span> <span class="n">r0</span><span class="o">*</span><span class="n">y3</span>
+		<span class="n">r2</span> <span class="o">=</span> <span class="mi">6</span><span class="o">*</span><span class="n">y2</span>
+		<span class="n">r3</span> <span class="o">=</span> <span class="mi">10</span><span class="o">*</span><span class="n">y3</span>
+		<span class="n">r4</span> <span class="o">=</span> <span class="n">r3</span><span class="o">*</span><span class="n">x3</span>
+		<span class="n">r5</span> <span class="o">=</span> <span class="mi">3</span><span class="o">*</span><span class="n">x1</span>
+		<span class="n">r6</span> <span class="o">=</span> <span class="mi">3</span><span class="o">*</span><span class="n">y1</span>
+		<span class="n">r7</span> <span class="o">=</span> <span class="mi">6</span><span class="o">*</span><span class="n">x1</span>
+		<span class="n">r8</span> <span class="o">=</span> <span class="mi">3</span><span class="o">*</span><span class="n">x2</span>
+		<span class="n">r9</span> <span class="o">=</span> <span class="mi">6</span><span class="o">*</span><span class="n">y1</span>
+		<span class="n">r10</span> <span class="o">=</span> <span class="mi">3</span><span class="o">*</span><span class="n">y2</span>
+		<span class="n">r11</span> <span class="o">=</span> <span class="n">x2</span><span class="o">**</span><span class="mi">2</span>
+		<span class="n">r12</span> <span class="o">=</span> <span class="n">r11</span><span class="o">*</span><span class="n">y3</span>
+		<span class="n">r13</span> <span class="o">=</span> <span class="mi">45</span><span class="o">*</span><span class="n">r12</span>
+		<span class="n">r14</span> <span class="o">=</span> <span class="n">x3</span><span class="o">**</span><span class="mi">2</span>
+		<span class="n">r15</span> <span class="o">=</span> <span class="n">r14</span><span class="o">*</span><span class="n">y2</span>
+		<span class="n">r16</span> <span class="o">=</span> <span class="n">r14</span><span class="o">*</span><span class="n">y3</span>
+		<span class="n">r17</span> <span class="o">=</span> <span class="n">x2</span><span class="o">*</span><span class="n">x3</span>
+		<span class="n">r18</span> <span class="o">=</span> <span class="mi">15</span><span class="o">*</span><span class="n">r17</span>
+		<span class="n">r19</span> <span class="o">=</span> <span class="mi">7</span><span class="o">*</span><span class="n">y3</span>
+		<span class="n">r20</span> <span class="o">=</span> <span class="n">x1</span><span class="o">**</span><span class="mi">2</span>
+		<span class="n">r21</span> <span class="o">=</span> <span class="mi">9</span><span class="o">*</span><span class="n">r20</span>
+		<span class="n">r22</span> <span class="o">=</span> <span class="n">x0</span><span class="o">**</span><span class="mi">2</span>
+		<span class="n">r23</span> <span class="o">=</span> <span class="mi">21</span><span class="o">*</span><span class="n">y1</span>
+		<span class="n">r24</span> <span class="o">=</span> <span class="mi">9</span><span class="o">*</span><span class="n">r11</span>
+		<span class="n">r25</span> <span class="o">=</span> <span class="mi">9</span><span class="o">*</span><span class="n">x2</span>
+		<span class="n">r26</span> <span class="o">=</span> <span class="n">x2</span><span class="o">*</span><span class="n">y3</span>
+		<span class="n">r27</span> <span class="o">=</span> <span class="mi">15</span><span class="o">*</span><span class="n">r26</span>
+		<span class="n">r28</span> <span class="o">=</span> <span class="o">-</span><span class="n">r25</span><span class="o">*</span><span class="n">y1</span> <span class="o">+</span> <span class="n">r27</span>
+		<span class="n">r29</span> <span class="o">=</span> <span class="n">r25</span><span class="o">*</span><span class="n">y2</span>
+		<span class="n">r30</span> <span class="o">=</span> <span class="n">r9</span><span class="o">*</span><span class="n">x3</span>
+		<span class="n">r31</span> <span class="o">=</span> <span class="mi">45</span><span class="o">*</span><span class="n">x1</span>
+		<span class="n">r32</span> <span class="o">=</span> <span class="n">x1</span><span class="o">*</span><span class="n">x3</span>
+		<span class="n">r33</span> <span class="o">=</span> <span class="mi">45</span><span class="o">*</span><span class="n">r20</span>
+		<span class="n">r34</span> <span class="o">=</span> <span class="mi">5</span><span class="o">*</span><span class="n">r14</span>
+		<span class="n">r35</span> <span class="o">=</span> <span class="n">x2</span><span class="o">*</span><span class="n">y2</span>
+		<span class="n">r36</span> <span class="o">=</span> <span class="mi">18</span><span class="o">*</span><span class="n">r35</span>
+		<span class="n">r37</span> <span class="o">=</span> <span class="mi">5</span><span class="o">*</span><span class="n">x3</span>
+		<span class="n">r38</span> <span class="o">=</span> <span class="n">r37</span><span class="o">*</span><span class="n">y3</span>
+		<span class="n">r39</span> <span class="o">=</span> <span class="n">r31</span><span class="o">*</span><span class="n">y1</span> <span class="o">+</span> <span class="n">r36</span> <span class="o">+</span> <span class="n">r38</span>
+		<span class="n">r40</span> <span class="o">=</span> <span class="n">x1</span><span class="o">*</span><span class="n">y0</span>
+		<span class="n">r41</span> <span class="o">=</span> <span class="n">x1</span><span class="o">*</span><span class="n">y3</span>
+		<span class="n">r42</span> <span class="o">=</span> <span class="n">x2</span><span class="o">*</span><span class="n">y0</span>
+		<span class="n">r43</span> <span class="o">=</span> <span class="n">x3</span><span class="o">*</span><span class="n">y1</span>
+		<span class="n">r44</span> <span class="o">=</span> <span class="n">r10</span><span class="o">*</span><span class="n">x3</span>
+		<span class="n">r45</span> <span class="o">=</span> <span class="n">x3</span><span class="o">*</span><span class="n">y2</span><span class="o">*</span><span class="n">y3</span>
+		<span class="n">r46</span> <span class="o">=</span> <span class="n">y2</span><span class="o">**</span><span class="mi">2</span>
+		<span class="n">r47</span> <span class="o">=</span> <span class="mi">45</span><span class="o">*</span><span class="n">r46</span>
+		<span class="n">r48</span> <span class="o">=</span> <span class="n">r47</span><span class="o">*</span><span class="n">x3</span>
+		<span class="n">r49</span> <span class="o">=</span> <span class="n">y3</span><span class="o">**</span><span class="mi">2</span>
+		<span class="n">r50</span> <span class="o">=</span> <span class="n">r49</span><span class="o">*</span><span class="n">x3</span>
+		<span class="n">r51</span> <span class="o">=</span> <span class="n">y1</span><span class="o">**</span><span class="mi">2</span>
+		<span class="n">r52</span> <span class="o">=</span> <span class="mi">9</span><span class="o">*</span><span class="n">r51</span>
+		<span class="n">r53</span> <span class="o">=</span> <span class="n">y0</span><span class="o">**</span><span class="mi">2</span>
+		<span class="n">r54</span> <span class="o">=</span> <span class="mi">21</span><span class="o">*</span><span class="n">x1</span>
+		<span class="n">r55</span> <span class="o">=</span> <span class="n">x3</span><span class="o">*</span><span class="n">y2</span>
+		<span class="n">r56</span> <span class="o">=</span> <span class="mi">15</span><span class="o">*</span><span class="n">r55</span>
+		<span class="n">r57</span> <span class="o">=</span> <span class="mi">9</span><span class="o">*</span><span class="n">y2</span>
+		<span class="n">r58</span> <span class="o">=</span> <span class="n">y2</span><span class="o">*</span><span class="n">y3</span>
+		<span class="n">r59</span> <span class="o">=</span> <span class="mi">15</span><span class="o">*</span><span class="n">r58</span>
+		<span class="n">r60</span> <span class="o">=</span> <span class="mi">9</span><span class="o">*</span><span class="n">r46</span>
+		<span class="n">r61</span> <span class="o">=</span> <span class="mi">3</span><span class="o">*</span><span class="n">y3</span>
+		<span class="n">r62</span> <span class="o">=</span> <span class="mi">45</span><span class="o">*</span><span class="n">y1</span>
+		<span class="n">r63</span> <span class="o">=</span> <span class="n">r8</span><span class="o">*</span><span class="n">y3</span>
+		<span class="n">r64</span> <span class="o">=</span> <span class="n">y0</span><span class="o">*</span><span class="n">y1</span>
+		<span class="n">r65</span> <span class="o">=</span> <span class="n">y0</span><span class="o">*</span><span class="n">y2</span>
+		<span class="n">r66</span> <span class="o">=</span> <span class="mi">30</span><span class="o">*</span><span class="n">r65</span>
+		<span class="n">r67</span> <span class="o">=</span> <span class="mi">5</span><span class="o">*</span><span class="n">y3</span>
+		<span class="n">r68</span> <span class="o">=</span> <span class="n">y1</span><span class="o">*</span><span class="n">y3</span>
+		<span class="n">r69</span> <span class="o">=</span> <span class="mi">45</span><span class="o">*</span><span class="n">r51</span>
+		<span class="n">r70</span> <span class="o">=</span> <span class="mi">5</span><span class="o">*</span><span class="n">r49</span>
+		<span class="n">r71</span> <span class="o">=</span> <span class="n">x2</span><span class="o">**</span><span class="mi">3</span>
+		<span class="n">r72</span> <span class="o">=</span> <span class="n">x3</span><span class="o">**</span><span class="mi">3</span>
+		<span class="n">r73</span> <span class="o">=</span> <span class="mi">126</span><span class="o">*</span><span class="n">x3</span>
+		<span class="n">r74</span> <span class="o">=</span> <span class="n">x1</span><span class="o">**</span><span class="mi">3</span>
+		<span class="n">r75</span> <span class="o">=</span> <span class="n">r14</span><span class="o">*</span><span class="n">x2</span>
+		<span class="n">r76</span> <span class="o">=</span> <span class="mi">63</span><span class="o">*</span><span class="n">r11</span>
+		<span class="n">r77</span> <span class="o">=</span> <span class="n">r76</span><span class="o">*</span><span class="n">x3</span>
+		<span class="n">r78</span> <span class="o">=</span> <span class="mi">15</span><span class="o">*</span><span class="n">r35</span>
+		<span class="n">r79</span> <span class="o">=</span> <span class="n">r19</span><span class="o">*</span><span class="n">x3</span>
+		<span class="n">r80</span> <span class="o">=</span> <span class="n">x1</span><span class="o">*</span><span class="n">y1</span>
+		<span class="n">r81</span> <span class="o">=</span> <span class="mi">63</span><span class="o">*</span><span class="n">r35</span>
+		<span class="n">r82</span> <span class="o">=</span> <span class="n">r38</span> <span class="o">+</span> <span class="mi">378</span><span class="o">*</span><span class="n">r80</span> <span class="o">+</span> <span class="n">r81</span>
+		<span class="n">r83</span> <span class="o">=</span> <span class="n">x1</span><span class="o">*</span><span class="n">y2</span>
+		<span class="n">r84</span> <span class="o">=</span> <span class="n">x2</span><span class="o">*</span><span class="n">y1</span>
+		<span class="n">r85</span> <span class="o">=</span> <span class="n">x3</span><span class="o">*</span><span class="n">y0</span>
+		<span class="n">r86</span> <span class="o">=</span> <span class="n">x2</span><span class="o">*</span><span class="n">x3</span><span class="o">*</span><span class="n">y1</span>
+		<span class="n">r87</span> <span class="o">=</span> <span class="n">x2</span><span class="o">*</span><span class="n">x3</span><span class="o">*</span><span class="n">y3</span>
+		<span class="n">r88</span> <span class="o">=</span> <span class="n">r11</span><span class="o">*</span><span class="n">y2</span>
+		<span class="n">r89</span> <span class="o">=</span> <span class="mi">27</span><span class="o">*</span><span class="n">r88</span>
+		<span class="n">r90</span> <span class="o">=</span> <span class="mi">42</span><span class="o">*</span><span class="n">y3</span>
+		<span class="n">r91</span> <span class="o">=</span> <span class="n">r14</span><span class="o">*</span><span class="n">r90</span>
+		<span class="n">r92</span> <span class="o">=</span> <span class="mi">90</span><span class="o">*</span><span class="n">x1</span><span class="o">*</span><span class="n">x2</span>
+		<span class="n">r93</span> <span class="o">=</span> <span class="mi">189</span><span class="o">*</span><span class="n">x2</span>
+		<span class="n">r94</span> <span class="o">=</span> <span class="mi">30</span><span class="o">*</span><span class="n">x1</span><span class="o">*</span><span class="n">x3</span>
+		<span class="n">r95</span> <span class="o">=</span> <span class="mi">14</span><span class="o">*</span><span class="n">r16</span> <span class="o">+</span> <span class="mi">126</span><span class="o">*</span><span class="n">r20</span><span class="o">*</span><span class="n">y1</span> <span class="o">+</span> <span class="mi">45</span><span class="o">*</span><span class="n">r88</span> <span class="o">+</span> <span class="n">r94</span><span class="o">*</span><span class="n">y2</span>
+		<span class="n">r96</span> <span class="o">=</span> <span class="n">x1</span><span class="o">*</span><span class="n">x2</span>
+		<span class="n">r97</span> <span class="o">=</span> <span class="mi">252</span><span class="o">*</span><span class="n">r96</span>
+		<span class="n">r98</span> <span class="o">=</span> <span class="n">x1</span><span class="o">*</span><span class="n">x2</span><span class="o">*</span><span class="n">y2</span>
+		<span class="n">r99</span> <span class="o">=</span> <span class="mi">42</span><span class="o">*</span><span class="n">r32</span>
+		<span class="n">r100</span> <span class="o">=</span> <span class="n">x1</span><span class="o">*</span><span class="n">x3</span><span class="o">*</span><span class="n">y1</span>
+		<span class="n">r101</span> <span class="o">=</span> <span class="mi">30</span><span class="o">*</span><span class="n">r17</span>
+		<span class="n">r102</span> <span class="o">=</span> <span class="mi">18</span><span class="o">*</span><span class="n">r17</span>
+		<span class="n">r103</span> <span class="o">=</span> <span class="mi">378</span><span class="o">*</span><span class="n">r20</span>
+		<span class="n">r104</span> <span class="o">=</span> <span class="mi">189</span><span class="o">*</span><span class="n">y2</span>
+		<span class="n">r105</span> <span class="o">=</span> <span class="n">r20</span><span class="o">*</span><span class="n">y3</span>
+		<span class="n">r106</span> <span class="o">=</span> <span class="n">r11</span><span class="o">*</span><span class="n">y1</span>
+		<span class="n">r107</span> <span class="o">=</span> <span class="n">r14</span><span class="o">*</span><span class="n">y1</span>
+		<span class="n">r108</span> <span class="o">=</span> <span class="mi">378</span><span class="o">*</span><span class="n">r46</span>
+		<span class="n">r109</span> <span class="o">=</span> <span class="mi">252</span><span class="o">*</span><span class="n">y2</span>
+		<span class="n">r110</span> <span class="o">=</span> <span class="n">y1</span><span class="o">*</span><span class="n">y2</span>
+		<span class="n">r111</span> <span class="o">=</span> <span class="n">x2</span><span class="o">*</span><span class="n">x3</span><span class="o">*</span><span class="n">y2</span>
+		<span class="n">r112</span> <span class="o">=</span> <span class="n">y0</span><span class="o">*</span><span class="n">y3</span>
+		<span class="n">r113</span> <span class="o">=</span> <span class="mi">378</span><span class="o">*</span><span class="n">r51</span>
+		<span class="n">r114</span> <span class="o">=</span> <span class="mi">63</span><span class="o">*</span><span class="n">r46</span>
+		<span class="n">r115</span> <span class="o">=</span> <span class="mi">27</span><span class="o">*</span><span class="n">x2</span>
+		<span class="n">r116</span> <span class="o">=</span> <span class="n">r115</span><span class="o">*</span><span class="n">r46</span> <span class="o">+</span> <span class="mi">42</span><span class="o">*</span><span class="n">r50</span>
+		<span class="n">r117</span> <span class="o">=</span> <span class="n">x2</span><span class="o">*</span><span class="n">y1</span><span class="o">*</span><span class="n">y3</span>
+		<span class="n">r118</span> <span class="o">=</span> <span class="n">x3</span><span class="o">*</span><span class="n">y1</span><span class="o">*</span><span class="n">y2</span>
+		<span class="n">r119</span> <span class="o">=</span> <span class="n">r49</span><span class="o">*</span><span class="n">x2</span>
+		<span class="n">r120</span> <span class="o">=</span> <span class="n">r51</span><span class="o">*</span><span class="n">x3</span>
+		<span class="n">r121</span> <span class="o">=</span> <span class="n">x3</span><span class="o">*</span><span class="n">y3</span>
+		<span class="n">r122</span> <span class="o">=</span> <span class="mi">14</span><span class="o">*</span><span class="n">x3</span>
+		<span class="n">r123</span> <span class="o">=</span> <span class="mi">30</span><span class="o">*</span><span class="n">r117</span> <span class="o">+</span> <span class="n">r122</span><span class="o">*</span><span class="n">r49</span> <span class="o">+</span> <span class="n">r47</span><span class="o">*</span><span class="n">x2</span> <span class="o">+</span> <span class="mi">126</span><span class="o">*</span><span class="n">r51</span><span class="o">*</span><span class="n">x1</span>
+		<span class="n">r124</span> <span class="o">=</span> <span class="n">x1</span><span class="o">*</span><span class="n">y1</span><span class="o">*</span><span class="n">y3</span>
+		<span class="n">r125</span> <span class="o">=</span> <span class="n">x1</span><span class="o">*</span><span class="n">y2</span><span class="o">*</span><span class="n">y3</span>
+		<span class="n">r126</span> <span class="o">=</span> <span class="n">x2</span><span class="o">*</span><span class="n">y1</span><span class="o">*</span><span class="n">y2</span>
+		<span class="n">r127</span> <span class="o">=</span> <span class="mi">54</span><span class="o">*</span><span class="n">y3</span>
+		<span class="n">r128</span> <span class="o">=</span> <span class="mi">21</span><span class="o">*</span><span class="n">r55</span>
+		<span class="n">r129</span> <span class="o">=</span> <span class="mi">630</span><span class="o">*</span><span class="n">r53</span>
+		<span class="n">r130</span> <span class="o">=</span> <span class="n">r46</span><span class="o">*</span><span class="n">x1</span>
+		<span class="n">r131</span> <span class="o">=</span> <span class="n">r49</span><span class="o">*</span><span class="n">x1</span>
+		<span class="n">r132</span> <span class="o">=</span> <span class="mi">126</span><span class="o">*</span><span class="n">r53</span>
+		<span class="n">r133</span> <span class="o">=</span> <span class="n">y2</span><span class="o">**</span><span class="mi">3</span>
+		<span class="n">r134</span> <span class="o">=</span> <span class="n">y3</span><span class="o">**</span><span class="mi">3</span>
+		<span class="n">r135</span> <span class="o">=</span> <span class="mi">630</span><span class="o">*</span><span class="n">r49</span>
+		<span class="n">r136</span> <span class="o">=</span> <span class="n">y1</span><span class="o">**</span><span class="mi">3</span>
+		<span class="n">r137</span> <span class="o">=</span> <span class="n">y0</span><span class="o">**</span><span class="mi">3</span>
+		<span class="n">r138</span> <span class="o">=</span> <span class="n">r114</span><span class="o">*</span><span class="n">y3</span> <span class="o">+</span> <span class="n">r23</span><span class="o">*</span><span class="n">r49</span>
+		<span class="n">r139</span> <span class="o">=</span> <span class="n">r49</span><span class="o">*</span><span class="n">y2</span>
+
+		<span class="bp">self</span><span class="o">.</span><span class="n">area</span> <span class="o">+=</span> <span class="n">r1</span><span class="o">/</span><span class="mi">20</span> <span class="o">-</span> <span class="n">r2</span><span class="o">*</span><span class="n">x3</span><span class="o">/</span><span class="mi">20</span> <span class="o">-</span> <span class="n">r4</span><span class="o">/</span><span class="mi">20</span> <span class="o">+</span> <span class="n">r5</span><span class="o">*</span><span class="p">(</span><span class="n">y2</span> <span class="o">+</span> <span class="n">y3</span><span class="p">)</span><span class="o">/</span><span class="mi">20</span> <span class="o">-</span> <span class="n">r6</span><span class="o">*</span><span class="p">(</span><span class="n">x2</span> <span class="o">+</span> <span class="n">x3</span><span class="p">)</span><span class="o">/</span><span class="mi">20</span> <span class="o">+</span> <span class="n">x0</span><span class="o">*</span><span class="p">(</span><span class="n">r10</span> <span class="o">+</span> <span class="n">r9</span> <span class="o">+</span> <span class="mi">10</span><span class="o">*</span><span class="n">y0</span> <span class="o">+</span> <span class="n">y3</span><span class="p">)</span><span class="o">/</span><span class="mi">20</span> <span class="o">-</span> <span class="n">y0</span><span class="o">*</span><span class="p">(</span><span class="n">r7</span> <span class="o">+</span> <span class="n">r8</span> <span class="o">+</span> <span class="n">x3</span><span class="p">)</span><span class="o">/</span><span class="mi">20</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">momentX</span> <span class="o">+=</span> <span class="n">r13</span><span class="o">/</span><span class="mi">840</span> <span class="o">-</span> <span class="n">r15</span><span class="o">/</span><span class="mi">8</span> <span class="o">-</span> <span class="n">r16</span><span class="o">/</span><span class="mi">3</span> <span class="o">-</span> <span class="n">r18</span><span class="o">*</span><span class="p">(</span><span class="n">r10</span> <span class="o">-</span> <span class="n">r19</span><span class="p">)</span><span class="o">/</span><span class="mi">840</span> <span class="o">+</span> <span class="n">r21</span><span class="o">*</span><span class="p">(</span><span class="n">r10</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">y3</span><span class="p">)</span><span class="o">/</span><span class="mi">840</span> <span class="o">+</span> <span class="n">r22</span><span class="o">*</span><span class="p">(</span><span class="n">r2</span> <span class="o">+</span> <span class="n">r23</span> <span class="o">+</span> <span class="mi">56</span><span class="o">*</span><span class="n">y0</span> <span class="o">+</span> <span class="n">y3</span><span class="p">)</span><span class="o">/</span><span class="mi">168</span> <span class="o">+</span> <span class="n">r5</span><span class="o">*</span><span class="p">(</span><span class="n">r28</span> <span class="o">+</span> <span class="n">r29</span> <span class="o">-</span> <span class="n">r30</span> <span class="o">+</span> <span class="n">r4</span><span class="p">)</span><span class="o">/</span><span class="mi">840</span> <span class="o">-</span> <span class="n">r6</span><span class="o">*</span><span class="p">(</span><span class="mi">10</span><span class="o">*</span><span class="n">r14</span> <span class="o">+</span> <span class="n">r18</span> <span class="o">+</span> <span class="n">r24</span><span class="p">)</span><span class="o">/</span><span class="mi">840</span> <span class="o">+</span> <span class="n">x0</span><span class="o">*</span><span class="p">(</span><span class="mi">12</span><span class="o">*</span><span class="n">r26</span> <span class="o">+</span> <span class="n">r31</span><span class="o">*</span><span class="n">y2</span> <span class="o">-</span> <span class="n">r37</span><span class="o">*</span><span class="n">y0</span> <span class="o">+</span> <span class="n">r39</span> <span class="o">-</span> <span class="mi">105</span><span class="o">*</span><span class="n">r40</span> <span class="o">+</span> <span class="mi">15</span><span class="o">*</span><span class="n">r41</span> <span class="o">-</span> <span class="mi">30</span><span class="o">*</span><span class="n">r42</span> <span class="o">-</span> <span class="mi">3</span><span class="o">*</span><span class="n">r43</span> <span class="o">+</span> <span class="n">r44</span><span class="p">)</span><span class="o">/</span><span class="mi">840</span> <span class="o">-</span> <span class="n">y0</span><span class="o">*</span><span class="p">(</span><span class="mi">18</span><span class="o">*</span><span class="n">r11</span> <span class="o">+</span> <span class="n">r18</span> <span class="o">+</span> <span class="n">r31</span><span class="o">*</span><span class="n">x2</span> <span class="o">+</span> <span class="mi">12</span><span class="o">*</span><span class="n">r32</span> <span class="o">+</span> <span class="n">r33</span> <span class="o">+</span> <span class="n">r34</span><span class="p">)</span><span class="o">/</span><span class="mi">840</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">momentY</span> <span class="o">+=</span> <span class="n">r27</span><span class="o">*</span><span class="p">(</span><span class="n">r10</span> <span class="o">+</span> <span class="n">r19</span><span class="p">)</span><span class="o">/</span><span class="mi">840</span> <span class="o">-</span> <span class="n">r45</span><span class="o">/</span><span class="mi">8</span> <span class="o">-</span> <span class="n">r48</span><span class="o">/</span><span class="mi">840</span> <span class="o">+</span> <span class="n">r5</span><span class="o">*</span><span class="p">(</span><span class="mi">10</span><span class="o">*</span><span class="n">r49</span> <span class="o">+</span> <span class="n">r57</span><span class="o">*</span><span class="n">y1</span> <span class="o">+</span> <span class="n">r59</span> <span class="o">+</span> <span class="n">r60</span> <span class="o">+</span> <span class="n">r9</span><span class="o">*</span><span class="n">y3</span><span class="p">)</span><span class="o">/</span><span class="mi">840</span> <span class="o">-</span> <span class="n">r50</span><span class="o">/</span><span class="mi">6</span> <span class="o">-</span> <span class="n">r52</span><span class="o">*</span><span class="p">(</span><span class="n">r8</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">x3</span><span class="p">)</span><span class="o">/</span><span class="mi">840</span> <span class="o">-</span> <span class="n">r53</span><span class="o">*</span><span class="p">(</span><span class="n">r0</span> <span class="o">+</span> <span class="n">r54</span> <span class="o">+</span> <span class="n">x3</span><span class="p">)</span><span class="o">/</span><span class="mi">168</span> <span class="o">-</span> <span class="n">r6</span><span class="o">*</span><span class="p">(</span><span class="n">r29</span> <span class="o">+</span> <span class="n">r4</span> <span class="o">+</span> <span class="n">r56</span><span class="p">)</span><span class="o">/</span><span class="mi">840</span> <span class="o">+</span> <span class="n">x0</span><span class="o">*</span><span class="p">(</span><span class="mi">18</span><span class="o">*</span><span class="n">r46</span> <span class="o">+</span> <span class="mi">140</span><span class="o">*</span><span class="n">r53</span> <span class="o">+</span> <span class="n">r59</span> <span class="o">+</span> <span class="n">r62</span><span class="o">*</span><span class="n">y2</span> <span class="o">+</span> <span class="mi">105</span><span class="o">*</span><span class="n">r64</span> <span class="o">+</span> <span class="n">r66</span> <span class="o">+</span> <span class="n">r67</span><span class="o">*</span><span class="n">y0</span> <span class="o">+</span> <span class="mi">12</span><span class="o">*</span><span class="n">r68</span> <span class="o">+</span> <span class="n">r69</span> <span class="o">+</span> <span class="n">r70</span><span class="p">)</span><span class="o">/</span><span class="mi">840</span> <span class="o">-</span> <span class="n">y0</span><span class="o">*</span><span class="p">(</span><span class="n">r39</span> <span class="o">+</span> <span class="mi">15</span><span class="o">*</span><span class="n">r43</span> <span class="o">+</span> <span class="mi">12</span><span class="o">*</span><span class="n">r55</span> <span class="o">-</span> <span class="n">r61</span><span class="o">*</span><span class="n">x1</span> <span class="o">+</span> <span class="n">r62</span><span class="o">*</span><span class="n">x2</span> <span class="o">+</span> <span class="n">r63</span><span class="p">)</span><span class="o">/</span><span class="mi">840</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">momentXX</span> <span class="o">+=</span> <span class="o">-</span><span class="n">r11</span><span class="o">*</span><span class="n">r73</span><span class="o">*</span><span class="p">(</span><span class="o">-</span><span class="n">r61</span> <span class="o">+</span> <span class="n">y2</span><span class="p">)</span><span class="o">/</span><span class="mi">9240</span> <span class="o">+</span> <span class="n">r21</span><span class="o">*</span><span class="p">(</span><span class="n">r28</span> <span class="o">-</span> <span class="n">r37</span><span class="o">*</span><span class="n">y1</span> <span class="o">+</span> <span class="n">r44</span> <span class="o">+</span> <span class="n">r78</span> <span class="o">+</span> <span class="n">r79</span><span class="p">)</span><span class="o">/</span><span class="mi">9240</span> <span class="o">+</span> <span class="n">r22</span><span class="o">*</span><span class="p">(</span><span class="mi">21</span><span class="o">*</span><span class="n">r26</span> <span class="o">-</span> <span class="mi">630</span><span class="o">*</span><span class="n">r40</span> <span class="o">+</span> <span class="mi">42</span><span class="o">*</span><span class="n">r41</span> <span class="o">-</span> <span class="mi">126</span><span class="o">*</span><span class="n">r42</span> <span class="o">+</span> <span class="n">r57</span><span class="o">*</span><span class="n">x3</span> <span class="o">+</span> <span class="n">r82</span> <span class="o">+</span> <span class="mi">210</span><span class="o">*</span><span class="n">r83</span> <span class="o">+</span> <span class="mi">42</span><span class="o">*</span><span class="n">r84</span> <span class="o">-</span> <span class="mi">14</span><span class="o">*</span><span class="n">r85</span><span class="p">)</span><span class="o">/</span><span class="mi">9240</span> <span class="o">-</span> <span class="n">r5</span><span class="o">*</span><span class="p">(</span><span class="n">r11</span><span class="o">*</span><span class="n">r62</span> <span class="o">+</span> <span class="n">r14</span><span class="o">*</span><span class="n">r23</span> <span class="o">+</span> <span class="mi">14</span><span class="o">*</span><span class="n">r15</span> <span class="o">-</span> <span class="n">r76</span><span class="o">*</span><span class="n">y3</span> <span class="o">+</span> <span class="mi">54</span><span class="o">*</span><span class="n">r86</span> <span class="o">-</span> <span class="mi">84</span><span class="o">*</span><span class="n">r87</span> <span class="o">-</span> <span class="n">r89</span> <span class="o">-</span> <span class="n">r91</span><span class="p">)</span><span class="o">/</span><span class="mi">9240</span> <span class="o">-</span> <span class="n">r6</span><span class="o">*</span><span class="p">(</span><span class="mi">27</span><span class="o">*</span><span class="n">r71</span> <span class="o">+</span> <span class="mi">42</span><span class="o">*</span><span class="n">r72</span> <span class="o">+</span> <span class="mi">70</span><span class="o">*</span><span class="n">r75</span> <span class="o">+</span> <span class="n">r77</span><span class="p">)</span><span class="o">/</span><span class="mi">9240</span> <span class="o">+</span> <span class="mi">3</span><span class="o">*</span><span class="n">r71</span><span class="o">*</span><span class="n">y3</span><span class="o">/</span><span class="mi">220</span> <span class="o">-</span> <span class="mi">3</span><span class="o">*</span><span class="n">r72</span><span class="o">*</span><span class="n">y2</span><span class="o">/</span><span class="mi">44</span> <span class="o">-</span> <span class="n">r72</span><span class="o">*</span><span class="n">y3</span><span class="o">/</span><span class="mi">4</span> <span class="o">+</span> <span class="mi">3</span><span class="o">*</span><span class="n">r74</span><span class="o">*</span><span class="p">(</span><span class="n">r57</span> <span class="o">+</span> <span class="n">r67</span><span class="p">)</span><span class="o">/</span><span class="mi">3080</span> <span class="o">-</span> <span class="n">r75</span><span class="o">*</span><span class="p">(</span><span class="mi">378</span><span class="o">*</span><span class="n">y2</span> <span class="o">-</span> <span class="mi">630</span><span class="o">*</span><span class="n">y3</span><span class="p">)</span><span class="o">/</span><span class="mi">9240</span> <span class="o">+</span> <span class="n">x0</span><span class="o">**</span><span class="mi">3</span><span class="o">*</span><span class="p">(</span><span class="n">r57</span> <span class="o">+</span> <span class="n">r62</span> <span class="o">+</span> <span class="mi">165</span><span class="o">*</span><span class="n">y0</span> <span class="o">+</span> <span class="n">y3</span><span class="p">)</span><span class="o">/</span><span class="mi">660</span> <span class="o">+</span> <span class="n">x0</span><span class="o">*</span><span class="p">(</span><span class="o">-</span><span class="mi">18</span><span class="o">*</span><span class="n">r100</span> <span class="o">-</span> <span class="n">r101</span><span class="o">*</span><span class="n">y0</span> <span class="o">-</span> <span class="n">r101</span><span class="o">*</span><span class="n">y1</span> <span class="o">+</span> <span class="n">r102</span><span class="o">*</span><span class="n">y2</span> <span class="o">-</span> <span class="n">r103</span><span class="o">*</span><span class="n">y0</span> <span class="o">+</span> <span class="n">r104</span><span class="o">*</span><span class="n">r20</span> <span class="o">+</span> <span class="mi">63</span><span class="o">*</span><span class="n">r105</span> <span class="o">-</span> <span class="mi">27</span><span class="o">*</span><span class="n">r106</span> <span class="o">-</span> <span class="mi">9</span><span class="o">*</span><span class="n">r107</span> <span class="o">+</span> <span class="n">r13</span> <span class="o">-</span> <span class="n">r34</span><span class="o">*</span><span class="n">y0</span> <span class="o">-</span> <span class="n">r76</span><span class="o">*</span><span class="n">y0</span> <span class="o">+</span> <span class="mi">42</span><span class="o">*</span><span class="n">r87</span> <span class="o">+</span> <span class="n">r92</span><span class="o">*</span><span class="n">y3</span> <span class="o">+</span> <span class="n">r94</span><span class="o">*</span><span class="n">y3</span> <span class="o">+</span> <span class="n">r95</span> <span class="o">-</span> <span class="n">r97</span><span class="o">*</span><span class="n">y0</span> <span class="o">+</span> <span class="mi">162</span><span class="o">*</span><span class="n">r98</span> <span class="o">-</span> <span class="n">r99</span><span class="o">*</span><span class="n">y0</span><span class="p">)</span><span class="o">/</span><span class="mi">9240</span> <span class="o">-</span> <span class="n">y0</span><span class="o">*</span><span class="p">(</span><span class="mi">135</span><span class="o">*</span><span class="n">r11</span><span class="o">*</span><span class="n">x1</span> <span class="o">+</span> <span class="n">r14</span><span class="o">*</span><span class="n">r54</span> <span class="o">+</span> <span class="n">r20</span><span class="o">*</span><span class="n">r93</span> <span class="o">+</span> <span class="n">r33</span><span class="o">*</span><span class="n">x3</span> <span class="o">+</span> <span class="mi">45</span><span class="o">*</span><span class="n">r71</span> <span class="o">+</span> <span class="mi">14</span><span class="o">*</span><span class="n">r72</span> <span class="o">+</span> <span class="mi">126</span><span class="o">*</span><span class="n">r74</span> <span class="o">+</span> <span class="mi">42</span><span class="o">*</span><span class="n">r75</span> <span class="o">+</span> <span class="n">r77</span> <span class="o">+</span> <span class="n">r92</span><span class="o">*</span><span class="n">x3</span><span class="p">)</span><span class="o">/</span><span class="mi">9240</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">momentXY</span> <span class="o">+=</span> <span class="o">-</span><span class="n">r108</span><span class="o">*</span><span class="n">r14</span><span class="o">/</span><span class="mi">18480</span> <span class="o">+</span> <span class="n">r12</span><span class="o">*</span><span class="p">(</span><span class="n">r109</span> <span class="o">+</span> <span class="mi">378</span><span class="o">*</span><span class="n">y3</span><span class="p">)</span><span class="o">/</span><span class="mi">18480</span> <span class="o">-</span> <span class="n">r14</span><span class="o">*</span><span class="n">r49</span><span class="o">/</span><span class="mi">8</span> <span class="o">-</span> <span class="mi">3</span><span class="o">*</span><span class="n">r14</span><span class="o">*</span><span class="n">r58</span><span class="o">/</span><span class="mi">44</span> <span class="o">-</span> <span class="n">r17</span><span class="o">*</span><span class="p">(</span><span class="mi">252</span><span class="o">*</span><span class="n">r46</span> <span class="o">-</span> <span class="mi">1260</span><span class="o">*</span><span class="n">r49</span><span class="p">)</span><span class="o">/</span><span class="mi">18480</span> <span class="o">+</span> <span class="n">r21</span><span class="o">*</span><span class="p">(</span><span class="mi">18</span><span class="o">*</span><span class="n">r110</span> <span class="o">+</span> <span class="n">r3</span><span class="o">*</span><span class="n">y1</span> <span class="o">+</span> <span class="mi">15</span><span class="o">*</span><span class="n">r46</span> <span class="o">+</span> <span class="mi">7</span><span class="o">*</span><span class="n">r49</span> <span class="o">+</span> <span class="mi">18</span><span class="o">*</span><span class="n">r58</span><span class="p">)</span><span class="o">/</span><span class="mi">18480</span> <span class="o">+</span> <span class="n">r22</span><span class="o">*</span><span class="p">(</span><span class="mi">252</span><span class="o">*</span><span class="n">r110</span> <span class="o">+</span> <span class="mi">28</span><span class="o">*</span><span class="n">r112</span> <span class="o">+</span> <span class="n">r113</span> <span class="o">+</span> <span class="n">r114</span> <span class="o">+</span> <span class="mi">2310</span><span class="o">*</span><span class="n">r53</span> <span class="o">+</span> <span class="mi">30</span><span class="o">*</span><span class="n">r58</span> <span class="o">+</span> <span class="mi">1260</span><span class="o">*</span><span class="n">r64</span> <span class="o">+</span> <span class="mi">252</span><span class="o">*</span><span class="n">r65</span> <span class="o">+</span> <span class="mi">42</span><span class="o">*</span><span class="n">r68</span> <span class="o">+</span> <span class="n">r70</span><span class="p">)</span><span class="o">/</span><span class="mi">18480</span> <span class="o">-</span> <span class="n">r52</span><span class="o">*</span><span class="p">(</span><span class="n">r102</span> <span class="o">+</span> <span class="mi">15</span><span class="o">*</span><span class="n">r11</span> <span class="o">+</span> <span class="mi">7</span><span class="o">*</span><span class="n">r14</span><span class="p">)</span><span class="o">/</span><span class="mi">18480</span> <span class="o">-</span> <span class="n">r53</span><span class="o">*</span><span class="p">(</span><span class="n">r101</span> <span class="o">+</span> <span class="n">r103</span> <span class="o">+</span> <span class="n">r34</span> <span class="o">+</span> <span class="n">r76</span> <span class="o">+</span> <span class="n">r97</span> <span class="o">+</span> <span class="n">r99</span><span class="p">)</span><span class="o">/</span><span class="mi">18480</span> <span class="o">+</span> <span class="n">r7</span><span class="o">*</span><span class="p">(</span><span class="o">-</span><span class="n">r115</span><span class="o">*</span><span class="n">r51</span> <span class="o">+</span> <span class="n">r116</span> <span class="o">+</span> <span class="mi">18</span><span class="o">*</span><span class="n">r117</span> <span class="o">-</span> <span class="mi">18</span><span class="o">*</span><span class="n">r118</span> <span class="o">+</span> <span class="mi">42</span><span class="o">*</span><span class="n">r119</span> <span class="o">-</span> <span class="mi">15</span><span class="o">*</span><span class="n">r120</span> <span class="o">+</span> <span class="mi">28</span><span class="o">*</span><span class="n">r45</span> <span class="o">+</span> <span class="n">r81</span><span class="o">*</span><span class="n">y3</span><span class="p">)</span><span class="o">/</span><span class="mi">18480</span> <span class="o">-</span> <span class="n">r9</span><span class="o">*</span><span class="p">(</span><span class="mi">63</span><span class="o">*</span><span class="n">r111</span> <span class="o">+</span> <span class="mi">42</span><span class="o">*</span><span class="n">r15</span> <span class="o">+</span> <span class="mi">28</span><span class="o">*</span><span class="n">r87</span> <span class="o">+</span> <span class="n">r89</span> <span class="o">+</span> <span class="n">r91</span><span class="p">)</span><span class="o">/</span><span class="mi">18480</span> <span class="o">+</span> <span class="n">x0</span><span class="o">*</span><span class="p">(</span><span class="n">r1</span><span class="o">*</span><span class="n">y0</span> <span class="o">+</span> <span class="n">r104</span><span class="o">*</span><span class="n">r80</span> <span class="o">+</span> <span class="n">r112</span><span class="o">*</span><span class="n">r54</span> <span class="o">+</span> <span class="mi">21</span><span class="o">*</span><span class="n">r119</span> <span class="o">-</span> <span class="mi">9</span><span class="o">*</span><span class="n">r120</span> <span class="o">-</span> <span class="n">r122</span><span class="o">*</span><span class="n">r53</span> <span class="o">+</span> <span class="n">r123</span> <span class="o">+</span> <span class="mi">54</span><span class="o">*</span><span class="n">r124</span> <span class="o">+</span> <span class="mi">60</span><span class="o">*</span><span class="n">r125</span> <span class="o">+</span> <span class="mi">54</span><span class="o">*</span><span class="n">r126</span> <span class="o">+</span> <span class="n">r127</span><span class="o">*</span><span class="n">r35</span> <span class="o">+</span> <span class="n">r128</span><span class="o">*</span><span class="n">y3</span> <span class="o">-</span> <span class="n">r129</span><span class="o">*</span><span class="n">x1</span> <span class="o">+</span> <span class="mi">81</span><span class="o">*</span><span class="n">r130</span> <span class="o">+</span> <span class="mi">15</span><span class="o">*</span><span class="n">r131</span> <span class="o">-</span> <span class="n">r132</span><span class="o">*</span><span class="n">x2</span> <span class="o">-</span> <span class="n">r2</span><span class="o">*</span><span class="n">r85</span> <span class="o">-</span> <span class="n">r23</span><span class="o">*</span><span class="n">r85</span> <span class="o">+</span> <span class="n">r30</span><span class="o">*</span><span class="n">y3</span> <span class="o">+</span> <span class="mi">84</span><span class="o">*</span><span class="n">r40</span><span class="o">*</span><span class="n">y2</span> <span class="o">-</span> <span class="mi">84</span><span class="o">*</span><span class="n">r42</span><span class="o">*</span><span class="n">y1</span> <span class="o">+</span> <span class="n">r60</span><span class="o">*</span><span class="n">x3</span><span class="p">)</span><span class="o">/</span><span class="mi">9240</span> <span class="o">-</span> <span class="n">y0</span><span class="o">*</span><span class="p">(</span><span class="mi">54</span><span class="o">*</span><span class="n">r100</span> <span class="o">-</span> <span class="mi">9</span><span class="o">*</span><span class="n">r105</span> <span class="o">+</span> <span class="mi">81</span><span class="o">*</span><span class="n">r106</span> <span class="o">+</span> <span class="mi">15</span><span class="o">*</span><span class="n">r107</span> <span class="o">+</span> <span class="mi">54</span><span class="o">*</span><span class="n">r111</span> <span class="o">+</span> <span class="n">r121</span><span class="o">*</span><span class="n">r7</span> <span class="o">+</span> <span class="mi">21</span><span class="o">*</span><span class="n">r15</span> <span class="o">+</span> <span class="n">r24</span><span class="o">*</span><span class="n">y3</span> <span class="o">+</span> <span class="mi">60</span><span class="o">*</span><span class="n">r86</span> <span class="o">+</span> <span class="mi">21</span><span class="o">*</span><span class="n">r87</span> <span class="o">+</span> <span class="n">r95</span> <span class="o">+</span> <span class="mi">189</span><span class="o">*</span><span class="n">r96</span><span class="o">*</span><span class="n">y1</span> <span class="o">+</span> <span class="mi">54</span><span class="o">*</span><span class="n">r98</span><span class="p">)</span><span class="o">/</span><span class="mi">9240</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">momentYY</span> <span class="o">+=</span> <span class="o">-</span><span class="n">r108</span><span class="o">*</span><span class="n">r121</span><span class="o">/</span><span class="mi">9240</span> <span class="o">-</span> <span class="n">r133</span><span class="o">*</span><span class="n">r73</span><span class="o">/</span><span class="mi">9240</span> <span class="o">-</span> <span class="n">r134</span><span class="o">*</span><span class="n">x3</span><span class="o">/</span><span class="mi">12</span> <span class="o">-</span> <span class="n">r135</span><span class="o">*</span><span class="n">r55</span><span class="o">/</span><span class="mi">9240</span> <span class="o">-</span> <span class="mi">3</span><span class="o">*</span><span class="n">r136</span><span class="o">*</span><span class="p">(</span><span class="n">r25</span> <span class="o">+</span> <span class="n">r37</span><span class="p">)</span><span class="o">/</span><span class="mi">3080</span> <span class="o">-</span> <span class="n">r137</span><span class="o">*</span><span class="p">(</span><span class="n">r25</span> <span class="o">+</span> <span class="n">r31</span> <span class="o">+</span> <span class="n">x3</span><span class="p">)</span><span class="o">/</span><span class="mi">660</span> <span class="o">+</span> <span class="n">r26</span><span class="o">*</span><span class="p">(</span><span class="n">r135</span> <span class="o">+</span> <span class="mi">126</span><span class="o">*</span><span class="n">r46</span> <span class="o">+</span> <span class="mi">378</span><span class="o">*</span><span class="n">y2</span><span class="o">*</span><span class="n">y3</span><span class="p">)</span><span class="o">/</span><span class="mi">9240</span> <span class="o">+</span> <span class="n">r5</span><span class="o">*</span><span class="p">(</span><span class="n">r110</span><span class="o">*</span><span class="n">r127</span> <span class="o">+</span> <span class="mi">27</span><span class="o">*</span><span class="n">r133</span> <span class="o">+</span> <span class="mi">42</span><span class="o">*</span><span class="n">r134</span> <span class="o">+</span> <span class="n">r138</span> <span class="o">+</span> <span class="mi">70</span><span class="o">*</span><span class="n">r139</span> <span class="o">+</span> <span class="n">r46</span><span class="o">*</span><span class="n">r62</span> <span class="o">+</span> <span class="mi">27</span><span class="o">*</span><span class="n">r51</span><span class="o">*</span><span class="n">y2</span> <span class="o">+</span> <span class="mi">15</span><span class="o">*</span><span class="n">r51</span><span class="o">*</span><span class="n">y3</span><span class="p">)</span><span class="o">/</span><span class="mi">9240</span> <span class="o">-</span> <span class="n">r52</span><span class="o">*</span><span class="p">(</span><span class="n">r56</span> <span class="o">+</span> <span class="n">r63</span> <span class="o">+</span> <span class="n">r78</span> <span class="o">+</span> <span class="n">r79</span><span class="p">)</span><span class="o">/</span><span class="mi">9240</span> <span class="o">-</span> <span class="n">r53</span><span class="o">*</span><span class="p">(</span><span class="n">r128</span> <span class="o">+</span> <span class="n">r25</span><span class="o">*</span><span class="n">y3</span> <span class="o">+</span> <span class="mi">42</span><span class="o">*</span><span class="n">r43</span> <span class="o">+</span> <span class="n">r82</span> <span class="o">+</span> <span class="mi">42</span><span class="o">*</span><span class="n">r83</span> <span class="o">+</span> <span class="mi">210</span><span class="o">*</span><span class="n">r84</span><span class="p">)</span><span class="o">/</span><span class="mi">9240</span> <span class="o">-</span> <span class="n">r6</span><span class="o">*</span><span class="p">(</span><span class="n">r114</span><span class="o">*</span><span class="n">x3</span> <span class="o">+</span> <span class="n">r116</span> <span class="o">-</span> <span class="mi">14</span><span class="o">*</span><span class="n">r119</span> <span class="o">+</span> <span class="mi">84</span><span class="o">*</span><span class="n">r45</span><span class="p">)</span><span class="o">/</span><span class="mi">9240</span> <span class="o">+</span> <span class="n">x0</span><span class="o">*</span><span class="p">(</span><span class="n">r104</span><span class="o">*</span><span class="n">r51</span> <span class="o">+</span> <span class="n">r109</span><span class="o">*</span><span class="n">r64</span> <span class="o">+</span> <span class="mi">90</span><span class="o">*</span><span class="n">r110</span><span class="o">*</span><span class="n">y3</span> <span class="o">+</span> <span class="n">r113</span><span class="o">*</span><span class="n">y0</span> <span class="o">+</span> <span class="n">r114</span><span class="o">*</span><span class="n">y0</span> <span class="o">+</span> <span class="n">r129</span><span class="o">*</span><span class="n">y1</span> <span class="o">+</span> <span class="n">r132</span><span class="o">*</span><span class="n">y2</span> <span class="o">+</span> <span class="mi">45</span><span class="o">*</span><span class="n">r133</span> <span class="o">+</span> <span class="mi">14</span><span class="o">*</span><span class="n">r134</span> <span class="o">+</span> <span class="mi">126</span><span class="o">*</span><span class="n">r136</span> <span class="o">+</span> <span class="mi">770</span><span class="o">*</span><span class="n">r137</span> <span class="o">+</span> <span class="n">r138</span> <span class="o">+</span> <span class="mi">42</span><span class="o">*</span><span class="n">r139</span> <span class="o">+</span> <span class="mi">135</span><span class="o">*</span><span class="n">r46</span><span class="o">*</span><span class="n">y1</span> <span class="o">+</span> <span class="mi">14</span><span class="o">*</span><span class="n">r53</span><span class="o">*</span><span class="n">y3</span> <span class="o">+</span> <span class="n">r64</span><span class="o">*</span><span class="n">r90</span> <span class="o">+</span> <span class="n">r66</span><span class="o">*</span><span class="n">y3</span> <span class="o">+</span> <span class="n">r69</span><span class="o">*</span><span class="n">y3</span> <span class="o">+</span> <span class="n">r70</span><span class="o">*</span><span class="n">y0</span><span class="p">)</span><span class="o">/</span><span class="mi">9240</span> <span class="o">-</span> <span class="n">y0</span><span class="o">*</span><span class="p">(</span><span class="mi">90</span><span class="o">*</span><span class="n">r118</span> <span class="o">+</span> <span class="mi">63</span><span class="o">*</span><span class="n">r120</span> <span class="o">+</span> <span class="n">r123</span> <span class="o">-</span> <span class="mi">18</span><span class="o">*</span><span class="n">r124</span> <span class="o">-</span> <span class="mi">30</span><span class="o">*</span><span class="n">r125</span> <span class="o">+</span> <span class="mi">162</span><span class="o">*</span><span class="n">r126</span> <span class="o">-</span> <span class="mi">27</span><span class="o">*</span><span class="n">r130</span> <span class="o">-</span> <span class="mi">9</span><span class="o">*</span><span class="n">r131</span> <span class="o">+</span> <span class="n">r36</span><span class="o">*</span><span class="n">y3</span> <span class="o">+</span> <span class="mi">30</span><span class="o">*</span><span class="n">r43</span><span class="o">*</span><span class="n">y3</span> <span class="o">+</span> <span class="mi">42</span><span class="o">*</span><span class="n">r45</span> <span class="o">+</span> <span class="n">r48</span> <span class="o">+</span> <span class="n">r51</span><span class="o">*</span><span class="n">r93</span><span class="p">)</span><span class="o">/</span><span class="mi">9240</span></div>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+	<span class="kn">from</span> <span class="nn">fontTools.misc.symfont</span> <span class="k">import</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">printGreenPen</span>
+	<span class="n">printGreenPen</span><span class="p">(</span><span class="s1">&#39;MomentsPen&#39;</span><span class="p">,</span> <span class="p">[</span>
+		      <span class="p">(</span><span class="s1">&#39;area&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+		      <span class="p">(</span><span class="s1">&#39;momentX&#39;</span><span class="p">,</span> <span class="n">x</span><span class="p">),</span>
+		      <span class="p">(</span><span class="s1">&#39;momentY&#39;</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span>
+		      <span class="p">(</span><span class="s1">&#39;momentXX&#39;</span><span class="p">,</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">),</span>
+		      <span class="p">(</span><span class="s1">&#39;momentXY&#39;</span><span class="p">,</span> <span class="n">x</span><span class="o">*</span><span class="n">y</span><span class="p">),</span>
+		      <span class="p">(</span><span class="s1">&#39;momentYY&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">**</span><span class="mi">2</span><span class="p">),</span>
+		     <span class="p">])</span>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Just van Rossum, Behdad Esfahbod, and the fontTools Authors. CC BY-SA 4.0
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

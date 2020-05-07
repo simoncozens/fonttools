@@ -1,0 +1,840 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>designspaceLib &mdash; fontTools Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="DesignSpaceDocument Specification" href="readme.html" />
+    <link rel="prev" title="ufo" href="../cu2qu/ufo.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> fontTools
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Library</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../afmLib.html">afmLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../agl.html">agl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cffLib/index.html">cffLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../colorLib/index.html">colorLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cu2qu/index.html">cu2qu</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">designspaceLib</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="readme.html">DesignSpaceDocument Specification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scripting.html">Scripting a designspace</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../encodings/index.html">encodings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../feaLib/index.html">feaLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../merge.html">merge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/index.html">misc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mtiLib.html">mtiLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../otlLib/index.html">otlLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pens/index.html">pens</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../subset/index.html">subset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svgLib/index.html">svgLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../t1Lib.html">t1Lib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ttLib/index.html">ttLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ttx.html">ttx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ufoLib/index.html">ufoLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unicode.html">unicode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unicodedata/index.html">unicodedata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../varLib/index.html">varLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../voltLib.html">voltLib</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">fontTools</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>designspaceLib</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/designspaceLib/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="designspacelib">
+<h1>designspaceLib<a class="headerlink" href="#designspacelib" title="Permalink to this headline">¶</a></h1>
+<p>MutatorMath started out with its own reader and writer for designspaces.
+Since then the use of designspace has broadened and it would be useful
+to have a reader and writer that are independent of a specific system.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="readme.html">DesignSpaceDocument Specification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scripting.html">Scripting a designspace</a></li>
+</ul>
+</div>
+<span class="target" id="module-fontTools.designspaceLib"></span><dl class="py exception">
+<dt id="fontTools.designspaceLib.DesignSpaceDocumentError">
+<em class="property">exception </em><code class="sig-prename descclassname">fontTools.designspaceLib.</code><code class="sig-name descname">DesignSpaceDocumentError</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">msg</span></em>, <em class="sig-param"><span class="n">obj</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/designspaceLib.html#DesignSpaceDocumentError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.designspaceLib.DesignSpaceDocumentError" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py attribute">
+<dt id="fontTools.designspaceLib.DesignSpaceDocumentError.args">
+<code class="sig-name descname">args</code><a class="headerlink" href="#fontTools.designspaceLib.DesignSpaceDocumentError.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.designspaceLib.DesignSpaceDocumentError.with_traceback">
+<code class="sig-name descname">with_traceback</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.designspaceLib.DesignSpaceDocumentError.with_traceback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.designspaceLib.DesignSpaceDocument">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.designspaceLib.</code><code class="sig-name descname">DesignSpaceDocument</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">readerClass</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">writerClass</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/designspaceLib.html#DesignSpaceDocument"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.designspaceLib.DesignSpaceDocument" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read, write data from the designspace file</p>
+<dl class="py method">
+<dt id="fontTools.designspaceLib.DesignSpaceDocument.addAxis">
+<code class="sig-name descname">addAxis</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">axisDescriptor</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/designspaceLib.html#DesignSpaceDocument.addAxis"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.designspaceLib.DesignSpaceDocument.addAxis" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.designspaceLib.DesignSpaceDocument.addAxisDescriptor">
+<code class="sig-name descname">addAxisDescriptor</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/designspaceLib.html#DesignSpaceDocument.addAxisDescriptor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.designspaceLib.DesignSpaceDocument.addAxisDescriptor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.designspaceLib.DesignSpaceDocument.addInstance">
+<code class="sig-name descname">addInstance</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">instanceDescriptor</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/designspaceLib.html#DesignSpaceDocument.addInstance"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.designspaceLib.DesignSpaceDocument.addInstance" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.designspaceLib.DesignSpaceDocument.addInstanceDescriptor">
+<code class="sig-name descname">addInstanceDescriptor</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/designspaceLib.html#DesignSpaceDocument.addInstanceDescriptor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.designspaceLib.DesignSpaceDocument.addInstanceDescriptor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.designspaceLib.DesignSpaceDocument.addRule">
+<code class="sig-name descname">addRule</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ruleDescriptor</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/designspaceLib.html#DesignSpaceDocument.addRule"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.designspaceLib.DesignSpaceDocument.addRule" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.designspaceLib.DesignSpaceDocument.addRuleDescriptor">
+<code class="sig-name descname">addRuleDescriptor</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/designspaceLib.html#DesignSpaceDocument.addRuleDescriptor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.designspaceLib.DesignSpaceDocument.addRuleDescriptor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.designspaceLib.DesignSpaceDocument.addSource">
+<code class="sig-name descname">addSource</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sourceDescriptor</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/designspaceLib.html#DesignSpaceDocument.addSource"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.designspaceLib.DesignSpaceDocument.addSource" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.designspaceLib.DesignSpaceDocument.addSourceDescriptor">
+<code class="sig-name descname">addSourceDescriptor</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/designspaceLib.html#DesignSpaceDocument.addSourceDescriptor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.designspaceLib.DesignSpaceDocument.addSourceDescriptor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.designspaceLib.DesignSpaceDocument.asdict">
+<code class="sig-name descname">asdict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.designspaceLib.DesignSpaceDocument.asdict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.designspaceLib.DesignSpaceDocument.filename">
+<code class="sig-name descname">filename</code><em class="property"> = None</em><a class="headerlink" href="#fontTools.designspaceLib.DesignSpaceDocument.filename" title="Permalink to this definition">¶</a></dt>
+<dd><p>String, optional. When the document is read from the disk, this is
+its original file name, i.e. the last part of its path.</p>
+<p>When the document is produced by a Python script and still only exists
+in memory, the producing script can write here an indication of a
+possible “good” filename, in case one wants to save the file somewhere.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.designspaceLib.DesignSpaceDocument.findDefault">
+<code class="sig-name descname">findDefault</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/designspaceLib.html#DesignSpaceDocument.findDefault"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.designspaceLib.DesignSpaceDocument.findDefault" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set and return SourceDescriptor at the default location or None.</p>
+<p>The default location is the set of all <cite>default</cite> values in user space
+of all axes.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.designspaceLib.DesignSpaceDocument.fromfile">
+<em class="property">classmethod </em><code class="sig-name descname">fromfile</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em>, <em class="sig-param"><span class="n">readerClass</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">writerClass</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/designspaceLib.html#DesignSpaceDocument.fromfile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.designspaceLib.DesignSpaceDocument.fromfile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.designspaceLib.DesignSpaceDocument.fromstring">
+<em class="property">classmethod </em><code class="sig-name descname">fromstring</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">string</span></em>, <em class="sig-param"><span class="n">readerClass</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">writerClass</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/designspaceLib.html#DesignSpaceDocument.fromstring"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.designspaceLib.DesignSpaceDocument.fromstring" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.designspaceLib.DesignSpaceDocument.getAxis">
+<code class="sig-name descname">getAxis</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/designspaceLib.html#DesignSpaceDocument.getAxis"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.designspaceLib.DesignSpaceDocument.getAxis" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.designspaceLib.DesignSpaceDocument.getAxisOrder">
+<code class="sig-name descname">getAxisOrder</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/designspaceLib.html#DesignSpaceDocument.getAxisOrder"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.designspaceLib.DesignSpaceDocument.getAxisOrder" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.designspaceLib.DesignSpaceDocument.lib">
+<code class="sig-name descname">lib</code><em class="property"> = None</em><a class="headerlink" href="#fontTools.designspaceLib.DesignSpaceDocument.lib" title="Permalink to this definition">¶</a></dt>
+<dd><p>Custom data associated with the whole document.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.designspaceLib.DesignSpaceDocument.loadSourceFonts">
+<code class="sig-name descname">loadSourceFonts</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">opener</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/designspaceLib.html#DesignSpaceDocument.loadSourceFonts"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.designspaceLib.DesignSpaceDocument.loadSourceFonts" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ensure SourceDescriptor.font attributes are loaded, and return list of fonts.</p>
+<p>Takes a callable which initializes a new font object (e.g. TTFont, or
+defcon.Font, etc.) from the SourceDescriptor.path, and sets the
+SourceDescriptor.font attribute.
+If the font attribute is already not None, it is not loaded again.
+Fonts with the same path are only loaded once and shared among SourceDescriptors.</p>
+<p>For example, to load UFO sources using defcon:</p>
+<blockquote>
+<div><p>designspace = DesignSpaceDocument.fromfile(“path/to/my.designspace”)
+designspace.loadSourceFonts(defcon.Font)</p>
+</div></blockquote>
+<p>Or to load masters as FontTools binary fonts, including extra options:</p>
+<blockquote>
+<div><p>designspace.loadSourceFonts(ttLib.TTFont, recalcBBoxes=False)</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>opener</strong> (<em>Callable</em>) – takes one required positional argument, the source.path,
+and an optional list of keyword arguments, and returns a new font object
+loaded from the path.</p></li>
+<li><p><strong>**kwargs</strong> – extra options passed on to the opener function.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>List of font objects in the order they appear in the sources list.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.designspaceLib.DesignSpaceDocument.log">
+<em class="property">property </em><code class="sig-name descname">log</code><a class="headerlink" href="#fontTools.designspaceLib.DesignSpaceDocument.log" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.designspaceLib.DesignSpaceDocument.newAxisDescriptor">
+<code class="sig-name descname">newAxisDescriptor</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/designspaceLib.html#DesignSpaceDocument.newAxisDescriptor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.designspaceLib.DesignSpaceDocument.newAxisDescriptor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.designspaceLib.DesignSpaceDocument.newDefaultLocation">
+<code class="sig-name descname">newDefaultLocation</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/designspaceLib.html#DesignSpaceDocument.newDefaultLocation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.designspaceLib.DesignSpaceDocument.newDefaultLocation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return default location in design space.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.designspaceLib.DesignSpaceDocument.newInstanceDescriptor">
+<code class="sig-name descname">newInstanceDescriptor</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/designspaceLib.html#DesignSpaceDocument.newInstanceDescriptor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.designspaceLib.DesignSpaceDocument.newInstanceDescriptor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.designspaceLib.DesignSpaceDocument.newSourceDescriptor">
+<code class="sig-name descname">newSourceDescriptor</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/designspaceLib.html#DesignSpaceDocument.newSourceDescriptor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.designspaceLib.DesignSpaceDocument.newSourceDescriptor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.designspaceLib.DesignSpaceDocument.normalize">
+<code class="sig-name descname">normalize</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/designspaceLib.html#DesignSpaceDocument.normalize"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.designspaceLib.DesignSpaceDocument.normalize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.designspaceLib.DesignSpaceDocument.normalizeLocation">
+<code class="sig-name descname">normalizeLocation</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">location</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/designspaceLib.html#DesignSpaceDocument.normalizeLocation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.designspaceLib.DesignSpaceDocument.normalizeLocation" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.designspaceLib.DesignSpaceDocument.read">
+<code class="sig-name descname">read</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/designspaceLib.html#DesignSpaceDocument.read"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.designspaceLib.DesignSpaceDocument.read" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.designspaceLib.DesignSpaceDocument.tostring">
+<code class="sig-name descname">tostring</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">encoding</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/designspaceLib.html#DesignSpaceDocument.tostring"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.designspaceLib.DesignSpaceDocument.tostring" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.designspaceLib.DesignSpaceDocument.updateFilenameFromPath">
+<code class="sig-name descname">updateFilenameFromPath</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">masters</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">instances</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">force</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/designspaceLib.html#DesignSpaceDocument.updateFilenameFromPath"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.designspaceLib.DesignSpaceDocument.updateFilenameFromPath" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.designspaceLib.DesignSpaceDocument.updatePaths">
+<code class="sig-name descname">updatePaths</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/designspaceLib.html#DesignSpaceDocument.updatePaths"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.designspaceLib.DesignSpaceDocument.updatePaths" title="Permalink to this definition">¶</a></dt>
+<dd><p>Right before we save we need to identify and respond to the following situations:
+In each descriptor, we have to do the right thing for the filename attribute.</p>
+<p>case 1.
+descriptor.filename == None
+descriptor.path == None</p>
+<p>– action:
+write as is, descriptors will not have a filename attr.
+useless, but no reason to interfere.</p>
+<p>case 2.
+descriptor.filename == “../something”
+descriptor.path == None</p>
+<p>– action:
+write as is. The filename attr should not be touched.</p>
+<p>case 3.
+descriptor.filename == None
+descriptor.path == “~/absolute/path/there”</p>
+<p>– action:
+calculate the relative path for filename.
+We’re not overwriting some other value for filename, it should be fine</p>
+<p>case 4.
+descriptor.filename == ‘../somewhere’
+descriptor.path == “~/absolute/path/there”</p>
+<p>– action:
+there is a conflict between the given filename, and the path.
+So we know where the file is relative to the document.
+Can’t guess why they’re different, we just choose for path to be correct and update filename.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.designspaceLib.DesignSpaceDocument.write">
+<code class="sig-name descname">write</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/designspaceLib.html#DesignSpaceDocument.write"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.designspaceLib.DesignSpaceDocument.write" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.designspaceLib.SourceDescriptor">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.designspaceLib.</code><code class="sig-name descname">SourceDescriptor</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">filename</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">path</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">font</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">location</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">layerName</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">familyName</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">styleName</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">copyLib</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">copyInfo</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">copyGroups</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">copyFeatures</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">muteKerning</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">muteInfo</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">mutedGlyphNames</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/designspaceLib.html#SourceDescriptor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.designspaceLib.SourceDescriptor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Simple container for data related to the source</p>
+<dl class="py method">
+<dt id="fontTools.designspaceLib.SourceDescriptor.asdict">
+<code class="sig-name descname">asdict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.designspaceLib.SourceDescriptor.asdict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.designspaceLib.SourceDescriptor.compare">
+<code class="sig-name descname">compare</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.designspaceLib.SourceDescriptor.compare" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.designspaceLib.SourceDescriptor.filename">
+<em class="property">property </em><code class="sig-name descname">filename</code><a class="headerlink" href="#fontTools.designspaceLib.SourceDescriptor.filename" title="Permalink to this definition">¶</a></dt>
+<dd><p>The original path as found in the document.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.designspaceLib.SourceDescriptor.flavor">
+<code class="sig-name descname">flavor</code><em class="property"> = 'source'</em><a class="headerlink" href="#fontTools.designspaceLib.SourceDescriptor.flavor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.designspaceLib.SourceDescriptor.font">
+<code class="sig-name descname">font</code><em class="property"> = None</em><a class="headerlink" href="#fontTools.designspaceLib.SourceDescriptor.font" title="Permalink to this definition">¶</a></dt>
+<dd><p>Any Python object. Optional. Points to a representation of this
+source font that is loaded in memory, as a Python object (e.g. a
+<code class="docutils literal notranslate"><span class="pre">defcon.Font</span></code> or a <code class="docutils literal notranslate"><span class="pre">fontTools.ttFont.TTFont</span></code>).</p>
+<p>The default document reader will not fill-in this attribute, and the
+default writer will not use this attribute. It is up to the user of
+<code class="docutils literal notranslate"><span class="pre">designspaceLib</span></code> to either load the resource identified by
+<code class="docutils literal notranslate"><span class="pre">filename</span></code> and store it in this field, or write the contents of
+this field to the disk and make <code class="docutils literal notranslate"><span class="pre">`filename</span></code> point to that.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.designspaceLib.SourceDescriptor.path">
+<em class="property">property </em><code class="sig-name descname">path</code><a class="headerlink" href="#fontTools.designspaceLib.SourceDescriptor.path" title="Permalink to this definition">¶</a></dt>
+<dd><p>The absolute path, calculated from filename.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.designspaceLib.InstanceDescriptor">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.designspaceLib.</code><code class="sig-name descname">InstanceDescriptor</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">filename</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">path</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">font</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">location</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">familyName</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">styleName</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">postScriptFontName</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">styleMapFamilyName</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">styleMapStyleName</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">localisedFamilyName</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">localisedStyleName</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">localisedStyleMapFamilyName</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">localisedStyleMapStyleName</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">glyphs</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">kerning</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">info</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">lib</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/designspaceLib.html#InstanceDescriptor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.designspaceLib.InstanceDescriptor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Simple container for data related to the instance</p>
+<dl class="py method">
+<dt id="fontTools.designspaceLib.InstanceDescriptor.asdict">
+<code class="sig-name descname">asdict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.designspaceLib.InstanceDescriptor.asdict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.designspaceLib.InstanceDescriptor.compare">
+<code class="sig-name descname">compare</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.designspaceLib.InstanceDescriptor.compare" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.designspaceLib.InstanceDescriptor.filename">
+<em class="property">property </em><code class="sig-name descname">filename</code><a class="headerlink" href="#fontTools.designspaceLib.InstanceDescriptor.filename" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.designspaceLib.InstanceDescriptor.flavor">
+<code class="sig-name descname">flavor</code><em class="property"> = 'instance'</em><a class="headerlink" href="#fontTools.designspaceLib.InstanceDescriptor.flavor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.designspaceLib.InstanceDescriptor.getFamilyName">
+<code class="sig-name descname">getFamilyName</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">languageCode</span><span class="o">=</span><span class="default_value">'en'</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/designspaceLib.html#InstanceDescriptor.getFamilyName"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.designspaceLib.InstanceDescriptor.getFamilyName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.designspaceLib.InstanceDescriptor.getStyleMapFamilyName">
+<code class="sig-name descname">getStyleMapFamilyName</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">languageCode</span><span class="o">=</span><span class="default_value">'en'</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/designspaceLib.html#InstanceDescriptor.getStyleMapFamilyName"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.designspaceLib.InstanceDescriptor.getStyleMapFamilyName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.designspaceLib.InstanceDescriptor.getStyleMapStyleName">
+<code class="sig-name descname">getStyleMapStyleName</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">languageCode</span><span class="o">=</span><span class="default_value">'en'</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/designspaceLib.html#InstanceDescriptor.getStyleMapStyleName"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.designspaceLib.InstanceDescriptor.getStyleMapStyleName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.designspaceLib.InstanceDescriptor.getStyleName">
+<code class="sig-name descname">getStyleName</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">languageCode</span><span class="o">=</span><span class="default_value">'en'</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/designspaceLib.html#InstanceDescriptor.getStyleName"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.designspaceLib.InstanceDescriptor.getStyleName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.designspaceLib.InstanceDescriptor.lib">
+<code class="sig-name descname">lib</code><em class="property"> = None</em><a class="headerlink" href="#fontTools.designspaceLib.InstanceDescriptor.lib" title="Permalink to this definition">¶</a></dt>
+<dd><p>Custom data associated with this instance.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.designspaceLib.InstanceDescriptor.path">
+<em class="property">property </em><code class="sig-name descname">path</code><a class="headerlink" href="#fontTools.designspaceLib.InstanceDescriptor.path" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.designspaceLib.InstanceDescriptor.setFamilyName">
+<code class="sig-name descname">setFamilyName</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">familyName</span></em>, <em class="sig-param"><span class="n">languageCode</span><span class="o">=</span><span class="default_value">'en'</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/designspaceLib.html#InstanceDescriptor.setFamilyName"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.designspaceLib.InstanceDescriptor.setFamilyName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.designspaceLib.InstanceDescriptor.setStyleMapFamilyName">
+<code class="sig-name descname">setStyleMapFamilyName</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">styleMapFamilyName</span></em>, <em class="sig-param"><span class="n">languageCode</span><span class="o">=</span><span class="default_value">'en'</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/designspaceLib.html#InstanceDescriptor.setStyleMapFamilyName"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.designspaceLib.InstanceDescriptor.setStyleMapFamilyName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.designspaceLib.InstanceDescriptor.setStyleMapStyleName">
+<code class="sig-name descname">setStyleMapStyleName</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">styleMapStyleName</span></em>, <em class="sig-param"><span class="n">languageCode</span><span class="o">=</span><span class="default_value">'en'</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/designspaceLib.html#InstanceDescriptor.setStyleMapStyleName"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.designspaceLib.InstanceDescriptor.setStyleMapStyleName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.designspaceLib.InstanceDescriptor.setStyleName">
+<code class="sig-name descname">setStyleName</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">styleName</span></em>, <em class="sig-param"><span class="n">languageCode</span><span class="o">=</span><span class="default_value">'en'</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/designspaceLib.html#InstanceDescriptor.setStyleName"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.designspaceLib.InstanceDescriptor.setStyleName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.designspaceLib.AxisDescriptor">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.designspaceLib.</code><code class="sig-name descname">AxisDescriptor</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">tag</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">labelNames</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">minimum</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">default</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">maximum</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">hidden</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">map</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/designspaceLib.html#AxisDescriptor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.designspaceLib.AxisDescriptor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Simple container for the axis data
+Add more localisations?</p>
+<dl class="py method">
+<dt id="fontTools.designspaceLib.AxisDescriptor.asdict">
+<code class="sig-name descname">asdict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.designspaceLib.AxisDescriptor.asdict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.designspaceLib.AxisDescriptor.compare">
+<code class="sig-name descname">compare</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.designspaceLib.AxisDescriptor.compare" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.designspaceLib.AxisDescriptor.flavor">
+<code class="sig-name descname">flavor</code><em class="property"> = 'axis'</em><a class="headerlink" href="#fontTools.designspaceLib.AxisDescriptor.flavor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.designspaceLib.AxisDescriptor.map_backward">
+<code class="sig-name descname">map_backward</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">v</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/designspaceLib.html#AxisDescriptor.map_backward"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.designspaceLib.AxisDescriptor.map_backward" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.designspaceLib.AxisDescriptor.map_forward">
+<code class="sig-name descname">map_forward</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">v</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/designspaceLib.html#AxisDescriptor.map_forward"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.designspaceLib.AxisDescriptor.map_forward" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.designspaceLib.AxisDescriptor.serialize">
+<code class="sig-name descname">serialize</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/designspaceLib.html#AxisDescriptor.serialize"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.designspaceLib.AxisDescriptor.serialize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.designspaceLib.RuleDescriptor">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.designspaceLib.</code><code class="sig-name descname">RuleDescriptor</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">conditionSets</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">subs</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/designspaceLib.html#RuleDescriptor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.designspaceLib.RuleDescriptor" title="Permalink to this definition">¶</a></dt>
+<dd><p>&lt;!– optional: list of substitution rules –&gt;
+&lt;rules&gt;</p>
+<blockquote>
+<div><dl>
+<dt>&lt;rule name=”vertical.bars”&gt;</dt><dd><dl class="simple">
+<dt>&lt;conditionset&gt;</dt><dd><p>&lt;condition minimum=”250.000000” maximum=”750.000000” name=”weight”/&gt;
+&lt;condition minimum=”100” name=”width”/&gt;
+&lt;condition minimum=”10” maximum=”40” name=”optical”/&gt;</p>
+</dd>
+</dl>
+<p>&lt;/conditionset&gt;
+&lt;sub name=”cent” with=”cent.alt”/&gt;
+&lt;sub name=”dollar” with=”dollar.alt”/&gt;</p>
+</dd>
+</dl>
+<p>&lt;/rule&gt;</p>
+</div></blockquote>
+<p>&lt;/rules&gt;</p>
+<dl class="py method">
+<dt id="fontTools.designspaceLib.RuleDescriptor.asdict">
+<code class="sig-name descname">asdict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.designspaceLib.RuleDescriptor.asdict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.designspaceLib.RuleDescriptor.compare">
+<code class="sig-name descname">compare</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.designspaceLib.RuleDescriptor.compare" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.designspaceLib.BaseDocReader">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.designspaceLib.</code><code class="sig-name descname">BaseDocReader</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">documentPath</span></em>, <em class="sig-param"><span class="n">documentObject</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/designspaceLib.html#BaseDocReader"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.designspaceLib.BaseDocReader" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py attribute">
+<dt id="fontTools.designspaceLib.BaseDocReader.axisDescriptorClass">
+<code class="sig-name descname">axisDescriptorClass</code><a class="headerlink" href="#fontTools.designspaceLib.BaseDocReader.axisDescriptorClass" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#fontTools.designspaceLib.AxisDescriptor" title="fontTools.designspaceLib.AxisDescriptor"><code class="xref py py-class docutils literal notranslate"><span class="pre">AxisDescriptor</span></code></a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.designspaceLib.BaseDocReader.fromstring">
+<em class="property">classmethod </em><code class="sig-name descname">fromstring</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">string</span></em>, <em class="sig-param"><span class="n">documentObject</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/designspaceLib.html#BaseDocReader.fromstring"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.designspaceLib.BaseDocReader.fromstring" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.designspaceLib.BaseDocReader.instanceDescriptorClass">
+<code class="sig-name descname">instanceDescriptorClass</code><a class="headerlink" href="#fontTools.designspaceLib.BaseDocReader.instanceDescriptorClass" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#fontTools.designspaceLib.InstanceDescriptor" title="fontTools.designspaceLib.InstanceDescriptor"><code class="xref py py-class docutils literal notranslate"><span class="pre">InstanceDescriptor</span></code></a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.designspaceLib.BaseDocReader.locationFromElement">
+<code class="sig-name descname">locationFromElement</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">element</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/designspaceLib.html#BaseDocReader.locationFromElement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.designspaceLib.BaseDocReader.locationFromElement" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.designspaceLib.BaseDocReader.log">
+<em class="property">property </em><code class="sig-name descname">log</code><a class="headerlink" href="#fontTools.designspaceLib.BaseDocReader.log" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.designspaceLib.BaseDocReader.read">
+<code class="sig-name descname">read</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/designspaceLib.html#BaseDocReader.read"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.designspaceLib.BaseDocReader.read" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.designspaceLib.BaseDocReader.readAxes">
+<code class="sig-name descname">readAxes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/designspaceLib.html#BaseDocReader.readAxes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.designspaceLib.BaseDocReader.readAxes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.designspaceLib.BaseDocReader.readGlyphElement">
+<code class="sig-name descname">readGlyphElement</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">glyphElement</span></em>, <em class="sig-param"><span class="n">instanceObject</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/designspaceLib.html#BaseDocReader.readGlyphElement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.designspaceLib.BaseDocReader.readGlyphElement" title="Permalink to this definition">¶</a></dt>
+<dd><dl>
+<dt>Read the glyph element.</dt><dd><p>&lt;glyph name=”b” unicode=”0x62”/&gt;
+&lt;glyph name=”b”/&gt;
+&lt;glyph name=”b”&gt;</p>
+<blockquote>
+<div><p>&lt;master location=”location-token-bbb” source=”master-token-aaa2”/&gt;
+&lt;master glyphname=”b.alt1” location=”location-token-ccc” source=”master-token-aaa3”/&gt;
+&lt;note&gt;</p>
+<blockquote>
+<div><p>This is an instance from an anisotropic interpolation.</p>
+</div></blockquote>
+<p>&lt;/note&gt;</p>
+</div></blockquote>
+<p>&lt;/glyph&gt;</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.designspaceLib.BaseDocReader.readInfoElement">
+<code class="sig-name descname">readInfoElement</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">infoElement</span></em>, <em class="sig-param"><span class="n">instanceObject</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/designspaceLib.html#BaseDocReader.readInfoElement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.designspaceLib.BaseDocReader.readInfoElement" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read the info element.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.designspaceLib.BaseDocReader.readInstances">
+<code class="sig-name descname">readInstances</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">makeGlyphs</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">makeKerning</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">makeInfo</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/designspaceLib.html#BaseDocReader.readInstances"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.designspaceLib.BaseDocReader.readInstances" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.designspaceLib.BaseDocReader.readKerningElement">
+<code class="sig-name descname">readKerningElement</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">kerningElement</span></em>, <em class="sig-param"><span class="n">instanceObject</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/designspaceLib.html#BaseDocReader.readKerningElement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.designspaceLib.BaseDocReader.readKerningElement" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read the kerning element.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.designspaceLib.BaseDocReader.readLib">
+<code class="sig-name descname">readLib</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/designspaceLib.html#BaseDocReader.readLib"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.designspaceLib.BaseDocReader.readLib" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read the lib element for the whole document.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.designspaceLib.BaseDocReader.readLibElement">
+<code class="sig-name descname">readLibElement</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">libElement</span></em>, <em class="sig-param"><span class="n">instanceObject</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/designspaceLib.html#BaseDocReader.readLibElement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.designspaceLib.BaseDocReader.readLibElement" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read the lib element for the given instance.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.designspaceLib.BaseDocReader.readLocationElement">
+<code class="sig-name descname">readLocationElement</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">locationElement</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/designspaceLib.html#BaseDocReader.readLocationElement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.designspaceLib.BaseDocReader.readLocationElement" title="Permalink to this definition">¶</a></dt>
+<dd><p>Format 0 location reader</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.designspaceLib.BaseDocReader.readRules">
+<code class="sig-name descname">readRules</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/designspaceLib.html#BaseDocReader.readRules"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.designspaceLib.BaseDocReader.readRules" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.designspaceLib.BaseDocReader.readSources">
+<code class="sig-name descname">readSources</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/designspaceLib.html#BaseDocReader.readSources"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.designspaceLib.BaseDocReader.readSources" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.designspaceLib.BaseDocReader.ruleDescriptorClass">
+<code class="sig-name descname">ruleDescriptorClass</code><a class="headerlink" href="#fontTools.designspaceLib.BaseDocReader.ruleDescriptorClass" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#fontTools.designspaceLib.RuleDescriptor" title="fontTools.designspaceLib.RuleDescriptor"><code class="xref py py-class docutils literal notranslate"><span class="pre">RuleDescriptor</span></code></a></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.designspaceLib.BaseDocReader.sourceDescriptorClass">
+<code class="sig-name descname">sourceDescriptorClass</code><a class="headerlink" href="#fontTools.designspaceLib.BaseDocReader.sourceDescriptorClass" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#fontTools.designspaceLib.SourceDescriptor" title="fontTools.designspaceLib.SourceDescriptor"><code class="xref py py-class docutils literal notranslate"><span class="pre">SourceDescriptor</span></code></a></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.designspaceLib.BaseDocWriter">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.designspaceLib.</code><code class="sig-name descname">BaseDocWriter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">documentPath</span></em>, <em class="sig-param"><span class="n">documentObject</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/designspaceLib.html#BaseDocWriter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.designspaceLib.BaseDocWriter" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py attribute">
+<dt id="fontTools.designspaceLib.BaseDocWriter.axisDescriptorClass">
+<code class="sig-name descname">axisDescriptorClass</code><a class="headerlink" href="#fontTools.designspaceLib.BaseDocWriter.axisDescriptorClass" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#fontTools.designspaceLib.AxisDescriptor" title="fontTools.designspaceLib.AxisDescriptor"><code class="xref py py-class docutils literal notranslate"><span class="pre">AxisDescriptor</span></code></a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.designspaceLib.BaseDocWriter.getAxisDecriptor">
+<em class="property">classmethod </em><code class="sig-name descname">getAxisDecriptor</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/designspaceLib.html#BaseDocWriter.getAxisDecriptor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.designspaceLib.BaseDocWriter.getAxisDecriptor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.designspaceLib.BaseDocWriter.getInstanceDescriptor">
+<em class="property">classmethod </em><code class="sig-name descname">getInstanceDescriptor</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/designspaceLib.html#BaseDocWriter.getInstanceDescriptor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.designspaceLib.BaseDocWriter.getInstanceDescriptor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.designspaceLib.BaseDocWriter.getRuleDescriptor">
+<em class="property">classmethod </em><code class="sig-name descname">getRuleDescriptor</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/designspaceLib.html#BaseDocWriter.getRuleDescriptor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.designspaceLib.BaseDocWriter.getRuleDescriptor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.designspaceLib.BaseDocWriter.getSourceDescriptor">
+<em class="property">classmethod </em><code class="sig-name descname">getSourceDescriptor</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/designspaceLib.html#BaseDocWriter.getSourceDescriptor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.designspaceLib.BaseDocWriter.getSourceDescriptor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.designspaceLib.BaseDocWriter.instanceDescriptorClass">
+<code class="sig-name descname">instanceDescriptorClass</code><a class="headerlink" href="#fontTools.designspaceLib.BaseDocWriter.instanceDescriptorClass" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#fontTools.designspaceLib.InstanceDescriptor" title="fontTools.designspaceLib.InstanceDescriptor"><code class="xref py py-class docutils literal notranslate"><span class="pre">InstanceDescriptor</span></code></a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.designspaceLib.BaseDocWriter.intOrFloat">
+<code class="sig-name descname">intOrFloat</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">num</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/designspaceLib.html#BaseDocWriter.intOrFloat"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.designspaceLib.BaseDocWriter.intOrFloat" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.designspaceLib.BaseDocWriter.ruleDescriptorClass">
+<code class="sig-name descname">ruleDescriptorClass</code><a class="headerlink" href="#fontTools.designspaceLib.BaseDocWriter.ruleDescriptorClass" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#fontTools.designspaceLib.RuleDescriptor" title="fontTools.designspaceLib.RuleDescriptor"><code class="xref py py-class docutils literal notranslate"><span class="pre">RuleDescriptor</span></code></a></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.designspaceLib.BaseDocWriter.sourceDescriptorClass">
+<code class="sig-name descname">sourceDescriptorClass</code><a class="headerlink" href="#fontTools.designspaceLib.BaseDocWriter.sourceDescriptorClass" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#fontTools.designspaceLib.SourceDescriptor" title="fontTools.designspaceLib.SourceDescriptor"><code class="xref py py-class docutils literal notranslate"><span class="pre">SourceDescriptor</span></code></a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.designspaceLib.BaseDocWriter.write">
+<code class="sig-name descname">write</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pretty</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">encoding</span><span class="o">=</span><span class="default_value">'UTF-8'</span></em>, <em class="sig-param"><span class="n">xml_declaration</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/designspaceLib.html#BaseDocWriter.write"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.designspaceLib.BaseDocWriter.write" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="readme.html" class="btn btn-neutral float-right" title="DesignSpaceDocument Specification" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../cu2qu/ufo.html" class="btn btn-neutral float-left" title="ufo" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Just van Rossum, Behdad Esfahbod, and the fontTools Authors. CC BY-SA 4.0
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

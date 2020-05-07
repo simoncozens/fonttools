@@ -1,0 +1,388 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>fontTools.misc.fixedTools &mdash; fontTools Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> fontTools
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Library</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../afmLib.html">afmLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../agl.html">agl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cffLib/index.html">cffLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../colorLib/index.html">colorLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cu2qu/index.html">cu2qu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../designspaceLib/index.html">designspaceLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../encodings/index.html">encodings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../feaLib/index.html">feaLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../merge.html">merge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../misc/index.html">misc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../mtiLib.html">mtiLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../otlLib/index.html">otlLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pens/index.html">pens</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../subset/index.html">subset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../svgLib/index.html">svgLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../t1Lib.html">t1Lib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ttLib/index.html">ttLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ttx.html">ttx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ufoLib/index.html">ufoLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../unicode.html">unicode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../unicodedata/index.html">unicodedata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../varLib/index.html">varLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../voltLib.html">voltLib</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">fontTools</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>fontTools.misc.fixedTools</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for fontTools.misc.fixedTools</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;fontTools.misc.fixedTools.py -- tools for working with fixed numbers.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span> <span class="nn">fontTools.misc.py23</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+
+<span class="n">log</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span>
+	<span class="s2">&quot;otRound&quot;</span><span class="p">,</span>
+	<span class="s2">&quot;fixedToFloat&quot;</span><span class="p">,</span>
+	<span class="s2">&quot;floatToFixed&quot;</span><span class="p">,</span>
+	<span class="s2">&quot;floatToFixedToFloat&quot;</span><span class="p">,</span>
+	<span class="s2">&quot;floatToFixedToStr&quot;</span><span class="p">,</span>
+	<span class="s2">&quot;fixedToStr&quot;</span><span class="p">,</span>
+	<span class="s2">&quot;strToFixed&quot;</span><span class="p">,</span>
+	<span class="s2">&quot;strToFixedToFloat&quot;</span><span class="p">,</span>
+	<span class="s2">&quot;ensureVersionIsLong&quot;</span><span class="p">,</span>
+	<span class="s2">&quot;versionToFixed&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+
+
+<span class="c1"># the max value that can still fit in an F2Dot14:</span>
+<span class="c1"># 1.99993896484375</span>
+<span class="n">MAX_F2DOT14</span> <span class="o">=</span> <span class="mh">0x7FFF</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">14</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="otRound"><a class="viewcode-back" href="../../../misc/fixedTools.html#fontTools.misc.fixedTools.otRound">[docs]</a><span class="k">def</span> <span class="nf">otRound</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Round float value to nearest integer towards +Infinity.</span>
+<span class="sd">	For fractional values of 0.5 and higher, take the next higher integer;</span>
+<span class="sd">	for other fractional values, truncate.</span>
+
+<span class="sd">	https://docs.microsoft.com/en-us/typography/opentype/spec/otvaroverview</span>
+<span class="sd">	https://github.com/fonttools/fonttools/issues/1248#issuecomment-383198166</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="n">value</span> <span class="o">+</span> <span class="mf">0.5</span><span class="p">))</span></div>
+
+
+<div class="viewcode-block" id="fixedToFloat"><a class="viewcode-back" href="../../../misc/fixedTools.html#fontTools.misc.fixedTools.fixedToFloat">[docs]</a><span class="k">def</span> <span class="nf">fixedToFloat</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">precisionBits</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Converts a fixed-point number to a float given the number of</span>
+<span class="sd">	precisionBits.  Ie. value / (1 &lt;&lt; precisionBits)</span>
+
+<span class="sd">	&gt;&gt;&gt; import math</span>
+<span class="sd">	&gt;&gt;&gt; f = fixedToFloat(-10139, precisionBits=14)</span>
+<span class="sd">	&gt;&gt;&gt; math.isclose(f, -0.61883544921875)</span>
+<span class="sd">	True</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="k">return</span> <span class="n">value</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">precisionBits</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="floatToFixed"><a class="viewcode-back" href="../../../misc/fixedTools.html#fontTools.misc.fixedTools.floatToFixed">[docs]</a><span class="k">def</span> <span class="nf">floatToFixed</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">precisionBits</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Converts a float to a fixed-point number given the number of</span>
+<span class="sd">	precisionBits.  Ie. round(value * (1 &lt;&lt; precisionBits)).</span>
+
+<span class="sd">	&gt;&gt;&gt; floatToFixed(-0.61883544921875, precisionBits=14)</span>
+<span class="sd">	-10139</span>
+<span class="sd">	&gt;&gt;&gt; floatToFixed(-0.61884, precisionBits=14)</span>
+<span class="sd">	-10139</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="k">return</span> <span class="n">otRound</span><span class="p">(</span><span class="n">value</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">precisionBits</span><span class="p">))</span></div>
+
+
+<div class="viewcode-block" id="floatToFixedToFloat"><a class="viewcode-back" href="../../../misc/fixedTools.html#fontTools.misc.fixedTools.floatToFixedToFloat">[docs]</a><span class="k">def</span> <span class="nf">floatToFixedToFloat</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">precisionBits</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Converts a float to a fixed-point number given the number of</span>
+<span class="sd">	precisionBits, round it, then convert it back to float again.</span>
+<span class="sd">	Ie. round(value * (1&lt;&lt;precisionBits)) / (1&lt;&lt;precisionBits)</span>
+<span class="sd">	Note: this **is** equivalent to fixedToFloat(floatToFixed(value)).</span>
+
+<span class="sd">	&gt;&gt;&gt; import math</span>
+<span class="sd">	&gt;&gt;&gt; f1 = -0.61884</span>
+<span class="sd">	&gt;&gt;&gt; f2 = floatToFixedToFloat(-0.61884, precisionBits=14)</span>
+<span class="sd">	&gt;&gt;&gt; f1 != f2</span>
+<span class="sd">	True</span>
+<span class="sd">	&gt;&gt;&gt; math.isclose(f2, -0.61883544921875)</span>
+<span class="sd">	True</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="n">scale</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">precisionBits</span>
+	<span class="k">return</span> <span class="n">otRound</span><span class="p">(</span><span class="n">value</span> <span class="o">*</span> <span class="n">scale</span><span class="p">)</span> <span class="o">/</span> <span class="n">scale</span></div>
+
+
+<div class="viewcode-block" id="fixedToStr"><a class="viewcode-back" href="../../../misc/fixedTools.html#fontTools.misc.fixedTools.fixedToStr">[docs]</a><span class="k">def</span> <span class="nf">fixedToStr</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">precisionBits</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Converts a fixed-point number with &#39;precisionBits&#39; number of fractional binary</span>
+<span class="sd">	digits to a string representing a decimal float, choosing the float that has the</span>
+<span class="sd">	shortest decimal representation (the least number of fractional decimal digits).</span>
+<span class="sd">	Eg. to convert a fixed-point number in a 2.14 format, use precisionBits=14:</span>
+
+<span class="sd">	&gt;&gt;&gt; fixedToStr(-10139, precisionBits=14)</span>
+<span class="sd">	&#39;-0.61884&#39;</span>
+
+<span class="sd">	This is pretty slow compared to the simple division used in fixedToFloat.</span>
+<span class="sd">	Use sporadically when you need to serialize or print the fixed-point number in</span>
+<span class="sd">	a human-readable form.</span>
+
+<span class="sd">	NOTE: precisionBits is only supported up to 16.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="k">if</span> <span class="ow">not</span> <span class="n">value</span><span class="p">:</span> <span class="k">return</span> <span class="s2">&quot;0.0&quot;</span>
+
+	<span class="n">scale</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">precisionBits</span>
+	<span class="n">value</span> <span class="o">/=</span> <span class="n">scale</span>
+	<span class="n">eps</span> <span class="o">=</span> <span class="o">.</span><span class="mi">5</span> <span class="o">/</span> <span class="n">scale</span>
+	<span class="n">lo</span> <span class="o">=</span> <span class="n">value</span> <span class="o">-</span> <span class="n">eps</span>
+	<span class="n">hi</span> <span class="o">=</span> <span class="n">value</span> <span class="o">+</span> <span class="n">eps</span>
+	<span class="c1"># If the range of valid choices spans an integer, return the integer.</span>
+	<span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">lo</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">int</span><span class="p">(</span><span class="n">hi</span><span class="p">):</span>
+		<span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">value</span><span class="p">)))</span>
+	<span class="n">fmt</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%.8f</span><span class="s2">&quot;</span>
+	<span class="n">lo</span> <span class="o">=</span> <span class="n">fmt</span> <span class="o">%</span> <span class="n">lo</span>
+	<span class="n">hi</span> <span class="o">=</span> <span class="n">fmt</span> <span class="o">%</span> <span class="n">hi</span>
+	<span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">lo</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">hi</span><span class="p">)</span> <span class="ow">and</span> <span class="n">lo</span> <span class="o">!=</span> <span class="n">hi</span>
+	<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">lo</span><span class="p">)):</span>
+		<span class="k">if</span> <span class="n">lo</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">!=</span> <span class="n">hi</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+			<span class="k">break</span>
+	<span class="n">period</span> <span class="o">=</span> <span class="n">lo</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
+	<span class="k">assert</span> <span class="n">period</span> <span class="o">&lt;</span> <span class="n">i</span>
+	<span class="n">fmt</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%%</span><span class="s2">.</span><span class="si">%d</span><span class="s2">f&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">i</span> <span class="o">-</span> <span class="n">period</span><span class="p">)</span>
+	<span class="k">return</span> <span class="n">fmt</span> <span class="o">%</span> <span class="n">value</span></div>
+
+
+<div class="viewcode-block" id="strToFixed"><a class="viewcode-back" href="../../../misc/fixedTools.html#fontTools.misc.fixedTools.strToFixed">[docs]</a><span class="k">def</span> <span class="nf">strToFixed</span><span class="p">(</span><span class="n">string</span><span class="p">,</span> <span class="n">precisionBits</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Convert the string representation of a decimal float number to a fixed-point</span>
+<span class="sd">	number with &#39;precisionBits&#39; fractional binary digits.</span>
+<span class="sd">	E.g. to convert a float string to a 2.14 fixed-point number:</span>
+
+<span class="sd">	&gt;&gt;&gt; strToFixed(&#39;-0.61884&#39;, precisionBits=14)</span>
+<span class="sd">	-10139</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="n">value</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>
+	<span class="k">return</span> <span class="n">otRound</span><span class="p">(</span><span class="n">value</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">precisionBits</span><span class="p">))</span></div>
+
+
+<div class="viewcode-block" id="strToFixedToFloat"><a class="viewcode-back" href="../../../misc/fixedTools.html#fontTools.misc.fixedTools.strToFixedToFloat">[docs]</a><span class="k">def</span> <span class="nf">strToFixedToFloat</span><span class="p">(</span><span class="n">string</span><span class="p">,</span> <span class="n">precisionBits</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Convert a string to a decimal float, by first converting the float to a</span>
+<span class="sd">	fixed-point number with precisionBits fractional binary digits.</span>
+<span class="sd">	This is simply a shorthand for fixedToFloat(floatToFixed(float(s))).</span>
+
+<span class="sd">	&gt;&gt;&gt; import math</span>
+<span class="sd">	&gt;&gt;&gt; s = &#39;-0.61884&#39;</span>
+<span class="sd">	&gt;&gt;&gt; bits = 14</span>
+<span class="sd">	&gt;&gt;&gt; f = strToFixedToFloat(s, precisionBits=bits)</span>
+<span class="sd">	&gt;&gt;&gt; math.isclose(f, -0.61883544921875)</span>
+<span class="sd">	True</span>
+<span class="sd">	&gt;&gt;&gt; f == fixedToFloat(floatToFixed(float(s), precisionBits=bits), precisionBits=bits)</span>
+<span class="sd">	True</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="n">value</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>
+	<span class="n">scale</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">precisionBits</span>
+	<span class="k">return</span> <span class="n">otRound</span><span class="p">(</span><span class="n">value</span> <span class="o">*</span> <span class="n">scale</span><span class="p">)</span> <span class="o">/</span> <span class="n">scale</span></div>
+
+
+<div class="viewcode-block" id="floatToFixedToStr"><a class="viewcode-back" href="../../../misc/fixedTools.html#fontTools.misc.fixedTools.floatToFixedToStr">[docs]</a><span class="k">def</span> <span class="nf">floatToFixedToStr</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">precisionBits</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Convert float to string using the shortest decimal representation (ie. the least</span>
+<span class="sd">	number of fractional decimal digits) to represent the equivalent fixed-point number</span>
+<span class="sd">	with &#39;precisionBits&#39; fractional binary digits.</span>
+<span class="sd">	It uses fixedToStr under the hood.</span>
+
+<span class="sd">	&gt;&gt;&gt; floatToFixedToStr(-0.61883544921875, precisionBits=14)</span>
+<span class="sd">	&#39;-0.61884&#39;</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="n">fixed</span> <span class="o">=</span> <span class="n">otRound</span><span class="p">(</span><span class="n">value</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">precisionBits</span><span class="p">))</span>
+	<span class="k">return</span> <span class="n">fixedToStr</span><span class="p">(</span><span class="n">fixed</span><span class="p">,</span> <span class="n">precisionBits</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="ensureVersionIsLong"><a class="viewcode-back" href="../../../misc/fixedTools.html#fontTools.misc.fixedTools.ensureVersionIsLong">[docs]</a><span class="k">def</span> <span class="nf">ensureVersionIsLong</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Ensure a table version is an unsigned long (unsigned short major,</span>
+<span class="sd">	unsigned short minor) instead of a float.&quot;&quot;&quot;</span>
+	<span class="k">if</span> <span class="n">value</span> <span class="o">&lt;</span> <span class="mh">0x10000</span><span class="p">:</span>
+		<span class="n">newValue</span> <span class="o">=</span> <span class="n">floatToFixed</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="mi">16</span><span class="p">)</span>
+		<span class="n">log</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+			<span class="s2">&quot;Table version value is a float: </span><span class="si">%.4f</span><span class="s2">; &quot;</span>
+			<span class="s2">&quot;fix to use hex instead: 0x</span><span class="si">%08x</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">newValue</span><span class="p">)</span>
+		<span class="n">value</span> <span class="o">=</span> <span class="n">newValue</span>
+	<span class="k">return</span> <span class="n">value</span></div>
+
+
+<div class="viewcode-block" id="versionToFixed"><a class="viewcode-back" href="../../../misc/fixedTools.html#fontTools.misc.fixedTools.versionToFixed">[docs]</a><span class="k">def</span> <span class="nf">versionToFixed</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Converts a table version to a fixed&quot;&quot;&quot;</span>
+	<span class="n">value</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="k">if</span> <span class="n">value</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;0&quot;</span><span class="p">)</span> <span class="k">else</span> <span class="nb">float</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+	<span class="n">value</span> <span class="o">=</span> <span class="n">ensureVersionIsLong</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+	<span class="k">return</span> <span class="n">value</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Just van Rossum, Behdad Esfahbod, and the fontTools Authors. CC BY-SA 4.0
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

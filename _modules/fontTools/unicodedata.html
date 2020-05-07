@@ -1,0 +1,490 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>fontTools.unicodedata &mdash; fontTools Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> fontTools
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Library</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../afmLib.html">afmLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../agl.html">agl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cffLib/index.html">cffLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../colorLib/index.html">colorLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cu2qu/index.html">cu2qu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../designspaceLib/index.html">designspaceLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../encodings/index.html">encodings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../feaLib/index.html">feaLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../merge.html">merge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../misc/index.html">misc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mtiLib.html">mtiLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../otlLib/index.html">otlLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pens/index.html">pens</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../subset/index.html">subset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../svgLib/index.html">svgLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../t1Lib.html">t1Lib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ttLib/index.html">ttLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ttx.html">ttx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ufoLib/index.html">ufoLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../unicode.html">unicode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../unicodedata/index.html">unicodedata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../varLib/index.html">varLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../voltLib.html">voltLib</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">fontTools</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+      <li>fontTools.unicodedata</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for fontTools.unicodedata</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">fontTools.misc.py23</span> <span class="k">import</span> <span class="o">*</span>
+
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">from</span> <span class="nn">bisect</span> <span class="k">import</span> <span class="n">bisect_right</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="c1"># use unicodedata backport compatible with python2:</span>
+    <span class="c1"># https://github.com/mikekap/unicodedata2</span>
+    <span class="kn">from</span> <span class="nn">unicodedata2</span> <span class="k">import</span> <span class="o">*</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>  <span class="c1"># pragma: no cover</span>
+    <span class="c1"># fall back to built-in unicodedata (possibly outdated)</span>
+    <span class="kn">from</span> <span class="nn">unicodedata</span> <span class="k">import</span> <span class="o">*</span>
+
+<span class="kn">from</span> <span class="nn">.</span> <span class="k">import</span> <span class="n">Blocks</span><span class="p">,</span> <span class="n">Scripts</span><span class="p">,</span> <span class="n">ScriptExtensions</span><span class="p">,</span> <span class="n">OTTags</span>
+
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="n">tostr</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="p">(</span>
+    <span class="c1"># names from built-in unicodedata module</span>
+    <span class="s2">&quot;lookup&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;name&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;decimal&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;digit&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;numeric&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;category&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;bidirectional&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;combining&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;east_asian_width&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;mirrored&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;decomposition&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;normalize&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;unidata_version&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ucd_3_2_0&quot;</span><span class="p">,</span>
+    <span class="c1"># additonal functions</span>
+    <span class="s2">&quot;block&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;script&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;script_extension&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;script_name&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;script_code&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;script_horizontal_direction&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ot_tags_from_script&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ot_tag_to_script&quot;</span><span class="p">,</span>
+<span class="p">)]</span>
+
+
+<div class="viewcode-block" id="script"><a class="viewcode-back" href="../../unicodedata/index.html#fontTools.unicodedata.script">[docs]</a><span class="k">def</span> <span class="nf">script</span><span class="p">(</span><span class="n">char</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Return the four-letter script code assigned to the Unicode character</span>
+<span class="sd">    &#39;char&#39; as string.</span>
+
+<span class="sd">    &gt;&gt;&gt; script(&quot;a&quot;)</span>
+<span class="sd">    &#39;Latn&#39;</span>
+<span class="sd">    &gt;&gt;&gt; script(&quot;,&quot;)</span>
+<span class="sd">    &#39;Zyyy&#39;</span>
+<span class="sd">    &gt;&gt;&gt; script(unichr(0x10FFFF))</span>
+<span class="sd">    &#39;Zzzz&#39;</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">code</span> <span class="o">=</span> <span class="n">byteord</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
+    <span class="c1"># &#39;bisect_right(a, x, lo=0, hi=len(a))&#39; returns an insertion point which</span>
+    <span class="c1"># comes after (to the right of) any existing entries of x in a, and it</span>
+    <span class="c1"># partitions array a into two halves so that, for the left side</span>
+    <span class="c1"># all(val &lt;= x for val in a[lo:i]), and for the right side</span>
+    <span class="c1"># all(val &gt; x for val in a[i:hi]).</span>
+    <span class="c1"># Our &#39;SCRIPT_RANGES&#39; is a sorted list of ranges (only their starting</span>
+    <span class="c1"># breakpoints); we want to use `bisect_right` to look up the range that</span>
+    <span class="c1"># contains the given codepoint: i.e. whose start is less than or equal</span>
+    <span class="c1"># to the codepoint. Thus, we subtract -1 from the index returned.</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="n">bisect_right</span><span class="p">(</span><span class="n">Scripts</span><span class="o">.</span><span class="n">RANGES</span><span class="p">,</span> <span class="n">code</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">Scripts</span><span class="o">.</span><span class="n">VALUES</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span></div>
+
+
+<div class="viewcode-block" id="script_extension"><a class="viewcode-back" href="../../unicodedata/index.html#fontTools.unicodedata.script_extension">[docs]</a><span class="k">def</span> <span class="nf">script_extension</span><span class="p">(</span><span class="n">char</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Return the script extension property assigned to the Unicode character</span>
+<span class="sd">    &#39;char&#39; as a set of string.</span>
+
+<span class="sd">    &gt;&gt;&gt; script_extension(&quot;a&quot;) == {&#39;Latn&#39;}</span>
+<span class="sd">    True</span>
+<span class="sd">    &gt;&gt;&gt; script_extension(unichr(0x060C)) == {&#39;Rohg&#39;, &#39;Syrc&#39;, &#39;Yezi&#39;, &#39;Arab&#39;, &#39;Thaa&#39;}</span>
+<span class="sd">    True</span>
+<span class="sd">    &gt;&gt;&gt; script_extension(unichr(0x10FFFF)) == {&#39;Zzzz&#39;}</span>
+<span class="sd">    True</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">code</span> <span class="o">=</span> <span class="n">byteord</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="n">bisect_right</span><span class="p">(</span><span class="n">ScriptExtensions</span><span class="o">.</span><span class="n">RANGES</span><span class="p">,</span> <span class="n">code</span><span class="p">)</span>
+    <span class="n">value</span> <span class="o">=</span> <span class="n">ScriptExtensions</span><span class="o">.</span><span class="n">VALUES</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="c1"># code points not explicitly listed for Script Extensions</span>
+        <span class="c1"># have as their value the corresponding Script property value</span>
+        <span class="k">return</span> <span class="p">{</span><span class="n">script</span><span class="p">(</span><span class="n">char</span><span class="p">)}</span>
+    <span class="k">return</span> <span class="n">value</span></div>
+
+
+<div class="viewcode-block" id="script_name"><a class="viewcode-back" href="../../unicodedata/index.html#fontTools.unicodedata.script_name">[docs]</a><span class="k">def</span> <span class="nf">script_name</span><span class="p">(</span><span class="n">code</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="ne">KeyError</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Return the long, human-readable script name given a four-letter</span>
+<span class="sd">    Unicode script code.</span>
+
+<span class="sd">    If no matching name is found, a KeyError is raised by default.</span>
+
+<span class="sd">    You can use the &#39;default&#39; argument to return a fallback value (e.g.</span>
+<span class="sd">    &#39;Unknown&#39; or None) instead of throwing an error.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">Scripts</span><span class="o">.</span><span class="n">NAMES</span><span class="p">[</span><span class="n">code</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="p">))</span>
+    <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">default</span><span class="p">,</span> <span class="nb">type</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">issubclass</span><span class="p">(</span><span class="n">default</span><span class="p">,</span> <span class="ne">KeyError</span><span class="p">):</span>
+            <span class="k">raise</span>
+        <span class="k">return</span> <span class="n">default</span></div>
+
+
+<span class="n">_normalize_re</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;[-_ ]+&quot;</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">_normalize_property_name</span><span class="p">(</span><span class="n">string</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Remove case, strip space, &#39;-&#39; and &#39;_&#39; for loose matching.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">_normalize_re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">string</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+
+
+<span class="n">_SCRIPT_CODES</span> <span class="o">=</span> <span class="p">{</span><span class="n">_normalize_property_name</span><span class="p">(</span><span class="n">v</span><span class="p">):</span> <span class="n">k</span>
+                 <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">Scripts</span><span class="o">.</span><span class="n">NAMES</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+
+
+<div class="viewcode-block" id="script_code"><a class="viewcode-back" href="../../unicodedata/index.html#fontTools.unicodedata.script_code">[docs]</a><span class="k">def</span> <span class="nf">script_code</span><span class="p">(</span><span class="n">script_name</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="ne">KeyError</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Returns the four-letter Unicode script code from its long name</span>
+
+<span class="sd">    If no matching script code is found, a KeyError is raised by default.</span>
+
+<span class="sd">    You can use the &#39;default&#39; argument to return a fallback string (e.g.</span>
+<span class="sd">    &#39;Zzzz&#39; or None) instead of throwing an error.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">normalized_name</span> <span class="o">=</span> <span class="n">_normalize_property_name</span><span class="p">(</span><span class="n">script_name</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">_SCRIPT_CODES</span><span class="p">[</span><span class="n">normalized_name</span><span class="p">]</span>
+    <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">default</span><span class="p">,</span> <span class="nb">type</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">issubclass</span><span class="p">(</span><span class="n">default</span><span class="p">,</span> <span class="ne">KeyError</span><span class="p">):</span>
+            <span class="k">raise</span>
+        <span class="k">return</span> <span class="n">default</span></div>
+
+
+<span class="c1"># The data on script direction is taken from harfbuzz&#39;s &quot;hb-common.cc&quot;:</span>
+<span class="c1"># https://goo.gl/X5FDXC</span>
+<span class="c1"># It matches the CLDR &quot;scriptMetadata.txt as of January 2018:</span>
+<span class="c1"># http://unicode.org/repos/cldr/trunk/common/properties/scriptMetadata.txt</span>
+<span class="n">RTL_SCRIPTS</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="c1"># Unicode-1.1 additions</span>
+    <span class="s1">&#39;Arab&#39;</span><span class="p">,</span>  <span class="c1"># Arabic</span>
+    <span class="s1">&#39;Hebr&#39;</span><span class="p">,</span>  <span class="c1"># Hebrew</span>
+
+    <span class="c1"># Unicode-3.0 additions</span>
+    <span class="s1">&#39;Syrc&#39;</span><span class="p">,</span>  <span class="c1"># Syriac</span>
+    <span class="s1">&#39;Thaa&#39;</span><span class="p">,</span>  <span class="c1"># Thaana</span>
+
+    <span class="c1"># Unicode-4.0 additions</span>
+    <span class="s1">&#39;Cprt&#39;</span><span class="p">,</span>  <span class="c1"># Cypriot</span>
+
+    <span class="c1"># Unicode-4.1 additions</span>
+    <span class="s1">&#39;Khar&#39;</span><span class="p">,</span>  <span class="c1"># Kharoshthi</span>
+
+    <span class="c1"># Unicode-5.0 additions</span>
+    <span class="s1">&#39;Phnx&#39;</span><span class="p">,</span>  <span class="c1"># Phoenician</span>
+    <span class="s1">&#39;Nkoo&#39;</span><span class="p">,</span>  <span class="c1"># Nko</span>
+
+    <span class="c1"># Unicode-5.1 additions</span>
+    <span class="s1">&#39;Lydi&#39;</span><span class="p">,</span>  <span class="c1"># Lydian</span>
+
+    <span class="c1"># Unicode-5.2 additions</span>
+    <span class="s1">&#39;Avst&#39;</span><span class="p">,</span>  <span class="c1"># Avestan</span>
+    <span class="s1">&#39;Armi&#39;</span><span class="p">,</span>  <span class="c1"># Imperial Aramaic</span>
+    <span class="s1">&#39;Phli&#39;</span><span class="p">,</span>  <span class="c1"># Inscriptional Pahlavi</span>
+    <span class="s1">&#39;Prti&#39;</span><span class="p">,</span>  <span class="c1"># Inscriptional Parthian</span>
+    <span class="s1">&#39;Sarb&#39;</span><span class="p">,</span>  <span class="c1"># Old South Arabian</span>
+    <span class="s1">&#39;Orkh&#39;</span><span class="p">,</span>  <span class="c1"># Old Turkic</span>
+    <span class="s1">&#39;Samr&#39;</span><span class="p">,</span>  <span class="c1"># Samaritan</span>
+
+    <span class="c1"># Unicode-6.0 additions</span>
+    <span class="s1">&#39;Mand&#39;</span><span class="p">,</span>  <span class="c1"># Mandaic</span>
+
+    <span class="c1"># Unicode-6.1 additions</span>
+    <span class="s1">&#39;Merc&#39;</span><span class="p">,</span>  <span class="c1"># Meroitic Cursive</span>
+    <span class="s1">&#39;Mero&#39;</span><span class="p">,</span>  <span class="c1"># Meroitic Hieroglyphs</span>
+
+    <span class="c1"># Unicode-7.0 additions</span>
+    <span class="s1">&#39;Mani&#39;</span><span class="p">,</span>  <span class="c1"># Manichaean</span>
+    <span class="s1">&#39;Mend&#39;</span><span class="p">,</span>  <span class="c1"># Mende Kikakui</span>
+    <span class="s1">&#39;Nbat&#39;</span><span class="p">,</span>  <span class="c1"># Nabataean</span>
+    <span class="s1">&#39;Narb&#39;</span><span class="p">,</span>  <span class="c1"># Old North Arabian</span>
+    <span class="s1">&#39;Palm&#39;</span><span class="p">,</span>  <span class="c1"># Palmyrene</span>
+    <span class="s1">&#39;Phlp&#39;</span><span class="p">,</span>  <span class="c1"># Psalter Pahlavi</span>
+
+    <span class="c1"># Unicode-8.0 additions</span>
+    <span class="s1">&#39;Hatr&#39;</span><span class="p">,</span>  <span class="c1"># Hatran</span>
+    <span class="s1">&#39;Hung&#39;</span><span class="p">,</span>  <span class="c1"># Old Hungarian</span>
+
+    <span class="c1"># Unicode-9.0 additions</span>
+    <span class="s1">&#39;Adlm&#39;</span><span class="p">,</span>  <span class="c1"># Adlam</span>
+
+    <span class="c1"># Unicode-11.0 additions</span>
+    <span class="s1">&#39;Rohg&#39;</span><span class="p">,</span>  <span class="c1"># Hanifi Rohingya</span>
+    <span class="s1">&#39;Sogo&#39;</span><span class="p">,</span>  <span class="c1"># Old Sogdian</span>
+    <span class="s1">&#39;Sogd&#39;</span><span class="p">,</span>  <span class="c1"># Sogdian</span>
+
+    <span class="c1"># Unicode-12.0 additions</span>
+    <span class="s1">&#39;Elym&#39;</span><span class="p">,</span>  <span class="c1"># Elymaic</span>
+<span class="p">}</span>
+
+<div class="viewcode-block" id="script_horizontal_direction"><a class="viewcode-back" href="../../unicodedata/index.html#fontTools.unicodedata.script_horizontal_direction">[docs]</a><span class="k">def</span> <span class="nf">script_horizontal_direction</span><span class="p">(</span><span class="n">script_code</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="ne">KeyError</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Return &quot;RTL&quot; for scripts that contain right-to-left characters</span>
+<span class="sd">    according to the Bidi_Class property. Otherwise return &quot;LTR&quot;.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">script_code</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">Scripts</span><span class="o">.</span><span class="n">NAMES</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">default</span><span class="p">,</span> <span class="nb">type</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">issubclass</span><span class="p">(</span><span class="n">default</span><span class="p">,</span> <span class="ne">KeyError</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="n">default</span><span class="p">(</span><span class="n">script_code</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">default</span>
+    <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="s2">&quot;RTL&quot;</span><span class="p">)</span> <span class="k">if</span> <span class="n">script_code</span> <span class="ow">in</span> <span class="n">RTL_SCRIPTS</span> <span class="k">else</span> <span class="nb">str</span><span class="p">(</span><span class="s2">&quot;LTR&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="block"><a class="viewcode-back" href="../../unicodedata/index.html#fontTools.unicodedata.block">[docs]</a><span class="k">def</span> <span class="nf">block</span><span class="p">(</span><span class="n">char</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Return the block property assigned to the Unicode character &#39;char&#39;</span>
+<span class="sd">    as a string.</span>
+
+<span class="sd">    &gt;&gt;&gt; block(&quot;a&quot;)</span>
+<span class="sd">    &#39;Basic Latin&#39;</span>
+<span class="sd">    &gt;&gt;&gt; block(unichr(0x060C))</span>
+<span class="sd">    &#39;Arabic&#39;</span>
+<span class="sd">    &gt;&gt;&gt; block(unichr(0xEFFFF))</span>
+<span class="sd">    &#39;No_Block&#39;</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">code</span> <span class="o">=</span> <span class="n">byteord</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="n">bisect_right</span><span class="p">(</span><span class="n">Blocks</span><span class="o">.</span><span class="n">RANGES</span><span class="p">,</span> <span class="n">code</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">Blocks</span><span class="o">.</span><span class="n">VALUES</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span></div>
+
+
+<div class="viewcode-block" id="ot_tags_from_script"><a class="viewcode-back" href="../../unicodedata/index.html#fontTools.unicodedata.ot_tags_from_script">[docs]</a><span class="k">def</span> <span class="nf">ot_tags_from_script</span><span class="p">(</span><span class="n">script_code</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Return a list of OpenType script tags associated with a given</span>
+<span class="sd">    Unicode script code.</span>
+<span class="sd">    Return [&#39;DFLT&#39;] script tag for invalid/unknown script codes.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">script_code</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">Scripts</span><span class="o">.</span><span class="n">NAMES</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">OTTags</span><span class="o">.</span><span class="n">DEFAULT_SCRIPT</span><span class="p">]</span>
+
+    <span class="n">script_tags</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">OTTags</span><span class="o">.</span><span class="n">SCRIPT_EXCEPTIONS</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+            <span class="n">script_code</span><span class="p">,</span>
+            <span class="n">script_code</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">+</span> <span class="n">script_code</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+        <span class="p">)</span>
+    <span class="p">]</span>
+    <span class="k">if</span> <span class="n">script_code</span> <span class="ow">in</span> <span class="n">OTTags</span><span class="o">.</span><span class="n">NEW_SCRIPT_TAGS</span><span class="p">:</span>
+        <span class="n">script_tags</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">OTTags</span><span class="o">.</span><span class="n">NEW_SCRIPT_TAGS</span><span class="p">[</span><span class="n">script_code</span><span class="p">])</span>
+        <span class="n">script_tags</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>  <span class="c1"># last in, first out</span>
+
+    <span class="k">return</span> <span class="n">script_tags</span></div>
+
+
+<div class="viewcode-block" id="ot_tag_to_script"><a class="viewcode-back" href="../../unicodedata/index.html#fontTools.unicodedata.ot_tag_to_script">[docs]</a><span class="k">def</span> <span class="nf">ot_tag_to_script</span><span class="p">(</span><span class="n">tag</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Return the Unicode script code for the given OpenType script tag, or</span>
+<span class="sd">    None for &quot;DFLT&quot; tag or if there is no Unicode script associated with it.</span>
+<span class="sd">    Raises ValueError if the tag is invalid.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">tag</span> <span class="o">=</span> <span class="n">tostr</span><span class="p">(</span><span class="n">tag</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">tag</span> <span class="ow">or</span> <span class="s2">&quot; &quot;</span> <span class="ow">in</span> <span class="n">tag</span> <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="n">tag</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">4</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;invalid OpenType tag: </span><span class="si">%r</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">tag</span><span class="p">)</span>
+
+    <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">tag</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">4</span><span class="p">:</span>
+        <span class="n">tag</span> <span class="o">+=</span> <span class="nb">str</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)</span>  <span class="c1"># pad with spaces</span>
+
+    <span class="k">if</span> <span class="n">tag</span> <span class="o">==</span> <span class="n">OTTags</span><span class="o">.</span><span class="n">DEFAULT_SCRIPT</span><span class="p">:</span>
+        <span class="c1"># it&#39;s unclear which Unicode script the &quot;DFLT&quot; OpenType tag maps to,</span>
+        <span class="c1"># so here we return None</span>
+        <span class="k">return</span> <span class="kc">None</span>
+
+    <span class="k">if</span> <span class="n">tag</span> <span class="ow">in</span> <span class="n">OTTags</span><span class="o">.</span><span class="n">NEW_SCRIPT_TAGS_REVERSED</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">OTTags</span><span class="o">.</span><span class="n">NEW_SCRIPT_TAGS_REVERSED</span><span class="p">[</span><span class="n">tag</span><span class="p">]</span>
+
+    <span class="c1"># This side of the conversion is fully algorithmic</span>
+
+    <span class="c1"># Any spaces at the end of the tag are replaced by repeating the last</span>
+    <span class="c1"># letter. Eg &#39;nko &#39; -&gt; &#39;Nkoo&#39;.</span>
+    <span class="c1"># Change first char to uppercase</span>
+    <span class="n">script_code</span> <span class="o">=</span> <span class="n">tag</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">+</span> <span class="n">tag</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">):</span>
+        <span class="n">script_code</span> <span class="o">+=</span> <span class="p">(</span><span class="n">script_code</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="k">if</span> <span class="n">tag</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot; &quot;</span> <span class="k">else</span> <span class="n">tag</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+
+    <span class="k">if</span> <span class="n">script_code</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">Scripts</span><span class="o">.</span><span class="n">NAMES</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="k">return</span> <span class="n">script_code</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Just van Rossum, Behdad Esfahbod, and the fontTools Authors. CC BY-SA 4.0
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

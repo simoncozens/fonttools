@@ -1,0 +1,385 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>macRes &mdash; fontTools Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="psCharStrings" href="psCharStrings.html" />
+    <link rel="prev" title="macCreatorType" href="macCreatorType.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> fontTools
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Library</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../afmLib.html">afmLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../agl.html">agl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cffLib/index.html">cffLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../colorLib/index.html">colorLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cu2qu/index.html">cu2qu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../designspaceLib/index.html">designspaceLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../encodings/index.html">encodings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../feaLib/index.html">feaLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../merge.html">merge</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">misc</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="arrayTools.html">arrayTools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bezierTools.html">bezierTools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classifyTools.html">classifyTools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cliTools.html">cliTools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eexec.html">eexec</a></li>
+<li class="toctree-l2"><a class="reference internal" href="encodingTools.html">encodingTools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="etree.html">etree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="filenames.html">filenames</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fixedTools.html">fixedTools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intTools.html">intTools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="loggingTools.html">loggingTools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="macCreatorType.html">macCreatorType</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">macRes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psCharStrings.html">psCharStrings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psLib.html">psLib</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psOperators.html">psOperators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="py23.html">py23</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sstruct.html">sstruct</a></li>
+<li class="toctree-l2"><a class="reference internal" href="symfont.html">symfont</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testTools.html">testTools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="textTools.html">textTools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="timeTools.html">timeTools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transform.html">transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xmlReader.html">xmlReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xmlWriter.html">xmlWriter</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../mtiLib.html">mtiLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../otlLib/index.html">otlLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pens/index.html">pens</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../subset/index.html">subset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svgLib/index.html">svgLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../t1Lib.html">t1Lib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ttLib/index.html">ttLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ttx.html">ttx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ufoLib/index.html">ufoLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unicode.html">unicode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unicodedata/index.html">unicodedata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../varLib/index.html">varLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../voltLib.html">voltLib</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">fontTools</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">misc</a> &raquo;</li>
+        
+      <li>macRes</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/misc/macRes.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-fontTools.misc.macRes">
+<span id="macres"></span><h1>macRes<a class="headerlink" href="#module-fontTools.misc.macRes" title="Permalink to this headline">¶</a></h1>
+<p>Tools for reading Mac resource forks.</p>
+<dl class="py class">
+<dt id="fontTools.misc.macRes.Resource">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.misc.macRes.</code><code class="sig-name descname">Resource</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">resType</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">resData</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">resID</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">resName</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">resAttr</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/macRes.html#Resource"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.macRes.Resource" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.misc.macRes.Resource.decompile">
+<code class="sig-name descname">decompile</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">refData</span></em>, <em class="sig-param"><span class="n">reader</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/macRes.html#Resource.decompile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.macRes.Resource.decompile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt id="fontTools.misc.macRes.ResourceError">
+<em class="property">exception </em><code class="sig-prename descclassname">fontTools.misc.macRes.</code><code class="sig-name descname">ResourceError</code><a class="reference internal" href="../_modules/fontTools/misc/macRes.html#ResourceError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.macRes.ResourceError" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py attribute">
+<dt id="fontTools.misc.macRes.ResourceError.args">
+<code class="sig-name descname">args</code><a class="headerlink" href="#fontTools.misc.macRes.ResourceError.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.macRes.ResourceError.with_traceback">
+<code class="sig-name descname">with_traceback</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.macRes.ResourceError.with_traceback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.misc.macRes.ResourceReader">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.misc.macRes.</code><code class="sig-name descname">ResourceReader</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fileOrPath</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/macRes.html#ResourceReader"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.macRes.ResourceReader" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.misc.macRes.ResourceReader.clear">
+<code class="sig-name descname">clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; None.  Remove all items from D.<a class="headerlink" href="#fontTools.misc.macRes.ResourceReader.clear" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.macRes.ResourceReader.close">
+<code class="sig-name descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/macRes.html#ResourceReader.close"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.macRes.ResourceReader.close" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.macRes.ResourceReader.countResources">
+<code class="sig-name descname">countResources</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">resType</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/macRes.html#ResourceReader.countResources"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.macRes.ResourceReader.countResources" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the number of resources of a given type.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.macRes.ResourceReader.get">
+<code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param">k</em><span class="optional">[</span>, <em class="sig-param">d</em><span class="optional">]</span><span class="sig-paren">)</span> &#x2192; D[k] if k in D, else d.  d defaults to None.<a class="headerlink" href="#fontTools.misc.macRes.ResourceReader.get" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.macRes.ResourceReader.getIndResource">
+<code class="sig-name descname">getIndResource</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">resType</span></em>, <em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/macRes.html#ResourceReader.getIndResource"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.macRes.ResourceReader.getIndResource" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return resource of given type located at an index ranging from 1
+to the number of resources for that type, or None if not found.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.macRes.ResourceReader.getIndices">
+<code class="sig-name descname">getIndices</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">resType</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/macRes.html#ResourceReader.getIndices"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.macRes.ResourceReader.getIndices" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.macRes.ResourceReader.getNamedResource">
+<code class="sig-name descname">getNamedResource</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">resType</span></em>, <em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/macRes.html#ResourceReader.getNamedResource"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.macRes.ResourceReader.getNamedResource" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the named resource of given type, else return None.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.macRes.ResourceReader.getNames">
+<code class="sig-name descname">getNames</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">resType</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/macRes.html#ResourceReader.getNames"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.macRes.ResourceReader.getNames" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return list of names of all resources of a given type.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.macRes.ResourceReader.items">
+<code class="sig-name descname">items</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; a set-like object providing a view on D’s items<a class="headerlink" href="#fontTools.misc.macRes.ResourceReader.items" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.macRes.ResourceReader.keys">
+<code class="sig-name descname">keys</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; a set-like object providing a view on D’s keys<a class="reference internal" href="../_modules/fontTools/misc/macRes.html#ResourceReader.keys"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.macRes.ResourceReader.keys" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.macRes.ResourceReader.openDataFork">
+<em class="property">static </em><code class="sig-name descname">openDataFork</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/macRes.html#ResourceReader.openDataFork"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.macRes.ResourceReader.openDataFork" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.macRes.ResourceReader.openResourceFork">
+<em class="property">static </em><code class="sig-name descname">openResourceFork</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/macRes.html#ResourceReader.openResourceFork"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.macRes.ResourceReader.openResourceFork" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.macRes.ResourceReader.pop">
+<code class="sig-name descname">pop</code><span class="sig-paren">(</span><em class="sig-param">k</em><span class="optional">[</span>, <em class="sig-param">d</em><span class="optional">]</span><span class="sig-paren">)</span> &#x2192; v, remove specified key and return the corresponding value.<a class="headerlink" href="#fontTools.misc.macRes.ResourceReader.pop" title="Permalink to this definition">¶</a></dt>
+<dd><p>If key is not found, d is returned if given, otherwise KeyError is raised.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.macRes.ResourceReader.popitem">
+<code class="sig-name descname">popitem</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; (k, v), remove and return some (key, value) pair<a class="headerlink" href="#fontTools.misc.macRes.ResourceReader.popitem" title="Permalink to this definition">¶</a></dt>
+<dd><p>as a 2-tuple; but raise KeyError if D is empty.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.macRes.ResourceReader.setdefault">
+<code class="sig-name descname">setdefault</code><span class="sig-paren">(</span><em class="sig-param">k</em><span class="optional">[</span>, <em class="sig-param">d</em><span class="optional">]</span><span class="sig-paren">)</span> &#x2192; D.get(k,d), also set D[k]=d if k not in D<a class="headerlink" href="#fontTools.misc.macRes.ResourceReader.setdefault" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.macRes.ResourceReader.types">
+<em class="property">property </em><code class="sig-name descname">types</code><a class="headerlink" href="#fontTools.misc.macRes.ResourceReader.types" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.macRes.ResourceReader.update">
+<code class="sig-name descname">update</code><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param">E</em>, <span class="optional">]</span><em class="sig-param">**F</em><span class="sig-paren">)</span> &#x2192; None.  Update D from mapping/iterable E and F.<a class="headerlink" href="#fontTools.misc.macRes.ResourceReader.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>If E present and has a .keys() method, does:     for k in E: D[k] = E[k]
+If E present and lacks .keys() method, does:     for (k, v) in E: D[k] = v
+In either case, this is followed by: for k, v in F.items(): D[k] = v</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.macRes.ResourceReader.values">
+<code class="sig-name descname">values</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; an object providing a view on D’s values<a class="headerlink" href="#fontTools.misc.macRes.ResourceReader.values" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="psCharStrings.html" class="btn btn-neutral float-right" title="psCharStrings" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="macCreatorType.html" class="btn btn-neutral float-left" title="macCreatorType" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Just van Rossum, Behdad Esfahbod, and the fontTools Authors. CC BY-SA 4.0
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

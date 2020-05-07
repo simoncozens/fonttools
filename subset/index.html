@@ -1,0 +1,851 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>subset &mdash; fontTools Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="cff" href="cff.html" />
+    <link rel="prev" title="wxPen" href="../pens/wxPen.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> fontTools
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Library</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../afmLib.html">afmLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../agl.html">agl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cffLib/index.html">cffLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../colorLib/index.html">colorLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cu2qu/index.html">cu2qu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../designspaceLib/index.html">designspaceLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../encodings/index.html">encodings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../feaLib/index.html">feaLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../merge.html">merge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/index.html">misc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mtiLib.html">mtiLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../otlLib/index.html">otlLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pens/index.html">pens</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">subset</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cff.html">cff</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../svgLib/index.html">svgLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../t1Lib.html">t1Lib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ttLib/index.html">ttLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ttx.html">ttx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ufoLib/index.html">ufoLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unicode.html">unicode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unicodedata/index.html">unicodedata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../varLib/index.html">varLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../voltLib.html">voltLib</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">fontTools</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>subset</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/subset/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="subset">
+<h1>subset<a class="headerlink" href="#subset" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="cff.html">cff</a></li>
+</ul>
+</div>
+<span class="target" id="module-fontTools.subset"></span><p>pyftsubset – OpenType font subsetter and optimizer</p>
+<blockquote>
+<div><p>pyftsubset is an OpenType font subsetter and optimizer, based on fontTools.
+It accepts any TT- or CFF-flavored OpenType (.otf or .ttf) or WOFF (.woff)
+font file. The subsetted glyph set is based on the specified glyphs
+or characters, and specified OpenType layout features.</p>
+<p>The tool also performs some size-reducing optimizations, aimed for using
+subset fonts as webfonts.  Individual optimizations can be enabled or
+disabled, and are enabled by default when they are safe.</p>
+</div></blockquote>
+<dl>
+<dt>Usage:</dt><dd><p>pyftsubset font-file [glyph…] [–option=value]…</p>
+<p>At least one glyph or one of –gids, –gids-file, –glyphs, –glyphs-file,
+–text, –text-file, –unicodes, or –unicodes-file, must be specified.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">param font-file</dt>
+<dd class="field-odd"><p>The input font file.</p>
+</dd>
+<dt class="field-even">param glyph</dt>
+<dd class="field-even"><p>Specify one or more glyph identifiers to include in the subset. Must be
+PS glyph names, or the special string ‘*’ to keep the entire glyph set.</p>
+</dd>
+</dl>
+<dl>
+<dt>Initial glyph set specification:</dt><dd><p>These options populate the initial glyph set. Same option can appear
+multiple times, and the results are accummulated.
+–gids=&lt;NNN&gt;[,&lt;NNN&gt;…]</p>
+<blockquote>
+<div><p>Specify comma/whitespace-separated list of glyph IDs or ranges as
+decimal numbers.  For example, –gids=10-12,14 adds glyphs with
+numbers 10, 11, 12, and 14.</p>
+</div></blockquote>
+<dl class="option-list">
+<dt><kbd><span class="option">--gids-file=<var>&lt;path&gt;</var></span></kbd></dt>
+<dd><p>Like –gids but reads from a file. Anything after a ‘#’ on any line
+is ignored as comments.</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>–glyphs=&lt;glyphname&gt;[,&lt;glyphname&gt;…]</dt><dd><p>Specify comma/whitespace-separated PS glyph names to add to the subset.
+Note that only PS glyph names are accepted, not gidNNN, U+XXXX, etc
+that are accepted on the command line.  The special string ‘*’ will keep
+the entire glyph set.</p>
+</dd>
+</dl>
+<dl class="option-list">
+<dt><kbd><span class="option">--glyphs-file=<var>&lt;path&gt;</var></span></kbd></dt>
+<dd><p>Like –glyphs but reads from a file. Anything after a ‘#’ on any line
+is ignored as comments.</p>
+</dd>
+<dt><kbd><span class="option">--text=<var>&lt;text&gt;</var></span></kbd></dt>
+<dd><p>Specify characters to include in the subset, as UTF-8 string.</p>
+</dd>
+<dt><kbd><span class="option">--text-file=<var>&lt;path&gt;</var></span></kbd></dt>
+<dd><p>Like –text but reads from a file. Newline character are not added to
+the subset.</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>–unicodes=&lt;XXXX&gt;[,&lt;XXXX&gt;…]</dt><dd><p>Specify comma/whitespace-separated list of Unicode codepoints or
+ranges as hex numbers, optionally prefixed with ‘U+’, ‘u’, etc.
+For example, –unicodes=41-5a,61-7a adds ASCII letters, so does
+the more verbose –unicodes=U+0041-005A,U+0061-007A.
+The special strings ‘*’ will choose all Unicode characters mapped
+by the font.</p>
+</dd>
+</dl>
+<dl class="option-list">
+<dt><kbd><span class="option">--unicodes-file=<var>&lt;path&gt;</var></span></kbd></dt>
+<dd><p>Like –unicodes, but reads from a file. Anything after a ‘#’ on any
+line in the file is ignored as comments.</p>
+</dd>
+<dt><kbd><span class="option">--ignore-missing-glyphs</span></kbd></dt>
+<dd><p>Do not fail if some requested glyphs or gids are not available in
+the font.</p>
+</dd>
+<dt><kbd><span class="option">--no-ignore-missing-glyphs</span></kbd></dt>
+<dd><p>Stop and fail if some requested glyphs or gids are not available
+in the font. [default]</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>–ignore-missing-unicodes [default]</dt><dd><p>Do not fail if some requested Unicode characters (including those
+indirectly specified using –text or –text-file) are not available
+in the font.</p>
+</dd>
+</dl>
+<dl class="option-list">
+<dt><kbd><span class="option">--no-ignore-missing-unicodes</span></kbd></dt>
+<dd><p>Stop and fail if some requested Unicode characters are not available
+in the font.
+Note the default discrepancy between ignoring missing glyphs versus
+unicodes.  This is for historical reasons and in the future
+–no-ignore-missing-unicodes might become default.</p>
+</dd>
+</dl>
+</dd>
+<dt>Other options:</dt><dd><p>For the other options listed below, to see the current value of the option,
+pass a value of ‘?’ to it, with or without a ‘=’.
+Examples:</p>
+<blockquote>
+<div><p>$ pyftsubset –glyph-names?
+Current setting for ‘glyph-names’ is: False
+$ ./pyftsubset –name-IDs=?
+Current setting for ‘name-IDs’ is: [0, 1, 2, 3, 4, 5, 6]
+$ ./pyftsubset –hinting? –no-hinting –hinting?
+Current setting for ‘hinting’ is: True
+Current setting for ‘hinting’ is: False</p>
+</div></blockquote>
+</dd>
+<dt>Output options:</dt><dd><dl class="option-list">
+<dt><kbd><span class="option">--output-file=<var>&lt;path&gt;</var></span></kbd></dt>
+<dd><p>The output font file. If not specified, the subsetted font
+will be saved in as font-file.subset.</p>
+</dd>
+<dt><kbd><span class="option">--flavor=<var>&lt;type&gt;</var></span></kbd></dt>
+<dd><p>Specify flavor of output font file. May be ‘woff’ or ‘woff2’.
+Note that WOFF2 requires the Brotli Python extension, available
+at <a class="reference external" href="https://github.com/google/brotli">https://github.com/google/brotli</a></p>
+</dd>
+<dt><kbd><span class="option">--with-zopfli</span></kbd></dt>
+<dd><p>Use the Google Zopfli algorithm to compress WOFF. The output is 3-8 %
+smaller than pure zlib, but the compression speed is much slower.
+The Zopfli Python bindings are available at:
+<a class="reference external" href="https://pypi.python.org/pypi/zopfli">https://pypi.python.org/pypi/zopfli</a></p>
+</dd>
+</dl>
+</dd>
+<dt>Glyph set expansion:</dt><dd><p>These options control how additional glyphs are added to the subset.
+–retain-gids</p>
+<blockquote>
+<div><p>Retain glyph indices; just empty glyphs not needed in-place.</p>
+</div></blockquote>
+<dl class="option-list">
+<dt><kbd><span class="option">--notdef-glyph</span></kbd></dt>
+<dd><p>Add the ‘.notdef’ glyph to the subset (ie, keep it). [default]</p>
+</dd>
+<dt><kbd><span class="option">--no-notdef-glyph</span></kbd></dt>
+<dd><p>Drop the ‘.notdef’ glyph unless specified in the glyph set. This
+saves a few bytes, but is not possible for Postscript-flavored
+fonts, as those require ‘.notdef’. For TrueType-flavored fonts,
+this works fine as long as no unsupported glyphs are requested
+from the font.</p>
+</dd>
+<dt><kbd><span class="option">--notdef-outline</span></kbd></dt>
+<dd><p>Keep the outline of ‘.notdef’ glyph. The ‘.notdef’ glyph outline is
+used when glyphs not supported by the font are to be shown. It is not
+needed otherwise.</p>
+</dd>
+<dt><kbd><span class="option">--no-notdef-outline</span></kbd></dt>
+<dd><p>When including a ‘.notdef’ glyph, remove its outline. This saves
+a few bytes. [default]</p>
+</dd>
+<dt><kbd><span class="option">--recommended-glyphs</span></kbd></dt>
+<dd><p>Add glyphs 0, 1, 2, and 3 to the subset, as recommended for
+TrueType-flavored fonts: ‘.notdef’, ‘NULL’ or ‘.null’, ‘CR’, ‘space’.
+Some legacy software might require this, but no modern system does.</p>
+</dd>
+<dt><kbd><span class="option">--no-recommended-glyphs</span></kbd></dt>
+<dd><p>Do not add glyphs 0, 1, 2, and 3 to the subset, unless specified in
+glyph set. [default]</p>
+</dd>
+<dt><kbd><span class="option">--no-layout-closure</span></kbd></dt>
+<dd><p>Do not expand glyph set to add glyphs produced by OpenType layout
+features.  Instead, OpenType layout features will be subset to only
+rules that are relevant to the otherwise-specified glyph set.</p>
+</dd>
+</dl>
+<dl>
+<dt>–layout-features[+|-]=&lt;feature&gt;[,&lt;feature&gt;…]</dt><dd><p>Specify (=), add to (+=) or exclude from (-=) the comma-separated
+set of OpenType layout feature tags that will be preserved.
+Glyph variants used by the preserved features are added to the
+specified subset glyph set. By default, ‘calt’, ‘ccmp’, ‘clig’, ‘curs’,
+‘dnom’, ‘frac’, ‘kern’, ‘liga’, ‘locl’, ‘mark’, ‘mkmk’, ‘numr’, ‘rclt’,
+‘rlig’, ‘rvrn’, and all features required for script shaping are
+preserved. To see the full list, try ‘–layout-features=?’.
+Use ‘*’ to keep all features.
+Multiple –layout-features options can be provided if necessary.
+Examples:</p>
+<blockquote>
+<div><dl class="simple">
+<dt>–layout-features+=onum,pnum,ss01</dt><dd><ul class="simple">
+<li><p>Keep the default set of features and ‘onum’, ‘pnum’, ‘ss01’.</p></li>
+</ul>
+</dd>
+<dt>–layout-features-=’mark’,’mkmk’</dt><dd><ul class="simple">
+<li><p>Keep the default set of features but drop ‘mark’ and ‘mkmk’.</p></li>
+</ul>
+</dd>
+<dt>–layout-features=’kern’</dt><dd><ul class="simple">
+<li><p>Only keep the ‘kern’ feature, drop all others.</p></li>
+</ul>
+</dd>
+<dt>–layout-features=’‘</dt><dd><ul class="simple">
+<li><p>Drop all features.</p></li>
+</ul>
+</dd>
+<dt>–layout-features=’*’</dt><dd><ul class="simple">
+<li><p>Keep all features.</p></li>
+</ul>
+</dd>
+<dt>–layout-features+=aalt –layout-features-=vrt2</dt><dd><ul class="simple">
+<li><p>Keep default set of features plus ‘aalt’, but drop ‘vrt2’.</p></li>
+</ul>
+</dd>
+</dl>
+</div></blockquote>
+</dd>
+<dt>–layout-scripts[+|-]=&lt;script&gt;[,&lt;script&gt;…]</dt><dd><p>Specify (=), add to (+=) or exclude from (-=) the comma-separated
+set of OpenType layout script tags that will be preserved.  By
+default all scripts are retained (‘*’).</p>
+</dd>
+</dl>
+</dd>
+<dt>Hinting options:</dt><dd><dl class="option-list">
+<dt><kbd><span class="option">--hinting</span></kbd></dt>
+<dd><p>Keep hinting [default]</p>
+</dd>
+<dt><kbd><span class="option">--no-hinting</span></kbd></dt>
+<dd><p>Drop glyph-specific hinting and font-wide hinting tables, as well
+as remove hinting-related bits and pieces from other tables (eg. GPOS).
+See –hinting-tables for list of tables that are dropped by default.
+Instructions and hints are stripped from ‘glyf’ and ‘CFF ‘ tables
+respectively. This produces (sometimes up to 30%) smaller fonts that
+are suitable for extremely high-resolution systems, like high-end
+mobile devices and retina displays.</p>
+</dd>
+</dl>
+</dd>
+<dt>Optimization options:</dt><dd><dl class="option-list">
+<dt><kbd><span class="option">--desubroutinize</span></kbd></dt>
+<dd><p>Remove CFF use of subroutinizes.  Subroutinization is a way to make CFF
+fonts smaller.  For small subsets however, desubroutinizing might make
+the font smaller.  It has even been reported that desubroutinized CFF
+fonts compress better (produce smaller output) WOFF and WOFF2 fonts.
+Also see note under –no-hinting.</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>–no-desubroutinize [default]</dt><dd><p>Leave CFF subroutinizes as is, only throw away unused subroutinizes.</p>
+</dd>
+</dl>
+</dd>
+<dt>Font table options:</dt><dd><dl>
+<dt>–drop-tables[+|-]=&lt;table&gt;[,&lt;table&gt;…]</dt><dd><p>Specify (=), add to (+=) or exclude from (-=) the comma-separated
+set of tables that will be be dropped.
+By default, the following tables are dropped:
+‘BASE’, ‘JSTF’, ‘DSIG’, ‘EBDT’, ‘EBLC’, ‘EBSC’, ‘SVG ‘, ‘PCLT’, ‘LTSH’
+and Graphite tables: ‘Feat’, ‘Glat’, ‘Gloc’, ‘Silf’, ‘Sill’.
+The tool will attempt to subset the remaining tables.
+Examples:</p>
+<blockquote>
+<div><dl class="simple">
+<dt>–drop-tables-=’SVG ‘</dt><dd><ul class="simple">
+<li><p>Drop the default set of tables but keep ‘SVG ‘.</p></li>
+</ul>
+</dd>
+<dt>–drop-tables+=GSUB</dt><dd><ul class="simple">
+<li><p>Drop the default set of tables and ‘GSUB’.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="option-list">
+<dt><kbd><span class="option">--drop-tables=<var>DSIG</var></span></kbd></dt>
+<dd><ul class="simple">
+<li><p>Only drop the ‘DSIG’ table, keep all others.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>–drop-tables=</dt><dd><ul class="simple">
+<li><p>Keep all tables.</p></li>
+</ul>
+</dd>
+</dl>
+</div></blockquote>
+</dd>
+<dt>–no-subset-tables+=&lt;table&gt;[,&lt;table&gt;…]</dt><dd><p>Add to the set of tables that will not be subsetted.
+By default, the following tables are included in this list, as
+they do not need subsetting (ignore the fact that ‘loca’ is listed
+here): ‘gasp’, ‘head’, ‘hhea’, ‘maxp’, ‘vhea’, ‘OS/2’, ‘loca’, ‘name’,
+‘cvt ‘, ‘fpgm’, ‘prep’, ‘VMDX’, ‘DSIG’, ‘CPAL’, ‘MVAR’, ‘cvar’, ‘STAT’.
+By default, tables that the tool does not know how to subset and are not
+specified here will be dropped from the font, unless –passthrough-tables
+option is passed.
+Example:</p>
+<blockquote>
+<div><dl class="simple">
+<dt>–no-subset-tables+=FFTM</dt><dd><ul class="simple">
+<li><p>Keep ‘FFTM’ table in the font by preventing subsetting.</p></li>
+</ul>
+</dd>
+</dl>
+</div></blockquote>
+</dd>
+</dl>
+<dl class="option-list">
+<dt><kbd><span class="option">--passthrough-tables</span></kbd></dt>
+<dd><p>Do not drop tables that the tool does not know how to subset.</p>
+</dd>
+<dt><kbd><span class="option">--no-passthrough-tables</span></kbd></dt>
+<dd><p>Tables that the tool does not know how to subset and are not specified
+in –no-subset-tables will be dropped from the font. [default]</p>
+</dd>
+</dl>
+<dl>
+<dt>–hinting-tables[-]=&lt;table&gt;[,&lt;table&gt;…]</dt><dd><p>Specify (=), add to (+=) or exclude from (-=) the list of font-wide
+hinting tables that will be dropped if –no-hinting is specified,
+Examples:</p>
+<blockquote>
+<div><dl class="simple">
+<dt>–hinting-tables-=’VDMX’</dt><dd><ul class="simple">
+<li><p>Drop font-wide hinting tables except ‘VDMX’.</p></li>
+</ul>
+</dd>
+<dt>–hinting-tables=’‘</dt><dd><ul class="simple">
+<li><p>Keep all font-wide hinting tables (but strip hints from glyphs).</p></li>
+</ul>
+</dd>
+</dl>
+</div></blockquote>
+</dd>
+</dl>
+<dl class="option-list">
+<dt><kbd><span class="option">--legacy-kern</span></kbd></dt>
+<dd><p>Keep TrueType ‘kern’ table even when OpenType ‘GPOS’ is available.</p>
+</dd>
+<dt><kbd><span class="option">--no-legacy-kern</span></kbd></dt>
+<dd><p>Drop TrueType ‘kern’ table if OpenType ‘GPOS’ is available. [default]</p>
+</dd>
+</dl>
+</dd>
+<dt>Font naming options:</dt><dd><p>These options control what is retained in the ‘name’ table. For numerical
+codes, see: <a class="reference external" href="http://www.microsoft.com/typography/otspec/name.htm">http://www.microsoft.com/typography/otspec/name.htm</a>
+–name-IDs[+|-]=&lt;nameID&gt;[,&lt;nameID&gt;…]</p>
+<blockquote>
+<div><p>Specify (=), add to (+=) or exclude from (-=) the set of ‘name’ table
+entry nameIDs that will be preserved. By default, only nameIDs between 0
+and 6 are preserved, the rest are dropped. Use ‘*’ to keep all entries.
+Examples:</p>
+<blockquote>
+<div><dl class="simple">
+<dt>–name-IDs+=7,8,9</dt><dd><ul class="simple">
+<li><p>Also keep Trademark, Manufacturer and Designer name entries.</p></li>
+</ul>
+</dd>
+<dt>–name-IDs=’‘</dt><dd><ul class="simple">
+<li><p>Drop all ‘name’ table entries.</p></li>
+</ul>
+</dd>
+<dt>–name-IDs=’*’</dt><dd><ul class="simple">
+<li><p>keep all ‘name’ table entries</p></li>
+</ul>
+</dd>
+</dl>
+</div></blockquote>
+</div></blockquote>
+<dl class="option-list">
+<dt><kbd><span class="option">--name-legacy</span></kbd></dt>
+<dd><p>Keep legacy (non-Unicode) ‘name’ table entries (0.x, 1.x etc.).
+XXX Note: This might be needed for some fonts that have no Unicode name
+entires for English. See: <a class="reference external" href="https://github.com/fonttools/fonttools/issues/146">https://github.com/fonttools/fonttools/issues/146</a></p>
+</dd>
+<dt><kbd><span class="option">--no-name-legacy</span></kbd></dt>
+<dd><p>Drop legacy (non-Unicode) ‘name’ table entries [default]</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>–name-languages[+|-]=&lt;langID&gt;[,&lt;langID&gt;]</dt><dd><p>Specify (=), add to (+=) or exclude from (-=) the set of ‘name’ table
+langIDs that will be preserved. By default only records with langID
+0x0409 (English) are preserved. Use ‘*’ to keep all langIDs.</p>
+</dd>
+</dl>
+<dl class="option-list">
+<dt><kbd><span class="option">--obfuscate-names</span></kbd></dt>
+<dd><p>Make the font unusable as a system font by replacing name IDs 1, 2, 3, 4,
+and 6 with dummy strings (it is still fully functional as webfont).</p>
+</dd>
+</dl>
+</dd>
+<dt>Glyph naming and encoding options:</dt><dd><dl class="option-list">
+<dt><kbd><span class="option">--glyph-names</span></kbd></dt>
+<dd><p>Keep PS glyph names in TT-flavored fonts. In general glyph names are
+not needed for correct use of the font. However, some PDF generators
+and PDF viewers might rely on glyph names to extract Unicode text
+from PDF documents.</p>
+</dd>
+<dt><kbd><span class="option">--no-glyph-names</span></kbd></dt>
+<dd><p>Drop PS glyph names in TT-flavored fonts, by using ‘post’ table
+version 3.0. [default]</p>
+</dd>
+<dt><kbd><span class="option">--legacy-cmap</span></kbd></dt>
+<dd><p>Keep the legacy ‘cmap’ subtables (0.x, 1.x, 4.x etc.).</p>
+</dd>
+<dt><kbd><span class="option">--no-legacy-cmap</span></kbd></dt>
+<dd><p>Drop the legacy ‘cmap’ subtables. [default]</p>
+</dd>
+<dt><kbd><span class="option">--symbol-cmap</span></kbd></dt>
+<dd><p>Keep the 3.0 symbol ‘cmap’.</p>
+</dd>
+<dt><kbd><span class="option">--no-symbol-cmap</span></kbd></dt>
+<dd><p>Drop the 3.0 symbol ‘cmap’. [default]</p>
+</dd>
+</dl>
+</dd>
+<dt>Other font-specific options:</dt><dd><dl class="option-list">
+<dt><kbd><span class="option">--recalc-bounds</span></kbd></dt>
+<dd><p>Recalculate font bounding boxes.</p>
+</dd>
+<dt><kbd><span class="option">--no-recalc-bounds</span></kbd></dt>
+<dd><p>Keep original font bounding boxes. This is faster and still safe
+for all practical purposes. [default]</p>
+</dd>
+<dt><kbd><span class="option">--recalc-timestamp</span></kbd></dt>
+<dd><p>Set font ‘modified’ timestamp to current time.</p>
+</dd>
+<dt><kbd><span class="option">--no-recalc-timestamp</span></kbd></dt>
+<dd><p>Do not modify font ‘modified’ timestamp. [default]</p>
+</dd>
+<dt><kbd><span class="option">--canonical-order</span></kbd></dt>
+<dd><p>Order tables as recommended in the OpenType standard. This is not
+required by the standard, nor by any known implementation.</p>
+</dd>
+<dt><kbd><span class="option">--no-canonical-order</span></kbd></dt>
+<dd><p>Keep original order of font tables. This is faster. [default]</p>
+</dd>
+<dt><kbd><span class="option">--prune-unicode-ranges</span></kbd></dt>
+<dd><p>Update the ‘OS/2 ulUnicodeRange*’ bits after subsetting. The Unicode
+ranges defined in the OpenType specification v1.7 are intersected with
+the Unicode codepoints specified in the font’s Unicode ‘cmap’ subtables:
+when no overlap is found, the bit will be switched off. However, it will
+<em>not</em> be switched on if an intersection is found.  [default]</p>
+</dd>
+<dt><kbd><span class="option">--no-prune-unicode-ranges</span></kbd></dt>
+<dd><p>Don’t change the ‘OS/2 ulUnicodeRange*’ bits.</p>
+</dd>
+<dt><kbd><span class="option">--recalc-average-width</span></kbd></dt>
+<dd><p>Update the ‘OS/2 xAvgCharWidth’ field after subsetting.</p>
+</dd>
+<dt><kbd><span class="option">--no-recalc-average-width</span></kbd></dt>
+<dd><p>Don’t change the ‘OS/2 xAvgCharWidth’ field. [default]</p>
+</dd>
+<dt><kbd><span class="option">--recalc-max-context</span></kbd></dt>
+<dd><p>Update the ‘OS/2 usMaxContext’ field after subsetting.</p>
+</dd>
+<dt><kbd><span class="option">--no-recalc-max-context</span></kbd></dt>
+<dd><p>Don’t change the ‘OS/2 usMaxContext’ field. [default]</p>
+</dd>
+<dt><kbd><span class="option">--font-number=<var>&lt;number&gt;</var></span></kbd></dt>
+<dd><p>Select font number for TrueType Collection (.ttc/.otc), starting from 0.</p>
+</dd>
+</dl>
+</dd>
+<dt>Application options:</dt><dd><dl class="option-list">
+<dt><kbd><span class="option">--verbose</span></kbd></dt>
+<dd><p>Display verbose information of the subsetting process.</p>
+</dd>
+<dt><kbd><span class="option">--timing</span></kbd></dt>
+<dd><p>Display detailed timing information of the subsetting process.</p>
+</dd>
+<dt><kbd><span class="option">--xml</span></kbd></dt>
+<dd><p>Display the TTX XML representation of subsetted font.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<p>Produce a subset containing the characters ‘ !”#$%’ without performing
+size-reducing optimizations:</p>
+<dl class="simple">
+<dt>$ pyftsubset font.ttf –unicodes=”U+0020-0025” </dt><dd><p>–layout-features=’*’ –glyph-names –symbol-cmap –legacy-cmap –notdef-glyph –notdef-outline –recommended-glyphs –name-IDs=’*’ –name-legacy –name-languages=’*’</p>
+</dd>
+</dl>
+<dl class="py class">
+<dt id="fontTools.subset.Options">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.subset.</code><code class="sig-name descname">Options</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/subset.html#Options"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.subset.Options" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py exception">
+<dt id="fontTools.subset.Options.OptionError">
+<em class="property">exception </em><code class="sig-name descname">OptionError</code><a class="reference internal" href="../_modules/fontTools/subset.html#Options.OptionError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.subset.Options.OptionError" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py attribute">
+<dt id="fontTools.subset.Options.OptionError.args">
+<code class="sig-name descname">args</code><a class="headerlink" href="#fontTools.subset.Options.OptionError.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.subset.Options.OptionError.with_traceback">
+<code class="sig-name descname">with_traceback</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.subset.Options.OptionError.with_traceback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt id="fontTools.subset.Options.UnknownOptionError">
+<em class="property">exception </em><code class="sig-name descname">UnknownOptionError</code><a class="reference internal" href="../_modules/fontTools/subset.html#Options.UnknownOptionError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.subset.Options.UnknownOptionError" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py attribute">
+<dt id="fontTools.subset.Options.UnknownOptionError.args">
+<code class="sig-name descname">args</code><a class="headerlink" href="#fontTools.subset.Options.UnknownOptionError.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.subset.Options.UnknownOptionError.with_traceback">
+<code class="sig-name descname">with_traceback</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.subset.Options.UnknownOptionError.with_traceback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.subset.Options.parse_opts">
+<code class="sig-name descname">parse_opts</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">argv</span></em>, <em class="sig-param"><span class="n">ignore_unknown</span><span class="o">=</span><span class="default_value">[]</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/subset.html#Options.parse_opts"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.subset.Options.parse_opts" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.subset.Options.set">
+<code class="sig-name descname">set</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/subset.html#Options.set"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.subset.Options.set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.subset.Subsetter">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.subset.</code><code class="sig-name descname">Subsetter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">options</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/subset.html#Subsetter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.subset.Subsetter" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py exception">
+<dt id="fontTools.subset.Subsetter.MissingGlyphsSubsettingError">
+<em class="property">exception </em><code class="sig-name descname">MissingGlyphsSubsettingError</code><a class="reference internal" href="../_modules/fontTools/subset.html#Subsetter.MissingGlyphsSubsettingError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.subset.Subsetter.MissingGlyphsSubsettingError" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py attribute">
+<dt id="fontTools.subset.Subsetter.MissingGlyphsSubsettingError.args">
+<code class="sig-name descname">args</code><a class="headerlink" href="#fontTools.subset.Subsetter.MissingGlyphsSubsettingError.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.subset.Subsetter.MissingGlyphsSubsettingError.with_traceback">
+<code class="sig-name descname">with_traceback</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.subset.Subsetter.MissingGlyphsSubsettingError.with_traceback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt id="fontTools.subset.Subsetter.MissingUnicodesSubsettingError">
+<em class="property">exception </em><code class="sig-name descname">MissingUnicodesSubsettingError</code><a class="reference internal" href="../_modules/fontTools/subset.html#Subsetter.MissingUnicodesSubsettingError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.subset.Subsetter.MissingUnicodesSubsettingError" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py attribute">
+<dt id="fontTools.subset.Subsetter.MissingUnicodesSubsettingError.args">
+<code class="sig-name descname">args</code><a class="headerlink" href="#fontTools.subset.Subsetter.MissingUnicodesSubsettingError.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.subset.Subsetter.MissingUnicodesSubsettingError.with_traceback">
+<code class="sig-name descname">with_traceback</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.subset.Subsetter.MissingUnicodesSubsettingError.with_traceback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt id="fontTools.subset.Subsetter.SubsettingError">
+<em class="property">exception </em><code class="sig-name descname">SubsettingError</code><a class="reference internal" href="../_modules/fontTools/subset.html#Subsetter.SubsettingError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.subset.Subsetter.SubsettingError" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py attribute">
+<dt id="fontTools.subset.Subsetter.SubsettingError.args">
+<code class="sig-name descname">args</code><a class="headerlink" href="#fontTools.subset.Subsetter.SubsettingError.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.subset.Subsetter.SubsettingError.with_traceback">
+<code class="sig-name descname">with_traceback</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.subset.Subsetter.SubsettingError.with_traceback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.subset.Subsetter.populate">
+<code class="sig-name descname">populate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">glyphs</span><span class="o">=</span><span class="default_value">[]</span></em>, <em class="sig-param"><span class="n">gids</span><span class="o">=</span><span class="default_value">[]</span></em>, <em class="sig-param"><span class="n">unicodes</span><span class="o">=</span><span class="default_value">[]</span></em>, <em class="sig-param"><span class="n">text</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/subset.html#Subsetter.populate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.subset.Subsetter.populate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.subset.Subsetter.subset">
+<code class="sig-name descname">subset</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">font</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/subset.html#Subsetter.subset"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.subset.Subsetter.subset" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.subset.load_font">
+<code class="sig-prename descclassname">fontTools.subset.</code><code class="sig-name descname">load_font</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fontFile</span></em>, <em class="sig-param"><span class="n">options</span></em>, <em class="sig-param"><span class="n">allowVID</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">checkChecksums</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">dontLoadGlyphNames</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">lazy</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/subset.html#load_font"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.subset.load_font" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.subset.save_font">
+<code class="sig-prename descclassname">fontTools.subset.</code><code class="sig-name descname">save_font</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">font</span></em>, <em class="sig-param"><span class="n">outfile</span></em>, <em class="sig-param"><span class="n">options</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/subset.html#save_font"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.subset.save_font" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.subset.parse_gids">
+<code class="sig-prename descclassname">fontTools.subset.</code><code class="sig-name descname">parse_gids</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">s</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/subset.html#parse_gids"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.subset.parse_gids" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.subset.parse_glyphs">
+<code class="sig-prename descclassname">fontTools.subset.</code><code class="sig-name descname">parse_glyphs</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">s</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/subset.html#parse_glyphs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.subset.parse_glyphs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.subset.parse_unicodes">
+<code class="sig-prename descclassname">fontTools.subset.</code><code class="sig-name descname">parse_unicodes</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">s</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/subset.html#parse_unicodes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.subset.parse_unicodes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.subset.main">
+<code class="sig-prename descclassname">fontTools.subset.</code><code class="sig-name descname">main</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">args</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/subset.html#main"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.subset.main" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="cff.html" class="btn btn-neutral float-right" title="cff" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../pens/wxPen.html" class="btn btn-neutral float-left" title="wxPen" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Just van Rossum, Behdad Esfahbod, and the fontTools Authors. CC BY-SA 4.0
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

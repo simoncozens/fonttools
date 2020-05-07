@@ -1,0 +1,416 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>macUtils &mdash; fontTools Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="sfnt" href="sfnt.html" />
+    <link rel="prev" title="ttLib" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> fontTools
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Library</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../afmLib.html">afmLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../agl.html">agl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cffLib/index.html">cffLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../colorLib/index.html">colorLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cu2qu/index.html">cu2qu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../designspaceLib/index.html">designspaceLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../encodings/index.html">encodings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../feaLib/index.html">feaLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../merge.html">merge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/index.html">misc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mtiLib.html">mtiLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../otlLib/index.html">otlLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pens/index.html">pens</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../subset/index.html">subset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svgLib/index.html">svgLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../t1Lib.html">t1Lib</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">ttLib</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">macUtils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sfnt.html">sfnt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="standardGlyphOrder.html">standardGlyphOrder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tables.html">tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ttCollection.html">ttCollection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ttFont.html">ttFont</a></li>
+<li class="toctree-l2"><a class="reference internal" href="woff2.html">woff2</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ttx.html">ttx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ufoLib/index.html">ufoLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unicode.html">unicode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unicodedata/index.html">unicodedata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../varLib/index.html">varLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../voltLib.html">voltLib</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">fontTools</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">ttLib</a> &raquo;</li>
+        
+      <li>macUtils</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/ttLib/macUtils.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-fontTools.ttLib.macUtils">
+<span id="macutils"></span><h1>macUtils<a class="headerlink" href="#module-fontTools.ttLib.macUtils" title="Permalink to this headline">¶</a></h1>
+<p>ttLib.macUtils.py – Various Mac-specific stuff.</p>
+<dl class="py class">
+<dt id="fontTools.ttLib.macUtils.SFNTResourceReader">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.ttLib.macUtils.</code><code class="sig-name descname">SFNTResourceReader</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em>, <em class="sig-param"><span class="n">res_name_or_index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ttLib/macUtils.html#SFNTResourceReader"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ttLib.macUtils.SFNTResourceReader" title="Permalink to this definition">¶</a></dt>
+<dd><p>Simple read-only file wrapper for ‘sfnt’ resources.</p>
+<dl class="py method">
+<dt id="fontTools.ttLib.macUtils.SFNTResourceReader.close">
+<code class="sig-name descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.ttLib.macUtils.SFNTResourceReader.close" title="Permalink to this definition">¶</a></dt>
+<dd><p>Disable all I/O operations.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.ttLib.macUtils.SFNTResourceReader.closed">
+<code class="sig-name descname">closed</code><a class="headerlink" href="#fontTools.ttLib.macUtils.SFNTResourceReader.closed" title="Permalink to this definition">¶</a></dt>
+<dd><p>True if the file is closed.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ttLib.macUtils.SFNTResourceReader.detach">
+<code class="sig-name descname">detach</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.ttLib.macUtils.SFNTResourceReader.detach" title="Permalink to this definition">¶</a></dt>
+<dd><p>Disconnect this buffer from its underlying raw stream and return it.</p>
+<p>After the raw stream has been detached, the buffer is in an unusable
+state.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ttLib.macUtils.SFNTResourceReader.fileno">
+<code class="sig-name descname">fileno</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.ttLib.macUtils.SFNTResourceReader.fileno" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns underlying file descriptor if one exists.</p>
+<p>OSError is raised if the IO object does not use a file descriptor.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ttLib.macUtils.SFNTResourceReader.flush">
+<code class="sig-name descname">flush</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.ttLib.macUtils.SFNTResourceReader.flush" title="Permalink to this definition">¶</a></dt>
+<dd><p>Does nothing.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ttLib.macUtils.SFNTResourceReader.getbuffer">
+<code class="sig-name descname">getbuffer</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.ttLib.macUtils.SFNTResourceReader.getbuffer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a read-write view over the contents of the BytesIO object.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ttLib.macUtils.SFNTResourceReader.getvalue">
+<code class="sig-name descname">getvalue</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.ttLib.macUtils.SFNTResourceReader.getvalue" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve the entire contents of the BytesIO object.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ttLib.macUtils.SFNTResourceReader.isatty">
+<code class="sig-name descname">isatty</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.ttLib.macUtils.SFNTResourceReader.isatty" title="Permalink to this definition">¶</a></dt>
+<dd><p>Always returns False.</p>
+<p>BytesIO objects are not connected to a TTY-like device.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ttLib.macUtils.SFNTResourceReader.read">
+<code class="sig-name descname">read</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.ttLib.macUtils.SFNTResourceReader.read" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read at most size bytes, returned as a bytes object.</p>
+<p>If the size argument is negative, read until EOF is reached.
+Return an empty bytes object at EOF.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ttLib.macUtils.SFNTResourceReader.read1">
+<code class="sig-name descname">read1</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.ttLib.macUtils.SFNTResourceReader.read1" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read at most size bytes, returned as a bytes object.</p>
+<p>If the size argument is negative or omitted, read until EOF is reached.
+Return an empty bytes object at EOF.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ttLib.macUtils.SFNTResourceReader.readable">
+<code class="sig-name descname">readable</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.ttLib.macUtils.SFNTResourceReader.readable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns True if the IO object can be read.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ttLib.macUtils.SFNTResourceReader.readinto">
+<code class="sig-name descname">readinto</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.ttLib.macUtils.SFNTResourceReader.readinto" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read bytes into buffer.</p>
+<p>Returns number of bytes read (0 for EOF), or None if the object
+is set not to block and has no data to read.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ttLib.macUtils.SFNTResourceReader.readinto1">
+<code class="sig-name descname">readinto1</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.ttLib.macUtils.SFNTResourceReader.readinto1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ttLib.macUtils.SFNTResourceReader.readline">
+<code class="sig-name descname">readline</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.ttLib.macUtils.SFNTResourceReader.readline" title="Permalink to this definition">¶</a></dt>
+<dd><p>Next line from the file, as a bytes object.</p>
+<p>Retain newline.  A non-negative size argument limits the maximum
+number of bytes to return (an incomplete line may be returned then).
+Return an empty bytes object at EOF.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ttLib.macUtils.SFNTResourceReader.readlines">
+<code class="sig-name descname">readlines</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.ttLib.macUtils.SFNTResourceReader.readlines" title="Permalink to this definition">¶</a></dt>
+<dd><p>List of bytes objects, each a line from the file.</p>
+<p>Call readline() repeatedly and return a list of the lines so read.
+The optional size argument, if given, is an approximate bound on the
+total number of bytes in the lines returned.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ttLib.macUtils.SFNTResourceReader.seek">
+<code class="sig-name descname">seek</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.ttLib.macUtils.SFNTResourceReader.seek" title="Permalink to this definition">¶</a></dt>
+<dd><p>Change stream position.</p>
+<dl class="simple">
+<dt>Seek to byte offset pos relative to position indicated by whence:</dt><dd><p>0  Start of stream (the default).  pos should be &gt;= 0;
+1  Current position - pos may be negative;
+2  End of stream - pos usually negative.</p>
+</dd>
+</dl>
+<p>Returns the new absolute position.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ttLib.macUtils.SFNTResourceReader.seekable">
+<code class="sig-name descname">seekable</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.ttLib.macUtils.SFNTResourceReader.seekable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns True if the IO object can be seeked.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ttLib.macUtils.SFNTResourceReader.tell">
+<code class="sig-name descname">tell</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.ttLib.macUtils.SFNTResourceReader.tell" title="Permalink to this definition">¶</a></dt>
+<dd><p>Current file position, an integer.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ttLib.macUtils.SFNTResourceReader.truncate">
+<code class="sig-name descname">truncate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.ttLib.macUtils.SFNTResourceReader.truncate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Truncate the file to at most size bytes.</p>
+<p>Size defaults to the current file position, as returned by tell().
+The current file position is unchanged.  Returns the new size.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ttLib.macUtils.SFNTResourceReader.writable">
+<code class="sig-name descname">writable</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.ttLib.macUtils.SFNTResourceReader.writable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns True if the IO object can be written.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ttLib.macUtils.SFNTResourceReader.write">
+<code class="sig-name descname">write</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.ttLib.macUtils.SFNTResourceReader.write" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write bytes to file.</p>
+<p>Return the number of bytes written.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ttLib.macUtils.SFNTResourceReader.writelines">
+<code class="sig-name descname">writelines</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.ttLib.macUtils.SFNTResourceReader.writelines" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write lines to the file.</p>
+<p>Note that newlines are not added.  lines can be any iterable object
+producing bytes-like objects. This is equivalent to calling write() for
+each element.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.ttLib.macUtils.getSFNTResIndices">
+<code class="sig-prename descclassname">fontTools.ttLib.macUtils.</code><code class="sig-name descname">getSFNTResIndices</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ttLib/macUtils.html#getSFNTResIndices"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ttLib.macUtils.getSFNTResIndices" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determine whether a file has a ‘sfnt’ resource fork or not.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.ttLib.macUtils.openTTFonts">
+<code class="sig-prename descclassname">fontTools.ttLib.macUtils.</code><code class="sig-name descname">openTTFonts</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ttLib/macUtils.html#openTTFonts"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ttLib.macUtils.openTTFonts" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a pathname, return a list of TTFont objects. In the case
+of a flat TTF/OTF file, the list will contain just one font object;
+but in the case of a Mac font suitcase it will contain as many
+font objects as there are sfnt resources in the file.</p>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="sfnt.html" class="btn btn-neutral float-right" title="sfnt" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="ttLib" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Just van Rossum, Behdad Esfahbod, and the fontTools Authors. CC BY-SA 4.0
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

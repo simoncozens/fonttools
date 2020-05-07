@@ -1,0 +1,433 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>lexer &mdash; fontTools Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="parser" href="parser.html" />
+    <link rel="prev" title="error" href="error.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> fontTools
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Library</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../afmLib.html">afmLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../agl.html">agl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cffLib/index.html">cffLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../colorLib/index.html">colorLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cu2qu/index.html">cu2qu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../designspaceLib/index.html">designspaceLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../encodings/index.html">encodings</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">feaLib</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ast.html">ast</a></li>
+<li class="toctree-l2"><a class="reference internal" href="builder.html">builder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="error.html">error</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">lexer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="parser.html">parser</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../merge.html">merge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/index.html">misc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mtiLib.html">mtiLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../otlLib/index.html">otlLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pens/index.html">pens</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../subset/index.html">subset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svgLib/index.html">svgLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../t1Lib.html">t1Lib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ttLib/index.html">ttLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ttx.html">ttx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ufoLib/index.html">ufoLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unicode.html">unicode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unicodedata/index.html">unicodedata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../varLib/index.html">varLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../voltLib.html">voltLib</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">fontTools</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">feaLib</a> &raquo;</li>
+        
+      <li>lexer</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/feaLib/lexer.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-fontTools.feaLib.lexer">
+<span id="lexer"></span><h1>lexer<a class="headerlink" href="#module-fontTools.feaLib.lexer" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="fontTools.feaLib.lexer.IncludingLexer">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.feaLib.lexer.</code><code class="sig-name descname">IncludingLexer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">featurefile</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/lexer.html#IncludingLexer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.lexer.IncludingLexer" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.feaLib.lexer.IncludingLexer.make_lexer_">
+<em class="property">static </em><code class="sig-name descname">make_lexer_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">file_or_path</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/lexer.html#IncludingLexer.make_lexer_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.lexer.IncludingLexer.make_lexer_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.lexer.IncludingLexer.next">
+<code class="sig-name descname">next</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/lexer.html#IncludingLexer.next"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.lexer.IncludingLexer.next" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.lexer.IncludingLexer.scan_anonymous_block">
+<code class="sig-name descname">scan_anonymous_block</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/lexer.html#IncludingLexer.scan_anonymous_block"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.lexer.IncludingLexer.scan_anonymous_block" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.feaLib.lexer.Lexer">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.feaLib.lexer.</code><code class="sig-name descname">Lexer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text</span></em>, <em class="sig-param"><span class="n">filename</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/lexer.html#Lexer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.lexer.Lexer" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py attribute">
+<dt id="fontTools.feaLib.lexer.Lexer.ANONYMOUS_BLOCK">
+<code class="sig-name descname">ANONYMOUS_BLOCK</code><em class="property"> = 'ANONYMOUS_BLOCK'</em><a class="headerlink" href="#fontTools.feaLib.lexer.Lexer.ANONYMOUS_BLOCK" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.feaLib.lexer.Lexer.CHAR_DIGIT_">
+<code class="sig-name descname">CHAR_DIGIT_</code><em class="property"> = '0123456789'</em><a class="headerlink" href="#fontTools.feaLib.lexer.Lexer.CHAR_DIGIT_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.feaLib.lexer.Lexer.CHAR_HEXDIGIT_">
+<code class="sig-name descname">CHAR_HEXDIGIT_</code><em class="property"> = '0123456789ABCDEFabcdef'</em><a class="headerlink" href="#fontTools.feaLib.lexer.Lexer.CHAR_HEXDIGIT_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.feaLib.lexer.Lexer.CHAR_LETTER_">
+<code class="sig-name descname">CHAR_LETTER_</code><em class="property"> = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'</em><a class="headerlink" href="#fontTools.feaLib.lexer.Lexer.CHAR_LETTER_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.feaLib.lexer.Lexer.CHAR_NAME_CONTINUATION_">
+<code class="sig-name descname">CHAR_NAME_CONTINUATION_</code><em class="property"> = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_.+*:^~!/-'</em><a class="headerlink" href="#fontTools.feaLib.lexer.Lexer.CHAR_NAME_CONTINUATION_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.feaLib.lexer.Lexer.CHAR_NAME_START_">
+<code class="sig-name descname">CHAR_NAME_START_</code><em class="property"> = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz_+*:.^~!\\'</em><a class="headerlink" href="#fontTools.feaLib.lexer.Lexer.CHAR_NAME_START_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.feaLib.lexer.Lexer.CHAR_NEWLINE_">
+<code class="sig-name descname">CHAR_NEWLINE_</code><em class="property"> = '\r\n'</em><a class="headerlink" href="#fontTools.feaLib.lexer.Lexer.CHAR_NEWLINE_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.feaLib.lexer.Lexer.CHAR_SYMBOL_">
+<code class="sig-name descname">CHAR_SYMBOL_</code><em class="property"> = &quot;,;:-+'{}[]&lt;&gt;()=&quot;</em><a class="headerlink" href="#fontTools.feaLib.lexer.Lexer.CHAR_SYMBOL_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.feaLib.lexer.Lexer.CHAR_WHITESPACE_">
+<code class="sig-name descname">CHAR_WHITESPACE_</code><em class="property"> = ' \t'</em><a class="headerlink" href="#fontTools.feaLib.lexer.Lexer.CHAR_WHITESPACE_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.feaLib.lexer.Lexer.CID">
+<code class="sig-name descname">CID</code><em class="property"> = 'CID'</em><a class="headerlink" href="#fontTools.feaLib.lexer.Lexer.CID" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.feaLib.lexer.Lexer.COMMENT">
+<code class="sig-name descname">COMMENT</code><em class="property"> = 'COMMENT'</em><a class="headerlink" href="#fontTools.feaLib.lexer.Lexer.COMMENT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.feaLib.lexer.Lexer.FILENAME">
+<code class="sig-name descname">FILENAME</code><em class="property"> = 'FILENAME'</em><a class="headerlink" href="#fontTools.feaLib.lexer.Lexer.FILENAME" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.feaLib.lexer.Lexer.FLOAT">
+<code class="sig-name descname">FLOAT</code><em class="property"> = 'FLOAT'</em><a class="headerlink" href="#fontTools.feaLib.lexer.Lexer.FLOAT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.feaLib.lexer.Lexer.GLYPHCLASS">
+<code class="sig-name descname">GLYPHCLASS</code><em class="property"> = 'GLYPHCLASS'</em><a class="headerlink" href="#fontTools.feaLib.lexer.Lexer.GLYPHCLASS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.feaLib.lexer.Lexer.HEXADECIMAL">
+<code class="sig-name descname">HEXADECIMAL</code><em class="property"> = 'HEXADECIMAL'</em><a class="headerlink" href="#fontTools.feaLib.lexer.Lexer.HEXADECIMAL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.feaLib.lexer.Lexer.MODE_FILENAME_">
+<code class="sig-name descname">MODE_FILENAME_</code><em class="property"> = 'FILENAME'</em><a class="headerlink" href="#fontTools.feaLib.lexer.Lexer.MODE_FILENAME_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.feaLib.lexer.Lexer.MODE_NORMAL_">
+<code class="sig-name descname">MODE_NORMAL_</code><em class="property"> = 'NORMAL'</em><a class="headerlink" href="#fontTools.feaLib.lexer.Lexer.MODE_NORMAL_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.feaLib.lexer.Lexer.NAME">
+<code class="sig-name descname">NAME</code><em class="property"> = 'NAME'</em><a class="headerlink" href="#fontTools.feaLib.lexer.Lexer.NAME" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.feaLib.lexer.Lexer.NEWLINE">
+<code class="sig-name descname">NEWLINE</code><em class="property"> = 'NEWLINE'</em><a class="headerlink" href="#fontTools.feaLib.lexer.Lexer.NEWLINE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.feaLib.lexer.Lexer.NUMBER">
+<code class="sig-name descname">NUMBER</code><em class="property"> = 'NUMBER'</em><a class="headerlink" href="#fontTools.feaLib.lexer.Lexer.NUMBER" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.feaLib.lexer.Lexer.NUMBERS">
+<code class="sig-name descname">NUMBERS</code><em class="property"> = ('NUMBER', 'HEXADECIMAL', 'OCTAL')</em><a class="headerlink" href="#fontTools.feaLib.lexer.Lexer.NUMBERS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.feaLib.lexer.Lexer.OCTAL">
+<code class="sig-name descname">OCTAL</code><em class="property"> = 'OCTAL'</em><a class="headerlink" href="#fontTools.feaLib.lexer.Lexer.OCTAL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.feaLib.lexer.Lexer.RE_GLYPHCLASS">
+<code class="sig-name descname">RE_GLYPHCLASS</code><em class="property"> = re.compile('^[A-Za-z_0-9.\\-]+$')</em><a class="headerlink" href="#fontTools.feaLib.lexer.Lexer.RE_GLYPHCLASS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.feaLib.lexer.Lexer.STRING">
+<code class="sig-name descname">STRING</code><em class="property"> = 'STRING'</em><a class="headerlink" href="#fontTools.feaLib.lexer.Lexer.STRING" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.feaLib.lexer.Lexer.SYMBOL">
+<code class="sig-name descname">SYMBOL</code><em class="property"> = 'SYMBOL'</em><a class="headerlink" href="#fontTools.feaLib.lexer.Lexer.SYMBOL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.lexer.Lexer.location_">
+<code class="sig-name descname">location_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/lexer.html#Lexer.location_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.lexer.Lexer.location_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.lexer.Lexer.next">
+<code class="sig-name descname">next</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/lexer.html#Lexer.next"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.lexer.Lexer.next" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.lexer.Lexer.next_">
+<code class="sig-name descname">next_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/lexer.html#Lexer.next_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.lexer.Lexer.next_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.lexer.Lexer.scan_anonymous_block">
+<code class="sig-name descname">scan_anonymous_block</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/lexer.html#Lexer.scan_anonymous_block"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.lexer.Lexer.scan_anonymous_block" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.lexer.Lexer.scan_over_">
+<code class="sig-name descname">scan_over_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">valid</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/lexer.html#Lexer.scan_over_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.lexer.Lexer.scan_over_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.lexer.Lexer.scan_until_">
+<code class="sig-name descname">scan_until_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">stop_at</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/lexer.html#Lexer.scan_until_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.lexer.Lexer.scan_until_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.feaLib.lexer.NonIncludingLexer">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.feaLib.lexer.</code><code class="sig-name descname">NonIncludingLexer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">featurefile</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/lexer.html#NonIncludingLexer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.lexer.NonIncludingLexer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Lexer that does not follow <cite>include</cite> statements, emits them as-is.</p>
+<dl class="py method">
+<dt id="fontTools.feaLib.lexer.NonIncludingLexer.make_lexer_">
+<em class="property">static </em><code class="sig-name descname">make_lexer_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">file_or_path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.lexer.NonIncludingLexer.make_lexer_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.lexer.NonIncludingLexer.next">
+<code class="sig-name descname">next</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.lexer.NonIncludingLexer.next" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.lexer.NonIncludingLexer.scan_anonymous_block">
+<code class="sig-name descname">scan_anonymous_block</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.lexer.NonIncludingLexer.scan_anonymous_block" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="parser.html" class="btn btn-neutral float-right" title="parser" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="error.html" class="btn btn-neutral float-left" title="error" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Just van Rossum, Behdad Esfahbod, and the fontTools Authors. CC BY-SA 4.0
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

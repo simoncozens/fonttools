@@ -1,0 +1,359 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>fontTools.pens.recordingPen &mdash; fontTools Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> fontTools
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Library</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../afmLib.html">afmLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../agl.html">agl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cffLib/index.html">cffLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../colorLib/index.html">colorLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cu2qu/index.html">cu2qu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../designspaceLib/index.html">designspaceLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../encodings/index.html">encodings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../feaLib/index.html">feaLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../merge.html">merge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../misc/index.html">misc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../mtiLib.html">mtiLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../otlLib/index.html">otlLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pens/index.html">pens</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../subset/index.html">subset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../svgLib/index.html">svgLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../t1Lib.html">t1Lib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ttLib/index.html">ttLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ttx.html">ttx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ufoLib/index.html">ufoLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../unicode.html">unicode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../unicodedata/index.html">unicodedata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../varLib/index.html">varLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../voltLib.html">voltLib</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">fontTools</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>fontTools.pens.recordingPen</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for fontTools.pens.recordingPen</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;Pen recording operations that can be accessed or replayed.&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">fontTools.misc.py23</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">fontTools.pens.basePen</span> <span class="k">import</span> <span class="n">AbstractPen</span><span class="p">,</span> <span class="n">DecomposingPen</span>
+<span class="kn">from</span> <span class="nn">fontTools.pens.pointPen</span> <span class="k">import</span> <span class="n">AbstractPointPen</span>
+
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span>
+	<span class="s2">&quot;replayRecording&quot;</span><span class="p">,</span>
+	<span class="s2">&quot;RecordingPen&quot;</span><span class="p">,</span>
+	<span class="s2">&quot;DecomposingRecordingPen&quot;</span><span class="p">,</span>
+	<span class="s2">&quot;RecordingPointPen&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+
+
+<div class="viewcode-block" id="replayRecording"><a class="viewcode-back" href="../../../pens/recordingPen.html#fontTools.pens.filterPen.replayRecording">[docs]</a><span class="k">def</span> <span class="nf">replayRecording</span><span class="p">(</span><span class="n">recording</span><span class="p">,</span> <span class="n">pen</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Replay a recording, as produced by RecordingPen or DecomposingRecordingPen,</span>
+<span class="sd">	to a pen.</span>
+
+<span class="sd">	Note that recording does not have to be produced by those pens.</span>
+<span class="sd">	It can be any iterable of tuples of method name and tuple-of-arguments.</span>
+<span class="sd">	Likewise, pen can be any objects receiving those method calls.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="k">for</span> <span class="n">operator</span><span class="p">,</span><span class="n">operands</span> <span class="ow">in</span> <span class="n">recording</span><span class="p">:</span>
+		<span class="nb">getattr</span><span class="p">(</span><span class="n">pen</span><span class="p">,</span> <span class="n">operator</span><span class="p">)(</span><span class="o">*</span><span class="n">operands</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="RecordingPen"><a class="viewcode-back" href="../../../pens/recordingPen.html#fontTools.pens.filterPen.RecordingPen">[docs]</a><span class="k">class</span> <span class="nc">RecordingPen</span><span class="p">(</span><span class="n">AbstractPen</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Pen recording operations that can be accessed or replayed.</span>
+
+<span class="sd">	The recording can be accessed as pen.value; or replayed using</span>
+<span class="sd">	pen.replay(otherPen).</span>
+
+<span class="sd">	Usage example:</span>
+<span class="sd">	==============</span>
+<span class="sd">	from fontTools.ttLib import TTFont</span>
+<span class="sd">	from fontTools.pens.recordingPen import RecordingPen</span>
+
+<span class="sd">	glyph_name = &#39;dollar&#39;</span>
+<span class="sd">	font_path = &#39;MyFont.otf&#39;</span>
+
+<span class="sd">	font = TTFont(font_path)</span>
+<span class="sd">	glyphset = font.getGlyphSet()</span>
+<span class="sd">	glyph = glyphset[glyph_name]</span>
+
+<span class="sd">	pen = RecordingPen()</span>
+<span class="sd">	glyph.draw(pen)</span>
+<span class="sd">	print(pen.value)</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="p">[]</span>
+<div class="viewcode-block" id="RecordingPen.moveTo"><a class="viewcode-back" href="../../../pens/recordingPen.html#fontTools.pens.filterPen.RecordingPen.moveTo">[docs]</a>	<span class="k">def</span> <span class="nf">moveTo</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">p0</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s1">&#39;moveTo&#39;</span><span class="p">,</span> <span class="p">(</span><span class="n">p0</span><span class="p">,)))</span></div>
+<div class="viewcode-block" id="RecordingPen.lineTo"><a class="viewcode-back" href="../../../pens/recordingPen.html#fontTools.pens.filterPen.RecordingPen.lineTo">[docs]</a>	<span class="k">def</span> <span class="nf">lineTo</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">p1</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s1">&#39;lineTo&#39;</span><span class="p">,</span> <span class="p">(</span><span class="n">p1</span><span class="p">,)))</span></div>
+<div class="viewcode-block" id="RecordingPen.qCurveTo"><a class="viewcode-back" href="../../../pens/recordingPen.html#fontTools.pens.filterPen.RecordingPen.qCurveTo">[docs]</a>	<span class="k">def</span> <span class="nf">qCurveTo</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">points</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s1">&#39;qCurveTo&#39;</span><span class="p">,</span> <span class="n">points</span><span class="p">))</span></div>
+<div class="viewcode-block" id="RecordingPen.curveTo"><a class="viewcode-back" href="../../../pens/recordingPen.html#fontTools.pens.filterPen.RecordingPen.curveTo">[docs]</a>	<span class="k">def</span> <span class="nf">curveTo</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">points</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s1">&#39;curveTo&#39;</span><span class="p">,</span> <span class="n">points</span><span class="p">))</span></div>
+<div class="viewcode-block" id="RecordingPen.closePath"><a class="viewcode-back" href="../../../pens/recordingPen.html#fontTools.pens.filterPen.RecordingPen.closePath">[docs]</a>	<span class="k">def</span> <span class="nf">closePath</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s1">&#39;closePath&#39;</span><span class="p">,</span> <span class="p">()))</span></div>
+<div class="viewcode-block" id="RecordingPen.endPath"><a class="viewcode-back" href="../../../pens/recordingPen.html#fontTools.pens.filterPen.RecordingPen.endPath">[docs]</a>	<span class="k">def</span> <span class="nf">endPath</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s1">&#39;endPath&#39;</span><span class="p">,</span> <span class="p">()))</span></div>
+<div class="viewcode-block" id="RecordingPen.addComponent"><a class="viewcode-back" href="../../../pens/recordingPen.html#fontTools.pens.filterPen.RecordingPen.addComponent">[docs]</a>	<span class="k">def</span> <span class="nf">addComponent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">glyphName</span><span class="p">,</span> <span class="n">transformation</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s1">&#39;addComponent&#39;</span><span class="p">,</span> <span class="p">(</span><span class="n">glyphName</span><span class="p">,</span> <span class="n">transformation</span><span class="p">)))</span></div>
+<div class="viewcode-block" id="RecordingPen.replay"><a class="viewcode-back" href="../../../pens/recordingPen.html#fontTools.pens.filterPen.RecordingPen.replay">[docs]</a>	<span class="k">def</span> <span class="nf">replay</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pen</span><span class="p">):</span>
+		<span class="n">replayRecording</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">pen</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="DecomposingRecordingPen"><a class="viewcode-back" href="../../../pens/recordingPen.html#fontTools.pens.filterPen.DecomposingRecordingPen">[docs]</a><span class="k">class</span> <span class="nc">DecomposingRecordingPen</span><span class="p">(</span><span class="n">DecomposingPen</span><span class="p">,</span> <span class="n">RecordingPen</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot; Same as RecordingPen, except that it doesn&#39;t keep components</span>
+<span class="sd">	as references, but draws them decomposed as regular contours.</span>
+
+<span class="sd">	The constructor takes a single &#39;glyphSet&#39; positional argument,</span>
+<span class="sd">	a dictionary of glyph objects (i.e. with a &#39;draw&#39; method) keyed</span>
+<span class="sd">	by thir name.</span>
+
+<span class="sd">	&gt;&gt;&gt; class SimpleGlyph(object):</span>
+<span class="sd">	...     def draw(self, pen):</span>
+<span class="sd">	...         pen.moveTo((0, 0))</span>
+<span class="sd">	...         pen.curveTo((1, 1), (2, 2), (3, 3))</span>
+<span class="sd">	...         pen.closePath()</span>
+<span class="sd">	&gt;&gt;&gt; class CompositeGlyph(object):</span>
+<span class="sd">	...     def draw(self, pen):</span>
+<span class="sd">	...         pen.addComponent(&#39;a&#39;, (1, 0, 0, 1, -1, 1))</span>
+<span class="sd">	&gt;&gt;&gt; glyphSet = {&#39;a&#39;: SimpleGlyph(), &#39;b&#39;: CompositeGlyph()}</span>
+<span class="sd">	&gt;&gt;&gt; for name, glyph in sorted(glyphSet.items()):</span>
+<span class="sd">	...     pen = DecomposingRecordingPen(glyphSet)</span>
+<span class="sd">	...     glyph.draw(pen)</span>
+<span class="sd">	...     print(&quot;{}: {}&quot;.format(name, pen.value))</span>
+<span class="sd">	a: [(&#39;moveTo&#39;, ((0, 0),)), (&#39;curveTo&#39;, ((1, 1), (2, 2), (3, 3))), (&#39;closePath&#39;, ())]</span>
+<span class="sd">	b: [(&#39;moveTo&#39;, ((-1, 1),)), (&#39;curveTo&#39;, ((0, 2), (1, 3), (2, 4))), (&#39;closePath&#39;, ())]</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="c1"># raises KeyError if base glyph is not found in glyphSet</span>
+	<span class="n">skipMissingComponents</span> <span class="o">=</span> <span class="kc">False</span></div>
+
+
+<div class="viewcode-block" id="RecordingPointPen"><a class="viewcode-back" href="../../../pens/recordingPen.html#fontTools.pens.filterPen.RecordingPointPen">[docs]</a><span class="k">class</span> <span class="nc">RecordingPointPen</span><span class="p">(</span><span class="n">AbstractPointPen</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;PointPen recording operations that can be accessed or replayed.</span>
+
+<span class="sd">	The recording can be accessed as pen.value; or replayed using</span>
+<span class="sd">	pointPen.replay(otherPointPen).</span>
+
+<span class="sd">	Usage example:</span>
+<span class="sd">	==============</span>
+<span class="sd">	from defcon import Font</span>
+<span class="sd">	from fontTools.pens.recordingPen import RecordingPointPen</span>
+
+<span class="sd">	glyph_name = &#39;a&#39;</span>
+<span class="sd">	font_path = &#39;MyFont.ufo&#39;</span>
+
+<span class="sd">	font = Font(font_path)</span>
+<span class="sd">	glyph = font[glyph_name]</span>
+
+<span class="sd">	pen = RecordingPointPen()</span>
+<span class="sd">	glyph.drawPoints(pen)</span>
+<span class="sd">	print(pen.value)</span>
+
+<span class="sd">	new_glyph = font.newGlyph(&#39;b&#39;)</span>
+<span class="sd">	pen.replay(new_glyph.getPointPen())</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="p">[]</span>
+
+<div class="viewcode-block" id="RecordingPointPen.beginPath"><a class="viewcode-back" href="../../../pens/recordingPen.html#fontTools.pens.filterPen.RecordingPointPen.beginPath">[docs]</a>	<span class="k">def</span> <span class="nf">beginPath</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s2">&quot;beginPath&quot;</span><span class="p">,</span> <span class="p">(),</span> <span class="n">kwargs</span><span class="p">))</span></div>
+
+<div class="viewcode-block" id="RecordingPointPen.endPath"><a class="viewcode-back" href="../../../pens/recordingPen.html#fontTools.pens.filterPen.RecordingPointPen.endPath">[docs]</a>	<span class="k">def</span> <span class="nf">endPath</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s2">&quot;endPath&quot;</span><span class="p">,</span> <span class="p">(),</span> <span class="p">{}))</span></div>
+
+<div class="viewcode-block" id="RecordingPointPen.addPoint"><a class="viewcode-back" href="../../../pens/recordingPen.html#fontTools.pens.filterPen.RecordingPointPen.addPoint">[docs]</a>	<span class="k">def</span> <span class="nf">addPoint</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pt</span><span class="p">,</span> <span class="n">segmentType</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">smooth</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s2">&quot;addPoint&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">pt</span><span class="p">,</span> <span class="n">segmentType</span><span class="p">,</span> <span class="n">smooth</span><span class="p">,</span> <span class="n">name</span><span class="p">),</span> <span class="n">kwargs</span><span class="p">))</span></div>
+
+<div class="viewcode-block" id="RecordingPointPen.addComponent"><a class="viewcode-back" href="../../../pens/recordingPen.html#fontTools.pens.filterPen.RecordingPointPen.addComponent">[docs]</a>	<span class="k">def</span> <span class="nf">addComponent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">baseGlyphName</span><span class="p">,</span> <span class="n">transformation</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s2">&quot;addComponent&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">baseGlyphName</span><span class="p">,</span> <span class="n">transformation</span><span class="p">),</span> <span class="n">kwargs</span><span class="p">))</span></div>
+
+<div class="viewcode-block" id="RecordingPointPen.replay"><a class="viewcode-back" href="../../../pens/recordingPen.html#fontTools.pens.filterPen.RecordingPointPen.replay">[docs]</a>	<span class="k">def</span> <span class="nf">replay</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pointPen</span><span class="p">):</span>
+		<span class="k">for</span> <span class="n">operator</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="p">:</span>
+			<span class="nb">getattr</span><span class="p">(</span><span class="n">pointPen</span><span class="p">,</span> <span class="n">operator</span><span class="p">)(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div></div>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+	<span class="kn">from</span> <span class="nn">fontTools.pens.basePen</span> <span class="k">import</span> <span class="n">_TestPen</span>
+	<span class="n">pen</span> <span class="o">=</span> <span class="n">RecordingPen</span><span class="p">()</span>
+	<span class="n">pen</span><span class="o">.</span><span class="n">moveTo</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+	<span class="n">pen</span><span class="o">.</span><span class="n">lineTo</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">))</span>
+	<span class="n">pen</span><span class="o">.</span><span class="n">curveTo</span><span class="p">((</span><span class="mi">50</span><span class="p">,</span> <span class="mi">75</span><span class="p">),</span> <span class="p">(</span><span class="mi">60</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span> <span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">25</span><span class="p">))</span>
+	<span class="n">pen</span><span class="o">.</span><span class="n">closePath</span><span class="p">()</span>
+	<span class="kn">from</span> <span class="nn">pprint</span> <span class="k">import</span> <span class="n">pprint</span>
+	<span class="n">pprint</span><span class="p">(</span><span class="n">pen</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Just van Rossum, Behdad Esfahbod, and the fontTools Authors. CC BY-SA 4.0
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

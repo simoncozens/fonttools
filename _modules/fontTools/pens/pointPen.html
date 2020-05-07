@@ -1,0 +1,653 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>fontTools.pens.pointPen &mdash; fontTools Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> fontTools
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Library</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../afmLib.html">afmLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../agl.html">agl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cffLib/index.html">cffLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../colorLib/index.html">colorLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cu2qu/index.html">cu2qu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../designspaceLib/index.html">designspaceLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../encodings/index.html">encodings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../feaLib/index.html">feaLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../merge.html">merge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../misc/index.html">misc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../mtiLib.html">mtiLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../otlLib/index.html">otlLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pens/index.html">pens</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../subset/index.html">subset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../svgLib/index.html">svgLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../t1Lib.html">t1Lib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ttLib/index.html">ttLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ttx.html">ttx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ufoLib/index.html">ufoLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../unicode.html">unicode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../unicodedata/index.html">unicodedata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../varLib/index.html">varLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../voltLib.html">voltLib</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">fontTools</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>fontTools.pens.pointPen</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for fontTools.pens.pointPen</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">=========</span>
+<span class="sd">PointPens</span>
+<span class="sd">=========</span>
+
+<span class="sd">Where **SegmentPens** have an intuitive approach to drawing</span>
+<span class="sd">(if you&#39;re familiar with postscript anyway), the **PointPen**</span>
+<span class="sd">is geared towards accessing all the data in the contours of</span>
+<span class="sd">the glyph. A PointPen has a very simple interface, it just</span>
+<span class="sd">steps through all the points in a call from glyph.drawPoints().</span>
+<span class="sd">This allows the caller to provide more data for each point.</span>
+<span class="sd">For instance, whether or not a point is smooth, and its name.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">fontTools.pens.basePen</span> <span class="k">import</span> <span class="n">AbstractPen</span>
+<span class="kn">import</span> <span class="nn">math</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span>
+	<span class="s2">&quot;AbstractPointPen&quot;</span><span class="p">,</span>
+	<span class="s2">&quot;BasePointToSegmentPen&quot;</span><span class="p">,</span>
+	<span class="s2">&quot;PointToSegmentPen&quot;</span><span class="p">,</span>
+	<span class="s2">&quot;SegmentToPointPen&quot;</span><span class="p">,</span>
+	<span class="s2">&quot;GuessSmoothPointPen&quot;</span><span class="p">,</span>
+	<span class="s2">&quot;ReverseContourPointPen&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+
+
+<div class="viewcode-block" id="AbstractPointPen"><a class="viewcode-back" href="../../../pens/pointPen.html#fontTools.pens.cu2quPen.AbstractPointPen">[docs]</a><span class="k">class</span> <span class="nc">AbstractPointPen</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	Baseclass for all PointPens.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="AbstractPointPen.beginPath"><a class="viewcode-back" href="../../../pens/pointPen.html#fontTools.pens.cu2quPen.AbstractPointPen.beginPath">[docs]</a>	<span class="k">def</span> <span class="nf">beginPath</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">identifier</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Start a new sub path.&quot;&quot;&quot;</span>
+		<span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
+
+<div class="viewcode-block" id="AbstractPointPen.endPath"><a class="viewcode-back" href="../../../pens/pointPen.html#fontTools.pens.cu2quPen.AbstractPointPen.endPath">[docs]</a>	<span class="k">def</span> <span class="nf">endPath</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;End the current sub path.&quot;&quot;&quot;</span>
+		<span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
+
+<div class="viewcode-block" id="AbstractPointPen.addPoint"><a class="viewcode-back" href="../../../pens/pointPen.html#fontTools.pens.cu2quPen.AbstractPointPen.addPoint">[docs]</a>	<span class="k">def</span> <span class="nf">addPoint</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pt</span><span class="p">,</span> <span class="n">segmentType</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">smooth</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+				 <span class="n">identifier</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Add a point to the current sub path.&quot;&quot;&quot;</span>
+		<span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
+
+<div class="viewcode-block" id="AbstractPointPen.addComponent"><a class="viewcode-back" href="../../../pens/pointPen.html#fontTools.pens.cu2quPen.AbstractPointPen.addComponent">[docs]</a>	<span class="k">def</span> <span class="nf">addComponent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">baseGlyphName</span><span class="p">,</span> <span class="n">transformation</span><span class="p">,</span> <span class="n">identifier</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+					 <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Add a sub glyph.&quot;&quot;&quot;</span>
+		<span class="k">raise</span> <span class="ne">NotImplementedError</span></div></div>
+
+
+<div class="viewcode-block" id="BasePointToSegmentPen"><a class="viewcode-back" href="../../../pens/pointPen.html#fontTools.pens.cu2quPen.BasePointToSegmentPen">[docs]</a><span class="k">class</span> <span class="nc">BasePointToSegmentPen</span><span class="p">(</span><span class="n">AbstractPointPen</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	Base class for retrieving the outline in a segment-oriented</span>
+<span class="sd">	way. The PointPen protocol is simple yet also a little tricky,</span>
+<span class="sd">	so when you need an outline presented as segments but you have</span>
+<span class="sd">	as points, do use this base implementation as it properly takes</span>
+<span class="sd">	care of all the edge cases.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">currentPath</span> <span class="o">=</span> <span class="kc">None</span>
+
+<div class="viewcode-block" id="BasePointToSegmentPen.beginPath"><a class="viewcode-back" href="../../../pens/pointPen.html#fontTools.pens.cu2quPen.BasePointToSegmentPen.beginPath">[docs]</a>	<span class="k">def</span> <span class="nf">beginPath</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">identifier</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+		<span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">currentPath</span> <span class="ow">is</span> <span class="kc">None</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">currentPath</span> <span class="o">=</span> <span class="p">[]</span></div>
+
+	<span class="k">def</span> <span class="nf">_flushContour</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">segments</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Override this method.</span>
+
+<span class="sd">		It will be called for each non-empty sub path with a list</span>
+<span class="sd">		of segments: the &#39;segments&#39; argument.</span>
+
+<span class="sd">		The segments list contains tuples of length 2:</span>
+<span class="sd">			(segmentType, points)</span>
+
+<span class="sd">		segmentType is one of &quot;move&quot;, &quot;line&quot;, &quot;curve&quot; or &quot;qcurve&quot;.</span>
+<span class="sd">		&quot;move&quot; may only occur as the first segment, and it signifies</span>
+<span class="sd">		an OPEN path. A CLOSED path does NOT start with a &quot;move&quot;, in</span>
+<span class="sd">		fact it will not contain a &quot;move&quot; at ALL.</span>
+
+<span class="sd">		The &#39;points&#39; field in the 2-tuple is a list of point info</span>
+<span class="sd">		tuples. The list has 1 or more items, a point tuple has</span>
+<span class="sd">		four items:</span>
+<span class="sd">			(point, smooth, name, kwargs)</span>
+<span class="sd">		&#39;point&#39; is an (x, y) coordinate pair.</span>
+
+<span class="sd">		For a closed path, the initial moveTo point is defined as</span>
+<span class="sd">		the last point of the last segment.</span>
+
+<span class="sd">		The &#39;points&#39; list of &quot;move&quot; and &quot;line&quot; segments always contains</span>
+<span class="sd">		exactly one point tuple.</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="k">raise</span> <span class="ne">NotImplementedError</span>
+
+<div class="viewcode-block" id="BasePointToSegmentPen.endPath"><a class="viewcode-back" href="../../../pens/pointPen.html#fontTools.pens.cu2quPen.BasePointToSegmentPen.endPath">[docs]</a>	<span class="k">def</span> <span class="nf">endPath</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">currentPath</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+		<span class="n">points</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">currentPath</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">currentPath</span> <span class="o">=</span> <span class="kc">None</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="n">points</span><span class="p">:</span>
+			<span class="k">return</span>
+		<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">points</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+			<span class="c1"># Not much more we can do than output a single move segment.</span>
+			<span class="n">pt</span><span class="p">,</span> <span class="n">segmentType</span><span class="p">,</span> <span class="n">smooth</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">kwargs</span> <span class="o">=</span> <span class="n">points</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+			<span class="n">segments</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">&quot;move&quot;</span><span class="p">,</span> <span class="p">[(</span><span class="n">pt</span><span class="p">,</span> <span class="n">smooth</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)])]</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_flushContour</span><span class="p">(</span><span class="n">segments</span><span class="p">)</span>
+			<span class="k">return</span>
+		<span class="n">segments</span> <span class="o">=</span> <span class="p">[]</span>
+		<span class="k">if</span> <span class="n">points</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;move&quot;</span><span class="p">:</span>
+			<span class="c1"># It&#39;s an open contour, insert a &quot;move&quot; segment for the first</span>
+			<span class="c1"># point and remove that first point from the point list.</span>
+			<span class="n">pt</span><span class="p">,</span> <span class="n">segmentType</span><span class="p">,</span> <span class="n">smooth</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">kwargs</span> <span class="o">=</span> <span class="n">points</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+			<span class="n">segments</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s2">&quot;move&quot;</span><span class="p">,</span> <span class="p">[(</span><span class="n">pt</span><span class="p">,</span> <span class="n">smooth</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)]))</span>
+			<span class="n">points</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="c1"># It&#39;s a closed contour. Locate the first on-curve point, and</span>
+			<span class="c1"># rotate the point list so that it _ends_ with an on-curve</span>
+			<span class="c1"># point.</span>
+			<span class="n">firstOnCurve</span> <span class="o">=</span> <span class="kc">None</span>
+			<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">points</span><span class="p">)):</span>
+				<span class="n">segmentType</span> <span class="o">=</span> <span class="n">points</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+				<span class="k">if</span> <span class="n">segmentType</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+					<span class="n">firstOnCurve</span> <span class="o">=</span> <span class="n">i</span>
+					<span class="k">break</span>
+			<span class="k">if</span> <span class="n">firstOnCurve</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+				<span class="c1"># Special case for quadratics: a contour with no on-curve</span>
+				<span class="c1"># points. Add a &quot;None&quot; point. (See also the Pen protocol&#39;s</span>
+				<span class="c1"># qCurveTo() method and fontTools.pens.basePen.py.)</span>
+				<span class="n">points</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;qcurve&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="n">points</span> <span class="o">=</span> <span class="n">points</span><span class="p">[</span><span class="n">firstOnCurve</span><span class="o">+</span><span class="mi">1</span><span class="p">:]</span> <span class="o">+</span> <span class="n">points</span><span class="p">[:</span><span class="n">firstOnCurve</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
+
+		<span class="n">currentSegment</span> <span class="o">=</span> <span class="p">[]</span>
+		<span class="k">for</span> <span class="n">pt</span><span class="p">,</span> <span class="n">segmentType</span><span class="p">,</span> <span class="n">smooth</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">kwargs</span> <span class="ow">in</span> <span class="n">points</span><span class="p">:</span>
+			<span class="n">currentSegment</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">pt</span><span class="p">,</span> <span class="n">smooth</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">))</span>
+			<span class="k">if</span> <span class="n">segmentType</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+				<span class="k">continue</span>
+			<span class="n">segments</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">segmentType</span><span class="p">,</span> <span class="n">currentSegment</span><span class="p">))</span>
+			<span class="n">currentSegment</span> <span class="o">=</span> <span class="p">[]</span>
+
+		<span class="bp">self</span><span class="o">.</span><span class="n">_flushContour</span><span class="p">(</span><span class="n">segments</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="BasePointToSegmentPen.addPoint"><a class="viewcode-back" href="../../../pens/pointPen.html#fontTools.pens.cu2quPen.BasePointToSegmentPen.addPoint">[docs]</a>	<span class="k">def</span> <span class="nf">addPoint</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pt</span><span class="p">,</span> <span class="n">segmentType</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">smooth</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+				 <span class="n">identifier</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">currentPath</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">pt</span><span class="p">,</span> <span class="n">segmentType</span><span class="p">,</span> <span class="n">smooth</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">))</span></div></div>
+
+
+<div class="viewcode-block" id="PointToSegmentPen"><a class="viewcode-back" href="../../../pens/pointPen.html#fontTools.pens.cu2quPen.PointToSegmentPen">[docs]</a><span class="k">class</span> <span class="nc">PointToSegmentPen</span><span class="p">(</span><span class="n">BasePointToSegmentPen</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	Adapter class that converts the PointPen protocol to the</span>
+<span class="sd">	(Segment)Pen protocol.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">segmentPen</span><span class="p">,</span> <span class="n">outputImpliedClosingLine</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+		<span class="n">BasePointToSegmentPen</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">pen</span> <span class="o">=</span> <span class="n">segmentPen</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">outputImpliedClosingLine</span> <span class="o">=</span> <span class="n">outputImpliedClosingLine</span>
+
+	<span class="k">def</span> <span class="nf">_flushContour</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">segments</span><span class="p">):</span>
+		<span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">segments</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">1</span>
+		<span class="n">pen</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pen</span>
+		<span class="k">if</span> <span class="n">segments</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;move&quot;</span><span class="p">:</span>
+			<span class="c1"># It&#39;s an open path.</span>
+			<span class="n">closed</span> <span class="o">=</span> <span class="kc">False</span>
+			<span class="n">points</span> <span class="o">=</span> <span class="n">segments</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+			<span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">points</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;illegal move segment point count: </span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">points</span><span class="p">)</span>
+			<span class="n">movePt</span><span class="p">,</span> <span class="n">smooth</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">kwargs</span> <span class="o">=</span> <span class="n">points</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+			<span class="k">del</span> <span class="n">segments</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="c1"># It&#39;s a closed path, do a moveTo to the last</span>
+			<span class="c1"># point of the last segment.</span>
+			<span class="n">closed</span> <span class="o">=</span> <span class="kc">True</span>
+			<span class="n">segmentType</span><span class="p">,</span> <span class="n">points</span> <span class="o">=</span> <span class="n">segments</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+			<span class="n">movePt</span><span class="p">,</span> <span class="n">smooth</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">kwargs</span> <span class="o">=</span> <span class="n">points</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+		<span class="k">if</span> <span class="n">movePt</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="c1"># quad special case: a contour with no on-curve points contains</span>
+			<span class="c1"># one &quot;qcurve&quot; segment that ends with a point that&#39;s None. We</span>
+			<span class="c1"># must not output a moveTo() in that case.</span>
+			<span class="k">pass</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="n">pen</span><span class="o">.</span><span class="n">moveTo</span><span class="p">(</span><span class="n">movePt</span><span class="p">)</span>
+		<span class="n">outputImpliedClosingLine</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">outputImpliedClosingLine</span>
+		<span class="n">nSegments</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">segments</span><span class="p">)</span>
+		<span class="n">lastPt</span> <span class="o">=</span> <span class="n">movePt</span>
+		<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nSegments</span><span class="p">):</span>
+			<span class="n">segmentType</span><span class="p">,</span> <span class="n">points</span> <span class="o">=</span> <span class="n">segments</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+			<span class="n">points</span> <span class="o">=</span> <span class="p">[</span><span class="n">pt</span> <span class="k">for</span> <span class="n">pt</span><span class="p">,</span> <span class="n">smooth</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">kwargs</span> <span class="ow">in</span> <span class="n">points</span><span class="p">]</span>
+			<span class="k">if</span> <span class="n">segmentType</span> <span class="o">==</span> <span class="s2">&quot;line&quot;</span><span class="p">:</span>
+				<span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">points</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;illegal line segment point count: </span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">points</span><span class="p">)</span>
+				<span class="n">pt</span> <span class="o">=</span> <span class="n">points</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+				<span class="c1"># For closed contours, a &#39;lineTo&#39; is always implied from the last oncurve</span>
+				<span class="c1"># point to the starting point, thus we can omit it when the last and</span>
+				<span class="c1"># starting point don&#39;t overlap.</span>
+				<span class="c1"># However, when the last oncurve point is a &quot;line&quot; segment and has same</span>
+				<span class="c1"># coordinates as the starting point of a closed contour, we need to output</span>
+				<span class="c1"># the closing &#39;lineTo&#39; explicitly (regardless of the value of the</span>
+				<span class="c1"># &#39;outputImpliedClosingLine&#39; option) in order to disambiguate this case from</span>
+				<span class="c1"># the implied closing &#39;lineTo&#39;, otherwise the duplicate point would be lost.</span>
+				<span class="c1"># See https://github.com/googlefonts/fontmake/issues/572.</span>
+				<span class="k">if</span> <span class="p">(</span>
+					<span class="n">i</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">!=</span> <span class="n">nSegments</span>
+					<span class="ow">or</span> <span class="n">outputImpliedClosingLine</span>
+					<span class="ow">or</span> <span class="ow">not</span> <span class="n">closed</span>
+					<span class="ow">or</span> <span class="n">pt</span> <span class="o">==</span> <span class="n">lastPt</span>
+				<span class="p">):</span>
+					<span class="n">pen</span><span class="o">.</span><span class="n">lineTo</span><span class="p">(</span><span class="n">pt</span><span class="p">)</span>
+					<span class="n">lastPt</span> <span class="o">=</span> <span class="n">pt</span>
+			<span class="k">elif</span> <span class="n">segmentType</span> <span class="o">==</span> <span class="s2">&quot;curve&quot;</span><span class="p">:</span>
+				<span class="n">pen</span><span class="o">.</span><span class="n">curveTo</span><span class="p">(</span><span class="o">*</span><span class="n">points</span><span class="p">)</span>
+				<span class="n">lastPt</span> <span class="o">=</span> <span class="n">points</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+			<span class="k">elif</span> <span class="n">segmentType</span> <span class="o">==</span> <span class="s2">&quot;qcurve&quot;</span><span class="p">:</span>
+				<span class="n">pen</span><span class="o">.</span><span class="n">qCurveTo</span><span class="p">(</span><span class="o">*</span><span class="n">points</span><span class="p">)</span>
+				<span class="n">lastPt</span> <span class="o">=</span> <span class="n">points</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="k">assert</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;illegal segmentType: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">segmentType</span>
+		<span class="k">if</span> <span class="n">closed</span><span class="p">:</span>
+			<span class="n">pen</span><span class="o">.</span><span class="n">closePath</span><span class="p">()</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="n">pen</span><span class="o">.</span><span class="n">endPath</span><span class="p">()</span>
+
+<div class="viewcode-block" id="PointToSegmentPen.addComponent"><a class="viewcode-back" href="../../../pens/pointPen.html#fontTools.pens.cu2quPen.PointToSegmentPen.addComponent">[docs]</a>	<span class="k">def</span> <span class="nf">addComponent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">glyphName</span><span class="p">,</span> <span class="n">transform</span><span class="p">,</span> <span class="n">identifier</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+		<span class="k">del</span> <span class="n">identifier</span>  <span class="c1"># unused</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">pen</span><span class="o">.</span><span class="n">addComponent</span><span class="p">(</span><span class="n">glyphName</span><span class="p">,</span> <span class="n">transform</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="SegmentToPointPen"><a class="viewcode-back" href="../../../pens/pointPen.html#fontTools.pens.cu2quPen.SegmentToPointPen">[docs]</a><span class="k">class</span> <span class="nc">SegmentToPointPen</span><span class="p">(</span><span class="n">AbstractPen</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	Adapter class that converts the (Segment)Pen protocol to the</span>
+<span class="sd">	PointPen protocol.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pointPen</span><span class="p">,</span> <span class="n">guessSmooth</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+		<span class="k">if</span> <span class="n">guessSmooth</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">pen</span> <span class="o">=</span> <span class="n">GuessSmoothPointPen</span><span class="p">(</span><span class="n">pointPen</span><span class="p">)</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">pen</span> <span class="o">=</span> <span class="n">pointPen</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">contour</span> <span class="o">=</span> <span class="kc">None</span>
+
+	<span class="k">def</span> <span class="nf">_flushContour</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">pen</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pen</span>
+		<span class="n">pen</span><span class="o">.</span><span class="n">beginPath</span><span class="p">()</span>
+		<span class="k">for</span> <span class="n">pt</span><span class="p">,</span> <span class="n">segmentType</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">contour</span><span class="p">:</span>
+			<span class="n">pen</span><span class="o">.</span><span class="n">addPoint</span><span class="p">(</span><span class="n">pt</span><span class="p">,</span> <span class="n">segmentType</span><span class="o">=</span><span class="n">segmentType</span><span class="p">)</span>
+		<span class="n">pen</span><span class="o">.</span><span class="n">endPath</span><span class="p">()</span>
+
+<div class="viewcode-block" id="SegmentToPointPen.moveTo"><a class="viewcode-back" href="../../../pens/pointPen.html#fontTools.pens.cu2quPen.SegmentToPointPen.moveTo">[docs]</a>	<span class="k">def</span> <span class="nf">moveTo</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pt</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">contour</span> <span class="o">=</span> <span class="p">[]</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">contour</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">pt</span><span class="p">,</span> <span class="s2">&quot;move&quot;</span><span class="p">))</span></div>
+
+<div class="viewcode-block" id="SegmentToPointPen.lineTo"><a class="viewcode-back" href="../../../pens/pointPen.html#fontTools.pens.cu2quPen.SegmentToPointPen.lineTo">[docs]</a>	<span class="k">def</span> <span class="nf">lineTo</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pt</span><span class="p">):</span>
+		<span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">contour</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;contour missing required initial moveTo&quot;</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">contour</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">pt</span><span class="p">,</span> <span class="s2">&quot;line&quot;</span><span class="p">))</span></div>
+
+<div class="viewcode-block" id="SegmentToPointPen.curveTo"><a class="viewcode-back" href="../../../pens/pointPen.html#fontTools.pens.cu2quPen.SegmentToPointPen.curveTo">[docs]</a>	<span class="k">def</span> <span class="nf">curveTo</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">pts</span><span class="p">):</span>
+		<span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">contour</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;contour missing required initial moveTo&quot;</span>
+		<span class="k">for</span> <span class="n">pt</span> <span class="ow">in</span> <span class="n">pts</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">contour</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">pt</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">contour</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">pts</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="s2">&quot;curve&quot;</span><span class="p">))</span></div>
+
+<div class="viewcode-block" id="SegmentToPointPen.qCurveTo"><a class="viewcode-back" href="../../../pens/pointPen.html#fontTools.pens.cu2quPen.SegmentToPointPen.qCurveTo">[docs]</a>	<span class="k">def</span> <span class="nf">qCurveTo</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">pts</span><span class="p">):</span>
+		<span class="k">if</span> <span class="n">pts</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">contour</span> <span class="o">=</span> <span class="p">[]</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">contour</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;contour missing required initial moveTo&quot;</span>
+		<span class="k">for</span> <span class="n">pt</span> <span class="ow">in</span> <span class="n">pts</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">contour</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">pt</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
+		<span class="k">if</span> <span class="n">pts</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">contour</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">pts</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="s2">&quot;qcurve&quot;</span><span class="p">))</span></div>
+
+<div class="viewcode-block" id="SegmentToPointPen.closePath"><a class="viewcode-back" href="../../../pens/pointPen.html#fontTools.pens.cu2quPen.SegmentToPointPen.closePath">[docs]</a>	<span class="k">def</span> <span class="nf">closePath</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">contour</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;contour missing required initial moveTo&quot;</span>
+		<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">contour</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">contour</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">contour</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">contour</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">contour</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+			<span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">contour</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="c1"># There&#39;s an implied line at the end, replace &quot;move&quot; with &quot;line&quot;</span>
+			<span class="c1"># for the first point</span>
+			<span class="n">pt</span><span class="p">,</span> <span class="n">tp</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">contour</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+			<span class="k">if</span> <span class="n">tp</span> <span class="o">==</span> <span class="s2">&quot;move&quot;</span><span class="p">:</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">contour</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">pt</span><span class="p">,</span> <span class="s2">&quot;line&quot;</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_flushContour</span><span class="p">()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">contour</span> <span class="o">=</span> <span class="kc">None</span></div>
+
+<div class="viewcode-block" id="SegmentToPointPen.endPath"><a class="viewcode-back" href="../../../pens/pointPen.html#fontTools.pens.cu2quPen.SegmentToPointPen.endPath">[docs]</a>	<span class="k">def</span> <span class="nf">endPath</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">contour</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;contour missing required initial moveTo&quot;</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_flushContour</span><span class="p">()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">contour</span> <span class="o">=</span> <span class="kc">None</span></div>
+
+<div class="viewcode-block" id="SegmentToPointPen.addComponent"><a class="viewcode-back" href="../../../pens/pointPen.html#fontTools.pens.cu2quPen.SegmentToPointPen.addComponent">[docs]</a>	<span class="k">def</span> <span class="nf">addComponent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">glyphName</span><span class="p">,</span> <span class="n">transform</span><span class="p">):</span>
+		<span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">contour</span> <span class="ow">is</span> <span class="kc">None</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">pen</span><span class="o">.</span><span class="n">addComponent</span><span class="p">(</span><span class="n">glyphName</span><span class="p">,</span> <span class="n">transform</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="GuessSmoothPointPen"><a class="viewcode-back" href="../../../pens/pointPen.html#fontTools.pens.cu2quPen.GuessSmoothPointPen">[docs]</a><span class="k">class</span> <span class="nc">GuessSmoothPointPen</span><span class="p">(</span><span class="n">AbstractPointPen</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	Filtering PointPen that tries to determine whether an on-curve point</span>
+<span class="sd">	should be &quot;smooth&quot;, ie. that it&#39;s a &quot;tangent&quot; point or a &quot;curve&quot; point.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">outPen</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_outPen</span> <span class="o">=</span> <span class="n">outPen</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_points</span> <span class="o">=</span> <span class="kc">None</span>
+
+	<span class="k">def</span> <span class="nf">_flushContour</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">points</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_points</span>
+		<span class="n">nPoints</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">points</span><span class="p">)</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="n">nPoints</span><span class="p">:</span>
+			<span class="k">return</span>
+		<span class="k">if</span> <span class="n">points</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;move&quot;</span><span class="p">:</span>
+			<span class="c1"># Open path.</span>
+			<span class="n">indices</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">nPoints</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+		<span class="k">elif</span> <span class="n">nPoints</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+			<span class="c1"># Closed path. To avoid having to mod the contour index, we</span>
+			<span class="c1"># simply abuse Python&#39;s negative index feature, and start at -1</span>
+			<span class="n">indices</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">nPoints</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="c1"># closed path containing 1 point (!), ignore.</span>
+			<span class="n">indices</span> <span class="o">=</span> <span class="p">[]</span>
+		<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">indices</span><span class="p">:</span>
+			<span class="n">pt</span><span class="p">,</span> <span class="n">segmentType</span><span class="p">,</span> <span class="n">dummy</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">kwargs</span> <span class="o">=</span> <span class="n">points</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+			<span class="k">if</span> <span class="n">segmentType</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+				<span class="k">continue</span>
+			<span class="n">prev</span> <span class="o">=</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span>
+			<span class="nb">next</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+			<span class="k">if</span> <span class="n">points</span><span class="p">[</span><span class="n">prev</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">points</span><span class="p">[</span><span class="nb">next</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+				<span class="k">continue</span>
+			<span class="c1"># At least one of our neighbors is an off-curve point</span>
+			<span class="n">pt</span> <span class="o">=</span> <span class="n">points</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+			<span class="n">prevPt</span> <span class="o">=</span> <span class="n">points</span><span class="p">[</span><span class="n">prev</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+			<span class="n">nextPt</span> <span class="o">=</span> <span class="n">points</span><span class="p">[</span><span class="nb">next</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+			<span class="k">if</span> <span class="n">pt</span> <span class="o">!=</span> <span class="n">prevPt</span> <span class="ow">and</span> <span class="n">pt</span> <span class="o">!=</span> <span class="n">nextPt</span><span class="p">:</span>
+				<span class="n">dx1</span><span class="p">,</span> <span class="n">dy1</span> <span class="o">=</span> <span class="n">pt</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">prevPt</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">pt</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">prevPt</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+				<span class="n">dx2</span><span class="p">,</span> <span class="n">dy2</span> <span class="o">=</span> <span class="n">nextPt</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">pt</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">nextPt</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">pt</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+				<span class="n">a1</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">atan2</span><span class="p">(</span><span class="n">dx1</span><span class="p">,</span> <span class="n">dy1</span><span class="p">)</span>
+				<span class="n">a2</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">atan2</span><span class="p">(</span><span class="n">dx2</span><span class="p">,</span> <span class="n">dy2</span><span class="p">)</span>
+				<span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">a1</span> <span class="o">-</span> <span class="n">a2</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">0.05</span><span class="p">:</span>
+					<span class="n">points</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">pt</span><span class="p">,</span> <span class="n">segmentType</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">kwargs</span>
+
+		<span class="k">for</span> <span class="n">pt</span><span class="p">,</span> <span class="n">segmentType</span><span class="p">,</span> <span class="n">smooth</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">kwargs</span> <span class="ow">in</span> <span class="n">points</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_outPen</span><span class="o">.</span><span class="n">addPoint</span><span class="p">(</span><span class="n">pt</span><span class="p">,</span> <span class="n">segmentType</span><span class="p">,</span> <span class="n">smooth</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<div class="viewcode-block" id="GuessSmoothPointPen.beginPath"><a class="viewcode-back" href="../../../pens/pointPen.html#fontTools.pens.cu2quPen.GuessSmoothPointPen.beginPath">[docs]</a>	<span class="k">def</span> <span class="nf">beginPath</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">identifier</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+		<span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">_points</span> <span class="ow">is</span> <span class="kc">None</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_points</span> <span class="o">=</span> <span class="p">[]</span>
+		<span class="k">if</span> <span class="n">identifier</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;identifier&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">identifier</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_outPen</span><span class="o">.</span><span class="n">beginPath</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="GuessSmoothPointPen.endPath"><a class="viewcode-back" href="../../../pens/pointPen.html#fontTools.pens.cu2quPen.GuessSmoothPointPen.endPath">[docs]</a>	<span class="k">def</span> <span class="nf">endPath</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_flushContour</span><span class="p">()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_outPen</span><span class="o">.</span><span class="n">endPath</span><span class="p">()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_points</span> <span class="o">=</span> <span class="kc">None</span></div>
+
+<div class="viewcode-block" id="GuessSmoothPointPen.addPoint"><a class="viewcode-back" href="../../../pens/pointPen.html#fontTools.pens.cu2quPen.GuessSmoothPointPen.addPoint">[docs]</a>	<span class="k">def</span> <span class="nf">addPoint</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pt</span><span class="p">,</span> <span class="n">segmentType</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">smooth</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+				 <span class="n">identifier</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+		<span class="k">if</span> <span class="n">identifier</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;identifier&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">identifier</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_points</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">pt</span><span class="p">,</span> <span class="n">segmentType</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">))</span></div>
+
+<div class="viewcode-block" id="GuessSmoothPointPen.addComponent"><a class="viewcode-back" href="../../../pens/pointPen.html#fontTools.pens.cu2quPen.GuessSmoothPointPen.addComponent">[docs]</a>	<span class="k">def</span> <span class="nf">addComponent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">glyphName</span><span class="p">,</span> <span class="n">transformation</span><span class="p">,</span> <span class="n">identifier</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+		<span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">_points</span> <span class="ow">is</span> <span class="kc">None</span>
+		<span class="k">if</span> <span class="n">identifier</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;identifier&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">identifier</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_outPen</span><span class="o">.</span><span class="n">addComponent</span><span class="p">(</span><span class="n">glyphName</span><span class="p">,</span> <span class="n">transformation</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="ReverseContourPointPen"><a class="viewcode-back" href="../../../pens/pointPen.html#fontTools.pens.cu2quPen.ReverseContourPointPen">[docs]</a><span class="k">class</span> <span class="nc">ReverseContourPointPen</span><span class="p">(</span><span class="n">AbstractPointPen</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	This is a PointPen that passes outline data to another PointPen, but</span>
+<span class="sd">	reversing the winding direction of all contours. Components are simply</span>
+<span class="sd">	passed through unchanged.</span>
+
+<span class="sd">	Closed contours are reversed in such a way that the first point remains</span>
+<span class="sd">	the first point.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">outputPointPen</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">pen</span> <span class="o">=</span> <span class="n">outputPointPen</span>
+		<span class="c1"># a place to store the points for the current sub path</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">currentContour</span> <span class="o">=</span> <span class="kc">None</span>
+
+	<span class="k">def</span> <span class="nf">_flushContour</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">pen</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pen</span>
+		<span class="n">contour</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">currentContour</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="n">contour</span><span class="p">:</span>
+			<span class="n">pen</span><span class="o">.</span><span class="n">beginPath</span><span class="p">(</span><span class="n">identifier</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">currentContourIdentifier</span><span class="p">)</span>
+			<span class="n">pen</span><span class="o">.</span><span class="n">endPath</span><span class="p">()</span>
+			<span class="k">return</span>
+
+		<span class="n">closed</span> <span class="o">=</span> <span class="n">contour</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">&quot;move&quot;</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="n">closed</span><span class="p">:</span>
+			<span class="n">lastSegmentType</span> <span class="o">=</span> <span class="s2">&quot;move&quot;</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="c1"># Remove the first point and insert it at the end. When</span>
+			<span class="c1"># the list of points gets reversed, this point will then</span>
+			<span class="c1"># again be at the start. In other words, the following</span>
+			<span class="c1"># will hold:</span>
+			<span class="c1">#   for N in range(len(originalContour)):</span>
+			<span class="c1">#       originalContour[N] == reversedContour[-N]</span>
+			<span class="n">contour</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">contour</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+			<span class="c1"># Find the first on-curve point.</span>
+			<span class="n">firstOnCurve</span> <span class="o">=</span> <span class="kc">None</span>
+			<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">contour</span><span class="p">)):</span>
+				<span class="k">if</span> <span class="n">contour</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+					<span class="n">firstOnCurve</span> <span class="o">=</span> <span class="n">i</span>
+					<span class="k">break</span>
+			<span class="k">if</span> <span class="n">firstOnCurve</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+				<span class="c1"># There are no on-curve points, be basically have to</span>
+				<span class="c1"># do nothing but contour.reverse().</span>
+				<span class="n">lastSegmentType</span> <span class="o">=</span> <span class="kc">None</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="n">lastSegmentType</span> <span class="o">=</span> <span class="n">contour</span><span class="p">[</span><span class="n">firstOnCurve</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+
+		<span class="n">contour</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="n">closed</span><span class="p">:</span>
+			<span class="c1"># Open paths must start with a move, so we simply dump</span>
+			<span class="c1"># all off-curve points leading up to the first on-curve.</span>
+			<span class="k">while</span> <span class="n">contour</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+				<span class="n">contour</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+		<span class="n">pen</span><span class="o">.</span><span class="n">beginPath</span><span class="p">(</span><span class="n">identifier</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">currentContourIdentifier</span><span class="p">)</span>
+		<span class="k">for</span> <span class="n">pt</span><span class="p">,</span> <span class="n">nextSegmentType</span><span class="p">,</span> <span class="n">smooth</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">kwargs</span> <span class="ow">in</span> <span class="n">contour</span><span class="p">:</span>
+			<span class="k">if</span> <span class="n">nextSegmentType</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+				<span class="n">segmentType</span> <span class="o">=</span> <span class="n">lastSegmentType</span>
+				<span class="n">lastSegmentType</span> <span class="o">=</span> <span class="n">nextSegmentType</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="n">segmentType</span> <span class="o">=</span> <span class="kc">None</span>
+			<span class="n">pen</span><span class="o">.</span><span class="n">addPoint</span><span class="p">(</span><span class="n">pt</span><span class="p">,</span> <span class="n">segmentType</span><span class="o">=</span><span class="n">segmentType</span><span class="p">,</span> <span class="n">smooth</span><span class="o">=</span><span class="n">smooth</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+		<span class="n">pen</span><span class="o">.</span><span class="n">endPath</span><span class="p">()</span>
+
+<div class="viewcode-block" id="ReverseContourPointPen.beginPath"><a class="viewcode-back" href="../../../pens/pointPen.html#fontTools.pens.cu2quPen.ReverseContourPointPen.beginPath">[docs]</a>	<span class="k">def</span> <span class="nf">beginPath</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">identifier</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+		<span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">currentContour</span> <span class="ow">is</span> <span class="kc">None</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">currentContour</span> <span class="o">=</span> <span class="p">[]</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">currentContourIdentifier</span> <span class="o">=</span> <span class="n">identifier</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">onCurve</span> <span class="o">=</span> <span class="p">[]</span></div>
+
+<div class="viewcode-block" id="ReverseContourPointPen.endPath"><a class="viewcode-back" href="../../../pens/pointPen.html#fontTools.pens.cu2quPen.ReverseContourPointPen.endPath">[docs]</a>	<span class="k">def</span> <span class="nf">endPath</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">currentContour</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_flushContour</span><span class="p">()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">currentContour</span> <span class="o">=</span> <span class="kc">None</span></div>
+
+<div class="viewcode-block" id="ReverseContourPointPen.addPoint"><a class="viewcode-back" href="../../../pens/pointPen.html#fontTools.pens.cu2quPen.ReverseContourPointPen.addPoint">[docs]</a>	<span class="k">def</span> <span class="nf">addPoint</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pt</span><span class="p">,</span> <span class="n">segmentType</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">smooth</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">currentContour</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">pt</span><span class="p">,</span> <span class="n">segmentType</span><span class="p">,</span> <span class="n">smooth</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">))</span></div>
+
+<div class="viewcode-block" id="ReverseContourPointPen.addComponent"><a class="viewcode-back" href="../../../pens/pointPen.html#fontTools.pens.cu2quPen.ReverseContourPointPen.addComponent">[docs]</a>	<span class="k">def</span> <span class="nf">addComponent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">glyphName</span><span class="p">,</span> <span class="n">transform</span><span class="p">,</span> <span class="n">identifier</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+		<span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">currentContour</span> <span class="ow">is</span> <span class="kc">None</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">pen</span><span class="o">.</span><span class="n">addComponent</span><span class="p">(</span><span class="n">glyphName</span><span class="p">,</span> <span class="n">transform</span><span class="p">,</span> <span class="n">identifier</span><span class="o">=</span><span class="n">identifier</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Just van Rossum, Behdad Esfahbod, and the fontTools Authors. CC BY-SA 4.0
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

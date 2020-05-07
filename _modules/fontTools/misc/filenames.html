@@ -1,0 +1,431 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>fontTools.misc.filenames &mdash; fontTools Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> fontTools
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Library</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../afmLib.html">afmLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../agl.html">agl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cffLib/index.html">cffLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../colorLib/index.html">colorLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cu2qu/index.html">cu2qu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../designspaceLib/index.html">designspaceLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../encodings/index.html">encodings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../feaLib/index.html">feaLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../merge.html">merge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../misc/index.html">misc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../mtiLib.html">mtiLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../otlLib/index.html">otlLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pens/index.html">pens</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../subset/index.html">subset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../svgLib/index.html">svgLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../t1Lib.html">t1Lib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ttLib/index.html">ttLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ttx.html">ttx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ufoLib/index.html">ufoLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../unicode.html">unicode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../unicodedata/index.html">unicodedata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../varLib/index.html">varLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../voltLib.html">voltLib</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">fontTools</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>fontTools.misc.filenames</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for fontTools.misc.filenames</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">User name to file name conversion based on the UFO 3 spec:</span>
+<span class="sd">http://unifiedfontobject.org/versions/ufo3/conventions/</span>
+
+<span class="sd">The code was copied from:</span>
+<span class="sd">https://github.com/unified-font-object/ufoLib/blob/8747da7/Lib/ufoLib/filenames.py</span>
+
+<span class="sd">Author: Tal Leming</span>
+<span class="sd">Copyright (c) 2005-2016, The RoboFab Developers:</span>
+<span class="sd">	Erik van Blokland</span>
+<span class="sd">	Tal Leming</span>
+<span class="sd">	Just van Rossum</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">fontTools.misc.py23</span> <span class="k">import</span> <span class="n">basestring</span><span class="p">,</span> <span class="n">unicode</span>
+
+
+<span class="n">illegalCharacters</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;</span><span class="se">\&quot;</span><span class="s2"> * + / : &lt; &gt; ? [ \ ] | \0&quot;</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+<span class="n">illegalCharacters</span> <span class="o">+=</span> <span class="p">[</span><span class="nb">chr</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">32</span><span class="p">)]</span>
+<span class="n">illegalCharacters</span> <span class="o">+=</span> <span class="p">[</span><span class="nb">chr</span><span class="p">(</span><span class="mh">0x7F</span><span class="p">)]</span>
+<span class="n">reservedFileNames</span> <span class="o">=</span> <span class="s2">&quot;CON PRN AUX CLOCK$ NUL A:-Z: COM1&quot;</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+<span class="n">reservedFileNames</span> <span class="o">+=</span> <span class="s2">&quot;LPT1 LPT2 LPT3 COM2 COM3 COM4&quot;</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+<span class="n">maxFileNameLength</span> <span class="o">=</span> <span class="mi">255</span>
+
+
+<div class="viewcode-block" id="NameTranslationError"><a class="viewcode-back" href="../../../misc/filenames.html#fontTools.misc.filenames.NameTranslationError">[docs]</a><span class="k">class</span> <span class="nc">NameTranslationError</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+	<span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="userNameToFileName"><a class="viewcode-back" href="../../../misc/filenames.html#fontTools.misc.filenames.userNameToFileName">[docs]</a><span class="k">def</span> <span class="nf">userNameToFileName</span><span class="p">(</span><span class="n">userName</span><span class="p">,</span> <span class="n">existing</span><span class="o">=</span><span class="p">[],</span> <span class="n">prefix</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">suffix</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	existing should be a case-insensitive list</span>
+<span class="sd">	of all existing file names.</span>
+
+<span class="sd">	&gt;&gt;&gt; userNameToFileName(&quot;a&quot;) == &quot;a&quot;</span>
+<span class="sd">	True</span>
+<span class="sd">	&gt;&gt;&gt; userNameToFileName(&quot;A&quot;) == &quot;A_&quot;</span>
+<span class="sd">	True</span>
+<span class="sd">	&gt;&gt;&gt; userNameToFileName(&quot;AE&quot;) == &quot;A_E_&quot;</span>
+<span class="sd">	True</span>
+<span class="sd">	&gt;&gt;&gt; userNameToFileName(&quot;Ae&quot;) == &quot;A_e&quot;</span>
+<span class="sd">	True</span>
+<span class="sd">	&gt;&gt;&gt; userNameToFileName(&quot;ae&quot;) == &quot;ae&quot;</span>
+<span class="sd">	True</span>
+<span class="sd">	&gt;&gt;&gt; userNameToFileName(&quot;aE&quot;) == &quot;aE_&quot;</span>
+<span class="sd">	True</span>
+<span class="sd">	&gt;&gt;&gt; userNameToFileName(&quot;a.alt&quot;) == &quot;a.alt&quot;</span>
+<span class="sd">	True</span>
+<span class="sd">	&gt;&gt;&gt; userNameToFileName(&quot;A.alt&quot;) == &quot;A_.alt&quot;</span>
+<span class="sd">	True</span>
+<span class="sd">	&gt;&gt;&gt; userNameToFileName(&quot;A.Alt&quot;) == &quot;A_.A_lt&quot;</span>
+<span class="sd">	True</span>
+<span class="sd">	&gt;&gt;&gt; userNameToFileName(&quot;A.aLt&quot;) == &quot;A_.aL_t&quot;</span>
+<span class="sd">	True</span>
+<span class="sd">	&gt;&gt;&gt; userNameToFileName(u&quot;A.alT&quot;) == &quot;A_.alT_&quot;</span>
+<span class="sd">	True</span>
+<span class="sd">	&gt;&gt;&gt; userNameToFileName(&quot;T_H&quot;) == &quot;T__H_&quot;</span>
+<span class="sd">	True</span>
+<span class="sd">	&gt;&gt;&gt; userNameToFileName(&quot;T_h&quot;) == &quot;T__h&quot;</span>
+<span class="sd">	True</span>
+<span class="sd">	&gt;&gt;&gt; userNameToFileName(&quot;t_h&quot;) == &quot;t_h&quot;</span>
+<span class="sd">	True</span>
+<span class="sd">	&gt;&gt;&gt; userNameToFileName(&quot;F_F_I&quot;) == &quot;F__F__I_&quot;</span>
+<span class="sd">	True</span>
+<span class="sd">	&gt;&gt;&gt; userNameToFileName(&quot;f_f_i&quot;) == &quot;f_f_i&quot;</span>
+<span class="sd">	True</span>
+<span class="sd">	&gt;&gt;&gt; userNameToFileName(&quot;Aacute_V.swash&quot;) == &quot;A_acute_V_.swash&quot;</span>
+<span class="sd">	True</span>
+<span class="sd">	&gt;&gt;&gt; userNameToFileName(&quot;.notdef&quot;) == &quot;_notdef&quot;</span>
+<span class="sd">	True</span>
+<span class="sd">	&gt;&gt;&gt; userNameToFileName(&quot;con&quot;) == &quot;_con&quot;</span>
+<span class="sd">	True</span>
+<span class="sd">	&gt;&gt;&gt; userNameToFileName(&quot;CON&quot;) == &quot;C_O_N_&quot;</span>
+<span class="sd">	True</span>
+<span class="sd">	&gt;&gt;&gt; userNameToFileName(&quot;con.alt&quot;) == &quot;_con.alt&quot;</span>
+<span class="sd">	True</span>
+<span class="sd">	&gt;&gt;&gt; userNameToFileName(&quot;alt.con&quot;) == &quot;alt._con&quot;</span>
+<span class="sd">	True</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="c1"># the incoming name must be a unicode string</span>
+	<span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">userName</span><span class="p">,</span> <span class="n">unicode</span><span class="p">):</span>
+		<span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;The value for userName must be a unicode string.&quot;</span><span class="p">)</span>
+	<span class="c1"># establish the prefix and suffix lengths</span>
+	<span class="n">prefixLength</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">prefix</span><span class="p">)</span>
+	<span class="n">suffixLength</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">suffix</span><span class="p">)</span>
+	<span class="c1"># replace an initial period with an _</span>
+	<span class="c1"># if no prefix is to be added</span>
+	<span class="k">if</span> <span class="ow">not</span> <span class="n">prefix</span> <span class="ow">and</span> <span class="n">userName</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;.&quot;</span><span class="p">:</span>
+		<span class="n">userName</span> <span class="o">=</span> <span class="s2">&quot;_&quot;</span> <span class="o">+</span> <span class="n">userName</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+	<span class="c1"># filter the user name</span>
+	<span class="n">filteredUserName</span> <span class="o">=</span> <span class="p">[]</span>
+	<span class="k">for</span> <span class="n">character</span> <span class="ow">in</span> <span class="n">userName</span><span class="p">:</span>
+		<span class="c1"># replace illegal characters with _</span>
+		<span class="k">if</span> <span class="n">character</span> <span class="ow">in</span> <span class="n">illegalCharacters</span><span class="p">:</span>
+			<span class="n">character</span> <span class="o">=</span> <span class="s2">&quot;_&quot;</span>
+		<span class="c1"># add _ to all non-lower characters</span>
+		<span class="k">elif</span> <span class="n">character</span> <span class="o">!=</span> <span class="n">character</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>
+			<span class="n">character</span> <span class="o">+=</span> <span class="s2">&quot;_&quot;</span>
+		<span class="n">filteredUserName</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">character</span><span class="p">)</span>
+	<span class="n">userName</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">filteredUserName</span><span class="p">)</span>
+	<span class="c1"># clip to 255</span>
+	<span class="n">sliceLength</span> <span class="o">=</span> <span class="n">maxFileNameLength</span> <span class="o">-</span> <span class="n">prefixLength</span> <span class="o">-</span> <span class="n">suffixLength</span>
+	<span class="n">userName</span> <span class="o">=</span> <span class="n">userName</span><span class="p">[:</span><span class="n">sliceLength</span><span class="p">]</span>
+	<span class="c1"># test for illegal files names</span>
+	<span class="n">parts</span> <span class="o">=</span> <span class="p">[]</span>
+	<span class="k">for</span> <span class="n">part</span> <span class="ow">in</span> <span class="n">userName</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">):</span>
+		<span class="k">if</span> <span class="n">part</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">in</span> <span class="n">reservedFileNames</span><span class="p">:</span>
+			<span class="n">part</span> <span class="o">=</span> <span class="s2">&quot;_&quot;</span> <span class="o">+</span> <span class="n">part</span>
+		<span class="n">parts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">part</span><span class="p">)</span>
+	<span class="n">userName</span> <span class="o">=</span> <span class="s2">&quot;.&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">parts</span><span class="p">)</span>
+	<span class="c1"># test for clash</span>
+	<span class="n">fullName</span> <span class="o">=</span> <span class="n">prefix</span> <span class="o">+</span> <span class="n">userName</span> <span class="o">+</span> <span class="n">suffix</span>
+	<span class="k">if</span> <span class="n">fullName</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">in</span> <span class="n">existing</span><span class="p">:</span>
+		<span class="n">fullName</span> <span class="o">=</span> <span class="n">handleClash1</span><span class="p">(</span><span class="n">userName</span><span class="p">,</span> <span class="n">existing</span><span class="p">,</span> <span class="n">prefix</span><span class="p">,</span> <span class="n">suffix</span><span class="p">)</span>
+	<span class="c1"># finished</span>
+	<span class="k">return</span> <span class="n">fullName</span></div>
+
+<div class="viewcode-block" id="handleClash1"><a class="viewcode-back" href="../../../misc/filenames.html#fontTools.misc.filenames.handleClash1">[docs]</a><span class="k">def</span> <span class="nf">handleClash1</span><span class="p">(</span><span class="n">userName</span><span class="p">,</span> <span class="n">existing</span><span class="o">=</span><span class="p">[],</span> <span class="n">prefix</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">suffix</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	existing should be a case-insensitive list</span>
+<span class="sd">	of all existing file names.</span>
+
+<span class="sd">	&gt;&gt;&gt; prefix = (&quot;0&quot; * 5) + &quot;.&quot;</span>
+<span class="sd">	&gt;&gt;&gt; suffix = &quot;.&quot; + (&quot;0&quot; * 10)</span>
+<span class="sd">	&gt;&gt;&gt; existing = [&quot;a&quot; * 5]</span>
+
+<span class="sd">	&gt;&gt;&gt; e = list(existing)</span>
+<span class="sd">	&gt;&gt;&gt; handleClash1(userName=&quot;A&quot; * 5, existing=e,</span>
+<span class="sd">	...		prefix=prefix, suffix=suffix) == (</span>
+<span class="sd">	... 	&#39;00000.AAAAA000000000000001.0000000000&#39;)</span>
+<span class="sd">	True</span>
+
+<span class="sd">	&gt;&gt;&gt; e = list(existing)</span>
+<span class="sd">	&gt;&gt;&gt; e.append(prefix + &quot;aaaaa&quot; + &quot;1&quot;.zfill(15) + suffix)</span>
+<span class="sd">	&gt;&gt;&gt; handleClash1(userName=&quot;A&quot; * 5, existing=e,</span>
+<span class="sd">	...		prefix=prefix, suffix=suffix) == (</span>
+<span class="sd">	... 	&#39;00000.AAAAA000000000000002.0000000000&#39;)</span>
+<span class="sd">	True</span>
+
+<span class="sd">	&gt;&gt;&gt; e = list(existing)</span>
+<span class="sd">	&gt;&gt;&gt; e.append(prefix + &quot;AAAAA&quot; + &quot;2&quot;.zfill(15) + suffix)</span>
+<span class="sd">	&gt;&gt;&gt; handleClash1(userName=&quot;A&quot; * 5, existing=e,</span>
+<span class="sd">	...		prefix=prefix, suffix=suffix) == (</span>
+<span class="sd">	... 	&#39;00000.AAAAA000000000000001.0000000000&#39;)</span>
+<span class="sd">	True</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="c1"># if the prefix length + user name length + suffix length + 15 is at</span>
+	<span class="c1"># or past the maximum length, silce 15 characters off of the user name</span>
+	<span class="n">prefixLength</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">prefix</span><span class="p">)</span>
+	<span class="n">suffixLength</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">suffix</span><span class="p">)</span>
+	<span class="k">if</span> <span class="n">prefixLength</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">userName</span><span class="p">)</span> <span class="o">+</span> <span class="n">suffixLength</span> <span class="o">+</span> <span class="mi">15</span> <span class="o">&gt;</span> <span class="n">maxFileNameLength</span><span class="p">:</span>
+		<span class="n">l</span> <span class="o">=</span> <span class="p">(</span><span class="n">prefixLength</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">userName</span><span class="p">)</span> <span class="o">+</span> <span class="n">suffixLength</span> <span class="o">+</span> <span class="mi">15</span><span class="p">)</span>
+		<span class="n">sliceLength</span> <span class="o">=</span> <span class="n">maxFileNameLength</span> <span class="o">-</span> <span class="n">l</span>
+		<span class="n">userName</span> <span class="o">=</span> <span class="n">userName</span><span class="p">[:</span><span class="n">sliceLength</span><span class="p">]</span>
+	<span class="n">finalName</span> <span class="o">=</span> <span class="kc">None</span>
+	<span class="c1"># try to add numbers to create a unique name</span>
+	<span class="n">counter</span> <span class="o">=</span> <span class="mi">1</span>
+	<span class="k">while</span> <span class="n">finalName</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+		<span class="n">name</span> <span class="o">=</span> <span class="n">userName</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">counter</span><span class="p">)</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
+		<span class="n">fullName</span> <span class="o">=</span> <span class="n">prefix</span> <span class="o">+</span> <span class="n">name</span> <span class="o">+</span> <span class="n">suffix</span>
+		<span class="k">if</span> <span class="n">fullName</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">existing</span><span class="p">:</span>
+			<span class="n">finalName</span> <span class="o">=</span> <span class="n">fullName</span>
+			<span class="k">break</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="n">counter</span> <span class="o">+=</span> <span class="mi">1</span>
+		<span class="k">if</span> <span class="n">counter</span> <span class="o">&gt;=</span> <span class="mi">999999999999999</span><span class="p">:</span>
+			<span class="k">break</span>
+	<span class="c1"># if there is a clash, go to the next fallback</span>
+	<span class="k">if</span> <span class="n">finalName</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+		<span class="n">finalName</span> <span class="o">=</span> <span class="n">handleClash2</span><span class="p">(</span><span class="n">existing</span><span class="p">,</span> <span class="n">prefix</span><span class="p">,</span> <span class="n">suffix</span><span class="p">)</span>
+	<span class="c1"># finished</span>
+	<span class="k">return</span> <span class="n">finalName</span></div>
+
+<div class="viewcode-block" id="handleClash2"><a class="viewcode-back" href="../../../misc/filenames.html#fontTools.misc.filenames.handleClash2">[docs]</a><span class="k">def</span> <span class="nf">handleClash2</span><span class="p">(</span><span class="n">existing</span><span class="o">=</span><span class="p">[],</span> <span class="n">prefix</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">suffix</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	existing should be a case-insensitive list</span>
+<span class="sd">	of all existing file names.</span>
+
+<span class="sd">	&gt;&gt;&gt; prefix = (&quot;0&quot; * 5) + &quot;.&quot;</span>
+<span class="sd">	&gt;&gt;&gt; suffix = &quot;.&quot; + (&quot;0&quot; * 10)</span>
+<span class="sd">	&gt;&gt;&gt; existing = [prefix + str(i) + suffix for i in range(100)]</span>
+
+<span class="sd">	&gt;&gt;&gt; e = list(existing)</span>
+<span class="sd">	&gt;&gt;&gt; handleClash2(existing=e, prefix=prefix, suffix=suffix) == (</span>
+<span class="sd">	... 	&#39;00000.100.0000000000&#39;)</span>
+<span class="sd">	True</span>
+
+<span class="sd">	&gt;&gt;&gt; e = list(existing)</span>
+<span class="sd">	&gt;&gt;&gt; e.remove(prefix + &quot;1&quot; + suffix)</span>
+<span class="sd">	&gt;&gt;&gt; handleClash2(existing=e, prefix=prefix, suffix=suffix) == (</span>
+<span class="sd">	... 	&#39;00000.1.0000000000&#39;)</span>
+<span class="sd">	True</span>
+
+<span class="sd">	&gt;&gt;&gt; e = list(existing)</span>
+<span class="sd">	&gt;&gt;&gt; e.remove(prefix + &quot;2&quot; + suffix)</span>
+<span class="sd">	&gt;&gt;&gt; handleClash2(existing=e, prefix=prefix, suffix=suffix) == (</span>
+<span class="sd">	... 	&#39;00000.2.0000000000&#39;)</span>
+<span class="sd">	True</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="c1"># calculate the longest possible string</span>
+	<span class="n">maxLength</span> <span class="o">=</span> <span class="n">maxFileNameLength</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">prefix</span><span class="p">)</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">suffix</span><span class="p">)</span>
+	<span class="n">maxValue</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="s2">&quot;9&quot;</span> <span class="o">*</span> <span class="n">maxLength</span><span class="p">)</span>
+	<span class="c1"># try to find a number</span>
+	<span class="n">finalName</span> <span class="o">=</span> <span class="kc">None</span>
+	<span class="n">counter</span> <span class="o">=</span> <span class="mi">1</span>
+	<span class="k">while</span> <span class="n">finalName</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+		<span class="n">fullName</span> <span class="o">=</span> <span class="n">prefix</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">counter</span><span class="p">)</span> <span class="o">+</span> <span class="n">suffix</span>
+		<span class="k">if</span> <span class="n">fullName</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">existing</span><span class="p">:</span>
+			<span class="n">finalName</span> <span class="o">=</span> <span class="n">fullName</span>
+			<span class="k">break</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="n">counter</span> <span class="o">+=</span> <span class="mi">1</span>
+		<span class="k">if</span> <span class="n">counter</span> <span class="o">&gt;=</span> <span class="n">maxValue</span><span class="p">:</span>
+			<span class="k">break</span>
+	<span class="c1"># raise an error if nothing has been found</span>
+	<span class="k">if</span> <span class="n">finalName</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+		<span class="k">raise</span> <span class="n">NameTranslationError</span><span class="p">(</span><span class="s2">&quot;No unique name could be found.&quot;</span><span class="p">)</span>
+	<span class="c1"># finished</span>
+	<span class="k">return</span> <span class="n">finalName</span></div>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+	<span class="kn">import</span> <span class="nn">doctest</span>
+	<span class="kn">import</span> <span class="nn">sys</span>
+	<span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="n">doctest</span><span class="o">.</span><span class="n">testmod</span><span class="p">()</span><span class="o">.</span><span class="n">failed</span><span class="p">)</span>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Just van Rossum, Behdad Esfahbod, and the fontTools Authors. CC BY-SA 4.0
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,368 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>t1Lib &mdash; fontTools Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="ttLib" href="ttLib/index.html" />
+    <link rel="prev" title="parser" href="svgLib/path/parser.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> fontTools
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Library</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="afmLib.html">afmLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agl.html">agl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cffLib/index.html">cffLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="colorLib/index.html">colorLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cu2qu/index.html">cu2qu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="designspaceLib/index.html">designspaceLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="encodings/index.html">encodings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="feaLib/index.html">feaLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="merge.html">merge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="misc/index.html">misc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mtiLib.html">mtiLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="otlLib/index.html">otlLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pens/index.html">pens</a></li>
+<li class="toctree-l1"><a class="reference internal" href="subset/index.html">subset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="svgLib/index.html">svgLib</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">t1Lib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ttLib/index.html">ttLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ttx.html">ttx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ufoLib/index.html">ufoLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unicode.html">unicode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unicodedata/index.html">unicodedata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="varLib/index.html">varLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="voltLib.html">voltLib</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">fontTools</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>t1Lib</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/t1Lib.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-fontTools.t1Lib">
+<span id="t1lib"></span><h1>t1Lib<a class="headerlink" href="#module-fontTools.t1Lib" title="Permalink to this headline">¶</a></h1>
+<p>fontTools.t1Lib.py – Tools for PostScript Type 1 fonts (Python2 only)</p>
+<p>Functions for reading and writing raw Type 1 data:</p>
+<dl class="simple">
+<dt>read(path)</dt><dd><p>reads any Type 1 font file, returns the raw data and a type indicator:
+‘LWFN’, ‘PFB’ or ‘OTHER’, depending on the format of the file pointed
+to by ‘path’.
+Raises an error when the file does not contain valid Type 1 data.</p>
+</dd>
+<dt>write(path, data, kind=’OTHER’, dohex=False)</dt><dd><p>writes raw Type 1 data to the file pointed to by ‘path’.
+‘kind’ can be one of ‘LWFN’, ‘PFB’ or ‘OTHER’; it defaults to ‘OTHER’.
+‘dohex’ is a flag which determines whether the eexec encrypted
+part should be written as hexadecimal or binary, but only if kind
+is ‘OTHER’.</p>
+</dd>
+</dl>
+<dl class="py exception">
+<dt id="fontTools.t1Lib.T1Error">
+<em class="property">exception </em><code class="sig-prename descclassname">fontTools.t1Lib.</code><code class="sig-name descname">T1Error</code><a class="reference internal" href="_modules/fontTools/t1Lib.html#T1Error"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.t1Lib.T1Error" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py attribute">
+<dt id="fontTools.t1Lib.T1Error.args">
+<code class="sig-name descname">args</code><a class="headerlink" href="#fontTools.t1Lib.T1Error.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.t1Lib.T1Error.with_traceback">
+<code class="sig-name descname">with_traceback</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.t1Lib.T1Error.with_traceback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.t1Lib.T1Font">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.t1Lib.</code><code class="sig-name descname">T1Font</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em>, <em class="sig-param"><span class="n">encoding</span><span class="o">=</span><span class="default_value">'ascii'</span></em>, <em class="sig-param"><span class="n">kind</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/t1Lib.html#T1Font"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.t1Lib.T1Font" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type 1 font class.</p>
+<p>Uses a minimal interpeter that supports just about enough PS to parse
+Type 1 fonts.</p>
+<dl class="py method">
+<dt id="fontTools.t1Lib.T1Font.getData">
+<code class="sig-name descname">getData</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/t1Lib.html#T1Font.getData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.t1Lib.T1Font.getData" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.t1Lib.T1Font.getGlyphSet">
+<code class="sig-name descname">getGlyphSet</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/t1Lib.html#T1Font.getGlyphSet"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.t1Lib.T1Font.getGlyphSet" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a generic GlyphSet, which is a dict-like object
+mapping glyph names to glyph objects. The returned glyph objects
+have a .draw() method that supports the Pen protocol, and will
+have an attribute named ‘width’, but only <em>after</em> the .draw() method
+has been called.</p>
+<p>In the case of Type 1, the GlyphSet is simply the CharStrings dict.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.t1Lib.T1Font.parse">
+<code class="sig-name descname">parse</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/t1Lib.html#T1Font.parse"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.t1Lib.T1Font.parse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.t1Lib.T1Font.saveAs">
+<code class="sig-name descname">saveAs</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em>, <em class="sig-param"><span class="n">type</span></em>, <em class="sig-param"><span class="n">dohex</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/t1Lib.html#T1Font.saveAs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.t1Lib.T1Font.saveAs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.t1Lib.assertType1">
+<code class="sig-prename descclassname">fontTools.t1Lib.</code><code class="sig-name descname">assertType1</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/t1Lib.html#assertType1"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.t1Lib.assertType1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.t1Lib.deHexString">
+<code class="sig-prename descclassname">fontTools.t1Lib.</code><code class="sig-name descname">deHexString</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">hexstring</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/t1Lib.html#deHexString"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.t1Lib.deHexString" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.t1Lib.decryptType1">
+<code class="sig-prename descclassname">fontTools.t1Lib.</code><code class="sig-name descname">decryptType1</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/t1Lib.html#decryptType1"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.t1Lib.decryptType1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.t1Lib.findEncryptedChunks">
+<code class="sig-prename descclassname">fontTools.t1Lib.</code><code class="sig-name descname">findEncryptedChunks</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/t1Lib.html#findEncryptedChunks"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.t1Lib.findEncryptedChunks" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.t1Lib.isHex">
+<code class="sig-prename descclassname">fontTools.t1Lib.</code><code class="sig-name descname">isHex</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/t1Lib.html#isHex"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.t1Lib.isHex" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.t1Lib.longToString">
+<code class="sig-prename descclassname">fontTools.t1Lib.</code><code class="sig-name descname">longToString</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">long</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/t1Lib.html#longToString"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.t1Lib.longToString" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.t1Lib.read">
+<code class="sig-prename descclassname">fontTools.t1Lib.</code><code class="sig-name descname">read</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em>, <em class="sig-param"><span class="n">onlyHeader</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/t1Lib.html#read"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.t1Lib.read" title="Permalink to this definition">¶</a></dt>
+<dd><p>reads any Type 1 font file, returns raw data</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.t1Lib.readLWFN">
+<code class="sig-prename descclassname">fontTools.t1Lib.</code><code class="sig-name descname">readLWFN</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em>, <em class="sig-param"><span class="n">onlyHeader</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/t1Lib.html#readLWFN"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.t1Lib.readLWFN" title="Permalink to this definition">¶</a></dt>
+<dd><p>reads an LWFN font file, returns raw data</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.t1Lib.readOther">
+<code class="sig-prename descclassname">fontTools.t1Lib.</code><code class="sig-name descname">readOther</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/t1Lib.html#readOther"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.t1Lib.readOther" title="Permalink to this definition">¶</a></dt>
+<dd><p>reads any (font) file, returns raw data</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.t1Lib.readPFB">
+<code class="sig-prename descclassname">fontTools.t1Lib.</code><code class="sig-name descname">readPFB</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em>, <em class="sig-param"><span class="n">onlyHeader</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/t1Lib.html#readPFB"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.t1Lib.readPFB" title="Permalink to this definition">¶</a></dt>
+<dd><p>reads a PFB font file, returns raw data</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.t1Lib.stringToLong">
+<code class="sig-prename descclassname">fontTools.t1Lib.</code><code class="sig-name descname">stringToLong</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">s</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/t1Lib.html#stringToLong"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.t1Lib.stringToLong" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.t1Lib.write">
+<code class="sig-prename descclassname">fontTools.t1Lib.</code><code class="sig-name descname">write</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em>, <em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">kind</span><span class="o">=</span><span class="default_value">'OTHER'</span></em>, <em class="sig-param"><span class="n">dohex</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/t1Lib.html#write"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.t1Lib.write" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.t1Lib.writeLWFN">
+<code class="sig-prename descclassname">fontTools.t1Lib.</code><code class="sig-name descname">writeLWFN</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em>, <em class="sig-param"><span class="n">data</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/t1Lib.html#writeLWFN"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.t1Lib.writeLWFN" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.t1Lib.writeOther">
+<code class="sig-prename descclassname">fontTools.t1Lib.</code><code class="sig-name descname">writeOther</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em>, <em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">dohex</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/t1Lib.html#writeOther"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.t1Lib.writeOther" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.t1Lib.writePFB">
+<code class="sig-prename descclassname">fontTools.t1Lib.</code><code class="sig-name descname">writePFB</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em>, <em class="sig-param"><span class="n">data</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fontTools/t1Lib.html#writePFB"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.t1Lib.writePFB" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="ttLib/index.html" class="btn btn-neutral float-right" title="ttLib" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="svgLib/path/parser.html" class="btn btn-neutral float-left" title="parser" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Just van Rossum, Behdad Esfahbod, and the fontTools Authors. CC BY-SA 4.0
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,304 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>fontTools.pens.reverseContourPen &mdash; fontTools Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> fontTools
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Library</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../afmLib.html">afmLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../agl.html">agl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cffLib/index.html">cffLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../colorLib/index.html">colorLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cu2qu/index.html">cu2qu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../designspaceLib/index.html">designspaceLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../encodings/index.html">encodings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../feaLib/index.html">feaLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../merge.html">merge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../misc/index.html">misc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../mtiLib.html">mtiLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../otlLib/index.html">otlLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pens/index.html">pens</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../subset/index.html">subset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../svgLib/index.html">svgLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../t1Lib.html">t1Lib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ttLib/index.html">ttLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ttx.html">ttx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ufoLib/index.html">ufoLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../unicode.html">unicode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../unicodedata/index.html">unicodedata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../varLib/index.html">varLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../voltLib.html">voltLib</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">fontTools</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>fontTools.pens.reverseContourPen</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for fontTools.pens.reverseContourPen</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">fontTools.misc.py23</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">fontTools.misc.arrayTools</span> <span class="k">import</span> <span class="n">pairwise</span>
+<span class="kn">from</span> <span class="nn">fontTools.pens.filterPen</span> <span class="k">import</span> <span class="n">ContourFilterPen</span>
+
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;reversedContour&quot;</span><span class="p">,</span> <span class="s2">&quot;ReverseContourPen&quot;</span><span class="p">]</span>
+
+
+<div class="viewcode-block" id="ReverseContourPen"><a class="viewcode-back" href="../../../pens/reverseContourPen.html#fontTools.pens.reverseContourPen.ReverseContourPen">[docs]</a><span class="k">class</span> <span class="nc">ReverseContourPen</span><span class="p">(</span><span class="n">ContourFilterPen</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Filter pen that passes outline data to another pen, but reversing</span>
+<span class="sd">    the winding direction of all contours. Components are simply passed</span>
+<span class="sd">    through unchanged.</span>
+
+<span class="sd">    Closed contours are reversed in such a way that the first point remains</span>
+<span class="sd">    the first point.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="ReverseContourPen.filterContour"><a class="viewcode-back" href="../../../pens/reverseContourPen.html#fontTools.pens.reverseContourPen.ReverseContourPen.filterContour">[docs]</a>    <span class="k">def</span> <span class="nf">filterContour</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">contour</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">reversedContour</span><span class="p">(</span><span class="n">contour</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="reversedContour"><a class="viewcode-back" href="../../../pens/reverseContourPen.html#fontTools.pens.reverseContourPen.reversedContour">[docs]</a><span class="k">def</span> <span class="nf">reversedContour</span><span class="p">(</span><span class="n">contour</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Generator that takes a list of pen&#39;s (operator, operands) tuples,</span>
+<span class="sd">    and yields them with the winding direction reversed.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">contour</span><span class="p">:</span>
+        <span class="k">return</span>  <span class="c1"># nothing to do, stop iteration</span>
+
+    <span class="c1"># valid contours must have at least a starting and ending command,</span>
+    <span class="c1"># can&#39;t have one without the other</span>
+    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">contour</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;invalid contour&quot;</span>
+
+    <span class="c1"># the type of the last command determines if the contour is closed</span>
+    <span class="n">contourType</span> <span class="o">=</span> <span class="n">contour</span><span class="o">.</span><span class="n">pop</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">assert</span> <span class="n">contourType</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;endPath&quot;</span><span class="p">,</span> <span class="s2">&quot;closePath&quot;</span><span class="p">)</span>
+    <span class="n">closed</span> <span class="o">=</span> <span class="n">contourType</span> <span class="o">==</span> <span class="s2">&quot;closePath&quot;</span>
+
+    <span class="n">firstType</span><span class="p">,</span> <span class="n">firstPts</span> <span class="o">=</span> <span class="n">contour</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="n">firstType</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;moveTo&quot;</span><span class="p">,</span> <span class="s2">&quot;qCurveTo&quot;</span><span class="p">),</span> <span class="p">(</span>
+        <span class="s2">&quot;invalid initial segment type: </span><span class="si">%r</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">firstType</span><span class="p">)</span>
+    <span class="n">firstOnCurve</span> <span class="o">=</span> <span class="n">firstPts</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">firstType</span> <span class="o">==</span> <span class="s2">&quot;qCurveTo&quot;</span><span class="p">:</span>
+        <span class="c1"># special case for TrueType paths contaning only off-curve points</span>
+        <span class="k">assert</span> <span class="n">firstOnCurve</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">,</span> <span class="p">(</span>
+            <span class="s2">&quot;off-curve only paths must end with &#39;None&#39;&quot;</span><span class="p">)</span>
+        <span class="k">assert</span> <span class="ow">not</span> <span class="n">contour</span><span class="p">,</span> <span class="p">(</span>
+            <span class="s2">&quot;only one qCurveTo allowed per off-curve path&quot;</span><span class="p">)</span>
+        <span class="n">firstPts</span> <span class="o">=</span> <span class="p">((</span><span class="n">firstPts</span><span class="p">[</span><span class="mi">0</span><span class="p">],)</span> <span class="o">+</span> <span class="nb">tuple</span><span class="p">(</span><span class="nb">reversed</span><span class="p">(</span><span class="n">firstPts</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span> <span class="o">+</span>
+                    <span class="p">(</span><span class="kc">None</span><span class="p">,))</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">contour</span><span class="p">:</span>
+        <span class="c1"># contour contains only one segment, nothing to reverse</span>
+        <span class="k">if</span> <span class="n">firstType</span> <span class="o">==</span> <span class="s2">&quot;moveTo&quot;</span><span class="p">:</span>
+            <span class="n">closed</span> <span class="o">=</span> <span class="kc">False</span>  <span class="c1"># single-point paths can&#39;t be closed</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">closed</span> <span class="o">=</span> <span class="kc">True</span>  <span class="c1"># off-curve paths are closed by definition</span>
+        <span class="k">yield</span> <span class="n">firstType</span><span class="p">,</span> <span class="n">firstPts</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">lastType</span><span class="p">,</span> <span class="n">lastPts</span> <span class="o">=</span> <span class="n">contour</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">lastOnCurve</span> <span class="o">=</span> <span class="n">lastPts</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">closed</span><span class="p">:</span>
+            <span class="c1"># for closed paths, we keep the starting point</span>
+            <span class="k">yield</span> <span class="n">firstType</span><span class="p">,</span> <span class="n">firstPts</span>
+            <span class="k">if</span> <span class="n">firstOnCurve</span> <span class="o">!=</span> <span class="n">lastOnCurve</span><span class="p">:</span>
+                <span class="c1"># emit an implied line between the last and first points</span>
+                <span class="k">yield</span> <span class="s2">&quot;lineTo&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">lastOnCurve</span><span class="p">,)</span>
+                <span class="n">contour</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">lastType</span><span class="p">,</span>
+                               <span class="nb">tuple</span><span class="p">(</span><span class="n">lastPts</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">+</span> <span class="p">(</span><span class="n">firstOnCurve</span><span class="p">,))</span>
+
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">contour</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">secondType</span><span class="p">,</span> <span class="n">secondPts</span> <span class="o">=</span> <span class="n">contour</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="c1"># contour has only two points, the second and last are the same</span>
+                <span class="n">secondType</span><span class="p">,</span> <span class="n">secondPts</span> <span class="o">=</span> <span class="n">lastType</span><span class="p">,</span> <span class="n">lastPts</span>
+            <span class="c1"># if a lineTo follows the initial moveTo, after reversing it</span>
+            <span class="c1"># will be implied by the closePath, so we don&#39;t emit one;</span>
+            <span class="c1"># unless the lineTo and moveTo overlap, in which case we keep the</span>
+            <span class="c1"># duplicate points</span>
+            <span class="k">if</span> <span class="n">secondType</span> <span class="o">==</span> <span class="s2">&quot;lineTo&quot;</span> <span class="ow">and</span> <span class="n">firstPts</span> <span class="o">!=</span> <span class="n">secondPts</span><span class="p">:</span>
+                <span class="k">del</span> <span class="n">contour</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="k">if</span> <span class="n">contour</span><span class="p">:</span>
+                    <span class="n">contour</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">lastType</span><span class="p">,</span>
+                                   <span class="nb">tuple</span><span class="p">(</span><span class="n">lastPts</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">+</span> <span class="n">secondPts</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># for open paths, the last point will become the first</span>
+            <span class="k">yield</span> <span class="n">firstType</span><span class="p">,</span> <span class="p">(</span><span class="n">lastOnCurve</span><span class="p">,)</span>
+            <span class="n">contour</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">lastType</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">lastPts</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">+</span> <span class="p">(</span><span class="n">firstOnCurve</span><span class="p">,))</span>
+
+        <span class="c1"># we iterate over all segment pairs in reverse order, and yield</span>
+        <span class="c1"># each one with the off-curve points reversed (if any), and</span>
+        <span class="c1"># with the on-curve point of the following segment</span>
+        <span class="k">for</span> <span class="p">(</span><span class="n">curType</span><span class="p">,</span> <span class="n">curPts</span><span class="p">),</span> <span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="n">nextPts</span><span class="p">)</span> <span class="ow">in</span> <span class="n">pairwise</span><span class="p">(</span>
+                <span class="n">contour</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+            <span class="k">yield</span> <span class="n">curType</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">(</span><span class="nb">reversed</span><span class="p">(</span><span class="n">curPts</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span> <span class="o">+</span> <span class="p">(</span><span class="n">nextPts</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],)</span>
+
+    <span class="k">yield</span> <span class="s2">&quot;closePath&quot;</span> <span class="k">if</span> <span class="n">closed</span> <span class="k">else</span> <span class="s2">&quot;endPath&quot;</span><span class="p">,</span> <span class="p">()</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Just van Rossum, Behdad Esfahbod, and the fontTools Authors. CC BY-SA 4.0
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

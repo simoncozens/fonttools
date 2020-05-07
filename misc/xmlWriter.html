@@ -1,0 +1,356 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>xmlWriter &mdash; fontTools Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="mtiLib" href="../mtiLib.html" />
+    <link rel="prev" title="xmlReader" href="xmlReader.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> fontTools
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Library</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../afmLib.html">afmLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../agl.html">agl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cffLib/index.html">cffLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../colorLib/index.html">colorLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cu2qu/index.html">cu2qu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../designspaceLib/index.html">designspaceLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../encodings/index.html">encodings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../feaLib/index.html">feaLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../merge.html">merge</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">misc</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="arrayTools.html">arrayTools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bezierTools.html">bezierTools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classifyTools.html">classifyTools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cliTools.html">cliTools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eexec.html">eexec</a></li>
+<li class="toctree-l2"><a class="reference internal" href="encodingTools.html">encodingTools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="etree.html">etree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="filenames.html">filenames</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fixedTools.html">fixedTools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intTools.html">intTools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="loggingTools.html">loggingTools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="macCreatorType.html">macCreatorType</a></li>
+<li class="toctree-l2"><a class="reference internal" href="macRes.html">macRes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psCharStrings.html">psCharStrings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psLib.html">psLib</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psOperators.html">psOperators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="py23.html">py23</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sstruct.html">sstruct</a></li>
+<li class="toctree-l2"><a class="reference internal" href="symfont.html">symfont</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testTools.html">testTools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="textTools.html">textTools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="timeTools.html">timeTools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transform.html">transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xmlReader.html">xmlReader</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">xmlWriter</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../mtiLib.html">mtiLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../otlLib/index.html">otlLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pens/index.html">pens</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../subset/index.html">subset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svgLib/index.html">svgLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../t1Lib.html">t1Lib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ttLib/index.html">ttLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ttx.html">ttx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ufoLib/index.html">ufoLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unicode.html">unicode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unicodedata/index.html">unicodedata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../varLib/index.html">varLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../voltLib.html">voltLib</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">fontTools</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">misc</a> &raquo;</li>
+        
+      <li>xmlWriter</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/misc/xmlWriter.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-fontTools.misc.xmlWriter">
+<span id="xmlwriter"></span><h1>xmlWriter<a class="headerlink" href="#module-fontTools.misc.xmlWriter" title="Permalink to this headline">¶</a></h1>
+<p>xmlWriter.py – Simple XML authoring class</p>
+<dl class="py class">
+<dt id="fontTools.misc.xmlWriter.XMLWriter">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.misc.xmlWriter.</code><code class="sig-name descname">XMLWriter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fileOrPath</span></em>, <em class="sig-param"><span class="n">indentwhite</span><span class="o">=</span><span class="default_value">'  '</span></em>, <em class="sig-param"><span class="n">idlefunc</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">encoding</span><span class="o">=</span><span class="default_value">'utf_8'</span></em>, <em class="sig-param"><span class="n">newlinestr</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/xmlWriter.html#XMLWriter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.xmlWriter.XMLWriter" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.misc.xmlWriter.XMLWriter.begintag">
+<code class="sig-name descname">begintag</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">_TAG_</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/xmlWriter.html#XMLWriter.begintag"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.xmlWriter.XMLWriter.begintag" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.xmlWriter.XMLWriter.close">
+<code class="sig-name descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/xmlWriter.html#XMLWriter.close"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.xmlWriter.XMLWriter.close" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.xmlWriter.XMLWriter.comment">
+<code class="sig-name descname">comment</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/xmlWriter.html#XMLWriter.comment"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.xmlWriter.XMLWriter.comment" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.xmlWriter.XMLWriter.dedent">
+<code class="sig-name descname">dedent</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/xmlWriter.html#XMLWriter.dedent"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.xmlWriter.XMLWriter.dedent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.xmlWriter.XMLWriter.dumphex">
+<code class="sig-name descname">dumphex</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/xmlWriter.html#XMLWriter.dumphex"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.xmlWriter.XMLWriter.dumphex" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.xmlWriter.XMLWriter.endtag">
+<code class="sig-name descname">endtag</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">_TAG_</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/xmlWriter.html#XMLWriter.endtag"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.xmlWriter.XMLWriter.endtag" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.xmlWriter.XMLWriter.indent">
+<code class="sig-name descname">indent</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/xmlWriter.html#XMLWriter.indent"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.xmlWriter.XMLWriter.indent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.xmlWriter.XMLWriter.newline">
+<code class="sig-name descname">newline</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/xmlWriter.html#XMLWriter.newline"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.xmlWriter.XMLWriter.newline" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.xmlWriter.XMLWriter.simpletag">
+<code class="sig-name descname">simpletag</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">_TAG_</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/xmlWriter.html#XMLWriter.simpletag"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.xmlWriter.XMLWriter.simpletag" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.xmlWriter.XMLWriter.stringifyattrs">
+<code class="sig-name descname">stringifyattrs</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/xmlWriter.html#XMLWriter.stringifyattrs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.xmlWriter.XMLWriter.stringifyattrs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.xmlWriter.XMLWriter.write">
+<code class="sig-name descname">write</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">string</span></em>, <em class="sig-param"><span class="n">indent</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/xmlWriter.html#XMLWriter.write"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.xmlWriter.XMLWriter.write" title="Permalink to this definition">¶</a></dt>
+<dd><p>Writes text.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.xmlWriter.XMLWriter.write8bit">
+<code class="sig-name descname">write8bit</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">strip</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/xmlWriter.html#XMLWriter.write8bit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.xmlWriter.XMLWriter.write8bit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Writes a bytes() sequence into the XML, escaping
+non-ASCII bytes.  When this is read in xmlReader,
+the original bytes can be recovered by encoding to
+‘latin-1’.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.xmlWriter.XMLWriter.write_noindent">
+<code class="sig-name descname">write_noindent</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">string</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/xmlWriter.html#XMLWriter.write_noindent"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.xmlWriter.XMLWriter.write_noindent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Writes text without indentation.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.xmlWriter.XMLWriter.writecdata">
+<code class="sig-name descname">writecdata</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">string</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/xmlWriter.html#XMLWriter.writecdata"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.xmlWriter.XMLWriter.writecdata" title="Permalink to this definition">¶</a></dt>
+<dd><p>Writes text in a CDATA section.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.misc.xmlWriter.escape">
+<code class="sig-prename descclassname">fontTools.misc.xmlWriter.</code><code class="sig-name descname">escape</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/xmlWriter.html#escape"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.xmlWriter.escape" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.misc.xmlWriter.escape8bit">
+<code class="sig-prename descclassname">fontTools.misc.xmlWriter.</code><code class="sig-name descname">escape8bit</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/xmlWriter.html#escape8bit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.xmlWriter.escape8bit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Input is Unicode string.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.misc.xmlWriter.escapeattr">
+<code class="sig-prename descclassname">fontTools.misc.xmlWriter.</code><code class="sig-name descname">escapeattr</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/xmlWriter.html#escapeattr"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.xmlWriter.escapeattr" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.misc.xmlWriter.hexStr">
+<code class="sig-prename descclassname">fontTools.misc.xmlWriter.</code><code class="sig-name descname">hexStr</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">s</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/xmlWriter.html#hexStr"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.xmlWriter.hexStr" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../mtiLib.html" class="btn btn-neutral float-right" title="mtiLib" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="xmlReader.html" class="btn btn-neutral float-left" title="xmlReader" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Just van Rossum, Behdad Esfahbod, and the fontTools Authors. CC BY-SA 4.0
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,398 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>arrayTools &mdash; fontTools Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="bezierTools" href="bezierTools.html" />
+    <link rel="prev" title="misc" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> fontTools
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Library</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../afmLib.html">afmLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../agl.html">agl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cffLib/index.html">cffLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../colorLib/index.html">colorLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cu2qu/index.html">cu2qu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../designspaceLib/index.html">designspaceLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../encodings/index.html">encodings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../feaLib/index.html">feaLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../merge.html">merge</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">misc</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">arrayTools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bezierTools.html">bezierTools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classifyTools.html">classifyTools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cliTools.html">cliTools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eexec.html">eexec</a></li>
+<li class="toctree-l2"><a class="reference internal" href="encodingTools.html">encodingTools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="etree.html">etree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="filenames.html">filenames</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fixedTools.html">fixedTools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intTools.html">intTools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="loggingTools.html">loggingTools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="macCreatorType.html">macCreatorType</a></li>
+<li class="toctree-l2"><a class="reference internal" href="macRes.html">macRes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psCharStrings.html">psCharStrings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psLib.html">psLib</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psOperators.html">psOperators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="py23.html">py23</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sstruct.html">sstruct</a></li>
+<li class="toctree-l2"><a class="reference internal" href="symfont.html">symfont</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testTools.html">testTools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="textTools.html">textTools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="timeTools.html">timeTools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transform.html">transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xmlReader.html">xmlReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xmlWriter.html">xmlWriter</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../mtiLib.html">mtiLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../otlLib/index.html">otlLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pens/index.html">pens</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../subset/index.html">subset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svgLib/index.html">svgLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../t1Lib.html">t1Lib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ttLib/index.html">ttLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ttx.html">ttx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ufoLib/index.html">ufoLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unicode.html">unicode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unicodedata/index.html">unicodedata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../varLib/index.html">varLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../voltLib.html">voltLib</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">fontTools</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">misc</a> &raquo;</li>
+        
+      <li>arrayTools</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/misc/arrayTools.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-fontTools.misc.arrayTools">
+<span id="arraytools"></span><h1>arrayTools<a class="headerlink" href="#module-fontTools.misc.arrayTools" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="fontTools.misc.arrayTools.Vector">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.misc.arrayTools.</code><code class="sig-name descname">Vector</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">values</span></em>, <em class="sig-param"><span class="n">keep</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/arrayTools.html#Vector"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.arrayTools.Vector" title="Permalink to this definition">¶</a></dt>
+<dd><p>A math-like vector.</p>
+<dl class="py method">
+<dt id="fontTools.misc.arrayTools.Vector.dot">
+<code class="sig-name descname">dot</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/arrayTools.html#Vector.dot"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.arrayTools.Vector.dot" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.arrayTools.Vector.toInt">
+<code class="sig-name descname">toInt</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/arrayTools.html#Vector.toInt"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.arrayTools.Vector.toInt" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.misc.arrayTools.asInt16">
+<code class="sig-prename descclassname">fontTools.misc.arrayTools.</code><code class="sig-name descname">asInt16</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">array</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/arrayTools.html#asInt16"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.arrayTools.asInt16" title="Permalink to this definition">¶</a></dt>
+<dd><p>Round and cast to 16 bit integer.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.misc.arrayTools.calcBounds">
+<code class="sig-prename descclassname">fontTools.misc.arrayTools.</code><code class="sig-name descname">calcBounds</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">array</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/arrayTools.html#calcBounds"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.arrayTools.calcBounds" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the bounding rectangle of a 2D points array as a tuple:
+(xMin, yMin, xMax, yMax)</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.misc.arrayTools.calcIntBounds">
+<code class="sig-prename descclassname">fontTools.misc.arrayTools.</code><code class="sig-name descname">calcIntBounds</code><span class="sig-paren">(</span><em class="sig-param">array</em>, <em class="sig-param">round=&lt;function otRound&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/arrayTools.html#calcIntBounds"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.arrayTools.calcIntBounds" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the integer bounding rectangle of a 2D points array as a
+tuple: (xMin, yMin, xMax, yMax)
+Values are rounded to closest integer towards +Infinity using otRound
+function by default, unless an optional ‘round’ function is passed.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.misc.arrayTools.insetRect">
+<code class="sig-prename descclassname">fontTools.misc.arrayTools.</code><code class="sig-name descname">insetRect</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">rect</span></em>, <em class="sig-param"><span class="n">dx</span></em>, <em class="sig-param"><span class="n">dy</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/arrayTools.html#insetRect"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.arrayTools.insetRect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Inset the rectangle by dx, dy on all sides.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.misc.arrayTools.intRect">
+<code class="sig-prename descclassname">fontTools.misc.arrayTools.</code><code class="sig-name descname">intRect</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">rect1</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/arrayTools.html#intRect"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.arrayTools.intRect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the rectangle, rounded off to integer values, but guaranteeing that
+the resulting rectangle is NOT smaller than the original.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.misc.arrayTools.normRect">
+<code class="sig-prename descclassname">fontTools.misc.arrayTools.</code><code class="sig-name descname">normRect</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">rect</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/arrayTools.html#normRect"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.arrayTools.normRect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Normalize the rectangle so that the following holds:
+xMin &lt;= xMax and yMin &lt;= yMax</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.misc.arrayTools.offsetRect">
+<code class="sig-prename descclassname">fontTools.misc.arrayTools.</code><code class="sig-name descname">offsetRect</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">rect</span></em>, <em class="sig-param"><span class="n">dx</span></em>, <em class="sig-param"><span class="n">dy</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/arrayTools.html#offsetRect"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.arrayTools.offsetRect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Offset the rectangle by dx, dy.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.misc.arrayTools.pairwise">
+<code class="sig-prename descclassname">fontTools.misc.arrayTools.</code><code class="sig-name descname">pairwise</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">iterable</span></em>, <em class="sig-param"><span class="n">reverse</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/arrayTools.html#pairwise"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.arrayTools.pairwise" title="Permalink to this definition">¶</a></dt>
+<dd><p>Iterate over current and next items in iterable, optionally in
+reverse order.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">tuple</span><span class="p">(</span><span class="n">pairwise</span><span class="p">([]))</span>
+<span class="go">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">tuple</span><span class="p">(</span><span class="n">pairwise</span><span class="p">([],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+<span class="go">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">tuple</span><span class="p">(</span><span class="n">pairwise</span><span class="p">([</span><span class="mi">0</span><span class="p">]))</span>
+<span class="go">((0, 0),)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">tuple</span><span class="p">(</span><span class="n">pairwise</span><span class="p">([</span><span class="mi">0</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+<span class="go">((0, 0),)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">tuple</span><span class="p">(</span><span class="n">pairwise</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]))</span>
+<span class="go">((0, 1), (1, 0))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">tuple</span><span class="p">(</span><span class="n">pairwise</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+<span class="go">((1, 0), (0, 1))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">tuple</span><span class="p">(</span><span class="n">pairwise</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]))</span>
+<span class="go">((0, 1), (1, 2), (2, 0))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">tuple</span><span class="p">(</span><span class="n">pairwise</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+<span class="go">((2, 1), (1, 0), (0, 2))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">tuple</span><span class="p">(</span><span class="n">pairwise</span><span class="p">([</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">]))</span>
+<span class="go">((&#39;a&#39;, &#39;b&#39;), (&#39;b&#39;, &#39;c&#39;), (&#39;c&#39;, &#39;d&#39;), (&#39;d&#39;, &#39;a&#39;))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">tuple</span><span class="p">(</span><span class="n">pairwise</span><span class="p">([</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+<span class="go">((&#39;d&#39;, &#39;c&#39;), (&#39;c&#39;, &#39;b&#39;), (&#39;b&#39;, &#39;a&#39;), (&#39;a&#39;, &#39;d&#39;))</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.misc.arrayTools.pointInRect">
+<code class="sig-prename descclassname">fontTools.misc.arrayTools.</code><code class="sig-name descname">pointInRect</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">p</span></em>, <em class="sig-param"><span class="n">rect</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/arrayTools.html#pointInRect"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.arrayTools.pointInRect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return True when point (x, y) is inside rect.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.misc.arrayTools.pointsInRect">
+<code class="sig-prename descclassname">fontTools.misc.arrayTools.</code><code class="sig-name descname">pointsInRect</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">array</span></em>, <em class="sig-param"><span class="n">rect</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/arrayTools.html#pointsInRect"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.arrayTools.pointsInRect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find out which points or array are inside rect.
+Returns an array with a boolean for each point.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.misc.arrayTools.rectCenter">
+<code class="sig-prename descclassname">fontTools.misc.arrayTools.</code><code class="sig-name descname">rectCenter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">rect0</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/arrayTools.html#rectCenter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.arrayTools.rectCenter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the center of the rectangle as an (x, y) coordinate.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.misc.arrayTools.scaleRect">
+<code class="sig-prename descclassname">fontTools.misc.arrayTools.</code><code class="sig-name descname">scaleRect</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">rect</span></em>, <em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">y</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/arrayTools.html#scaleRect"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.arrayTools.scaleRect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Scale the rectangle by x, y.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.misc.arrayTools.sectRect">
+<code class="sig-prename descclassname">fontTools.misc.arrayTools.</code><code class="sig-name descname">sectRect</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">rect1</span></em>, <em class="sig-param"><span class="n">rect2</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/arrayTools.html#sectRect"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.arrayTools.sectRect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a boolean and a rectangle. If the input rectangles intersect, return
+True and the intersecting rectangle. Return False and (0, 0, 0, 0) if the input
+rectangles don’t intersect.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.misc.arrayTools.unionRect">
+<code class="sig-prename descclassname">fontTools.misc.arrayTools.</code><code class="sig-name descname">unionRect</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">rect1</span></em>, <em class="sig-param"><span class="n">rect2</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/arrayTools.html#unionRect"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.arrayTools.unionRect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the smallest rectangle in which both input rectangles are fully
+enclosed. In other words, return the total bounding rectangle of both input
+rectangles.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.misc.arrayTools.updateBounds">
+<code class="sig-prename descclassname">fontTools.misc.arrayTools.</code><code class="sig-name descname">updateBounds</code><span class="sig-paren">(</span><em class="sig-param">bounds</em>, <em class="sig-param">p</em>, <em class="sig-param">min=&lt;built-in function min&gt;</em>, <em class="sig-param">max=&lt;built-in function max&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/arrayTools.html#updateBounds"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.arrayTools.updateBounds" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the bounding recangle of rectangle bounds and point (x, y).</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.misc.arrayTools.vectorLength">
+<code class="sig-prename descclassname">fontTools.misc.arrayTools.</code><code class="sig-name descname">vectorLength</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vector</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/misc/arrayTools.html#vectorLength"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.misc.arrayTools.vectorLength" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the length of the given vector.</p>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="bezierTools.html" class="btn btn-neutral float-right" title="bezierTools" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="misc" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Just van Rossum, Behdad Esfahbod, and the fontTools Authors. CC BY-SA 4.0
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

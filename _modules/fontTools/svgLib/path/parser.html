@@ -1,0 +1,460 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>fontTools.svgLib.path.parser &mdash; fontTools Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> fontTools
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Library</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../afmLib.html">afmLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../agl.html">agl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../cffLib/index.html">cffLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../colorLib/index.html">colorLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../cu2qu/index.html">cu2qu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../designspaceLib/index.html">designspaceLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../encodings/index.html">encodings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../feaLib/index.html">feaLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../merge.html">merge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../misc/index.html">misc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../mtiLib.html">mtiLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../otlLib/index.html">otlLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../pens/index.html">pens</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../subset/index.html">subset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../svgLib/index.html">svgLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../t1Lib.html">t1Lib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../ttLib/index.html">ttLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../ttx.html">ttx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../ufoLib/index.html">ufoLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../unicode.html">unicode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../unicodedata/index.html">unicodedata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../varLib/index.html">varLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../voltLib.html">voltLib</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">fontTools</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../path.html">fontTools.svgLib.path</a> &raquo;</li>
+        
+      <li>fontTools.svgLib.path.parser</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for fontTools.svgLib.path.parser</h1><div class="highlight"><pre>
+<span></span><span class="c1"># SVG Path specification parser.</span>
+<span class="c1"># This is an adaptation from &#39;svg.path&#39; by Lennart Regebro (@regebro),</span>
+<span class="c1"># modified so that the parser takes a FontTools Pen object instead of</span>
+<span class="c1"># returning a list of svg.path Path objects.</span>
+<span class="c1"># The original code can be found at:</span>
+<span class="c1"># https://github.com/regebro/svg.path/blob/4f9b6e3/src/svg/path/parser.py</span>
+<span class="c1"># Copyright (c) 2013-2014 Lennart Regebro</span>
+<span class="c1"># License: MIT</span>
+
+<span class="kn">from</span> <span class="nn">fontTools.misc.py23</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">.arc</span> <span class="k">import</span> <span class="n">EllipticalArc</span>
+<span class="kn">import</span> <span class="nn">re</span>
+
+
+<span class="n">COMMANDS</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="s1">&#39;MmZzLlHhVvCcSsQqTtAa&#39;</span><span class="p">)</span>
+<span class="n">UPPERCASE</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="s1">&#39;MZLHVCSQTA&#39;</span><span class="p">)</span>
+
+<span class="n">COMMAND_RE</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s2">&quot;([MmZzLlHhVvCcSsQqTtAa])&quot;</span><span class="p">)</span>
+<span class="n">FLOAT_RE</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?&quot;</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">_tokenize_path</span><span class="p">(</span><span class="n">pathdef</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">COMMAND_RE</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">pathdef</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">COMMANDS</span><span class="p">:</span>
+            <span class="k">yield</span> <span class="n">x</span>
+        <span class="k">for</span> <span class="n">token</span> <span class="ow">in</span> <span class="n">FLOAT_RE</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+            <span class="k">yield</span> <span class="n">token</span>
+
+
+<div class="viewcode-block" id="parse_path"><a class="viewcode-back" href="../../../../svgLib/path/parser.html#fontTools.svgLib.path.parse_path">[docs]</a><span class="k">def</span> <span class="nf">parse_path</span><span class="p">(</span><span class="n">pathdef</span><span class="p">,</span> <span class="n">pen</span><span class="p">,</span> <span class="n">current_pos</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">arc_class</span><span class="o">=</span><span class="n">EllipticalArc</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Parse SVG path definition (i.e. &quot;d&quot; attribute of &lt;path&gt; elements)</span>
+<span class="sd">    and call a &#39;pen&#39; object&#39;s moveTo, lineTo, curveTo, qCurveTo and closePath</span>
+<span class="sd">    methods.</span>
+
+<span class="sd">    If &#39;current_pos&#39; (2-float tuple) is provided, the initial moveTo will</span>
+<span class="sd">    be relative to that instead being absolute.</span>
+
+<span class="sd">    If the pen has an &quot;arcTo&quot; method, it is called with the original values</span>
+<span class="sd">    of the elliptical arc curve commands:</span>
+
+<span class="sd">        pen.arcTo(rx, ry, rotation, arc_large, arc_sweep, (x, y))</span>
+
+<span class="sd">    Otherwise, the arcs are approximated by series of cubic Bezier segments</span>
+<span class="sd">    (&quot;curveTo&quot;), one every 90 degrees.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># In the SVG specs, initial movetos are absolute, even if</span>
+    <span class="c1"># specified as &#39;m&#39;. This is the default behavior here as well.</span>
+    <span class="c1"># But if you pass in a current_pos variable, the initial moveto</span>
+    <span class="c1"># will be relative to that current_pos. This is useful.</span>
+    <span class="n">current_pos</span> <span class="o">=</span> <span class="nb">complex</span><span class="p">(</span><span class="o">*</span><span class="n">current_pos</span><span class="p">)</span>
+
+    <span class="n">elements</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">_tokenize_path</span><span class="p">(</span><span class="n">pathdef</span><span class="p">))</span>
+    <span class="c1"># Reverse for easy use of .pop()</span>
+    <span class="n">elements</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
+
+    <span class="n">start_pos</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">command</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">last_control</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="n">have_arcTo</span> <span class="o">=</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">pen</span><span class="p">,</span> <span class="s2">&quot;arcTo&quot;</span><span class="p">)</span>
+
+    <span class="k">while</span> <span class="n">elements</span><span class="p">:</span>
+
+        <span class="k">if</span> <span class="n">elements</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="ow">in</span> <span class="n">COMMANDS</span><span class="p">:</span>
+            <span class="c1"># New command.</span>
+            <span class="n">last_command</span> <span class="o">=</span> <span class="n">command</span>  <span class="c1"># Used by S and T</span>
+            <span class="n">command</span> <span class="o">=</span> <span class="n">elements</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+            <span class="n">absolute</span> <span class="o">=</span> <span class="n">command</span> <span class="ow">in</span> <span class="n">UPPERCASE</span>
+            <span class="n">command</span> <span class="o">=</span> <span class="n">command</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># If this element starts with numbers, it is an implicit command</span>
+            <span class="c1"># and we don&#39;t change the command. Check that it&#39;s allowed:</span>
+            <span class="k">if</span> <span class="n">command</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Unallowed implicit command in </span><span class="si">%s</span><span class="s2">, position </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span>
+                    <span class="n">pathdef</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">pathdef</span><span class="o">.</span><span class="n">split</span><span class="p">())</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">elements</span><span class="p">)))</span>
+            <span class="n">last_command</span> <span class="o">=</span> <span class="n">command</span>  <span class="c1"># Used by S and T</span>
+
+        <span class="k">if</span> <span class="n">command</span> <span class="o">==</span> <span class="s1">&#39;M&#39;</span><span class="p">:</span>
+            <span class="c1"># Moveto command.</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="n">elements</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+            <span class="n">y</span> <span class="o">=</span> <span class="n">elements</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+            <span class="n">pos</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="nb">float</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="o">*</span> <span class="mi">1</span><span class="n">j</span>
+            <span class="k">if</span> <span class="n">absolute</span><span class="p">:</span>
+                <span class="n">current_pos</span> <span class="o">=</span> <span class="n">pos</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">current_pos</span> <span class="o">+=</span> <span class="n">pos</span>
+
+            <span class="c1"># M is not preceded by Z; it&#39;s an open subpath</span>
+            <span class="k">if</span> <span class="n">start_pos</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">pen</span><span class="o">.</span><span class="n">endPath</span><span class="p">()</span>
+
+            <span class="n">pen</span><span class="o">.</span><span class="n">moveTo</span><span class="p">((</span><span class="n">current_pos</span><span class="o">.</span><span class="n">real</span><span class="p">,</span> <span class="n">current_pos</span><span class="o">.</span><span class="n">imag</span><span class="p">))</span>
+
+            <span class="c1"># when M is called, reset start_pos</span>
+            <span class="c1"># This behavior of Z is defined in svg spec:</span>
+            <span class="c1"># http://www.w3.org/TR/SVG/paths.html#PathDataClosePathCommand</span>
+            <span class="n">start_pos</span> <span class="o">=</span> <span class="n">current_pos</span>
+
+            <span class="c1"># Implicit moveto commands are treated as lineto commands.</span>
+            <span class="c1"># So we set command to lineto here, in case there are</span>
+            <span class="c1"># further implicit commands after this moveto.</span>
+            <span class="n">command</span> <span class="o">=</span> <span class="s1">&#39;L&#39;</span>
+
+        <span class="k">elif</span> <span class="n">command</span> <span class="o">==</span> <span class="s1">&#39;Z&#39;</span><span class="p">:</span>
+            <span class="c1"># Close path</span>
+            <span class="k">if</span> <span class="n">current_pos</span> <span class="o">!=</span> <span class="n">start_pos</span><span class="p">:</span>
+                <span class="n">pen</span><span class="o">.</span><span class="n">lineTo</span><span class="p">((</span><span class="n">start_pos</span><span class="o">.</span><span class="n">real</span><span class="p">,</span> <span class="n">start_pos</span><span class="o">.</span><span class="n">imag</span><span class="p">))</span>
+            <span class="n">pen</span><span class="o">.</span><span class="n">closePath</span><span class="p">()</span>
+            <span class="n">current_pos</span> <span class="o">=</span> <span class="n">start_pos</span>
+            <span class="n">start_pos</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="n">command</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># You can&#39;t have implicit commands after closing.</span>
+
+        <span class="k">elif</span> <span class="n">command</span> <span class="o">==</span> <span class="s1">&#39;L&#39;</span><span class="p">:</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="n">elements</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+            <span class="n">y</span> <span class="o">=</span> <span class="n">elements</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+            <span class="n">pos</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="nb">float</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="o">*</span> <span class="mi">1</span><span class="n">j</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">absolute</span><span class="p">:</span>
+                <span class="n">pos</span> <span class="o">+=</span> <span class="n">current_pos</span>
+            <span class="n">pen</span><span class="o">.</span><span class="n">lineTo</span><span class="p">((</span><span class="n">pos</span><span class="o">.</span><span class="n">real</span><span class="p">,</span> <span class="n">pos</span><span class="o">.</span><span class="n">imag</span><span class="p">))</span>
+            <span class="n">current_pos</span> <span class="o">=</span> <span class="n">pos</span>
+
+        <span class="k">elif</span> <span class="n">command</span> <span class="o">==</span> <span class="s1">&#39;H&#39;</span><span class="p">:</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="n">elements</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+            <span class="n">pos</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="n">current_pos</span><span class="o">.</span><span class="n">imag</span> <span class="o">*</span> <span class="mi">1</span><span class="n">j</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">absolute</span><span class="p">:</span>
+                <span class="n">pos</span> <span class="o">+=</span> <span class="n">current_pos</span><span class="o">.</span><span class="n">real</span>
+            <span class="n">pen</span><span class="o">.</span><span class="n">lineTo</span><span class="p">((</span><span class="n">pos</span><span class="o">.</span><span class="n">real</span><span class="p">,</span> <span class="n">pos</span><span class="o">.</span><span class="n">imag</span><span class="p">))</span>
+            <span class="n">current_pos</span> <span class="o">=</span> <span class="n">pos</span>
+
+        <span class="k">elif</span> <span class="n">command</span> <span class="o">==</span> <span class="s1">&#39;V&#39;</span><span class="p">:</span>
+            <span class="n">y</span> <span class="o">=</span> <span class="n">elements</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+            <span class="n">pos</span> <span class="o">=</span> <span class="n">current_pos</span><span class="o">.</span><span class="n">real</span> <span class="o">+</span> <span class="nb">float</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="o">*</span> <span class="mi">1</span><span class="n">j</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">absolute</span><span class="p">:</span>
+                <span class="n">pos</span> <span class="o">+=</span> <span class="n">current_pos</span><span class="o">.</span><span class="n">imag</span> <span class="o">*</span> <span class="mi">1</span><span class="n">j</span>
+            <span class="n">pen</span><span class="o">.</span><span class="n">lineTo</span><span class="p">((</span><span class="n">pos</span><span class="o">.</span><span class="n">real</span><span class="p">,</span> <span class="n">pos</span><span class="o">.</span><span class="n">imag</span><span class="p">))</span>
+            <span class="n">current_pos</span> <span class="o">=</span> <span class="n">pos</span>
+
+        <span class="k">elif</span> <span class="n">command</span> <span class="o">==</span> <span class="s1">&#39;C&#39;</span><span class="p">:</span>
+            <span class="n">control1</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">elements</span><span class="o">.</span><span class="n">pop</span><span class="p">())</span> <span class="o">+</span> <span class="nb">float</span><span class="p">(</span><span class="n">elements</span><span class="o">.</span><span class="n">pop</span><span class="p">())</span> <span class="o">*</span> <span class="mi">1</span><span class="n">j</span>
+            <span class="n">control2</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">elements</span><span class="o">.</span><span class="n">pop</span><span class="p">())</span> <span class="o">+</span> <span class="nb">float</span><span class="p">(</span><span class="n">elements</span><span class="o">.</span><span class="n">pop</span><span class="p">())</span> <span class="o">*</span> <span class="mi">1</span><span class="n">j</span>
+            <span class="n">end</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">elements</span><span class="o">.</span><span class="n">pop</span><span class="p">())</span> <span class="o">+</span> <span class="nb">float</span><span class="p">(</span><span class="n">elements</span><span class="o">.</span><span class="n">pop</span><span class="p">())</span> <span class="o">*</span> <span class="mi">1</span><span class="n">j</span>
+
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">absolute</span><span class="p">:</span>
+                <span class="n">control1</span> <span class="o">+=</span> <span class="n">current_pos</span>
+                <span class="n">control2</span> <span class="o">+=</span> <span class="n">current_pos</span>
+                <span class="n">end</span> <span class="o">+=</span> <span class="n">current_pos</span>
+
+            <span class="n">pen</span><span class="o">.</span><span class="n">curveTo</span><span class="p">((</span><span class="n">control1</span><span class="o">.</span><span class="n">real</span><span class="p">,</span> <span class="n">control1</span><span class="o">.</span><span class="n">imag</span><span class="p">),</span>
+                        <span class="p">(</span><span class="n">control2</span><span class="o">.</span><span class="n">real</span><span class="p">,</span> <span class="n">control2</span><span class="o">.</span><span class="n">imag</span><span class="p">),</span>
+                        <span class="p">(</span><span class="n">end</span><span class="o">.</span><span class="n">real</span><span class="p">,</span> <span class="n">end</span><span class="o">.</span><span class="n">imag</span><span class="p">))</span>
+            <span class="n">current_pos</span> <span class="o">=</span> <span class="n">end</span>
+            <span class="n">last_control</span> <span class="o">=</span> <span class="n">control2</span>
+
+        <span class="k">elif</span> <span class="n">command</span> <span class="o">==</span> <span class="s1">&#39;S&#39;</span><span class="p">:</span>
+            <span class="c1"># Smooth curve. First control point is the &quot;reflection&quot; of</span>
+            <span class="c1"># the second control point in the previous path.</span>
+
+            <span class="k">if</span> <span class="n">last_command</span> <span class="ow">not</span> <span class="ow">in</span> <span class="s1">&#39;CS&#39;</span><span class="p">:</span>
+                <span class="c1"># If there is no previous command or if the previous command</span>
+                <span class="c1"># was not an C, c, S or s, assume the first control point is</span>
+                <span class="c1"># coincident with the current point.</span>
+                <span class="n">control1</span> <span class="o">=</span> <span class="n">current_pos</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="c1"># The first control point is assumed to be the reflection of</span>
+                <span class="c1"># the second control point on the previous command relative</span>
+                <span class="c1"># to the current point.</span>
+                <span class="n">control1</span> <span class="o">=</span> <span class="n">current_pos</span> <span class="o">+</span> <span class="n">current_pos</span> <span class="o">-</span> <span class="n">last_control</span>
+
+            <span class="n">control2</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">elements</span><span class="o">.</span><span class="n">pop</span><span class="p">())</span> <span class="o">+</span> <span class="nb">float</span><span class="p">(</span><span class="n">elements</span><span class="o">.</span><span class="n">pop</span><span class="p">())</span> <span class="o">*</span> <span class="mi">1</span><span class="n">j</span>
+            <span class="n">end</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">elements</span><span class="o">.</span><span class="n">pop</span><span class="p">())</span> <span class="o">+</span> <span class="nb">float</span><span class="p">(</span><span class="n">elements</span><span class="o">.</span><span class="n">pop</span><span class="p">())</span> <span class="o">*</span> <span class="mi">1</span><span class="n">j</span>
+
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">absolute</span><span class="p">:</span>
+                <span class="n">control2</span> <span class="o">+=</span> <span class="n">current_pos</span>
+                <span class="n">end</span> <span class="o">+=</span> <span class="n">current_pos</span>
+
+            <span class="n">pen</span><span class="o">.</span><span class="n">curveTo</span><span class="p">((</span><span class="n">control1</span><span class="o">.</span><span class="n">real</span><span class="p">,</span> <span class="n">control1</span><span class="o">.</span><span class="n">imag</span><span class="p">),</span>
+                        <span class="p">(</span><span class="n">control2</span><span class="o">.</span><span class="n">real</span><span class="p">,</span> <span class="n">control2</span><span class="o">.</span><span class="n">imag</span><span class="p">),</span>
+                        <span class="p">(</span><span class="n">end</span><span class="o">.</span><span class="n">real</span><span class="p">,</span> <span class="n">end</span><span class="o">.</span><span class="n">imag</span><span class="p">))</span>
+            <span class="n">current_pos</span> <span class="o">=</span> <span class="n">end</span>
+            <span class="n">last_control</span> <span class="o">=</span> <span class="n">control2</span>
+
+        <span class="k">elif</span> <span class="n">command</span> <span class="o">==</span> <span class="s1">&#39;Q&#39;</span><span class="p">:</span>
+            <span class="n">control</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">elements</span><span class="o">.</span><span class="n">pop</span><span class="p">())</span> <span class="o">+</span> <span class="nb">float</span><span class="p">(</span><span class="n">elements</span><span class="o">.</span><span class="n">pop</span><span class="p">())</span> <span class="o">*</span> <span class="mi">1</span><span class="n">j</span>
+            <span class="n">end</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">elements</span><span class="o">.</span><span class="n">pop</span><span class="p">())</span> <span class="o">+</span> <span class="nb">float</span><span class="p">(</span><span class="n">elements</span><span class="o">.</span><span class="n">pop</span><span class="p">())</span> <span class="o">*</span> <span class="mi">1</span><span class="n">j</span>
+
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">absolute</span><span class="p">:</span>
+                <span class="n">control</span> <span class="o">+=</span> <span class="n">current_pos</span>
+                <span class="n">end</span> <span class="o">+=</span> <span class="n">current_pos</span>
+
+            <span class="n">pen</span><span class="o">.</span><span class="n">qCurveTo</span><span class="p">((</span><span class="n">control</span><span class="o">.</span><span class="n">real</span><span class="p">,</span> <span class="n">control</span><span class="o">.</span><span class="n">imag</span><span class="p">),</span> <span class="p">(</span><span class="n">end</span><span class="o">.</span><span class="n">real</span><span class="p">,</span> <span class="n">end</span><span class="o">.</span><span class="n">imag</span><span class="p">))</span>
+            <span class="n">current_pos</span> <span class="o">=</span> <span class="n">end</span>
+            <span class="n">last_control</span> <span class="o">=</span> <span class="n">control</span>
+
+        <span class="k">elif</span> <span class="n">command</span> <span class="o">==</span> <span class="s1">&#39;T&#39;</span><span class="p">:</span>
+            <span class="c1"># Smooth curve. Control point is the &quot;reflection&quot; of</span>
+            <span class="c1"># the second control point in the previous path.</span>
+
+            <span class="k">if</span> <span class="n">last_command</span> <span class="ow">not</span> <span class="ow">in</span> <span class="s1">&#39;QT&#39;</span><span class="p">:</span>
+                <span class="c1"># If there is no previous command or if the previous command</span>
+                <span class="c1"># was not an Q, q, T or t, assume the first control point is</span>
+                <span class="c1"># coincident with the current point.</span>
+                <span class="n">control</span> <span class="o">=</span> <span class="n">current_pos</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="c1"># The control point is assumed to be the reflection of</span>
+                <span class="c1"># the control point on the previous command relative</span>
+                <span class="c1"># to the current point.</span>
+                <span class="n">control</span> <span class="o">=</span> <span class="n">current_pos</span> <span class="o">+</span> <span class="n">current_pos</span> <span class="o">-</span> <span class="n">last_control</span>
+
+            <span class="n">end</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">elements</span><span class="o">.</span><span class="n">pop</span><span class="p">())</span> <span class="o">+</span> <span class="nb">float</span><span class="p">(</span><span class="n">elements</span><span class="o">.</span><span class="n">pop</span><span class="p">())</span> <span class="o">*</span> <span class="mi">1</span><span class="n">j</span>
+
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">absolute</span><span class="p">:</span>
+                <span class="n">end</span> <span class="o">+=</span> <span class="n">current_pos</span>
+
+            <span class="n">pen</span><span class="o">.</span><span class="n">qCurveTo</span><span class="p">((</span><span class="n">control</span><span class="o">.</span><span class="n">real</span><span class="p">,</span> <span class="n">control</span><span class="o">.</span><span class="n">imag</span><span class="p">),</span> <span class="p">(</span><span class="n">end</span><span class="o">.</span><span class="n">real</span><span class="p">,</span> <span class="n">end</span><span class="o">.</span><span class="n">imag</span><span class="p">))</span>
+            <span class="n">current_pos</span> <span class="o">=</span> <span class="n">end</span>
+            <span class="n">last_control</span> <span class="o">=</span> <span class="n">control</span>
+
+        <span class="k">elif</span> <span class="n">command</span> <span class="o">==</span> <span class="s1">&#39;A&#39;</span><span class="p">:</span>
+            <span class="n">rx</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">elements</span><span class="o">.</span><span class="n">pop</span><span class="p">())</span>
+            <span class="n">ry</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">elements</span><span class="o">.</span><span class="n">pop</span><span class="p">())</span>
+            <span class="n">rotation</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">elements</span><span class="o">.</span><span class="n">pop</span><span class="p">())</span>
+            <span class="n">arc_large</span> <span class="o">=</span> <span class="nb">bool</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">elements</span><span class="o">.</span><span class="n">pop</span><span class="p">()))</span>
+            <span class="n">arc_sweep</span> <span class="o">=</span> <span class="nb">bool</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">elements</span><span class="o">.</span><span class="n">pop</span><span class="p">()))</span>
+            <span class="n">end</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">elements</span><span class="o">.</span><span class="n">pop</span><span class="p">())</span> <span class="o">+</span> <span class="nb">float</span><span class="p">(</span><span class="n">elements</span><span class="o">.</span><span class="n">pop</span><span class="p">())</span> <span class="o">*</span> <span class="mi">1</span><span class="n">j</span>
+
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">absolute</span><span class="p">:</span>
+                <span class="n">end</span> <span class="o">+=</span> <span class="n">current_pos</span>
+
+            <span class="c1"># if the pen supports arcs, pass the values unchanged, otherwise</span>
+            <span class="c1"># approximate the arc with a series of cubic bezier curves</span>
+            <span class="k">if</span> <span class="n">have_arcTo</span><span class="p">:</span>
+                <span class="n">pen</span><span class="o">.</span><span class="n">arcTo</span><span class="p">(</span>
+                    <span class="n">rx</span><span class="p">,</span>
+                    <span class="n">ry</span><span class="p">,</span>
+                    <span class="n">rotation</span><span class="p">,</span>
+                    <span class="n">arc_large</span><span class="p">,</span>
+                    <span class="n">arc_sweep</span><span class="p">,</span>
+                    <span class="p">(</span><span class="n">end</span><span class="o">.</span><span class="n">real</span><span class="p">,</span> <span class="n">end</span><span class="o">.</span><span class="n">imag</span><span class="p">),</span>
+                <span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">arc</span> <span class="o">=</span> <span class="n">arc_class</span><span class="p">(</span>
+                    <span class="n">current_pos</span><span class="p">,</span> <span class="n">rx</span><span class="p">,</span> <span class="n">ry</span><span class="p">,</span> <span class="n">rotation</span><span class="p">,</span> <span class="n">arc_large</span><span class="p">,</span> <span class="n">arc_sweep</span><span class="p">,</span> <span class="n">end</span>
+                <span class="p">)</span>
+                <span class="n">arc</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">pen</span><span class="p">)</span>
+
+            <span class="n">current_pos</span> <span class="o">=</span> <span class="n">end</span>
+
+    <span class="c1"># no final Z command, it&#39;s an open path</span>
+    <span class="k">if</span> <span class="n">start_pos</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">pen</span><span class="o">.</span><span class="n">endPath</span><span class="p">()</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Just van Rossum, Behdad Esfahbod, and the fontTools Authors. CC BY-SA 4.0
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

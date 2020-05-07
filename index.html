@@ -1,0 +1,672 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>fontTools Docs &mdash; fontTools Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="afmLib" href="afmLib.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="#" class="icon icon-home"> fontTools
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Library</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="afmLib.html">afmLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agl.html">agl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cffLib/index.html">cffLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="colorLib/index.html">colorLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cu2qu/index.html">cu2qu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="designspaceLib/index.html">designspaceLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="encodings/index.html">encodings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="feaLib/index.html">feaLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="merge.html">merge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="misc/index.html">misc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mtiLib.html">mtiLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="otlLib/index.html">otlLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pens/index.html">pens</a></li>
+<li class="toctree-l1"><a class="reference internal" href="subset/index.html">subset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="svgLib/index.html">svgLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="t1Lib.html">t1Lib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ttLib/index.html">ttLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ttx.html">ttx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ufoLib/index.html">ufoLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unicode.html">unicode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unicodedata/index.html">unicodedata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="varLib/index.html">varLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="voltLib.html">voltLib</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">fontTools</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="#">Docs</a> &raquo;</li>
+        
+      <li>fontTools Docs</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <a class="reference internal image-reference" href="_images/FontToolsIconGreenCircle.png"><img alt="Font Tools" class="align-center" src="_images/FontToolsIconGreenCircle.png" style="width: 200px; height: 200px;" /></a>
+<div class="section" id="fonttools-docs">
+<h1>fontTools Docs<a class="headerlink" href="#fonttools-docs" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://travis-ci.org/fonttools/fonttools"><img alt="Travis Build Status" src="https://travis-ci.org/fonttools/fonttools.svg" /></a> <a class="reference external" href="https://ci.appveyor.com/project/fonttools/fonttools/branch/master"><img alt="Appveyor Build status" src="https://ci.appveyor.com/api/projects/status/0f7fmee9as744sl7/branch/master?svg=true" /></a> <a class="reference external" href="https://codecov.io/gh/fonttools/fonttools"><img alt="Coverage Status" src="https://codecov.io/gh/fonttools/fonttools/branch/master/graph/badge.svg" /></a> <a class="reference external" href="https://pypi.org/project/FontTools"><img alt="PyPI" src="https://img.shields.io/pypi/v/fonttools.svg" /></a> <a class="reference external" href="https://gitter.im/fonttools-dev/Lobby?utm_source=badge&amp;utm_medium=badge&amp;utm_campaign=pr-badge&amp;utm_content=badge"><img alt="Join the chat at https://gitter.im/fonttools-dev/Lobby" src="https://badges.gitter.im/fonttools-dev/Lobby.svg" /></a></p>
+<div class="section" id="about">
+<h2>About<a class="headerlink" href="#about" title="Permalink to this headline">¶</a></h2>
+<p>fontTools is a library for manipulating fonts, written in Python. The project includes the TTX tool, that can convert TrueType and OpenType fonts to and from an XML text format, which is also called TTX. It supports TrueType, OpenType, AFM and to an extent Type 1 and some Mac-specific formats. The project has an <a class="reference external" href="https://github.com/fonttools/fonttools/blob/master/LICENSE">MIT open-source license</a>. Among other things this means you can use it free of charge.</p>
+</div>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>fontTools requires <a class="reference external" href="http://www.python.org/download/">Python</a> 3.6 or later.</p>
+</div>
+<p>The package is listed in the Python Package Index (PyPI), so you can install it with <a class="reference external" href="https://pip.pypa.io/">pip</a>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">fonttools</span>
+</pre></div>
+</div>
+<p>If you would like to contribute to its development, you can clone the repository from GitHub, install the package in ‘editable’ mode and modify the source code in place. We recommend creating a virtual environment, using the Python 3 <a class="reference external" href="https://docs.python.org/3/library/venv.html">venv</a> module:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># download the source code to &#39;fonttools&#39; folder</span>
+<span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">fonttools</span><span class="o">/</span><span class="n">fonttools</span><span class="o">.</span><span class="n">git</span>
+<span class="n">cd</span> <span class="n">fonttools</span>
+
+<span class="c1"># create new virtual environment called e.g. &#39;fonttools-venv&#39;, or anything you like</span>
+<span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">venv</span> <span class="n">fonttools</span><span class="o">-</span><span class="n">venv</span>
+
+<span class="c1"># source the `activate` shell script to enter the environment (Un*x)</span>
+<span class="o">.</span> <span class="n">fonttools</span><span class="o">-</span><span class="n">venv</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">activate</span>
+
+<span class="c1"># to activate the virtual environment in Windows `cmd.exe`, do</span>
+<span class="n">fonttools</span><span class="o">-</span><span class="n">venv</span>\<span class="n">Scripts</span>\<span class="n">activate</span><span class="o">.</span><span class="n">bat</span>
+
+<span class="c1"># install in &#39;editable&#39; mode</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">e</span> <span class="o">.</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To exit a Python virtual environment, enter the command <code class="docutils literal notranslate"><span class="pre">deactivate</span></code>.</p>
+</div>
+<p>See the Optional Requirements section below for details about module-specific dependencies that must be installed in select cases.</p>
+</div>
+<div class="section" id="ttx-from-opentype-and-truetype-to-xml-and-back">
+<h2>TTX – From OpenType and TrueType to XML and Back<a class="headerlink" href="#ttx-from-opentype-and-truetype-to-xml-and-back" title="Permalink to this headline">¶</a></h2>
+<p>Once installed you can use the ttx command to convert binary font files (.otf, .ttf, etc) to the TTX XML format, edit them, and convert them back to binary format. TTX files have a .ttx file extension:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ttx</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">font</span><span class="o">.</span><span class="n">otf</span>
+<span class="n">ttx</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">font</span><span class="o">.</span><span class="n">ttx</span>
+</pre></div>
+</div>
+<p>The TTX application can be used in two ways, depending on what platform you run it on:</p>
+<ul class="simple">
+<li><p>As a command line tool (Windows/DOS, Unix, macOS)</p></li>
+<li><p>By dropping files onto the application (Windows, macOS)</p></li>
+</ul>
+<p>TTX detects what kind of files it is fed: it will output a <code class="docutils literal notranslate"><span class="pre">.ttx</span></code> file when it sees a <code class="docutils literal notranslate"><span class="pre">.ttf</span></code> or <code class="docutils literal notranslate"><span class="pre">.otf</span></code>, and it will compile a <code class="docutils literal notranslate"><span class="pre">.ttf</span></code> or <code class="docutils literal notranslate"><span class="pre">.otf</span></code> when the input file is a <code class="docutils literal notranslate"><span class="pre">.ttx</span></code> file. By default, the output file is created in the same folder as the input file, and will have the same name as the input file but with a different extension. TTX will never overwrite existing files, but if necessary will append a unique number to the output filename (before the extension) such as <code class="docutils literal notranslate"><span class="pre">Arial#1.ttf</span></code>.</p>
+<p>When using TTX from the command line there are a bunch of extra options. These are explained in the help text, as displayed when typing <code class="docutils literal notranslate"><span class="pre">ttx</span> <span class="pre">-h</span></code> at the command prompt. These additional options include:</p>
+<ul class="simple">
+<li><p>specifying the folder where the output files are created</p></li>
+<li><p>specifying which tables to dump or which tables to exclude</p></li>
+<li><p>merging partial .ttx files with existing .ttf or .otf files</p></li>
+<li><p>listing brief table info instead of dumping to .ttx</p></li>
+<li><p>splitting tables to separate .ttx files</p></li>
+<li><p>disabling TrueType instruction disassembly</p></li>
+</ul>
+<div class="section" id="the-ttx-file-format">
+<h3>The TTX file format<a class="headerlink" href="#the-ttx-file-format" title="Permalink to this headline">¶</a></h3>
+<p>The following tables are currently supported:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">BASE</span><span class="p">,</span> <span class="n">CBDT</span><span class="p">,</span> <span class="n">CBLC</span><span class="p">,</span> <span class="n">CFF</span><span class="p">,</span> <span class="n">CFF2</span><span class="p">,</span> <span class="n">COLR</span><span class="p">,</span> <span class="n">CPAL</span><span class="p">,</span> <span class="n">DSIG</span><span class="p">,</span> <span class="n">EBDT</span><span class="p">,</span> <span class="n">EBLC</span><span class="p">,</span> <span class="n">FFTM</span><span class="p">,</span>
+<span class="n">Feat</span><span class="p">,</span> <span class="n">GDEF</span><span class="p">,</span> <span class="n">GMAP</span><span class="p">,</span> <span class="n">GPKG</span><span class="p">,</span> <span class="n">GPOS</span><span class="p">,</span> <span class="n">GSUB</span><span class="p">,</span> <span class="n">Glat</span><span class="p">,</span> <span class="n">Gloc</span><span class="p">,</span> <span class="n">HVAR</span><span class="p">,</span> <span class="n">JSTF</span><span class="p">,</span> <span class="n">LTSH</span><span class="p">,</span>
+<span class="n">MATH</span><span class="p">,</span> <span class="n">META</span><span class="p">,</span> <span class="n">MVAR</span><span class="p">,</span> <span class="n">OS</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">SING</span><span class="p">,</span> <span class="n">STAT</span><span class="p">,</span> <span class="n">SVG</span><span class="p">,</span> <span class="n">Silf</span><span class="p">,</span> <span class="n">Sill</span><span class="p">,</span> <span class="n">TSI0</span><span class="p">,</span> <span class="n">TSI1</span><span class="p">,</span>
+<span class="n">TSI2</span><span class="p">,</span> <span class="n">TSI3</span><span class="p">,</span> <span class="n">TSI5</span><span class="p">,</span> <span class="n">TSIB</span><span class="p">,</span> <span class="n">TSID</span><span class="p">,</span> <span class="n">TSIJ</span><span class="p">,</span> <span class="n">TSIP</span><span class="p">,</span> <span class="n">TSIS</span><span class="p">,</span> <span class="n">TSIV</span><span class="p">,</span> <span class="n">TTFA</span><span class="p">,</span> <span class="n">VDMX</span><span class="p">,</span>
+<span class="n">VORG</span><span class="p">,</span> <span class="n">VVAR</span><span class="p">,</span> <span class="n">ankr</span><span class="p">,</span> <span class="n">avar</span><span class="p">,</span> <span class="n">bsln</span><span class="p">,</span> <span class="n">cidg</span><span class="p">,</span> <span class="n">cmap</span><span class="p">,</span> <span class="n">cvar</span><span class="p">,</span> <span class="n">cvt</span><span class="p">,</span> <span class="n">feat</span><span class="p">,</span> <span class="n">fpgm</span><span class="p">,</span>
+<span class="n">fvar</span><span class="p">,</span> <span class="n">gasp</span><span class="p">,</span> <span class="n">gcid</span><span class="p">,</span> <span class="n">glyf</span><span class="p">,</span> <span class="n">gvar</span><span class="p">,</span> <span class="n">hdmx</span><span class="p">,</span> <span class="n">head</span><span class="p">,</span> <span class="n">hhea</span><span class="p">,</span> <span class="n">hmtx</span><span class="p">,</span> <span class="n">kern</span><span class="p">,</span> <span class="n">lcar</span><span class="p">,</span>
+<span class="n">loca</span><span class="p">,</span> <span class="n">ltag</span><span class="p">,</span> <span class="n">maxp</span><span class="p">,</span> <span class="n">meta</span><span class="p">,</span> <span class="n">mort</span><span class="p">,</span> <span class="n">morx</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">opbd</span><span class="p">,</span> <span class="n">post</span><span class="p">,</span> <span class="n">prep</span><span class="p">,</span> <span class="n">prop</span><span class="p">,</span>
+<span class="n">sbix</span><span class="p">,</span> <span class="n">trak</span><span class="p">,</span> <span class="n">vhea</span> <span class="ow">and</span> <span class="n">vmtx</span>
+</pre></div>
+</div>
+<p>Other tables are dumped as hexadecimal data.</p>
+<p>TrueType fonts use glyph indices (GlyphIDs) to refer to glyphs in most places. While this is fine in binary form, it is really hard to work with for humans. Therefore we use names instead.</p>
+<p>The glyph names are either extracted from the <code class="docutils literal notranslate"><span class="pre">CFF</span></code> table or the <code class="docutils literal notranslate"><span class="pre">post</span></code> table, or are derived from a Unicode <code class="docutils literal notranslate"><span class="pre">cmap</span></code> table. In the latter case the Adobe Glyph List is used to calculate names based on Unicode values. If all of these methods fail, names are invented based on GlyphID (eg <code class="docutils literal notranslate"><span class="pre">glyph00142</span></code>)</p>
+<p>It is possible that different glyphs use the same name. If this happens, we force the names to be unique by appending #n to the name (n being an integer number.) The original names are being kept, so this has no influence on a “round tripped” font.</p>
+<p>Because the order in which glyphs are stored inside the binary font is important, we maintain an ordered list of glyph names in the font.</p>
+<p>Please see the <a class="reference internal" href="ttx.html#module-fontTools.ttx" title="fontTools.ttx"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fontTools.ttx</span></code></a> documentation for additional details.</p>
+</div>
+</div>
+<div class="section" id="other-tools">
+<h2>Other Tools<a class="headerlink" href="#other-tools" title="Permalink to this headline">¶</a></h2>
+<p>Commands for merging and subsetting fonts are also available:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pyftmerge</span>
+<span class="n">pyftsubset</span>
+</pre></div>
+</div>
+<p>Please see the <a class="reference internal" href="merge.html#module-fontTools.merge" title="fontTools.merge"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fontTools.merge</span></code></a> and <a class="reference internal" href="subset/index.html#module-fontTools.subset" title="fontTools.subset"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fontTools.subset</span></code></a> documentation for additional information about these tools.</p>
+</div>
+<div class="section" id="fonttools-python-library">
+<h2>fontTools Python Library<a class="headerlink" href="#fonttools-python-library" title="Permalink to this headline">¶</a></h2>
+<p>The fontTools Python library provides a convenient way to programmatically edit font files:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">fontTools.ttLib</span> <span class="k">import</span> <span class="n">TTFont</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">font</span> <span class="o">=</span> <span class="n">TTFont</span><span class="p">(</span><span class="s1">&#39;/path/to/font.ttf&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">font</span>
+<span class="go">&lt;fontTools.ttLib.TTFont object at 0x10c34ed50&gt;</span>
+<span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>A selection of sample Python programs is in the <a class="reference external" href="https://github.com/fonttools/fonttools/blob/master/Snippets/">Snippets directory</a> of the fontTools repository.</p>
+<p>Please navigate to the respective area of the documentation to learn more about the available modules in the fontTools library.</p>
+</div>
+<div class="section" id="optional-requirements">
+<h2>Optional Requirements<a class="headerlink" href="#optional-requirements" title="Permalink to this headline">¶</a></h2>
+<p>The fontTools package currently has no (required) external dependencies
+besides the modules included in the Python Standard Library.
+However, a few extra dependencies are required to unlock optional features
+in some of the library modules.</p>
+<p>The fonttools PyPI distribution also supports so-called “extras”, i.e. a
+set of keywords that describe a group of additional dependencies, which can be
+used when installing via pip, or when specifying a requirement.
+For example:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pip install fonttools<span class="o">[</span>ufo,lxml,woff,unicode<span class="o">]</span>
+</pre></div>
+</div>
+<p>This command will install fonttools, as well as the optional dependencies that
+are required to unlock the extra features named “ufo”, etc.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Optional dependencies are detailed by module in the list below with the <code class="docutils literal notranslate"><span class="pre">Extra</span></code> setting that automates <code class="docutils literal notranslate"><span class="pre">pip</span></code> dependency installation when this is supported.</p>
+</div>
+<div class="section" id="fonttools-misc-etree">
+<h3><a class="reference internal" href="misc/etree.html#module-fontTools.misc.etree" title="fontTools.misc.etree"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fontTools.misc.etree</span></code></a><a class="headerlink" href="#fonttools-misc-etree" title="Permalink to this headline">¶</a></h3>
+<p>The module exports a ElementTree-like API for reading/writing XML files, and allows to use as the backend either the built-in <code class="docutils literal notranslate"><span class="pre">xml.etree</span></code> module or <a class="reference external" href="https://lxml.de">lxml</a>. The latter is preferred whenever present, as it is generally faster and more secure.</p>
+<p><em>Extra:</em> <code class="docutils literal notranslate"><span class="pre">lxml</span></code></p>
+</div>
+<div class="section" id="fonttools-ufolib">
+<h3><a class="reference internal" href="ufoLib/index.html#module-fontTools.ufoLib" title="fontTools.ufoLib"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fontTools.ufoLib</span></code></a><a class="headerlink" href="#fonttools-ufolib" title="Permalink to this headline">¶</a></h3>
+<p>Package for reading and writing UFO source files; it requires:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://pypi.org/pypi/fs">fs</a>: (aka <code class="docutils literal notranslate"><span class="pre">pyfilesystem2</span></code>) filesystem abstraction layer.</p></li>
+<li><p><a class="reference external" href="https://pypi.org/pypi/enum34">enum34</a>: backport for the built-in <code class="docutils literal notranslate"><span class="pre">enum</span></code> module (only required on Python &lt; 3.4).</p></li>
+</ul>
+<p><em>Extra:</em> <code class="docutils literal notranslate"><span class="pre">ufo</span></code></p>
+</div>
+<div class="section" id="fonttools-ttlib-woff2">
+<h3><a class="reference internal" href="ttLib/woff2.html#module-fontTools.ttLib.woff2" title="fontTools.ttLib.woff2"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fontTools.ttLib.woff2</span></code></a><a class="headerlink" href="#fonttools-ttlib-woff2" title="Permalink to this headline">¶</a></h3>
+<p>Module to compress/decompress WOFF 2.0 web fonts; it requires:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://pypi.python.org/pypi/Brotli">brotli</a>: Python bindings of the Brotli compression library.</p></li>
+</ul>
+<p><em>Extra:</em> <code class="docutils literal notranslate"><span class="pre">woff</span></code></p>
+</div>
+<div class="section" id="fonttools-unicode">
+<h3><a class="reference internal" href="unicode.html#module-fontTools.unicode" title="fontTools.unicode"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fontTools.unicode</span></code></a><a class="headerlink" href="#fonttools-unicode" title="Permalink to this headline">¶</a></h3>
+<p>To display the Unicode character names when dumping the <code class="docutils literal notranslate"><span class="pre">cmap</span></code> table
+with <code class="docutils literal notranslate"><span class="pre">ttx</span></code> we use the <code class="docutils literal notranslate"><span class="pre">unicodedata</span></code> module in the Standard Library.
+The version included in there varies between different Python versions.
+To use the latest available data, you can install:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://pypi.python.org/pypi/unicodedata2">unicodedata2</a>: <code class="docutils literal notranslate"><span class="pre">unicodedata</span></code> backport for Python 2.7
+and 3.x updated to the latest Unicode version 12.0. Note this is not necessary if you use Python 3.8
+as the latter already comes with an up-to-date <code class="docutils literal notranslate"><span class="pre">unicodedata</span></code>.</p></li>
+</ul>
+<p><em>Extra:</em> <code class="docutils literal notranslate"><span class="pre">unicode</span></code></p>
+</div>
+<div class="section" id="fonttools-varlib-interpolatable">
+<h3><a class="reference internal" href="varLib/interpolatable.html#module-fontTools.varLib.interpolatable" title="fontTools.varLib.interpolatable"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fontTools.varLib.interpolatable</span></code></a><a class="headerlink" href="#fonttools-varlib-interpolatable" title="Permalink to this headline">¶</a></h3>
+<p>Module for finding wrong contour/component order between different masters.
+It requires one of the following packages in order to solve the so-called
+“minimum weight perfect matching problem in bipartite graphs”, or
+the Assignment problem:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://pypi.python.org/pypi/scipy">scipy</a>: the Scientific Library for Python, which internally
+uses <a class="reference external" href="https://pypi.python.org/pypi/numpy">NumPy</a> arrays and hence is very fast;</p></li>
+<li><p><a class="reference external" href="https://pypi.python.org/pypi/munkres">munkres</a>: a pure-Python module that implements the Hungarian
+or Kuhn-Munkres algorithm.</p></li>
+</ul>
+<p><em>Extra:</em> <code class="docutils literal notranslate"><span class="pre">interpolatable</span></code></p>
+</div>
+<div class="section" id="fonttools-varlib-plot">
+<h3><a class="reference internal" href="varLib/plot.html#module-fontTools.varLib.plot" title="fontTools.varLib.plot"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fontTools.varLib.plot</span></code></a><a class="headerlink" href="#fonttools-varlib-plot" title="Permalink to this headline">¶</a></h3>
+<p>Module for visualizing DesignSpaceDocument and resulting VariationModel.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://pypi.org/pypi/matplotlib">matplotlib</a>: 2D plotting library.</p></li>
+</ul>
+<p><em>Extra:</em> <code class="docutils literal notranslate"><span class="pre">plot</span></code></p>
+</div>
+<div class="section" id="fonttools-misc-symfont">
+<h3><code class="xref py py-mod docutils literal notranslate"><span class="pre">fontTools.misc.symfont</span></code><a class="headerlink" href="#fonttools-misc-symfont" title="Permalink to this headline">¶</a></h3>
+<p>Advanced module for symbolic font statistics analysis; it requires:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://pypi.python.org/pypi/sympy">sympy</a>: the Python library for symbolic mathematics.</p></li>
+</ul>
+<p><em>Extra:</em> <code class="docutils literal notranslate"><span class="pre">symfont</span></code></p>
+</div>
+<div class="section" id="fonttools-t1lib">
+<h3><a class="reference internal" href="t1Lib.html#module-fontTools.t1Lib" title="fontTools.t1Lib"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fontTools.t1Lib</span></code></a><a class="headerlink" href="#fonttools-t1lib" title="Permalink to this headline">¶</a></h3>
+<p>To get the file creator and type of Macintosh PostScript Type 1 fonts
+on Python 3 you need to install the following module, as the old <code class="docutils literal notranslate"><span class="pre">MacOS</span></code>
+module is no longer included in Mac Python:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://pypi.python.org/pypi/xattr">xattr</a>: Python wrapper for extended filesystem attributes
+(macOS platform only).</p></li>
+</ul>
+<p><em>Extra:</em> <code class="docutils literal notranslate"><span class="pre">type1</span></code></p>
+</div>
+<div class="section" id="fonttools-pens-cocoapen">
+<h3><a class="reference internal" href="pens/cocoaPen.html#module-fontTools.pens.cocoaPen" title="fontTools.pens.cocoaPen"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fontTools.pens.cocoaPen</span></code></a><a class="headerlink" href="#fonttools-pens-cocoapen" title="Permalink to this headline">¶</a></h3>
+<p>Pen for drawing glyphs with Cocoa <code class="docutils literal notranslate"><span class="pre">NSBezierPath</span></code>, requires:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://pypi.python.org/pypi/pyobjc">PyObjC</a>: the bridge between Python and the Objective-C
+runtime (macOS platform only).</p></li>
+</ul>
+</div>
+<div class="section" id="fonttools-pens-qtpen">
+<h3><a class="reference internal" href="pens/qtPen.html#module-fontTools.pens.qtPen" title="fontTools.pens.qtPen"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fontTools.pens.qtPen</span></code></a><a class="headerlink" href="#fonttools-pens-qtpen" title="Permalink to this headline">¶</a></h3>
+<p>Pen for drawing glyphs with Qt’s <code class="docutils literal notranslate"><span class="pre">QPainterPath</span></code>, requires:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://pypi.python.org/pypi/PyQt5">PyQt5</a>: Python bindings for the Qt cross platform UI and
+application toolkit.</p></li>
+</ul>
+</div>
+<div class="section" id="fonttools-pens-reportlabpen">
+<h3><code class="xref py py-mod docutils literal notranslate"><span class="pre">fontTools.pens.reportLabPen</span></code><a class="headerlink" href="#fonttools-pens-reportlabpen" title="Permalink to this headline">¶</a></h3>
+<p>Pen to drawing glyphs as PNG images, requires:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://pypi.python.org/pypi/reportlab">reportlab</a>: Python toolkit for generating PDFs and
+graphics.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="testing">
+<h2>Testing<a class="headerlink" href="#testing" title="Permalink to this headline">¶</a></h2>
+<p>To run the test suite, you need to install <a class="reference external" href="http://docs.pytest.org/en/latest/">pytest</a>.
+When you run the <code class="docutils literal notranslate"><span class="pre">pytest</span></code> command, the tests will run against the
+installed fontTools package, or the first one found in the
+<code class="docutils literal notranslate"><span class="pre">PYTHONPATH</span></code>.</p>
+<p>You can also use <a class="reference external" href="https://tox.readthedocs.io/en/latest/">tox</a> to
+automatically run tests on different Python versions in isolated virtual
+environments:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">tox</span>
+<span class="n">tox</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When you run <code class="docutils literal notranslate"><span class="pre">tox</span></code> without arguments, the tests are executed for all the environments listed in the <code class="docutils literal notranslate"><span class="pre">tox.ini</span></code> <code class="docutils literal notranslate"><span class="pre">envlist</span></code>. The current Python interpreters defined for tox testing must be available on your system <code class="docutils literal notranslate"><span class="pre">PATH</span></code>.</p>
+</div>
+<p>You can specify a different testing environment list via the <code class="docutils literal notranslate"><span class="pre">-e</span></code> option, or the <code class="docutils literal notranslate"><span class="pre">TOXENV</span></code> environment variable:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tox</span> <span class="o">-</span><span class="n">e</span> <span class="n">py36</span>
+<span class="n">TOXENV</span><span class="o">=</span><span class="s2">&quot;py36-cov,htmlcov&quot;</span> <span class="n">tox</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="development-community">
+<h2>Development Community<a class="headerlink" href="#development-community" title="Permalink to this headline">¶</a></h2>
+<p>fontTools development is ongoing in an active community of developers that includes professional developers employed at major software corporations and type foundries as well as hobbyists.</p>
+<p>Feature requests and bug reports are always welcome at <a class="reference external" href="https://github.com/fonttools/fonttools/issues/">https://github.com/fonttools/fonttools/issues/</a></p>
+<p>The best place for end-user and developer discussion about the fontTools project is the <a class="reference external" href="https://gitter.im/fonttools-dev/Lobby">fontTools gitter channel</a>. There is also a development <a class="reference external" href="https://groups.google.com/d/forum/fonttools-dev">https://groups.google.com/d/forum/fonttools-dev</a> mailing list for continuous integration notifications.</p>
+</div>
+<div class="section" id="history">
+<h2>History<a class="headerlink" href="#history" title="Permalink to this headline">¶</a></h2>
+<p>The fontTools project was started by Just van Rossum in 1999, and was
+maintained as an open source project at
+<a class="reference external" href="http://sourceforge.net/projects/fonttools/">http://sourceforge.net/projects/fonttools/</a>. In 2008, Paul Wise (pabs3)
+began helping Just with stability maintenance. In 2013 Behdad Esfahbod
+began a friendly fork, thoroughly reviewing the codebase and making
+changes at <a class="reference external" href="https://github.com/behdad/fonttools">https://github.com/behdad/fonttools</a> to add new features and
+support for new font formats.</p>
+</div>
+<div class="section" id="acknowledgments">
+<h2>Acknowledgments<a class="headerlink" href="#acknowledgments" title="Permalink to this headline">¶</a></h2>
+<p>In alphabetical order:</p>
+<p>Olivier Berten, Samyak Bhuta, Erik van Blokland, Petr van Blokland,
+Jelle Bosma, Sascha Brawer, Tom Byrer, Frédéric Coiffier, Vincent
+Connare, Dave Crossland, Simon Daniels, Peter Dekkers, Behdad Esfahbod,
+Behnam Esfahbod, Hannes Famira, Sam Fishman, Matt Fontaine, Yannis
+Haralambous, Greg Hitchcock, Jeremie Hornus, Khaled Hosny, John Hudson,
+Denis Moyogo Jacquerye, Jack Jansen, Tom Kacvinsky, Jens Kutilek,
+Antoine Leca, Werner Lemberg, Tal Leming, Peter Lofting, Cosimo Lupo,
+Masaya Nakamura, Dave Opstad, Laurence Penney, Roozbeh Pournader, Garret
+Rieger, Read Roberts, Guido van Rossum, Just van Rossum, Andreas Seidel,
+Georg Seifert, Chris Simpkins, Miguel Sousa, Adam Twardoch, Adrien Tétar, Vitaly Volkov,
+Paul Wise.</p>
+</div>
+<div class="section" id="license">
+<h2>License<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://github.com/fonttools/fonttools/blob/master/LICENSE">MIT license</a>.  See the full text of the license for details.</p>
+</div>
+<div class="section" id="table-of-contents">
+<h2>Table of Contents<a class="headerlink" href="#table-of-contents" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">Library</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="afmLib.html">afmLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agl.html">agl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cffLib/index.html">cffLib</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cffLib/specializer.html">specializer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cffLib/width.html">width</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="colorLib/index.html">colorLib</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="colorLib/builder.html">builder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="colorLib/errors.html">errors</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cu2qu/index.html">cu2qu</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cu2qu/cli.html">cli</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cu2qu/cu2qu.html">cu2qu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cu2qu/errors.html">errors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cu2qu/ufo.html">ufo</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="designspaceLib/index.html">designspaceLib</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="designspaceLib/readme.html">DesignSpaceDocument Specification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="designspaceLib/scripting.html">Scripting a designspace</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="encodings/index.html">encodings</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="encodings/codecs.html">codecs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="encodings/macRoman.html">MacRoman</a></li>
+<li class="toctree-l2"><a class="reference internal" href="encodings/StandardEncoding.html">StandardEncoding</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="feaLib/index.html">feaLib</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="feaLib/ast.html">ast</a></li>
+<li class="toctree-l2"><a class="reference internal" href="feaLib/builder.html">builder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="feaLib/error.html">error</a></li>
+<li class="toctree-l2"><a class="reference internal" href="feaLib/lexer.html">lexer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="feaLib/parser.html">parser</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="merge.html">merge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="misc/index.html">misc</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="misc/arrayTools.html">arrayTools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="misc/bezierTools.html">bezierTools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="misc/classifyTools.html">classifyTools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="misc/cliTools.html">cliTools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="misc/eexec.html">eexec</a></li>
+<li class="toctree-l2"><a class="reference internal" href="misc/encodingTools.html">encodingTools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="misc/etree.html">etree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="misc/filenames.html">filenames</a></li>
+<li class="toctree-l2"><a class="reference internal" href="misc/fixedTools.html">fixedTools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="misc/intTools.html">intTools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="misc/loggingTools.html">loggingTools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="misc/macCreatorType.html">macCreatorType</a></li>
+<li class="toctree-l2"><a class="reference internal" href="misc/macRes.html">macRes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="misc/psCharStrings.html">psCharStrings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="misc/psLib.html">psLib</a></li>
+<li class="toctree-l2"><a class="reference internal" href="misc/psOperators.html">psOperators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="misc/py23.html">py23</a></li>
+<li class="toctree-l2"><a class="reference internal" href="misc/sstruct.html">sstruct</a></li>
+<li class="toctree-l2"><a class="reference internal" href="misc/symfont.html">symfont</a></li>
+<li class="toctree-l2"><a class="reference internal" href="misc/testTools.html">testTools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="misc/textTools.html">textTools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="misc/timeTools.html">timeTools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="misc/transform.html">transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="misc/xmlReader.html">xmlReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="misc/xmlWriter.html">xmlWriter</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="mtiLib.html">mtiLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="otlLib/index.html">otlLib</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="otlLib/builder.html">builder</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pens/index.html">pens</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pens/areaPen.html">areaPen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pens/basePen.html">basePen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pens/boundsPen.html">boundsPen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pens/cocoaPen.html">cocoaPen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pens/cu2quPen.html">cu2quPen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pens/filterPen.html">filterPen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pens/momentsPen.html">momentsPen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pens/perimeterPen.html">perimeterPen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pens/pointInsidePen.html">pointInsidePen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pens/pointPen.html">pointPen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pens/qtPen.html">qtPen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pens/recordingPen.html">recordingPen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pens/reportLabPen.html">reportLabPen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pens/reverseContourPen.html">reverseContourPen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pens/roundingPen.html">roundingPen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pens/statisticsPen.html">statisticsPen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pens/svgPathPen.html">svgPathPen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pens/t2CharStringPen.html">t2CharStringPen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pens/teePen.html">teePen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pens/transformPen.html">transformPen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pens/ttGlyphPen.html">ttGlyphPen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pens/wxPen.html">wxPen</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="subset/index.html">subset</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="subset/cff.html">cff</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="svgLib/index.html">svgLib</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="svgLib/path/index.html">path</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="t1Lib.html">t1Lib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ttLib/index.html">ttLib</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ttLib/macUtils.html">macUtils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ttLib/sfnt.html">sfnt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ttLib/standardGlyphOrder.html">standardGlyphOrder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ttLib/tables.html">tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ttLib/ttCollection.html">ttCollection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ttLib/ttFont.html">ttFont</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ttLib/woff2.html">woff2</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ttx.html">ttx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ufoLib/index.html">ufoLib</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ufoLib/converters.html">converters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ufoLib/errors.html">errors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ufoLib/filenames.html">filenames</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ufoLib/glifLib.html">glifLib</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ufoLib/kerning.html">kerning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ufoLib/plistlib.html">plistlib</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ufoLib/pointpen.html">pointPen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ufoLib/utils.html">utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ufoLib/validators.html">validators</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="unicode.html">unicode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unicodedata/index.html">unicodedata</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="unicodedata/Blocks.html">Blocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unicodedata/OTTags.html">OTTags</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unicodedata/ScriptExtensions.html">ScriptExtensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unicodedata/Scripts.html">Scripts</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="varLib/index.html">varLib</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="varLib/builder.html">builder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="varLib/cff.html">cff</a></li>
+<li class="toctree-l2"><a class="reference internal" href="varLib/errors.html">errors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="varLib/featureVars.html">featureVars</a></li>
+<li class="toctree-l2"><a class="reference internal" href="varLib/instancer.html">instancer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="varLib/interpolatable.html">interpolatable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="varLib/interpolate_layout.html">interpolate_layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="varLib/iup.html">iup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="varLib/merger.html">merger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="varLib/models.html">models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="varLib/mutator.html">mutator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="varLib/mvar.html">mvar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="varLib/plot.html">plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="varLib/varStore.html">varStore</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="voltLib.html">voltLib</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="voltLib.html#module-fontTools.voltLib.ast">ast</a></li>
+<li class="toctree-l2"><a class="reference internal" href="voltLib.html#module-fontTools.voltLib.parser">error</a></li>
+<li class="toctree-l2"><a class="reference internal" href="voltLib.html#module-fontTools.voltLib.lexer">lexer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="voltLib.html#module-0">parser</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="afmLib.html" class="btn btn-neutral float-right" title="afmLib" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Just van Rossum, Behdad Esfahbod, and the fontTools Authors. CC BY-SA 4.0
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

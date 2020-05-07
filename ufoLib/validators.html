@@ -1,0 +1,708 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>validators &mdash; fontTools Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="unicode" href="../unicode.html" />
+    <link rel="prev" title="utils" href="utils.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> fontTools
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Library</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../afmLib.html">afmLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../agl.html">agl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cffLib/index.html">cffLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../colorLib/index.html">colorLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cu2qu/index.html">cu2qu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../designspaceLib/index.html">designspaceLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../encodings/index.html">encodings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../feaLib/index.html">feaLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../merge.html">merge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/index.html">misc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mtiLib.html">mtiLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../otlLib/index.html">otlLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pens/index.html">pens</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../subset/index.html">subset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svgLib/index.html">svgLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../t1Lib.html">t1Lib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ttLib/index.html">ttLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ttx.html">ttx</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">ufoLib</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="converters.html">converters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="errors.html">errors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="filenames.html">filenames</a></li>
+<li class="toctree-l2"><a class="reference internal" href="glifLib.html">glifLib</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kerning.html">kerning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plistlib.html">plistlib</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pointpen.html">pointPen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.html">utils</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">validators</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../unicode.html">unicode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unicodedata/index.html">unicodedata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../varLib/index.html">varLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../voltLib.html">voltLib</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">fontTools</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">ufoLib</a> &raquo;</li>
+        
+      <li>validators</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/ufoLib/validators.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-fontTools.ufoLib.validators">
+<span id="validators"></span><h1>validators<a class="headerlink" href="#module-fontTools.ufoLib.validators" title="Permalink to this headline">¶</a></h1>
+<p>Various low level data validators.</p>
+<dl class="py function">
+<dt id="fontTools.ufoLib.validators.anchorValidator">
+<code class="sig-prename descclassname">fontTools.ufoLib.validators.</code><code class="sig-name descname">anchorValidator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ufoLib/validators.html#anchorValidator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ufoLib.validators.anchorValidator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Version 3+.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.ufoLib.validators.anchorsValidator">
+<code class="sig-prename descclassname">fontTools.ufoLib.validators.</code><code class="sig-name descname">anchorsValidator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em>, <em class="sig-param"><span class="n">identifiers</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ufoLib/validators.html#anchorsValidator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ufoLib.validators.anchorsValidator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Version 3+.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.ufoLib.validators.colorValidator">
+<code class="sig-prename descclassname">fontTools.ufoLib.validators.</code><code class="sig-name descname">colorValidator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ufoLib/validators.html#colorValidator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ufoLib.validators.colorValidator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Version 3+.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">colorValidator</span><span class="p">(</span><span class="s2">&quot;0,0,0,0&quot;</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">colorValidator</span><span class="p">(</span><span class="s2">&quot;.5,.5,.5,.5&quot;</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">colorValidator</span><span class="p">(</span><span class="s2">&quot;0.5,0.5,0.5,0.5&quot;</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">colorValidator</span><span class="p">(</span><span class="s2">&quot;1,1,1,1&quot;</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">colorValidator</span><span class="p">(</span><span class="s2">&quot;2,0,0,0&quot;</span><span class="p">)</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">colorValidator</span><span class="p">(</span><span class="s2">&quot;0,2,0,0&quot;</span><span class="p">)</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">colorValidator</span><span class="p">(</span><span class="s2">&quot;0,0,2,0&quot;</span><span class="p">)</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">colorValidator</span><span class="p">(</span><span class="s2">&quot;0,0,0,2&quot;</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">colorValidator</span><span class="p">(</span><span class="s2">&quot;1r,1,1,1&quot;</span><span class="p">)</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">colorValidator</span><span class="p">(</span><span class="s2">&quot;1,1g,1,1&quot;</span><span class="p">)</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">colorValidator</span><span class="p">(</span><span class="s2">&quot;1,1,1b,1&quot;</span><span class="p">)</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">colorValidator</span><span class="p">(</span><span class="s2">&quot;1,1,1,1a&quot;</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">colorValidator</span><span class="p">(</span><span class="s2">&quot;1 1 1 1&quot;</span><span class="p">)</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">colorValidator</span><span class="p">(</span><span class="s2">&quot;1 1,1,1&quot;</span><span class="p">)</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">colorValidator</span><span class="p">(</span><span class="s2">&quot;1,1 1,1&quot;</span><span class="p">)</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">colorValidator</span><span class="p">(</span><span class="s2">&quot;1,1,1 1&quot;</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">colorValidator</span><span class="p">(</span><span class="s2">&quot;1, 1, 1, 1&quot;</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.ufoLib.validators.fontInfoOpenTypeGaspRangeRecordsValidator">
+<code class="sig-prename descclassname">fontTools.ufoLib.validators.</code><code class="sig-name descname">fontInfoOpenTypeGaspRangeRecordsValidator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ufoLib/validators.html#fontInfoOpenTypeGaspRangeRecordsValidator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ufoLib.validators.fontInfoOpenTypeGaspRangeRecordsValidator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Version 3+.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.ufoLib.validators.fontInfoOpenTypeHeadCreatedValidator">
+<code class="sig-prename descclassname">fontTools.ufoLib.validators.</code><code class="sig-name descname">fontInfoOpenTypeHeadCreatedValidator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ufoLib/validators.html#fontInfoOpenTypeHeadCreatedValidator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ufoLib.validators.fontInfoOpenTypeHeadCreatedValidator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Version 2+.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.ufoLib.validators.fontInfoOpenTypeNameRecordsValidator">
+<code class="sig-prename descclassname">fontTools.ufoLib.validators.</code><code class="sig-name descname">fontInfoOpenTypeNameRecordsValidator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ufoLib/validators.html#fontInfoOpenTypeNameRecordsValidator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ufoLib.validators.fontInfoOpenTypeNameRecordsValidator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Version 3+.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.ufoLib.validators.fontInfoOpenTypeOS2FamilyClassValidator">
+<code class="sig-prename descclassname">fontTools.ufoLib.validators.</code><code class="sig-name descname">fontInfoOpenTypeOS2FamilyClassValidator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">values</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ufoLib/validators.html#fontInfoOpenTypeOS2FamilyClassValidator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ufoLib.validators.fontInfoOpenTypeOS2FamilyClassValidator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Version 2+.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.ufoLib.validators.fontInfoOpenTypeOS2WeightClassValidator">
+<code class="sig-prename descclassname">fontTools.ufoLib.validators.</code><code class="sig-name descname">fontInfoOpenTypeOS2WeightClassValidator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ufoLib/validators.html#fontInfoOpenTypeOS2WeightClassValidator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ufoLib.validators.fontInfoOpenTypeOS2WeightClassValidator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Version 2+.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.ufoLib.validators.fontInfoOpenTypeOS2WidthClassValidator">
+<code class="sig-prename descclassname">fontTools.ufoLib.validators.</code><code class="sig-name descname">fontInfoOpenTypeOS2WidthClassValidator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ufoLib/validators.html#fontInfoOpenTypeOS2WidthClassValidator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ufoLib.validators.fontInfoOpenTypeOS2WidthClassValidator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Version 2+.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.ufoLib.validators.fontInfoPostscriptBluesValidator">
+<code class="sig-prename descclassname">fontTools.ufoLib.validators.</code><code class="sig-name descname">fontInfoPostscriptBluesValidator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">values</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ufoLib/validators.html#fontInfoPostscriptBluesValidator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ufoLib.validators.fontInfoPostscriptBluesValidator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Version 2+.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.ufoLib.validators.fontInfoPostscriptOtherBluesValidator">
+<code class="sig-prename descclassname">fontTools.ufoLib.validators.</code><code class="sig-name descname">fontInfoPostscriptOtherBluesValidator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">values</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ufoLib/validators.html#fontInfoPostscriptOtherBluesValidator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ufoLib.validators.fontInfoPostscriptOtherBluesValidator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Version 2+.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.ufoLib.validators.fontInfoPostscriptStemsValidator">
+<code class="sig-prename descclassname">fontTools.ufoLib.validators.</code><code class="sig-name descname">fontInfoPostscriptStemsValidator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">values</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ufoLib/validators.html#fontInfoPostscriptStemsValidator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ufoLib.validators.fontInfoPostscriptStemsValidator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Version 2+.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.ufoLib.validators.fontInfoPostscriptWindowsCharacterSetValidator">
+<code class="sig-prename descclassname">fontTools.ufoLib.validators.</code><code class="sig-name descname">fontInfoPostscriptWindowsCharacterSetValidator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ufoLib/validators.html#fontInfoPostscriptWindowsCharacterSetValidator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ufoLib.validators.fontInfoPostscriptWindowsCharacterSetValidator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Version 2+.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.ufoLib.validators.fontInfoStyleMapStyleNameValidator">
+<code class="sig-prename descclassname">fontTools.ufoLib.validators.</code><code class="sig-name descname">fontInfoStyleMapStyleNameValidator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ufoLib/validators.html#fontInfoStyleMapStyleNameValidator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ufoLib.validators.fontInfoStyleMapStyleNameValidator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Version 2+.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.ufoLib.validators.fontInfoVersion2OpenTypeOS2PanoseValidator">
+<code class="sig-prename descclassname">fontTools.ufoLib.validators.</code><code class="sig-name descname">fontInfoVersion2OpenTypeOS2PanoseValidator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">values</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ufoLib/validators.html#fontInfoVersion2OpenTypeOS2PanoseValidator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ufoLib.validators.fontInfoVersion2OpenTypeOS2PanoseValidator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Version 2.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.ufoLib.validators.fontInfoVersion3OpenTypeOS2PanoseValidator">
+<code class="sig-prename descclassname">fontTools.ufoLib.validators.</code><code class="sig-name descname">fontInfoVersion3OpenTypeOS2PanoseValidator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">values</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ufoLib/validators.html#fontInfoVersion3OpenTypeOS2PanoseValidator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ufoLib.validators.fontInfoVersion3OpenTypeOS2PanoseValidator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Version 3+.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.ufoLib.validators.fontInfoWOFFMetadataCopyrightValidator">
+<code class="sig-prename descclassname">fontTools.ufoLib.validators.</code><code class="sig-name descname">fontInfoWOFFMetadataCopyrightValidator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ufoLib/validators.html#fontInfoWOFFMetadataCopyrightValidator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ufoLib.validators.fontInfoWOFFMetadataCopyrightValidator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Version 3+.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.ufoLib.validators.fontInfoWOFFMetadataCreditsValidator">
+<code class="sig-prename descclassname">fontTools.ufoLib.validators.</code><code class="sig-name descname">fontInfoWOFFMetadataCreditsValidator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ufoLib/validators.html#fontInfoWOFFMetadataCreditsValidator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ufoLib.validators.fontInfoWOFFMetadataCreditsValidator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Version 3+.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.ufoLib.validators.fontInfoWOFFMetadataDescriptionValidator">
+<code class="sig-prename descclassname">fontTools.ufoLib.validators.</code><code class="sig-name descname">fontInfoWOFFMetadataDescriptionValidator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ufoLib/validators.html#fontInfoWOFFMetadataDescriptionValidator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ufoLib.validators.fontInfoWOFFMetadataDescriptionValidator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Version 3+.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.ufoLib.validators.fontInfoWOFFMetadataExtensionItemValidator">
+<code class="sig-prename descclassname">fontTools.ufoLib.validators.</code><code class="sig-name descname">fontInfoWOFFMetadataExtensionItemValidator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ufoLib/validators.html#fontInfoWOFFMetadataExtensionItemValidator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ufoLib.validators.fontInfoWOFFMetadataExtensionItemValidator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Version 3+.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.ufoLib.validators.fontInfoWOFFMetadataExtensionNameValidator">
+<code class="sig-prename descclassname">fontTools.ufoLib.validators.</code><code class="sig-name descname">fontInfoWOFFMetadataExtensionNameValidator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ufoLib/validators.html#fontInfoWOFFMetadataExtensionNameValidator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ufoLib.validators.fontInfoWOFFMetadataExtensionNameValidator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Version 3+.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.ufoLib.validators.fontInfoWOFFMetadataExtensionValidator">
+<code class="sig-prename descclassname">fontTools.ufoLib.validators.</code><code class="sig-name descname">fontInfoWOFFMetadataExtensionValidator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ufoLib/validators.html#fontInfoWOFFMetadataExtensionValidator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ufoLib.validators.fontInfoWOFFMetadataExtensionValidator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Version 3+.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.ufoLib.validators.fontInfoWOFFMetadataExtensionValueValidator">
+<code class="sig-prename descclassname">fontTools.ufoLib.validators.</code><code class="sig-name descname">fontInfoWOFFMetadataExtensionValueValidator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ufoLib/validators.html#fontInfoWOFFMetadataExtensionValueValidator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ufoLib.validators.fontInfoWOFFMetadataExtensionValueValidator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Version 3+.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.ufoLib.validators.fontInfoWOFFMetadataExtensionsValidator">
+<code class="sig-prename descclassname">fontTools.ufoLib.validators.</code><code class="sig-name descname">fontInfoWOFFMetadataExtensionsValidator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ufoLib/validators.html#fontInfoWOFFMetadataExtensionsValidator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ufoLib.validators.fontInfoWOFFMetadataExtensionsValidator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Version 3+.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.ufoLib.validators.fontInfoWOFFMetadataLicenseValidator">
+<code class="sig-prename descclassname">fontTools.ufoLib.validators.</code><code class="sig-name descname">fontInfoWOFFMetadataLicenseValidator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ufoLib/validators.html#fontInfoWOFFMetadataLicenseValidator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ufoLib.validators.fontInfoWOFFMetadataLicenseValidator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Version 3+.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.ufoLib.validators.fontInfoWOFFMetadataLicenseeValidator">
+<code class="sig-prename descclassname">fontTools.ufoLib.validators.</code><code class="sig-name descname">fontInfoWOFFMetadataLicenseeValidator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ufoLib/validators.html#fontInfoWOFFMetadataLicenseeValidator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ufoLib.validators.fontInfoWOFFMetadataLicenseeValidator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Version 3+.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.ufoLib.validators.fontInfoWOFFMetadataTextValue">
+<code class="sig-prename descclassname">fontTools.ufoLib.validators.</code><code class="sig-name descname">fontInfoWOFFMetadataTextValue</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ufoLib/validators.html#fontInfoWOFFMetadataTextValue"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ufoLib.validators.fontInfoWOFFMetadataTextValue" title="Permalink to this definition">¶</a></dt>
+<dd><p>Version 3+.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.ufoLib.validators.fontInfoWOFFMetadataTrademarkValidator">
+<code class="sig-prename descclassname">fontTools.ufoLib.validators.</code><code class="sig-name descname">fontInfoWOFFMetadataTrademarkValidator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ufoLib/validators.html#fontInfoWOFFMetadataTrademarkValidator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ufoLib.validators.fontInfoWOFFMetadataTrademarkValidator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Version 3+.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.ufoLib.validators.fontInfoWOFFMetadataUniqueIDValidator">
+<code class="sig-prename descclassname">fontTools.ufoLib.validators.</code><code class="sig-name descname">fontInfoWOFFMetadataUniqueIDValidator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ufoLib/validators.html#fontInfoWOFFMetadataUniqueIDValidator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ufoLib.validators.fontInfoWOFFMetadataUniqueIDValidator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Version 3+.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.ufoLib.validators.fontInfoWOFFMetadataVendorValidator">
+<code class="sig-prename descclassname">fontTools.ufoLib.validators.</code><code class="sig-name descname">fontInfoWOFFMetadataVendorValidator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ufoLib/validators.html#fontInfoWOFFMetadataVendorValidator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ufoLib.validators.fontInfoWOFFMetadataVendorValidator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Version 3+.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.ufoLib.validators.fontLibValidator">
+<code class="sig-prename descclassname">fontTools.ufoLib.validators.</code><code class="sig-name descname">fontLibValidator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ufoLib/validators.html#fontLibValidator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ufoLib.validators.fontLibValidator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check the validity of the lib.
+Version 3+ (though it’s backwards compatible with UFO 1 and UFO 2).</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">lib</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;foo&quot;</span> <span class="p">:</span> <span class="s2">&quot;bar&quot;</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fontLibValidator</span><span class="p">(</span><span class="n">lib</span><span class="p">)</span>
+<span class="go">(True, None)</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">lib</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;public.awesome&quot;</span> <span class="p">:</span> <span class="s2">&quot;hello&quot;</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fontLibValidator</span><span class="p">(</span><span class="n">lib</span><span class="p">)</span>
+<span class="go">(True, None)</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">lib</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;public.glyphOrder&quot;</span> <span class="p">:</span> <span class="p">[</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">]}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fontLibValidator</span><span class="p">(</span><span class="n">lib</span><span class="p">)</span>
+<span class="go">(True, None)</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">lib</span> <span class="o">=</span> <span class="s2">&quot;hello&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">valid</span><span class="p">,</span> <span class="n">msg</span> <span class="o">=</span> <span class="n">fontLibValidator</span><span class="p">(</span><span class="n">lib</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">valid</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>  
+<span class="go">The lib data is not in the correct format: expected a dictionary, ...</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">lib</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="s2">&quot;hello&quot;</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">valid</span><span class="p">,</span> <span class="n">msg</span> <span class="o">=</span> <span class="n">fontLibValidator</span><span class="p">(</span><span class="n">lib</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">valid</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+<span class="go">The lib key is not properly formatted: expected str, found int: 1</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">lib</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;public.glyphOrder&quot;</span> <span class="p">:</span> <span class="s2">&quot;hello&quot;</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">valid</span><span class="p">,</span> <span class="n">msg</span> <span class="o">=</span> <span class="n">fontLibValidator</span><span class="p">(</span><span class="n">lib</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">valid</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>  
+<span class="go">public.glyphOrder is not properly formatted: expected list or tuple,...</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">lib</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;public.glyphOrder&quot;</span> <span class="p">:</span> <span class="p">[</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">]}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">valid</span><span class="p">,</span> <span class="n">msg</span> <span class="o">=</span> <span class="n">fontLibValidator</span><span class="p">(</span><span class="n">lib</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">valid</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>  
+<span class="go">public.glyphOrder is not properly formatted: expected str,...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.ufoLib.validators.genericDictValidator">
+<code class="sig-prename descclassname">fontTools.ufoLib.validators.</code><code class="sig-name descname">genericDictValidator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em>, <em class="sig-param"><span class="n">prototype</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ufoLib/validators.html#genericDictValidator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ufoLib.validators.genericDictValidator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generic. (Added at version 3.)</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.ufoLib.validators.genericIntListValidator">
+<code class="sig-prename descclassname">fontTools.ufoLib.validators.</code><code class="sig-name descname">genericIntListValidator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">values</span></em>, <em class="sig-param"><span class="n">validValues</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ufoLib/validators.html#genericIntListValidator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ufoLib.validators.genericIntListValidator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generic. (Added at version 2.)</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.ufoLib.validators.genericNonNegativeIntValidator">
+<code class="sig-prename descclassname">fontTools.ufoLib.validators.</code><code class="sig-name descname">genericNonNegativeIntValidator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ufoLib/validators.html#genericNonNegativeIntValidator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ufoLib.validators.genericNonNegativeIntValidator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generic. (Added at version 3.)</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.ufoLib.validators.genericNonNegativeNumberValidator">
+<code class="sig-prename descclassname">fontTools.ufoLib.validators.</code><code class="sig-name descname">genericNonNegativeNumberValidator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ufoLib/validators.html#genericNonNegativeNumberValidator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ufoLib.validators.genericNonNegativeNumberValidator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generic. (Added at version 3.)</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.ufoLib.validators.genericTypeValidator">
+<code class="sig-prename descclassname">fontTools.ufoLib.validators.</code><code class="sig-name descname">genericTypeValidator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em>, <em class="sig-param"><span class="n">typ</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ufoLib/validators.html#genericTypeValidator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ufoLib.validators.genericTypeValidator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generic. (Added at version 2.)</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.ufoLib.validators.glyphLibValidator">
+<code class="sig-prename descclassname">fontTools.ufoLib.validators.</code><code class="sig-name descname">glyphLibValidator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ufoLib/validators.html#glyphLibValidator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ufoLib.validators.glyphLibValidator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check the validity of the lib.
+Version 3+ (though it’s backwards compatible with UFO 1 and UFO 2).</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">lib</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;foo&quot;</span> <span class="p">:</span> <span class="s2">&quot;bar&quot;</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">glyphLibValidator</span><span class="p">(</span><span class="n">lib</span><span class="p">)</span>
+<span class="go">(True, None)</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">lib</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;public.awesome&quot;</span> <span class="p">:</span> <span class="s2">&quot;hello&quot;</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">glyphLibValidator</span><span class="p">(</span><span class="n">lib</span><span class="p">)</span>
+<span class="go">(True, None)</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">lib</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;public.markColor&quot;</span> <span class="p">:</span> <span class="s2">&quot;1,0,0,0.5&quot;</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">glyphLibValidator</span><span class="p">(</span><span class="n">lib</span><span class="p">)</span>
+<span class="go">(True, None)</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">lib</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;public.markColor&quot;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">valid</span><span class="p">,</span> <span class="n">msg</span> <span class="o">=</span> <span class="n">glyphLibValidator</span><span class="p">(</span><span class="n">lib</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">valid</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+<span class="go">public.markColor is not properly formatted.</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.ufoLib.validators.groupsValidator">
+<code class="sig-prename descclassname">fontTools.ufoLib.validators.</code><code class="sig-name descname">groupsValidator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ufoLib/validators.html#groupsValidator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ufoLib.validators.groupsValidator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check the validity of the groups.
+Version 3+ (though it’s backwards compatible with UFO 1 and UFO 2).</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">groups</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;A&quot;</span> <span class="p">:</span> <span class="p">[</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;A&quot;</span><span class="p">],</span> <span class="s2">&quot;A2&quot;</span> <span class="p">:</span> <span class="p">[</span><span class="s2">&quot;A&quot;</span><span class="p">]}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">groupsValidator</span><span class="p">(</span><span class="n">groups</span><span class="p">)</span>
+<span class="go">(True, None)</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">groups</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;&quot;</span> <span class="p">:</span> <span class="p">[</span><span class="s2">&quot;A&quot;</span><span class="p">]}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">valid</span><span class="p">,</span> <span class="n">msg</span> <span class="o">=</span> <span class="n">groupsValidator</span><span class="p">(</span><span class="n">groups</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">valid</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+<span class="go">A group has an empty name.</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">groups</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;public.awesome&quot;</span> <span class="p">:</span> <span class="p">[</span><span class="s2">&quot;A&quot;</span><span class="p">]}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">groupsValidator</span><span class="p">(</span><span class="n">groups</span><span class="p">)</span>
+<span class="go">(True, None)</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">groups</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;public.kern1.&quot;</span> <span class="p">:</span> <span class="p">[</span><span class="s2">&quot;A&quot;</span><span class="p">]}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">valid</span><span class="p">,</span> <span class="n">msg</span> <span class="o">=</span> <span class="n">groupsValidator</span><span class="p">(</span><span class="n">groups</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">valid</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+<span class="go">The group data contains a kerning group with an incomplete name.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">groups</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;public.kern2.&quot;</span> <span class="p">:</span> <span class="p">[</span><span class="s2">&quot;A&quot;</span><span class="p">]}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">valid</span><span class="p">,</span> <span class="n">msg</span> <span class="o">=</span> <span class="n">groupsValidator</span><span class="p">(</span><span class="n">groups</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">valid</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+<span class="go">The group data contains a kerning group with an incomplete name.</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">groups</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;public.kern1.A&quot;</span> <span class="p">:</span> <span class="p">[</span><span class="s2">&quot;A&quot;</span><span class="p">],</span> <span class="s2">&quot;public.kern2.A&quot;</span> <span class="p">:</span> <span class="p">[</span><span class="s2">&quot;A&quot;</span><span class="p">]}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">groupsValidator</span><span class="p">(</span><span class="n">groups</span><span class="p">)</span>
+<span class="go">(True, None)</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">groups</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;public.kern1.A1&quot;</span> <span class="p">:</span> <span class="p">[</span><span class="s2">&quot;A&quot;</span><span class="p">],</span> <span class="s2">&quot;public.kern1.A2&quot;</span> <span class="p">:</span> <span class="p">[</span><span class="s2">&quot;A&quot;</span><span class="p">]}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">valid</span><span class="p">,</span> <span class="n">msg</span> <span class="o">=</span> <span class="n">groupsValidator</span><span class="p">(</span><span class="n">groups</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">valid</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+<span class="go">The glyph &quot;A&quot; occurs in too many kerning groups.</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.ufoLib.validators.guidelineValidator">
+<code class="sig-prename descclassname">fontTools.ufoLib.validators.</code><code class="sig-name descname">guidelineValidator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ufoLib/validators.html#guidelineValidator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ufoLib.validators.guidelineValidator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Version 3+.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.ufoLib.validators.guidelinesValidator">
+<code class="sig-prename descclassname">fontTools.ufoLib.validators.</code><code class="sig-name descname">guidelinesValidator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em>, <em class="sig-param"><span class="n">identifiers</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ufoLib/validators.html#guidelinesValidator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ufoLib.validators.guidelinesValidator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Version 3+.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.ufoLib.validators.identifierValidator">
+<code class="sig-prename descclassname">fontTools.ufoLib.validators.</code><code class="sig-name descname">identifierValidator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ufoLib/validators.html#identifierValidator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ufoLib.validators.identifierValidator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Version 3+.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">identifierValidator</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">identifierValidator</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">identifierValidator</span><span class="p">(</span><span class="s2">&quot;a&quot;</span> <span class="o">*</span> <span class="mi">101</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.ufoLib.validators.imageValidator">
+<code class="sig-prename descclassname">fontTools.ufoLib.validators.</code><code class="sig-name descname">imageValidator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ufoLib/validators.html#imageValidator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ufoLib.validators.imageValidator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Version 3+.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.ufoLib.validators.isDictEnough">
+<code class="sig-prename descclassname">fontTools.ufoLib.validators.</code><code class="sig-name descname">isDictEnough</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ufoLib/validators.html#isDictEnough"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ufoLib.validators.isDictEnough" title="Permalink to this definition">¶</a></dt>
+<dd><p>Some objects will likely come in that aren’t
+dicts but are dict-ish enough.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.ufoLib.validators.kerningValidator">
+<code class="sig-prename descclassname">fontTools.ufoLib.validators.</code><code class="sig-name descname">kerningValidator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ufoLib/validators.html#kerningValidator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ufoLib.validators.kerningValidator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check the validity of the kerning data structure.
+Version 3+ (though it’s backwards compatible with UFO 1 and UFO 2).</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">kerning</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;A&quot;</span> <span class="p">:</span> <span class="p">{</span><span class="s2">&quot;B&quot;</span> <span class="p">:</span> <span class="mi">100</span><span class="p">}}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">kerningValidator</span><span class="p">(</span><span class="n">kerning</span><span class="p">)</span>
+<span class="go">(True, None)</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">kerning</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;A&quot;</span> <span class="p">:</span> <span class="p">[</span><span class="s2">&quot;B&quot;</span><span class="p">]}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">valid</span><span class="p">,</span> <span class="n">msg</span> <span class="o">=</span> <span class="n">kerningValidator</span><span class="p">(</span><span class="n">kerning</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">valid</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+<span class="go">The kerning data is not in the correct format.</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">kerning</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;A&quot;</span> <span class="p">:</span> <span class="p">{</span><span class="s2">&quot;B&quot;</span> <span class="p">:</span> <span class="s2">&quot;100&quot;</span><span class="p">}}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">valid</span><span class="p">,</span> <span class="n">msg</span> <span class="o">=</span> <span class="n">kerningValidator</span><span class="p">(</span><span class="n">kerning</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">valid</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+<span class="go">The kerning data is not in the correct format.</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.ufoLib.validators.layerContentsValidator">
+<code class="sig-prename descclassname">fontTools.ufoLib.validators.</code><code class="sig-name descname">layerContentsValidator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em>, <em class="sig-param"><span class="n">ufoPathOrFileSystem</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ufoLib/validators.html#layerContentsValidator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ufoLib.validators.layerContentsValidator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check the validity of layercontents.plist.
+Version 3+.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.ufoLib.validators.pngValidator">
+<code class="sig-prename descclassname">fontTools.ufoLib.validators.</code><code class="sig-name descname">pngValidator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">data</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">fileObj</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ufoLib/validators.html#pngValidator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ufoLib.validators.pngValidator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Version 3+.</p>
+<p>This checks the signature of the image data.</p>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../unicode.html" class="btn btn-neutral float-right" title="unicode" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="utils.html" class="btn btn-neutral float-left" title="utils" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Just van Rossum, Behdad Esfahbod, and the fontTools Authors. CC BY-SA 4.0
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

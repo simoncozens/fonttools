@@ -1,0 +1,867 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>fontTools.otlLib.builder &mdash; fontTools Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> fontTools
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Library</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../afmLib.html">afmLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../agl.html">agl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cffLib/index.html">cffLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../colorLib/index.html">colorLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cu2qu/index.html">cu2qu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../designspaceLib/index.html">designspaceLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../encodings/index.html">encodings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../feaLib/index.html">feaLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../merge.html">merge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../misc/index.html">misc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../mtiLib.html">mtiLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../otlLib/index.html">otlLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pens/index.html">pens</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../subset/index.html">subset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../svgLib/index.html">svgLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../t1Lib.html">t1Lib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ttLib/index.html">ttLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ttx.html">ttx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ufoLib/index.html">ufoLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../unicode.html">unicode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../unicodedata/index.html">unicodedata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../varLib/index.html">varLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../voltLib.html">voltLib</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">fontTools</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>fontTools.otlLib.builder</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for fontTools.otlLib.builder</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="k">import</span> <span class="n">namedtuple</span>
+<span class="kn">from</span> <span class="nn">fontTools</span> <span class="k">import</span> <span class="n">ttLib</span>
+<span class="kn">from</span> <span class="nn">fontTools.ttLib.tables</span> <span class="k">import</span> <span class="n">otTables</span> <span class="k">as</span> <span class="n">ot</span>
+<span class="kn">from</span> <span class="nn">fontTools.ttLib.tables.otBase</span> <span class="k">import</span> <span class="n">ValueRecord</span><span class="p">,</span> <span class="n">valueRecordFormatDict</span>
+
+
+<div class="viewcode-block" id="buildCoverage"><a class="viewcode-back" href="../../../otlLib/builder.html#fontTools.otlLib.builder.buildCoverage">[docs]</a><span class="k">def</span> <span class="nf">buildCoverage</span><span class="p">(</span><span class="n">glyphs</span><span class="p">,</span> <span class="n">glyphMap</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">glyphs</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="bp">self</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Coverage</span><span class="p">()</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">glyphs</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">glyphs</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">glyphMap</span><span class="o">.</span><span class="fm">__getitem__</span><span class="p">)</span>
+    <span class="k">return</span> <span class="bp">self</span></div>
+
+
+<span class="n">LOOKUP_FLAG_RIGHT_TO_LEFT</span> <span class="o">=</span> <span class="mh">0x0001</span>
+<span class="n">LOOKUP_FLAG_IGNORE_BASE_GLYPHS</span> <span class="o">=</span> <span class="mh">0x0002</span>
+<span class="n">LOOKUP_FLAG_IGNORE_LIGATURES</span> <span class="o">=</span> <span class="mh">0x0004</span>
+<span class="n">LOOKUP_FLAG_IGNORE_MARKS</span> <span class="o">=</span> <span class="mh">0x0008</span>
+<span class="n">LOOKUP_FLAG_USE_MARK_FILTERING_SET</span> <span class="o">=</span> <span class="mh">0x0010</span>
+
+
+<div class="viewcode-block" id="buildLookup"><a class="viewcode-back" href="../../../otlLib/builder.html#fontTools.otlLib.builder.buildLookup">[docs]</a><span class="k">def</span> <span class="nf">buildLookup</span><span class="p">(</span><span class="n">subtables</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">markFilterSet</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">subtables</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="n">subtables</span> <span class="o">=</span> <span class="p">[</span><span class="n">st</span> <span class="k">for</span> <span class="n">st</span> <span class="ow">in</span> <span class="n">subtables</span> <span class="k">if</span> <span class="n">st</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">]</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">subtables</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="k">assert</span> <span class="nb">all</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">LookupType</span> <span class="o">==</span> <span class="n">subtables</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">LookupType</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">subtables</span><span class="p">),</span> \
+        <span class="p">(</span><span class="s2">&quot;all subtables must have the same LookupType; got </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span>
+         <span class="nb">repr</span><span class="p">([</span><span class="n">t</span><span class="o">.</span><span class="n">LookupType</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">subtables</span><span class="p">]))</span>
+    <span class="bp">self</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Lookup</span><span class="p">()</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">LookupType</span> <span class="o">=</span> <span class="n">subtables</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">LookupType</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">LookupFlag</span> <span class="o">=</span> <span class="n">flags</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">SubTable</span> <span class="o">=</span> <span class="n">subtables</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">SubTableCount</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">SubTable</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">markFilterSet</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">LookupFlag</span> <span class="o">&amp;</span> <span class="n">LOOKUP_FLAG_USE_MARK_FILTERING_SET</span><span class="p">,</span> \
+            <span class="p">(</span><span class="s2">&quot;if markFilterSet is not None, flags must set &quot;</span>
+             <span class="s2">&quot;LOOKUP_FLAG_USE_MARK_FILTERING_SET; flags=0x</span><span class="si">%04x</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">flags</span><span class="p">)</span>
+        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">markFilterSet</span><span class="p">,</span> <span class="nb">int</span><span class="p">),</span> <span class="n">markFilterSet</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">MarkFilteringSet</span> <span class="o">=</span> <span class="n">markFilterSet</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">assert</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">LookupFlag</span> <span class="o">&amp;</span> <span class="n">LOOKUP_FLAG_USE_MARK_FILTERING_SET</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> \
+            <span class="p">(</span><span class="s2">&quot;if markFilterSet is None, flags must not set &quot;</span>
+             <span class="s2">&quot;LOOKUP_FLAG_USE_MARK_FILTERING_SET; flags=0x</span><span class="si">%04x</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">flags</span><span class="p">)</span>
+    <span class="k">return</span> <span class="bp">self</span></div>
+
+
+<span class="c1"># GSUB</span>
+
+
+<div class="viewcode-block" id="buildSingleSubstSubtable"><a class="viewcode-back" href="../../../otlLib/builder.html#fontTools.otlLib.builder.buildSingleSubstSubtable">[docs]</a><span class="k">def</span> <span class="nf">buildSingleSubstSubtable</span><span class="p">(</span><span class="n">mapping</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">mapping</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="bp">self</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SingleSubst</span><span class="p">()</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">mapping</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">mapping</span><span class="p">)</span>
+    <span class="k">return</span> <span class="bp">self</span></div>
+
+
+<div class="viewcode-block" id="buildMultipleSubstSubtable"><a class="viewcode-back" href="../../../otlLib/builder.html#fontTools.otlLib.builder.buildMultipleSubstSubtable">[docs]</a><span class="k">def</span> <span class="nf">buildMultipleSubstSubtable</span><span class="p">(</span><span class="n">mapping</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">mapping</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="bp">self</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">MultipleSubst</span><span class="p">()</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">mapping</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">mapping</span><span class="p">)</span>
+    <span class="k">return</span> <span class="bp">self</span></div>
+
+
+<div class="viewcode-block" id="buildAlternateSubstSubtable"><a class="viewcode-back" href="../../../otlLib/builder.html#fontTools.otlLib.builder.buildAlternateSubstSubtable">[docs]</a><span class="k">def</span> <span class="nf">buildAlternateSubstSubtable</span><span class="p">(</span><span class="n">mapping</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">mapping</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="bp">self</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">AlternateSubst</span><span class="p">()</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">alternates</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">mapping</span><span class="p">)</span>
+    <span class="k">return</span> <span class="bp">self</span></div>
+
+
+<span class="k">def</span> <span class="nf">_getLigatureKey</span><span class="p">(</span><span class="n">components</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Computes a key for ordering ligatures in a GSUB Type-4 lookup.</span>
+
+<span class="sd">    When building the OpenType lookup, we need to make sure that</span>
+<span class="sd">    the longest sequence of components is listed first, so we</span>
+<span class="sd">    use the negative length as the primary key for sorting.</span>
+<span class="sd">    To make buildLigatureSubstSubtable() deterministic, we use the</span>
+<span class="sd">    component sequence as the secondary key.</span>
+
+<span class="sd">    For example, this will sort (f,f,f) &lt; (f,f,i) &lt; (f,f) &lt; (f,i) &lt; (f,l).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">(</span><span class="o">-</span><span class="nb">len</span><span class="p">(</span><span class="n">components</span><span class="p">),</span> <span class="n">components</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="buildLigatureSubstSubtable"><a class="viewcode-back" href="../../../otlLib/builder.html#fontTools.otlLib.builder.buildLigatureSubstSubtable">[docs]</a><span class="k">def</span> <span class="nf">buildLigatureSubstSubtable</span><span class="p">(</span><span class="n">mapping</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">mapping</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="bp">self</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">LigatureSubst</span><span class="p">()</span>
+    <span class="c1"># The following single line can replace the rest of this function</span>
+    <span class="c1"># with fontTools &gt;= 3.1:</span>
+    <span class="c1"># self.ligatures = dict(mapping)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">ligatures</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">components</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">mapping</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="n">_getLigatureKey</span><span class="p">):</span>
+        <span class="n">ligature</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Ligature</span><span class="p">()</span>
+        <span class="n">ligature</span><span class="o">.</span><span class="n">Component</span> <span class="o">=</span> <span class="n">components</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+        <span class="n">ligature</span><span class="o">.</span><span class="n">CompCount</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">ligature</span><span class="o">.</span><span class="n">Component</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="n">ligature</span><span class="o">.</span><span class="n">LigGlyph</span> <span class="o">=</span> <span class="n">mapping</span><span class="p">[</span><span class="n">components</span><span class="p">]</span>
+        <span class="n">firstGlyph</span> <span class="o">=</span> <span class="n">components</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ligatures</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">firstGlyph</span><span class="p">,</span> <span class="p">[])</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ligature</span><span class="p">)</span>
+    <span class="k">return</span> <span class="bp">self</span></div>
+
+
+<span class="c1"># GPOS</span>
+
+
+<div class="viewcode-block" id="buildAnchor"><a class="viewcode-back" href="../../../otlLib/builder.html#fontTools.otlLib.builder.buildAnchor">[docs]</a><span class="k">def</span> <span class="nf">buildAnchor</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">point</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">deviceX</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">deviceY</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="bp">self</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Anchor</span><span class="p">()</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">XCoordinate</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">YCoordinate</span> <span class="o">=</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">Format</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="n">point</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">AnchorPoint</span> <span class="o">=</span> <span class="n">point</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Format</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="k">if</span> <span class="n">deviceX</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">deviceY</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">Format</span> <span class="o">==</span> <span class="mi">1</span><span class="p">,</span> \
+            <span class="s2">&quot;Either point, or both of deviceX/deviceY, must be None.&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">XDeviceTable</span> <span class="o">=</span> <span class="n">deviceX</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">YDeviceTable</span> <span class="o">=</span> <span class="n">deviceY</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Format</span> <span class="o">=</span> <span class="mi">3</span>
+    <span class="k">return</span> <span class="bp">self</span></div>
+
+
+<div class="viewcode-block" id="buildBaseArray"><a class="viewcode-back" href="../../../otlLib/builder.html#fontTools.otlLib.builder.buildBaseArray">[docs]</a><span class="k">def</span> <span class="nf">buildBaseArray</span><span class="p">(</span><span class="n">bases</span><span class="p">,</span> <span class="n">numMarkClasses</span><span class="p">,</span> <span class="n">glyphMap</span><span class="p">):</span>
+    <span class="bp">self</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">BaseArray</span><span class="p">()</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">BaseRecord</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">base</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">bases</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">glyphMap</span><span class="o">.</span><span class="fm">__getitem__</span><span class="p">):</span>
+        <span class="n">b</span> <span class="o">=</span> <span class="n">bases</span><span class="p">[</span><span class="n">base</span><span class="p">]</span>
+        <span class="n">anchors</span> <span class="o">=</span> <span class="p">[</span><span class="n">b</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">markClass</span><span class="p">)</span> <span class="k">for</span> <span class="n">markClass</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">numMarkClasses</span><span class="p">)]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">BaseRecord</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">buildBaseRecord</span><span class="p">(</span><span class="n">anchors</span><span class="p">))</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">BaseCount</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">BaseRecord</span><span class="p">)</span>
+    <span class="k">return</span> <span class="bp">self</span></div>
+
+
+<div class="viewcode-block" id="buildBaseRecord"><a class="viewcode-back" href="../../../otlLib/builder.html#fontTools.otlLib.builder.buildBaseRecord">[docs]</a><span class="k">def</span> <span class="nf">buildBaseRecord</span><span class="p">(</span><span class="n">anchors</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;[otTables.Anchor, otTables.Anchor, ...] --&gt; otTables.BaseRecord&quot;&quot;&quot;</span>
+    <span class="bp">self</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">BaseRecord</span><span class="p">()</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">BaseAnchor</span> <span class="o">=</span> <span class="n">anchors</span>
+    <span class="k">return</span> <span class="bp">self</span></div>
+
+
+<div class="viewcode-block" id="buildComponentRecord"><a class="viewcode-back" href="../../../otlLib/builder.html#fontTools.otlLib.builder.buildComponentRecord">[docs]</a><span class="k">def</span> <span class="nf">buildComponentRecord</span><span class="p">(</span><span class="n">anchors</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;[otTables.Anchor, otTables.Anchor, ...] --&gt; otTables.ComponentRecord&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">anchors</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="bp">self</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">ComponentRecord</span><span class="p">()</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">LigatureAnchor</span> <span class="o">=</span> <span class="n">anchors</span>
+    <span class="k">return</span> <span class="bp">self</span></div>
+
+
+<div class="viewcode-block" id="buildCursivePosSubtable"><a class="viewcode-back" href="../../../otlLib/builder.html#fontTools.otlLib.builder.buildCursivePosSubtable">[docs]</a><span class="k">def</span> <span class="nf">buildCursivePosSubtable</span><span class="p">(</span><span class="n">attach</span><span class="p">,</span> <span class="n">glyphMap</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;{&quot;alef&quot;: (entry, exit)} --&gt; otTables.CursivePos&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">attach</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="bp">self</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">CursivePos</span><span class="p">()</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">Format</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">Coverage</span> <span class="o">=</span> <span class="n">buildCoverage</span><span class="p">(</span><span class="n">attach</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span> <span class="n">glyphMap</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">EntryExitRecord</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">glyph</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">Coverage</span><span class="o">.</span><span class="n">glyphs</span><span class="p">:</span>
+        <span class="n">entryAnchor</span><span class="p">,</span> <span class="n">exitAnchor</span> <span class="o">=</span> <span class="n">attach</span><span class="p">[</span><span class="n">glyph</span><span class="p">]</span>
+        <span class="n">rec</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">EntryExitRecord</span><span class="p">()</span>
+        <span class="n">rec</span><span class="o">.</span><span class="n">EntryAnchor</span> <span class="o">=</span> <span class="n">entryAnchor</span>
+        <span class="n">rec</span><span class="o">.</span><span class="n">ExitAnchor</span> <span class="o">=</span> <span class="n">exitAnchor</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">EntryExitRecord</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rec</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">EntryExitCount</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">EntryExitRecord</span><span class="p">)</span>
+    <span class="k">return</span> <span class="bp">self</span></div>
+
+
+<div class="viewcode-block" id="buildDevice"><a class="viewcode-back" href="../../../otlLib/builder.html#fontTools.otlLib.builder.buildDevice">[docs]</a><span class="k">def</span> <span class="nf">buildDevice</span><span class="p">(</span><span class="n">deltas</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;{8:+1, 10:-3, ...} --&gt; otTables.Device&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">deltas</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="bp">self</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Device</span><span class="p">()</span>
+    <span class="n">keys</span> <span class="o">=</span> <span class="n">deltas</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">StartSize</span> <span class="o">=</span> <span class="n">startSize</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">keys</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">EndSize</span> <span class="o">=</span> <span class="n">endSize</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">keys</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">startSize</span> <span class="o">&lt;=</span> <span class="n">endSize</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">DeltaValue</span> <span class="o">=</span> <span class="n">deltaValues</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">deltas</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">size</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">startSize</span><span class="p">,</span> <span class="n">endSize</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)]</span>
+    <span class="n">maxDelta</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">deltaValues</span><span class="p">)</span>
+    <span class="n">minDelta</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">deltaValues</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="n">minDelta</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">129</span> <span class="ow">and</span> <span class="n">maxDelta</span> <span class="o">&lt;</span> <span class="mi">128</span>
+    <span class="k">if</span> <span class="n">minDelta</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">3</span> <span class="ow">and</span> <span class="n">maxDelta</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">DeltaFormat</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">elif</span> <span class="n">minDelta</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">9</span> <span class="ow">and</span> <span class="n">maxDelta</span> <span class="o">&lt;</span> <span class="mi">8</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">DeltaFormat</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">DeltaFormat</span> <span class="o">=</span> <span class="mi">3</span>
+    <span class="k">return</span> <span class="bp">self</span></div>
+
+
+<div class="viewcode-block" id="buildLigatureArray"><a class="viewcode-back" href="../../../otlLib/builder.html#fontTools.otlLib.builder.buildLigatureArray">[docs]</a><span class="k">def</span> <span class="nf">buildLigatureArray</span><span class="p">(</span><span class="n">ligs</span><span class="p">,</span> <span class="n">numMarkClasses</span><span class="p">,</span> <span class="n">glyphMap</span><span class="p">):</span>
+    <span class="bp">self</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">LigatureArray</span><span class="p">()</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">LigatureAttach</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">lig</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">ligs</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">glyphMap</span><span class="o">.</span><span class="fm">__getitem__</span><span class="p">):</span>
+        <span class="n">anchors</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">component</span> <span class="ow">in</span> <span class="n">ligs</span><span class="p">[</span><span class="n">lig</span><span class="p">]:</span>
+            <span class="n">anchors</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">component</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">mc</span><span class="p">)</span> <span class="k">for</span> <span class="n">mc</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">numMarkClasses</span><span class="p">)])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">LigatureAttach</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">buildLigatureAttach</span><span class="p">(</span><span class="n">anchors</span><span class="p">))</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">LigatureCount</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">LigatureAttach</span><span class="p">)</span>
+    <span class="k">return</span> <span class="bp">self</span></div>
+
+
+<div class="viewcode-block" id="buildLigatureAttach"><a class="viewcode-back" href="../../../otlLib/builder.html#fontTools.otlLib.builder.buildLigatureAttach">[docs]</a><span class="k">def</span> <span class="nf">buildLigatureAttach</span><span class="p">(</span><span class="n">components</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;[[Anchor, Anchor], [Anchor, Anchor, Anchor]] --&gt; LigatureAttach&quot;&quot;&quot;</span>
+    <span class="bp">self</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">LigatureAttach</span><span class="p">()</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">ComponentRecord</span> <span class="o">=</span> <span class="p">[</span><span class="n">buildComponentRecord</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">components</span><span class="p">]</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">ComponentCount</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ComponentRecord</span><span class="p">)</span>
+    <span class="k">return</span> <span class="bp">self</span></div>
+
+
+<div class="viewcode-block" id="buildMarkArray"><a class="viewcode-back" href="../../../otlLib/builder.html#fontTools.otlLib.builder.buildMarkArray">[docs]</a><span class="k">def</span> <span class="nf">buildMarkArray</span><span class="p">(</span><span class="n">marks</span><span class="p">,</span> <span class="n">glyphMap</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;{&quot;acute&quot;: (markClass, otTables.Anchor)} --&gt; otTables.MarkArray&quot;&quot;&quot;</span>
+    <span class="bp">self</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">MarkArray</span><span class="p">()</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">MarkRecord</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">mark</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">marks</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="n">glyphMap</span><span class="o">.</span><span class="fm">__getitem__</span><span class="p">):</span>
+        <span class="n">markClass</span><span class="p">,</span> <span class="n">anchor</span> <span class="o">=</span> <span class="n">marks</span><span class="p">[</span><span class="n">mark</span><span class="p">]</span>
+        <span class="n">markrec</span> <span class="o">=</span> <span class="n">buildMarkRecord</span><span class="p">(</span><span class="n">markClass</span><span class="p">,</span> <span class="n">anchor</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">MarkRecord</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">markrec</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">MarkCount</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">MarkRecord</span><span class="p">)</span>
+    <span class="k">return</span> <span class="bp">self</span></div>
+
+
+<div class="viewcode-block" id="buildMarkBasePos"><a class="viewcode-back" href="../../../otlLib/builder.html#fontTools.otlLib.builder.buildMarkBasePos">[docs]</a><span class="k">def</span> <span class="nf">buildMarkBasePos</span><span class="p">(</span><span class="n">marks</span><span class="p">,</span> <span class="n">bases</span><span class="p">,</span> <span class="n">glyphMap</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Build a list of MarkBasePos subtables.</span>
+
+<span class="sd">    a1, a2, a3, a4, a5 = buildAnchor(500, 100), ...</span>
+<span class="sd">    marks = {&quot;acute&quot;: (0, a1), &quot;grave&quot;: (0, a1), &quot;cedilla&quot;: (1, a2)}</span>
+<span class="sd">    bases = {&quot;a&quot;: {0: a3, 1: a5}, &quot;b&quot;: {0: a4, 1: a5}}</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># TODO: Consider emitting multiple subtables to save space.</span>
+    <span class="c1"># Partition the marks and bases into disjoint subsets, so that</span>
+    <span class="c1"># MarkBasePos rules would only access glyphs from a single</span>
+    <span class="c1"># subset. This would likely lead to smaller mark/base</span>
+    <span class="c1"># matrices, so we might be able to omit many of the empty</span>
+    <span class="c1"># anchor tables that we currently produce. Of course, this</span>
+    <span class="c1"># would only work if the MarkBasePos rules of real-world fonts</span>
+    <span class="c1"># allow partitioning into multiple subsets. We should find out</span>
+    <span class="c1"># whether this is the case; if so, implement the optimization.</span>
+    <span class="c1"># On the other hand, a very large number of subtables could</span>
+    <span class="c1"># slow down layout engines; so this would need profiling.</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">buildMarkBasePosSubtable</span><span class="p">(</span><span class="n">marks</span><span class="p">,</span> <span class="n">bases</span><span class="p">,</span> <span class="n">glyphMap</span><span class="p">)]</span></div>
+
+
+<div class="viewcode-block" id="buildMarkBasePosSubtable"><a class="viewcode-back" href="../../../otlLib/builder.html#fontTools.otlLib.builder.buildMarkBasePosSubtable">[docs]</a><span class="k">def</span> <span class="nf">buildMarkBasePosSubtable</span><span class="p">(</span><span class="n">marks</span><span class="p">,</span> <span class="n">bases</span><span class="p">,</span> <span class="n">glyphMap</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Build a single MarkBasePos subtable.</span>
+
+<span class="sd">    a1, a2, a3, a4, a5 = buildAnchor(500, 100), ...</span>
+<span class="sd">    marks = {&quot;acute&quot;: (0, a1), &quot;grave&quot;: (0, a1), &quot;cedilla&quot;: (1, a2)}</span>
+<span class="sd">    bases = {&quot;a&quot;: {0: a3, 1: a5}, &quot;b&quot;: {0: a4, 1: a5}}</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="bp">self</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">MarkBasePos</span><span class="p">()</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">Format</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">MarkCoverage</span> <span class="o">=</span> <span class="n">buildCoverage</span><span class="p">(</span><span class="n">marks</span><span class="p">,</span> <span class="n">glyphMap</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">MarkArray</span> <span class="o">=</span> <span class="n">buildMarkArray</span><span class="p">(</span><span class="n">marks</span><span class="p">,</span> <span class="n">glyphMap</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">ClassCount</span> <span class="o">=</span> <span class="nb">max</span><span class="p">([</span><span class="n">mc</span> <span class="k">for</span> <span class="n">mc</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">marks</span><span class="o">.</span><span class="n">values</span><span class="p">()])</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">BaseCoverage</span> <span class="o">=</span> <span class="n">buildCoverage</span><span class="p">(</span><span class="n">bases</span><span class="p">,</span> <span class="n">glyphMap</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">BaseArray</span> <span class="o">=</span> <span class="n">buildBaseArray</span><span class="p">(</span><span class="n">bases</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">ClassCount</span><span class="p">,</span> <span class="n">glyphMap</span><span class="p">)</span>
+    <span class="k">return</span> <span class="bp">self</span></div>
+
+
+<div class="viewcode-block" id="buildMarkLigPos"><a class="viewcode-back" href="../../../otlLib/builder.html#fontTools.otlLib.builder.buildMarkLigPos">[docs]</a><span class="k">def</span> <span class="nf">buildMarkLigPos</span><span class="p">(</span><span class="n">marks</span><span class="p">,</span> <span class="n">ligs</span><span class="p">,</span> <span class="n">glyphMap</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Build a list of MarkLigPos subtables.</span>
+
+<span class="sd">    a1, a2, a3, a4, a5 = buildAnchor(500, 100), ...</span>
+<span class="sd">    marks = {&quot;acute&quot;: (0, a1), &quot;grave&quot;: (0, a1), &quot;cedilla&quot;: (1, a2)}</span>
+<span class="sd">    ligs = {&quot;f_i&quot;: [{0: a3, 1: a5},  {0: a4, 1: a5}], &quot;c_t&quot;: [{...}, {...}]}</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># TODO: Consider splitting into multiple subtables to save space,</span>
+    <span class="c1"># as with MarkBasePos, this would be a trade-off that would need</span>
+    <span class="c1"># profiling. And, depending on how typical fonts are structured,</span>
+    <span class="c1"># it might not be worth doing at all.</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">buildMarkLigPosSubtable</span><span class="p">(</span><span class="n">marks</span><span class="p">,</span> <span class="n">ligs</span><span class="p">,</span> <span class="n">glyphMap</span><span class="p">)]</span></div>
+
+
+<div class="viewcode-block" id="buildMarkLigPosSubtable"><a class="viewcode-back" href="../../../otlLib/builder.html#fontTools.otlLib.builder.buildMarkLigPosSubtable">[docs]</a><span class="k">def</span> <span class="nf">buildMarkLigPosSubtable</span><span class="p">(</span><span class="n">marks</span><span class="p">,</span> <span class="n">ligs</span><span class="p">,</span> <span class="n">glyphMap</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Build a single MarkLigPos subtable.</span>
+
+<span class="sd">    a1, a2, a3, a4, a5 = buildAnchor(500, 100), ...</span>
+<span class="sd">    marks = {&quot;acute&quot;: (0, a1), &quot;grave&quot;: (0, a1), &quot;cedilla&quot;: (1, a2)}</span>
+<span class="sd">    ligs = {&quot;f_i&quot;: [{0: a3, 1: a5},  {0: a4, 1: a5}], &quot;c_t&quot;: [{...}, {...}]}</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="bp">self</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">MarkLigPos</span><span class="p">()</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">Format</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">MarkCoverage</span> <span class="o">=</span> <span class="n">buildCoverage</span><span class="p">(</span><span class="n">marks</span><span class="p">,</span> <span class="n">glyphMap</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">MarkArray</span> <span class="o">=</span> <span class="n">buildMarkArray</span><span class="p">(</span><span class="n">marks</span><span class="p">,</span> <span class="n">glyphMap</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">ClassCount</span> <span class="o">=</span> <span class="nb">max</span><span class="p">([</span><span class="n">mc</span> <span class="k">for</span> <span class="n">mc</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">marks</span><span class="o">.</span><span class="n">values</span><span class="p">()])</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">LigatureCoverage</span> <span class="o">=</span> <span class="n">buildCoverage</span><span class="p">(</span><span class="n">ligs</span><span class="p">,</span> <span class="n">glyphMap</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">LigatureArray</span> <span class="o">=</span> <span class="n">buildLigatureArray</span><span class="p">(</span><span class="n">ligs</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">ClassCount</span><span class="p">,</span> <span class="n">glyphMap</span><span class="p">)</span>
+    <span class="k">return</span> <span class="bp">self</span></div>
+
+
+<div class="viewcode-block" id="buildMarkRecord"><a class="viewcode-back" href="../../../otlLib/builder.html#fontTools.otlLib.builder.buildMarkRecord">[docs]</a><span class="k">def</span> <span class="nf">buildMarkRecord</span><span class="p">(</span><span class="n">classID</span><span class="p">,</span> <span class="n">anchor</span><span class="p">):</span>
+    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">classID</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">anchor</span><span class="p">,</span> <span class="n">ot</span><span class="o">.</span><span class="n">Anchor</span><span class="p">)</span>
+    <span class="bp">self</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">MarkRecord</span><span class="p">()</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">Class</span> <span class="o">=</span> <span class="n">classID</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">MarkAnchor</span> <span class="o">=</span> <span class="n">anchor</span>
+    <span class="k">return</span> <span class="bp">self</span></div>
+
+
+<div class="viewcode-block" id="buildMark2Record"><a class="viewcode-back" href="../../../otlLib/builder.html#fontTools.otlLib.builder.buildMark2Record">[docs]</a><span class="k">def</span> <span class="nf">buildMark2Record</span><span class="p">(</span><span class="n">anchors</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;[otTables.Anchor, otTables.Anchor, ...] --&gt; otTables.Mark2Record&quot;&quot;&quot;</span>
+    <span class="bp">self</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Mark2Record</span><span class="p">()</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">Mark2Anchor</span> <span class="o">=</span> <span class="n">anchors</span>
+    <span class="k">return</span> <span class="bp">self</span></div>
+
+
+<span class="k">def</span> <span class="nf">_getValueFormat</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">values</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Helper for buildPairPos{Glyphs|Classes}Subtable.&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">f</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">f</span>
+    <span class="n">mask</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">values</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">value</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">mask</span> <span class="o">|=</span> <span class="n">value</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">getFormat</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">mask</span>
+
+
+<div class="viewcode-block" id="buildPairPosClassesSubtable"><a class="viewcode-back" href="../../../otlLib/builder.html#fontTools.otlLib.builder.buildPairPosClassesSubtable">[docs]</a><span class="k">def</span> <span class="nf">buildPairPosClassesSubtable</span><span class="p">(</span><span class="n">pairs</span><span class="p">,</span> <span class="n">glyphMap</span><span class="p">,</span>
+                                <span class="n">valueFormat1</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">valueFormat2</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="n">coverage</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+    <span class="n">classDef1</span> <span class="o">=</span> <span class="n">ClassDefBuilder</span><span class="p">(</span><span class="n">useClass0</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">classDef2</span> <span class="o">=</span> <span class="n">ClassDefBuilder</span><span class="p">(</span><span class="n">useClass0</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">gc1</span><span class="p">,</span> <span class="n">gc2</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">pairs</span><span class="p">):</span>
+        <span class="n">coverage</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">gc1</span><span class="p">)</span>
+        <span class="n">classDef1</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">gc1</span><span class="p">)</span>
+        <span class="n">classDef2</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">gc2</span><span class="p">)</span>
+    <span class="bp">self</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">PairPos</span><span class="p">()</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">Format</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">ValueFormat1</span> <span class="o">=</span> <span class="n">_getValueFormat</span><span class="p">(</span><span class="n">valueFormat1</span><span class="p">,</span> <span class="n">pairs</span><span class="o">.</span><span class="n">values</span><span class="p">(),</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">ValueFormat2</span> <span class="o">=</span> <span class="n">_getValueFormat</span><span class="p">(</span><span class="n">valueFormat2</span><span class="p">,</span> <span class="n">pairs</span><span class="o">.</span><span class="n">values</span><span class="p">(),</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">Coverage</span> <span class="o">=</span> <span class="n">buildCoverage</span><span class="p">(</span><span class="n">coverage</span><span class="p">,</span> <span class="n">glyphMap</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">ClassDef1</span> <span class="o">=</span> <span class="n">classDef1</span><span class="o">.</span><span class="n">build</span><span class="p">()</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">ClassDef2</span> <span class="o">=</span> <span class="n">classDef2</span><span class="o">.</span><span class="n">build</span><span class="p">()</span>
+    <span class="n">classes1</span> <span class="o">=</span> <span class="n">classDef1</span><span class="o">.</span><span class="n">classes</span><span class="p">()</span>
+    <span class="n">classes2</span> <span class="o">=</span> <span class="n">classDef2</span><span class="o">.</span><span class="n">classes</span><span class="p">()</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">Class1Record</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">c1</span> <span class="ow">in</span> <span class="n">classes1</span><span class="p">:</span>
+        <span class="n">rec1</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Class1Record</span><span class="p">()</span>
+        <span class="n">rec1</span><span class="o">.</span><span class="n">Class2Record</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Class1Record</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rec1</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">c2</span> <span class="ow">in</span> <span class="n">classes2</span><span class="p">:</span>
+            <span class="n">rec2</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Class2Record</span><span class="p">()</span>
+            <span class="n">rec2</span><span class="o">.</span><span class="n">Value1</span><span class="p">,</span> <span class="n">rec2</span><span class="o">.</span><span class="n">Value2</span> <span class="o">=</span> <span class="n">pairs</span><span class="o">.</span><span class="n">get</span><span class="p">((</span><span class="n">c1</span><span class="p">,</span> <span class="n">c2</span><span class="p">),</span> <span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
+            <span class="n">rec1</span><span class="o">.</span><span class="n">Class2Record</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rec2</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">Class1Count</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Class1Record</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">Class2Count</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">classes2</span><span class="p">)</span>
+    <span class="k">return</span> <span class="bp">self</span></div>
+
+
+<div class="viewcode-block" id="buildPairPosGlyphs"><a class="viewcode-back" href="../../../otlLib/builder.html#fontTools.otlLib.builder.buildPairPosGlyphs">[docs]</a><span class="k">def</span> <span class="nf">buildPairPosGlyphs</span><span class="p">(</span><span class="n">pairs</span><span class="p">,</span> <span class="n">glyphMap</span><span class="p">):</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="p">{}</span>  <span class="c1"># (formatA, formatB) --&gt; {(glyphA, glyphB): (valA, valB)}</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">glyphA</span><span class="p">,</span> <span class="n">glyphB</span><span class="p">),</span> <span class="p">(</span><span class="n">valA</span><span class="p">,</span> <span class="n">valB</span><span class="p">)</span> <span class="ow">in</span> <span class="n">pairs</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">formatA</span> <span class="o">=</span> <span class="n">valA</span><span class="o">.</span><span class="n">getFormat</span><span class="p">()</span> <span class="k">if</span> <span class="n">valA</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="mi">0</span>
+        <span class="n">formatB</span> <span class="o">=</span> <span class="n">valB</span><span class="o">.</span><span class="n">getFormat</span><span class="p">()</span> <span class="k">if</span> <span class="n">valB</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="mi">0</span>
+        <span class="n">pos</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">setdefault</span><span class="p">((</span><span class="n">formatA</span><span class="p">,</span> <span class="n">formatB</span><span class="p">),</span> <span class="p">{})</span>
+        <span class="n">pos</span><span class="p">[(</span><span class="n">glyphA</span><span class="p">,</span> <span class="n">glyphB</span><span class="p">)]</span> <span class="o">=</span> <span class="p">(</span><span class="n">valA</span><span class="p">,</span> <span class="n">valB</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">[</span>
+        <span class="n">buildPairPosGlyphsSubtable</span><span class="p">(</span><span class="n">pos</span><span class="p">,</span> <span class="n">glyphMap</span><span class="p">,</span> <span class="n">formatA</span><span class="p">,</span> <span class="n">formatB</span><span class="p">)</span>
+        <span class="k">for</span> <span class="p">((</span><span class="n">formatA</span><span class="p">,</span> <span class="n">formatB</span><span class="p">),</span> <span class="n">pos</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">items</span><span class="p">())]</span></div>
+
+
+<div class="viewcode-block" id="buildPairPosGlyphsSubtable"><a class="viewcode-back" href="../../../otlLib/builder.html#fontTools.otlLib.builder.buildPairPosGlyphsSubtable">[docs]</a><span class="k">def</span> <span class="nf">buildPairPosGlyphsSubtable</span><span class="p">(</span><span class="n">pairs</span><span class="p">,</span> <span class="n">glyphMap</span><span class="p">,</span>
+                               <span class="n">valueFormat1</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">valueFormat2</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="bp">self</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">PairPos</span><span class="p">()</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">Format</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">ValueFormat1</span> <span class="o">=</span> <span class="n">_getValueFormat</span><span class="p">(</span><span class="n">valueFormat1</span><span class="p">,</span> <span class="n">pairs</span><span class="o">.</span><span class="n">values</span><span class="p">(),</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">ValueFormat2</span> <span class="o">=</span> <span class="n">_getValueFormat</span><span class="p">(</span><span class="n">valueFormat2</span><span class="p">,</span> <span class="n">pairs</span><span class="o">.</span><span class="n">values</span><span class="p">(),</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">glyphA</span><span class="p">,</span> <span class="n">glyphB</span><span class="p">),</span> <span class="p">(</span><span class="n">valA</span><span class="p">,</span> <span class="n">valB</span><span class="p">)</span> <span class="ow">in</span> <span class="n">pairs</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">p</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">glyphA</span><span class="p">,</span> <span class="p">[])</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">glyphB</span><span class="p">,</span> <span class="n">valA</span><span class="p">,</span> <span class="n">valB</span><span class="p">))</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">Coverage</span> <span class="o">=</span> <span class="n">buildCoverage</span><span class="p">({</span><span class="n">g</span> <span class="k">for</span> <span class="n">g</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">pairs</span><span class="o">.</span><span class="n">keys</span><span class="p">()},</span> <span class="n">glyphMap</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">PairSet</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">glyph</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">Coverage</span><span class="o">.</span><span class="n">glyphs</span><span class="p">:</span>
+        <span class="n">ps</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">PairSet</span><span class="p">()</span>
+        <span class="n">ps</span><span class="o">.</span><span class="n">PairValueRecord</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">PairSet</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ps</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">glyph2</span><span class="p">,</span> <span class="n">val1</span><span class="p">,</span> <span class="n">val2</span> <span class="ow">in</span> \
+                <span class="nb">sorted</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="n">glyph</span><span class="p">],</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">glyphMap</span><span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]]):</span>
+            <span class="n">pvr</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">PairValueRecord</span><span class="p">()</span>
+            <span class="n">pvr</span><span class="o">.</span><span class="n">SecondGlyph</span> <span class="o">=</span> <span class="n">glyph2</span>
+            <span class="n">pvr</span><span class="o">.</span><span class="n">Value1</span> <span class="o">=</span> <span class="n">val1</span> <span class="k">if</span> <span class="n">val1</span> <span class="ow">and</span> <span class="n">val1</span><span class="o">.</span><span class="n">getFormat</span><span class="p">()</span> <span class="o">!=</span> <span class="mi">0</span> <span class="k">else</span> <span class="kc">None</span>
+            <span class="n">pvr</span><span class="o">.</span><span class="n">Value2</span> <span class="o">=</span> <span class="n">val2</span> <span class="k">if</span> <span class="n">val2</span> <span class="ow">and</span> <span class="n">val2</span><span class="o">.</span><span class="n">getFormat</span><span class="p">()</span> <span class="o">!=</span> <span class="mi">0</span> <span class="k">else</span> <span class="kc">None</span>
+            <span class="n">ps</span><span class="o">.</span><span class="n">PairValueRecord</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pvr</span><span class="p">)</span>
+        <span class="n">ps</span><span class="o">.</span><span class="n">PairValueCount</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">ps</span><span class="o">.</span><span class="n">PairValueRecord</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">PairSetCount</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">PairSet</span><span class="p">)</span>
+    <span class="k">return</span> <span class="bp">self</span></div>
+
+
+<div class="viewcode-block" id="buildSinglePos"><a class="viewcode-back" href="../../../otlLib/builder.html#fontTools.otlLib.builder.buildSinglePos">[docs]</a><span class="k">def</span> <span class="nf">buildSinglePos</span><span class="p">(</span><span class="n">mapping</span><span class="p">,</span> <span class="n">glyphMap</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;{&quot;glyph&quot;: ValueRecord} --&gt; [otTables.SinglePos*]&quot;&quot;&quot;</span>
+    <span class="n">result</span><span class="p">,</span> <span class="n">handled</span> <span class="o">=</span> <span class="p">[],</span> <span class="nb">set</span><span class="p">()</span>
+    <span class="c1"># In SinglePos format 1, the covered glyphs all share the same ValueRecord.</span>
+    <span class="c1"># In format 2, each glyph has its own ValueRecord, but these records</span>
+    <span class="c1"># all have the same properties (eg., all have an X but no Y placement).</span>
+    <span class="n">coverages</span><span class="p">,</span> <span class="n">masks</span><span class="p">,</span> <span class="n">values</span> <span class="o">=</span> <span class="p">{},</span> <span class="p">{},</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">glyph</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">mapping</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">key</span> <span class="o">=</span> <span class="n">_getSinglePosValueKey</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+        <span class="n">coverages</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="p">[])</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">glyph</span><span class="p">)</span>
+        <span class="n">masks</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">key</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="p">[])</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+        <span class="n">values</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+
+    <span class="c1"># If a ValueRecord is shared between multiple glyphs, we generate</span>
+    <span class="c1"># a SinglePos format 1 subtable; that is the most compact form.</span>
+    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">glyphs</span> <span class="ow">in</span> <span class="n">coverages</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="c1"># 5 ushorts is the length of introducing another sublookup</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">glyphs</span><span class="p">)</span> <span class="o">*</span> <span class="n">_getSinglePosValueSize</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>
+            <span class="n">format1Mapping</span> <span class="o">=</span> <span class="p">{</span><span class="n">g</span><span class="p">:</span> <span class="n">values</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="k">for</span> <span class="n">g</span> <span class="ow">in</span> <span class="n">glyphs</span><span class="p">}</span>
+            <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">buildSinglePosSubtable</span><span class="p">(</span><span class="n">format1Mapping</span><span class="p">,</span> <span class="n">glyphMap</span><span class="p">))</span>
+            <span class="n">handled</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+
+    <span class="c1"># In the remaining ValueRecords, look for those whose valueFormat</span>
+    <span class="c1"># (the set of used properties) is shared between multiple records.</span>
+    <span class="c1"># These will get encoded in format 2.</span>
+    <span class="k">for</span> <span class="n">valueFormat</span><span class="p">,</span> <span class="n">keys</span> <span class="ow">in</span> <span class="n">masks</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">f2</span> <span class="o">=</span> <span class="p">[</span><span class="n">k</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">keys</span> <span class="k">if</span> <span class="n">k</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">handled</span><span class="p">]</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">f2</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">format2Mapping</span> <span class="o">=</span> <span class="p">{}</span>
+            <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">f2</span><span class="p">:</span>
+                <span class="n">format2Mapping</span><span class="o">.</span><span class="n">update</span><span class="p">((</span><span class="n">g</span><span class="p">,</span> <span class="n">values</span><span class="p">[</span><span class="n">k</span><span class="p">])</span> <span class="k">for</span> <span class="n">g</span> <span class="ow">in</span> <span class="n">coverages</span><span class="p">[</span><span class="n">k</span><span class="p">])</span>
+            <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">buildSinglePosSubtable</span><span class="p">(</span><span class="n">format2Mapping</span><span class="p">,</span> <span class="n">glyphMap</span><span class="p">))</span>
+            <span class="n">handled</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">f2</span><span class="p">)</span>
+
+    <span class="c1"># The remaining ValueRecords are only used by a few glyphs, normally</span>
+    <span class="c1"># one. We encode these in format 1 again.</span>
+    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">glyphs</span> <span class="ow">in</span> <span class="n">coverages</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">handled</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">g</span> <span class="ow">in</span> <span class="n">glyphs</span><span class="p">:</span>
+                <span class="n">st</span> <span class="o">=</span> <span class="n">buildSinglePosSubtable</span><span class="p">({</span><span class="n">g</span><span class="p">:</span> <span class="n">values</span><span class="p">[</span><span class="n">key</span><span class="p">]},</span> <span class="n">glyphMap</span><span class="p">)</span>
+            <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">st</span><span class="p">)</span>
+
+    <span class="c1"># When the OpenType layout engine traverses the subtables, it will</span>
+    <span class="c1"># stop after the first matching subtable.  Therefore, we sort the</span>
+    <span class="c1"># resulting subtables by decreasing coverage size; this increases</span>
+    <span class="c1"># the chance that the layout engine can do an early exit. (Of course,</span>
+    <span class="c1"># this would only be true if all glyphs were equally frequent, which</span>
+    <span class="c1"># is not really the case; but we do not know their distribution).</span>
+    <span class="c1"># If two subtables cover the same number of glyphs, we sort them</span>
+    <span class="c1"># by glyph ID so that our output is deterministic.</span>
+    <span class="n">result</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">_getSinglePosTableKey</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">glyphMap</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">result</span></div>
+
+
+<div class="viewcode-block" id="buildSinglePosSubtable"><a class="viewcode-back" href="../../../otlLib/builder.html#fontTools.otlLib.builder.buildSinglePosSubtable">[docs]</a><span class="k">def</span> <span class="nf">buildSinglePosSubtable</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">glyphMap</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;{glyphName: otBase.ValueRecord} --&gt; otTables.SinglePos&quot;&quot;&quot;</span>
+    <span class="bp">self</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SinglePos</span><span class="p">()</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">Coverage</span> <span class="o">=</span> <span class="n">buildCoverage</span><span class="p">(</span><span class="n">values</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span> <span class="n">glyphMap</span><span class="p">)</span>
+    <span class="n">valueRecords</span> <span class="o">=</span> <span class="p">[</span><span class="n">values</span><span class="p">[</span><span class="n">g</span><span class="p">]</span> <span class="k">for</span> <span class="n">g</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">Coverage</span><span class="o">.</span><span class="n">glyphs</span><span class="p">]</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">ValueFormat</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">valueRecords</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ValueFormat</span> <span class="o">|=</span> <span class="n">v</span><span class="o">.</span><span class="n">getFormat</span><span class="p">()</span>
+    <span class="k">if</span> <span class="nb">all</span><span class="p">(</span><span class="n">v</span> <span class="o">==</span> <span class="n">valueRecords</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">valueRecords</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Format</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">ValueFormat</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">Value</span> <span class="o">=</span> <span class="n">valueRecords</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">Value</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Format</span> <span class="o">=</span> <span class="mi">2</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Value</span> <span class="o">=</span> <span class="n">valueRecords</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ValueCount</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Value</span><span class="p">)</span>
+    <span class="k">return</span> <span class="bp">self</span></div>
+
+
+<span class="k">def</span> <span class="nf">_getSinglePosTableKey</span><span class="p">(</span><span class="n">subtable</span><span class="p">,</span> <span class="n">glyphMap</span><span class="p">):</span>
+    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">subtable</span><span class="p">,</span> <span class="n">ot</span><span class="o">.</span><span class="n">SinglePos</span><span class="p">),</span> <span class="n">subtable</span>
+    <span class="n">glyphs</span> <span class="o">=</span> <span class="n">subtable</span><span class="o">.</span><span class="n">Coverage</span><span class="o">.</span><span class="n">glyphs</span>
+    <span class="k">return</span> <span class="p">(</span><span class="o">-</span><span class="nb">len</span><span class="p">(</span><span class="n">glyphs</span><span class="p">),</span> <span class="n">glyphMap</span><span class="p">[</span><span class="n">glyphs</span><span class="p">[</span><span class="mi">0</span><span class="p">]])</span>
+
+
+<span class="k">def</span> <span class="nf">_getSinglePosValueKey</span><span class="p">(</span><span class="n">valueRecord</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;otBase.ValueRecord --&gt; (2, (&quot;YPlacement&quot;: 12))&quot;&quot;&quot;</span>
+    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">valueRecord</span><span class="p">,</span> <span class="n">ValueRecord</span><span class="p">),</span> <span class="n">valueRecord</span>
+    <span class="n">valueFormat</span><span class="p">,</span> <span class="n">result</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">valueRecord</span><span class="o">.</span><span class="vm">__dict__</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">ot</span><span class="o">.</span><span class="n">Device</span><span class="p">):</span>
+            <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">name</span><span class="p">,</span> <span class="n">_makeDeviceTuple</span><span class="p">(</span><span class="n">value</span><span class="p">)))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">))</span>
+        <span class="n">valueFormat</span> <span class="o">|=</span> <span class="n">valueRecordFormatDict</span><span class="p">[</span><span class="n">name</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">result</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+    <span class="n">result</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">valueFormat</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+
+
+<span class="n">_DeviceTuple</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span><span class="s2">&quot;_DeviceTuple&quot;</span><span class="p">,</span> <span class="s2">&quot;DeltaFormat StartSize EndSize DeltaValue&quot;</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">_makeDeviceTuple</span><span class="p">(</span><span class="n">device</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;otTables.Device --&gt; tuple, for making device tables unique&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">_DeviceTuple</span><span class="p">(</span>
+        <span class="n">device</span><span class="o">.</span><span class="n">DeltaFormat</span><span class="p">,</span>
+        <span class="n">device</span><span class="o">.</span><span class="n">StartSize</span><span class="p">,</span>
+        <span class="n">device</span><span class="o">.</span><span class="n">EndSize</span><span class="p">,</span>
+        <span class="p">()</span> <span class="k">if</span> <span class="n">device</span><span class="o">.</span><span class="n">DeltaFormat</span> <span class="o">&amp;</span> <span class="mh">0x8000</span> <span class="k">else</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">device</span><span class="o">.</span><span class="n">DeltaValue</span><span class="p">)</span>
+    <span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">_getSinglePosValueSize</span><span class="p">(</span><span class="n">valueKey</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Returns how many ushorts this valueKey (short form of ValueRecord) takes up&quot;&quot;&quot;</span>
+    <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">valueKey</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">_DeviceTuple</span><span class="p">):</span>
+            <span class="n">count</span> <span class="o">+=</span> <span class="nb">len</span><span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">DeltaValue</span><span class="p">)</span> <span class="o">+</span> <span class="mi">3</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">count</span>
+
+<div class="viewcode-block" id="buildValue"><a class="viewcode-back" href="../../../otlLib/builder.html#fontTools.otlLib.builder.buildValue">[docs]</a><span class="k">def</span> <span class="nf">buildValue</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+    <span class="bp">self</span> <span class="o">=</span> <span class="n">ValueRecord</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">value</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="nb">setattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+    <span class="k">return</span> <span class="bp">self</span></div>
+
+
+<span class="c1"># GDEF</span>
+
+<div class="viewcode-block" id="buildAttachList"><a class="viewcode-back" href="../../../otlLib/builder.html#fontTools.otlLib.builder.buildAttachList">[docs]</a><span class="k">def</span> <span class="nf">buildAttachList</span><span class="p">(</span><span class="n">attachPoints</span><span class="p">,</span> <span class="n">glyphMap</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;{&quot;glyphName&quot;: [4, 23]} --&gt; otTables.AttachList, or None&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">attachPoints</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="bp">self</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">AttachList</span><span class="p">()</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">Coverage</span> <span class="o">=</span> <span class="n">buildCoverage</span><span class="p">(</span><span class="n">attachPoints</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span> <span class="n">glyphMap</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">AttachPoint</span> <span class="o">=</span> <span class="p">[</span><span class="n">buildAttachPoint</span><span class="p">(</span><span class="n">attachPoints</span><span class="p">[</span><span class="n">g</span><span class="p">])</span>
+                        <span class="k">for</span> <span class="n">g</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">Coverage</span><span class="o">.</span><span class="n">glyphs</span><span class="p">]</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">GlyphCount</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">AttachPoint</span><span class="p">)</span>
+    <span class="k">return</span> <span class="bp">self</span></div>
+
+
+<div class="viewcode-block" id="buildAttachPoint"><a class="viewcode-back" href="../../../otlLib/builder.html#fontTools.otlLib.builder.buildAttachPoint">[docs]</a><span class="k">def</span> <span class="nf">buildAttachPoint</span><span class="p">(</span><span class="n">points</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;[4, 23, 41] --&gt; otTables.AttachPoint&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">points</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="bp">self</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">AttachPoint</span><span class="p">()</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">PointIndex</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">points</span><span class="p">))</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">PointCount</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">PointIndex</span><span class="p">)</span>
+    <span class="k">return</span> <span class="bp">self</span></div>
+
+
+<div class="viewcode-block" id="buildCaretValueForCoord"><a class="viewcode-back" href="../../../otlLib/builder.html#fontTools.otlLib.builder.buildCaretValueForCoord">[docs]</a><span class="k">def</span> <span class="nf">buildCaretValueForCoord</span><span class="p">(</span><span class="n">coord</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;500 --&gt; otTables.CaretValue, format 1&quot;&quot;&quot;</span>
+    <span class="bp">self</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">CaretValue</span><span class="p">()</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">Format</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">Coordinate</span> <span class="o">=</span> <span class="n">coord</span>
+    <span class="k">return</span> <span class="bp">self</span></div>
+
+
+<div class="viewcode-block" id="buildCaretValueForPoint"><a class="viewcode-back" href="../../../otlLib/builder.html#fontTools.otlLib.builder.buildCaretValueForPoint">[docs]</a><span class="k">def</span> <span class="nf">buildCaretValueForPoint</span><span class="p">(</span><span class="n">point</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;4 --&gt; otTables.CaretValue, format 2&quot;&quot;&quot;</span>
+    <span class="bp">self</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">CaretValue</span><span class="p">()</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">Format</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">CaretValuePoint</span> <span class="o">=</span> <span class="n">point</span>
+    <span class="k">return</span> <span class="bp">self</span></div>
+
+
+<div class="viewcode-block" id="buildLigCaretList"><a class="viewcode-back" href="../../../otlLib/builder.html#fontTools.otlLib.builder.buildLigCaretList">[docs]</a><span class="k">def</span> <span class="nf">buildLigCaretList</span><span class="p">(</span><span class="n">coords</span><span class="p">,</span> <span class="n">points</span><span class="p">,</span> <span class="n">glyphMap</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;{&quot;f_f_i&quot;:[300,600]}, {&quot;c_t&quot;:[28]} --&gt; otTables.LigCaretList, or None&quot;&quot;&quot;</span>
+    <span class="n">glyphs</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">coords</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span> <span class="k">if</span> <span class="n">coords</span> <span class="k">else</span> <span class="nb">set</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">points</span><span class="p">:</span>
+        <span class="n">glyphs</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">points</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+    <span class="n">carets</span> <span class="o">=</span> <span class="p">{</span><span class="n">g</span><span class="p">:</span> <span class="n">buildLigGlyph</span><span class="p">(</span><span class="n">coords</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">g</span><span class="p">),</span> <span class="n">points</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">g</span><span class="p">))</span> <span class="k">for</span> <span class="n">g</span> <span class="ow">in</span> <span class="n">glyphs</span><span class="p">}</span>
+    <span class="n">carets</span> <span class="o">=</span> <span class="p">{</span><span class="n">g</span><span class="p">:</span> <span class="n">c</span> <span class="k">for</span> <span class="n">g</span><span class="p">,</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">carets</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">c</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">}</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">carets</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="bp">self</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">LigCaretList</span><span class="p">()</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">Coverage</span> <span class="o">=</span> <span class="n">buildCoverage</span><span class="p">(</span><span class="n">carets</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span> <span class="n">glyphMap</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">LigGlyph</span> <span class="o">=</span> <span class="p">[</span><span class="n">carets</span><span class="p">[</span><span class="n">g</span><span class="p">]</span> <span class="k">for</span> <span class="n">g</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">Coverage</span><span class="o">.</span><span class="n">glyphs</span><span class="p">]</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">LigGlyphCount</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">LigGlyph</span><span class="p">)</span>
+    <span class="k">return</span> <span class="bp">self</span></div>
+
+
+<div class="viewcode-block" id="buildLigGlyph"><a class="viewcode-back" href="../../../otlLib/builder.html#fontTools.otlLib.builder.buildLigGlyph">[docs]</a><span class="k">def</span> <span class="nf">buildLigGlyph</span><span class="p">(</span><span class="n">coords</span><span class="p">,</span> <span class="n">points</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;([500], [4]) --&gt; otTables.LigGlyph; None for empty coords/points&quot;&quot;&quot;</span>
+    <span class="n">carets</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">if</span> <span class="n">coords</span><span class="p">:</span>
+        <span class="n">carets</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="n">buildCaretValueForCoord</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">coords</span><span class="p">)])</span>
+    <span class="k">if</span> <span class="n">points</span><span class="p">:</span>
+        <span class="n">carets</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="n">buildCaretValueForPoint</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">points</span><span class="p">)])</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">carets</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="bp">self</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">LigGlyph</span><span class="p">()</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">CaretValue</span> <span class="o">=</span> <span class="n">carets</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">CaretCount</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">CaretValue</span><span class="p">)</span>
+    <span class="k">return</span> <span class="bp">self</span></div>
+
+
+<div class="viewcode-block" id="buildMarkGlyphSetsDef"><a class="viewcode-back" href="../../../otlLib/builder.html#fontTools.otlLib.builder.buildMarkGlyphSetsDef">[docs]</a><span class="k">def</span> <span class="nf">buildMarkGlyphSetsDef</span><span class="p">(</span><span class="n">markSets</span><span class="p">,</span> <span class="n">glyphMap</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;[{&quot;acute&quot;,&quot;grave&quot;}, {&quot;caron&quot;,&quot;grave&quot;}] --&gt; otTables.MarkGlyphSetsDef&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">markSets</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="bp">self</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">MarkGlyphSetsDef</span><span class="p">()</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">MarkSetTableFormat</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">Coverage</span> <span class="o">=</span> <span class="p">[</span><span class="n">buildCoverage</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">glyphMap</span><span class="p">)</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">markSets</span><span class="p">]</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">MarkSetCount</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Coverage</span><span class="p">)</span>
+    <span class="k">return</span> <span class="bp">self</span></div>
+
+
+<div class="viewcode-block" id="ClassDefBuilder"><a class="viewcode-back" href="../../../otlLib/builder.html#fontTools.otlLib.builder.ClassDefBuilder">[docs]</a><span class="k">class</span> <span class="nc">ClassDefBuilder</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Helper for building ClassDef tables.&quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">useClass0</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">classes_</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">glyphs_</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">useClass0_</span> <span class="o">=</span> <span class="n">useClass0</span>
+
+<div class="viewcode-block" id="ClassDefBuilder.canAdd"><a class="viewcode-back" href="../../../otlLib/builder.html#fontTools.otlLib.builder.ClassDefBuilder.canAdd">[docs]</a>    <span class="k">def</span> <span class="nf">canAdd</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">glyphs</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">glyphs</span><span class="p">,</span> <span class="p">(</span><span class="nb">set</span><span class="p">,</span> <span class="nb">frozenset</span><span class="p">)):</span>
+            <span class="n">glyphs</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">glyphs</span><span class="p">)</span>
+        <span class="n">glyphs</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">glyphs</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">glyphs</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">classes_</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">True</span>
+        <span class="k">for</span> <span class="n">glyph</span> <span class="ow">in</span> <span class="n">glyphs</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">glyph</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">glyphs_</span><span class="p">:</span>
+                <span class="k">return</span> <span class="kc">False</span>
+        <span class="k">return</span> <span class="kc">True</span></div>
+
+<div class="viewcode-block" id="ClassDefBuilder.add"><a class="viewcode-back" href="../../../otlLib/builder.html#fontTools.otlLib.builder.ClassDefBuilder.add">[docs]</a>    <span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">glyphs</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">glyphs</span><span class="p">,</span> <span class="p">(</span><span class="nb">set</span><span class="p">,</span> <span class="nb">frozenset</span><span class="p">)):</span>
+            <span class="n">glyphs</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">glyphs</span><span class="p">)</span>
+        <span class="n">glyphs</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">glyphs</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">glyphs</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">classes_</span><span class="p">:</span>
+            <span class="k">return</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">classes_</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">glyphs</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">glyph</span> <span class="ow">in</span> <span class="n">glyphs</span><span class="p">:</span>
+            <span class="k">assert</span> <span class="n">glyph</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">glyphs_</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">glyphs_</span><span class="p">[</span><span class="n">glyph</span><span class="p">]</span> <span class="o">=</span> <span class="n">glyphs</span></div>
+
+<div class="viewcode-block" id="ClassDefBuilder.classes"><a class="viewcode-back" href="../../../otlLib/builder.html#fontTools.otlLib.builder.ClassDefBuilder.classes">[docs]</a>    <span class="k">def</span> <span class="nf">classes</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># In ClassDef1 tables, class id #0 does not need to be encoded</span>
+        <span class="c1"># because zero is the default. Therefore, we use id #0 for the</span>
+        <span class="c1"># glyph class that has the largest number of members. However,</span>
+        <span class="c1"># in other tables than ClassDef1, 0 means &quot;every other glyph&quot;</span>
+        <span class="c1"># so we should not use that ID for any real glyph classes;</span>
+        <span class="c1"># we implement this by inserting an empty set at position 0.</span>
+        <span class="c1">#</span>
+        <span class="c1"># TODO: Instead of counting the number of glyphs in each class,</span>
+        <span class="c1"># we should determine the encoded size. If the glyphs in a large</span>
+        <span class="c1"># class form a contiguous range, the encoding is actually quite</span>
+        <span class="c1"># compact, whereas a non-contiguous set might need a lot of bytes</span>
+        <span class="c1"># in the output file. We don&#39;t get this right with the key below.</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">classes_</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">s</span><span class="p">:</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">),</span> <span class="n">s</span><span class="p">),</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">useClass0_</span><span class="p">:</span>
+            <span class="n">result</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">frozenset</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">result</span></div>
+
+<div class="viewcode-block" id="ClassDefBuilder.build"><a class="viewcode-back" href="../../../otlLib/builder.html#fontTools.otlLib.builder.ClassDefBuilder.build">[docs]</a>    <span class="k">def</span> <span class="nf">build</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">glyphClasses</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">classID</span><span class="p">,</span> <span class="n">glyphs</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">classes</span><span class="p">()):</span>
+            <span class="k">if</span> <span class="n">classID</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="k">continue</span>
+            <span class="k">for</span> <span class="n">glyph</span> <span class="ow">in</span> <span class="n">glyphs</span><span class="p">:</span>
+                <span class="n">glyphClasses</span><span class="p">[</span><span class="n">glyph</span><span class="p">]</span> <span class="o">=</span> <span class="n">classID</span>
+        <span class="n">classDef</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">ClassDef</span><span class="p">()</span>
+        <span class="n">classDef</span><span class="o">.</span><span class="n">classDefs</span> <span class="o">=</span> <span class="n">glyphClasses</span>
+        <span class="k">return</span> <span class="n">classDef</span></div></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Just van Rossum, Behdad Esfahbod, and the fontTools Authors. CC BY-SA 4.0
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

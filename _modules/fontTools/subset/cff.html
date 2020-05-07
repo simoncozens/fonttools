@@ -1,0 +1,841 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>fontTools.subset.cff &mdash; fontTools Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> fontTools
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Library</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../afmLib.html">afmLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../agl.html">agl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cffLib/index.html">cffLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../colorLib/index.html">colorLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cu2qu/index.html">cu2qu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../designspaceLib/index.html">designspaceLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../encodings/index.html">encodings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../feaLib/index.html">feaLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../merge.html">merge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../misc/index.html">misc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../mtiLib.html">mtiLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../otlLib/index.html">otlLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pens/index.html">pens</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../subset/index.html">subset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../svgLib/index.html">svgLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../t1Lib.html">t1Lib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ttLib/index.html">ttLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ttx.html">ttx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ufoLib/index.html">ufoLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../unicode.html">unicode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../unicodedata/index.html">unicodedata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../varLib/index.html">varLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../voltLib.html">voltLib</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">fontTools</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../subset.html">fontTools.subset</a> &raquo;</li>
+        
+      <li>fontTools.subset.cff</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for fontTools.subset.cff</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">fontTools.misc</span> <span class="k">import</span> <span class="n">psCharStrings</span>
+<span class="kn">from</span> <span class="nn">fontTools</span> <span class="k">import</span> <span class="n">ttLib</span>
+<span class="kn">from</span> <span class="nn">fontTools.pens.basePen</span> <span class="k">import</span> <span class="n">NullPen</span>
+<span class="kn">from</span> <span class="nn">fontTools.misc.fixedTools</span> <span class="k">import</span> <span class="n">otRound</span>
+<span class="kn">from</span> <span class="nn">fontTools.varLib.varStore</span> <span class="k">import</span> <span class="n">VarStoreInstancer</span>
+
+<span class="k">def</span> <span class="nf">_add_method</span><span class="p">(</span><span class="o">*</span><span class="n">clazzes</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Returns a decorator function that adds a new method to one or</span>
+<span class="sd">	more classes.&quot;&quot;&quot;</span>
+	<span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="n">method</span><span class="p">):</span>
+		<span class="n">done</span> <span class="o">=</span> <span class="p">[]</span>
+		<span class="k">for</span> <span class="n">clazz</span> <span class="ow">in</span> <span class="n">clazzes</span><span class="p">:</span>
+			<span class="k">if</span> <span class="n">clazz</span> <span class="ow">in</span> <span class="n">done</span><span class="p">:</span> <span class="k">continue</span> <span class="c1"># Support multiple names of a clazz</span>
+			<span class="n">done</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">clazz</span><span class="p">)</span>
+			<span class="k">assert</span> <span class="n">clazz</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">!=</span> <span class="s1">&#39;DefaultTable&#39;</span><span class="p">,</span> \
+					<span class="s1">&#39;Oops, table class not found.&#39;</span>
+			<span class="k">assert</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">clazz</span><span class="p">,</span> <span class="n">method</span><span class="o">.</span><span class="vm">__name__</span><span class="p">),</span> \
+					<span class="s2">&quot;Oops, class &#39;</span><span class="si">%s</span><span class="s2">&#39; has method &#39;</span><span class="si">%s</span><span class="s2">&#39;.&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">clazz</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span>
+									       <span class="n">method</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
+			<span class="nb">setattr</span><span class="p">(</span><span class="n">clazz</span><span class="p">,</span> <span class="n">method</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span> <span class="n">method</span><span class="p">)</span>
+		<span class="k">return</span> <span class="kc">None</span>
+	<span class="k">return</span> <span class="n">wrapper</span>
+
+<span class="k">def</span> <span class="nf">_uniq_sort</span><span class="p">(</span><span class="n">l</span><span class="p">):</span>
+	<span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">l</span><span class="p">))</span>
+
+<span class="k">class</span> <span class="nc">_ClosureGlyphsT2Decompiler</span><span class="p">(</span><span class="n">psCharStrings</span><span class="o">.</span><span class="n">SimpleT2Decompiler</span><span class="p">):</span>
+
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">components</span><span class="p">,</span> <span class="n">localSubrs</span><span class="p">,</span> <span class="n">globalSubrs</span><span class="p">):</span>
+		<span class="n">psCharStrings</span><span class="o">.</span><span class="n">SimpleT2Decompiler</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+							  <span class="n">localSubrs</span><span class="p">,</span>
+							  <span class="n">globalSubrs</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">components</span> <span class="o">=</span> <span class="n">components</span>
+
+	<span class="k">def</span> <span class="nf">op_endchar</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+		<span class="n">args</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">popall</span><span class="p">()</span>
+		<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">4</span><span class="p">:</span>
+			<span class="kn">from</span> <span class="nn">fontTools.encodings.StandardEncoding</span> <span class="k">import</span> <span class="n">StandardEncoding</span>
+			<span class="c1"># endchar can do seac accent bulding; The T2 spec says it&#39;s deprecated,</span>
+			<span class="c1"># but recent software that shall remain nameless does output it.</span>
+			<span class="n">adx</span><span class="p">,</span> <span class="n">ady</span><span class="p">,</span> <span class="n">bchar</span><span class="p">,</span> <span class="n">achar</span> <span class="o">=</span> <span class="n">args</span><span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">:]</span>
+			<span class="n">baseGlyph</span> <span class="o">=</span> <span class="n">StandardEncoding</span><span class="p">[</span><span class="n">bchar</span><span class="p">]</span>
+			<span class="n">accentGlyph</span> <span class="o">=</span> <span class="n">StandardEncoding</span><span class="p">[</span><span class="n">achar</span><span class="p">]</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">components</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">baseGlyph</span><span class="p">)</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">components</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">accentGlyph</span><span class="p">)</span>
+
+<span class="nd">@_add_method</span><span class="p">(</span><span class="n">ttLib</span><span class="o">.</span><span class="n">getTableClass</span><span class="p">(</span><span class="s1">&#39;CFF &#39;</span><span class="p">))</span>
+<span class="k">def</span> <span class="nf">closure_glyphs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">):</span>
+	<span class="n">cff</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cff</span>
+	<span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">cff</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span>
+	<span class="n">font</span> <span class="o">=</span> <span class="n">cff</span><span class="p">[</span><span class="n">cff</span><span class="o">.</span><span class="n">keys</span><span class="p">()[</span><span class="mi">0</span><span class="p">]]</span>
+	<span class="n">glyphSet</span> <span class="o">=</span> <span class="n">font</span><span class="o">.</span><span class="n">CharStrings</span>
+
+	<span class="n">decompose</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">glyphs</span>
+	<span class="k">while</span> <span class="n">decompose</span><span class="p">:</span>
+		<span class="n">components</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+		<span class="k">for</span> <span class="n">g</span> <span class="ow">in</span> <span class="n">decompose</span><span class="p">:</span>
+			<span class="k">if</span> <span class="n">g</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">glyphSet</span><span class="p">:</span>
+				<span class="k">continue</span>
+			<span class="n">gl</span> <span class="o">=</span> <span class="n">glyphSet</span><span class="p">[</span><span class="n">g</span><span class="p">]</span>
+
+			<span class="n">subrs</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">gl</span><span class="o">.</span><span class="n">private</span><span class="p">,</span> <span class="s2">&quot;Subrs&quot;</span><span class="p">,</span> <span class="p">[])</span>
+			<span class="n">decompiler</span> <span class="o">=</span> <span class="n">_ClosureGlyphsT2Decompiler</span><span class="p">(</span><span class="n">components</span><span class="p">,</span> <span class="n">subrs</span><span class="p">,</span> <span class="n">gl</span><span class="o">.</span><span class="n">globalSubrs</span><span class="p">)</span>
+			<span class="n">decompiler</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">gl</span><span class="p">)</span>
+		<span class="n">components</span> <span class="o">-=</span> <span class="n">s</span><span class="o">.</span><span class="n">glyphs</span>
+		<span class="n">s</span><span class="o">.</span><span class="n">glyphs</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">components</span><span class="p">)</span>
+		<span class="n">decompose</span> <span class="o">=</span> <span class="n">components</span>
+
+<span class="k">def</span> <span class="nf">_empty_charstring</span><span class="p">(</span><span class="n">font</span><span class="p">,</span> <span class="n">glyphName</span><span class="p">,</span> <span class="n">isCFF2</span><span class="p">,</span> <span class="n">ignoreWidth</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+	<span class="n">c</span><span class="p">,</span> <span class="n">fdSelectIndex</span> <span class="o">=</span> <span class="n">font</span><span class="o">.</span><span class="n">CharStrings</span><span class="o">.</span><span class="n">getItemAndSelector</span><span class="p">(</span><span class="n">glyphName</span><span class="p">)</span>
+	<span class="k">if</span> <span class="n">isCFF2</span> <span class="ow">or</span> <span class="n">ignoreWidth</span><span class="p">:</span>
+		<span class="c1"># CFF2 charstrings have no widths nor &#39;endchar&#39; operators</span>
+		<span class="n">c</span><span class="o">.</span><span class="n">decompile</span><span class="p">()</span>
+		<span class="n">c</span><span class="o">.</span><span class="n">program</span> <span class="o">=</span> <span class="p">[]</span> <span class="k">if</span> <span class="n">isCFF2</span> <span class="k">else</span> <span class="p">[</span><span class="s1">&#39;endchar&#39;</span><span class="p">]</span>
+	<span class="k">else</span><span class="p">:</span>
+		<span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">font</span><span class="p">,</span> <span class="s1">&#39;FDArray&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="n">font</span><span class="o">.</span><span class="n">FDArray</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="n">private</span> <span class="o">=</span> <span class="n">font</span><span class="o">.</span><span class="n">FDArray</span><span class="p">[</span><span class="n">fdSelectIndex</span><span class="p">]</span><span class="o">.</span><span class="n">Private</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="n">private</span> <span class="o">=</span> <span class="n">font</span><span class="o">.</span><span class="n">Private</span>
+		<span class="n">dfltWdX</span> <span class="o">=</span> <span class="n">private</span><span class="o">.</span><span class="n">defaultWidthX</span>
+		<span class="n">nmnlWdX</span> <span class="o">=</span> <span class="n">private</span><span class="o">.</span><span class="n">nominalWidthX</span>
+		<span class="n">pen</span> <span class="o">=</span> <span class="n">NullPen</span><span class="p">()</span>
+		<span class="n">c</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">pen</span><span class="p">)</span>  <span class="c1"># this will set the charstring&#39;s width</span>
+		<span class="k">if</span> <span class="n">c</span><span class="o">.</span><span class="n">width</span> <span class="o">!=</span> <span class="n">dfltWdX</span><span class="p">:</span>
+			<span class="n">c</span><span class="o">.</span><span class="n">program</span> <span class="o">=</span> <span class="p">[</span><span class="n">c</span><span class="o">.</span><span class="n">width</span> <span class="o">-</span> <span class="n">nmnlWdX</span><span class="p">,</span> <span class="s1">&#39;endchar&#39;</span><span class="p">]</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="n">c</span><span class="o">.</span><span class="n">program</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;endchar&#39;</span><span class="p">]</span>
+
+<span class="nd">@_add_method</span><span class="p">(</span><span class="n">ttLib</span><span class="o">.</span><span class="n">getTableClass</span><span class="p">(</span><span class="s1">&#39;CFF &#39;</span><span class="p">))</span>
+<span class="k">def</span> <span class="nf">prune_pre_subset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">font</span><span class="p">,</span> <span class="n">options</span><span class="p">):</span>
+	<span class="n">cff</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cff</span>
+	<span class="c1"># CFF table must have one font only</span>
+	<span class="n">cff</span><span class="o">.</span><span class="n">fontNames</span> <span class="o">=</span> <span class="n">cff</span><span class="o">.</span><span class="n">fontNames</span><span class="p">[:</span><span class="mi">1</span><span class="p">]</span>
+
+	<span class="k">if</span> <span class="n">options</span><span class="o">.</span><span class="n">notdef_glyph</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">options</span><span class="o">.</span><span class="n">notdef_outline</span><span class="p">:</span>
+		<span class="n">isCFF2</span> <span class="o">=</span> <span class="n">cff</span><span class="o">.</span><span class="n">major</span> <span class="o">&gt;</span> <span class="mi">1</span>
+		<span class="k">for</span> <span class="n">fontname</span> <span class="ow">in</span> <span class="n">cff</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+			<span class="n">font</span> <span class="o">=</span> <span class="n">cff</span><span class="p">[</span><span class="n">fontname</span><span class="p">]</span>
+			<span class="n">_empty_charstring</span><span class="p">(</span><span class="n">font</span><span class="p">,</span> <span class="s2">&quot;.notdef&quot;</span><span class="p">,</span> <span class="n">isCFF2</span><span class="o">=</span><span class="n">isCFF2</span><span class="p">)</span>
+
+	<span class="c1"># Clear useless Encoding</span>
+	<span class="k">for</span> <span class="n">fontname</span> <span class="ow">in</span> <span class="n">cff</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+		<span class="n">font</span> <span class="o">=</span> <span class="n">cff</span><span class="p">[</span><span class="n">fontname</span><span class="p">]</span>
+		<span class="c1"># https://github.com/fonttools/fonttools/issues/620</span>
+		<span class="n">font</span><span class="o">.</span><span class="n">Encoding</span> <span class="o">=</span> <span class="s2">&quot;StandardEncoding&quot;</span>
+
+	<span class="k">return</span> <span class="kc">True</span> <span class="c1"># bool(cff.fontNames)</span>
+
+<span class="nd">@_add_method</span><span class="p">(</span><span class="n">ttLib</span><span class="o">.</span><span class="n">getTableClass</span><span class="p">(</span><span class="s1">&#39;CFF &#39;</span><span class="p">))</span>
+<span class="k">def</span> <span class="nf">subset_glyphs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">):</span>
+	<span class="n">cff</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cff</span>
+	<span class="k">for</span> <span class="n">fontname</span> <span class="ow">in</span> <span class="n">cff</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+		<span class="n">font</span> <span class="o">=</span> <span class="n">cff</span><span class="p">[</span><span class="n">fontname</span><span class="p">]</span>
+		<span class="n">cs</span> <span class="o">=</span> <span class="n">font</span><span class="o">.</span><span class="n">CharStrings</span>
+
+		<span class="n">glyphs</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">glyphs</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">glyphs_emptied</span><span class="p">)</span>
+
+		<span class="c1"># Load all glyphs</span>
+		<span class="k">for</span> <span class="n">g</span> <span class="ow">in</span> <span class="n">font</span><span class="o">.</span><span class="n">charset</span><span class="p">:</span>
+			<span class="k">if</span> <span class="n">g</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">glyphs</span><span class="p">:</span> <span class="k">continue</span>
+			<span class="n">c</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">cs</span><span class="o">.</span><span class="n">getItemAndSelector</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
+
+		<span class="k">if</span> <span class="n">cs</span><span class="o">.</span><span class="n">charStringsAreIndexed</span><span class="p">:</span>
+			<span class="n">indices</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">g</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">font</span><span class="o">.</span><span class="n">charset</span><span class="p">)</span> <span class="k">if</span> <span class="n">g</span> <span class="ow">in</span> <span class="n">glyphs</span><span class="p">]</span>
+			<span class="n">csi</span> <span class="o">=</span> <span class="n">cs</span><span class="o">.</span><span class="n">charStringsIndex</span>
+			<span class="n">csi</span><span class="o">.</span><span class="n">items</span> <span class="o">=</span> <span class="p">[</span><span class="n">csi</span><span class="o">.</span><span class="n">items</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">indices</span><span class="p">]</span>
+			<span class="k">del</span> <span class="n">csi</span><span class="o">.</span><span class="n">file</span><span class="p">,</span> <span class="n">csi</span><span class="o">.</span><span class="n">offsets</span>
+			<span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">font</span><span class="p">,</span> <span class="s2">&quot;FDSelect&quot;</span><span class="p">):</span>
+				<span class="n">sel</span> <span class="o">=</span> <span class="n">font</span><span class="o">.</span><span class="n">FDSelect</span>
+				<span class="c1"># XXX We want to set sel.format to None, such that the</span>
+				<span class="c1"># most compact format is selected. However, OTS was</span>
+				<span class="c1"># broken and couldn&#39;t parse a FDSelect format 0 that</span>
+				<span class="c1"># happened before CharStrings. As such, always force</span>
+				<span class="c1"># format 3 until we fix cffLib to always generate</span>
+				<span class="c1"># FDSelect after CharStrings.</span>
+				<span class="c1"># https://github.com/khaledhosny/ots/pull/31</span>
+				<span class="c1">#sel.format = None</span>
+				<span class="n">sel</span><span class="o">.</span><span class="n">format</span> <span class="o">=</span> <span class="mi">3</span>
+				<span class="n">sel</span><span class="o">.</span><span class="n">gidArray</span> <span class="o">=</span> <span class="p">[</span><span class="n">sel</span><span class="o">.</span><span class="n">gidArray</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">indices</span><span class="p">]</span>
+			<span class="n">cs</span><span class="o">.</span><span class="n">charStrings</span> <span class="o">=</span> <span class="p">{</span><span class="n">g</span><span class="p">:</span><span class="n">indices</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+					  <span class="k">for</span> <span class="n">g</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">cs</span><span class="o">.</span><span class="n">charStrings</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+					  <span class="k">if</span> <span class="n">g</span> <span class="ow">in</span> <span class="n">glyphs</span><span class="p">}</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="n">cs</span><span class="o">.</span><span class="n">charStrings</span> <span class="o">=</span> <span class="p">{</span><span class="n">g</span><span class="p">:</span><span class="n">v</span>
+					  <span class="k">for</span> <span class="n">g</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">cs</span><span class="o">.</span><span class="n">charStrings</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+					  <span class="k">if</span> <span class="n">g</span> <span class="ow">in</span> <span class="n">glyphs</span><span class="p">}</span>
+		<span class="n">font</span><span class="o">.</span><span class="n">charset</span> <span class="o">=</span> <span class="p">[</span><span class="n">g</span> <span class="k">for</span> <span class="n">g</span> <span class="ow">in</span> <span class="n">font</span><span class="o">.</span><span class="n">charset</span> <span class="k">if</span> <span class="n">g</span> <span class="ow">in</span> <span class="n">glyphs</span><span class="p">]</span>
+		<span class="n">font</span><span class="o">.</span><span class="n">numGlyphs</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">font</span><span class="o">.</span><span class="n">charset</span><span class="p">)</span>
+
+
+		<span class="k">if</span> <span class="n">s</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">retain_gids</span><span class="p">:</span>
+			<span class="n">isCFF2</span> <span class="o">=</span> <span class="n">cff</span><span class="o">.</span><span class="n">major</span> <span class="o">&gt;</span> <span class="mi">1</span>
+			<span class="k">for</span> <span class="n">g</span> <span class="ow">in</span> <span class="n">s</span><span class="o">.</span><span class="n">glyphs_emptied</span><span class="p">:</span>
+				<span class="n">_empty_charstring</span><span class="p">(</span><span class="n">font</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">isCFF2</span><span class="o">=</span><span class="n">isCFF2</span><span class="p">,</span> <span class="n">ignoreWidth</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+
+	<span class="k">return</span> <span class="kc">True</span> <span class="c1"># any(cff[fontname].numGlyphs for fontname in cff.keys())</span>
+
+<span class="nd">@_add_method</span><span class="p">(</span><span class="n">psCharStrings</span><span class="o">.</span><span class="n">T2CharString</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">subset_subroutines</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">subrs</span><span class="p">,</span> <span class="n">gsubrs</span><span class="p">):</span>
+	<span class="n">p</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">program</span>
+	<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">p</span><span class="p">)):</span>
+		<span class="k">if</span> <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;callsubr&#39;</span><span class="p">:</span>
+			<span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="nb">int</span><span class="p">)</span>
+			<span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">subrs</span><span class="o">.</span><span class="n">_used</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">subrs</span><span class="o">.</span><span class="n">_old_bias</span><span class="p">)</span> <span class="o">-</span> <span class="n">subrs</span><span class="o">.</span><span class="n">_new_bias</span>
+		<span class="k">elif</span> <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;callgsubr&#39;</span><span class="p">:</span>
+			<span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="nb">int</span><span class="p">)</span>
+			<span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">gsubrs</span><span class="o">.</span><span class="n">_used</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">gsubrs</span><span class="o">.</span><span class="n">_old_bias</span><span class="p">)</span> <span class="o">-</span> <span class="n">gsubrs</span><span class="o">.</span><span class="n">_new_bias</span>
+
+<span class="nd">@_add_method</span><span class="p">(</span><span class="n">psCharStrings</span><span class="o">.</span><span class="n">T2CharString</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">drop_hints</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+	<span class="n">hints</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_hints</span>
+
+	<span class="k">if</span> <span class="n">hints</span><span class="o">.</span><span class="n">deletions</span><span class="p">:</span>
+		<span class="n">p</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">program</span>
+		<span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">hints</span><span class="o">.</span><span class="n">deletions</span><span class="p">):</span>
+			<span class="k">del</span> <span class="n">p</span><span class="p">[</span><span class="n">idx</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">idx</span><span class="p">]</span>
+
+	<span class="k">if</span> <span class="n">hints</span><span class="o">.</span><span class="n">has_hint</span><span class="p">:</span>
+		<span class="k">assert</span> <span class="ow">not</span> <span class="n">hints</span><span class="o">.</span><span class="n">deletions</span> <span class="ow">or</span> <span class="n">hints</span><span class="o">.</span><span class="n">last_hint</span> <span class="o">&lt;=</span> <span class="n">hints</span><span class="o">.</span><span class="n">deletions</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">program</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">program</span><span class="p">[</span><span class="n">hints</span><span class="o">.</span><span class="n">last_hint</span><span class="p">:]</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">program</span><span class="p">:</span>
+			<span class="c1"># TODO CFF2 no need for endchar.</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">program</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;endchar&#39;</span><span class="p">)</span>
+		<span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;width&#39;</span><span class="p">):</span>
+			<span class="c1"># Insert width back if needed</span>
+			<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">private</span><span class="o">.</span><span class="n">defaultWidthX</span><span class="p">:</span>
+				<span class="c1"># For CFF2 charstrings, this should never happen</span>
+				<span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">private</span><span class="o">.</span><span class="n">defaultWidthX</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;CFF2 CharStrings must not have an initial width value&quot;</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">program</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">private</span><span class="o">.</span><span class="n">nominalWidthX</span><span class="p">)</span>
+
+	<span class="k">if</span> <span class="n">hints</span><span class="o">.</span><span class="n">has_hintmask</span><span class="p">:</span>
+		<span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+		<span class="n">p</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">program</span>
+		<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">p</span><span class="p">):</span>
+			<span class="k">if</span> <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;hintmask&#39;</span><span class="p">,</span> <span class="s1">&#39;cntrmask&#39;</span><span class="p">]:</span>
+				<span class="k">assert</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&lt;=</span> <span class="nb">len</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+				<span class="k">del</span> <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="mi">2</span><span class="p">]</span>
+				<span class="k">continue</span>
+			<span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+
+	<span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">program</span><span class="p">)</span>
+
+	<span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">_hints</span>
+
+<span class="k">class</span> <span class="nc">_MarkingT2Decompiler</span><span class="p">(</span><span class="n">psCharStrings</span><span class="o">.</span><span class="n">SimpleT2Decompiler</span><span class="p">):</span>
+
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">localSubrs</span><span class="p">,</span> <span class="n">globalSubrs</span><span class="p">,</span> <span class="n">private</span><span class="p">):</span>
+		<span class="n">psCharStrings</span><span class="o">.</span><span class="n">SimpleT2Decompiler</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+							  <span class="n">localSubrs</span><span class="p">,</span>
+							  <span class="n">globalSubrs</span><span class="p">,</span>
+							  <span class="n">private</span><span class="p">)</span>
+		<span class="k">for</span> <span class="n">subrs</span> <span class="ow">in</span> <span class="p">[</span><span class="n">localSubrs</span><span class="p">,</span> <span class="n">globalSubrs</span><span class="p">]:</span>
+			<span class="k">if</span> <span class="n">subrs</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">subrs</span><span class="p">,</span> <span class="s2">&quot;_used&quot;</span><span class="p">):</span>
+				<span class="n">subrs</span><span class="o">.</span><span class="n">_used</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+
+	<span class="k">def</span> <span class="nf">op_callsubr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">localSubrs</span><span class="o">.</span><span class="n">_used</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">operandStack</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">localBias</span><span class="p">)</span>
+		<span class="n">psCharStrings</span><span class="o">.</span><span class="n">SimpleT2Decompiler</span><span class="o">.</span><span class="n">op_callsubr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">)</span>
+
+	<span class="k">def</span> <span class="nf">op_callgsubr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">globalSubrs</span><span class="o">.</span><span class="n">_used</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">operandStack</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">globalBias</span><span class="p">)</span>
+		<span class="n">psCharStrings</span><span class="o">.</span><span class="n">SimpleT2Decompiler</span><span class="o">.</span><span class="n">op_callgsubr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">_DehintingT2Decompiler</span><span class="p">(</span><span class="n">psCharStrings</span><span class="o">.</span><span class="n">T2WidthExtractor</span><span class="p">):</span>
+
+	<span class="k">class</span> <span class="nc">Hints</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+		<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+			<span class="c1"># Whether calling this charstring produces any hint stems</span>
+			<span class="c1"># Note that if a charstring starts with hintmask, it will</span>
+			<span class="c1"># have has_hint set to True, because it *might* produce an</span>
+			<span class="c1"># implicit vstem if called under certain conditions.</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">has_hint</span> <span class="o">=</span> <span class="kc">False</span>
+			<span class="c1"># Index to start at to drop all hints</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">last_hint</span> <span class="o">=</span> <span class="mi">0</span>
+			<span class="c1"># Index up to which we know more hints are possible.</span>
+			<span class="c1"># Only relevant if status is 0 or 1.</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">last_checked</span> <span class="o">=</span> <span class="mi">0</span>
+			<span class="c1"># The status means:</span>
+			<span class="c1"># 0: after dropping hints, this charstring is empty</span>
+			<span class="c1"># 1: after dropping hints, there may be more hints</span>
+			<span class="c1">#	continuing after this, or there might be</span>
+			<span class="c1">#	other things.  Not clear yet.</span>
+			<span class="c1"># 2: no more hints possible after this charstring</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">status</span> <span class="o">=</span> <span class="mi">0</span>
+			<span class="c1"># Has hintmask instructions; not recursive</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">has_hintmask</span> <span class="o">=</span> <span class="kc">False</span>
+			<span class="c1"># List of indices of calls to empty subroutines to remove.</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">deletions</span> <span class="o">=</span> <span class="p">[]</span>
+		<span class="k">pass</span>
+
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">css</span><span class="p">,</span> <span class="n">localSubrs</span><span class="p">,</span> <span class="n">globalSubrs</span><span class="p">,</span> <span class="n">nominalWidthX</span><span class="p">,</span> <span class="n">defaultWidthX</span><span class="p">,</span> <span class="n">private</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_css</span> <span class="o">=</span> <span class="n">css</span>
+		<span class="n">psCharStrings</span><span class="o">.</span><span class="n">T2WidthExtractor</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+			<span class="bp">self</span><span class="p">,</span> <span class="n">localSubrs</span><span class="p">,</span> <span class="n">globalSubrs</span><span class="p">,</span> <span class="n">nominalWidthX</span><span class="p">,</span> <span class="n">defaultWidthX</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">private</span> <span class="o">=</span> <span class="n">private</span>
+
+	<span class="k">def</span> <span class="nf">execute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">charString</span><span class="p">):</span>
+		<span class="n">old_hints</span> <span class="o">=</span> <span class="n">charString</span><span class="o">.</span><span class="n">_hints</span> <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">charString</span><span class="p">,</span> <span class="s1">&#39;_hints&#39;</span><span class="p">)</span> <span class="k">else</span> <span class="kc">None</span>
+		<span class="n">charString</span><span class="o">.</span><span class="n">_hints</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Hints</span><span class="p">()</span>
+
+		<span class="n">psCharStrings</span><span class="o">.</span><span class="n">T2WidthExtractor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">charString</span><span class="p">)</span>
+
+		<span class="n">hints</span> <span class="o">=</span> <span class="n">charString</span><span class="o">.</span><span class="n">_hints</span>
+
+		<span class="k">if</span> <span class="n">hints</span><span class="o">.</span><span class="n">has_hint</span> <span class="ow">or</span> <span class="n">hints</span><span class="o">.</span><span class="n">has_hintmask</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_css</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">charString</span><span class="p">)</span>
+
+		<span class="k">if</span> <span class="n">hints</span><span class="o">.</span><span class="n">status</span> <span class="o">!=</span> <span class="mi">2</span><span class="p">:</span>
+			<span class="c1"># Check from last_check, make sure we didn&#39;t have any operators.</span>
+			<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">hints</span><span class="o">.</span><span class="n">last_checked</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">charString</span><span class="o">.</span><span class="n">program</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+				<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">charString</span><span class="o">.</span><span class="n">program</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="nb">str</span><span class="p">):</span>
+					<span class="n">hints</span><span class="o">.</span><span class="n">status</span> <span class="o">=</span> <span class="mi">2</span>
+					<span class="k">break</span>
+				<span class="k">else</span><span class="p">:</span>
+					<span class="n">hints</span><span class="o">.</span><span class="n">status</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># There&#39;s *something* here</span>
+			<span class="n">hints</span><span class="o">.</span><span class="n">last_checked</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">charString</span><span class="o">.</span><span class="n">program</span><span class="p">)</span>
+
+		<span class="k">if</span> <span class="n">old_hints</span><span class="p">:</span>
+			<span class="k">assert</span> <span class="n">hints</span><span class="o">.</span><span class="vm">__dict__</span> <span class="o">==</span> <span class="n">old_hints</span><span class="o">.</span><span class="vm">__dict__</span>
+
+	<span class="k">def</span> <span class="nf">op_callsubr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+		<span class="n">subr</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">localSubrs</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">operandStack</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">localBias</span><span class="p">]</span>
+		<span class="n">psCharStrings</span><span class="o">.</span><span class="n">T2WidthExtractor</span><span class="o">.</span><span class="n">op_callsubr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">processSubr</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">subr</span><span class="p">)</span>
+
+	<span class="k">def</span> <span class="nf">op_callgsubr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+		<span class="n">subr</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">globalSubrs</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">operandStack</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">globalBias</span><span class="p">]</span>
+		<span class="n">psCharStrings</span><span class="o">.</span><span class="n">T2WidthExtractor</span><span class="o">.</span><span class="n">op_callgsubr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">processSubr</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">subr</span><span class="p">)</span>
+
+	<span class="k">def</span> <span class="nf">op_hstem</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+		<span class="n">psCharStrings</span><span class="o">.</span><span class="n">T2WidthExtractor</span><span class="o">.</span><span class="n">op_hstem</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">processHint</span><span class="p">(</span><span class="n">index</span><span class="p">)</span>
+	<span class="k">def</span> <span class="nf">op_vstem</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+		<span class="n">psCharStrings</span><span class="o">.</span><span class="n">T2WidthExtractor</span><span class="o">.</span><span class="n">op_vstem</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">processHint</span><span class="p">(</span><span class="n">index</span><span class="p">)</span>
+	<span class="k">def</span> <span class="nf">op_hstemhm</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+		<span class="n">psCharStrings</span><span class="o">.</span><span class="n">T2WidthExtractor</span><span class="o">.</span><span class="n">op_hstemhm</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">processHint</span><span class="p">(</span><span class="n">index</span><span class="p">)</span>
+	<span class="k">def</span> <span class="nf">op_vstemhm</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+		<span class="n">psCharStrings</span><span class="o">.</span><span class="n">T2WidthExtractor</span><span class="o">.</span><span class="n">op_vstemhm</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">processHint</span><span class="p">(</span><span class="n">index</span><span class="p">)</span>
+	<span class="k">def</span> <span class="nf">op_hintmask</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+		<span class="n">rv</span> <span class="o">=</span> <span class="n">psCharStrings</span><span class="o">.</span><span class="n">T2WidthExtractor</span><span class="o">.</span><span class="n">op_hintmask</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">processHintmask</span><span class="p">(</span><span class="n">index</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">rv</span>
+	<span class="k">def</span> <span class="nf">op_cntrmask</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+		<span class="n">rv</span> <span class="o">=</span> <span class="n">psCharStrings</span><span class="o">.</span><span class="n">T2WidthExtractor</span><span class="o">.</span><span class="n">op_cntrmask</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">processHintmask</span><span class="p">(</span><span class="n">index</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">rv</span>
+
+	<span class="k">def</span> <span class="nf">processHintmask</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+		<span class="n">cs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">callingStack</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+		<span class="n">hints</span> <span class="o">=</span> <span class="n">cs</span><span class="o">.</span><span class="n">_hints</span>
+		<span class="n">hints</span><span class="o">.</span><span class="n">has_hintmask</span> <span class="o">=</span> <span class="kc">True</span>
+		<span class="k">if</span> <span class="n">hints</span><span class="o">.</span><span class="n">status</span> <span class="o">!=</span> <span class="mi">2</span><span class="p">:</span>
+			<span class="c1"># Check from last_check, see if we may be an implicit vstem</span>
+			<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">hints</span><span class="o">.</span><span class="n">last_checked</span><span class="p">,</span> <span class="n">index</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+				<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">cs</span><span class="o">.</span><span class="n">program</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="nb">str</span><span class="p">):</span>
+					<span class="n">hints</span><span class="o">.</span><span class="n">status</span> <span class="o">=</span> <span class="mi">2</span>
+					<span class="k">break</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="c1"># We are an implicit vstem</span>
+				<span class="n">hints</span><span class="o">.</span><span class="n">has_hint</span> <span class="o">=</span> <span class="kc">True</span>
+				<span class="n">hints</span><span class="o">.</span><span class="n">last_hint</span> <span class="o">=</span> <span class="n">index</span> <span class="o">+</span> <span class="mi">1</span>
+				<span class="n">hints</span><span class="o">.</span><span class="n">status</span> <span class="o">=</span> <span class="mi">0</span>
+		<span class="n">hints</span><span class="o">.</span><span class="n">last_checked</span> <span class="o">=</span> <span class="n">index</span> <span class="o">+</span> <span class="mi">1</span>
+
+	<span class="k">def</span> <span class="nf">processHint</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+		<span class="n">cs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">callingStack</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+		<span class="n">hints</span> <span class="o">=</span> <span class="n">cs</span><span class="o">.</span><span class="n">_hints</span>
+		<span class="n">hints</span><span class="o">.</span><span class="n">has_hint</span> <span class="o">=</span> <span class="kc">True</span>
+		<span class="n">hints</span><span class="o">.</span><span class="n">last_hint</span> <span class="o">=</span> <span class="n">index</span>
+		<span class="n">hints</span><span class="o">.</span><span class="n">last_checked</span> <span class="o">=</span> <span class="n">index</span>
+
+	<span class="k">def</span> <span class="nf">processSubr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">subr</span><span class="p">):</span>
+		<span class="n">cs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">callingStack</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+		<span class="n">hints</span> <span class="o">=</span> <span class="n">cs</span><span class="o">.</span><span class="n">_hints</span>
+		<span class="n">subr_hints</span> <span class="o">=</span> <span class="n">subr</span><span class="o">.</span><span class="n">_hints</span>
+
+		<span class="c1"># Check from last_check, make sure we didn&#39;t have</span>
+		<span class="c1"># any operators.</span>
+		<span class="k">if</span> <span class="n">hints</span><span class="o">.</span><span class="n">status</span> <span class="o">!=</span> <span class="mi">2</span><span class="p">:</span>
+			<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">hints</span><span class="o">.</span><span class="n">last_checked</span><span class="p">,</span> <span class="n">index</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+				<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">cs</span><span class="o">.</span><span class="n">program</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="nb">str</span><span class="p">):</span>
+					<span class="n">hints</span><span class="o">.</span><span class="n">status</span> <span class="o">=</span> <span class="mi">2</span>
+					<span class="k">break</span>
+			<span class="n">hints</span><span class="o">.</span><span class="n">last_checked</span> <span class="o">=</span> <span class="n">index</span>
+
+		<span class="k">if</span> <span class="n">hints</span><span class="o">.</span><span class="n">status</span> <span class="o">!=</span> <span class="mi">2</span><span class="p">:</span>
+			<span class="k">if</span> <span class="n">subr_hints</span><span class="o">.</span><span class="n">has_hint</span><span class="p">:</span>
+				<span class="n">hints</span><span class="o">.</span><span class="n">has_hint</span> <span class="o">=</span> <span class="kc">True</span>
+
+				<span class="c1"># Decide where to chop off from</span>
+				<span class="k">if</span> <span class="n">subr_hints</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+					<span class="n">hints</span><span class="o">.</span><span class="n">last_hint</span> <span class="o">=</span> <span class="n">index</span>
+				<span class="k">else</span><span class="p">:</span>
+					<span class="n">hints</span><span class="o">.</span><span class="n">last_hint</span> <span class="o">=</span> <span class="n">index</span> <span class="o">-</span> <span class="mi">2</span>  <span class="c1"># Leave the subr call in</span>
+
+		<span class="k">elif</span> <span class="n">subr_hints</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+			<span class="n">hints</span><span class="o">.</span><span class="n">deletions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">index</span><span class="p">)</span>
+
+		<span class="n">hints</span><span class="o">.</span><span class="n">status</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">hints</span><span class="o">.</span><span class="n">status</span><span class="p">,</span> <span class="n">subr_hints</span><span class="o">.</span><span class="n">status</span><span class="p">)</span>
+
+<div class="viewcode-block" id="StopHintCountEvent"><a class="viewcode-back" href="../../../subset/cff.html#fontTools.subset.cff.StopHintCountEvent">[docs]</a><span class="k">class</span> <span class="nc">StopHintCountEvent</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+	<span class="k">pass</span></div>
+
+
+
+
+<span class="k">class</span> <span class="nc">_DesubroutinizingT2Decompiler</span><span class="p">(</span><span class="n">psCharStrings</span><span class="o">.</span><span class="n">SimpleT2Decompiler</span><span class="p">):</span>
+	<span class="n">stop_hintcount_ops</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;op_hintmask&quot;</span><span class="p">,</span> <span class="s2">&quot;op_cntrmask&quot;</span><span class="p">,</span> <span class="s2">&quot;op_rmoveto&quot;</span><span class="p">,</span> <span class="s2">&quot;op_hmoveto&quot;</span><span class="p">,</span>
+							<span class="s2">&quot;op_vmoveto&quot;</span><span class="p">)</span>
+
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">localSubrs</span><span class="p">,</span> <span class="n">globalSubrs</span><span class="p">,</span> <span class="n">private</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+		<span class="n">psCharStrings</span><span class="o">.</span><span class="n">SimpleT2Decompiler</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">localSubrs</span><span class="p">,</span> <span class="n">globalSubrs</span><span class="p">,</span>
+												<span class="n">private</span><span class="p">)</span>
+
+	<span class="k">def</span> <span class="nf">execute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">charString</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">need_hintcount</span> <span class="o">=</span> <span class="kc">True</span>  <span class="c1"># until proven otherwise</span>
+		<span class="k">for</span> <span class="n">op_name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">stop_hintcount_ops</span><span class="p">:</span>
+			<span class="nb">setattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">op_name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">stop_hint_count</span><span class="p">)</span>
+
+		<span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">charString</span><span class="p">,</span> <span class="s1">&#39;_desubroutinized&#39;</span><span class="p">):</span>
+			<span class="c1"># If a charstring has already been desubroutinized, we will still</span>
+			<span class="c1"># need to execute it if we need to count hints in order to</span>
+			<span class="c1"># compute the byte length for mask arguments, and haven&#39;t finished</span>
+			<span class="c1"># counting hints pairs.</span>
+			<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">need_hintcount</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">callingStack</span><span class="p">:</span>
+				<span class="k">try</span><span class="p">:</span>
+					<span class="n">psCharStrings</span><span class="o">.</span><span class="n">SimpleT2Decompiler</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">charString</span><span class="p">)</span>
+				<span class="k">except</span> <span class="n">StopHintCountEvent</span><span class="p">:</span>
+					<span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">callingStack</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+			<span class="k">return</span>
+
+		<span class="n">charString</span><span class="o">.</span><span class="n">_patches</span> <span class="o">=</span> <span class="p">[]</span>
+		<span class="n">psCharStrings</span><span class="o">.</span><span class="n">SimpleT2Decompiler</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">charString</span><span class="p">)</span>
+		<span class="n">desubroutinized</span> <span class="o">=</span> <span class="n">charString</span><span class="o">.</span><span class="n">program</span><span class="p">[:]</span>
+		<span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">expansion</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">charString</span><span class="o">.</span><span class="n">_patches</span><span class="p">):</span>
+			<span class="k">assert</span> <span class="n">idx</span> <span class="o">&gt;=</span> <span class="mi">2</span>
+			<span class="k">assert</span> <span class="n">desubroutinized</span><span class="p">[</span><span class="n">idx</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;callsubr&#39;</span><span class="p">,</span> <span class="s1">&#39;callgsubr&#39;</span><span class="p">],</span> <span class="n">desubroutinized</span><span class="p">[</span><span class="n">idx</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+			<span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">desubroutinized</span><span class="p">[</span><span class="n">idx</span> <span class="o">-</span> <span class="mi">2</span><span class="p">])</span> <span class="o">==</span> <span class="nb">int</span>
+			<span class="k">if</span> <span class="n">expansion</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;return&#39;</span><span class="p">:</span>
+				<span class="n">expansion</span> <span class="o">=</span> <span class="n">expansion</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+			<span class="n">desubroutinized</span><span class="p">[</span><span class="n">idx</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">expansion</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">private</span><span class="o">.</span><span class="n">in_cff2</span><span class="p">:</span>
+			<span class="k">if</span> <span class="s1">&#39;endchar&#39;</span> <span class="ow">in</span> <span class="n">desubroutinized</span><span class="p">:</span>
+				<span class="c1"># Cut off after first endchar</span>
+				<span class="n">desubroutinized</span> <span class="o">=</span> <span class="n">desubroutinized</span><span class="p">[:</span><span class="n">desubroutinized</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s1">&#39;endchar&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="k">if</span> <span class="ow">not</span> <span class="nb">len</span><span class="p">(</span><span class="n">desubroutinized</span><span class="p">)</span> <span class="ow">or</span> <span class="n">desubroutinized</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;return&#39;</span><span class="p">:</span>
+					<span class="n">desubroutinized</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;return&#39;</span><span class="p">)</span>
+
+		<span class="n">charString</span><span class="o">.</span><span class="n">_desubroutinized</span> <span class="o">=</span> <span class="n">desubroutinized</span>
+		<span class="k">del</span> <span class="n">charString</span><span class="o">.</span><span class="n">_patches</span>
+
+	<span class="k">def</span> <span class="nf">op_callsubr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+		<span class="n">subr</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">localSubrs</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">operandStack</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">localBias</span><span class="p">]</span>
+		<span class="n">psCharStrings</span><span class="o">.</span><span class="n">SimpleT2Decompiler</span><span class="o">.</span><span class="n">op_callsubr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">processSubr</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">subr</span><span class="p">)</span>
+
+	<span class="k">def</span> <span class="nf">op_callgsubr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+		<span class="n">subr</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">globalSubrs</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">operandStack</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">globalBias</span><span class="p">]</span>
+		<span class="n">psCharStrings</span><span class="o">.</span><span class="n">SimpleT2Decompiler</span><span class="o">.</span><span class="n">op_callgsubr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">processSubr</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">subr</span><span class="p">)</span>
+
+	<span class="k">def</span> <span class="nf">stop_hint_count</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">need_hintcount</span> <span class="o">=</span> <span class="kc">False</span>
+		<span class="k">for</span> <span class="n">op_name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">stop_hintcount_ops</span><span class="p">:</span>
+			<span class="nb">setattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">op_name</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+		<span class="n">cs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">callingStack</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+		<span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">cs</span><span class="p">,</span> <span class="s1">&#39;_desubroutinized&#39;</span><span class="p">):</span>
+			<span class="k">raise</span> <span class="n">StopHintCountEvent</span><span class="p">()</span>
+
+	<span class="k">def</span> <span class="nf">op_hintmask</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+		<span class="n">psCharStrings</span><span class="o">.</span><span class="n">SimpleT2Decompiler</span><span class="o">.</span><span class="n">op_hintmask</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">)</span>
+		<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">need_hintcount</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">stop_hint_count</span><span class="p">()</span>
+
+	<span class="k">def</span> <span class="nf">processSubr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">subr</span><span class="p">):</span>
+		<span class="n">cs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">callingStack</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">cs</span><span class="p">,</span> <span class="s1">&#39;_desubroutinized&#39;</span><span class="p">):</span>
+			<span class="n">cs</span><span class="o">.</span><span class="n">_patches</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">index</span><span class="p">,</span> <span class="n">subr</span><span class="o">.</span><span class="n">_desubroutinized</span><span class="p">))</span>
+
+
+<span class="nd">@_add_method</span><span class="p">(</span><span class="n">ttLib</span><span class="o">.</span><span class="n">getTableClass</span><span class="p">(</span><span class="s1">&#39;CFF &#39;</span><span class="p">))</span>
+<span class="k">def</span> <span class="nf">prune_post_subset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ttfFont</span><span class="p">,</span> <span class="n">options</span><span class="p">):</span>
+	<span class="n">cff</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cff</span>
+	<span class="k">for</span> <span class="n">fontname</span> <span class="ow">in</span> <span class="n">cff</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+		<span class="n">font</span> <span class="o">=</span> <span class="n">cff</span><span class="p">[</span><span class="n">fontname</span><span class="p">]</span>
+		<span class="n">cs</span> <span class="o">=</span> <span class="n">font</span><span class="o">.</span><span class="n">CharStrings</span>
+
+		<span class="c1"># Drop unused FontDictionaries</span>
+		<span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">font</span><span class="p">,</span> <span class="s2">&quot;FDSelect&quot;</span><span class="p">):</span>
+			<span class="n">sel</span> <span class="o">=</span> <span class="n">font</span><span class="o">.</span><span class="n">FDSelect</span>
+			<span class="n">indices</span> <span class="o">=</span> <span class="n">_uniq_sort</span><span class="p">(</span><span class="n">sel</span><span class="o">.</span><span class="n">gidArray</span><span class="p">)</span>
+			<span class="n">sel</span><span class="o">.</span><span class="n">gidArray</span> <span class="o">=</span> <span class="p">[</span><span class="n">indices</span><span class="o">.</span><span class="n">index</span> <span class="p">(</span><span class="n">ss</span><span class="p">)</span> <span class="k">for</span> <span class="n">ss</span> <span class="ow">in</span> <span class="n">sel</span><span class="o">.</span><span class="n">gidArray</span><span class="p">]</span>
+			<span class="n">arr</span> <span class="o">=</span> <span class="n">font</span><span class="o">.</span><span class="n">FDArray</span>
+			<span class="n">arr</span><span class="o">.</span><span class="n">items</span> <span class="o">=</span> <span class="p">[</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">indices</span><span class="p">]</span>
+			<span class="k">del</span> <span class="n">arr</span><span class="o">.</span><span class="n">file</span><span class="p">,</span> <span class="n">arr</span><span class="o">.</span><span class="n">offsets</span>
+
+	<span class="c1"># Desubroutinize if asked for</span>
+	<span class="k">if</span> <span class="n">options</span><span class="o">.</span><span class="n">desubroutinize</span><span class="p">:</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">desubroutinize</span><span class="p">()</span>
+
+	<span class="c1"># Drop hints if not needed</span>
+	<span class="k">if</span> <span class="ow">not</span> <span class="n">options</span><span class="o">.</span><span class="n">hinting</span><span class="p">:</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">remove_hints</span><span class="p">()</span>
+	<span class="k">elif</span> <span class="ow">not</span> <span class="n">options</span><span class="o">.</span><span class="n">desubroutinize</span><span class="p">:</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">remove_unused_subroutines</span><span class="p">()</span>
+	<span class="k">return</span> <span class="kc">True</span>
+
+
+<span class="k">def</span> <span class="nf">_delete_empty_subrs</span><span class="p">(</span><span class="n">private_dict</span><span class="p">):</span>
+	<span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">private_dict</span><span class="p">,</span> <span class="s1">&#39;Subrs&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">private_dict</span><span class="o">.</span><span class="n">Subrs</span><span class="p">:</span>
+		<span class="k">if</span> <span class="s1">&#39;Subrs&#39;</span> <span class="ow">in</span> <span class="n">private_dict</span><span class="o">.</span><span class="n">rawDict</span><span class="p">:</span>
+			<span class="k">del</span> <span class="n">private_dict</span><span class="o">.</span><span class="n">rawDict</span><span class="p">[</span><span class="s1">&#39;Subrs&#39;</span><span class="p">]</span>
+		<span class="k">del</span> <span class="n">private_dict</span><span class="o">.</span><span class="n">Subrs</span>
+
+<span class="nd">@_add_method</span><span class="p">(</span><span class="n">ttLib</span><span class="o">.</span><span class="n">getTableClass</span><span class="p">(</span><span class="s1">&#39;CFF &#39;</span><span class="p">))</span>
+<span class="k">def</span> <span class="nf">desubroutinize</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+	<span class="n">cff</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cff</span>
+	<span class="k">for</span> <span class="n">fontname</span> <span class="ow">in</span> <span class="n">cff</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+		<span class="n">font</span> <span class="o">=</span> <span class="n">cff</span><span class="p">[</span><span class="n">fontname</span><span class="p">]</span>
+		<span class="n">cs</span> <span class="o">=</span> <span class="n">font</span><span class="o">.</span><span class="n">CharStrings</span>
+		<span class="k">for</span> <span class="n">g</span> <span class="ow">in</span> <span class="n">font</span><span class="o">.</span><span class="n">charset</span><span class="p">:</span>
+			<span class="n">c</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">cs</span><span class="o">.</span><span class="n">getItemAndSelector</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
+			<span class="n">c</span><span class="o">.</span><span class="n">decompile</span><span class="p">()</span>
+			<span class="n">subrs</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">private</span><span class="p">,</span> <span class="s2">&quot;Subrs&quot;</span><span class="p">,</span> <span class="p">[])</span>
+			<span class="n">decompiler</span> <span class="o">=</span> <span class="n">_DesubroutinizingT2Decompiler</span><span class="p">(</span><span class="n">subrs</span><span class="p">,</span> <span class="n">c</span><span class="o">.</span><span class="n">globalSubrs</span><span class="p">,</span> <span class="n">c</span><span class="o">.</span><span class="n">private</span><span class="p">)</span>
+			<span class="n">decompiler</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+			<span class="n">c</span><span class="o">.</span><span class="n">program</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">_desubroutinized</span>
+			<span class="k">del</span> <span class="n">c</span><span class="o">.</span><span class="n">_desubroutinized</span>
+		<span class="c1"># Delete all the local subrs</span>
+		<span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">font</span><span class="p">,</span> <span class="s1">&#39;FDArray&#39;</span><span class="p">):</span>
+			<span class="k">for</span> <span class="n">fd</span> <span class="ow">in</span> <span class="n">font</span><span class="o">.</span><span class="n">FDArray</span><span class="p">:</span>
+				<span class="n">pd</span> <span class="o">=</span> <span class="n">fd</span><span class="o">.</span><span class="n">Private</span>
+				<span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">pd</span><span class="p">,</span> <span class="s1">&#39;Subrs&#39;</span><span class="p">):</span>
+					<span class="k">del</span> <span class="n">pd</span><span class="o">.</span><span class="n">Subrs</span>
+				<span class="k">if</span> <span class="s1">&#39;Subrs&#39;</span> <span class="ow">in</span> <span class="n">pd</span><span class="o">.</span><span class="n">rawDict</span><span class="p">:</span>
+					<span class="k">del</span> <span class="n">pd</span><span class="o">.</span><span class="n">rawDict</span><span class="p">[</span><span class="s1">&#39;Subrs&#39;</span><span class="p">]</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="n">pd</span> <span class="o">=</span> <span class="n">font</span><span class="o">.</span><span class="n">Private</span>
+			<span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">pd</span><span class="p">,</span> <span class="s1">&#39;Subrs&#39;</span><span class="p">):</span>
+				<span class="k">del</span> <span class="n">pd</span><span class="o">.</span><span class="n">Subrs</span>
+			<span class="k">if</span> <span class="s1">&#39;Subrs&#39;</span> <span class="ow">in</span> <span class="n">pd</span><span class="o">.</span><span class="n">rawDict</span><span class="p">:</span>
+				<span class="k">del</span> <span class="n">pd</span><span class="o">.</span><span class="n">rawDict</span><span class="p">[</span><span class="s1">&#39;Subrs&#39;</span><span class="p">]</span>
+	<span class="c1"># as well as the global subrs</span>
+	<span class="n">cff</span><span class="o">.</span><span class="n">GlobalSubrs</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+
+
+<span class="nd">@_add_method</span><span class="p">(</span><span class="n">ttLib</span><span class="o">.</span><span class="n">getTableClass</span><span class="p">(</span><span class="s1">&#39;CFF &#39;</span><span class="p">))</span>
+<span class="k">def</span> <span class="nf">remove_hints</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+	<span class="n">cff</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cff</span>
+	<span class="k">for</span> <span class="n">fontname</span> <span class="ow">in</span> <span class="n">cff</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+		<span class="n">font</span> <span class="o">=</span> <span class="n">cff</span><span class="p">[</span><span class="n">fontname</span><span class="p">]</span>
+		<span class="n">cs</span> <span class="o">=</span> <span class="n">font</span><span class="o">.</span><span class="n">CharStrings</span>
+		<span class="c1"># This can be tricky, but doesn&#39;t have to. What we do is:</span>
+		<span class="c1">#</span>
+		<span class="c1"># - Run all used glyph charstrings and recurse into subroutines,</span>
+		<span class="c1"># - For each charstring (including subroutines), if it has any</span>
+		<span class="c1">#   of the hint stem operators, we mark it as such.</span>
+		<span class="c1">#   Upon returning, for each charstring we note all the</span>
+		<span class="c1">#   subroutine calls it makes that (recursively) contain a stem,</span>
+		<span class="c1"># - Dropping hinting then consists of the following two ops:</span>
+		<span class="c1">#   * Drop the piece of the program in each charstring before the</span>
+		<span class="c1">#     last call to a stem op or a stem-calling subroutine,</span>
+		<span class="c1">#   * Drop all hintmask operations.</span>
+		<span class="c1"># - It&#39;s trickier... A hintmask right after hints and a few numbers</span>
+		<span class="c1">#    will act as an implicit vstemhm. As such, we track whether</span>
+		<span class="c1">#    we have seen any non-hint operators so far and do the right</span>
+		<span class="c1">#    thing, recursively... Good luck understanding that :(</span>
+		<span class="n">css</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+		<span class="k">for</span> <span class="n">g</span> <span class="ow">in</span> <span class="n">font</span><span class="o">.</span><span class="n">charset</span><span class="p">:</span>
+			<span class="n">c</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">cs</span><span class="o">.</span><span class="n">getItemAndSelector</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
+			<span class="n">c</span><span class="o">.</span><span class="n">decompile</span><span class="p">()</span>
+			<span class="n">subrs</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">private</span><span class="p">,</span> <span class="s2">&quot;Subrs&quot;</span><span class="p">,</span> <span class="p">[])</span>
+			<span class="n">decompiler</span> <span class="o">=</span> <span class="n">_DehintingT2Decompiler</span><span class="p">(</span><span class="n">css</span><span class="p">,</span> <span class="n">subrs</span><span class="p">,</span> <span class="n">c</span><span class="o">.</span><span class="n">globalSubrs</span><span class="p">,</span>
+								<span class="n">c</span><span class="o">.</span><span class="n">private</span><span class="o">.</span><span class="n">nominalWidthX</span><span class="p">,</span>
+								<span class="n">c</span><span class="o">.</span><span class="n">private</span><span class="o">.</span><span class="n">defaultWidthX</span><span class="p">,</span>
+								<span class="n">c</span><span class="o">.</span><span class="n">private</span><span class="p">)</span>
+			<span class="n">decompiler</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+			<span class="n">c</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="n">decompiler</span><span class="o">.</span><span class="n">width</span>
+		<span class="k">for</span> <span class="n">charstring</span> <span class="ow">in</span> <span class="n">css</span><span class="p">:</span>
+			<span class="n">charstring</span><span class="o">.</span><span class="n">drop_hints</span><span class="p">()</span>
+		<span class="k">del</span> <span class="n">css</span>
+
+		<span class="c1"># Drop font-wide hinting values</span>
+		<span class="n">all_privs</span> <span class="o">=</span> <span class="p">[]</span>
+		<span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">font</span><span class="p">,</span> <span class="s1">&#39;FDArray&#39;</span><span class="p">):</span>
+			<span class="n">all_privs</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">fd</span><span class="o">.</span><span class="n">Private</span> <span class="k">for</span> <span class="n">fd</span> <span class="ow">in</span> <span class="n">font</span><span class="o">.</span><span class="n">FDArray</span><span class="p">)</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="n">all_privs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">font</span><span class="o">.</span><span class="n">Private</span><span class="p">)</span>
+		<span class="k">for</span> <span class="n">priv</span> <span class="ow">in</span> <span class="n">all_privs</span><span class="p">:</span>
+			<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;BlueValues&#39;</span><span class="p">,</span> <span class="s1">&#39;OtherBlues&#39;</span><span class="p">,</span>
+				  <span class="s1">&#39;FamilyBlues&#39;</span><span class="p">,</span> <span class="s1">&#39;FamilyOtherBlues&#39;</span><span class="p">,</span>
+				  <span class="s1">&#39;BlueScale&#39;</span><span class="p">,</span> <span class="s1">&#39;BlueShift&#39;</span><span class="p">,</span> <span class="s1">&#39;BlueFuzz&#39;</span><span class="p">,</span>
+				  <span class="s1">&#39;StemSnapH&#39;</span><span class="p">,</span> <span class="s1">&#39;StemSnapV&#39;</span><span class="p">,</span> <span class="s1">&#39;StdHW&#39;</span><span class="p">,</span> <span class="s1">&#39;StdVW&#39;</span><span class="p">,</span>
+				  <span class="s1">&#39;ForceBold&#39;</span><span class="p">,</span> <span class="s1">&#39;LanguageGroup&#39;</span><span class="p">,</span> <span class="s1">&#39;ExpansionFactor&#39;</span><span class="p">]:</span>
+				<span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">priv</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+					<span class="nb">setattr</span><span class="p">(</span><span class="n">priv</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+	<span class="bp">self</span><span class="o">.</span><span class="n">remove_unused_subroutines</span><span class="p">()</span>
+
+
+<span class="nd">@_add_method</span><span class="p">(</span><span class="n">ttLib</span><span class="o">.</span><span class="n">getTableClass</span><span class="p">(</span><span class="s1">&#39;CFF &#39;</span><span class="p">))</span>
+<span class="k">def</span> <span class="nf">remove_unused_subroutines</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+	<span class="n">cff</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cff</span>
+	<span class="k">for</span> <span class="n">fontname</span> <span class="ow">in</span> <span class="n">cff</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+		<span class="n">font</span> <span class="o">=</span> <span class="n">cff</span><span class="p">[</span><span class="n">fontname</span><span class="p">]</span>
+		<span class="n">cs</span> <span class="o">=</span> <span class="n">font</span><span class="o">.</span><span class="n">CharStrings</span>
+		<span class="c1"># Renumber subroutines to remove unused ones</span>
+
+		<span class="c1"># Mark all used subroutines</span>
+		<span class="k">for</span> <span class="n">g</span> <span class="ow">in</span> <span class="n">font</span><span class="o">.</span><span class="n">charset</span><span class="p">:</span>
+			<span class="n">c</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">cs</span><span class="o">.</span><span class="n">getItemAndSelector</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
+			<span class="n">subrs</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">private</span><span class="p">,</span> <span class="s2">&quot;Subrs&quot;</span><span class="p">,</span> <span class="p">[])</span>
+			<span class="n">decompiler</span> <span class="o">=</span> <span class="n">_MarkingT2Decompiler</span><span class="p">(</span><span class="n">subrs</span><span class="p">,</span> <span class="n">c</span><span class="o">.</span><span class="n">globalSubrs</span><span class="p">,</span> <span class="n">c</span><span class="o">.</span><span class="n">private</span><span class="p">)</span>
+			<span class="n">decompiler</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+
+		<span class="n">all_subrs</span> <span class="o">=</span> <span class="p">[</span><span class="n">font</span><span class="o">.</span><span class="n">GlobalSubrs</span><span class="p">]</span>
+		<span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">font</span><span class="p">,</span> <span class="s1">&#39;FDArray&#39;</span><span class="p">):</span>
+			<span class="n">all_subrs</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">fd</span><span class="o">.</span><span class="n">Private</span><span class="o">.</span><span class="n">Subrs</span> <span class="k">for</span> <span class="n">fd</span> <span class="ow">in</span> <span class="n">font</span><span class="o">.</span><span class="n">FDArray</span> <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">fd</span><span class="o">.</span><span class="n">Private</span><span class="p">,</span> <span class="s1">&#39;Subrs&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="n">fd</span><span class="o">.</span><span class="n">Private</span><span class="o">.</span><span class="n">Subrs</span><span class="p">)</span>
+		<span class="k">elif</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">font</span><span class="o">.</span><span class="n">Private</span><span class="p">,</span> <span class="s1">&#39;Subrs&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="n">font</span><span class="o">.</span><span class="n">Private</span><span class="o">.</span><span class="n">Subrs</span><span class="p">:</span>
+			<span class="n">all_subrs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">font</span><span class="o">.</span><span class="n">Private</span><span class="o">.</span><span class="n">Subrs</span><span class="p">)</span>
+
+		<span class="n">subrs</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">subrs</span><span class="p">)</span> <span class="c1"># Remove duplicates</span>
+
+		<span class="c1"># Prepare</span>
+		<span class="k">for</span> <span class="n">subrs</span> <span class="ow">in</span> <span class="n">all_subrs</span><span class="p">:</span>
+			<span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">subrs</span><span class="p">,</span> <span class="s1">&#39;_used&#39;</span><span class="p">):</span>
+				<span class="n">subrs</span><span class="o">.</span><span class="n">_used</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+			<span class="n">subrs</span><span class="o">.</span><span class="n">_used</span> <span class="o">=</span> <span class="n">_uniq_sort</span><span class="p">(</span><span class="n">subrs</span><span class="o">.</span><span class="n">_used</span><span class="p">)</span>
+			<span class="n">subrs</span><span class="o">.</span><span class="n">_old_bias</span> <span class="o">=</span> <span class="n">psCharStrings</span><span class="o">.</span><span class="n">calcSubrBias</span><span class="p">(</span><span class="n">subrs</span><span class="p">)</span>
+			<span class="n">subrs</span><span class="o">.</span><span class="n">_new_bias</span> <span class="o">=</span> <span class="n">psCharStrings</span><span class="o">.</span><span class="n">calcSubrBias</span><span class="p">(</span><span class="n">subrs</span><span class="o">.</span><span class="n">_used</span><span class="p">)</span>
+
+		<span class="c1"># Renumber glyph charstrings</span>
+		<span class="k">for</span> <span class="n">g</span> <span class="ow">in</span> <span class="n">font</span><span class="o">.</span><span class="n">charset</span><span class="p">:</span>
+			<span class="n">c</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">cs</span><span class="o">.</span><span class="n">getItemAndSelector</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
+			<span class="n">subrs</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">private</span><span class="p">,</span> <span class="s2">&quot;Subrs&quot;</span><span class="p">,</span> <span class="p">[])</span>
+			<span class="n">c</span><span class="o">.</span><span class="n">subset_subroutines</span> <span class="p">(</span><span class="n">subrs</span><span class="p">,</span> <span class="n">font</span><span class="o">.</span><span class="n">GlobalSubrs</span><span class="p">)</span>
+
+		<span class="c1"># Renumber subroutines themselves</span>
+		<span class="k">for</span> <span class="n">subrs</span> <span class="ow">in</span> <span class="n">all_subrs</span><span class="p">:</span>
+			<span class="k">if</span> <span class="n">subrs</span> <span class="o">==</span> <span class="n">font</span><span class="o">.</span><span class="n">GlobalSubrs</span><span class="p">:</span>
+				<span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">font</span><span class="p">,</span> <span class="s1">&#39;FDArray&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">font</span><span class="o">.</span><span class="n">Private</span><span class="p">,</span> <span class="s1">&#39;Subrs&#39;</span><span class="p">):</span>
+					<span class="n">local_subrs</span> <span class="o">=</span> <span class="n">font</span><span class="o">.</span><span class="n">Private</span><span class="o">.</span><span class="n">Subrs</span>
+				<span class="k">else</span><span class="p">:</span>
+					<span class="n">local_subrs</span> <span class="o">=</span> <span class="p">[]</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="n">local_subrs</span> <span class="o">=</span> <span class="n">subrs</span>
+
+			<span class="n">subrs</span><span class="o">.</span><span class="n">items</span> <span class="o">=</span> <span class="p">[</span><span class="n">subrs</span><span class="o">.</span><span class="n">items</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">subrs</span><span class="o">.</span><span class="n">_used</span><span class="p">]</span>
+			<span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">subrs</span><span class="p">,</span> <span class="s1">&#39;file&#39;</span><span class="p">):</span>
+				<span class="k">del</span> <span class="n">subrs</span><span class="o">.</span><span class="n">file</span>
+			<span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">subrs</span><span class="p">,</span> <span class="s1">&#39;offsets&#39;</span><span class="p">):</span>
+				<span class="k">del</span> <span class="n">subrs</span><span class="o">.</span><span class="n">offsets</span>
+
+			<span class="k">for</span> <span class="n">subr</span> <span class="ow">in</span> <span class="n">subrs</span><span class="o">.</span><span class="n">items</span><span class="p">:</span>
+				<span class="n">subr</span><span class="o">.</span><span class="n">subset_subroutines</span> <span class="p">(</span><span class="n">local_subrs</span><span class="p">,</span> <span class="n">font</span><span class="o">.</span><span class="n">GlobalSubrs</span><span class="p">)</span>
+
+		<span class="c1"># Delete local SubrsIndex if empty</span>
+		<span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">font</span><span class="p">,</span> <span class="s1">&#39;FDArray&#39;</span><span class="p">):</span>
+			<span class="k">for</span> <span class="n">fd</span> <span class="ow">in</span> <span class="n">font</span><span class="o">.</span><span class="n">FDArray</span><span class="p">:</span>
+				<span class="n">_delete_empty_subrs</span><span class="p">(</span><span class="n">fd</span><span class="o">.</span><span class="n">Private</span><span class="p">)</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="n">_delete_empty_subrs</span><span class="p">(</span><span class="n">font</span><span class="o">.</span><span class="n">Private</span><span class="p">)</span>
+
+		<span class="c1"># Cleanup</span>
+		<span class="k">for</span> <span class="n">subrs</span> <span class="ow">in</span> <span class="n">all_subrs</span><span class="p">:</span>
+			<span class="k">del</span> <span class="n">subrs</span><span class="o">.</span><span class="n">_used</span><span class="p">,</span> <span class="n">subrs</span><span class="o">.</span><span class="n">_old_bias</span><span class="p">,</span> <span class="n">subrs</span><span class="o">.</span><span class="n">_new_bias</span>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Just van Rossum, Behdad Esfahbod, and the fontTools Authors. CC BY-SA 4.0
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

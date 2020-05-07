@@ -1,0 +1,577 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>fontTools.misc.psLib &mdash; fontTools Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> fontTools
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Library</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../afmLib.html">afmLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../agl.html">agl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cffLib/index.html">cffLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../colorLib/index.html">colorLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cu2qu/index.html">cu2qu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../designspaceLib/index.html">designspaceLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../encodings/index.html">encodings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../feaLib/index.html">feaLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../merge.html">merge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../misc/index.html">misc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../mtiLib.html">mtiLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../otlLib/index.html">otlLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pens/index.html">pens</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../subset/index.html">subset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../svgLib/index.html">svgLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../t1Lib.html">t1Lib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ttLib/index.html">ttLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ttx.html">ttx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ufoLib/index.html">ufoLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../unicode.html">unicode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../unicodedata/index.html">unicodedata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../varLib/index.html">varLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../voltLib.html">voltLib</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">fontTools</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>fontTools.misc.psLib</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for fontTools.misc.psLib</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">fontTools.misc.py23</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">fontTools.misc</span> <span class="k">import</span> <span class="n">eexec</span>
+<span class="kn">from</span> <span class="nn">.psOperators</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">from</span> <span class="nn">collections.abc</span> <span class="k">import</span> <span class="n">Callable</span>
+<span class="kn">from</span> <span class="nn">string</span> <span class="k">import</span> <span class="n">whitespace</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+
+
+<span class="n">log</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+<span class="n">ps_special</span> <span class="o">=</span> <span class="sa">b</span><span class="s1">&#39;()&lt;&gt;[]</span><span class="si">{}</span><span class="s1">%&#39;</span>	<span class="c1"># / is one too, but we take care of that one differently</span>
+
+<span class="n">skipwhiteRE</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">bytesjoin</span><span class="p">([</span><span class="sa">b</span><span class="s2">&quot;[&quot;</span><span class="p">,</span> <span class="n">whitespace</span><span class="p">,</span> <span class="sa">b</span><span class="s2">&quot;]*&quot;</span><span class="p">]))</span>
+<span class="n">endofthingPat</span> <span class="o">=</span> <span class="n">bytesjoin</span><span class="p">([</span><span class="sa">b</span><span class="s2">&quot;[^][()</span><span class="si">{}</span><span class="s2">&lt;&gt;/%&quot;</span><span class="p">,</span> <span class="n">whitespace</span><span class="p">,</span> <span class="sa">b</span><span class="s2">&quot;]*&quot;</span><span class="p">])</span>
+<span class="n">endofthingRE</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">endofthingPat</span><span class="p">)</span>
+<span class="n">commentRE</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">b</span><span class="s2">&quot;%[^</span><span class="se">\n\r</span><span class="s2">]*&quot;</span><span class="p">)</span>
+
+<span class="c1"># XXX This not entirely correct as it doesn&#39;t allow *nested* embedded parens:</span>
+<span class="n">stringPat</span> <span class="o">=</span> <span class="sa">br</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">	\(</span>
+<span class="s2">		(</span>
+<span class="s2">			(</span>
+<span class="s2">				[^()]*   \   [()]</span>
+<span class="s2">			)</span>
+<span class="s2">			|</span>
+<span class="s2">			(</span>
+<span class="s2">				[^()]*  \(   [^()]*  \)</span>
+<span class="s2">			)</span>
+<span class="s2">		)*</span>
+<span class="s2">		[^()]*</span>
+<span class="s2">	\)</span>
+<span class="s2">&quot;&quot;&quot;</span>
+<span class="n">stringPat</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">stringPat</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+<span class="n">stringRE</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">stringPat</span><span class="p">)</span>
+
+<span class="n">hexstringRE</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">bytesjoin</span><span class="p">([</span><span class="sa">b</span><span class="s2">&quot;&lt;[&quot;</span><span class="p">,</span> <span class="n">whitespace</span><span class="p">,</span> <span class="sa">b</span><span class="s2">&quot;0-9A-Fa-f]*&gt;&quot;</span><span class="p">]))</span>
+
+<div class="viewcode-block" id="PSTokenError"><a class="viewcode-back" href="../../../misc/psLib.html#fontTools.misc.psLib.PSTokenError">[docs]</a><span class="k">class</span> <span class="nc">PSTokenError</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span> <span class="k">pass</span></div>
+<div class="viewcode-block" id="PSError"><a class="viewcode-back" href="../../../misc/psLib.html#fontTools.misc.psLib.PSError">[docs]</a><span class="k">class</span> <span class="nc">PSError</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span> <span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="PSTokenizer"><a class="viewcode-back" href="../../../misc/psLib.html#fontTools.misc.psLib.PSTokenizer">[docs]</a><span class="k">class</span> <span class="nc">PSTokenizer</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">buf</span><span class="o">=</span><span class="sa">b</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;ascii&quot;</span><span class="p">):</span>
+		<span class="c1"># Force self.buf to be a byte string</span>
+		<span class="n">buf</span> <span class="o">=</span> <span class="n">tobytes</span><span class="p">(</span><span class="n">buf</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">buf</span> <span class="o">=</span> <span class="n">buf</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">len</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">buf</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">pos</span> <span class="o">=</span> <span class="mi">0</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">closed</span> <span class="o">=</span> <span class="kc">False</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">encoding</span> <span class="o">=</span> <span class="n">encoding</span>
+
+<div class="viewcode-block" id="PSTokenizer.read"><a class="viewcode-back" href="../../../misc/psLib.html#fontTools.misc.psLib.PSTokenizer.read">[docs]</a>	<span class="k">def</span> <span class="nf">read</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="o">=-</span><span class="mi">1</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Read at most &#39;n&#39; bytes from the buffer, or less if the read</span>
+<span class="sd">		hits EOF before obtaining &#39;n&#39; bytes.</span>
+<span class="sd">		If &#39;n&#39; is negative or omitted, read all data until EOF is reached.</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">closed</span><span class="p">:</span>
+			<span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;I/O operation on closed file&quot;</span><span class="p">)</span>
+		<span class="k">if</span> <span class="n">n</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+			<span class="n">newpos</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">len</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="n">newpos</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pos</span><span class="o">+</span><span class="n">n</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">len</span><span class="p">)</span>
+		<span class="n">r</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">buf</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">pos</span><span class="p">:</span><span class="n">newpos</span><span class="p">]</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">pos</span> <span class="o">=</span> <span class="n">newpos</span>
+		<span class="k">return</span> <span class="n">r</span></div>
+
+<div class="viewcode-block" id="PSTokenizer.close"><a class="viewcode-back" href="../../../misc/psLib.html#fontTools.misc.psLib.PSTokenizer.close">[docs]</a>	<span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">closed</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">closed</span> <span class="o">=</span> <span class="kc">True</span>
+			<span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">buf</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">pos</span></div>
+
+<div class="viewcode-block" id="PSTokenizer.getnexttoken"><a class="viewcode-back" href="../../../misc/psLib.html#fontTools.misc.psLib.PSTokenizer.getnexttoken">[docs]</a>	<span class="k">def</span> <span class="nf">getnexttoken</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+			<span class="c1"># localize some stuff, for performance</span>
+			<span class="nb">len</span><span class="o">=</span><span class="nb">len</span><span class="p">,</span>
+			<span class="n">ps_special</span><span class="o">=</span><span class="n">ps_special</span><span class="p">,</span>
+			<span class="n">stringmatch</span><span class="o">=</span><span class="n">stringRE</span><span class="o">.</span><span class="n">match</span><span class="p">,</span>
+			<span class="n">hexstringmatch</span><span class="o">=</span><span class="n">hexstringRE</span><span class="o">.</span><span class="n">match</span><span class="p">,</span>
+			<span class="n">commentmatch</span><span class="o">=</span><span class="n">commentRE</span><span class="o">.</span><span class="n">match</span><span class="p">,</span>
+			<span class="n">endmatch</span><span class="o">=</span><span class="n">endofthingRE</span><span class="o">.</span><span class="n">match</span><span class="p">):</span>
+
+		<span class="bp">self</span><span class="o">.</span><span class="n">skipwhite</span><span class="p">()</span>
+		<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">pos</span> <span class="o">&gt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">len</span><span class="p">:</span>
+			<span class="k">return</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span>
+		<span class="n">pos</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pos</span>
+		<span class="n">buf</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">buf</span>
+		<span class="n">char</span> <span class="o">=</span> <span class="n">bytechr</span><span class="p">(</span><span class="n">byteord</span><span class="p">(</span><span class="n">buf</span><span class="p">[</span><span class="n">pos</span><span class="p">]))</span>
+		<span class="k">if</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">ps_special</span><span class="p">:</span>
+			<span class="k">if</span> <span class="n">char</span> <span class="ow">in</span> <span class="sa">b</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1">[]&#39;</span><span class="p">:</span>
+				<span class="n">tokentype</span> <span class="o">=</span> <span class="s1">&#39;do_special&#39;</span>
+				<span class="n">token</span> <span class="o">=</span> <span class="n">char</span>
+			<span class="k">elif</span> <span class="n">char</span> <span class="o">==</span> <span class="sa">b</span><span class="s1">&#39;%&#39;</span><span class="p">:</span>
+				<span class="n">tokentype</span> <span class="o">=</span> <span class="s1">&#39;do_comment&#39;</span>
+				<span class="n">_</span><span class="p">,</span> <span class="n">nextpos</span> <span class="o">=</span> <span class="n">commentmatch</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span> <span class="n">pos</span><span class="p">)</span><span class="o">.</span><span class="n">span</span><span class="p">()</span>
+				<span class="n">token</span> <span class="o">=</span> <span class="n">buf</span><span class="p">[</span><span class="n">pos</span><span class="p">:</span><span class="n">nextpos</span><span class="p">]</span>
+			<span class="k">elif</span> <span class="n">char</span> <span class="o">==</span> <span class="sa">b</span><span class="s1">&#39;(&#39;</span><span class="p">:</span>
+				<span class="n">tokentype</span> <span class="o">=</span> <span class="s1">&#39;do_string&#39;</span>
+				<span class="n">m</span> <span class="o">=</span> <span class="n">stringmatch</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span> <span class="n">pos</span><span class="p">)</span>
+				<span class="k">if</span> <span class="n">m</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+					<span class="k">raise</span> <span class="n">PSTokenError</span><span class="p">(</span><span class="s1">&#39;bad string at character </span><span class="si">%d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">pos</span><span class="p">)</span>
+				<span class="n">_</span><span class="p">,</span> <span class="n">nextpos</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">span</span><span class="p">()</span>
+				<span class="n">token</span> <span class="o">=</span> <span class="n">buf</span><span class="p">[</span><span class="n">pos</span><span class="p">:</span><span class="n">nextpos</span><span class="p">]</span>
+			<span class="k">elif</span> <span class="n">char</span> <span class="o">==</span> <span class="sa">b</span><span class="s1">&#39;&lt;&#39;</span><span class="p">:</span>
+				<span class="n">tokentype</span> <span class="o">=</span> <span class="s1">&#39;do_hexstring&#39;</span>
+				<span class="n">m</span> <span class="o">=</span> <span class="n">hexstringmatch</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span> <span class="n">pos</span><span class="p">)</span>
+				<span class="k">if</span> <span class="n">m</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+					<span class="k">raise</span> <span class="n">PSTokenError</span><span class="p">(</span><span class="s1">&#39;bad hexstring at character </span><span class="si">%d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">pos</span><span class="p">)</span>
+				<span class="n">_</span><span class="p">,</span> <span class="n">nextpos</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">span</span><span class="p">()</span>
+				<span class="n">token</span> <span class="o">=</span> <span class="n">buf</span><span class="p">[</span><span class="n">pos</span><span class="p">:</span><span class="n">nextpos</span><span class="p">]</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="k">raise</span> <span class="n">PSTokenError</span><span class="p">(</span><span class="s1">&#39;bad token at character </span><span class="si">%d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">pos</span><span class="p">)</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="k">if</span> <span class="n">char</span> <span class="o">==</span> <span class="sa">b</span><span class="s1">&#39;/&#39;</span><span class="p">:</span>
+				<span class="n">tokentype</span> <span class="o">=</span> <span class="s1">&#39;do_literal&#39;</span>
+				<span class="n">m</span> <span class="o">=</span> <span class="n">endmatch</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span> <span class="n">pos</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="n">tokentype</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+				<span class="n">m</span> <span class="o">=</span> <span class="n">endmatch</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span> <span class="n">pos</span><span class="p">)</span>
+			<span class="k">if</span> <span class="n">m</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+				<span class="k">raise</span> <span class="n">PSTokenError</span><span class="p">(</span><span class="s1">&#39;bad token at character </span><span class="si">%d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">pos</span><span class="p">)</span>
+			<span class="n">_</span><span class="p">,</span> <span class="n">nextpos</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">span</span><span class="p">()</span>
+			<span class="n">token</span> <span class="o">=</span> <span class="n">buf</span><span class="p">[</span><span class="n">pos</span><span class="p">:</span><span class="n">nextpos</span><span class="p">]</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">pos</span> <span class="o">=</span> <span class="n">pos</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">token</span><span class="p">)</span>
+		<span class="n">token</span> <span class="o">=</span> <span class="n">tostr</span><span class="p">(</span><span class="n">token</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">encoding</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">tokentype</span><span class="p">,</span> <span class="n">token</span></div>
+
+<div class="viewcode-block" id="PSTokenizer.skipwhite"><a class="viewcode-back" href="../../../misc/psLib.html#fontTools.misc.psLib.PSTokenizer.skipwhite">[docs]</a>	<span class="k">def</span> <span class="nf">skipwhite</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">whitematch</span><span class="o">=</span><span class="n">skipwhiteRE</span><span class="o">.</span><span class="n">match</span><span class="p">):</span>
+		<span class="n">_</span><span class="p">,</span> <span class="n">nextpos</span> <span class="o">=</span> <span class="n">whitematch</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">buf</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">pos</span><span class="p">)</span><span class="o">.</span><span class="n">span</span><span class="p">()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">pos</span> <span class="o">=</span> <span class="n">nextpos</span></div>
+
+<div class="viewcode-block" id="PSTokenizer.starteexec"><a class="viewcode-back" href="../../../misc/psLib.html#fontTools.misc.psLib.PSTokenizer.starteexec">[docs]</a>	<span class="k">def</span> <span class="nf">starteexec</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">pos</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pos</span> <span class="o">+</span> <span class="mi">1</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">dirtybuf</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">buf</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">pos</span><span class="p">:]</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">buf</span><span class="p">,</span> <span class="n">R</span> <span class="o">=</span> <span class="n">eexec</span><span class="o">.</span><span class="n">decrypt</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dirtybuf</span><span class="p">,</span> <span class="mi">55665</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">len</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">buf</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">pos</span> <span class="o">=</span> <span class="mi">4</span></div>
+
+<div class="viewcode-block" id="PSTokenizer.stopeexec"><a class="viewcode-back" href="../../../misc/psLib.html#fontTools.misc.psLib.PSTokenizer.stopeexec">[docs]</a>	<span class="k">def</span> <span class="nf">stopeexec</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;dirtybuf&#39;</span><span class="p">):</span>
+			<span class="k">return</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">buf</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dirtybuf</span>
+		<span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">dirtybuf</span></div></div>
+
+
+<div class="viewcode-block" id="PSInterpreter"><a class="viewcode-back" href="../../../misc/psLib.html#fontTools.misc.psLib.PSInterpreter">[docs]</a><span class="k">class</span> <span class="nc">PSInterpreter</span><span class="p">(</span><span class="n">PSOperators</span><span class="p">):</span>
+
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;ascii&quot;</span><span class="p">):</span>
+		<span class="n">systemdict</span> <span class="o">=</span> <span class="p">{}</span>
+		<span class="n">userdict</span> <span class="o">=</span> <span class="p">{}</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">encoding</span> <span class="o">=</span> <span class="n">encoding</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">dictstack</span> <span class="o">=</span> <span class="p">[</span><span class="n">systemdict</span><span class="p">,</span> <span class="n">userdict</span><span class="p">]</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">stack</span> <span class="o">=</span> <span class="p">[]</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">proclevel</span> <span class="o">=</span> <span class="mi">0</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">procmark</span> <span class="o">=</span> <span class="n">ps_procmark</span><span class="p">()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">fillsystemdict</span><span class="p">()</span>
+
+<div class="viewcode-block" id="PSInterpreter.fillsystemdict"><a class="viewcode-back" href="../../../misc/psLib.html#fontTools.misc.psLib.PSInterpreter.fillsystemdict">[docs]</a>	<span class="k">def</span> <span class="nf">fillsystemdict</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">systemdict</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dictstack</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+		<span class="n">systemdict</span><span class="p">[</span><span class="s1">&#39;[&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">systemdict</span><span class="p">[</span><span class="s1">&#39;mark&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mark</span> <span class="o">=</span> <span class="n">ps_mark</span><span class="p">()</span>
+		<span class="n">systemdict</span><span class="p">[</span><span class="s1">&#39;]&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ps_operator</span><span class="p">(</span><span class="s1">&#39;]&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">do_makearray</span><span class="p">)</span>
+		<span class="n">systemdict</span><span class="p">[</span><span class="s1">&#39;true&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ps_boolean</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+		<span class="n">systemdict</span><span class="p">[</span><span class="s1">&#39;false&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ps_boolean</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+		<span class="n">systemdict</span><span class="p">[</span><span class="s1">&#39;StandardEncoding&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ps_array</span><span class="p">(</span><span class="n">ps_StandardEncoding</span><span class="p">)</span>
+		<span class="n">systemdict</span><span class="p">[</span><span class="s1">&#39;FontDirectory&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ps_dict</span><span class="p">({})</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">suckoperators</span><span class="p">(</span><span class="n">systemdict</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="PSInterpreter.suckoperators"><a class="viewcode-back" href="../../../misc/psLib.html#fontTools.misc.psLib.PSInterpreter.suckoperators">[docs]</a>	<span class="k">def</span> <span class="nf">suckoperators</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">systemdict</span><span class="p">,</span> <span class="n">klass</span><span class="p">):</span>
+		<span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="nb">dir</span><span class="p">(</span><span class="n">klass</span><span class="p">):</span>
+			<span class="n">attr</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+			<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">attr</span><span class="p">,</span> <span class="n">Callable</span><span class="p">)</span> <span class="ow">and</span> <span class="n">name</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;ps_&#39;</span><span class="p">:</span>
+				<span class="n">name</span> <span class="o">=</span> <span class="n">name</span><span class="p">[</span><span class="mi">3</span><span class="p">:]</span>
+				<span class="n">systemdict</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">ps_operator</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">attr</span><span class="p">)</span>
+		<span class="k">for</span> <span class="n">baseclass</span> <span class="ow">in</span> <span class="n">klass</span><span class="o">.</span><span class="vm">__bases__</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">suckoperators</span><span class="p">(</span><span class="n">systemdict</span><span class="p">,</span> <span class="n">baseclass</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="PSInterpreter.interpret"><a class="viewcode-back" href="../../../misc/psLib.html#fontTools.misc.psLib.PSInterpreter.interpret">[docs]</a>	<span class="k">def</span> <span class="nf">interpret</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="nb">getattr</span><span class="o">=</span><span class="nb">getattr</span><span class="p">):</span>
+		<span class="n">tokenizer</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">tokenizer</span> <span class="o">=</span> <span class="n">PSTokenizer</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">encoding</span><span class="p">)</span>
+		<span class="n">getnexttoken</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="o">.</span><span class="n">getnexttoken</span>
+		<span class="n">do_token</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">do_token</span>
+		<span class="n">handle_object</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">handle_object</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="k">while</span> <span class="mi">1</span><span class="p">:</span>
+				<span class="n">tokentype</span><span class="p">,</span> <span class="n">token</span> <span class="o">=</span> <span class="n">getnexttoken</span><span class="p">()</span>
+				<span class="k">if</span> <span class="ow">not</span> <span class="n">token</span><span class="p">:</span>
+					<span class="k">break</span>
+				<span class="k">if</span> <span class="n">tokentype</span><span class="p">:</span>
+					<span class="n">handler</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tokentype</span><span class="p">)</span>
+					<span class="nb">object</span> <span class="o">=</span> <span class="n">handler</span><span class="p">(</span><span class="n">token</span><span class="p">)</span>
+				<span class="k">else</span><span class="p">:</span>
+					<span class="nb">object</span> <span class="o">=</span> <span class="n">do_token</span><span class="p">(</span><span class="n">token</span><span class="p">)</span>
+				<span class="k">if</span> <span class="nb">object</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+					<span class="n">handle_object</span><span class="p">(</span><span class="nb">object</span><span class="p">)</span>
+			<span class="n">tokenizer</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">tokenizer</span> <span class="o">=</span> <span class="kc">None</span>
+		<span class="k">except</span><span class="p">:</span>
+			<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">tokenizer</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+				<span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span>
+					<span class="s1">&#39;ps error:</span><span class="se">\n</span><span class="s1">&#39;</span>
+					<span class="s1">&#39;- - - - - - -</span><span class="se">\n</span><span class="s1">&#39;</span>
+					<span class="s1">&#39;</span><span class="si">%s</span><span class="se">\n</span><span class="s1">&#39;</span>
+					<span class="s1">&#39;&gt;&gt;&gt;</span><span class="se">\n</span><span class="s1">&#39;</span>
+					<span class="s1">&#39;</span><span class="si">%s</span><span class="se">\n</span><span class="s1">&#39;</span>
+					<span class="s1">&#39;- - - - - - -&#39;</span><span class="p">,</span>
+					<span class="bp">self</span><span class="o">.</span><span class="n">tokenizer</span><span class="o">.</span><span class="n">buf</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">tokenizer</span><span class="o">.</span><span class="n">pos</span><span class="o">-</span><span class="mi">50</span><span class="p">:</span><span class="bp">self</span><span class="o">.</span><span class="n">tokenizer</span><span class="o">.</span><span class="n">pos</span><span class="p">],</span>
+					<span class="bp">self</span><span class="o">.</span><span class="n">tokenizer</span><span class="o">.</span><span class="n">buf</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">tokenizer</span><span class="o">.</span><span class="n">pos</span><span class="p">:</span><span class="bp">self</span><span class="o">.</span><span class="n">tokenizer</span><span class="o">.</span><span class="n">pos</span><span class="o">+</span><span class="mi">50</span><span class="p">])</span>
+			<span class="k">raise</span></div>
+
+<div class="viewcode-block" id="PSInterpreter.handle_object"><a class="viewcode-back" href="../../../misc/psLib.html#fontTools.misc.psLib.PSInterpreter.handle_object">[docs]</a>	<span class="k">def</span> <span class="nf">handle_object</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">object</span><span class="p">):</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">proclevel</span> <span class="ow">or</span> <span class="nb">object</span><span class="o">.</span><span class="n">literal</span> <span class="ow">or</span> <span class="nb">object</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="s1">&#39;proceduretype&#39;</span><span class="p">):</span>
+			<span class="k">if</span> <span class="nb">object</span><span class="o">.</span><span class="n">type</span> <span class="o">!=</span> <span class="s1">&#39;operatortype&#39;</span><span class="p">:</span>
+				<span class="nb">object</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">resolve_name</span><span class="p">(</span><span class="nb">object</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+			<span class="k">if</span> <span class="nb">object</span><span class="o">.</span><span class="n">literal</span><span class="p">:</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="nb">object</span><span class="p">)</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="k">if</span> <span class="nb">object</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="s1">&#39;proceduretype&#39;</span><span class="p">:</span>
+					<span class="bp">self</span><span class="o">.</span><span class="n">call_procedure</span><span class="p">(</span><span class="nb">object</span><span class="p">)</span>
+				<span class="k">else</span><span class="p">:</span>
+					<span class="nb">object</span><span class="o">.</span><span class="n">function</span><span class="p">()</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="nb">object</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="PSInterpreter.call_procedure"><a class="viewcode-back" href="../../../misc/psLib.html#fontTools.misc.psLib.PSInterpreter.call_procedure">[docs]</a>	<span class="k">def</span> <span class="nf">call_procedure</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">proc</span><span class="p">):</span>
+		<span class="n">handle_object</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">handle_object</span>
+		<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">proc</span><span class="o">.</span><span class="n">value</span><span class="p">:</span>
+			<span class="n">handle_object</span><span class="p">(</span><span class="n">item</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="PSInterpreter.resolve_name"><a class="viewcode-back" href="../../../misc/psLib.html#fontTools.misc.psLib.PSInterpreter.resolve_name">[docs]</a>	<span class="k">def</span> <span class="nf">resolve_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+		<span class="n">dictstack</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dictstack</span>
+		<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">dictstack</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+			<span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">dictstack</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+				<span class="k">return</span> <span class="n">dictstack</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">name</span><span class="p">]</span>
+		<span class="k">raise</span> <span class="n">PSError</span><span class="p">(</span><span class="s1">&#39;name error: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">name</span><span class="p">))</span></div>
+
+<div class="viewcode-block" id="PSInterpreter.do_token"><a class="viewcode-back" href="../../../misc/psLib.html#fontTools.misc.psLib.PSInterpreter.do_token">[docs]</a>	<span class="k">def</span> <span class="nf">do_token</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">token</span><span class="p">,</span>
+				<span class="nb">int</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span>
+				<span class="nb">float</span><span class="o">=</span><span class="nb">float</span><span class="p">,</span>
+				<span class="n">ps_name</span><span class="o">=</span><span class="n">ps_name</span><span class="p">,</span>
+				<span class="n">ps_integer</span><span class="o">=</span><span class="n">ps_integer</span><span class="p">,</span>
+				<span class="n">ps_real</span><span class="o">=</span><span class="n">ps_real</span><span class="p">):</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="n">num</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">token</span><span class="p">)</span>
+		<span class="k">except</span> <span class="p">(</span><span class="ne">ValueError</span><span class="p">,</span> <span class="ne">OverflowError</span><span class="p">):</span>
+			<span class="k">try</span><span class="p">:</span>
+				<span class="n">num</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">token</span><span class="p">)</span>
+			<span class="k">except</span> <span class="p">(</span><span class="ne">ValueError</span><span class="p">,</span> <span class="ne">OverflowError</span><span class="p">):</span>
+				<span class="k">if</span> <span class="s1">&#39;#&#39;</span> <span class="ow">in</span> <span class="n">token</span><span class="p">:</span>
+					<span class="n">hashpos</span> <span class="o">=</span> <span class="n">token</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;#&#39;</span><span class="p">)</span>
+					<span class="k">try</span><span class="p">:</span>
+						<span class="n">base</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">token</span><span class="p">[:</span><span class="n">hashpos</span><span class="p">])</span>
+						<span class="n">num</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">token</span><span class="p">[</span><span class="n">hashpos</span><span class="o">+</span><span class="mi">1</span><span class="p">:],</span> <span class="n">base</span><span class="p">)</span>
+					<span class="k">except</span> <span class="p">(</span><span class="ne">ValueError</span><span class="p">,</span> <span class="ne">OverflowError</span><span class="p">):</span>
+						<span class="k">return</span> <span class="n">ps_name</span><span class="p">(</span><span class="n">token</span><span class="p">)</span>
+					<span class="k">else</span><span class="p">:</span>
+						<span class="k">return</span> <span class="n">ps_integer</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+				<span class="k">else</span><span class="p">:</span>
+					<span class="k">return</span> <span class="n">ps_name</span><span class="p">(</span><span class="n">token</span><span class="p">)</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="k">return</span> <span class="n">ps_real</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="k">return</span> <span class="n">ps_integer</span><span class="p">(</span><span class="n">num</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="PSInterpreter.do_comment"><a class="viewcode-back" href="../../../misc/psLib.html#fontTools.misc.psLib.PSInterpreter.do_comment">[docs]</a>	<span class="k">def</span> <span class="nf">do_comment</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">token</span><span class="p">):</span>
+		<span class="k">pass</span></div>
+
+<div class="viewcode-block" id="PSInterpreter.do_literal"><a class="viewcode-back" href="../../../misc/psLib.html#fontTools.misc.psLib.PSInterpreter.do_literal">[docs]</a>	<span class="k">def</span> <span class="nf">do_literal</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">token</span><span class="p">):</span>
+		<span class="k">return</span> <span class="n">ps_literal</span><span class="p">(</span><span class="n">token</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span></div>
+
+<div class="viewcode-block" id="PSInterpreter.do_string"><a class="viewcode-back" href="../../../misc/psLib.html#fontTools.misc.psLib.PSInterpreter.do_string">[docs]</a>	<span class="k">def</span> <span class="nf">do_string</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">token</span><span class="p">):</span>
+		<span class="k">return</span> <span class="n">ps_string</span><span class="p">(</span><span class="n">token</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span></div>
+
+<div class="viewcode-block" id="PSInterpreter.do_hexstring"><a class="viewcode-back" href="../../../misc/psLib.html#fontTools.misc.psLib.PSInterpreter.do_hexstring">[docs]</a>	<span class="k">def</span> <span class="nf">do_hexstring</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">token</span><span class="p">):</span>
+		<span class="n">hexStr</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">token</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+		<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">hexStr</span><span class="p">)</span> <span class="o">%</span> <span class="mi">2</span><span class="p">:</span>
+			<span class="n">hexStr</span> <span class="o">=</span> <span class="n">hexStr</span> <span class="o">+</span> <span class="s1">&#39;0&#39;</span>
+		<span class="n">cleanstr</span> <span class="o">=</span> <span class="p">[]</span>
+		<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">hexStr</span><span class="p">),</span> <span class="mi">2</span><span class="p">):</span>
+			<span class="n">cleanstr</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">chr</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">hexStr</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="mi">2</span><span class="p">],</span> <span class="mi">16</span><span class="p">)))</span>
+		<span class="n">cleanstr</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">cleanstr</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">ps_string</span><span class="p">(</span><span class="n">cleanstr</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="PSInterpreter.do_special"><a class="viewcode-back" href="../../../misc/psLib.html#fontTools.misc.psLib.PSInterpreter.do_special">[docs]</a>	<span class="k">def</span> <span class="nf">do_special</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">token</span><span class="p">):</span>
+		<span class="k">if</span> <span class="n">token</span> <span class="o">==</span> <span class="s1">&#39;{&#39;</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">proclevel</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">proclevel</span> <span class="o">+</span> <span class="mi">1</span>
+			<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">procmark</span>
+		<span class="k">elif</span> <span class="n">token</span> <span class="o">==</span> <span class="s1">&#39;}&#39;</span><span class="p">:</span>
+			<span class="n">proc</span> <span class="o">=</span> <span class="p">[]</span>
+			<span class="k">while</span> <span class="mi">1</span><span class="p">:</span>
+				<span class="n">topobject</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+				<span class="k">if</span> <span class="n">topobject</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">procmark</span><span class="p">:</span>
+					<span class="k">break</span>
+				<span class="n">proc</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">topobject</span><span class="p">)</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">proclevel</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">proclevel</span> <span class="o">-</span> <span class="mi">1</span>
+			<span class="n">proc</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
+			<span class="k">return</span> <span class="n">ps_procedure</span><span class="p">(</span><span class="n">proc</span><span class="p">)</span>
+		<span class="k">elif</span> <span class="n">token</span> <span class="o">==</span> <span class="s1">&#39;[&#39;</span><span class="p">:</span>
+			<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">mark</span>
+		<span class="k">elif</span> <span class="n">token</span> <span class="o">==</span> <span class="s1">&#39;]&#39;</span><span class="p">:</span>
+			<span class="k">return</span> <span class="n">ps_name</span><span class="p">(</span><span class="s1">&#39;]&#39;</span><span class="p">)</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="k">raise</span> <span class="n">PSTokenError</span><span class="p">(</span><span class="s1">&#39;huh?&#39;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="PSInterpreter.push"><a class="viewcode-back" href="../../../misc/psLib.html#fontTools.misc.psLib.PSInterpreter.push">[docs]</a>	<span class="k">def</span> <span class="nf">push</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">object</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">object</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="PSInterpreter.pop"><a class="viewcode-back" href="../../../misc/psLib.html#fontTools.misc.psLib.PSInterpreter.pop">[docs]</a>	<span class="k">def</span> <span class="nf">pop</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">types</span><span class="p">):</span>
+		<span class="n">stack</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stack</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="n">stack</span><span class="p">:</span>
+			<span class="k">raise</span> <span class="n">PSError</span><span class="p">(</span><span class="s1">&#39;stack underflow&#39;</span><span class="p">)</span>
+		<span class="nb">object</span> <span class="o">=</span> <span class="n">stack</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+		<span class="k">if</span> <span class="n">types</span><span class="p">:</span>
+			<span class="k">if</span> <span class="nb">object</span><span class="o">.</span><span class="n">type</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">types</span><span class="p">:</span>
+				<span class="k">raise</span> <span class="n">PSError</span><span class="p">(</span><span class="s1">&#39;typecheck, expected </span><span class="si">%s</span><span class="s1">, found </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="nb">repr</span><span class="p">(</span><span class="n">types</span><span class="p">),</span> <span class="nb">object</span><span class="o">.</span><span class="n">type</span><span class="p">))</span>
+		<span class="k">del</span> <span class="n">stack</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+		<span class="k">return</span> <span class="nb">object</span></div>
+
+<div class="viewcode-block" id="PSInterpreter.do_makearray"><a class="viewcode-back" href="../../../misc/psLib.html#fontTools.misc.psLib.PSInterpreter.do_makearray">[docs]</a>	<span class="k">def</span> <span class="nf">do_makearray</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">array</span> <span class="o">=</span> <span class="p">[]</span>
+		<span class="k">while</span> <span class="mi">1</span><span class="p">:</span>
+			<span class="n">topobject</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+			<span class="k">if</span> <span class="n">topobject</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">mark</span><span class="p">:</span>
+				<span class="k">break</span>
+			<span class="n">array</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">topobject</span><span class="p">)</span>
+		<span class="n">array</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">ps_array</span><span class="p">(</span><span class="n">array</span><span class="p">))</span></div>
+
+<div class="viewcode-block" id="PSInterpreter.close"><a class="viewcode-back" href="../../../misc/psLib.html#fontTools.misc.psLib.PSInterpreter.close">[docs]</a>	<span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Remove circular references.&quot;&quot;&quot;</span>
+		<span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">stack</span>
+		<span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">dictstack</span></div></div>
+
+
+<div class="viewcode-block" id="unpack_item"><a class="viewcode-back" href="../../../misc/psLib.html#fontTools.misc.psLib.unpack_item">[docs]</a><span class="k">def</span> <span class="nf">unpack_item</span><span class="p">(</span><span class="n">item</span><span class="p">):</span>
+	<span class="n">tp</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+	<span class="k">if</span> <span class="n">tp</span> <span class="o">==</span> <span class="nb">dict</span><span class="p">:</span>
+		<span class="n">newitem</span> <span class="o">=</span> <span class="p">{}</span>
+		<span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">item</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+			<span class="n">newitem</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">unpack_item</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+	<span class="k">elif</span> <span class="n">tp</span> <span class="o">==</span> <span class="nb">list</span><span class="p">:</span>
+		<span class="n">newitem</span> <span class="o">=</span> <span class="p">[</span><span class="kc">None</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+		<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">value</span><span class="p">)):</span>
+			<span class="n">newitem</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">unpack_item</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">value</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+		<span class="k">if</span> <span class="n">item</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="s1">&#39;proceduretype&#39;</span><span class="p">:</span>
+			<span class="n">newitem</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">newitem</span><span class="p">)</span>
+	<span class="k">else</span><span class="p">:</span>
+		<span class="n">newitem</span> <span class="o">=</span> <span class="n">item</span><span class="o">.</span><span class="n">value</span>
+	<span class="k">return</span> <span class="n">newitem</span></div>
+
+<div class="viewcode-block" id="suckfont"><a class="viewcode-back" href="../../../misc/psLib.html#fontTools.misc.psLib.suckfont">[docs]</a><span class="k">def</span> <span class="nf">suckfont</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;ascii&quot;</span><span class="p">):</span>
+	<span class="n">m</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">br</span><span class="s2">&quot;/FontName\s+/([^ \t\n\r]+)\s+def&quot;</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+	<span class="k">if</span> <span class="n">m</span><span class="p">:</span>
+		<span class="n">fontName</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+	<span class="k">else</span><span class="p">:</span>
+		<span class="n">fontName</span> <span class="o">=</span> <span class="kc">None</span>
+	<span class="n">interpreter</span> <span class="o">=</span> <span class="n">PSInterpreter</span><span class="p">(</span><span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">)</span>
+	<span class="n">interpreter</span><span class="o">.</span><span class="n">interpret</span><span class="p">(</span><span class="sa">b</span><span class="s2">&quot;/Helvetica 4 dict dup /Encoding StandardEncoding put definefont pop&quot;</span><span class="p">)</span>
+	<span class="n">interpreter</span><span class="o">.</span><span class="n">interpret</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+	<span class="n">fontdir</span> <span class="o">=</span> <span class="n">interpreter</span><span class="o">.</span><span class="n">dictstack</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;FontDirectory&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value</span>
+	<span class="k">if</span> <span class="n">fontName</span> <span class="ow">in</span> <span class="n">fontdir</span><span class="p">:</span>
+		<span class="n">rawfont</span> <span class="o">=</span> <span class="n">fontdir</span><span class="p">[</span><span class="n">fontName</span><span class="p">]</span>
+	<span class="k">else</span><span class="p">:</span>
+		<span class="c1"># fall back, in case fontName wasn&#39;t found</span>
+		<span class="n">fontNames</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">fontdir</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+		<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">fontNames</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+			<span class="n">fontNames</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s2">&quot;Helvetica&quot;</span><span class="p">)</span>
+		<span class="n">fontNames</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+		<span class="n">rawfont</span> <span class="o">=</span> <span class="n">fontdir</span><span class="p">[</span><span class="n">fontNames</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+	<span class="n">interpreter</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+	<span class="k">return</span> <span class="n">unpack_item</span><span class="p">(</span><span class="n">rawfont</span><span class="p">)</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Just van Rossum, Behdad Esfahbod, and the fontTools Authors. CC BY-SA 4.0
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

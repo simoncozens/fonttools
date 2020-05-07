@@ -1,0 +1,950 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>fontTools.cffLib.specializer &mdash; fontTools Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> fontTools
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Library</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../afmLib.html">afmLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../agl.html">agl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cffLib/index.html">cffLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../colorLib/index.html">colorLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cu2qu/index.html">cu2qu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../designspaceLib/index.html">designspaceLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../encodings/index.html">encodings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../feaLib/index.html">feaLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../merge.html">merge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../misc/index.html">misc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../mtiLib.html">mtiLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../otlLib/index.html">otlLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pens/index.html">pens</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../subset/index.html">subset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../svgLib/index.html">svgLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../t1Lib.html">t1Lib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ttLib/index.html">ttLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ttx.html">ttx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ufoLib/index.html">ufoLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../unicode.html">unicode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../unicodedata/index.html">unicodedata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../varLib/index.html">varLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../voltLib.html">voltLib</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">fontTools</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../cffLib.html">fontTools.cffLib</a> &raquo;</li>
+        
+      <li>fontTools.cffLib.specializer</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for fontTools.cffLib.specializer</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+
+<span class="sd">&quot;&quot;&quot;T2CharString operator specializer and generalizer.&quot;&quot;&quot;</span>
+
+<span class="kn">from</span> <span class="nn">fontTools.misc.py23</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">fontTools.cffLib</span> <span class="k">import</span> <span class="n">maxStackLimit</span>
+
+
+<div class="viewcode-block" id="stringToProgram"><a class="viewcode-back" href="../../../cffLib/specializer.html#fontTools.cffLib.specializer.stringToProgram">[docs]</a><span class="k">def</span> <span class="nf">stringToProgram</span><span class="p">(</span><span class="n">string</span><span class="p">):</span>
+	<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">string</span><span class="p">,</span> <span class="n">basestring</span><span class="p">):</span>
+		<span class="n">string</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+	<span class="n">program</span> <span class="o">=</span> <span class="p">[]</span>
+	<span class="k">for</span> <span class="n">token</span> <span class="ow">in</span> <span class="n">string</span><span class="p">:</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="n">token</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">token</span><span class="p">)</span>
+		<span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+			<span class="k">try</span><span class="p">:</span>
+				<span class="n">token</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">token</span><span class="p">)</span>
+			<span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+				<span class="k">pass</span>
+		<span class="n">program</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">token</span><span class="p">)</span>
+	<span class="k">return</span> <span class="n">program</span></div>
+
+
+<div class="viewcode-block" id="programToString"><a class="viewcode-back" href="../../../cffLib/specializer.html#fontTools.cffLib.specializer.programToString">[docs]</a><span class="k">def</span> <span class="nf">programToString</span><span class="p">(</span><span class="n">program</span><span class="p">):</span>
+	<span class="k">return</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">program</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="programToCommands"><a class="viewcode-back" href="../../../cffLib/specializer.html#fontTools.cffLib.specializer.programToCommands">[docs]</a><span class="k">def</span> <span class="nf">programToCommands</span><span class="p">(</span><span class="n">program</span><span class="p">,</span> <span class="n">getNumRegions</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Takes a T2CharString program list and returns list of commands.</span>
+<span class="sd">	Each command is a two-tuple of commandname,arg-list.  The commandname might</span>
+<span class="sd">	be empty string if no commandname shall be emitted (used for glyph width,</span>
+<span class="sd">	hintmask/cntrmask argument, as well as stray arguments at the end of the</span>
+<span class="sd">	program (¯\_(ツ)_/¯).</span>
+<span class="sd">	&#39;getNumRegions&#39; may be None, or a callable object. It must return the</span>
+<span class="sd">	number of regions. &#39;getNumRegions&#39; takes a single argument, vsindex. If</span>
+<span class="sd">	the vsindex argument is None, getNumRegions returns the default number</span>
+<span class="sd">	of regions for the charstring, else it returns the numRegions for</span>
+<span class="sd">	the vsindex.</span>
+<span class="sd">	The Charstring may or may not start with a width value. If the first</span>
+<span class="sd">	non-blend operator has an odd number of arguments, then the first argument is</span>
+<span class="sd">	a width, and is popped off. This is complicated with blend operators, as</span>
+<span class="sd">	there may be more than one before the first hint or moveto operator, and each</span>
+<span class="sd">	one reduces several arguments to just one list argument. We have to sum the</span>
+<span class="sd">	number of arguments that are not part of the blend arguments, and all the</span>
+<span class="sd">	&#39;numBlends&#39; values. We could instead have said that by definition, if there</span>
+<span class="sd">	is a blend operator, there is no width value, since CFF2 Charstrings don&#39;t</span>
+<span class="sd">	have width values. I discussed this with Behdad, and we are allowing for an</span>
+<span class="sd">	initial width value in this case because developers may assemble a CFF2</span>
+<span class="sd">	charstring from CFF Charstrings, which could have width values.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+
+	<span class="n">seenWidthOp</span> <span class="o">=</span> <span class="kc">False</span>
+	<span class="n">vsIndex</span> <span class="o">=</span> <span class="kc">None</span>
+	<span class="n">lenBlendStack</span> <span class="o">=</span> <span class="mi">0</span>
+	<span class="n">lastBlendIndex</span> <span class="o">=</span> <span class="mi">0</span>
+	<span class="n">commands</span> <span class="o">=</span> <span class="p">[]</span>
+	<span class="n">stack</span> <span class="o">=</span> <span class="p">[]</span>
+	<span class="n">it</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">(</span><span class="n">program</span><span class="p">)</span>
+
+	<span class="k">for</span> <span class="n">token</span> <span class="ow">in</span> <span class="n">it</span><span class="p">:</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">token</span><span class="p">,</span> <span class="n">basestring</span><span class="p">):</span>
+			<span class="n">stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">token</span><span class="p">)</span>
+			<span class="k">continue</span>
+
+		<span class="k">if</span> <span class="n">token</span> <span class="o">==</span> <span class="s1">&#39;blend&#39;</span><span class="p">:</span>
+			<span class="k">assert</span> <span class="n">getNumRegions</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+			<span class="n">numSourceFonts</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">getNumRegions</span><span class="p">(</span><span class="n">vsIndex</span><span class="p">)</span>
+			<span class="c1"># replace the blend op args on the stack with a single list</span>
+			<span class="c1"># containing all the blend op args.</span>
+			<span class="n">numBlends</span> <span class="o">=</span> <span class="n">stack</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+			<span class="n">numBlendArgs</span> <span class="o">=</span> <span class="n">numBlends</span> <span class="o">*</span> <span class="n">numSourceFonts</span> <span class="o">+</span> <span class="mi">1</span>
+			<span class="c1"># replace first blend op by a list of the blend ops.</span>
+			<span class="n">stack</span><span class="p">[</span><span class="o">-</span><span class="n">numBlendArgs</span><span class="p">:]</span> <span class="o">=</span> <span class="p">[</span><span class="n">stack</span><span class="p">[</span><span class="o">-</span><span class="n">numBlendArgs</span><span class="p">:]]</span>
+			<span class="n">lenBlendStack</span> <span class="o">+=</span> <span class="n">numBlends</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">stack</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+			<span class="n">lastBlendIndex</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">stack</span><span class="p">)</span>
+			<span class="c1"># if a blend op exists, this is or will be a CFF2 charstring.</span>
+			<span class="k">continue</span>
+
+		<span class="k">elif</span> <span class="n">token</span> <span class="o">==</span> <span class="s1">&#39;vsindex&#39;</span><span class="p">:</span>
+			<span class="n">vsIndex</span> <span class="o">=</span> <span class="n">stack</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+			<span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">vsIndex</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">int</span>
+
+		<span class="k">elif</span> <span class="p">(</span><span class="ow">not</span> <span class="n">seenWidthOp</span><span class="p">)</span> <span class="ow">and</span> <span class="n">token</span> <span class="ow">in</span> <span class="p">{</span><span class="s1">&#39;hstem&#39;</span><span class="p">,</span> <span class="s1">&#39;hstemhm&#39;</span><span class="p">,</span> <span class="s1">&#39;vstem&#39;</span><span class="p">,</span> <span class="s1">&#39;vstemhm&#39;</span><span class="p">,</span>
+			<span class="s1">&#39;cntrmask&#39;</span><span class="p">,</span> <span class="s1">&#39;hintmask&#39;</span><span class="p">,</span>
+			<span class="s1">&#39;hmoveto&#39;</span><span class="p">,</span> <span class="s1">&#39;vmoveto&#39;</span><span class="p">,</span> <span class="s1">&#39;rmoveto&#39;</span><span class="p">,</span>
+			<span class="s1">&#39;endchar&#39;</span><span class="p">}:</span>
+			<span class="n">seenWidthOp</span> <span class="o">=</span> <span class="kc">True</span>
+			<span class="n">parity</span> <span class="o">=</span> <span class="n">token</span> <span class="ow">in</span> <span class="p">{</span><span class="s1">&#39;hmoveto&#39;</span><span class="p">,</span> <span class="s1">&#39;vmoveto&#39;</span><span class="p">}</span>
+			<span class="k">if</span> <span class="n">lenBlendStack</span><span class="p">:</span>
+				<span class="c1"># lenBlendStack has the number of args represented by the last blend</span>
+				<span class="c1"># arg and all the preceding args. We need to now add the number of</span>
+				<span class="c1"># args following the last blend arg.</span>
+				<span class="n">numArgs</span> <span class="o">=</span> <span class="n">lenBlendStack</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">stack</span><span class="p">[</span><span class="n">lastBlendIndex</span><span class="p">:])</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="n">numArgs</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">stack</span><span class="p">)</span>
+			<span class="k">if</span> <span class="n">numArgs</span> <span class="ow">and</span> <span class="p">(</span><span class="n">numArgs</span> <span class="o">%</span> <span class="mi">2</span><span class="p">)</span> <span class="o">^</span> <span class="n">parity</span><span class="p">:</span>
+				<span class="n">width</span> <span class="o">=</span> <span class="n">stack</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+				<span class="n">commands</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="p">[</span><span class="n">width</span><span class="p">]))</span>
+
+		<span class="k">if</span> <span class="n">token</span> <span class="ow">in</span> <span class="p">{</span><span class="s1">&#39;hintmask&#39;</span><span class="p">,</span> <span class="s1">&#39;cntrmask&#39;</span><span class="p">}:</span>
+			<span class="k">if</span> <span class="n">stack</span><span class="p">:</span>
+				<span class="n">commands</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">stack</span><span class="p">))</span>
+			<span class="n">commands</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">token</span><span class="p">,</span> <span class="p">[]))</span>
+			<span class="n">commands</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="p">[</span><span class="nb">next</span><span class="p">(</span><span class="n">it</span><span class="p">)]))</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="n">commands</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">token</span><span class="p">,</span> <span class="n">stack</span><span class="p">))</span>
+		<span class="n">stack</span> <span class="o">=</span> <span class="p">[]</span>
+	<span class="k">if</span> <span class="n">stack</span><span class="p">:</span>
+		<span class="n">commands</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">stack</span><span class="p">))</span>
+	<span class="k">return</span> <span class="n">commands</span></div>
+
+
+<span class="k">def</span> <span class="nf">_flattenBlendArgs</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+	<span class="n">token_list</span> <span class="o">=</span> <span class="p">[]</span>
+	<span class="k">for</span> <span class="n">arg</span> <span class="ow">in</span> <span class="n">args</span><span class="p">:</span>
+		<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">arg</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+			<span class="n">token_list</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span>
+			<span class="n">token_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;blend&#39;</span><span class="p">)</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="n">token_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span>
+	<span class="k">return</span> <span class="n">token_list</span>
+
+<div class="viewcode-block" id="commandsToProgram"><a class="viewcode-back" href="../../../cffLib/specializer.html#fontTools.cffLib.specializer.commandsToProgram">[docs]</a><span class="k">def</span> <span class="nf">commandsToProgram</span><span class="p">(</span><span class="n">commands</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Takes a commands list as returned by programToCommands() and converts</span>
+<span class="sd">	it back to a T2CharString program list.&quot;&quot;&quot;</span>
+	<span class="n">program</span> <span class="o">=</span> <span class="p">[]</span>
+	<span class="k">for</span> <span class="n">op</span><span class="p">,</span><span class="n">args</span> <span class="ow">in</span> <span class="n">commands</span><span class="p">:</span>
+		<span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">arg</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span> <span class="k">for</span> <span class="n">arg</span> <span class="ow">in</span> <span class="n">args</span><span class="p">):</span>
+			<span class="n">args</span> <span class="o">=</span> <span class="n">_flattenBlendArgs</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+		<span class="n">program</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+		<span class="k">if</span> <span class="n">op</span><span class="p">:</span>
+			<span class="n">program</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">op</span><span class="p">)</span>
+	<span class="k">return</span> <span class="n">program</span></div>
+
+
+<span class="k">def</span> <span class="nf">_everyN</span><span class="p">(</span><span class="n">el</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Group the list el into groups of size n&quot;&quot;&quot;</span>
+	<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">el</span><span class="p">)</span> <span class="o">%</span> <span class="n">n</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span> <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">el</span><span class="p">)</span>
+	<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">el</span><span class="p">),</span> <span class="n">n</span><span class="p">):</span>
+		<span class="k">yield</span> <span class="n">el</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="n">n</span><span class="p">]</span>
+
+
+<span class="k">class</span> <span class="nc">_GeneralizerDecombinerCommandsMap</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+	<span class="nd">@staticmethod</span>
+	<span class="k">def</span> <span class="nf">rmoveto</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+		<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">2</span><span class="p">:</span> <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+		<span class="k">yield</span> <span class="p">(</span><span class="s1">&#39;rmoveto&#39;</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span>
+	<span class="nd">@staticmethod</span>
+	<span class="k">def</span> <span class="nf">hmoveto</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+		<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">:</span> <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+		<span class="k">yield</span> <span class="p">(</span><span class="s1">&#39;rmoveto&#39;</span><span class="p">,</span> <span class="p">[</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">0</span><span class="p">])</span>
+	<span class="nd">@staticmethod</span>
+	<span class="k">def</span> <span class="nf">vmoveto</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+		<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">:</span> <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+		<span class="k">yield</span> <span class="p">(</span><span class="s1">&#39;rmoveto&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]])</span>
+
+	<span class="nd">@staticmethod</span>
+	<span class="k">def</span> <span class="nf">rlineto</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="n">args</span><span class="p">:</span> <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+		<span class="k">for</span> <span class="n">args</span> <span class="ow">in</span> <span class="n">_everyN</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>
+			<span class="k">yield</span> <span class="p">(</span><span class="s1">&#39;rlineto&#39;</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span>
+	<span class="nd">@staticmethod</span>
+	<span class="k">def</span> <span class="nf">hlineto</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="n">args</span><span class="p">:</span> <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+		<span class="n">it</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+				<span class="k">yield</span> <span class="p">(</span><span class="s1">&#39;rlineto&#39;</span><span class="p">,</span> <span class="p">[</span><span class="nb">next</span><span class="p">(</span><span class="n">it</span><span class="p">),</span> <span class="mi">0</span><span class="p">])</span>
+				<span class="k">yield</span> <span class="p">(</span><span class="s1">&#39;rlineto&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="nb">next</span><span class="p">(</span><span class="n">it</span><span class="p">)])</span>
+		<span class="k">except</span> <span class="ne">StopIteration</span><span class="p">:</span>
+			<span class="k">pass</span>
+	<span class="nd">@staticmethod</span>
+	<span class="k">def</span> <span class="nf">vlineto</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="n">args</span><span class="p">:</span> <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+		<span class="n">it</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+				<span class="k">yield</span> <span class="p">(</span><span class="s1">&#39;rlineto&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="nb">next</span><span class="p">(</span><span class="n">it</span><span class="p">)])</span>
+				<span class="k">yield</span> <span class="p">(</span><span class="s1">&#39;rlineto&#39;</span><span class="p">,</span> <span class="p">[</span><span class="nb">next</span><span class="p">(</span><span class="n">it</span><span class="p">),</span> <span class="mi">0</span><span class="p">])</span>
+		<span class="k">except</span> <span class="ne">StopIteration</span><span class="p">:</span>
+			<span class="k">pass</span>
+	<span class="nd">@staticmethod</span>
+	<span class="k">def</span> <span class="nf">rrcurveto</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="n">args</span><span class="p">:</span> <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+		<span class="k">for</span> <span class="n">args</span> <span class="ow">in</span> <span class="n">_everyN</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>
+			<span class="k">yield</span> <span class="p">(</span><span class="s1">&#39;rrcurveto&#39;</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span>
+	<span class="nd">@staticmethod</span>
+	<span class="k">def</span> <span class="nf">hhcurveto</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+		<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">4</span> <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">%</span> <span class="mi">4</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span> <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+		<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+			<span class="k">yield</span> <span class="p">(</span><span class="s1">&#39;rrcurveto&#39;</span><span class="p">,</span> <span class="p">[</span><span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">args</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">args</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">args</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="mi">0</span><span class="p">])</span>
+			<span class="n">args</span> <span class="o">=</span> <span class="n">args</span><span class="p">[</span><span class="mi">5</span><span class="p">:]</span>
+		<span class="k">for</span> <span class="n">args</span> <span class="ow">in</span> <span class="n">_everyN</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="mi">4</span><span class="p">):</span>
+			<span class="k">yield</span> <span class="p">(</span><span class="s1">&#39;rrcurveto&#39;</span><span class="p">,</span> <span class="p">[</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">0</span><span class="p">,</span> <span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">args</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">args</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="mi">0</span><span class="p">])</span>
+	<span class="nd">@staticmethod</span>
+	<span class="k">def</span> <span class="nf">vvcurveto</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+		<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">4</span> <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">%</span> <span class="mi">4</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span> <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+		<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+			<span class="k">yield</span> <span class="p">(</span><span class="s1">&#39;rrcurveto&#39;</span><span class="p">,</span> <span class="p">[</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">args</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">args</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="mi">0</span><span class="p">,</span> <span class="n">args</span><span class="p">[</span><span class="mi">4</span><span class="p">]])</span>
+			<span class="n">args</span> <span class="o">=</span> <span class="n">args</span><span class="p">[</span><span class="mi">5</span><span class="p">:]</span>
+		<span class="k">for</span> <span class="n">args</span> <span class="ow">in</span> <span class="n">_everyN</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="mi">4</span><span class="p">):</span>
+			<span class="k">yield</span> <span class="p">(</span><span class="s1">&#39;rrcurveto&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">args</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="mi">0</span><span class="p">,</span> <span class="n">args</span><span class="p">[</span><span class="mi">3</span><span class="p">]])</span>
+	<span class="nd">@staticmethod</span>
+	<span class="k">def</span> <span class="nf">hvcurveto</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+		<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">4</span> <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">%</span> <span class="mi">8</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">}:</span> <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+		<span class="n">last_args</span> <span class="o">=</span> <span class="kc">None</span>
+		<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+			<span class="n">lastStraight</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">%</span> <span class="mi">8</span> <span class="o">==</span> <span class="mi">5</span>
+			<span class="n">args</span><span class="p">,</span> <span class="n">last_args</span> <span class="o">=</span> <span class="n">args</span><span class="p">[:</span><span class="o">-</span><span class="mi">5</span><span class="p">],</span> <span class="n">args</span><span class="p">[</span><span class="o">-</span><span class="mi">5</span><span class="p">:]</span>
+		<span class="n">it</span> <span class="o">=</span> <span class="n">_everyN</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+				<span class="n">args</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">it</span><span class="p">)</span>
+				<span class="k">yield</span> <span class="p">(</span><span class="s1">&#39;rrcurveto&#39;</span><span class="p">,</span> <span class="p">[</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">0</span><span class="p">,</span> <span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">args</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="mi">0</span><span class="p">,</span> <span class="n">args</span><span class="p">[</span><span class="mi">3</span><span class="p">]])</span>
+				<span class="n">args</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">it</span><span class="p">)</span>
+				<span class="k">yield</span> <span class="p">(</span><span class="s1">&#39;rrcurveto&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">args</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">args</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="mi">0</span><span class="p">])</span>
+		<span class="k">except</span> <span class="ne">StopIteration</span><span class="p">:</span>
+			<span class="k">pass</span>
+		<span class="k">if</span> <span class="n">last_args</span><span class="p">:</span>
+			<span class="n">args</span> <span class="o">=</span> <span class="n">last_args</span>
+			<span class="k">if</span> <span class="n">lastStraight</span><span class="p">:</span>
+				<span class="k">yield</span> <span class="p">(</span><span class="s1">&#39;rrcurveto&#39;</span><span class="p">,</span> <span class="p">[</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">0</span><span class="p">,</span> <span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">args</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">args</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">args</span><span class="p">[</span><span class="mi">3</span><span class="p">]])</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="k">yield</span> <span class="p">(</span><span class="s1">&#39;rrcurveto&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">args</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">args</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">args</span><span class="p">[</span><span class="mi">4</span><span class="p">]])</span>
+	<span class="nd">@staticmethod</span>
+	<span class="k">def</span> <span class="nf">vhcurveto</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+		<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">4</span> <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">%</span> <span class="mi">8</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">}:</span> <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+		<span class="n">last_args</span> <span class="o">=</span> <span class="kc">None</span>
+		<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+			<span class="n">lastStraight</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">%</span> <span class="mi">8</span> <span class="o">==</span> <span class="mi">5</span>
+			<span class="n">args</span><span class="p">,</span> <span class="n">last_args</span> <span class="o">=</span> <span class="n">args</span><span class="p">[:</span><span class="o">-</span><span class="mi">5</span><span class="p">],</span> <span class="n">args</span><span class="p">[</span><span class="o">-</span><span class="mi">5</span><span class="p">:]</span>
+		<span class="n">it</span> <span class="o">=</span> <span class="n">_everyN</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+				<span class="n">args</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">it</span><span class="p">)</span>
+				<span class="k">yield</span> <span class="p">(</span><span class="s1">&#39;rrcurveto&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">args</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">args</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="mi">0</span><span class="p">])</span>
+				<span class="n">args</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">it</span><span class="p">)</span>
+				<span class="k">yield</span> <span class="p">(</span><span class="s1">&#39;rrcurveto&#39;</span><span class="p">,</span> <span class="p">[</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">0</span><span class="p">,</span> <span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">args</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="mi">0</span><span class="p">,</span> <span class="n">args</span><span class="p">[</span><span class="mi">3</span><span class="p">]])</span>
+		<span class="k">except</span> <span class="ne">StopIteration</span><span class="p">:</span>
+			<span class="k">pass</span>
+		<span class="k">if</span> <span class="n">last_args</span><span class="p">:</span>
+			<span class="n">args</span> <span class="o">=</span> <span class="n">last_args</span>
+			<span class="k">if</span> <span class="n">lastStraight</span><span class="p">:</span>
+				<span class="k">yield</span> <span class="p">(</span><span class="s1">&#39;rrcurveto&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">args</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">args</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">args</span><span class="p">[</span><span class="mi">4</span><span class="p">]])</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="k">yield</span> <span class="p">(</span><span class="s1">&#39;rrcurveto&#39;</span><span class="p">,</span> <span class="p">[</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">0</span><span class="p">,</span> <span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">args</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">args</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">args</span><span class="p">[</span><span class="mi">3</span><span class="p">]])</span>
+
+	<span class="nd">@staticmethod</span>
+	<span class="k">def</span> <span class="nf">rcurveline</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+		<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">8</span> <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">%</span> <span class="mi">6</span> <span class="o">!=</span> <span class="mi">2</span><span class="p">:</span> <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+		<span class="n">args</span><span class="p">,</span> <span class="n">last_args</span> <span class="o">=</span> <span class="n">args</span><span class="p">[:</span><span class="o">-</span><span class="mi">2</span><span class="p">],</span> <span class="n">args</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:]</span>
+		<span class="k">for</span> <span class="n">args</span> <span class="ow">in</span> <span class="n">_everyN</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>
+			<span class="k">yield</span> <span class="p">(</span><span class="s1">&#39;rrcurveto&#39;</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span>
+		<span class="k">yield</span> <span class="p">(</span><span class="s1">&#39;rlineto&#39;</span><span class="p">,</span> <span class="n">last_args</span><span class="p">)</span>
+	<span class="nd">@staticmethod</span>
+	<span class="k">def</span> <span class="nf">rlinecurve</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+		<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">8</span> <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span> <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+		<span class="n">args</span><span class="p">,</span> <span class="n">last_args</span> <span class="o">=</span> <span class="n">args</span><span class="p">[:</span><span class="o">-</span><span class="mi">6</span><span class="p">],</span> <span class="n">args</span><span class="p">[</span><span class="o">-</span><span class="mi">6</span><span class="p">:]</span>
+		<span class="k">for</span> <span class="n">args</span> <span class="ow">in</span> <span class="n">_everyN</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>
+			<span class="k">yield</span> <span class="p">(</span><span class="s1">&#39;rlineto&#39;</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span>
+		<span class="k">yield</span> <span class="p">(</span><span class="s1">&#39;rrcurveto&#39;</span><span class="p">,</span> <span class="n">last_args</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">_convertBlendOpToArgs</span><span class="p">(</span><span class="n">blendList</span><span class="p">):</span>
+	<span class="c1"># args is list of blend op args. Since we are supporting</span>
+	<span class="c1"># recursive blend op calls, some of these args may also</span>
+	<span class="c1"># be a list of blend op args, and need to be converted before</span>
+	<span class="c1"># we convert the current list.</span>
+	<span class="k">if</span> <span class="nb">any</span><span class="p">([</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">arg</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span> <span class="k">for</span> <span class="n">arg</span> <span class="ow">in</span> <span class="n">blendList</span><span class="p">]):</span>
+		<span class="n">args</span> <span class="o">=</span>  <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">blendList</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> 
+					<span class="p">(</span><span class="n">_convertBlendOpToArgs</span><span class="p">(</span><span class="n">e</span><span class="p">)</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">e</span><span class="p">,</span><span class="nb">list</span><span class="p">)</span> <span class="k">else</span> <span class="p">[</span><span class="n">e</span><span class="p">])</span> <span class="p">]</span>
+	<span class="k">else</span><span class="p">:</span>
+		<span class="n">args</span> <span class="o">=</span> <span class="n">blendList</span>
+
+	<span class="c1"># We now know that blendList contains a blend op argument list, even if</span>
+	<span class="c1"># some of the args are lists that each contain a blend op argument list.</span>
+	<span class="c1"># 	Convert from:</span>
+	<span class="c1"># 		[default font arg sequence x0,...,xn] + [delta tuple for x0] + ... + [delta tuple for xn]</span>
+	<span class="c1"># 	to:</span>
+	<span class="c1"># 		[ [x0] + [delta tuple for x0],</span>
+	<span class="c1">#                 ...,</span>
+	<span class="c1">#          [xn] + [delta tuple for xn] ]</span>
+	<span class="n">numBlends</span> <span class="o">=</span> <span class="n">args</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+	<span class="c1"># Can&#39;t use args.pop() when the args are being used in a nested list</span>
+	<span class="c1"># comprehension. See calling context</span>
+	<span class="n">args</span> <span class="o">=</span> <span class="n">args</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+	<span class="n">numRegions</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span><span class="o">//</span><span class="n">numBlends</span> <span class="o">-</span> <span class="mi">1</span>
+	<span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">numBlends</span><span class="o">*</span><span class="p">(</span><span class="n">numRegions</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)):</span>
+		<span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">blendList</span><span class="p">)</span>
+
+	<span class="n">defaultArgs</span> <span class="o">=</span> <span class="p">[[</span><span class="n">arg</span><span class="p">]</span> <span class="k">for</span> <span class="n">arg</span> <span class="ow">in</span> <span class="n">args</span><span class="p">[:</span><span class="n">numBlends</span><span class="p">]]</span>
+	<span class="n">deltaArgs</span> <span class="o">=</span> <span class="n">args</span><span class="p">[</span><span class="n">numBlends</span><span class="p">:]</span>
+	<span class="n">numDeltaValues</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">deltaArgs</span><span class="p">)</span>
+	<span class="n">deltaList</span> <span class="o">=</span> <span class="p">[</span> <span class="n">deltaArgs</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span> <span class="o">+</span> <span class="n">numRegions</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">numDeltaValues</span><span class="p">,</span> <span class="n">numRegions</span><span class="p">)</span> <span class="p">]</span>
+	<span class="n">blend_args</span> <span class="o">=</span> <span class="p">[</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="k">for</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">defaultArgs</span><span class="p">,</span><span class="n">deltaList</span><span class="p">)]</span>
+	<span class="k">return</span> <span class="n">blend_args</span>
+
+<div class="viewcode-block" id="generalizeCommands"><a class="viewcode-back" href="../../../cffLib/specializer.html#fontTools.cffLib.specializer.generalizeCommands">[docs]</a><span class="k">def</span> <span class="nf">generalizeCommands</span><span class="p">(</span><span class="n">commands</span><span class="p">,</span> <span class="n">ignoreErrors</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+	<span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+	<span class="n">mapping</span> <span class="o">=</span> <span class="n">_GeneralizerDecombinerCommandsMap</span>
+	<span class="k">for</span> <span class="n">op</span><span class="p">,</span> <span class="n">args</span> <span class="ow">in</span> <span class="n">commands</span><span class="p">:</span>
+		<span class="c1"># First, generalize any blend args in the arg list.</span>
+		<span class="k">if</span> <span class="nb">any</span><span class="p">([</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">arg</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span> <span class="k">for</span> <span class="n">arg</span> <span class="ow">in</span> <span class="n">args</span><span class="p">]):</span>
+			<span class="k">try</span><span class="p">:</span>
+				<span class="n">args</span> <span class="o">=</span> <span class="p">[</span><span class="n">n</span> <span class="k">for</span> <span class="n">arg</span> <span class="ow">in</span> <span class="n">args</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="p">(</span><span class="n">_convertBlendOpToArgs</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">arg</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span> <span class="k">else</span> <span class="p">[</span><span class="n">arg</span><span class="p">])]</span>
+			<span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+				<span class="k">if</span> <span class="n">ignoreErrors</span><span class="p">:</span>
+					<span class="c1"># Store op as data, such that consumers of commands do not have to</span>
+					<span class="c1"># deal with incorrect number of arguments.</span>
+					<span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">args</span><span class="p">))</span>
+					<span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="p">[</span><span class="n">op</span><span class="p">]))</span>
+				<span class="k">else</span><span class="p">:</span>
+					<span class="k">raise</span>
+
+		<span class="n">func</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">mapping</span><span class="p">,</span> <span class="n">op</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="n">func</span><span class="p">:</span>
+			<span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">op</span><span class="p">,</span><span class="n">args</span><span class="p">))</span>
+			<span class="k">continue</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="k">for</span> <span class="n">command</span> <span class="ow">in</span> <span class="n">func</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+				<span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">command</span><span class="p">)</span>
+		<span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+			<span class="k">if</span> <span class="n">ignoreErrors</span><span class="p">:</span>
+				<span class="c1"># Store op as data, such that consumers of commands do not have to</span>
+				<span class="c1"># deal with incorrect number of arguments.</span>
+				<span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">args</span><span class="p">))</span>
+				<span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="p">[</span><span class="n">op</span><span class="p">]))</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="k">raise</span>
+	<span class="k">return</span> <span class="n">result</span></div>
+
+<div class="viewcode-block" id="generalizeProgram"><a class="viewcode-back" href="../../../cffLib/specializer.html#fontTools.cffLib.specializer.generalizeProgram">[docs]</a><span class="k">def</span> <span class="nf">generalizeProgram</span><span class="p">(</span><span class="n">program</span><span class="p">,</span> <span class="n">getNumRegions</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+	<span class="k">return</span> <span class="n">commandsToProgram</span><span class="p">(</span><span class="n">generalizeCommands</span><span class="p">(</span><span class="n">programToCommands</span><span class="p">(</span><span class="n">program</span><span class="p">,</span> <span class="n">getNumRegions</span><span class="p">),</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">))</span></div>
+
+
+<span class="k">def</span> <span class="nf">_categorizeVector</span><span class="p">(</span><span class="n">v</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	Takes X,Y vector v and returns one of r, h, v, or 0 depending on which</span>
+<span class="sd">	of X and/or Y are zero, plus tuple of nonzero ones.  If both are zero,</span>
+<span class="sd">	it returns a single zero still.</span>
+
+<span class="sd">	&gt;&gt;&gt; _categorizeVector((0,0))</span>
+<span class="sd">	(&#39;0&#39;, (0,))</span>
+<span class="sd">	&gt;&gt;&gt; _categorizeVector((1,0))</span>
+<span class="sd">	(&#39;h&#39;, (1,))</span>
+<span class="sd">	&gt;&gt;&gt; _categorizeVector((0,2))</span>
+<span class="sd">	(&#39;v&#39;, (2,))</span>
+<span class="sd">	&gt;&gt;&gt; _categorizeVector((1,2))</span>
+<span class="sd">	(&#39;r&#39;, (1, 2))</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="k">if</span> <span class="ow">not</span> <span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="n">v</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
+			<span class="k">return</span> <span class="s1">&#39;0&#39;</span><span class="p">,</span> <span class="n">v</span><span class="p">[:</span><span class="mi">1</span><span class="p">]</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="k">return</span> <span class="s1">&#39;v&#39;</span><span class="p">,</span> <span class="n">v</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+	<span class="k">else</span><span class="p">:</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="n">v</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
+			<span class="k">return</span> <span class="s1">&#39;h&#39;</span><span class="p">,</span> <span class="n">v</span><span class="p">[:</span><span class="mi">1</span><span class="p">]</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="k">return</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">v</span>
+
+<span class="k">def</span> <span class="nf">_mergeCategories</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+	<span class="k">if</span> <span class="n">a</span> <span class="o">==</span> <span class="s1">&#39;0&#39;</span><span class="p">:</span> <span class="k">return</span> <span class="n">b</span>
+	<span class="k">if</span> <span class="n">b</span> <span class="o">==</span> <span class="s1">&#39;0&#39;</span><span class="p">:</span> <span class="k">return</span> <span class="n">a</span>
+	<span class="k">if</span> <span class="n">a</span> <span class="o">==</span> <span class="n">b</span><span class="p">:</span> <span class="k">return</span> <span class="n">a</span>
+	<span class="k">return</span> <span class="kc">None</span>
+
+<span class="k">def</span> <span class="nf">_negateCategory</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+	<span class="k">if</span> <span class="n">a</span> <span class="o">==</span> <span class="s1">&#39;h&#39;</span><span class="p">:</span> <span class="k">return</span> <span class="s1">&#39;v&#39;</span>
+	<span class="k">if</span> <span class="n">a</span> <span class="o">==</span> <span class="s1">&#39;v&#39;</span><span class="p">:</span> <span class="k">return</span> <span class="s1">&#39;h&#39;</span>
+	<span class="k">assert</span> <span class="n">a</span> <span class="ow">in</span> <span class="s1">&#39;0r&#39;</span>
+	<span class="k">return</span> <span class="n">a</span>
+
+<span class="k">def</span> <span class="nf">_convertToBlendCmds</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+	<span class="c1"># return a list of blend commands, and</span>
+	<span class="c1"># the remaining non-blended args, if any.</span>
+	<span class="n">num_args</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+	<span class="n">stack_use</span> <span class="o">=</span> <span class="mi">0</span>
+	<span class="n">new_args</span> <span class="o">=</span> <span class="p">[]</span>
+	<span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+	<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">num_args</span><span class="p">:</span>
+		<span class="n">arg</span> <span class="o">=</span> <span class="n">args</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">arg</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+			<span class="n">new_args</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span>
+			<span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+			<span class="n">stack_use</span> <span class="o">+=</span> <span class="mi">1</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="n">prev_stack_use</span> <span class="o">=</span> <span class="n">stack_use</span>
+			<span class="c1"># The arg is a tuple of blend values.</span>
+			<span class="c1"># These are each (master 0,delta 1..delta n)</span>
+			<span class="c1"># Combine as many successive tuples as we can,</span>
+			<span class="c1"># up to the max stack limit.</span>
+			<span class="n">num_sources</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span>
+			<span class="n">blendlist</span> <span class="o">=</span> <span class="p">[</span><span class="n">arg</span><span class="p">]</span>
+			<span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+			<span class="n">stack_use</span> <span class="o">+=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">num_sources</span>  <span class="c1"># 1 for the num_blends arg</span>
+			<span class="k">while</span> <span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">num_args</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="nb">list</span><span class="p">):</span>
+				<span class="n">blendlist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+				<span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+				<span class="n">stack_use</span> <span class="o">+=</span> <span class="n">num_sources</span>
+				<span class="k">if</span> <span class="n">stack_use</span> <span class="o">+</span> <span class="n">num_sources</span> <span class="o">&gt;</span> <span class="n">maxStackLimit</span><span class="p">:</span>
+					<span class="c1"># if we are here, max stack is the CFF2 max stack.</span>
+					<span class="c1"># I use the CFF2 max stack limit here rather than</span>
+					<span class="c1"># the &#39;maxstack&#39; chosen by the client, as the default</span>
+					<span class="c1">#  maxstack may have been used unintentionally. For all</span>
+					<span class="c1"># the other operators, this just produces a little less</span>
+					<span class="c1"># optimization, but here it puts a hard (and low) limit</span>
+					<span class="c1"># on the number of source fonts that can be used.</span>
+					<span class="k">break</span>
+			<span class="c1"># blendList now contains as many single blend tuples as can be</span>
+			<span class="c1"># combined without exceeding the CFF2 stack limit.</span>
+			<span class="n">num_blends</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">blendlist</span><span class="p">)</span>
+			<span class="c1"># append the &#39;num_blends&#39; default font values</span>
+			<span class="n">blend_args</span> <span class="o">=</span> <span class="p">[]</span>
+			<span class="k">for</span> <span class="n">arg</span> <span class="ow">in</span> <span class="n">blendlist</span><span class="p">:</span>
+				<span class="n">blend_args</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">arg</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+			<span class="k">for</span> <span class="n">arg</span> <span class="ow">in</span> <span class="n">blendlist</span><span class="p">:</span>
+				<span class="n">blend_args</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">arg</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
+			<span class="n">blend_args</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">num_blends</span><span class="p">)</span>
+			<span class="n">new_args</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">blend_args</span><span class="p">)</span>
+			<span class="n">stack_use</span> <span class="o">=</span> <span class="n">prev_stack_use</span> <span class="o">+</span> <span class="n">num_blends</span>
+
+	<span class="k">return</span> <span class="n">new_args</span>
+
+<span class="k">def</span> <span class="nf">_addArgs</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+	<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+		<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+			<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="n">b</span><span class="p">):</span>
+				<span class="k">raise</span> <span class="ne">ValueError</span><span class="p">()</span>
+			<span class="k">return</span> <span class="p">[</span><span class="n">_addArgs</span><span class="p">(</span><span class="n">va</span><span class="p">,</span> <span class="n">vb</span><span class="p">)</span> <span class="k">for</span> <span class="n">va</span><span class="p">,</span><span class="n">vb</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)]</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span>
+	<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+		<span class="k">return</span> <span class="p">[</span><span class="n">_addArgs</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">b</span><span class="p">)]</span> <span class="o">+</span> <span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+	<span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+
+
+<div class="viewcode-block" id="specializeCommands"><a class="viewcode-back" href="../../../cffLib/specializer.html#fontTools.cffLib.specializer.specializeCommands">[docs]</a><span class="k">def</span> <span class="nf">specializeCommands</span><span class="p">(</span><span class="n">commands</span><span class="p">,</span>
+		       <span class="n">ignoreErrors</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+		       <span class="n">generalizeFirst</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+		       <span class="n">preserveTopology</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+		       <span class="n">maxstack</span><span class="o">=</span><span class="mi">48</span><span class="p">):</span>
+
+	<span class="c1"># We perform several rounds of optimizations.  They are carefully ordered and are:</span>
+	<span class="c1">#</span>
+	<span class="c1"># 0. Generalize commands.</span>
+	<span class="c1">#    This ensures that they are in our expected simple form, with each line/curve only</span>
+	<span class="c1">#    having arguments for one segment, and using the generic form (rlineto/rrcurveto).</span>
+	<span class="c1">#    If caller is sure the input is in this form, they can turn off generalization to</span>
+	<span class="c1">#    save time.</span>
+	<span class="c1">#</span>
+	<span class="c1"># 1. Combine successive rmoveto operations.</span>
+	<span class="c1">#</span>
+	<span class="c1"># 2. Specialize rmoveto/rlineto/rrcurveto operators into horizontal/vertical variants.</span>
+	<span class="c1">#    We specialize into some, made-up, variants as well, which simplifies following</span>
+	<span class="c1">#    passes.</span>
+	<span class="c1">#</span>
+	<span class="c1"># 3. Merge or delete redundant operations, to the extent requested.</span>
+	<span class="c1">#    OpenType spec declares point numbers in CFF undefined.  As such, we happily</span>
+	<span class="c1">#    change topology.  If client relies on point numbers (in GPOS anchors, or for</span>
+	<span class="c1">#    hinting purposes(what?)) they can turn this off.</span>
+	<span class="c1">#</span>
+	<span class="c1"># 4. Peephole optimization to revert back some of the h/v variants back into their</span>
+	<span class="c1">#    original &quot;relative&quot; operator (rline/rrcurveto) if that saves a byte.</span>
+	<span class="c1">#</span>
+	<span class="c1"># 5. Combine adjacent operators when possible, minding not to go over max stack size.</span>
+	<span class="c1">#</span>
+	<span class="c1"># 6. Resolve any remaining made-up operators into real operators.</span>
+	<span class="c1">#</span>
+	<span class="c1"># I have convinced myself that this produces optimal bytecode (except for, possibly</span>
+	<span class="c1"># one byte each time maxstack size prohibits combining.)  YMMV, but you&#39;d be wrong. :-)</span>
+	<span class="c1"># A dynamic-programming approach can do the same but would be significantly slower.</span>
+	<span class="c1">#</span>
+	<span class="c1"># 7. For any args which are blend lists, convert them to a blend command.</span>
+
+
+	<span class="c1"># 0. Generalize commands.</span>
+	<span class="k">if</span> <span class="n">generalizeFirst</span><span class="p">:</span>
+		<span class="n">commands</span> <span class="o">=</span> <span class="n">generalizeCommands</span><span class="p">(</span><span class="n">commands</span><span class="p">,</span> <span class="n">ignoreErrors</span><span class="o">=</span><span class="n">ignoreErrors</span><span class="p">)</span>
+	<span class="k">else</span><span class="p">:</span>
+		<span class="n">commands</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">commands</span><span class="p">)</span> <span class="c1"># Make copy since we modify in-place later.</span>
+
+	<span class="c1"># 1. Combine successive rmoveto operations.</span>
+	<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">commands</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+		<span class="k">if</span> <span class="s1">&#39;rmoveto&#39;</span> <span class="o">==</span> <span class="n">commands</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">commands</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]:</span>
+			<span class="n">v1</span><span class="p">,</span> <span class="n">v2</span> <span class="o">=</span> <span class="n">commands</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">commands</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+			<span class="n">commands</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;rmoveto&#39;</span><span class="p">,</span> <span class="p">[</span><span class="n">v1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="n">v2</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">v1</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">v2</span><span class="p">[</span><span class="mi">1</span><span class="p">]])</span>
+			<span class="k">del</span> <span class="n">commands</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+
+	<span class="c1"># 2. Specialize rmoveto/rlineto/rrcurveto operators into horizontal/vertical variants.</span>
+	<span class="c1">#</span>
+	<span class="c1"># We, in fact, specialize into more, made-up, variants that special-case when both</span>
+	<span class="c1"># X and Y components are zero.  This simplifies the following optimization passes.</span>
+	<span class="c1"># This case is rare, but OCD does not let me skip it.</span>
+	<span class="c1">#</span>
+	<span class="c1"># After this round, we will have four variants that use the following mnemonics:</span>
+	<span class="c1">#</span>
+	<span class="c1">#  - &#39;r&#39; for relative,   ie. non-zero X and non-zero Y,</span>
+	<span class="c1">#  - &#39;h&#39; for horizontal, ie. zero X and non-zero Y,</span>
+	<span class="c1">#  - &#39;v&#39; for vertical,   ie. non-zero X and zero Y,</span>
+	<span class="c1">#  - &#39;0&#39; for zeros,      ie. zero X and zero Y.</span>
+	<span class="c1">#</span>
+	<span class="c1"># The &#39;0&#39; pseudo-operators are not part of the spec, but help simplify the following</span>
+	<span class="c1"># optimization rounds.  We resolve them at the end.  So, after this, we will have four</span>
+	<span class="c1"># moveto and four lineto variants:</span>
+	<span class="c1">#</span>
+	<span class="c1">#  - 0moveto, 0lineto</span>
+	<span class="c1">#  - hmoveto, hlineto</span>
+	<span class="c1">#  - vmoveto, vlineto</span>
+	<span class="c1">#  - rmoveto, rlineto</span>
+	<span class="c1">#</span>
+	<span class="c1"># and sixteen curveto variants.  For example, a &#39;0hcurveto&#39; operator means a curve</span>
+	<span class="c1"># dx0,dy0,dx1,dy1,dx2,dy2,dx3,dy3 where dx0, dx1, and dy3 are zero but not dx3.</span>
+	<span class="c1"># An &#39;rvcurveto&#39; means dx3 is zero but not dx0,dy0,dy3.</span>
+	<span class="c1">#</span>
+	<span class="c1"># There are nine different variants of curves without the &#39;0&#39;.  Those nine map exactly</span>
+	<span class="c1"># to the existing curve variants in the spec: rrcurveto, and the four variants hhcurveto,</span>
+	<span class="c1"># vvcurveto, hvcurveto, and vhcurveto each cover two cases, one with an odd number of</span>
+	<span class="c1"># arguments and one without.  Eg. an hhcurveto with an extra argument (odd number of</span>
+	<span class="c1"># arguments) is in fact an rhcurveto.  The operators in the spec are designed such that</span>
+	<span class="c1"># all four of rhcurveto, rvcurveto, hrcurveto, and vrcurveto are encodable for one curve.</span>
+	<span class="c1">#</span>
+	<span class="c1"># Of the curve types with &#39;0&#39;, the 00curveto is equivalent to a lineto variant.  The rest</span>
+	<span class="c1"># of the curve types with a 0 need to be encoded as a h or v variant.  Ie. a &#39;0&#39; can be</span>
+	<span class="c1"># thought of a &quot;don&#39;t care&quot; and can be used as either an &#39;h&#39; or a &#39;v&#39;.  As such, we always</span>
+	<span class="c1"># encode a number 0 as argument when we use a &#39;0&#39; variant.  Later on, we can just substitute</span>
+	<span class="c1"># the &#39;0&#39; with either &#39;h&#39; or &#39;v&#39; and it works.</span>
+	<span class="c1">#</span>
+	<span class="c1"># When we get to curve splines however, things become more complicated...  XXX finish this.</span>
+	<span class="c1"># There&#39;s one more complexity with splines.  If one side of the spline is not horizontal or</span>
+	<span class="c1"># vertical (or zero), ie. if it&#39;s &#39;r&#39;, then it limits which spline types we can encode.</span>
+	<span class="c1"># Only hhcurveto and vvcurveto operators can encode a spline starting with &#39;r&#39;, and</span>
+	<span class="c1"># only hvcurveto and vhcurveto operators can encode a spline ending with &#39;r&#39;.</span>
+	<span class="c1"># This limits our merge opportunities later.</span>
+	<span class="c1">#</span>
+	<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">commands</span><span class="p">)):</span>
+		<span class="n">op</span><span class="p">,</span><span class="n">args</span> <span class="o">=</span> <span class="n">commands</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+
+		<span class="k">if</span> <span class="n">op</span> <span class="ow">in</span> <span class="p">{</span><span class="s1">&#39;rmoveto&#39;</span><span class="p">,</span> <span class="s1">&#39;rlineto&#39;</span><span class="p">}:</span>
+			<span class="n">c</span><span class="p">,</span> <span class="n">args</span> <span class="o">=</span> <span class="n">_categorizeVector</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+			<span class="n">commands</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">c</span><span class="o">+</span><span class="n">op</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">args</span>
+			<span class="k">continue</span>
+
+		<span class="k">if</span> <span class="n">op</span> <span class="o">==</span> <span class="s1">&#39;rrcurveto&#39;</span><span class="p">:</span>
+			<span class="n">c1</span><span class="p">,</span> <span class="n">args1</span> <span class="o">=</span> <span class="n">_categorizeVector</span><span class="p">(</span><span class="n">args</span><span class="p">[:</span><span class="mi">2</span><span class="p">])</span>
+			<span class="n">c2</span><span class="p">,</span> <span class="n">args2</span> <span class="o">=</span> <span class="n">_categorizeVector</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:])</span>
+			<span class="n">commands</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">c1</span><span class="o">+</span><span class="n">c2</span><span class="o">+</span><span class="s1">&#39;curveto&#39;</span><span class="p">,</span> <span class="n">args1</span><span class="o">+</span><span class="n">args</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span><span class="o">+</span><span class="n">args2</span>
+			<span class="k">continue</span>
+
+	<span class="c1"># 3. Merge or delete redundant operations, to the extent requested.</span>
+	<span class="c1">#</span>
+	<span class="c1"># TODO</span>
+	<span class="c1"># A 0moveto that comes before all other path operations can be removed.</span>
+	<span class="c1"># though I find conflicting evidence for this.</span>
+	<span class="c1">#</span>
+	<span class="c1"># TODO</span>
+	<span class="c1"># &quot;If hstem and vstem hints are both declared at the beginning of a</span>
+	<span class="c1"># CharString, and this sequence is followed directly by the hintmask or</span>
+	<span class="c1"># cntrmask operators, then the vstem hint operator (or, if applicable,</span>
+	<span class="c1"># the vstemhm operator) need not be included.&quot;</span>
+	<span class="c1">#</span>
+	<span class="c1"># &quot;The sequence and form of a CFF2 CharString program may be represented as:</span>
+	<span class="c1"># {hs* vs* cm* hm* mt subpath}? {mt subpath}*&quot;</span>
+	<span class="c1">#</span>
+	<span class="c1"># https://www.microsoft.com/typography/otspec/cff2charstr.htm#section3.1</span>
+	<span class="c1">#</span>
+	<span class="c1"># For Type2 CharStrings the sequence is:</span>
+	<span class="c1"># w? {hs* vs* cm* hm* mt subpath}? {mt subpath}* endchar&quot;</span>
+
+
+	<span class="c1"># Some other redundancies change topology (point numbers).</span>
+	<span class="k">if</span> <span class="ow">not</span> <span class="n">preserveTopology</span><span class="p">:</span>
+		<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">commands</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+			<span class="n">op</span><span class="p">,</span> <span class="n">args</span> <span class="o">=</span> <span class="n">commands</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+
+			<span class="c1"># A 00curveto is demoted to a (specialized) lineto.</span>
+			<span class="k">if</span> <span class="n">op</span> <span class="o">==</span> <span class="s1">&#39;00curveto&#39;</span><span class="p">:</span>
+				<span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">==</span> <span class="mi">4</span>
+				<span class="n">c</span><span class="p">,</span> <span class="n">args</span> <span class="o">=</span> <span class="n">_categorizeVector</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">])</span>
+				<span class="n">op</span> <span class="o">=</span> <span class="n">c</span><span class="o">+</span><span class="s1">&#39;lineto&#39;</span>
+				<span class="n">commands</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">op</span><span class="p">,</span> <span class="n">args</span>
+				<span class="c1"># and then...</span>
+
+			<span class="c1"># A 0lineto can be deleted.</span>
+			<span class="k">if</span> <span class="n">op</span> <span class="o">==</span> <span class="s1">&#39;0lineto&#39;</span><span class="p">:</span>
+				<span class="k">del</span> <span class="n">commands</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+				<span class="k">continue</span>
+
+			<span class="c1"># Merge adjacent hlineto&#39;s and vlineto&#39;s.</span>
+			<span class="c1"># In CFF2 charstrings from variable fonts, each</span>
+			<span class="c1"># arg item may be a list of blendable values, one from</span>
+			<span class="c1"># each source font.</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="ow">and</span> <span class="n">op</span> <span class="ow">in</span> <span class="p">{</span><span class="s1">&#39;hlineto&#39;</span><span class="p">,</span> <span class="s1">&#39;vlineto&#39;</span><span class="p">}</span> <span class="ow">and</span>
+							<span class="p">(</span><span class="n">op</span> <span class="o">==</span> <span class="n">commands</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">])):</span>
+				<span class="n">_</span><span class="p">,</span> <span class="n">other_args</span> <span class="o">=</span> <span class="n">commands</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+				<span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">other_args</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span>
+				<span class="k">try</span><span class="p">:</span>
+					<span class="n">new_args</span> <span class="o">=</span> <span class="p">[</span><span class="n">_addArgs</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">other_args</span><span class="p">[</span><span class="mi">0</span><span class="p">])]</span>
+				<span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+					<span class="k">continue</span>
+				<span class="n">commands</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">op</span><span class="p">,</span> <span class="n">new_args</span><span class="p">)</span>
+				<span class="k">del</span> <span class="n">commands</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+				<span class="k">continue</span>
+
+	<span class="c1"># 4. Peephole optimization to revert back some of the h/v variants back into their</span>
+	<span class="c1">#    original &quot;relative&quot; operator (rline/rrcurveto) if that saves a byte.</span>
+	<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">commands</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+		<span class="n">op</span><span class="p">,</span><span class="n">args</span> <span class="o">=</span> <span class="n">commands</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+		<span class="n">prv</span><span class="p">,</span><span class="n">nxt</span> <span class="o">=</span> <span class="n">commands</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">commands</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+
+		<span class="k">if</span> <span class="n">op</span> <span class="ow">in</span> <span class="p">{</span><span class="s1">&#39;0lineto&#39;</span><span class="p">,</span> <span class="s1">&#39;hlineto&#39;</span><span class="p">,</span> <span class="s1">&#39;vlineto&#39;</span><span class="p">}</span> <span class="ow">and</span> <span class="n">prv</span> <span class="o">==</span> <span class="n">nxt</span> <span class="o">==</span> <span class="s1">&#39;rlineto&#39;</span><span class="p">:</span>
+			<span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span>
+			<span class="n">args</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="k">if</span> <span class="n">op</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;v&#39;</span> <span class="k">else</span> <span class="p">[</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">0</span><span class="p">]</span>
+			<span class="n">commands</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;rlineto&#39;</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span>
+			<span class="k">continue</span>
+
+		<span class="k">if</span> <span class="n">op</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span> <span class="o">==</span> <span class="s1">&#39;curveto&#39;</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">==</span> <span class="mi">5</span> <span class="ow">and</span> <span class="n">prv</span> <span class="o">==</span> <span class="n">nxt</span> <span class="o">==</span> <span class="s1">&#39;rrcurveto&#39;</span><span class="p">:</span>
+			<span class="k">assert</span> <span class="p">(</span><span class="n">op</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="o">^</span> <span class="p">(</span><span class="n">op</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+			<span class="k">if</span> <span class="n">op</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;v&#39;</span><span class="p">:</span>
+				<span class="n">pos</span> <span class="o">=</span> <span class="mi">0</span>
+			<span class="k">elif</span> <span class="n">op</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;r&#39;</span><span class="p">:</span>
+				<span class="n">pos</span> <span class="o">=</span> <span class="mi">1</span>
+			<span class="k">elif</span> <span class="n">op</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;v&#39;</span><span class="p">:</span>
+				<span class="n">pos</span> <span class="o">=</span> <span class="mi">4</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="n">pos</span> <span class="o">=</span> <span class="mi">5</span>
+			<span class="c1"># Insert, while maintaining the type of args (can be tuple or list).</span>
+			<span class="n">args</span> <span class="o">=</span> <span class="n">args</span><span class="p">[:</span><span class="n">pos</span><span class="p">]</span> <span class="o">+</span> <span class="nb">type</span><span class="p">(</span><span class="n">args</span><span class="p">)((</span><span class="mi">0</span><span class="p">,))</span> <span class="o">+</span> <span class="n">args</span><span class="p">[</span><span class="n">pos</span><span class="p">:]</span>
+			<span class="n">commands</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;rrcurveto&#39;</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span>
+			<span class="k">continue</span>
+
+	<span class="c1"># 5. Combine adjacent operators when possible, minding not to go over max stack size.</span>
+	<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">commands</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+		<span class="n">op1</span><span class="p">,</span><span class="n">args1</span> <span class="o">=</span> <span class="n">commands</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+		<span class="n">op2</span><span class="p">,</span><span class="n">args2</span> <span class="o">=</span> <span class="n">commands</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+		<span class="n">new_op</span> <span class="o">=</span> <span class="kc">None</span>
+
+		<span class="c1"># Merge logic...</span>
+		<span class="k">if</span> <span class="p">{</span><span class="n">op1</span><span class="p">,</span> <span class="n">op2</span><span class="p">}</span> <span class="o">&lt;=</span> <span class="p">{</span><span class="s1">&#39;rlineto&#39;</span><span class="p">,</span> <span class="s1">&#39;rrcurveto&#39;</span><span class="p">}:</span>
+			<span class="k">if</span> <span class="n">op1</span> <span class="o">==</span> <span class="n">op2</span><span class="p">:</span>
+				<span class="n">new_op</span> <span class="o">=</span> <span class="n">op1</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="k">if</span> <span class="n">op2</span> <span class="o">==</span> <span class="s1">&#39;rrcurveto&#39;</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">args2</span><span class="p">)</span> <span class="o">==</span> <span class="mi">6</span><span class="p">:</span>
+					<span class="n">new_op</span> <span class="o">=</span> <span class="s1">&#39;rlinecurve&#39;</span>
+				<span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">args2</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+					<span class="n">new_op</span> <span class="o">=</span> <span class="s1">&#39;rcurveline&#39;</span>
+
+		<span class="k">elif</span> <span class="p">(</span><span class="n">op1</span><span class="p">,</span> <span class="n">op2</span><span class="p">)</span> <span class="ow">in</span> <span class="p">{(</span><span class="s1">&#39;rlineto&#39;</span><span class="p">,</span> <span class="s1">&#39;rlinecurve&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;rrcurveto&#39;</span><span class="p">,</span> <span class="s1">&#39;rcurveline&#39;</span><span class="p">)}:</span>
+			<span class="n">new_op</span> <span class="o">=</span> <span class="n">op2</span>
+
+		<span class="k">elif</span> <span class="p">{</span><span class="n">op1</span><span class="p">,</span> <span class="n">op2</span><span class="p">}</span> <span class="o">==</span> <span class="p">{</span><span class="s1">&#39;vlineto&#39;</span><span class="p">,</span> <span class="s1">&#39;hlineto&#39;</span><span class="p">}:</span>
+			<span class="n">new_op</span> <span class="o">=</span> <span class="n">op1</span>
+
+		<span class="k">elif</span> <span class="s1">&#39;curveto&#39;</span> <span class="o">==</span> <span class="n">op1</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span> <span class="o">==</span> <span class="n">op2</span><span class="p">[</span><span class="mi">2</span><span class="p">:]:</span>
+			<span class="n">d0</span><span class="p">,</span> <span class="n">d1</span> <span class="o">=</span> <span class="n">op1</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span>
+			<span class="n">d2</span><span class="p">,</span> <span class="n">d3</span> <span class="o">=</span> <span class="n">op2</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span>
+
+			<span class="k">if</span> <span class="n">d1</span> <span class="o">==</span> <span class="s1">&#39;r&#39;</span> <span class="ow">or</span> <span class="n">d2</span> <span class="o">==</span> <span class="s1">&#39;r&#39;</span> <span class="ow">or</span> <span class="n">d0</span> <span class="o">==</span> <span class="n">d3</span> <span class="o">==</span> <span class="s1">&#39;r&#39;</span><span class="p">:</span>
+				<span class="k">continue</span>
+
+			<span class="n">d</span> <span class="o">=</span> <span class="n">_mergeCategories</span><span class="p">(</span><span class="n">d1</span><span class="p">,</span> <span class="n">d2</span><span class="p">)</span>
+			<span class="k">if</span> <span class="n">d</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span> <span class="k">continue</span>
+			<span class="k">if</span> <span class="n">d0</span> <span class="o">==</span> <span class="s1">&#39;r&#39;</span><span class="p">:</span>
+				<span class="n">d</span> <span class="o">=</span> <span class="n">_mergeCategories</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">d3</span><span class="p">)</span>
+				<span class="k">if</span> <span class="n">d</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span> <span class="k">continue</span>
+				<span class="n">new_op</span> <span class="o">=</span> <span class="s1">&#39;r&#39;</span><span class="o">+</span><span class="n">d</span><span class="o">+</span><span class="s1">&#39;curveto&#39;</span>
+			<span class="k">elif</span> <span class="n">d3</span> <span class="o">==</span> <span class="s1">&#39;r&#39;</span><span class="p">:</span>
+				<span class="n">d0</span> <span class="o">=</span> <span class="n">_mergeCategories</span><span class="p">(</span><span class="n">d0</span><span class="p">,</span> <span class="n">_negateCategory</span><span class="p">(</span><span class="n">d</span><span class="p">))</span>
+				<span class="k">if</span> <span class="n">d0</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span> <span class="k">continue</span>
+				<span class="n">new_op</span> <span class="o">=</span> <span class="n">d0</span><span class="o">+</span><span class="s1">&#39;r&#39;</span><span class="o">+</span><span class="s1">&#39;curveto&#39;</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="n">d0</span> <span class="o">=</span> <span class="n">_mergeCategories</span><span class="p">(</span><span class="n">d0</span><span class="p">,</span> <span class="n">d3</span><span class="p">)</span>
+				<span class="k">if</span> <span class="n">d0</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span> <span class="k">continue</span>
+				<span class="n">new_op</span> <span class="o">=</span> <span class="n">d0</span><span class="o">+</span><span class="n">d</span><span class="o">+</span><span class="s1">&#39;curveto&#39;</span>
+
+		<span class="c1"># Make sure the stack depth does not exceed (maxstack - 1), so</span>
+		<span class="c1"># that subroutinizer can insert subroutine calls at any point.</span>
+		<span class="k">if</span> <span class="n">new_op</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">args1</span><span class="p">)</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">args2</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">maxstack</span><span class="p">:</span>
+			<span class="n">commands</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">new_op</span><span class="p">,</span> <span class="n">args1</span><span class="o">+</span><span class="n">args2</span><span class="p">)</span>
+			<span class="k">del</span> <span class="n">commands</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+
+	<span class="c1"># 6. Resolve any remaining made-up operators into real operators.</span>
+	<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">commands</span><span class="p">)):</span>
+		<span class="n">op</span><span class="p">,</span><span class="n">args</span> <span class="o">=</span> <span class="n">commands</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+
+		<span class="k">if</span> <span class="n">op</span> <span class="ow">in</span> <span class="p">{</span><span class="s1">&#39;0moveto&#39;</span><span class="p">,</span> <span class="s1">&#39;0lineto&#39;</span><span class="p">}:</span>
+			<span class="n">commands</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;h&#39;</span><span class="o">+</span><span class="n">op</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">args</span>
+			<span class="k">continue</span>
+
+		<span class="k">if</span> <span class="n">op</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span> <span class="o">==</span> <span class="s1">&#39;curveto&#39;</span> <span class="ow">and</span> <span class="n">op</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">{</span><span class="s1">&#39;rr&#39;</span><span class="p">,</span> <span class="s1">&#39;hh&#39;</span><span class="p">,</span> <span class="s1">&#39;vv&#39;</span><span class="p">,</span> <span class="s1">&#39;vh&#39;</span><span class="p">,</span> <span class="s1">&#39;hv&#39;</span><span class="p">}:</span>
+			<span class="n">op0</span><span class="p">,</span> <span class="n">op1</span> <span class="o">=</span> <span class="n">op</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">op0</span> <span class="o">==</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="o">^</span> <span class="p">(</span><span class="n">op1</span> <span class="o">==</span> <span class="s1">&#39;r&#39;</span><span class="p">):</span>
+				<span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span>
+			<span class="k">if</span> <span class="n">op0</span> <span class="o">==</span> <span class="s1">&#39;0&#39;</span><span class="p">:</span> <span class="n">op0</span> <span class="o">=</span> <span class="s1">&#39;h&#39;</span>
+			<span class="k">if</span> <span class="n">op1</span> <span class="o">==</span> <span class="s1">&#39;0&#39;</span><span class="p">:</span> <span class="n">op1</span> <span class="o">=</span> <span class="s1">&#39;h&#39;</span>
+			<span class="k">if</span> <span class="n">op0</span> <span class="o">==</span> <span class="s1">&#39;r&#39;</span><span class="p">:</span> <span class="n">op0</span> <span class="o">=</span> <span class="n">op1</span>
+			<span class="k">if</span> <span class="n">op1</span> <span class="o">==</span> <span class="s1">&#39;r&#39;</span><span class="p">:</span> <span class="n">op1</span> <span class="o">=</span> <span class="n">_negateCategory</span><span class="p">(</span><span class="n">op0</span><span class="p">)</span>
+			<span class="k">assert</span> <span class="p">{</span><span class="n">op0</span><span class="p">,</span><span class="n">op1</span><span class="p">}</span> <span class="o">&lt;=</span> <span class="p">{</span><span class="s1">&#39;h&#39;</span><span class="p">,</span><span class="s1">&#39;v&#39;</span><span class="p">},</span> <span class="p">(</span><span class="n">op0</span><span class="p">,</span> <span class="n">op1</span><span class="p">)</span>
+
+			<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">%</span> <span class="mi">2</span><span class="p">:</span>
+				<span class="k">if</span> <span class="n">op0</span> <span class="o">!=</span> <span class="n">op1</span><span class="p">:</span> <span class="c1"># vhcurveto / hvcurveto</span>
+					<span class="k">if</span> <span class="p">(</span><span class="n">op0</span> <span class="o">==</span> <span class="s1">&#39;h&#39;</span><span class="p">)</span> <span class="o">^</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">%</span> <span class="mi">8</span> <span class="o">==</span> <span class="mi">1</span><span class="p">):</span>
+						<span class="c1"># Swap last two args order</span>
+						<span class="n">args</span> <span class="o">=</span> <span class="n">args</span><span class="p">[:</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span><span class="o">+</span><span class="n">args</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">:]</span><span class="o">+</span><span class="n">args</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+				<span class="k">else</span><span class="p">:</span> <span class="c1"># hhcurveto / vvcurveto</span>
+					<span class="k">if</span> <span class="n">op0</span> <span class="o">==</span> <span class="s1">&#39;h&#39;</span><span class="p">:</span> <span class="c1"># hhcurveto</span>
+						<span class="c1"># Swap first two args order</span>
+						<span class="n">args</span> <span class="o">=</span> <span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span><span class="o">+</span><span class="n">args</span><span class="p">[:</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">args</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span>
+
+			<span class="n">commands</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">op0</span><span class="o">+</span><span class="n">op1</span><span class="o">+</span><span class="s1">&#39;curveto&#39;</span><span class="p">,</span> <span class="n">args</span>
+			<span class="k">continue</span>
+
+	<span class="c1"># 7. For any series of args which are blend lists, convert the series to a single blend arg.</span>
+	<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">commands</span><span class="p">)):</span>
+		<span class="n">op</span><span class="p">,</span> <span class="n">args</span> <span class="o">=</span> <span class="n">commands</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+		<span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">arg</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span> <span class="k">for</span> <span class="n">arg</span> <span class="ow">in</span> <span class="n">args</span><span class="p">):</span>
+			<span class="n">commands</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">op</span><span class="p">,</span> <span class="n">_convertToBlendCmds</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+
+	<span class="k">return</span> <span class="n">commands</span></div>
+
+<div class="viewcode-block" id="specializeProgram"><a class="viewcode-back" href="../../../cffLib/specializer.html#fontTools.cffLib.specializer.specializeProgram">[docs]</a><span class="k">def</span> <span class="nf">specializeProgram</span><span class="p">(</span><span class="n">program</span><span class="p">,</span> <span class="n">getNumRegions</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+	<span class="k">return</span> <span class="n">commandsToProgram</span><span class="p">(</span><span class="n">specializeCommands</span><span class="p">(</span><span class="n">programToCommands</span><span class="p">(</span><span class="n">program</span><span class="p">,</span> <span class="n">getNumRegions</span><span class="p">),</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">))</span></div>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+	<span class="kn">import</span> <span class="nn">sys</span>
+	<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+		<span class="kn">import</span> <span class="nn">doctest</span>
+		<span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="n">doctest</span><span class="o">.</span><span class="n">testmod</span><span class="p">()</span><span class="o">.</span><span class="n">failed</span><span class="p">)</span>
+	<span class="n">program</span> <span class="o">=</span> <span class="n">stringToProgram</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
+	<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Program:&quot;</span><span class="p">);</span> <span class="nb">print</span><span class="p">(</span><span class="n">programToString</span><span class="p">(</span><span class="n">program</span><span class="p">))</span>
+	<span class="n">commands</span> <span class="o">=</span> <span class="n">programToCommands</span><span class="p">(</span><span class="n">program</span><span class="p">)</span>
+	<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Commands:&quot;</span><span class="p">);</span> <span class="nb">print</span><span class="p">(</span><span class="n">commands</span><span class="p">)</span>
+	<span class="n">program2</span> <span class="o">=</span> <span class="n">commandsToProgram</span><span class="p">(</span><span class="n">commands</span><span class="p">)</span>
+	<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Program from commands:&quot;</span><span class="p">);</span> <span class="nb">print</span><span class="p">(</span><span class="n">programToString</span><span class="p">(</span><span class="n">program2</span><span class="p">))</span>
+	<span class="k">assert</span> <span class="n">program</span> <span class="o">==</span> <span class="n">program2</span>
+	<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Generalized program:&quot;</span><span class="p">);</span> <span class="nb">print</span><span class="p">(</span><span class="n">programToString</span><span class="p">(</span><span class="n">generalizeProgram</span><span class="p">(</span><span class="n">program</span><span class="p">)))</span>
+	<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Specialized program:&quot;</span><span class="p">);</span> <span class="nb">print</span><span class="p">(</span><span class="n">programToString</span><span class="p">(</span><span class="n">specializeProgram</span><span class="p">(</span><span class="n">program</span><span class="p">)))</span>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Just van Rossum, Behdad Esfahbod, and the fontTools Authors. CC BY-SA 4.0
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

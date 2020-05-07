@@ -1,0 +1,942 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ufoLib &mdash; fontTools Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="converters" href="converters.html" />
+    <link rel="prev" title="ttx" href="../ttx.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> fontTools
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Library</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../afmLib.html">afmLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../agl.html">agl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cffLib/index.html">cffLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../colorLib/index.html">colorLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cu2qu/index.html">cu2qu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../designspaceLib/index.html">designspaceLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../encodings/index.html">encodings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../feaLib/index.html">feaLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../merge.html">merge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/index.html">misc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mtiLib.html">mtiLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../otlLib/index.html">otlLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pens/index.html">pens</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../subset/index.html">subset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svgLib/index.html">svgLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../t1Lib.html">t1Lib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ttLib/index.html">ttLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ttx.html">ttx</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">ufoLib</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="converters.html">converters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="errors.html">errors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="filenames.html">filenames</a></li>
+<li class="toctree-l2"><a class="reference internal" href="glifLib.html">glifLib</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kerning.html">kerning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plistlib.html">plistlib</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pointpen.html">pointPen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.html">utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="validators.html">validators</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../unicode.html">unicode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unicodedata/index.html">unicodedata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../varLib/index.html">varLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../voltLib.html">voltLib</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">fontTools</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>ufoLib</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/ufoLib/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="ufolib">
+<h1>ufoLib<a class="headerlink" href="#ufolib" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="converters.html">converters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="errors.html">errors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="filenames.html">filenames</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glifLib.html">glifLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kerning.html">kerning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plistlib.html">plistlib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pointpen.html">pointPen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="utils.html">utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="validators.html">validators</a></li>
+</ul>
+</div>
+<span class="target" id="module-fontTools.ufoLib"></span><dl class="py function">
+<dt id="fontTools.ufoLib.makeUFOPath">
+<code class="sig-prename descclassname">fontTools.ufoLib.</code><code class="sig-name descname">makeUFOPath</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ufoLib.html#makeUFOPath"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ufoLib.makeUFOPath" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a .ufo pathname.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">makeUFOPath</span><span class="p">(</span><span class="s2">&quot;directory/something.ext&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="p">(</span>
+<span class="gp">... </span>    <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;directory&#39;</span><span class="p">,</span> <span class="s1">&#39;something.ufo&#39;</span><span class="p">))</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">makeUFOPath</span><span class="p">(</span><span class="s2">&quot;directory/something.another.thing.ext&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="p">(</span>
+<span class="gp">... </span>    <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;directory&#39;</span><span class="p">,</span> <span class="s1">&#39;something.another.thing.ufo&#39;</span><span class="p">))</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py exception">
+<dt id="fontTools.ufoLib.UFOLibError">
+<em class="property">exception </em><code class="sig-prename descclassname">fontTools.ufoLib.</code><code class="sig-name descname">UFOLibError</code><a class="reference internal" href="../_modules/fontTools/ufoLib/errors.html#UFOLibError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ufoLib.UFOLibError" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py attribute">
+<dt id="fontTools.ufoLib.UFOLibError.args">
+<code class="sig-name descname">args</code><a class="headerlink" href="#fontTools.ufoLib.UFOLibError.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ufoLib.UFOLibError.with_traceback">
+<code class="sig-name descname">with_traceback</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.ufoLib.UFOLibError.with_traceback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.ufoLib.UFOReader">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.ufoLib.</code><code class="sig-name descname">UFOReader</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em>, <em class="sig-param"><span class="n">validate</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ufoLib.html#UFOReader"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ufoLib.UFOReader" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read the various components of the .ufo.</p>
+<p>By default read data is validated. Set <code class="docutils literal notranslate"><span class="pre">validate</span></code> to
+<code class="docutils literal notranslate"><span class="pre">False</span></code> to not validate the data.</p>
+<dl class="py method">
+<dt id="fontTools.ufoLib.UFOReader.close">
+<code class="sig-name descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ufoLib.html#UFOReader.close"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ufoLib.UFOReader.close" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ufoLib.UFOReader.fileStructure">
+<em class="property">property </em><code class="sig-name descname">fileStructure</code><a class="headerlink" href="#fontTools.ufoLib.UFOReader.fileStructure" title="Permalink to this definition">¶</a></dt>
+<dd><p>either UFOFileStructure.ZIP or UFOFileStructure.PACKAGE</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>The file structure of the UFO</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ufoLib.UFOReader.formatVersion">
+<em class="property">property </em><code class="sig-name descname">formatVersion</code><a class="headerlink" href="#fontTools.ufoLib.UFOReader.formatVersion" title="Permalink to this definition">¶</a></dt>
+<dd><p>The format version of the UFO. This is determined by reading metainfo.plist during __init__.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ufoLib.UFOReader.getCharacterMapping">
+<code class="sig-name descname">getCharacterMapping</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">layerName</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">validate</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ufoLib.html#UFOReader.getCharacterMapping"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ufoLib.UFOReader.getCharacterMapping" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a dictionary that maps unicode values (ints) to
+lists of glyph names.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ufoLib.UFOReader.getDataDirectoryListing">
+<code class="sig-name descname">getDataDirectoryListing</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ufoLib.html#UFOReader.getDataDirectoryListing"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ufoLib.UFOReader.getDataDirectoryListing" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list of all files in the data directory.
+The returned paths will be relative to the UFO.
+This will not list directory names, only file names.
+Thus, empty directories will be skipped.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ufoLib.UFOReader.getDefaultLayerName">
+<code class="sig-name descname">getDefaultLayerName</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">validate</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ufoLib.html#UFOReader.getDefaultLayerName"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ufoLib.UFOReader.getDefaultLayerName" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the default layer name from layercontents.plist.</p>
+<p><code class="docutils literal notranslate"><span class="pre">validate</span></code> will validate the data, by default it is set to the
+class’s validate value, can be overridden.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ufoLib.UFOReader.getFileModificationTime">
+<code class="sig-name descname">getFileModificationTime</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.ufoLib.UFOReader.getFileModificationTime" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the modification time for the file at the given path, as a
+floating point number giving the number of seconds since the epoch.
+The path must be relative to the UFO path.
+Returns None if the file does not exist.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ufoLib.UFOReader.getGlyphSet">
+<code class="sig-name descname">getGlyphSet</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">layerName</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">validateRead</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">validateWrite</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ufoLib.html#UFOReader.getGlyphSet"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ufoLib.UFOReader.getGlyphSet" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the GlyphSet associated with the
+glyphs directory mapped to layerName
+in the UFO. If layerName is not provided,
+the name retrieved with getDefaultLayerName
+will be used.</p>
+<p><code class="docutils literal notranslate"><span class="pre">validateRead</span></code> will validate the read data, by default it is set to the
+class’s validate value, can be overridden.
+<code class="docutils literal notranslate"><span class="pre">validateWrite</span></code> will validate the written data, by default it is set to the
+class’s validate value, can be overridden.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ufoLib.UFOReader.getImageDirectoryListing">
+<code class="sig-name descname">getImageDirectoryListing</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">validate</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ufoLib.html#UFOReader.getImageDirectoryListing"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ufoLib.UFOReader.getImageDirectoryListing" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list of all image file names in
+the images directory. Each of the images will
+have been verified to have the PNG signature.</p>
+<p><code class="docutils literal notranslate"><span class="pre">validate</span></code> will validate the data, by default it is set to the
+class’s validate value, can be overridden.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ufoLib.UFOReader.getKerningGroupConversionRenameMaps">
+<code class="sig-name descname">getKerningGroupConversionRenameMaps</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">validate</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ufoLib.html#UFOReader.getKerningGroupConversionRenameMaps"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ufoLib.UFOReader.getKerningGroupConversionRenameMaps" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get maps defining the renaming that was done during any
+needed kerning group conversion. This method returns a
+dictionary of this form:</p>
+<blockquote>
+<div><dl class="simple">
+<dt>{</dt><dd><p>“side1” : {“old group name” : “new group name”},
+“side2” : {“old group name” : “new group name”}</p>
+</dd>
+</dl>
+<p>}</p>
+</div></blockquote>
+<p>When no conversion has been performed, the side1 and side2
+dictionaries will be empty.</p>
+<p><code class="docutils literal notranslate"><span class="pre">validate</span></code> will validate the groups, by default it is set to the
+class’s validate value, can be overridden.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ufoLib.UFOReader.getLayerNames">
+<code class="sig-name descname">getLayerNames</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">validate</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ufoLib.html#UFOReader.getLayerNames"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ufoLib.UFOReader.getLayerNames" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the ordered layer names from layercontents.plist.</p>
+<p><code class="docutils literal notranslate"><span class="pre">validate</span></code> will validate the data, by default it is set to the
+class’s validate value, can be overridden.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ufoLib.UFOReader.getReadFileForPath">
+<code class="sig-name descname">getReadFileForPath</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em>, <em class="sig-param"><span class="n">encoding</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ufoLib.html#UFOReader.getReadFileForPath"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ufoLib.UFOReader.getReadFileForPath" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a file (or file-like) object for the file at the given path.
+The path must be relative to the UFO path.
+Returns None if the file does not exist.
+By default the file is opened in binary mode (reads bytes).
+If encoding is passed, the file is opened in text mode (reads str).</p>
+<p>Note: The caller is responsible for closing the open file.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ufoLib.UFOReader.path">
+<em class="property">property </em><code class="sig-name descname">path</code><a class="headerlink" href="#fontTools.ufoLib.UFOReader.path" title="Permalink to this definition">¶</a></dt>
+<dd><p>The path of the UFO (DEPRECATED).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ufoLib.UFOReader.readBytesFromPath">
+<code class="sig-name descname">readBytesFromPath</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ufoLib.html#UFOReader.readBytesFromPath"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ufoLib.UFOReader.readBytesFromPath" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the bytes in the file at the given path.
+The path must be relative to the UFO’s filesystem root.
+Returns None if the file does not exist.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ufoLib.UFOReader.readData">
+<code class="sig-name descname">readData</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fileName</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ufoLib.html#UFOReader.readData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ufoLib.UFOReader.readData" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return bytes for the file named ‘fileName’ inside the ‘data/’ directory.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ufoLib.UFOReader.readFeatures">
+<code class="sig-name descname">readFeatures</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ufoLib.html#UFOReader.readFeatures"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ufoLib.UFOReader.readFeatures" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read features.fea. Return a string.
+The returned string is empty if the file is missing.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ufoLib.UFOReader.readGroups">
+<code class="sig-name descname">readGroups</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">validate</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ufoLib.html#UFOReader.readGroups"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ufoLib.UFOReader.readGroups" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read groups.plist. Returns a dict.
+<code class="docutils literal notranslate"><span class="pre">validate</span></code> will validate the read data, by default it is set to the
+class’s validate value, can be overridden.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ufoLib.UFOReader.readImage">
+<code class="sig-name descname">readImage</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fileName</span></em>, <em class="sig-param"><span class="n">validate</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ufoLib.html#UFOReader.readImage"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ufoLib.UFOReader.readImage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return image data for the file named fileName.</p>
+<p><code class="docutils literal notranslate"><span class="pre">validate</span></code> will validate the data, by default it is set to the
+class’s validate value, can be overridden.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ufoLib.UFOReader.readInfo">
+<code class="sig-name descname">readInfo</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">info</span></em>, <em class="sig-param"><span class="n">validate</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ufoLib.html#UFOReader.readInfo"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ufoLib.UFOReader.readInfo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read fontinfo.plist. It requires an object that allows
+setting attributes with names that follow the fontinfo.plist
+version 3 specification. This will write the attributes
+defined in the file into the object.</p>
+<p><code class="docutils literal notranslate"><span class="pre">validate</span></code> will validate the read data, by default it is set to the
+class’s validate value, can be overridden.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ufoLib.UFOReader.readKerning">
+<code class="sig-name descname">readKerning</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">validate</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ufoLib.html#UFOReader.readKerning"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ufoLib.UFOReader.readKerning" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read kerning.plist. Returns a dict.</p>
+<p><code class="docutils literal notranslate"><span class="pre">validate</span></code> will validate the kerning data, by default it is set to the
+class’s validate value, can be overridden.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ufoLib.UFOReader.readLib">
+<code class="sig-name descname">readLib</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">validate</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ufoLib.html#UFOReader.readLib"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ufoLib.UFOReader.readLib" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read lib.plist. Returns a dict.</p>
+<p><code class="docutils literal notranslate"><span class="pre">validate</span></code> will validate the data, by default it is set to the
+class’s validate value, can be overridden.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ufoLib.UFOReader.readMetaInfo">
+<code class="sig-name descname">readMetaInfo</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">validate</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ufoLib.html#UFOReader.readMetaInfo"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ufoLib.UFOReader.readMetaInfo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read metainfo.plist. Only used for internal operations.</p>
+<p><code class="docutils literal notranslate"><span class="pre">validate</span></code> will validate the read data, by default it is set
+to the class’s validate value, can be overridden.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.ufoLib.UFOWriter">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.ufoLib.</code><code class="sig-name descname">UFOWriter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em>, <em class="sig-param"><span class="n">formatVersion</span><span class="o">=</span><span class="default_value">3</span></em>, <em class="sig-param"><span class="n">fileCreator</span><span class="o">=</span><span class="default_value">'com.github.fonttools.ufoLib'</span></em>, <em class="sig-param"><span class="n">structure</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">validate</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ufoLib.html#UFOWriter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ufoLib.UFOWriter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write the various components of the .ufo.</p>
+<p>By default, the written data will be validated before writing. Set <code class="docutils literal notranslate"><span class="pre">validate</span></code> to
+<code class="docutils literal notranslate"><span class="pre">False</span></code> if you do not want to validate the data. Validation can also be overriden
+on a per method level if desired.</p>
+<dl class="py method">
+<dt id="fontTools.ufoLib.UFOWriter.close">
+<code class="sig-name descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ufoLib.html#UFOWriter.close"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ufoLib.UFOWriter.close" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ufoLib.UFOWriter.copyFromReader">
+<code class="sig-name descname">copyFromReader</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">reader</span></em>, <em class="sig-param"><span class="n">sourcePath</span></em>, <em class="sig-param"><span class="n">destPath</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ufoLib.html#UFOWriter.copyFromReader"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ufoLib.UFOWriter.copyFromReader" title="Permalink to this definition">¶</a></dt>
+<dd><p>Copy the sourcePath in the provided UFOReader to destPath
+in this writer. The paths must be relative. This works with
+both individual files and directories.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ufoLib.UFOWriter.copyImageFromReader">
+<code class="sig-name descname">copyImageFromReader</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">reader</span></em>, <em class="sig-param"><span class="n">sourceFileName</span></em>, <em class="sig-param"><span class="n">destFileName</span></em>, <em class="sig-param"><span class="n">validate</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ufoLib.html#UFOWriter.copyImageFromReader"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ufoLib.UFOWriter.copyImageFromReader" title="Permalink to this definition">¶</a></dt>
+<dd><p>Copy the sourceFileName in the provided UFOReader to destFileName
+in this writer. This uses the most memory efficient method possible
+for copying the data possible.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ufoLib.UFOWriter.deleteGlyphSet">
+<code class="sig-name descname">deleteGlyphSet</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">layerName</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ufoLib.html#UFOWriter.deleteGlyphSet"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ufoLib.UFOWriter.deleteGlyphSet" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove the glyph set matching layerName.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ufoLib.UFOWriter.fileCreator">
+<em class="property">property </em><code class="sig-name descname">fileCreator</code><a class="headerlink" href="#fontTools.ufoLib.UFOWriter.fileCreator" title="Permalink to this definition">¶</a></dt>
+<dd><p>The file creator of the UFO. This is set into metainfo.plist during __init__.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ufoLib.UFOWriter.fileStructure">
+<em class="property">property </em><code class="sig-name descname">fileStructure</code><a class="headerlink" href="#fontTools.ufoLib.UFOWriter.fileStructure" title="Permalink to this definition">¶</a></dt>
+<dd><p>either UFOFileStructure.ZIP or UFOFileStructure.PACKAGE</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>The file structure of the UFO</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ufoLib.UFOWriter.formatVersion">
+<em class="property">property </em><code class="sig-name descname">formatVersion</code><a class="headerlink" href="#fontTools.ufoLib.UFOWriter.formatVersion" title="Permalink to this definition">¶</a></dt>
+<dd><p>The format version of the UFO. This is determined by reading metainfo.plist during __init__.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ufoLib.UFOWriter.getCharacterMapping">
+<code class="sig-name descname">getCharacterMapping</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">layerName</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">validate</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.ufoLib.UFOWriter.getCharacterMapping" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a dictionary that maps unicode values (ints) to
+lists of glyph names.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ufoLib.UFOWriter.getDataDirectoryListing">
+<code class="sig-name descname">getDataDirectoryListing</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.ufoLib.UFOWriter.getDataDirectoryListing" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list of all files in the data directory.
+The returned paths will be relative to the UFO.
+This will not list directory names, only file names.
+Thus, empty directories will be skipped.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ufoLib.UFOWriter.getDefaultLayerName">
+<code class="sig-name descname">getDefaultLayerName</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">validate</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.ufoLib.UFOWriter.getDefaultLayerName" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the default layer name from layercontents.plist.</p>
+<p><code class="docutils literal notranslate"><span class="pre">validate</span></code> will validate the data, by default it is set to the
+class’s validate value, can be overridden.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ufoLib.UFOWriter.getFileModificationTime">
+<code class="sig-name descname">getFileModificationTime</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.ufoLib.UFOWriter.getFileModificationTime" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the modification time for the file at the given path, as a
+floating point number giving the number of seconds since the epoch.
+The path must be relative to the UFO path.
+Returns None if the file does not exist.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ufoLib.UFOWriter.getFileObjectForPath">
+<code class="sig-name descname">getFileObjectForPath</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em>, <em class="sig-param"><span class="n">mode</span><span class="o">=</span><span class="default_value">'w'</span></em>, <em class="sig-param"><span class="n">encoding</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ufoLib.html#UFOWriter.getFileObjectForPath"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ufoLib.UFOWriter.getFileObjectForPath" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a file (or file-like) object for the
+file at the given path. The path must be relative
+to the UFO path. Returns None if the file does
+not exist and the mode is “r” or “rb.
+An encoding may be passed if the file is opened in text mode.</p>
+<p>Note: The caller is responsible for closing the open file.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ufoLib.UFOWriter.getGlyphSet">
+<code class="sig-name descname">getGlyphSet</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">layerName</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">defaultLayer</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">glyphNameToFileNameFunc</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">validateRead</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">validateWrite</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ufoLib.html#UFOWriter.getGlyphSet"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ufoLib.UFOWriter.getGlyphSet" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the GlyphSet object associated with the
+appropriate glyph directory in the .ufo.
+If layerName is None, the default glyph set
+will be used. The defaultLayer flag indictes
+that the layer should be saved into the default
+glyphs directory.</p>
+<p><code class="docutils literal notranslate"><span class="pre">validateRead</span></code> will validate the read data, by default it is set to the
+class’s validate value, can be overridden.
+<code class="docutils literal notranslate"><span class="pre">validateWrte</span></code> will validate the written data, by default it is set to the
+class’s validate value, can be overridden.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ufoLib.UFOWriter.getImageDirectoryListing">
+<code class="sig-name descname">getImageDirectoryListing</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">validate</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.ufoLib.UFOWriter.getImageDirectoryListing" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list of all image file names in
+the images directory. Each of the images will
+have been verified to have the PNG signature.</p>
+<p><code class="docutils literal notranslate"><span class="pre">validate</span></code> will validate the data, by default it is set to the
+class’s validate value, can be overridden.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ufoLib.UFOWriter.getKerningGroupConversionRenameMaps">
+<code class="sig-name descname">getKerningGroupConversionRenameMaps</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">validate</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.ufoLib.UFOWriter.getKerningGroupConversionRenameMaps" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get maps defining the renaming that was done during any
+needed kerning group conversion. This method returns a
+dictionary of this form:</p>
+<blockquote>
+<div><dl class="simple">
+<dt>{</dt><dd><p>“side1” : {“old group name” : “new group name”},
+“side2” : {“old group name” : “new group name”}</p>
+</dd>
+</dl>
+<p>}</p>
+</div></blockquote>
+<p>When no conversion has been performed, the side1 and side2
+dictionaries will be empty.</p>
+<p><code class="docutils literal notranslate"><span class="pre">validate</span></code> will validate the groups, by default it is set to the
+class’s validate value, can be overridden.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ufoLib.UFOWriter.getLayerNames">
+<code class="sig-name descname">getLayerNames</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">validate</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.ufoLib.UFOWriter.getLayerNames" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the ordered layer names from layercontents.plist.</p>
+<p><code class="docutils literal notranslate"><span class="pre">validate</span></code> will validate the data, by default it is set to the
+class’s validate value, can be overridden.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ufoLib.UFOWriter.getReadFileForPath">
+<code class="sig-name descname">getReadFileForPath</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em>, <em class="sig-param"><span class="n">encoding</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.ufoLib.UFOWriter.getReadFileForPath" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a file (or file-like) object for the file at the given path.
+The path must be relative to the UFO path.
+Returns None if the file does not exist.
+By default the file is opened in binary mode (reads bytes).
+If encoding is passed, the file is opened in text mode (reads str).</p>
+<p>Note: The caller is responsible for closing the open file.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ufoLib.UFOWriter.path">
+<em class="property">property </em><code class="sig-name descname">path</code><a class="headerlink" href="#fontTools.ufoLib.UFOWriter.path" title="Permalink to this definition">¶</a></dt>
+<dd><p>The path of the UFO (DEPRECATED).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ufoLib.UFOWriter.readBytesFromPath">
+<code class="sig-name descname">readBytesFromPath</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.ufoLib.UFOWriter.readBytesFromPath" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the bytes in the file at the given path.
+The path must be relative to the UFO’s filesystem root.
+Returns None if the file does not exist.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ufoLib.UFOWriter.readData">
+<code class="sig-name descname">readData</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fileName</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.ufoLib.UFOWriter.readData" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return bytes for the file named ‘fileName’ inside the ‘data/’ directory.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ufoLib.UFOWriter.readFeatures">
+<code class="sig-name descname">readFeatures</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.ufoLib.UFOWriter.readFeatures" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read features.fea. Return a string.
+The returned string is empty if the file is missing.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ufoLib.UFOWriter.readGroups">
+<code class="sig-name descname">readGroups</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">validate</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.ufoLib.UFOWriter.readGroups" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read groups.plist. Returns a dict.
+<code class="docutils literal notranslate"><span class="pre">validate</span></code> will validate the read data, by default it is set to the
+class’s validate value, can be overridden.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ufoLib.UFOWriter.readImage">
+<code class="sig-name descname">readImage</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fileName</span></em>, <em class="sig-param"><span class="n">validate</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.ufoLib.UFOWriter.readImage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return image data for the file named fileName.</p>
+<p><code class="docutils literal notranslate"><span class="pre">validate</span></code> will validate the data, by default it is set to the
+class’s validate value, can be overridden.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ufoLib.UFOWriter.readInfo">
+<code class="sig-name descname">readInfo</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">info</span></em>, <em class="sig-param"><span class="n">validate</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.ufoLib.UFOWriter.readInfo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read fontinfo.plist. It requires an object that allows
+setting attributes with names that follow the fontinfo.plist
+version 3 specification. This will write the attributes
+defined in the file into the object.</p>
+<p><code class="docutils literal notranslate"><span class="pre">validate</span></code> will validate the read data, by default it is set to the
+class’s validate value, can be overridden.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ufoLib.UFOWriter.readKerning">
+<code class="sig-name descname">readKerning</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">validate</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.ufoLib.UFOWriter.readKerning" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read kerning.plist. Returns a dict.</p>
+<p><code class="docutils literal notranslate"><span class="pre">validate</span></code> will validate the kerning data, by default it is set to the
+class’s validate value, can be overridden.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ufoLib.UFOWriter.readLib">
+<code class="sig-name descname">readLib</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">validate</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.ufoLib.UFOWriter.readLib" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read lib.plist. Returns a dict.</p>
+<p><code class="docutils literal notranslate"><span class="pre">validate</span></code> will validate the data, by default it is set to the
+class’s validate value, can be overridden.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ufoLib.UFOWriter.readMetaInfo">
+<code class="sig-name descname">readMetaInfo</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">validate</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.ufoLib.UFOWriter.readMetaInfo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read metainfo.plist. Only used for internal operations.</p>
+<p><code class="docutils literal notranslate"><span class="pre">validate</span></code> will validate the read data, by default it is set
+to the class’s validate value, can be overridden.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ufoLib.UFOWriter.removeData">
+<code class="sig-name descname">removeData</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fileName</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ufoLib.html#UFOWriter.removeData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ufoLib.UFOWriter.removeData" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove the file named fileName from the data directory.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ufoLib.UFOWriter.removeFileForPath">
+<code class="sig-name descname">removeFileForPath</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em>, <em class="sig-param"><span class="n">force</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">removeEmptyParents</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.ufoLib.UFOWriter.removeFileForPath" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove the file (or directory) at path. The path
+must be relative to the UFO.
+Raises UFOLibError if the path doesn’t exist.
+If force=True, ignore non-existent paths.
+If the directory where ‘path’ is located becomes empty, it will
+be automatically removed, unless ‘removeEmptyParents’ is False.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ufoLib.UFOWriter.removeImage">
+<code class="sig-name descname">removeImage</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fileName</span></em>, <em class="sig-param"><span class="n">validate</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ufoLib.html#UFOWriter.removeImage"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ufoLib.UFOWriter.removeImage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove the file named fileName from the
+images directory.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ufoLib.UFOWriter.removePath">
+<code class="sig-name descname">removePath</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em>, <em class="sig-param"><span class="n">force</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">removeEmptyParents</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ufoLib.html#UFOWriter.removePath"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ufoLib.UFOWriter.removePath" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove the file (or directory) at path. The path
+must be relative to the UFO.
+Raises UFOLibError if the path doesn’t exist.
+If force=True, ignore non-existent paths.
+If the directory where ‘path’ is located becomes empty, it will
+be automatically removed, unless ‘removeEmptyParents’ is False.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ufoLib.UFOWriter.renameGlyphSet">
+<code class="sig-name descname">renameGlyphSet</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">layerName</span></em>, <em class="sig-param"><span class="n">newLayerName</span></em>, <em class="sig-param"><span class="n">defaultLayer</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ufoLib.html#UFOWriter.renameGlyphSet"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ufoLib.UFOWriter.renameGlyphSet" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rename a glyph set.</p>
+<p>Note: if a GlyphSet object has already been retrieved for
+layerName, it is up to the caller to inform that object that
+the directory it represents has changed.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ufoLib.UFOWriter.setKerningGroupConversionRenameMaps">
+<code class="sig-name descname">setKerningGroupConversionRenameMaps</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">maps</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ufoLib.html#UFOWriter.setKerningGroupConversionRenameMaps"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ufoLib.UFOWriter.setKerningGroupConversionRenameMaps" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set maps defining the renaming that should be done
+when writing groups and kerning in UFO 1 and UFO 2.
+This will effectively undo the conversion done when
+UFOReader reads this data. The dictionary should have
+this form:</p>
+<blockquote>
+<div><dl class="simple">
+<dt>{</dt><dd><p>“side1” : {“group name to use when writing” : “group name in data”},
+“side2” : {“group name to use when writing” : “group name in data”}</p>
+</dd>
+</dl>
+<p>}</p>
+</div></blockquote>
+<p>This is the same form returned by UFOReader’s
+getKerningGroupConversionRenameMaps method.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ufoLib.UFOWriter.setModificationTime">
+<code class="sig-name descname">setModificationTime</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ufoLib.html#UFOWriter.setModificationTime"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ufoLib.UFOWriter.setModificationTime" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the UFO modification time to the current time.
+This is never called automatically. It is up to the
+caller to call this when finished working on the UFO.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ufoLib.UFOWriter.writeBytesToPath">
+<code class="sig-name descname">writeBytesToPath</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em>, <em class="sig-param"><span class="n">data</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ufoLib.html#UFOWriter.writeBytesToPath"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ufoLib.UFOWriter.writeBytesToPath" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write bytes to a path relative to the UFO filesystem’s root.
+If writing to an existing UFO, check to see if data matches the data
+that is already in the file at path; if so, the file is not rewritten
+so that the modification date is preserved.
+If needed, the directory tree for the given path will be built.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ufoLib.UFOWriter.writeData">
+<code class="sig-name descname">writeData</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fileName</span></em>, <em class="sig-param"><span class="n">data</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ufoLib.html#UFOWriter.writeData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ufoLib.UFOWriter.writeData" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write data to fileName in the ‘data’ directory.
+The data must be a bytes string.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ufoLib.UFOWriter.writeFeatures">
+<code class="sig-name descname">writeFeatures</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">features</span></em>, <em class="sig-param"><span class="n">validate</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ufoLib.html#UFOWriter.writeFeatures"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ufoLib.UFOWriter.writeFeatures" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write features.fea. This method requires a
+features string as an argument.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ufoLib.UFOWriter.writeGroups">
+<code class="sig-name descname">writeGroups</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">groups</span></em>, <em class="sig-param"><span class="n">validate</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ufoLib.html#UFOWriter.writeGroups"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ufoLib.UFOWriter.writeGroups" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write groups.plist. This method requires a
+dict of glyph groups as an argument.</p>
+<p><code class="docutils literal notranslate"><span class="pre">validate</span></code> will validate the data, by default it is set to the
+class’s validate value, can be overridden.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ufoLib.UFOWriter.writeImage">
+<code class="sig-name descname">writeImage</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fileName</span></em>, <em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">validate</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ufoLib.html#UFOWriter.writeImage"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ufoLib.UFOWriter.writeImage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write data to fileName in the images directory.
+The data must be a valid PNG.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ufoLib.UFOWriter.writeInfo">
+<code class="sig-name descname">writeInfo</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">info</span></em>, <em class="sig-param"><span class="n">validate</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ufoLib.html#UFOWriter.writeInfo"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ufoLib.UFOWriter.writeInfo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write info.plist. This method requires an object
+that supports getting attributes that follow the
+fontinfo.plist version 2 specification. Attributes
+will be taken from the given object and written
+into the file.</p>
+<p><code class="docutils literal notranslate"><span class="pre">validate</span></code> will validate the data, by default it is set to the
+class’s validate value, can be overridden.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ufoLib.UFOWriter.writeKerning">
+<code class="sig-name descname">writeKerning</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">kerning</span></em>, <em class="sig-param"><span class="n">validate</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ufoLib.html#UFOWriter.writeKerning"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ufoLib.UFOWriter.writeKerning" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write kerning.plist. This method requires a
+dict of kerning pairs as an argument.</p>
+<p>This performs basic structural validation of the kerning,
+but it does not check for compliance with the spec in
+regards to conflicting pairs. The assumption is that the
+kerning data being passed is standards compliant.</p>
+<p><code class="docutils literal notranslate"><span class="pre">validate</span></code> will validate the data, by default it is set to the
+class’s validate value, can be overridden.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ufoLib.UFOWriter.writeLayerContents">
+<code class="sig-name descname">writeLayerContents</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">layerOrder</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">validate</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ufoLib.html#UFOWriter.writeLayerContents"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ufoLib.UFOWriter.writeLayerContents" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write the layercontents.plist file. This method  <em>must</em> be called
+after all glyph sets have been written.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ufoLib.UFOWriter.writeLib">
+<code class="sig-name descname">writeLib</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">libDict</span></em>, <em class="sig-param"><span class="n">validate</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ufoLib.html#UFOWriter.writeLib"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ufoLib.UFOWriter.writeLib" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write lib.plist. This method requires a
+lib dict as an argument.</p>
+<p><code class="docutils literal notranslate"><span class="pre">validate</span></code> will validate the data, by default it is set to the
+class’s validate value, can be overridden.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.ufoLib.UFOReaderWriter">
+<code class="sig-prename descclassname">fontTools.ufoLib.</code><code class="sig-name descname">UFOReaderWriter</code><a class="headerlink" href="#fontTools.ufoLib.UFOReaderWriter" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#fontTools.ufoLib.UFOWriter" title="fontTools.ufoLib.UFOWriter"><code class="xref py py-class docutils literal notranslate"><span class="pre">fontTools.ufoLib.UFOWriter</span></code></a></p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.ufoLib.UFOFileStructure">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.ufoLib.</code><code class="sig-name descname">UFOFileStructure</code><a class="reference internal" href="../_modules/fontTools/ufoLib.html#UFOFileStructure"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ufoLib.UFOFileStructure" title="Permalink to this definition">¶</a></dt>
+<dd><p>An enumeration.</p>
+<dl class="py attribute">
+<dt id="fontTools.ufoLib.UFOFileStructure.PACKAGE">
+<code class="sig-name descname">PACKAGE</code><em class="property"> = 'package'</em><a class="headerlink" href="#fontTools.ufoLib.UFOFileStructure.PACKAGE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.ufoLib.UFOFileStructure.ZIP">
+<code class="sig-name descname">ZIP</code><em class="property"> = 'zip'</em><a class="headerlink" href="#fontTools.ufoLib.UFOFileStructure.ZIP" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.ufoLib.validateFontInfoVersion2ValueForAttribute">
+<code class="sig-prename descclassname">fontTools.ufoLib.</code><code class="sig-name descname">validateFontInfoVersion2ValueForAttribute</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">attr</span></em>, <em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ufoLib.html#validateFontInfoVersion2ValueForAttribute"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ufoLib.validateFontInfoVersion2ValueForAttribute" title="Permalink to this definition">¶</a></dt>
+<dd><p>This performs very basic validation of the value for attribute
+following the UFO 2 fontinfo.plist specification. The results
+of this should not be interpretted as <em>correct</em> for the font
+that they are part of. This merely indicates that the value
+is of the proper type and, where the specification defines
+a set range of possible values for an attribute, that the
+value is in the accepted range.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.ufoLib.validateFontInfoVersion3ValueForAttribute">
+<code class="sig-prename descclassname">fontTools.ufoLib.</code><code class="sig-name descname">validateFontInfoVersion3ValueForAttribute</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">attr</span></em>, <em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ufoLib.html#validateFontInfoVersion3ValueForAttribute"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ufoLib.validateFontInfoVersion3ValueForAttribute" title="Permalink to this definition">¶</a></dt>
+<dd><p>This performs very basic validation of the value for attribute
+following the UFO 3 fontinfo.plist specification. The results
+of this should not be interpretted as <em>correct</em> for the font
+that they are part of. This merely indicates that the value
+is of the proper type and, where the specification defines
+a set range of possible values for an attribute, that the
+value is in the accepted range.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.ufoLib.convertFontInfoValueForAttributeFromVersion1ToVersion2">
+<code class="sig-prename descclassname">fontTools.ufoLib.</code><code class="sig-name descname">convertFontInfoValueForAttributeFromVersion1ToVersion2</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">attr</span></em>, <em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ufoLib.html#convertFontInfoValueForAttributeFromVersion1ToVersion2"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ufoLib.convertFontInfoValueForAttributeFromVersion1ToVersion2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert value from version 1 to version 2 format.
+Returns the new attribute name and the converted value.
+If the value is None, None will be returned for the new value.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.ufoLib.convertFontInfoValueForAttributeFromVersion2ToVersion1">
+<code class="sig-prename descclassname">fontTools.ufoLib.</code><code class="sig-name descname">convertFontInfoValueForAttributeFromVersion2ToVersion1</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">attr</span></em>, <em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ufoLib.html#convertFontInfoValueForAttributeFromVersion2ToVersion1"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ufoLib.convertFontInfoValueForAttributeFromVersion2ToVersion1" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert value from version 2 to version 1 format.
+Returns the new attribute name and the converted value.
+If the value is None, None will be returned for the new value.</p>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="converters.html" class="btn btn-neutral float-right" title="converters" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../ttx.html" class="btn btn-neutral float-left" title="ttx" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Just van Rossum, Behdad Esfahbod, and the fontTools Authors. CC BY-SA 4.0
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

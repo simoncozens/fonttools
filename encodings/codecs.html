@@ -1,0 +1,280 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>codecs &mdash; fontTools Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="MacRoman" href="macRoman.html" />
+    <link rel="prev" title="encodings" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> fontTools
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Library</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../afmLib.html">afmLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../agl.html">agl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cffLib/index.html">cffLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../colorLib/index.html">colorLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cu2qu/index.html">cu2qu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../designspaceLib/index.html">designspaceLib</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">encodings</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">codecs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="macRoman.html">MacRoman</a></li>
+<li class="toctree-l2"><a class="reference internal" href="StandardEncoding.html">StandardEncoding</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../feaLib/index.html">feaLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../merge.html">merge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/index.html">misc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mtiLib.html">mtiLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../otlLib/index.html">otlLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pens/index.html">pens</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../subset/index.html">subset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svgLib/index.html">svgLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../t1Lib.html">t1Lib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ttLib/index.html">ttLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ttx.html">ttx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ufoLib/index.html">ufoLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unicode.html">unicode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unicodedata/index.html">unicodedata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../varLib/index.html">varLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../voltLib.html">voltLib</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">fontTools</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">encodings</a> &raquo;</li>
+        
+      <li>codecs</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/encodings/codecs.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-fontTools.encodings.codecs">
+<span id="codecs"></span><h1>codecs<a class="headerlink" href="#module-fontTools.encodings.codecs" title="Permalink to this headline">¶</a></h1>
+<p>Extend the Python codecs module with a few encodings that are used in OpenType (name table)
+but missing from Python.  See <a class="reference external" href="https://github.com/fonttools/fonttools/issues/236">https://github.com/fonttools/fonttools/issues/236</a> for details.</p>
+<dl class="py class">
+<dt id="fontTools.encodings.codecs.ExtendCodec">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.encodings.codecs.</code><code class="sig-name descname">ExtendCodec</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">base_encoding</span></em>, <em class="sig-param"><span class="n">mapping</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/encodings/codecs.html#ExtendCodec"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.encodings.codecs.ExtendCodec" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.encodings.codecs.ExtendCodec.decode">
+<code class="sig-name descname">decode</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input</span></em>, <em class="sig-param"><span class="n">errors</span><span class="o">=</span><span class="default_value">'strict'</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/encodings/codecs.html#ExtendCodec.decode"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.encodings.codecs.ExtendCodec.decode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decodes the object input and returns a tuple (output
+object, length consumed).</p>
+<p>input must be an object which provides the bf_getreadbuf
+buffer slot. Python strings, buffer objects and memory
+mapped files are examples of objects providing this slot.</p>
+<p>errors defines the error handling to apply. It defaults to
+‘strict’ handling.</p>
+<p>The method may not store state in the Codec instance. Use
+StreamReader for codecs which have to keep state in order to
+make decoding efficient.</p>
+<p>The decoder must be able to handle zero length input and
+return an empty object of the output object type in this
+situation.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.encodings.codecs.ExtendCodec.encode">
+<code class="sig-name descname">encode</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input</span></em>, <em class="sig-param"><span class="n">errors</span><span class="o">=</span><span class="default_value">'strict'</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/encodings/codecs.html#ExtendCodec.encode"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.encodings.codecs.ExtendCodec.encode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Encodes the object input and returns a tuple (output
+object, length consumed).</p>
+<p>errors defines the error handling to apply. It defaults to
+‘strict’ handling.</p>
+<p>The method may not store state in the Codec instance. Use
+StreamWriter for codecs which have to keep state in order to
+make encoding efficient.</p>
+<p>The encoder must be able to handle zero length input and
+return an empty object of the output object type in this
+situation.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.encodings.codecs.ExtendCodec.error">
+<code class="sig-name descname">error</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">e</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/encodings/codecs.html#ExtendCodec.error"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.encodings.codecs.ExtendCodec.error" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.encodings.codecs.search_function">
+<code class="sig-prename descclassname">fontTools.encodings.codecs.</code><code class="sig-name descname">search_function</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/encodings/codecs.html#search_function"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.encodings.codecs.search_function" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="macRoman.html" class="btn btn-neutral float-right" title="MacRoman" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="encodings" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Just van Rossum, Behdad Esfahbod, and the fontTools Authors. CC BY-SA 4.0
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

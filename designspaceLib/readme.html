@@ -1,0 +1,1325 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>DesignSpaceDocument Specification &mdash; fontTools Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Scripting a designspace" href="scripting.html" />
+    <link rel="prev" title="designspaceLib" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> fontTools
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Library</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../afmLib.html">afmLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../agl.html">agl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cffLib/index.html">cffLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../colorLib/index.html">colorLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cu2qu/index.html">cu2qu</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">designspaceLib</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">DesignSpaceDocument Specification</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#python-api">Python API</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#designspacedocument-object">DesignSpaceDocument object</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sourcedescriptor-object">SourceDescriptor object</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#instancedescriptor-object">InstanceDescriptor object</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#axisdescriptor-object">AxisDescriptor object</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ruledescriptor-object">RuleDescriptor object</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#subclassing-descriptors">Subclassing descriptors</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#document-xml-structure">Document xml structure</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#axis-element">1. axis element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#labelname-element">1.1 labelname element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#map-element">1.2 map element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#location-element">2. location element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#dimension-element">2.1 dimension element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#source-element">3. source element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#lib-element">3.1 lib element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#info-element">3.2 info element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#features-element">3.3 features element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#glyph-element">3.4 glyph element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#kerning-element">3.5 kerning element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#instance-element">4. instance element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#glyphs-element">4.1 glyphs element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id17">4.2 glyph element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#note-element">4.2.1 note element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#masters-element">4.2.2 masters element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#master-element">4.2.2.1 master element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#localised-names-for-instances">4.3 Localised names for instances</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#rules-element">5.0 rules element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#rule-element">5.1 rule element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#conditionset-element">5.1.1 conditionset element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#condition-element">5.1.2 condition element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sub-element">5.1.3 sub element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#notes">6 Notes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#common-lib-key-registry">7 Common Lib Key Registry</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#implementation-and-differences">8 Implementation and differences</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#this-document">9 This document</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="scripting.html">Scripting a designspace</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../encodings/index.html">encodings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../feaLib/index.html">feaLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../merge.html">merge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/index.html">misc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mtiLib.html">mtiLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../otlLib/index.html">otlLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pens/index.html">pens</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../subset/index.html">subset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svgLib/index.html">svgLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../t1Lib.html">t1Lib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ttLib/index.html">ttLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ttx.html">ttx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ufoLib/index.html">ufoLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unicode.html">unicode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unicodedata/index.html">unicodedata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../varLib/index.html">varLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../voltLib.html">voltLib</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">fontTools</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">designspaceLib</a> &raquo;</li>
+        
+      <li>DesignSpaceDocument Specification</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/designspaceLib/readme.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="designspacedocument-specification">
+<h1>DesignSpaceDocument Specification<a class="headerlink" href="#designspacedocument-specification" title="Permalink to this headline">¶</a></h1>
+<p>An object to read, write and edit interpolation systems for typefaces. Define sources, axes, rules and instances.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="#python-api">The Python API of the objects</a></p></li>
+<li><p><a class="reference external" href="#document-xml-structure">The document XML structure</a></p></li>
+</ul>
+<div class="section" id="python-api">
+<h2>Python API<a class="headerlink" href="#python-api" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="designspacedocument-object">
+<span id="id1"></span><h3>DesignSpaceDocument object<a class="headerlink" href="#designspacedocument-object" title="Permalink to this headline">¶</a></h3>
+<p>The DesignSpaceDocument object can read and write <code class="docutils literal notranslate"><span class="pre">.designspace</span></code> data.
+It imports the axes, sources and instances to very basic <strong>descriptor</strong>
+objects that store the data in attributes. Data is added to the document
+by creating such descriptor objects, filling them with data and then
+adding them to the document. This makes it easy to integrate this object
+in different contexts.</p>
+<p>The <strong>DesignSpaceDocument</strong> object can be subclassed to work with
+different objects, as long as they have the same attributes. Reader and
+Writer objects can be subclassed as well.</p>
+<p><strong>Note:</strong> Python attribute names are usually camelCased, the
+corresponding <a class="reference external" href="#document-xml-structure">XML</a> attributes are usually
+all lowercase.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fontTools.designspaceLib</span> <span class="kn">import</span> <span class="n">DesignSpaceDocument</span>
+<span class="n">doc</span> <span class="o">=</span> <span class="n">DesignSpaceDocument</span><span class="p">()</span>
+<span class="n">doc</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s2">&quot;some/path/to/my.designspace&quot;</span><span class="p">)</span>
+<span class="n">doc</span><span class="o">.</span><span class="n">axes</span>
+<span class="n">doc</span><span class="o">.</span><span class="n">sources</span>
+<span class="n">doc</span><span class="o">.</span><span class="n">instances</span>
+</pre></div>
+</div>
+<div class="section" id="attributes">
+<h4>Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">axes</span></code>: list of axisDescriptors</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sources</span></code>: list of sourceDescriptors</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">instances</span></code>: list of instanceDescriptors</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rules</span></code>: list if ruleDescriptors</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">readerClass</span></code>: class of the reader object</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">writerClass</span></code>: class of the writer object</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lib</span></code>: dict for user defined, custom data that needs to be stored
+in the designspace. Use reverse-DNS notation to identify your own data.
+Respect the data stored by others.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rulesProcessingLast</span></code>: This flag indicates whether the substitution rules should be applied before or after other glyph substitution features. False: before, True: after.</p></li>
+</ul>
+</div>
+<div class="section" id="methods">
+<h4>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">read(path)</span></code>: read a designspace file from <code class="docutils literal notranslate"><span class="pre">path</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">write(path)</span></code>: write this designspace to <code class="docutils literal notranslate"><span class="pre">path</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">addSource(aSourceDescriptor)</span></code>: add this sourceDescriptor to
+<code class="docutils literal notranslate"><span class="pre">doc.sources</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">addInstance(anInstanceDescriptor)</span></code>: add this instanceDescriptor
+to <code class="docutils literal notranslate"><span class="pre">doc.instances</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">addAxis(anAxisDescriptor)</span></code>: add this instanceDescriptor to <code class="docutils literal notranslate"><span class="pre">doc.axes</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">newDefaultLocation()</span></code>: returns a dict with the default location
+in designspace coordinates.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">updateFilenameFromPath(masters=True,</span> <span class="pre">instances=True,</span> <span class="pre">force=False)</span></code>:
+set a descriptor filename attr from the path and this document.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">newAxisDescriptor()</span></code>: return a new axisDescriptor object.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">newSourceDescriptor()</span></code>: return a new sourceDescriptor object.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">newInstanceDescriptor()</span></code>: return a new instanceDescriptor object.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">getAxisOrder()</span></code>: return a list of axisnames</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">findDefault()</span></code>: return the sourceDescriptor that is on the default
+location. Returns None if there isn’t one.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">normalizeLocation(aLocation)</span></code>: return a dict with normalized axis values.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">normalize()</span></code>: normalize the geometry of this designspace: scale all the</p></li>
+</ul>
+<blockquote>
+<div><p>locations of all masters and instances to the <code class="docutils literal notranslate"><span class="pre">-1</span> <span class="pre">-</span> <span class="pre">0</span> <span class="pre">-</span> <span class="pre">1</span></code> value.</p>
+</div></blockquote>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">loadSourceFonts()</span></code>: Ensure SourceDescriptor.font attributes are loaded,
+and return list of fonts.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tostring(encoding=None)</span></code>: Returns the designspace as a string. Default
+encoding <cite>utf-8</cite>.</p></li>
+</ul>
+</div>
+<div class="section" id="class-methods">
+<h4>Class Methods<a class="headerlink" href="#class-methods" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">fromfile(path)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">fromstring(string)</span></code></p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="sourcedescriptor-object">
+<h3>SourceDescriptor object<a class="headerlink" href="#sourcedescriptor-object" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id2">
+<h4>Attributes<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">filename</span></code>: string. A relative path to the source file, <strong>as it is
+in the document</strong>. MutatorMath + Varlib.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">path</span></code>: string. Absolute path to the source file, calculated from
+the document path and the string in the filename attr. MutatorMath +
+Varlib.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">layerName</span></code>: string. The name of the layer in the source to look for
+outline data. Default <code class="docutils literal notranslate"><span class="pre">None</span></code> which means <code class="docutils literal notranslate"><span class="pre">foreground</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">font</span></code>: Any Python object. Optional. Points to a representation of
+this source font that is loaded in memory, as a Python object
+(e.g. a <code class="docutils literal notranslate"><span class="pre">defcon.Font</span></code> or a <code class="docutils literal notranslate"><span class="pre">fontTools.ttFont.TTFont</span></code>). The default
+document reader will not fill-in this attribute, and the default
+writer will not use this attribute. It is up to the user of
+<code class="docutils literal notranslate"><span class="pre">designspaceLib</span></code> to either load the resource identified by <code class="docutils literal notranslate"><span class="pre">filename</span></code>
+and store it in this field, or write the contents of this field to the
+disk and make <code class="docutils literal notranslate"><span class="pre">filename</span></code> point to that.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code>: string. Optional. Unique identifier name for this source,
+if there is one or more <code class="docutils literal notranslate"><span class="pre">instance.glyph</span></code> elements in the document.
+MutatorMath.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">location</span></code>: dict. Axis values for this source. MutatorMath + Varlib</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">copyLib</span></code>: bool. Indicates if the contents of the font.lib need to
+be copied to the instances. MutatorMath.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">copyInfo</span></code> bool. Indicates if the non-interpolating font.info needs
+to be copied to the instances. MutatorMath</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">copyGroups</span></code> bool. Indicates if the groups need to be copied to the
+instances. MutatorMath.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">copyFeatures</span></code> bool. Indicates if the feature text needs to be
+copied to the instances. MutatorMath.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">muteKerning</span></code>: bool. Indicates if the kerning data from this source
+needs to be muted (i.e. not be part of the calculations).
+MutatorMath.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">muteInfo</span></code>: bool. Indicated if the interpolating font.info data for
+this source needs to be muted. MutatorMath.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mutedGlyphNames</span></code>: list. Glyphnames that need to be muted in the
+instances. MutatorMath.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">familyName</span></code>: string. Family name of this source. Though this data
+can be extracted from the font, it can be efficient to have it right
+here. Varlib.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">styleName</span></code>: string. Style name of this source. Though this data
+can be extracted from the font, it can be efficient to have it right
+here. Varlib.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">doc</span> <span class="o">=</span> <span class="n">DesignSpaceDocument</span><span class="p">()</span>
+<span class="n">s1</span> <span class="o">=</span> <span class="n">SourceDescriptor</span><span class="p">()</span>
+<span class="n">s1</span><span class="o">.</span><span class="n">path</span> <span class="o">=</span> <span class="n">masterPath1</span>
+<span class="n">s1</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;master.ufo1&quot;</span>
+<span class="n">s1</span><span class="o">.</span><span class="n">font</span> <span class="o">=</span> <span class="n">defcon</span><span class="o">.</span><span class="n">Font</span><span class="p">(</span><span class="s2">&quot;master.ufo1&quot;</span><span class="p">)</span>
+<span class="n">s1</span><span class="o">.</span><span class="n">copyLib</span> <span class="o">=</span> <span class="bp">True</span>
+<span class="n">s1</span><span class="o">.</span><span class="n">copyInfo</span> <span class="o">=</span> <span class="bp">True</span>
+<span class="n">s1</span><span class="o">.</span><span class="n">copyFeatures</span> <span class="o">=</span> <span class="bp">True</span>
+<span class="n">s1</span><span class="o">.</span><span class="n">location</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">weight</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">s1</span><span class="o">.</span><span class="n">familyName</span> <span class="o">=</span> <span class="s2">&quot;MasterFamilyName&quot;</span>
+<span class="n">s1</span><span class="o">.</span><span class="n">styleName</span> <span class="o">=</span> <span class="s2">&quot;MasterStyleNameOne&quot;</span>
+<span class="n">s1</span><span class="o">.</span><span class="n">mutedGlyphNames</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">)</span>
+<span class="n">s1</span><span class="o">.</span><span class="n">mutedGlyphNames</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Z&quot;</span><span class="p">)</span>
+<span class="n">doc</span><span class="o">.</span><span class="n">addSource</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="instancedescriptor-object">
+<span id="instance-descriptor-object"></span><h3>InstanceDescriptor object<a class="headerlink" href="#instancedescriptor-object" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id3">
+<h4>Attributes<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">filename</span></code>: string. Relative path to the instance file, <strong>as it is
+in the document</strong>. The file may or may not exist. MutatorMath.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">path</span></code>: string. Absolute path to the source file, calculated from
+the document path and the string in the filename attr. The file may
+or may not exist. MutatorMath.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code>: string. Unique identifier name of the instance, used to
+identify it if it needs to be referenced from elsewhere in the
+document.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">location</span></code>: dict. Axis values for this source. MutatorMath +
+Varlib.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">familyName</span></code>: string. Family name of this instance. MutatorMath +
+Varlib.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">localisedFamilyName</span></code>: dict. A dictionary of localised family name
+strings, keyed by language code.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">styleName</span></code>: string. Style name of this source. MutatorMath +
+Varlib.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">localisedStyleName</span></code>: dict. A dictionary of localised stylename
+strings, keyed by language code.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">postScriptFontName</span></code>: string. Postscript fontname for this
+instance. MutatorMath.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">styleMapFamilyName</span></code>: string. StyleMap familyname for this
+instance. MutatorMath.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">localisedStyleMapFamilyName</span></code>: A dictionary of localised style map
+familyname strings, keyed by language code.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">localisedStyleMapStyleName</span></code>: A dictionary of localised style map
+stylename strings, keyed by language code.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">styleMapStyleName</span></code>: string. StyleMap stylename for this instance.
+MutatorMath.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">glyphs</span></code>: dict for special master definitions for glyphs. If glyphs
+need special masters (to record the results of executed rules for
+example). MutatorMath.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">kerning</span></code>: bool. Indicates if this instance needs its kerning
+calculated. MutatorMath.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">info</span></code>: bool. Indicated if this instance needs the interpolating
+font.info calculated.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lib</span></code>: dict. Custom data associated with this instance.</p></li>
+</ul>
+</div>
+<div class="section" id="id4">
+<h4>Methods<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
+<p>These methods give easier access to the localised names.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">setStyleName(styleName,</span> <span class="pre">languageCode=&quot;en&quot;)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">getStyleName(languageCode=&quot;en&quot;)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">setFamilyName(familyName,</span> <span class="pre">languageCode=&quot;en&quot;)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">getFamilyName(self,</span> <span class="pre">languageCode=&quot;en&quot;)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">setStyleMapStyleName(styleMapStyleName,</span> <span class="pre">languageCode=&quot;en&quot;)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">getStyleMapStyleName(languageCode=&quot;en&quot;)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">setStyleMapFamilyName(styleMapFamilyName,</span> <span class="pre">languageCode=&quot;en&quot;)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">getStyleMapFamilyName(languageCode=&quot;en&quot;)</span></code></p></li>
+</ul>
+</div>
+<div class="section" id="example">
+<h4>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">i2</span> <span class="o">=</span> <span class="n">InstanceDescriptor</span><span class="p">()</span>
+<span class="n">i2</span><span class="o">.</span><span class="n">path</span> <span class="o">=</span> <span class="n">instancePath2</span>
+<span class="n">i2</span><span class="o">.</span><span class="n">familyName</span> <span class="o">=</span> <span class="s2">&quot;InstanceFamilyName&quot;</span>
+<span class="n">i2</span><span class="o">.</span><span class="n">styleName</span> <span class="o">=</span> <span class="s2">&quot;InstanceStyleName&quot;</span>
+<span class="n">i2</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;instance.ufo2&quot;</span>
+<span class="c1"># anisotropic location</span>
+<span class="n">i2</span><span class="o">.</span><span class="n">location</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">weight</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span><span class="mi">300</span><span class="p">))</span>
+<span class="n">i2</span><span class="o">.</span><span class="n">postScriptFontName</span> <span class="o">=</span> <span class="s2">&quot;InstancePostscriptName&quot;</span>
+<span class="n">i2</span><span class="o">.</span><span class="n">styleMapFamilyName</span> <span class="o">=</span> <span class="s2">&quot;InstanceStyleMapFamilyName&quot;</span>
+<span class="n">i2</span><span class="o">.</span><span class="n">styleMapStyleName</span> <span class="o">=</span> <span class="s2">&quot;InstanceStyleMapStyleName&quot;</span>
+<span class="n">glyphMasters</span> <span class="o">=</span> <span class="p">[</span><span class="nb">dict</span><span class="p">(</span><span class="n">font</span><span class="o">=</span><span class="s2">&quot;master.ufo1&quot;</span><span class="p">,</span> <span class="n">glyphName</span><span class="o">=</span><span class="s2">&quot;BB&quot;</span><span class="p">,</span> <span class="n">location</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span><span class="n">weight</span><span class="o">=</span><span class="mi">20</span><span class="p">)),</span> <span class="nb">dict</span><span class="p">(</span><span class="n">font</span><span class="o">=</span><span class="s2">&quot;master.ufo2&quot;</span><span class="p">,</span> <span class="n">glyphName</span><span class="o">=</span><span class="s2">&quot;CC&quot;</span><span class="p">,</span> <span class="n">location</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">900</span><span class="p">,</span><span class="n">weight</span><span class="o">=</span><span class="mi">900</span><span class="p">))]</span>
+<span class="n">glyphData</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;arrow&quot;</span><span class="p">,</span> <span class="n">unicodeValue</span><span class="o">=</span><span class="mi">1234</span><span class="p">)</span>
+<span class="n">glyphData</span><span class="p">[</span><span class="s1">&#39;masters&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">glyphMasters</span>
+<span class="n">glyphData</span><span class="p">[</span><span class="s1">&#39;note&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;A note about this glyph&quot;</span>
+<span class="n">glyphData</span><span class="p">[</span><span class="s1">&#39;instanceLocation&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="mi">120</span><span class="p">)</span>
+<span class="n">i2</span><span class="o">.</span><span class="n">glyphs</span><span class="p">[</span><span class="s1">&#39;arrow&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">glyphData</span>
+<span class="n">i2</span><span class="o">.</span><span class="n">glyphs</span><span class="p">[</span><span class="s1">&#39;arrow2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">mute</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="n">i2</span><span class="o">.</span><span class="n">lib</span><span class="p">[</span><span class="s1">&#39;com.coolDesignspaceApp.specimenText&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Hamburgerwhatever&#39;</span>
+<span class="n">doc</span><span class="o">.</span><span class="n">addInstance</span><span class="p">(</span><span class="n">i2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="axisdescriptor-object">
+<span id="axis-descriptor-object"></span><h3>AxisDescriptor object<a class="headerlink" href="#axisdescriptor-object" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">tag</span></code>: string. Four letter tag for this axis. Some might be
+registered at the <a class="reference external" href="https://www.microsoft.com/typography/otspec/fvar.htm#VAT">OpenType
+specification</a>.
+Privately-defined axis tags must begin with an uppercase letter and
+use only uppercase letters or digits.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code>: string. Name of the axis as it is used in the location
+dicts. MutatorMath + Varlib.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">labelNames</span></code>: dict. When defining a non-registered axis, it will be
+necessary to define user-facing readable names for the axis. Keyed by
+xml:lang code. Values are required to be <code class="docutils literal notranslate"><span class="pre">unicode</span></code> strings, even if
+they only contain ASCII characters.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">minimum</span></code>: number. The minimum value for this axis in user space.
+MutatorMath + Varlib.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">maximum</span></code>: number. The maximum value for this axis in user space.
+MutatorMath + Varlib.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">default</span></code>: number. The default value for this axis, i.e. when a new
+location is created, this is the value this axis will get in user
+space. MutatorMath + Varlib.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">map</span></code>: list of input / output values that can describe a warp
+of user space to design space coordinates. If no map values are present, it is assumed user space is the same as design space, as
+in [(minimum, minimum), (maximum, maximum)]. Varlib.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a1</span> <span class="o">=</span> <span class="n">AxisDescriptor</span><span class="p">()</span>
+<span class="n">a1</span><span class="o">.</span><span class="n">minimum</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">a1</span><span class="o">.</span><span class="n">maximum</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">a1</span><span class="o">.</span><span class="n">default</span> <span class="o">=</span> <span class="mi">400</span>
+<span class="n">a1</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;weight&quot;</span>
+<span class="n">a1</span><span class="o">.</span><span class="n">tag</span> <span class="o">=</span> <span class="s2">&quot;wght&quot;</span>
+<span class="n">a1</span><span class="o">.</span><span class="n">labelNames</span><span class="p">[</span><span class="sa">u</span><span class="s1">&#39;fa-IR&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="sa">u</span><span class="s2">&quot;قطر&quot;</span>
+<span class="n">a1</span><span class="o">.</span><span class="n">labelNames</span><span class="p">[</span><span class="sa">u</span><span class="s1">&#39;en&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="sa">u</span><span class="s2">&quot;Wéíght&quot;</span>
+<span class="n">a1</span><span class="o">.</span><span class="n">map</span> <span class="o">=</span> <span class="p">[(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">),</span> <span class="p">(</span><span class="mf">400.0</span><span class="p">,</span> <span class="mf">66.0</span><span class="p">),</span> <span class="p">(</span><span class="mf">1000.0</span><span class="p">,</span> <span class="mf">990.0</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ruledescriptor-object">
+<h3>RuleDescriptor object<a class="headerlink" href="#ruledescriptor-object" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code>: string. Unique name for this rule. Can be used to
+reference this rule data.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">conditionSets</span></code>: a list of conditionsets</p></li>
+<li><p>Each conditionset is a list of conditions.</p></li>
+<li><p>Each condition is a dict with <code class="docutils literal notranslate"><span class="pre">name</span></code>, <code class="docutils literal notranslate"><span class="pre">minimum</span></code> and <code class="docutils literal notranslate"><span class="pre">maximum</span></code> keys.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">subs</span></code>: list of substitutions</p></li>
+<li><p>Each substitution is stored as tuples of glyphnames, e.g. (“a”, “a.alt”).</p></li>
+</ul>
+<div class="section" id="evaluating-rules">
+<h4>Evaluating rules<a class="headerlink" href="#evaluating-rules" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">evaluateRule(rule,</span> <span class="pre">location)</span></code>: Return True if any of the rule’s conditionsets
+matches the given location.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">evaluateConditions(conditions,</span> <span class="pre">location)</span></code>: Return True if all the conditions
+matches the given location.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">processRules(rules,</span> <span class="pre">location,</span> <span class="pre">glyphNames)</span></code>: Apply all the rules to the list
+of glyphNames. Return a new list of glyphNames with substitutions applied.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">r1</span> <span class="o">=</span> <span class="n">RuleDescriptor</span><span class="p">()</span>
+<span class="n">r1</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;unique.rule.name&quot;</span>
+<span class="n">r1</span><span class="o">.</span><span class="n">conditionsSets</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="nb">dict</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;weight&quot;</span><span class="p">,</span> <span class="n">minimum</span><span class="o">=-</span><span class="mi">10</span><span class="p">,</span> <span class="n">maximum</span><span class="o">=</span><span class="mi">10</span><span class="p">),</span> <span class="nb">dict</span><span class="p">(</span><span class="o">...</span><span class="p">)])</span>
+<span class="n">r1</span><span class="o">.</span><span class="n">conditionsSets</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="nb">dict</span><span class="p">(</span><span class="o">...</span><span class="p">),</span> <span class="nb">dict</span><span class="p">(</span><span class="o">...</span><span class="p">)])</span>
+<span class="n">r1</span><span class="o">.</span><span class="n">subs</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;a.alt&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="subclassing-descriptors">
+<span id="id5"></span><h3>Subclassing descriptors<a class="headerlink" href="#subclassing-descriptors" title="Permalink to this headline">¶</a></h3>
+<p>The DesignSpaceDocument can take subclassed Reader and Writer objects.
+This allows you to work with your own descriptors. You could subclass
+the descriptors. But as long as they have the basic attributes the
+descriptor does not need to be a subclass.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MyDocReader</span><span class="p">(</span><span class="n">BaseDocReader</span><span class="p">):</span>
+    <span class="n">ruleDescriptorClass</span> <span class="o">=</span> <span class="n">MyRuleDescriptor</span>
+    <span class="n">axisDescriptorClass</span> <span class="o">=</span> <span class="n">MyAxisDescriptor</span>
+    <span class="n">sourceDescriptorClass</span> <span class="o">=</span> <span class="n">MySourceDescriptor</span>
+    <span class="n">instanceDescriptorClass</span> <span class="o">=</span> <span class="n">MyInstanceDescriptor</span>
+
+<span class="k">class</span> <span class="nc">MyDocWriter</span><span class="p">(</span><span class="n">BaseDocWriter</span><span class="p">):</span>
+    <span class="n">ruleDescriptorClass</span> <span class="o">=</span> <span class="n">MyRuleDescriptor</span>
+    <span class="n">axisDescriptorClass</span> <span class="o">=</span> <span class="n">MyAxisDescriptor</span>
+    <span class="n">sourceDescriptorClass</span> <span class="o">=</span> <span class="n">MySourceDescriptor</span>
+    <span class="n">instanceDescriptorClass</span> <span class="o">=</span> <span class="n">MyInstanceDescriptor</span>
+
+<span class="n">myDoc</span> <span class="o">=</span> <span class="n">DesignSpaceDocument</span><span class="p">(</span><span class="n">KeyedDocReader</span><span class="p">,</span> <span class="n">KeyedDocWriter</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="document-xml-structure">
+<h2>Document xml structure<a class="headerlink" href="#document-xml-structure" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">axes</span></code> element contains one or more <code class="docutils literal notranslate"><span class="pre">axis</span></code> elements.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">sources</span></code> element contains one or more <code class="docutils literal notranslate"><span class="pre">source</span></code> elements.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">instances</span></code> element contains one or more <code class="docutils literal notranslate"><span class="pre">instance</span></code> elements.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">rules</span></code> element contains one or more <code class="docutils literal notranslate"><span class="pre">rule</span></code> elements.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">lib</span></code> element contains arbitrary data.</p></li>
+</ul>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&#39;1.0&#39; encoding=&#39;utf-8&#39;?&gt;</span>
+<span class="nt">&lt;designspace</span> <span class="na">format=</span><span class="s">&quot;3&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;axes&gt;</span>
+        <span class="c">&lt;!-- define axes here --&gt;</span>
+        <span class="nt">&lt;axis../&gt;</span>
+    <span class="nt">&lt;/axes&gt;</span>
+    <span class="nt">&lt;sources&gt;</span>
+        <span class="c">&lt;!-- define masters here --&gt;</span>
+        <span class="nt">&lt;source../&gt;</span>
+    <span class="nt">&lt;/sources&gt;</span>
+    <span class="nt">&lt;instances&gt;</span>
+        <span class="c">&lt;!-- define instances here --&gt;</span>
+        <span class="nt">&lt;instance../&gt;</span>
+    <span class="nt">&lt;/instances&gt;</span>
+    <span class="nt">&lt;rules&gt;</span>
+        <span class="c">&lt;!-- define rules here --&gt;</span>
+        <span class="nt">&lt;rule../&gt;</span>
+    <span class="nt">&lt;/rules&gt;</span>
+    <span class="nt">&lt;lib&gt;</span>
+        <span class="nt">&lt;dict&gt;</span>
+            <span class="c">&lt;!-- store custom data here --&gt;</span>
+        <span class="nt">&lt;/dict&gt;</span>
+    <span class="nt">&lt;/lib&gt;</span>
+<span class="nt">&lt;/designspace&gt;</span>
+</pre></div>
+</div>
+<div class="section" id="axis-element">
+<h3>1. axis element<a class="headerlink" href="#axis-element" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Define a single axis</p></li>
+<li><p>Child element of <code class="docutils literal notranslate"><span class="pre">axes</span></code></p></li>
+</ul>
+<div class="section" id="id6">
+<h4>Attributes<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code>: required, string. Name of the axis that is used in the
+location elements.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tag</span></code>: required, string, 4 letters. Some axis tags are registered
+in the OpenType Specification.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">minimum</span></code>: required, number. The minimum value for this axis, in user space coordinates.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">maximum</span></code>: required, number. The maximum value for this axis, in user space coordinates.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">default</span></code>: required, number. The default value for this axis, in user space coordinates.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">hidden</span></code>: optional, 0 or 1. Records whether this axis needs to be
+hidden in interfaces.</p></li>
+</ul>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;axis</span> <span class="na">name=</span><span class="s">&quot;weight&quot;</span> <span class="na">tag=</span><span class="s">&quot;wght&quot;</span> <span class="na">minimum=</span><span class="s">&quot;1&quot;</span> <span class="na">maximum=</span><span class="s">&quot;1000&quot;</span> <span class="na">default=</span><span class="s">&quot;400&quot;</span><span class="nt">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="labelname-element">
+<h3>1.1 labelname element<a class="headerlink" href="#labelname-element" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Defines a human readable name for UI use.</p></li>
+<li><p>Optional for non-registered axis names.</p></li>
+<li><p>Can be localised with <code class="docutils literal notranslate"><span class="pre">xml:lang</span></code></p></li>
+<li><p>Child element of <code class="docutils literal notranslate"><span class="pre">axis</span></code></p></li>
+</ul>
+<div class="section" id="id7">
+<h4>Attributes<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">xml:lang</span></code>: required, string. <a class="reference external" href="https://www.w3.org/International/questions/qa-when-xmllang.en">XML language
+definition</a></p></li>
+</ul>
+</div>
+<div class="section" id="value">
+<h4>Value<a class="headerlink" href="#value" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>The natural language name of this axis.</p></li>
+</ul>
+</div>
+<div class="section" id="id8">
+<h4>Example<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;labelname</span> <span class="na">xml:lang=</span><span class="s">&quot;fa-IR&quot;</span><span class="nt">&gt;</span>قطر<span class="nt">&lt;/labelname&gt;</span>
+<span class="nt">&lt;labelname</span> <span class="na">xml:lang=</span><span class="s">&quot;en&quot;</span><span class="nt">&gt;</span>Wéíght<span class="nt">&lt;/labelname&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="map-element">
+<h3>1.2 map element<a class="headerlink" href="#map-element" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Defines a single node in a series of input value (user space coordinate)
+to output value (designspace coordinate) pairs.</p></li>
+<li><p>Together these values transform the designspace.</p></li>
+<li><p>Child of <code class="docutils literal notranslate"><span class="pre">axis</span></code> element.</p></li>
+</ul>
+<div class="section" id="id9">
+<h4>Example<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;map</span> <span class="na">input=</span><span class="s">&quot;1.0&quot;</span> <span class="na">output=</span><span class="s">&quot;10.0&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;map</span> <span class="na">input=</span><span class="s">&quot;400.0&quot;</span> <span class="na">output=</span><span class="s">&quot;66.0&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;map</span> <span class="na">input=</span><span class="s">&quot;1000.0&quot;</span> <span class="na">output=</span><span class="s">&quot;990.0&quot;</span> <span class="nt">/&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-of-all-axis-elements-together">
+<h4>Example of all axis elements together:<a class="headerlink" href="#example-of-all-axis-elements-together" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;axes&gt;</span>
+    <span class="nt">&lt;axis</span> <span class="na">default=</span><span class="s">&quot;1&quot;</span> <span class="na">maximum=</span><span class="s">&quot;1000&quot;</span> <span class="na">minimum=</span><span class="s">&quot;0&quot;</span> <span class="na">name=</span><span class="s">&quot;weight&quot;</span> <span class="na">tag=</span><span class="s">&quot;wght&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;labelname</span> <span class="na">xml:lang=</span><span class="s">&quot;fa-IR&quot;</span><span class="nt">&gt;</span>قطر<span class="nt">&lt;/labelname&gt;</span>
+        <span class="nt">&lt;labelname</span> <span class="na">xml:lang=</span><span class="s">&quot;en&quot;</span><span class="nt">&gt;</span>Wéíght<span class="nt">&lt;/labelname&gt;</span>
+    <span class="nt">&lt;/axis&gt;</span>
+    <span class="nt">&lt;axis</span> <span class="na">default=</span><span class="s">&quot;100&quot;</span> <span class="na">maximum=</span><span class="s">&quot;200&quot;</span> <span class="na">minimum=</span><span class="s">&quot;50&quot;</span> <span class="na">name=</span><span class="s">&quot;width&quot;</span> <span class="na">tag=</span><span class="s">&quot;wdth&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;map</span> <span class="na">input=</span><span class="s">&quot;50.0&quot;</span> <span class="na">output=</span><span class="s">&quot;10.0&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;map</span> <span class="na">input=</span><span class="s">&quot;100.0&quot;</span> <span class="na">output=</span><span class="s">&quot;66.0&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;map</span> <span class="na">input=</span><span class="s">&quot;200.0&quot;</span> <span class="na">output=</span><span class="s">&quot;990.0&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/axis&gt;</span>
+<span class="nt">&lt;/axes&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="location-element">
+<h3>2. location element<a class="headerlink" href="#location-element" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Defines a coordinate in the design space.</p></li>
+<li><p>Dictionary of axisname: axisvalue</p></li>
+<li><p>Used in <code class="docutils literal notranslate"><span class="pre">source</span></code>, <code class="docutils literal notranslate"><span class="pre">instance</span></code> and <code class="docutils literal notranslate"><span class="pre">glyph</span></code> elements.</p></li>
+</ul>
+</div>
+<div class="section" id="dimension-element">
+<h3>2.1 dimension element<a class="headerlink" href="#dimension-element" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Child element of <code class="docutils literal notranslate"><span class="pre">location</span></code></p></li>
+</ul>
+<div class="section" id="id10">
+<h4>Attributes<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code>: required, string. Name of the axis.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">xvalue</span></code>: required, number. The value on this axis.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">yvalue</span></code>: optional, number. Separate value for anisotropic
+interpolations.</p></li>
+</ul>
+</div>
+<div class="section" id="id11">
+<h4>Example<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;location&gt;</span>
+    <span class="nt">&lt;dimension</span> <span class="na">name=</span><span class="s">&quot;width&quot;</span> <span class="na">xvalue=</span><span class="s">&quot;0.000000&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;dimension</span> <span class="na">name=</span><span class="s">&quot;weight&quot;</span> <span class="na">xvalue=</span><span class="s">&quot;0.000000&quot;</span> <span class="na">yvalue=</span><span class="s">&quot;0.003&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/location&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="source-element">
+<h3>3. source element<a class="headerlink" href="#source-element" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Defines a single font or layer that contributes to the designspace.</p></li>
+<li><p>Child element of <code class="docutils literal notranslate"><span class="pre">sources</span></code></p></li>
+<li><p>Location in designspace coordinates.</p></li>
+</ul>
+<div class="section" id="id12">
+<h4>Attributes<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">familyname</span></code>: optional, string. The family name of the source font.
+While this could be extracted from the font data itself, it can be
+more efficient to add it here.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">stylename</span></code>: optional, string. The style name of the source font.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code>: required, string. A unique name that can be used to
+identify this font if it needs to be referenced elsewhere.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">filename</span></code>: required, string. A path to the source file, relative
+to the root path of this document. The path can be at the same level
+as the document or lower.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">layer</span></code>: optional, string. The name of the layer in the source file.
+If no layer attribute is given assume the foreground layer should be used.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="lib-element">
+<h3>3.1 lib element<a class="headerlink" href="#lib-element" title="Permalink to this headline">¶</a></h3>
+<p>There are two meanings for the <code class="docutils literal notranslate"><span class="pre">lib</span></code> element:</p>
+<ol class="arabic">
+<li><dl class="simple">
+<dt>Source lib</dt><dd><ul class="simple">
+<li><p>Example: <code class="docutils literal notranslate"><span class="pre">&lt;lib</span> <span class="pre">copy=&quot;1&quot;</span> <span class="pre">/&gt;</span></code></p></li>
+<li><p>Child element of <code class="docutils literal notranslate"><span class="pre">source</span></code></p></li>
+<li><p>Defines if the instances can inherit the data in the lib of this
+source.</p></li>
+<li><p>MutatorMath only</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>Document and instance lib</dt><dd><ul>
+<li><p>Example:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;lib&gt;</span>
+    <span class="nt">&lt;dict&gt;</span>
+        <span class="nt">&lt;key&gt;</span>...<span class="nt">&lt;/key&gt;</span>
+        <span class="nt">&lt;string&gt;</span>The contents use the PLIST format.<span class="nt">&lt;/string&gt;</span>
+    <span class="nt">&lt;/dict&gt;</span>
+<span class="nt">&lt;/lib&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><p>Child element of <code class="docutils literal notranslate"><span class="pre">designspace</span></code> and <code class="docutils literal notranslate"><span class="pre">instance</span></code></p></li>
+<li><p>Contains arbitrary data about the whole document or about a specific
+instance.</p></li>
+<li><p>Items in the dict need to use <strong>reverse domain name notation</strong> &lt;<a class="reference external" href="https://en.wikipedia.org/wiki/Reverse_domain_name_notation">https://en.wikipedia.org/wiki/Reverse_domain_name_notation</a>&gt;__</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ol>
+</div>
+<div class="section" id="info-element">
+<h3>3.2 info element<a class="headerlink" href="#info-element" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;info</span> <span class="pre">copy=&quot;1&quot;</span> <span class="pre">/&gt;</span></code></p></li>
+<li><p>Child element of <code class="docutils literal notranslate"><span class="pre">source</span></code></p></li>
+<li><p>Defines if the instances can inherit the non-interpolating font info
+from this source.</p></li>
+<li><p>MutatorMath</p></li>
+</ul>
+</div>
+<div class="section" id="features-element">
+<h3>3.3 features element<a class="headerlink" href="#features-element" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;features</span> <span class="pre">copy=&quot;1&quot;</span> <span class="pre">/&gt;</span></code></p></li>
+<li><p>Defines if the instances can inherit opentype feature text from this
+source.</p></li>
+<li><p>Child element of <code class="docutils literal notranslate"><span class="pre">source</span></code></p></li>
+<li><p>MutatorMath only</p></li>
+</ul>
+</div>
+<div class="section" id="glyph-element">
+<h3>3.4 glyph element<a class="headerlink" href="#glyph-element" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Can appear in <code class="docutils literal notranslate"><span class="pre">source</span></code> as well as in <code class="docutils literal notranslate"><span class="pre">instance</span></code> elements.</p></li>
+<li><p>In a <code class="docutils literal notranslate"><span class="pre">source</span></code> element this states if a glyph is to be excluded from
+the calculation.</p></li>
+<li><p>MutatorMath only</p></li>
+</ul>
+<div class="section" id="id13">
+<h4>Attributes<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">mute</span></code>: optional attribute, number 1 or 0. Indicate if this glyph
+should be ignored as a master.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;glyph</span> <span class="pre">mute=&quot;1&quot;</span> <span class="pre">name=&quot;A&quot;/&gt;</span></code></p></li>
+<li><p>MutatorMath only</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="kerning-element">
+<h3>3.5 kerning element<a class="headerlink" href="#kerning-element" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;kerning</span> <span class="pre">mute=&quot;1&quot;</span> <span class="pre">/&gt;</span></code></p></li>
+<li><p>Can appear in <code class="docutils literal notranslate"><span class="pre">source</span></code> as well as in <code class="docutils literal notranslate"><span class="pre">instance</span></code> elements.</p></li>
+</ul>
+<div class="section" id="id14">
+<h4>Attributes<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">mute</span></code>: required attribute, number 1 or 0. Indicate if the kerning
+data from this source is to be excluded from the calculation.</p></li>
+<li><p>If the kerning element is not present, assume <code class="docutils literal notranslate"><span class="pre">mute=0</span></code>, yes,
+include the kerning of this source in the calculation.</p></li>
+<li><p>MutatorMath only</p></li>
+</ul>
+</div>
+<div class="section" id="id15">
+<h4>Example<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;source</span> <span class="na">familyname=</span><span class="s">&quot;MasterFamilyName&quot;</span> <span class="na">filename=</span><span class="s">&quot;masters/masterTest1.ufo&quot;</span> <span class="na">name=</span><span class="s">&quot;master.ufo1&quot;</span> <span class="na">stylename=</span><span class="s">&quot;MasterStyleNameOne&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;lib</span> <span class="na">copy=</span><span class="s">&quot;1&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;features</span> <span class="na">copy=</span><span class="s">&quot;1&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;info</span> <span class="na">copy=</span><span class="s">&quot;1&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;glyph</span> <span class="na">mute=</span><span class="s">&quot;1&quot;</span> <span class="na">name=</span><span class="s">&quot;A&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;glyph</span> <span class="na">mute=</span><span class="s">&quot;1&quot;</span> <span class="na">name=</span><span class="s">&quot;Z&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;location&gt;</span>
+        <span class="nt">&lt;dimension</span> <span class="na">name=</span><span class="s">&quot;width&quot;</span> <span class="na">xvalue=</span><span class="s">&quot;0.000000&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;dimension</span> <span class="na">name=</span><span class="s">&quot;weight&quot;</span> <span class="na">xvalue=</span><span class="s">&quot;0.000000&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/location&gt;</span>
+<span class="nt">&lt;/source&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="instance-element">
+<h3>4. instance element<a class="headerlink" href="#instance-element" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Defines a single font that can be calculated with the designspace.</p></li>
+<li><p>Child element of <code class="docutils literal notranslate"><span class="pre">instances</span></code></p></li>
+<li><p>For use in Varlib the instance element really only needs the names
+and the location. The <code class="docutils literal notranslate"><span class="pre">glyphs</span></code> element is not required.</p></li>
+<li><p>MutatorMath uses the <code class="docutils literal notranslate"><span class="pre">glyphs</span></code> element to describe how certain
+glyphs need different masters, mainly to describe the effects of
+conditional rules in Superpolator.</p></li>
+<li><p>Location in designspace coordinates.</p></li>
+</ul>
+<div class="section" id="id16">
+<h4>Attributes<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">familyname</span></code>: required, string. The family name of the instance
+font. Corresponds with <code class="docutils literal notranslate"><span class="pre">font.info.familyName</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">stylename</span></code>: required, string. The style name of the instance font.
+Corresponds with <code class="docutils literal notranslate"><span class="pre">font.info.styleName</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code>: required, string. A unique name that can be used to
+identify this font if it needs to be referenced elsewhere.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">filename</span></code>: string. Required for MutatorMath. A path to the
+instance file, relative to the root path of this document. The path
+can be at the same level as the document or lower.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">postscriptfontname</span></code>: string. Optional for MutatorMath. Corresponds
+with <code class="docutils literal notranslate"><span class="pre">font.info.postscriptFontName</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">stylemapfamilyname</span></code>: string. Optional for MutatorMath. Corresponds
+with <code class="docutils literal notranslate"><span class="pre">styleMapFamilyName</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">stylemapstylename</span></code>: string. Optional for MutatorMath. Corresponds
+with <code class="docutils literal notranslate"><span class="pre">styleMapStyleName</span></code></p></li>
+</ul>
+</div>
+<div class="section" id="example-for-varlib">
+<h4>Example for varlib<a class="headerlink" href="#example-for-varlib" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;instance</span> <span class="na">familyname=</span><span class="s">&quot;InstanceFamilyName&quot;</span> <span class="na">filename=</span><span class="s">&quot;instances/instanceTest2.ufo&quot;</span> <span class="na">name=</span><span class="s">&quot;instance.ufo2&quot;</span> <span class="na">postscriptfontname=</span><span class="s">&quot;InstancePostscriptName&quot;</span> <span class="na">stylemapfamilyname=</span><span class="s">&quot;InstanceStyleMapFamilyName&quot;</span> <span class="na">stylemapstylename=</span><span class="s">&quot;InstanceStyleMapStyleName&quot;</span> <span class="na">stylename=</span><span class="s">&quot;InstanceStyleName&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;location&gt;</span>
+    <span class="nt">&lt;dimension</span> <span class="na">name=</span><span class="s">&quot;width&quot;</span> <span class="na">xvalue=</span><span class="s">&quot;400&quot;</span> <span class="na">yvalue=</span><span class="s">&quot;300&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;dimension</span> <span class="na">name=</span><span class="s">&quot;weight&quot;</span> <span class="na">xvalue=</span><span class="s">&quot;66&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/location&gt;</span>
+<span class="nt">&lt;kerning</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;info</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;lib&gt;</span>
+    <span class="nt">&lt;dict&gt;</span>
+        <span class="nt">&lt;key&gt;</span>com.coolDesignspaceApp.specimenText<span class="nt">&lt;/key&gt;</span>
+        <span class="nt">&lt;string&gt;</span>Hamburgerwhatever<span class="nt">&lt;/string&gt;</span>
+    <span class="nt">&lt;/dict&gt;</span>
+<span class="nt">&lt;/lib&gt;</span>
+<span class="nt">&lt;/instance&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="glyphs-element">
+<h3>4.1 glyphs element<a class="headerlink" href="#glyphs-element" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Container for <code class="docutils literal notranslate"><span class="pre">glyph</span></code> elements.</p></li>
+<li><p>Optional</p></li>
+<li><p>MutatorMath only.</p></li>
+</ul>
+</div>
+<div class="section" id="id17">
+<h3>4.2 glyph element<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Child element of <code class="docutils literal notranslate"><span class="pre">glyphs</span></code></p></li>
+<li><p>May contain a <code class="docutils literal notranslate"><span class="pre">location</span></code> element.</p></li>
+</ul>
+<div class="section" id="id18">
+<h4>Attributes<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code>: string. The name of the glyph.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">unicode</span></code>: string. Unicode values for this glyph, in hexadecimal.
+Multiple values should be separated with a space.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mute</span></code>: optional attribute, number 1 or 0. Indicate if this glyph
+should be supressed in the output.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="note-element">
+<h3>4.2.1 note element<a class="headerlink" href="#note-element" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>String. The value corresponds to glyph.note in UFO.</p></li>
+</ul>
+</div>
+<div class="section" id="masters-element">
+<h3>4.2.2 masters element<a class="headerlink" href="#masters-element" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Container for <code class="docutils literal notranslate"><span class="pre">master</span></code> elements</p></li>
+<li><p>These <code class="docutils literal notranslate"><span class="pre">master</span></code> elements define an alternative set of glyph masters
+for this glyph.</p></li>
+</ul>
+</div>
+<div class="section" id="master-element">
+<h3>4.2.2.1 master element<a class="headerlink" href="#master-element" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Defines a single alternative master for this glyph.</p></li>
+</ul>
+</div>
+<div class="section" id="localised-names-for-instances">
+<h3>4.3 Localised names for instances<a class="headerlink" href="#localised-names-for-instances" title="Permalink to this headline">¶</a></h3>
+<p>Localised names for instances can be included with these simple elements
+with an <code class="docutils literal notranslate"><span class="pre">xml:lang</span></code> attribute:
+<a class="reference external" href="https://www.w3.org/International/questions/qa-when-xmllang.en">XML language definition</a></p>
+<ul class="simple">
+<li><p>stylename</p></li>
+<li><p>familyname</p></li>
+<li><p>stylemapstylename</p></li>
+<li><p>stylemapfamilyname</p></li>
+</ul>
+<div class="section" id="id19">
+<h4>Example<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;stylename</span> <span class="na">xml:lang=</span><span class="s">&quot;fr&quot;</span><span class="nt">&gt;</span>Demigras<span class="nt">&lt;/stylename&gt;</span>
+<span class="nt">&lt;stylename</span> <span class="na">xml:lang=</span><span class="s">&quot;ja&quot;</span><span class="nt">&gt;</span>半ば<span class="nt">&lt;/stylename&gt;</span>
+<span class="nt">&lt;familyname</span> <span class="na">xml:lang=</span><span class="s">&quot;fr&quot;</span><span class="nt">&gt;</span>Montserrat<span class="nt">&lt;/familyname&gt;</span>
+<span class="nt">&lt;familyname</span> <span class="na">xml:lang=</span><span class="s">&quot;ja&quot;</span><span class="nt">&gt;</span>モンセラート<span class="nt">&lt;/familyname&gt;</span>
+<span class="nt">&lt;stylemapstylename</span> <span class="na">xml:lang=</span><span class="s">&quot;de&quot;</span><span class="nt">&gt;</span>Standard<span class="nt">&lt;/stylemapstylename&gt;</span>
+<span class="nt">&lt;stylemapfamilyname</span> <span class="na">xml:lang=</span><span class="s">&quot;de&quot;</span><span class="nt">&gt;</span>Montserrat Halbfett<span class="nt">&lt;/stylemapfamilyname&gt;</span>
+<span class="nt">&lt;stylemapfamilyname</span> <span class="na">xml:lang=</span><span class="s">&quot;ja&quot;</span><span class="nt">&gt;</span>モンセラート SemiBold<span class="nt">&lt;/stylemapfamilyname&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id20">
+<h4>Attributes<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">glyphname</span></code>: the name of the alternate master glyph.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">source</span></code>: the identifier name of the source this master glyph needs
+to be loaded from</p></li>
+</ul>
+</div>
+<div class="section" id="id21">
+<h4>Example<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;instance</span> <span class="na">familyname=</span><span class="s">&quot;InstanceFamilyName&quot;</span> <span class="na">filename=</span><span class="s">&quot;instances/instanceTest2.ufo&quot;</span> <span class="na">name=</span><span class="s">&quot;instance.ufo2&quot;</span> <span class="na">postscriptfontname=</span><span class="s">&quot;InstancePostscriptName&quot;</span> <span class="na">stylemapfamilyname=</span><span class="s">&quot;InstanceStyleMapFamilyName&quot;</span> <span class="na">stylemapstylename=</span><span class="s">&quot;InstanceStyleMapStyleName&quot;</span> <span class="na">stylename=</span><span class="s">&quot;InstanceStyleName&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;location&gt;</span>
+    <span class="nt">&lt;dimension</span> <span class="na">name=</span><span class="s">&quot;width&quot;</span> <span class="na">xvalue=</span><span class="s">&quot;400&quot;</span> <span class="na">yvalue=</span><span class="s">&quot;300&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;dimension</span> <span class="na">name=</span><span class="s">&quot;weight&quot;</span> <span class="na">xvalue=</span><span class="s">&quot;66&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/location&gt;</span>
+<span class="nt">&lt;glyphs&gt;</span>
+    <span class="nt">&lt;glyph</span> <span class="na">name=</span><span class="s">&quot;arrow2&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;glyph</span> <span class="na">name=</span><span class="s">&quot;arrow&quot;</span> <span class="na">unicode=</span><span class="s">&quot;0x4d2 0x4d3&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;location&gt;</span>
+        <span class="nt">&lt;dimension</span> <span class="na">name=</span><span class="s">&quot;width&quot;</span> <span class="na">xvalue=</span><span class="s">&quot;100&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;dimension</span> <span class="na">name=</span><span class="s">&quot;weight&quot;</span> <span class="na">xvalue=</span><span class="s">&quot;120&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/location&gt;</span>
+    <span class="nt">&lt;note&gt;</span>A note about this glyph<span class="nt">&lt;/note&gt;</span>
+    <span class="nt">&lt;masters&gt;</span>
+        <span class="nt">&lt;master</span> <span class="na">glyphname=</span><span class="s">&quot;BB&quot;</span> <span class="na">source=</span><span class="s">&quot;master.ufo1&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;location&gt;</span>
+            <span class="nt">&lt;dimension</span> <span class="na">name=</span><span class="s">&quot;width&quot;</span> <span class="na">xvalue=</span><span class="s">&quot;20&quot;</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;dimension</span> <span class="na">name=</span><span class="s">&quot;weight&quot;</span> <span class="na">xvalue=</span><span class="s">&quot;20&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/location&gt;</span>
+        <span class="nt">&lt;/master&gt;</span>
+    <span class="nt">&lt;/masters&gt;</span>
+    <span class="nt">&lt;/glyph&gt;</span>
+<span class="nt">&lt;/glyphs&gt;</span>
+<span class="nt">&lt;kerning</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;info</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;lib&gt;</span>
+    <span class="nt">&lt;dict&gt;</span>
+        <span class="nt">&lt;key&gt;</span>com.coolDesignspaceApp.specimenText<span class="nt">&lt;/key&gt;</span>
+        <span class="nt">&lt;string&gt;</span>Hamburgerwhatever<span class="nt">&lt;/string&gt;</span>
+    <span class="nt">&lt;/dict&gt;</span>
+<span class="nt">&lt;/lib&gt;</span>
+<span class="nt">&lt;/instance&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="rules-element">
+<h3>5.0 rules element<a class="headerlink" href="#rules-element" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Container for <code class="docutils literal notranslate"><span class="pre">rule</span></code> elements</p></li>
+<li><p>The rules are evaluated in this order.</p></li>
+</ul>
+<p>Rules describe designspace areas in which one glyph should be replaced by another.
+A rule has a name and a number of conditionsets. The rule also contains a list of
+glyphname pairs: the glyphs that need to be substituted. For a rule to be triggered
+<strong>only one</strong> of the conditionsets needs to be true, <code class="docutils literal notranslate"><span class="pre">OR</span></code>. Within a conditionset
+<strong>all</strong> conditions need to be true, <code class="docutils literal notranslate"><span class="pre">AND</span></code>.</p>
+<div class="section" id="id22">
+<h4>Attributes<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">processing</span></code>: flag, optional. Valid values are [<code class="docutils literal notranslate"><span class="pre">first</span></code>, <code class="docutils literal notranslate"><span class="pre">last</span></code>]. This flag indicates whether the substitution rules should be applied before or after other glyph substitution features.</p></li>
+<li><p>If no <code class="docutils literal notranslate"><span class="pre">processing</span></code> attribute is given, interpret as <code class="docutils literal notranslate"><span class="pre">first</span></code>.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="rule-element">
+<h3>5.1 rule element<a class="headerlink" href="#rule-element" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Defines a named rule.</p></li>
+<li><p>Each <code class="docutils literal notranslate"><span class="pre">rule</span></code> element contains one or more <code class="docutils literal notranslate"><span class="pre">conditionset</span></code> elements.</p></li>
+<li><p><strong>Only one</strong> <code class="docutils literal notranslate"><span class="pre">conditionset</span></code> needs to be true to trigger the rule.</p></li>
+<li><p><strong>All</strong> conditions in a <code class="docutils literal notranslate"><span class="pre">conditionset</span></code> must be true to make the <code class="docutils literal notranslate"><span class="pre">conditionset</span></code> true.</p></li>
+<li><p>For backwards compatibility a <code class="docutils literal notranslate"><span class="pre">rule</span></code> can contain <code class="docutils literal notranslate"><span class="pre">condition</span></code> elements outside of a conditionset. These are then understood to be part of a single, implied, <code class="docutils literal notranslate"><span class="pre">conditionset</span></code>. Note: these conditions should be written wrapped in a conditionset.</p></li>
+<li><p>A rule element needs to contain one or more <code class="docutils literal notranslate"><span class="pre">sub</span></code> elements in order to be compiled to a variable font.</p></li>
+<li><p>Rules without sub elements should be ignored when compiling a font.</p></li>
+<li><p>For authoring tools it might be necessary to save designspace files without <code class="docutils literal notranslate"><span class="pre">sub</span></code> elements just because the work is incomplete.</p></li>
+</ul>
+<div class="section" id="id23">
+<h4>Attributes<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code>: optional, string. A unique name that can be used to
+identify this rule if it needs to be referenced elsewhere. The name
+is not important for compiling variable fonts.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="conditionset-element">
+<h3>5.1.1 conditionset element<a class="headerlink" href="#conditionset-element" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Child element of <code class="docutils literal notranslate"><span class="pre">rule</span></code></p></li>
+<li><p>Contains one or more <code class="docutils literal notranslate"><span class="pre">condition</span></code> elements.</p></li>
+</ul>
+</div>
+<div class="section" id="condition-element">
+<h3>5.1.2 condition element<a class="headerlink" href="#condition-element" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Child element of <code class="docutils literal notranslate"><span class="pre">conditionset</span></code></p></li>
+<li><p>Between the <code class="docutils literal notranslate"><span class="pre">minimum</span></code> and <code class="docutils literal notranslate"><span class="pre">maximum</span></code> this condition is <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">minimum</span></code> and <code class="docutils literal notranslate"><span class="pre">maximum</span></code> are in designspace coordinates.</p></li>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">minimum</span></code> is not available, assume it is <code class="docutils literal notranslate"><span class="pre">axis.minimum</span></code>, mapped to designspace coordinates.</p></li>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">maximum</span></code> is not available, assume it is <code class="docutils literal notranslate"><span class="pre">axis.maximum</span></code>, mapped to designspace coordinates.</p></li>
+<li><p>The condition must contain at least a minimum or maximum or both.</p></li>
+</ul>
+<div class="section" id="id24">
+<h4>Attributes<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code>: string, required. Must match one of the defined <code class="docutils literal notranslate"><span class="pre">axis</span></code>
+name attributes.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">minimum</span></code>: number, required*. The low value, in designspace coordinates.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">maximum</span></code>: number, required*. The high value, in designspace coordinates.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="sub-element">
+<h3>5.1.3 sub element<a class="headerlink" href="#sub-element" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Child element of <code class="docutils literal notranslate"><span class="pre">rule</span></code>.</p></li>
+<li><p>Defines which glyph to replace when the rule evaluates to <strong>True</strong>.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">sub</span></code> element contains a pair of glyphnames. The <code class="docutils literal notranslate"><span class="pre">name</span></code> attribute is the glyph that should be visible when the rule evaluates to <strong>False</strong>. The <code class="docutils literal notranslate"><span class="pre">with</span></code> attribute is the glyph that should be visible when the rule evaluates to <strong>True</strong>.</p></li>
+</ul>
+<p>Axis values in Conditions are in designspace coordinates.</p>
+<div class="section" id="id25">
+<h4>Attributes<a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code>: string, required. The name of the glyph this rule looks
+for.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">with</span></code>: string, required. The name of the glyph it is replaced
+with.</p></li>
+</ul>
+</div>
+<div class="section" id="id26">
+<h4>Example<a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h4>
+<p>Example with an implied <code class="docutils literal notranslate"><span class="pre">conditionset</span></code>. Here the conditions are not
+contained in a conditionset.</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;rules</span> <span class="na">processing=</span><span class="s">&quot;last&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;rule</span> <span class="na">name=</span><span class="s">&quot;named.rule.1&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;condition</span> <span class="na">minimum=</span><span class="s">&quot;250&quot;</span> <span class="na">maximum=</span><span class="s">&quot;750&quot;</span> <span class="na">name=</span><span class="s">&quot;weight&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;condition</span> <span class="na">minimum=</span><span class="s">&quot;50&quot;</span> <span class="na">maximum=</span><span class="s">&quot;100&quot;</span> <span class="na">name=</span><span class="s">&quot;width&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;sub</span> <span class="na">name=</span><span class="s">&quot;dollar&quot;</span> <span class="na">with=</span><span class="s">&quot;dollar.alt&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/rule&gt;</span>
+<span class="nt">&lt;/rules&gt;</span>
+</pre></div>
+</div>
+<p>Example with <code class="docutils literal notranslate"><span class="pre">conditionsets</span></code>. All conditions in a conditionset must be true.</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span>&lt;rules&gt;
+    &lt;rule name=&quot;named.rule.2&quot;&gt;
+        &lt;conditionset&gt;
+            &lt;condition minimum=&quot;250&quot; maximum=&quot;750&quot; name=&quot;weight&quot; /&gt;
+            &lt;condition minimum=&quot;50&quot; maximum=&quot;100&quot; name=&quot;width&quot; /&gt;
+        &lt;/conditionset&gt;
+        &lt;conditionset&gt;
+            &lt;condition ... /&gt;
+            &lt;condition ... /&gt;
+        &lt;/conditionset&gt;
+        &lt;sub name=&quot;dollar&quot; with=&quot;dollar.alt&quot;/&gt;
+    &lt;/rule&gt;
+&lt;/rules&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="notes">
+<h3>6 Notes<a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="paths-and-filenames">
+<h4>Paths and filenames<a class="headerlink" href="#paths-and-filenames" title="Permalink to this headline">¶</a></h4>
+<p>A designspace file needs to store many references to UFO files.</p>
+<ul class="simple">
+<li><p>designspace files can be part of versioning systems and appear on
+different computers. This means it is not possible to store absolute
+paths.</p></li>
+<li><p>So, all paths are relative to the designspace document path.</p></li>
+<li><p>Using relative paths allows designspace files and UFO files to be
+<strong>near</strong> each other, and that they can be <strong>found</strong> without enforcing
+one particular structure.</p></li>
+<li><p>The <strong>filename</strong> attribute in the <code class="docutils literal notranslate"><span class="pre">SourceDescriptor</span></code> and
+<code class="docutils literal notranslate"><span class="pre">InstanceDescriptor</span></code> classes stores the preferred relative path.</p></li>
+<li><p>The <strong>path</strong> attribute in these objects stores the absolute path. It
+is calculated from the document path and the relative path in the
+filename attribute when the object is created.</p></li>
+<li><p>Only the <strong>filename</strong> attribute is written to file.</p></li>
+<li><p>Both <strong>filename</strong> and <strong>path</strong> must use forward slashes (<code class="docutils literal notranslate"><span class="pre">/</span></code>) as
+path separators, even on Windows.</p></li>
+</ul>
+<p>Right before we save we need to identify and respond to the following
+situations:</p>
+<p>In each descriptor, we have to do the right thing for the filename
+attribute. Before writing to file, the <code class="docutils literal notranslate"><span class="pre">documentObject.updatePaths()</span></code>
+method prepares the paths as follows:</p>
+<p><strong>Case 1</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">descriptor</span><span class="o">.</span><span class="n">filename</span> <span class="o">==</span> <span class="kc">None</span>
+<span class="n">descriptor</span><span class="o">.</span><span class="n">path</span> <span class="o">==</span> <span class="kc">None</span>
+</pre></div>
+</div>
+<p><strong>Action</strong></p>
+<ul class="simple">
+<li><p>write as is, descriptors will not have a filename attr. Useless, but
+no reason to interfere.</p></li>
+</ul>
+<p><strong>Case 2</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">descriptor</span><span class="o">.</span><span class="n">filename</span> <span class="o">==</span> <span class="s2">&quot;../something&quot;</span>
+<span class="n">descriptor</span><span class="o">.</span><span class="n">path</span> <span class="o">==</span> <span class="kc">None</span>
+</pre></div>
+</div>
+<p><strong>Action</strong></p>
+<ul class="simple">
+<li><p>write as is. The filename attr should not be touched.</p></li>
+</ul>
+<p><strong>Case 3</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">descriptor</span><span class="o">.</span><span class="n">filename</span> <span class="o">==</span> <span class="kc">None</span>
+<span class="n">descriptor</span><span class="o">.</span><span class="n">path</span> <span class="o">==</span> <span class="s2">&quot;~/absolute/path/there&quot;</span>
+</pre></div>
+</div>
+<p><strong>Action</strong></p>
+<ul class="simple">
+<li><p>calculate the relative path for filename. We’re not overwriting some
+other value for filename, it should be fine.</p></li>
+</ul>
+<p><strong>Case 4</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">descriptor</span><span class="o">.</span><span class="n">filename</span> <span class="o">==</span> <span class="s1">&#39;../somewhere&#39;</span>
+<span class="n">descriptor</span><span class="o">.</span><span class="n">path</span> <span class="o">==</span> <span class="s2">&quot;~/absolute/path/there&quot;</span>
+</pre></div>
+</div>
+<p><strong>Action</strong></p>
+<ul class="simple">
+<li><p>There is a conflict between the given filename, and the path. The
+difference could have happened for any number of reasons. Assuming
+the values were not in conflict when the object was created, either
+could have changed. We can’t guess.</p></li>
+<li><p>Assume the path attribute is more up to date. Calculate a new value
+for filename based on the path and the document path.</p></li>
+</ul>
+</div>
+<div class="section" id="recommendation-for-editors">
+<h4>Recommendation for editors<a class="headerlink" href="#recommendation-for-editors" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>If you want to explicitly set the <strong>filename</strong> attribute, leave the
+path attribute empty.</p></li>
+<li><p>If you want to explicitly set the <strong>path</strong> attribute, leave the
+filename attribute empty. It will be recalculated.</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">documentObject.updateFilenameFromPath()</span></code> to explicitly set the
+<strong>filename</strong> attributes for all instance and source descriptors.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="common-lib-key-registry">
+<h3>7 Common Lib Key Registry<a class="headerlink" href="#common-lib-key-registry" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="public-skipexportglyphs">
+<h4>public.skipExportGlyphs<a class="headerlink" href="#public-skipexportglyphs" title="Permalink to this headline">¶</a></h4>
+<p>This lib key works the same as the UFO lib key with the same name. The
+difference is that applications using a Designspace as the corner stone of the
+font compilation process should use the lib key in that Designspace instead of
+any of the UFOs. If the lib key is empty or not present in the Designspace, all
+glyphs should be exported, regardless of what the same lib key in any of the
+UFOs says.</p>
+</div>
+</div>
+<div class="section" id="implementation-and-differences">
+<h3>8 Implementation and differences<a class="headerlink" href="#implementation-and-differences" title="Permalink to this headline">¶</a></h3>
+<p>The designspace format has gone through considerable development.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>the format was originally written for MutatorMath.</p></li>
+<li><p>the format is now also used in fontTools.varlib.</p></li>
+<li><p>not all values are be required by all implementations.</p></li>
+</ul>
+</div></blockquote>
+<div class="section" id="varlib-vs-mutatormath">
+<h4>8.1 Varlib vs. MutatorMath<a class="headerlink" href="#varlib-vs-mutatormath" title="Permalink to this headline">¶</a></h4>
+<p>There are some differences between the way MutatorMath and fontTools.varlib handle designspaces.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Varlib does not support anisotropic interpolations.</p></li>
+<li><p>MutatorMath will extrapolate over the boundaries of
+the axes. Varlib can not (at the moment).</p></li>
+<li><p>Varlib requires much less data to define an instance than
+MutatorMath.</p></li>
+<li><p>The goals of Varlib and MutatorMath are different, so not all
+attributes are always needed.</p></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="older-versions">
+<h4>8.2 Older versions<a class="headerlink" href="#older-versions" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>In some implementations that preceed Variable Fonts, the <cite>copyInfo</cite>
+flag in a source indicated the source was to be treated as the default.
+This is no longer compatible with the assumption that the default font
+is located on the default value of each axis.</p></li>
+<li><p>Older implementations did not require axis records to be present in
+the designspace file. The axis extremes for instance were generated
+from the locations used in the sources. This is no longer possible.</p></li>
+</ul>
+</div>
+<div class="section" id="rules-and-generating-static-ufo-instances">
+<h4>8.3 Rules and generating static UFO instances<a class="headerlink" href="#rules-and-generating-static-ufo-instances" title="Permalink to this headline">¶</a></h4>
+<p>When making instances as UFOs from a designspace with rules, it can
+be useful to evaluate the rules so that the characterset of the ufo
+reflects, as much as possible, the state of a variable font when seen
+at the same location. This can be done by some swapping and renaming of
+glyphs.</p>
+<p>While useful for proofing or development work, it should be noted that
+swapping and renaming leaves the UFOs with glyphnames that are no longer
+descriptive. For instance, after a swap <cite>dollar.bar</cite> could contain a shape
+without a bar. Also, when the swapped glyphs are part of other GSUB variations
+it can become complex very quickly. So proceed with caution.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Assuming <cite>rulesProcessingLast = True</cite>:</p></li>
+<li><p>We need to swap the glyphs so that the original shape is still available.
+For instance, if a rule swaps <code class="docutils literal notranslate"><span class="pre">a</span></code> for <code class="docutils literal notranslate"><span class="pre">a.alt</span></code>, a glyph
+that references <code class="docutils literal notranslate"><span class="pre">a</span></code> in a component would then show the new <code class="docutils literal notranslate"><span class="pre">a.alt</span></code>.</p></li>
+<li><p>But that can lead to unexpected results, the two glyphs may have different
+widths or height. So, glyphs that are not specifically referenced in a rule
+<strong>should not change appearance</strong>. That means that the implementation that swaps
+<code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">a.alt</span></code> also swap all components that reference these
+glyphs in order to preserve their appearance.</p></li>
+<li><p>The swap function also needs to take care of swapping the names in
+kerning data and any GPOS code.</p></li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="this-document">
+<h3>9 This document<a class="headerlink" href="#this-document" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Changes are to be expected.</p></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="scripting.html" class="btn btn-neutral float-right" title="Scripting a designspace" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="designspaceLib" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Just van Rossum, Behdad Esfahbod, and the fontTools Authors. CC BY-SA 4.0
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

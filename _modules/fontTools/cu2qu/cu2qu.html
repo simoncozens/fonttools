@@ -1,0 +1,570 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>fontTools.cu2qu.cu2qu &mdash; fontTools Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> fontTools
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Library</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../afmLib.html">afmLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../agl.html">agl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cffLib/index.html">cffLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../colorLib/index.html">colorLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cu2qu/index.html">cu2qu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../designspaceLib/index.html">designspaceLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../encodings/index.html">encodings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../feaLib/index.html">feaLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../merge.html">merge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../misc/index.html">misc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../mtiLib.html">mtiLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../otlLib/index.html">otlLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pens/index.html">pens</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../subset/index.html">subset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../svgLib/index.html">svgLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../t1Lib.html">t1Lib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ttLib/index.html">ttLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ttx.html">ttx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ufoLib/index.html">ufoLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../unicode.html">unicode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../unicodedata/index.html">unicodedata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../varLib/index.html">varLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../voltLib.html">voltLib</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">fontTools</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>fontTools.cu2qu.cu2qu</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for fontTools.cu2qu.cu2qu</h1><div class="highlight"><pre>
+<span></span><span class="c1">#cython: language_level=3</span>
+<span class="c1">#distutils: define_macros=CYTHON_TRACE_NOGIL=1</span>
+
+<span class="c1"># Copyright 2015 Google Inc. All Rights Reserved.</span>
+<span class="c1">#</span>
+<span class="c1"># Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span>
+<span class="c1"># you may not use this file except in compliance with the License.</span>
+<span class="c1"># You may obtain a copy of the License at</span>
+<span class="c1">#</span>
+<span class="c1">#     http://www.apache.org/licenses/LICENSE-2.0</span>
+<span class="c1">#</span>
+<span class="c1"># Unless required by applicable law or agreed to in writing, software</span>
+<span class="c1"># distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span>
+<span class="c1"># WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span>
+<span class="c1"># See the License for the specific language governing permissions and</span>
+<span class="c1"># limitations under the License.</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">import</span> <span class="nn">cython</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+    <span class="c1"># if cython not installed, use mock module with no-op decorators and types</span>
+    <span class="kn">from</span> <span class="nn">fontTools.misc</span> <span class="k">import</span> <span class="n">cython</span>
+
+<span class="kn">import</span> <span class="nn">math</span>
+
+<span class="kn">from</span> <span class="nn">.errors</span> <span class="k">import</span> <span class="n">Error</span> <span class="k">as</span> <span class="n">Cu2QuError</span><span class="p">,</span> <span class="n">ApproxNotFoundError</span>
+
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;curve_to_quadratic&#39;</span><span class="p">,</span> <span class="s1">&#39;curves_to_quadratic&#39;</span><span class="p">]</span>
+
+<span class="n">MAX_N</span> <span class="o">=</span> <span class="mi">100</span>
+
+<span class="n">NAN</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="s2">&quot;NaN&quot;</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="n">cython</span><span class="o">.</span><span class="n">compiled</span><span class="p">:</span>
+    <span class="c1"># Yep, I&#39;m compiled.</span>
+    <span class="n">COMPILED</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="c1"># Just a lowly interpreted script.</span>
+    <span class="n">COMPILED</span> <span class="o">=</span> <span class="kc">False</span>
+
+
+<span class="nd">@cython</span><span class="o">.</span><span class="n">cfunc</span>
+<span class="nd">@cython</span><span class="o">.</span><span class="n">inline</span>
+<span class="nd">@cython</span><span class="o">.</span><span class="n">returns</span><span class="p">(</span><span class="n">cython</span><span class="o">.</span><span class="n">double</span><span class="p">)</span>
+<span class="nd">@cython</span><span class="o">.</span><span class="n">locals</span><span class="p">(</span><span class="n">v1</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">complex</span><span class="p">,</span> <span class="n">v2</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">complex</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">dot</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Return the dot product of two vectors.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">v1</span> <span class="o">*</span> <span class="n">v2</span><span class="o">.</span><span class="n">conjugate</span><span class="p">())</span><span class="o">.</span><span class="n">real</span>
+
+
+<span class="nd">@cython</span><span class="o">.</span><span class="n">cfunc</span>
+<span class="nd">@cython</span><span class="o">.</span><span class="n">inline</span>
+<span class="nd">@cython</span><span class="o">.</span><span class="n">locals</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">complex</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">complex</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">complex</span><span class="p">,</span> <span class="n">d</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">complex</span><span class="p">)</span>
+<span class="nd">@cython</span><span class="o">.</span><span class="n">locals</span><span class="p">(</span><span class="n">_1</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">complex</span><span class="p">,</span> <span class="n">_2</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">complex</span><span class="p">,</span> <span class="n">_3</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">complex</span><span class="p">,</span> <span class="n">_4</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">complex</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">calc_cubic_points</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">):</span>
+    <span class="n">_1</span> <span class="o">=</span> <span class="n">d</span>
+    <span class="n">_2</span> <span class="o">=</span> <span class="p">(</span><span class="n">c</span> <span class="o">/</span> <span class="mf">3.0</span><span class="p">)</span> <span class="o">+</span> <span class="n">d</span>
+    <span class="n">_3</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span> <span class="o">+</span> <span class="n">c</span><span class="p">)</span> <span class="o">/</span> <span class="mf">3.0</span> <span class="o">+</span> <span class="n">_2</span>
+    <span class="n">_4</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">d</span> <span class="o">+</span> <span class="n">c</span> <span class="o">+</span> <span class="n">b</span>
+    <span class="k">return</span> <span class="n">_1</span><span class="p">,</span> <span class="n">_2</span><span class="p">,</span> <span class="n">_3</span><span class="p">,</span> <span class="n">_4</span>
+
+
+<span class="nd">@cython</span><span class="o">.</span><span class="n">cfunc</span>
+<span class="nd">@cython</span><span class="o">.</span><span class="n">inline</span>
+<span class="nd">@cython</span><span class="o">.</span><span class="n">locals</span><span class="p">(</span><span class="n">p0</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">complex</span><span class="p">,</span> <span class="n">p1</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">complex</span><span class="p">,</span> <span class="n">p2</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">complex</span><span class="p">,</span> <span class="n">p3</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">complex</span><span class="p">)</span>
+<span class="nd">@cython</span><span class="o">.</span><span class="n">locals</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">complex</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">complex</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">complex</span><span class="p">,</span> <span class="n">d</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">complex</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">calc_cubic_parameters</span><span class="p">(</span><span class="n">p0</span><span class="p">,</span> <span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="n">p3</span><span class="p">):</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="p">(</span><span class="n">p1</span> <span class="o">-</span> <span class="n">p0</span><span class="p">)</span> <span class="o">*</span> <span class="mf">3.0</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="p">(</span><span class="n">p2</span> <span class="o">-</span> <span class="n">p1</span><span class="p">)</span> <span class="o">*</span> <span class="mf">3.0</span> <span class="o">-</span> <span class="n">c</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="n">p0</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">p3</span> <span class="o">-</span> <span class="n">d</span> <span class="o">-</span> <span class="n">c</span> <span class="o">-</span> <span class="n">b</span>
+    <span class="k">return</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span>
+
+
+<span class="nd">@cython</span><span class="o">.</span><span class="n">cfunc</span>
+<span class="nd">@cython</span><span class="o">.</span><span class="n">locals</span><span class="p">(</span><span class="n">p0</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">complex</span><span class="p">,</span> <span class="n">p1</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">complex</span><span class="p">,</span> <span class="n">p2</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">complex</span><span class="p">,</span> <span class="n">p3</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">complex</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">split_cubic_into_n_iter</span><span class="p">(</span><span class="n">p0</span><span class="p">,</span> <span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="n">p3</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="c1"># Hand-coded special-cases</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">iter</span><span class="p">(</span><span class="n">split_cubic_into_two</span><span class="p">(</span><span class="n">p0</span><span class="p">,</span> <span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="n">p3</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">iter</span><span class="p">(</span><span class="n">split_cubic_into_three</span><span class="p">(</span><span class="n">p0</span><span class="p">,</span> <span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="n">p3</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span>
+        <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">split_cubic_into_two</span><span class="p">(</span><span class="n">p0</span><span class="p">,</span> <span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="n">p3</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nb">iter</span><span class="p">(</span><span class="n">split_cubic_into_two</span><span class="p">(</span><span class="o">*</span><span class="n">a</span><span class="p">)</span> <span class="o">+</span> <span class="n">split_cubic_into_two</span><span class="p">(</span><span class="o">*</span><span class="n">b</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">6</span><span class="p">:</span>
+        <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">split_cubic_into_two</span><span class="p">(</span><span class="n">p0</span><span class="p">,</span> <span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="n">p3</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nb">iter</span><span class="p">(</span><span class="n">split_cubic_into_three</span><span class="p">(</span><span class="o">*</span><span class="n">a</span><span class="p">)</span> <span class="o">+</span> <span class="n">split_cubic_into_three</span><span class="p">(</span><span class="o">*</span><span class="n">b</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">_split_cubic_into_n_gen</span><span class="p">(</span><span class="n">p0</span><span class="p">,</span><span class="n">p1</span><span class="p">,</span><span class="n">p2</span><span class="p">,</span><span class="n">p3</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>
+
+
+<span class="nd">@cython</span><span class="o">.</span><span class="n">locals</span><span class="p">(</span><span class="n">p0</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">complex</span><span class="p">,</span> <span class="n">p1</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">complex</span><span class="p">,</span> <span class="n">p2</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">complex</span><span class="p">,</span> <span class="n">p3</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">complex</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">int</span><span class="p">)</span>
+<span class="nd">@cython</span><span class="o">.</span><span class="n">locals</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">complex</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">complex</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">complex</span><span class="p">,</span> <span class="n">d</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">complex</span><span class="p">)</span>
+<span class="nd">@cython</span><span class="o">.</span><span class="n">locals</span><span class="p">(</span><span class="n">dt</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">double</span><span class="p">,</span> <span class="n">delta_2</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">double</span><span class="p">,</span> <span class="n">delta_3</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">double</span><span class="p">,</span> <span class="n">i</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">int</span><span class="p">)</span>
+<span class="nd">@cython</span><span class="o">.</span><span class="n">locals</span><span class="p">(</span><span class="n">a1</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">complex</span><span class="p">,</span> <span class="n">b1</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">complex</span><span class="p">,</span> <span class="n">c1</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">complex</span><span class="p">,</span> <span class="n">d1</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">complex</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">_split_cubic_into_n_gen</span><span class="p">(</span><span class="n">p0</span><span class="p">,</span> <span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="n">p3</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span> <span class="o">=</span> <span class="n">calc_cubic_parameters</span><span class="p">(</span><span class="n">p0</span><span class="p">,</span> <span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="n">p3</span><span class="p">)</span>
+    <span class="n">dt</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">n</span>
+    <span class="n">delta_2</span> <span class="o">=</span> <span class="n">dt</span> <span class="o">*</span> <span class="n">dt</span>
+    <span class="n">delta_3</span> <span class="o">=</span> <span class="n">dt</span> <span class="o">*</span> <span class="n">delta_2</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">t1</span> <span class="o">=</span> <span class="n">i</span> <span class="o">*</span> <span class="n">dt</span>
+        <span class="n">t1_2</span> <span class="o">=</span> <span class="n">t1</span> <span class="o">*</span> <span class="n">t1</span>
+        <span class="c1"># calc new a, b, c and d</span>
+        <span class="n">a1</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">delta_3</span>
+        <span class="n">b1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">a</span><span class="o">*</span><span class="n">t1</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span> <span class="o">*</span> <span class="n">delta_2</span>
+        <span class="n">c1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">b</span><span class="o">*</span><span class="n">t1</span> <span class="o">+</span> <span class="n">c</span> <span class="o">+</span> <span class="mi">3</span><span class="o">*</span><span class="n">a</span><span class="o">*</span><span class="n">t1_2</span><span class="p">)</span> <span class="o">*</span> <span class="n">dt</span>
+        <span class="n">d1</span> <span class="o">=</span> <span class="n">a</span><span class="o">*</span><span class="n">t1</span><span class="o">*</span><span class="n">t1_2</span> <span class="o">+</span> <span class="n">b</span><span class="o">*</span><span class="n">t1_2</span> <span class="o">+</span> <span class="n">c</span><span class="o">*</span><span class="n">t1</span> <span class="o">+</span> <span class="n">d</span>
+        <span class="k">yield</span> <span class="n">calc_cubic_points</span><span class="p">(</span><span class="n">a1</span><span class="p">,</span> <span class="n">b1</span><span class="p">,</span> <span class="n">c1</span><span class="p">,</span> <span class="n">d1</span><span class="p">)</span>
+
+
+<span class="nd">@cython</span><span class="o">.</span><span class="n">locals</span><span class="p">(</span><span class="n">p0</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">complex</span><span class="p">,</span> <span class="n">p1</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">complex</span><span class="p">,</span> <span class="n">p2</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">complex</span><span class="p">,</span> <span class="n">p3</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">complex</span><span class="p">)</span>
+<span class="nd">@cython</span><span class="o">.</span><span class="n">locals</span><span class="p">(</span><span class="n">mid</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">complex</span><span class="p">,</span> <span class="n">deriv3</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">complex</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">split_cubic_into_two</span><span class="p">(</span><span class="n">p0</span><span class="p">,</span> <span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="n">p3</span><span class="p">):</span>
+    <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">p0</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">*</span> <span class="p">(</span><span class="n">p1</span> <span class="o">+</span> <span class="n">p2</span><span class="p">)</span> <span class="o">+</span> <span class="n">p3</span><span class="p">)</span> <span class="o">*</span> <span class="o">.</span><span class="mi">125</span>
+    <span class="n">deriv3</span> <span class="o">=</span> <span class="p">(</span><span class="n">p3</span> <span class="o">+</span> <span class="n">p2</span> <span class="o">-</span> <span class="n">p1</span> <span class="o">-</span> <span class="n">p0</span><span class="p">)</span> <span class="o">*</span> <span class="o">.</span><span class="mi">125</span>
+    <span class="k">return</span> <span class="p">((</span><span class="n">p0</span><span class="p">,</span> <span class="p">(</span><span class="n">p0</span> <span class="o">+</span> <span class="n">p1</span><span class="p">)</span> <span class="o">*</span> <span class="o">.</span><span class="mi">5</span><span class="p">,</span> <span class="n">mid</span> <span class="o">-</span> <span class="n">deriv3</span><span class="p">,</span> <span class="n">mid</span><span class="p">),</span>
+            <span class="p">(</span><span class="n">mid</span><span class="p">,</span> <span class="n">mid</span> <span class="o">+</span> <span class="n">deriv3</span><span class="p">,</span> <span class="p">(</span><span class="n">p2</span> <span class="o">+</span> <span class="n">p3</span><span class="p">)</span> <span class="o">*</span> <span class="o">.</span><span class="mi">5</span><span class="p">,</span> <span class="n">p3</span><span class="p">))</span>
+
+
+<span class="nd">@cython</span><span class="o">.</span><span class="n">locals</span><span class="p">(</span><span class="n">p0</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">complex</span><span class="p">,</span> <span class="n">p1</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">complex</span><span class="p">,</span> <span class="n">p2</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">complex</span><span class="p">,</span> <span class="n">p3</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">complex</span><span class="p">,</span> <span class="n">_27</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">double</span><span class="p">)</span>
+<span class="nd">@cython</span><span class="o">.</span><span class="n">locals</span><span class="p">(</span><span class="n">mid1</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">complex</span><span class="p">,</span> <span class="n">deriv1</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">complex</span><span class="p">,</span> <span class="n">mid2</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">complex</span><span class="p">,</span> <span class="n">deriv2</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">complex</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">split_cubic_into_three</span><span class="p">(</span><span class="n">p0</span><span class="p">,</span> <span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="n">p3</span><span class="p">,</span> <span class="n">_27</span><span class="o">=</span><span class="mi">1</span><span class="o">/</span><span class="mi">27</span><span class="p">):</span>
+    <span class="c1"># we define 1/27 as a keyword argument so that it will be evaluated only</span>
+    <span class="c1"># once but still in the scope of this function</span>
+    <span class="n">mid1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">8</span><span class="o">*</span><span class="n">p0</span> <span class="o">+</span> <span class="mi">12</span><span class="o">*</span><span class="n">p1</span> <span class="o">+</span> <span class="mi">6</span><span class="o">*</span><span class="n">p2</span> <span class="o">+</span> <span class="n">p3</span><span class="p">)</span> <span class="o">*</span> <span class="n">_27</span>
+    <span class="n">deriv1</span> <span class="o">=</span> <span class="p">(</span><span class="n">p3</span> <span class="o">+</span> <span class="mi">3</span><span class="o">*</span><span class="n">p2</span> <span class="o">-</span> <span class="mi">4</span><span class="o">*</span><span class="n">p0</span><span class="p">)</span> <span class="o">*</span> <span class="n">_27</span>
+    <span class="n">mid2</span> <span class="o">=</span> <span class="p">(</span><span class="n">p0</span> <span class="o">+</span> <span class="mi">6</span><span class="o">*</span><span class="n">p1</span> <span class="o">+</span> <span class="mi">12</span><span class="o">*</span><span class="n">p2</span> <span class="o">+</span> <span class="mi">8</span><span class="o">*</span><span class="n">p3</span><span class="p">)</span> <span class="o">*</span> <span class="n">_27</span>
+    <span class="n">deriv2</span> <span class="o">=</span> <span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">p3</span> <span class="o">-</span> <span class="mi">3</span><span class="o">*</span><span class="n">p1</span> <span class="o">-</span> <span class="n">p0</span><span class="p">)</span> <span class="o">*</span> <span class="n">_27</span>
+    <span class="k">return</span> <span class="p">((</span><span class="n">p0</span><span class="p">,</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">p0</span> <span class="o">+</span> <span class="n">p1</span><span class="p">)</span> <span class="o">/</span> <span class="mf">3.0</span><span class="p">,</span> <span class="n">mid1</span> <span class="o">-</span> <span class="n">deriv1</span><span class="p">,</span> <span class="n">mid1</span><span class="p">),</span>
+            <span class="p">(</span><span class="n">mid1</span><span class="p">,</span> <span class="n">mid1</span> <span class="o">+</span> <span class="n">deriv1</span><span class="p">,</span> <span class="n">mid2</span> <span class="o">-</span> <span class="n">deriv2</span><span class="p">,</span> <span class="n">mid2</span><span class="p">),</span>
+            <span class="p">(</span><span class="n">mid2</span><span class="p">,</span> <span class="n">mid2</span> <span class="o">+</span> <span class="n">deriv2</span><span class="p">,</span> <span class="p">(</span><span class="n">p2</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">p3</span><span class="p">)</span> <span class="o">/</span> <span class="mf">3.0</span><span class="p">,</span> <span class="n">p3</span><span class="p">))</span>
+
+
+<span class="nd">@cython</span><span class="o">.</span><span class="n">returns</span><span class="p">(</span><span class="n">cython</span><span class="o">.</span><span class="n">complex</span><span class="p">)</span>
+<span class="nd">@cython</span><span class="o">.</span><span class="n">locals</span><span class="p">(</span><span class="n">t</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">double</span><span class="p">,</span> <span class="n">p0</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">complex</span><span class="p">,</span> <span class="n">p1</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">complex</span><span class="p">,</span> <span class="n">p2</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">complex</span><span class="p">,</span> <span class="n">p3</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">complex</span><span class="p">)</span>
+<span class="nd">@cython</span><span class="o">.</span><span class="n">locals</span><span class="p">(</span><span class="n">_p1</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">complex</span><span class="p">,</span> <span class="n">_p2</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">complex</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">cubic_approx_control</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">p0</span><span class="p">,</span> <span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="n">p3</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Approximate a cubic bezier curve with a quadratic one.</span>
+<span class="sd">       Returns the candidate control point.&quot;&quot;&quot;</span>
+    <span class="n">_p1</span> <span class="o">=</span> <span class="n">p0</span> <span class="o">+</span> <span class="p">(</span><span class="n">p1</span> <span class="o">-</span> <span class="n">p0</span><span class="p">)</span> <span class="o">*</span> <span class="mf">1.5</span>
+    <span class="n">_p2</span> <span class="o">=</span> <span class="n">p3</span> <span class="o">+</span> <span class="p">(</span><span class="n">p2</span> <span class="o">-</span> <span class="n">p3</span><span class="p">)</span> <span class="o">*</span> <span class="mf">1.5</span>
+    <span class="k">return</span> <span class="n">_p1</span> <span class="o">+</span> <span class="p">(</span><span class="n">_p2</span> <span class="o">-</span> <span class="n">_p1</span><span class="p">)</span> <span class="o">*</span> <span class="n">t</span>
+
+
+<span class="nd">@cython</span><span class="o">.</span><span class="n">returns</span><span class="p">(</span><span class="n">cython</span><span class="o">.</span><span class="n">complex</span><span class="p">)</span>
+<span class="nd">@cython</span><span class="o">.</span><span class="n">locals</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">complex</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">complex</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">complex</span><span class="p">,</span> <span class="n">d</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">complex</span><span class="p">)</span>
+<span class="nd">@cython</span><span class="o">.</span><span class="n">locals</span><span class="p">(</span><span class="n">ab</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">complex</span><span class="p">,</span> <span class="n">cd</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">complex</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">complex</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">double</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">calc_intersect</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Calculate the intersection of ab and cd, given a, b, c, d.&quot;&quot;&quot;</span>
+
+    <span class="n">ab</span> <span class="o">=</span> <span class="n">b</span> <span class="o">-</span> <span class="n">a</span>
+    <span class="n">cd</span> <span class="o">=</span> <span class="n">d</span> <span class="o">-</span> <span class="n">c</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">ab</span> <span class="o">*</span> <span class="mi">1</span><span class="n">j</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">h</span> <span class="o">=</span> <span class="n">dot</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">a</span> <span class="o">-</span> <span class="n">c</span><span class="p">)</span> <span class="o">/</span> <span class="n">dot</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">cd</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">complex</span><span class="p">(</span><span class="n">NAN</span><span class="p">,</span> <span class="n">NAN</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">c</span> <span class="o">+</span> <span class="n">cd</span> <span class="o">*</span> <span class="n">h</span>
+
+
+<span class="nd">@cython</span><span class="o">.</span><span class="n">cfunc</span>
+<span class="nd">@cython</span><span class="o">.</span><span class="n">returns</span><span class="p">(</span><span class="n">cython</span><span class="o">.</span><span class="n">int</span><span class="p">)</span>
+<span class="nd">@cython</span><span class="o">.</span><span class="n">locals</span><span class="p">(</span><span class="n">tolerance</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">double</span><span class="p">,</span> <span class="n">p0</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">complex</span><span class="p">,</span> <span class="n">p1</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">complex</span><span class="p">,</span> <span class="n">p2</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">complex</span><span class="p">,</span> <span class="n">p3</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">complex</span><span class="p">)</span>
+<span class="nd">@cython</span><span class="o">.</span><span class="n">locals</span><span class="p">(</span><span class="n">mid</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">complex</span><span class="p">,</span> <span class="n">deriv3</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">complex</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">cubic_farthest_fit_inside</span><span class="p">(</span><span class="n">p0</span><span class="p">,</span> <span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="n">p3</span><span class="p">,</span> <span class="n">tolerance</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Returns True if the cubic Bezier p entirely lies within a distance</span>
+<span class="sd">    tolerance of origin, False otherwise.  Assumes that p0 and p3 do fit</span>
+<span class="sd">    within tolerance of origin, and just checks the inside of the curve.&quot;&quot;&quot;</span>
+
+    <span class="c1"># First check p2 then p1, as p2 has higher error early on.</span>
+    <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">p2</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">tolerance</span> <span class="ow">and</span> <span class="nb">abs</span><span class="p">(</span><span class="n">p1</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">tolerance</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">True</span>
+
+    <span class="c1"># Split.</span>
+    <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">p0</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">*</span> <span class="p">(</span><span class="n">p1</span> <span class="o">+</span> <span class="n">p2</span><span class="p">)</span> <span class="o">+</span> <span class="n">p3</span><span class="p">)</span> <span class="o">*</span> <span class="o">.</span><span class="mi">125</span>
+    <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">mid</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">tolerance</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+    <span class="n">deriv3</span> <span class="o">=</span> <span class="p">(</span><span class="n">p3</span> <span class="o">+</span> <span class="n">p2</span> <span class="o">-</span> <span class="n">p1</span> <span class="o">-</span> <span class="n">p0</span><span class="p">)</span> <span class="o">*</span> <span class="o">.</span><span class="mi">125</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">cubic_farthest_fit_inside</span><span class="p">(</span><span class="n">p0</span><span class="p">,</span> <span class="p">(</span><span class="n">p0</span><span class="o">+</span><span class="n">p1</span><span class="p">)</span><span class="o">*.</span><span class="mi">5</span><span class="p">,</span> <span class="n">mid</span><span class="o">-</span><span class="n">deriv3</span><span class="p">,</span> <span class="n">mid</span><span class="p">,</span> <span class="n">tolerance</span><span class="p">)</span> <span class="ow">and</span>
+            <span class="n">cubic_farthest_fit_inside</span><span class="p">(</span><span class="n">mid</span><span class="p">,</span> <span class="n">mid</span><span class="o">+</span><span class="n">deriv3</span><span class="p">,</span> <span class="p">(</span><span class="n">p2</span><span class="o">+</span><span class="n">p3</span><span class="p">)</span><span class="o">*.</span><span class="mi">5</span><span class="p">,</span> <span class="n">p3</span><span class="p">,</span> <span class="n">tolerance</span><span class="p">))</span>
+
+
+<span class="nd">@cython</span><span class="o">.</span><span class="n">cfunc</span>
+<span class="nd">@cython</span><span class="o">.</span><span class="n">locals</span><span class="p">(</span><span class="n">tolerance</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">double</span><span class="p">,</span> <span class="n">_2_3</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">double</span><span class="p">)</span>
+<span class="nd">@cython</span><span class="o">.</span><span class="n">locals</span><span class="p">(</span><span class="n">q1</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">complex</span><span class="p">,</span> <span class="n">c0</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">complex</span><span class="p">,</span> <span class="n">c1</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">complex</span><span class="p">,</span> <span class="n">c2</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">complex</span><span class="p">,</span> <span class="n">c3</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">complex</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">cubic_approx_quadratic</span><span class="p">(</span><span class="n">cubic</span><span class="p">,</span> <span class="n">tolerance</span><span class="p">,</span> <span class="n">_2_3</span><span class="o">=</span><span class="mi">2</span><span class="o">/</span><span class="mi">3</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Return the uniq quadratic approximating cubic that maintains</span>
+<span class="sd">    endpoint tangents if that is within tolerance, None otherwise.&quot;&quot;&quot;</span>
+    <span class="c1"># we define 2/3 as a keyword argument so that it will be evaluated only</span>
+    <span class="c1"># once but still in the scope of this function</span>
+
+    <span class="n">q1</span> <span class="o">=</span> <span class="n">calc_intersect</span><span class="p">(</span><span class="o">*</span><span class="n">cubic</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">math</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">q1</span><span class="o">.</span><span class="n">imag</span><span class="p">):</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="n">c0</span> <span class="o">=</span> <span class="n">cubic</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">c3</span> <span class="o">=</span> <span class="n">cubic</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+    <span class="n">c1</span> <span class="o">=</span> <span class="n">c0</span> <span class="o">+</span> <span class="p">(</span><span class="n">q1</span> <span class="o">-</span> <span class="n">c0</span><span class="p">)</span> <span class="o">*</span> <span class="n">_2_3</span>
+    <span class="n">c2</span> <span class="o">=</span> <span class="n">c3</span> <span class="o">+</span> <span class="p">(</span><span class="n">q1</span> <span class="o">-</span> <span class="n">c3</span><span class="p">)</span> <span class="o">*</span> <span class="n">_2_3</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">cubic_farthest_fit_inside</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span>
+                                     <span class="n">c1</span> <span class="o">-</span> <span class="n">cubic</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+                                     <span class="n">c2</span> <span class="o">-</span> <span class="n">cubic</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span>
+                                     <span class="mi">0</span><span class="p">,</span> <span class="n">tolerance</span><span class="p">):</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="k">return</span> <span class="n">c0</span><span class="p">,</span> <span class="n">q1</span><span class="p">,</span> <span class="n">c3</span>
+
+
+<span class="nd">@cython</span><span class="o">.</span><span class="n">cfunc</span>
+<span class="nd">@cython</span><span class="o">.</span><span class="n">locals</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">int</span><span class="p">,</span> <span class="n">tolerance</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">double</span><span class="p">,</span> <span class="n">_2_3</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">double</span><span class="p">)</span>
+<span class="nd">@cython</span><span class="o">.</span><span class="n">locals</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">int</span><span class="p">)</span>
+<span class="nd">@cython</span><span class="o">.</span><span class="n">locals</span><span class="p">(</span><span class="n">c0</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">complex</span><span class="p">,</span> <span class="n">c1</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">complex</span><span class="p">,</span> <span class="n">c2</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">complex</span><span class="p">,</span> <span class="n">c3</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">complex</span><span class="p">)</span>
+<span class="nd">@cython</span><span class="o">.</span><span class="n">locals</span><span class="p">(</span><span class="n">q0</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">complex</span><span class="p">,</span> <span class="n">q1</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">complex</span><span class="p">,</span> <span class="n">next_q1</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">complex</span><span class="p">,</span> <span class="n">q2</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">complex</span><span class="p">,</span> <span class="n">d1</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">complex</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">cubic_approx_spline</span><span class="p">(</span><span class="n">cubic</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">tolerance</span><span class="p">,</span> <span class="n">_2_3</span><span class="o">=</span><span class="mi">2</span><span class="o">/</span><span class="mi">3</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Approximate a cubic bezier curve with a spline of n quadratics.</span>
+
+<span class="sd">    Returns None if no quadratic approximation is found which lies entirely</span>
+<span class="sd">    within a distance `tolerance` from the original curve.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># we define 2/3 as a keyword argument so that it will be evaluated only</span>
+    <span class="c1"># once but still in the scope of this function</span>
+
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">cubic_approx_quadratic</span><span class="p">(</span><span class="n">cubic</span><span class="p">,</span> <span class="n">tolerance</span><span class="p">)</span>
+
+    <span class="n">cubics</span> <span class="o">=</span> <span class="n">split_cubic_into_n_iter</span><span class="p">(</span><span class="n">cubic</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">cubic</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">cubic</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">cubic</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">n</span><span class="p">)</span>
+
+    <span class="c1"># calculate the spline of quadratics and check errors at the same time.</span>
+    <span class="n">next_cubic</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">cubics</span><span class="p">)</span>
+    <span class="n">next_q1</span> <span class="o">=</span> <span class="n">cubic_approx_control</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">*</span><span class="n">next_cubic</span><span class="p">)</span>
+    <span class="n">q2</span> <span class="o">=</span> <span class="n">cubic</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">d1</span> <span class="o">=</span> <span class="mi">0</span><span class="n">j</span>
+    <span class="n">spline</span> <span class="o">=</span> <span class="p">[</span><span class="n">cubic</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">next_q1</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+
+        <span class="c1"># Current cubic to convert</span>
+        <span class="n">c0</span><span class="p">,</span> <span class="n">c1</span><span class="p">,</span> <span class="n">c2</span><span class="p">,</span> <span class="n">c3</span> <span class="o">=</span> <span class="n">next_cubic</span>
+
+        <span class="c1"># Current quadratic approximation of current cubic</span>
+        <span class="n">q0</span> <span class="o">=</span> <span class="n">q2</span>
+        <span class="n">q1</span> <span class="o">=</span> <span class="n">next_q1</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
+            <span class="n">next_cubic</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">cubics</span><span class="p">)</span>
+            <span class="n">next_q1</span> <span class="o">=</span> <span class="n">cubic_approx_control</span><span class="p">(</span><span class="n">i</span> <span class="o">/</span> <span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="o">*</span><span class="n">next_cubic</span><span class="p">)</span>
+            <span class="n">spline</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">next_q1</span><span class="p">)</span>
+            <span class="n">q2</span> <span class="o">=</span> <span class="p">(</span><span class="n">q1</span> <span class="o">+</span> <span class="n">next_q1</span><span class="p">)</span> <span class="o">*</span> <span class="o">.</span><span class="mi">5</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">q2</span> <span class="o">=</span> <span class="n">c3</span>
+
+        <span class="c1"># End-point deltas</span>
+        <span class="n">d0</span> <span class="o">=</span> <span class="n">d1</span>
+        <span class="n">d1</span> <span class="o">=</span> <span class="n">q2</span> <span class="o">-</span> <span class="n">c3</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">d1</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">tolerance</span> <span class="ow">or</span>
+            <span class="ow">not</span> <span class="n">cubic_farthest_fit_inside</span><span class="p">(</span><span class="n">d0</span><span class="p">,</span>
+                                          <span class="n">q0</span> <span class="o">+</span> <span class="p">(</span><span class="n">q1</span> <span class="o">-</span> <span class="n">q0</span><span class="p">)</span> <span class="o">*</span> <span class="n">_2_3</span> <span class="o">-</span> <span class="n">c1</span><span class="p">,</span>
+                                          <span class="n">q2</span> <span class="o">+</span> <span class="p">(</span><span class="n">q1</span> <span class="o">-</span> <span class="n">q2</span><span class="p">)</span> <span class="o">*</span> <span class="n">_2_3</span> <span class="o">-</span> <span class="n">c2</span><span class="p">,</span>
+                                          <span class="n">d1</span><span class="p">,</span>
+                                          <span class="n">tolerance</span><span class="p">)):</span>
+            <span class="k">return</span> <span class="kc">None</span>
+    <span class="n">spline</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cubic</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+
+    <span class="k">return</span> <span class="n">spline</span>
+
+
+<div class="viewcode-block" id="curve_to_quadratic"><a class="viewcode-back" href="../../../cu2qu/cu2qu.html#fontTools.cu2qu.cu2qu.curve_to_quadratic">[docs]</a><span class="nd">@cython</span><span class="o">.</span><span class="n">locals</span><span class="p">(</span><span class="n">max_err</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">double</span><span class="p">)</span>
+<span class="nd">@cython</span><span class="o">.</span><span class="n">locals</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">int</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">curve_to_quadratic</span><span class="p">(</span><span class="n">curve</span><span class="p">,</span> <span class="n">max_err</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Return a quadratic spline approximating this cubic bezier.</span>
+<span class="sd">    Raise &#39;ApproxNotFoundError&#39; if no suitable approximation can be found</span>
+<span class="sd">    with the given parameters.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">curve</span> <span class="o">=</span> <span class="p">[</span><span class="nb">complex</span><span class="p">(</span><span class="o">*</span><span class="n">p</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">curve</span><span class="p">]</span>
+
+    <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">MAX_N</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">spline</span> <span class="o">=</span> <span class="n">cubic_approx_spline</span><span class="p">(</span><span class="n">curve</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">max_err</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">spline</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="c1"># done. go home</span>
+            <span class="k">return</span> <span class="p">[(</span><span class="n">s</span><span class="o">.</span><span class="n">real</span><span class="p">,</span> <span class="n">s</span><span class="o">.</span><span class="n">imag</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">spline</span><span class="p">]</span>
+
+    <span class="k">raise</span> <span class="n">ApproxNotFoundError</span><span class="p">(</span><span class="n">curve</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="curves_to_quadratic"><a class="viewcode-back" href="../../../cu2qu/cu2qu.html#fontTools.cu2qu.cu2qu.curves_to_quadratic">[docs]</a><span class="nd">@cython</span><span class="o">.</span><span class="n">locals</span><span class="p">(</span><span class="n">l</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">int</span><span class="p">,</span> <span class="n">last_i</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">int</span><span class="p">,</span> <span class="n">i</span><span class="o">=</span><span class="n">cython</span><span class="o">.</span><span class="n">int</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">curves_to_quadratic</span><span class="p">(</span><span class="n">curves</span><span class="p">,</span> <span class="n">max_errors</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Return quadratic splines approximating these cubic beziers.</span>
+<span class="sd">    Raise &#39;ApproxNotFoundError&#39; if no suitable approximation can be found</span>
+<span class="sd">    for all curves with the given parameters.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">curves</span> <span class="o">=</span> <span class="p">[[</span><span class="nb">complex</span><span class="p">(</span><span class="o">*</span><span class="n">p</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">curve</span><span class="p">]</span> <span class="k">for</span> <span class="n">curve</span> <span class="ow">in</span> <span class="n">curves</span><span class="p">]</span>
+    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">max_errors</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">curves</span><span class="p">)</span>
+
+    <span class="n">l</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">curves</span><span class="p">)</span>
+    <span class="n">splines</span> <span class="o">=</span> <span class="p">[</span><span class="kc">None</span><span class="p">]</span> <span class="o">*</span> <span class="n">l</span>
+    <span class="n">last_i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">spline</span> <span class="o">=</span> <span class="n">cubic_approx_spline</span><span class="p">(</span><span class="n">curves</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">n</span><span class="p">,</span> <span class="n">max_errors</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+        <span class="k">if</span> <span class="n">spline</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="n">MAX_N</span><span class="p">:</span>
+                <span class="k">break</span>
+            <span class="n">n</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="n">last_i</span> <span class="o">=</span> <span class="n">i</span>
+            <span class="k">continue</span>
+        <span class="n">splines</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">spline</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="n">l</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="n">last_i</span><span class="p">:</span>
+            <span class="c1"># done. go home</span>
+            <span class="k">return</span> <span class="p">[[(</span><span class="n">s</span><span class="o">.</span><span class="n">real</span><span class="p">,</span> <span class="n">s</span><span class="o">.</span><span class="n">imag</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">spline</span><span class="p">]</span> <span class="k">for</span> <span class="n">spline</span> <span class="ow">in</span> <span class="n">splines</span><span class="p">]</span>
+
+    <span class="k">raise</span> <span class="n">ApproxNotFoundError</span><span class="p">(</span><span class="n">curves</span><span class="p">)</span></div>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="kn">import</span> <span class="nn">random</span>
+    <span class="kn">import</span> <span class="nn">timeit</span>
+
+    <span class="n">MAX_ERR</span> <span class="o">=</span> <span class="mi">5</span>
+
+    <span class="k">def</span> <span class="nf">generate_curve</span><span class="p">():</span>
+        <span class="k">return</span> <span class="p">[</span>
+            <span class="nb">tuple</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2048</span><span class="p">))</span> <span class="k">for</span> <span class="n">coord</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+            <span class="k">for</span> <span class="n">point</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)]</span>
+
+    <span class="k">def</span> <span class="nf">setup_curve_to_quadratic</span><span class="p">():</span>
+        <span class="k">return</span> <span class="n">generate_curve</span><span class="p">(),</span> <span class="n">MAX_ERR</span>
+
+    <span class="k">def</span> <span class="nf">setup_curves_to_quadratic</span><span class="p">():</span>
+        <span class="n">num_curves</span> <span class="o">=</span> <span class="mi">3</span>
+        <span class="k">return</span> <span class="p">(</span>
+            <span class="p">[</span><span class="n">generate_curve</span><span class="p">()</span> <span class="k">for</span> <span class="n">curve</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_curves</span><span class="p">)],</span>
+            <span class="p">[</span><span class="n">MAX_ERR</span><span class="p">]</span> <span class="o">*</span> <span class="n">num_curves</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">run_benchmark</span><span class="p">(</span>
+            <span class="n">benchmark_module</span><span class="p">,</span> <span class="n">module</span><span class="p">,</span> <span class="n">function</span><span class="p">,</span> <span class="n">setup_suffix</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">repeat</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">number</span><span class="o">=</span><span class="mi">1000</span><span class="p">):</span>
+        <span class="n">setup_func</span> <span class="o">=</span> <span class="s1">&#39;setup_&#39;</span> <span class="o">+</span> <span class="n">function</span>
+        <span class="k">if</span> <span class="n">setup_suffix</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1"> with </span><span class="si">%s</span><span class="s1">:&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">function</span><span class="p">,</span> <span class="n">setup_suffix</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+            <span class="n">setup_func</span> <span class="o">+=</span> <span class="s1">&#39;_&#39;</span> <span class="o">+</span> <span class="n">setup_suffix</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1">:&#39;</span> <span class="o">%</span> <span class="n">function</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+
+        <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="n">function</span><span class="p">,</span> <span class="n">setup_func</span><span class="p">):</span>
+            <span class="n">function</span> <span class="o">=</span> <span class="nb">globals</span><span class="p">()[</span><span class="n">function</span><span class="p">]</span>
+            <span class="n">setup_func</span> <span class="o">=</span> <span class="nb">globals</span><span class="p">()[</span><span class="n">setup_func</span><span class="p">]</span>
+            <span class="k">def</span> <span class="nf">wrapped</span><span class="p">():</span>
+                <span class="k">return</span> <span class="n">function</span><span class="p">(</span><span class="o">*</span><span class="n">setup_func</span><span class="p">())</span>
+            <span class="k">return</span> <span class="n">wrapped</span>
+        <span class="n">results</span> <span class="o">=</span> <span class="n">timeit</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="n">wrapper</span><span class="p">(</span><span class="n">function</span><span class="p">,</span> <span class="n">setup_func</span><span class="p">),</span> <span class="n">repeat</span><span class="o">=</span><span class="n">repeat</span><span class="p">,</span> <span class="n">number</span><span class="o">=</span><span class="n">number</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="si">%5.1f</span><span class="s1">us&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">results</span><span class="p">)</span> <span class="o">*</span> <span class="mf">1000000.</span> <span class="o">/</span> <span class="n">number</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+        <span class="n">run_benchmark</span><span class="p">(</span><span class="s1">&#39;cu2qu.benchmark&#39;</span><span class="p">,</span> <span class="s1">&#39;cu2qu&#39;</span><span class="p">,</span> <span class="s1">&#39;curve_to_quadratic&#39;</span><span class="p">)</span>
+        <span class="n">run_benchmark</span><span class="p">(</span><span class="s1">&#39;cu2qu.benchmark&#39;</span><span class="p">,</span> <span class="s1">&#39;cu2qu&#39;</span><span class="p">,</span> <span class="s1">&#39;curves_to_quadratic&#39;</span><span class="p">)</span>
+
+    <span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Just van Rossum, Behdad Esfahbod, and the fontTools Authors. CC BY-SA 4.0
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

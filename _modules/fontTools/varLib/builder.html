@@ -1,0 +1,324 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>fontTools.varLib.builder &mdash; fontTools Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> fontTools
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Library</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../afmLib.html">afmLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../agl.html">agl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cffLib/index.html">cffLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../colorLib/index.html">colorLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cu2qu/index.html">cu2qu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../designspaceLib/index.html">designspaceLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../encodings/index.html">encodings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../feaLib/index.html">feaLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../merge.html">merge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../misc/index.html">misc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../mtiLib.html">mtiLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../otlLib/index.html">otlLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pens/index.html">pens</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../subset/index.html">subset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../svgLib/index.html">svgLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../t1Lib.html">t1Lib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ttLib/index.html">ttLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ttx.html">ttx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ufoLib/index.html">ufoLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../unicode.html">unicode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../unicodedata/index.html">unicodedata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../varLib/index.html">varLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../voltLib.html">voltLib</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">fontTools</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../varLib.html">fontTools.varLib</a> &raquo;</li>
+        
+      <li>fontTools.varLib.builder</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for fontTools.varLib.builder</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">fontTools</span> <span class="k">import</span> <span class="n">ttLib</span>
+<span class="kn">from</span> <span class="nn">fontTools.ttLib.tables</span> <span class="k">import</span> <span class="n">otTables</span> <span class="k">as</span> <span class="n">ot</span>
+
+<span class="c1"># VariationStore</span>
+
+<div class="viewcode-block" id="buildVarRegionAxis"><a class="viewcode-back" href="../../../varLib/builder.html#fontTools.ttLib.tables.otTables.buildVarRegionAxis">[docs]</a><span class="k">def</span> <span class="nf">buildVarRegionAxis</span><span class="p">(</span><span class="n">axisSupport</span><span class="p">):</span>
+	<span class="bp">self</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">VarRegionAxis</span><span class="p">()</span>
+	<span class="bp">self</span><span class="o">.</span><span class="n">StartCoord</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">PeakCoord</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">EndCoord</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">axisSupport</span><span class="p">]</span>
+	<span class="k">return</span> <span class="bp">self</span></div>
+
+<div class="viewcode-block" id="buildVarRegion"><a class="viewcode-back" href="../../../varLib/builder.html#fontTools.ttLib.tables.otTables.buildVarRegion">[docs]</a><span class="k">def</span> <span class="nf">buildVarRegion</span><span class="p">(</span><span class="n">support</span><span class="p">,</span> <span class="n">axisTags</span><span class="p">):</span>
+	<span class="k">assert</span> <span class="nb">all</span><span class="p">(</span><span class="n">tag</span> <span class="ow">in</span> <span class="n">axisTags</span> <span class="k">for</span> <span class="n">tag</span> <span class="ow">in</span> <span class="n">support</span><span class="o">.</span><span class="n">keys</span><span class="p">()),</span> <span class="p">(</span><span class="s2">&quot;Unknown axis tag found.&quot;</span><span class="p">,</span> <span class="n">support</span><span class="p">,</span> <span class="n">axisTags</span><span class="p">)</span>
+	<span class="bp">self</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">VarRegion</span><span class="p">()</span>
+	<span class="bp">self</span><span class="o">.</span><span class="n">VarRegionAxis</span> <span class="o">=</span> <span class="p">[]</span>
+	<span class="k">for</span> <span class="n">tag</span> <span class="ow">in</span> <span class="n">axisTags</span><span class="p">:</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">VarRegionAxis</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">buildVarRegionAxis</span><span class="p">(</span><span class="n">support</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">tag</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">))))</span>
+	<span class="k">return</span> <span class="bp">self</span></div>
+
+<div class="viewcode-block" id="buildVarRegionList"><a class="viewcode-back" href="../../../varLib/builder.html#fontTools.ttLib.tables.otTables.buildVarRegionList">[docs]</a><span class="k">def</span> <span class="nf">buildVarRegionList</span><span class="p">(</span><span class="n">supports</span><span class="p">,</span> <span class="n">axisTags</span><span class="p">):</span>
+	<span class="bp">self</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">VarRegionList</span><span class="p">()</span>
+	<span class="bp">self</span><span class="o">.</span><span class="n">RegionAxisCount</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">axisTags</span><span class="p">)</span>
+	<span class="bp">self</span><span class="o">.</span><span class="n">Region</span> <span class="o">=</span> <span class="p">[]</span>
+	<span class="k">for</span> <span class="n">support</span> <span class="ow">in</span> <span class="n">supports</span><span class="p">:</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">Region</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">buildVarRegion</span><span class="p">(</span><span class="n">support</span><span class="p">,</span> <span class="n">axisTags</span><span class="p">))</span>
+	<span class="bp">self</span><span class="o">.</span><span class="n">RegionCount</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Region</span><span class="p">)</span>
+	<span class="k">return</span> <span class="bp">self</span></div>
+
+
+<span class="k">def</span> <span class="nf">_reorderItem</span><span class="p">(</span><span class="n">lst</span><span class="p">,</span> <span class="n">narrows</span><span class="p">,</span> <span class="n">zeroes</span><span class="p">):</span>
+	<span class="n">out</span> <span class="o">=</span> <span class="p">[]</span>
+	<span class="n">count</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span>
+	<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">count</span><span class="p">):</span>
+		<span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">narrows</span><span class="p">:</span>
+			<span class="n">out</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">lst</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+	<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">count</span><span class="p">):</span>
+		<span class="k">if</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">narrows</span>  <span class="ow">and</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">zeroes</span><span class="p">:</span>
+			<span class="n">out</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">lst</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+	<span class="k">return</span> <span class="n">out</span>
+
+<div class="viewcode-block" id="VarData_calculateNumShorts"><a class="viewcode-back" href="../../../varLib/builder.html#fontTools.ttLib.tables.otTables.VarData_calculateNumShorts">[docs]</a><span class="k">def</span> <span class="nf">VarData_calculateNumShorts</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">optimize</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+	<span class="n">count</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">VarRegionCount</span>
+	<span class="n">items</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Item</span>
+	<span class="n">narrows</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">count</span><span class="p">))</span>
+	<span class="n">zeroes</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">count</span><span class="p">))</span>
+	<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">items</span><span class="p">:</span>
+		<span class="n">wides</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">narrows</span> <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="o">-</span><span class="mi">128</span> <span class="o">&lt;=</span> <span class="n">item</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">127</span><span class="p">)]</span>
+		<span class="n">narrows</span><span class="o">.</span><span class="n">difference_update</span><span class="p">(</span><span class="n">wides</span><span class="p">)</span>
+		<span class="n">nonzeroes</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">zeroes</span> <span class="k">if</span> <span class="n">item</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span>
+		<span class="n">zeroes</span><span class="o">.</span><span class="n">difference_update</span><span class="p">(</span><span class="n">nonzeroes</span><span class="p">)</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="n">narrows</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">zeroes</span><span class="p">:</span>
+			<span class="k">break</span>
+	<span class="k">if</span> <span class="n">optimize</span><span class="p">:</span>
+		<span class="c1"># Reorder columns such that all SHORT columns come before UINT8</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">VarRegionIndex</span> <span class="o">=</span> <span class="n">_reorderItem</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">VarRegionIndex</span><span class="p">,</span> <span class="n">narrows</span><span class="p">,</span> <span class="n">zeroes</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">VarRegionCount</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">VarRegionIndex</span><span class="p">)</span>
+		<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">items</span><span class="p">)):</span>
+			<span class="n">items</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">_reorderItem</span><span class="p">(</span><span class="n">items</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">narrows</span><span class="p">,</span> <span class="n">zeroes</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">NumShorts</span> <span class="o">=</span> <span class="n">count</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">narrows</span><span class="p">)</span>
+	<span class="k">else</span><span class="p">:</span>
+		<span class="n">wides</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">count</span><span class="p">))</span> <span class="o">-</span> <span class="n">narrows</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">NumShorts</span> <span class="o">=</span> <span class="mi">1</span><span class="o">+</span><span class="nb">max</span><span class="p">(</span><span class="n">wides</span><span class="p">)</span> <span class="k">if</span> <span class="n">wides</span> <span class="k">else</span> <span class="mi">0</span>
+	<span class="bp">self</span><span class="o">.</span><span class="n">VarRegionCount</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">VarRegionIndex</span><span class="p">)</span>
+	<span class="k">return</span> <span class="bp">self</span></div>
+
+<span class="n">ot</span><span class="o">.</span><span class="n">VarData</span><span class="o">.</span><span class="n">calculateNumShorts</span> <span class="o">=</span> <span class="n">VarData_calculateNumShorts</span>
+
+<div class="viewcode-block" id="VarData_CalculateNumShorts"><a class="viewcode-back" href="../../../varLib/builder.html#fontTools.ttLib.tables.otTables.VarData_CalculateNumShorts">[docs]</a><span class="k">def</span> <span class="nf">VarData_CalculateNumShorts</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">optimize</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Deprecated name for VarData_calculateNumShorts() which</span>
+<span class="sd">	defaults to optimize=True.  Use varData.calculateNumShorts()</span>
+<span class="sd">	or varData.optimize().&quot;&quot;&quot;</span>
+	<span class="k">return</span> <span class="n">VarData_calculateNumShorts</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">optimize</span><span class="o">=</span><span class="n">optimize</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="VarData_optimize"><a class="viewcode-back" href="../../../varLib/builder.html#fontTools.ttLib.tables.otTables.VarData_optimize">[docs]</a><span class="k">def</span> <span class="nf">VarData_optimize</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+	<span class="k">return</span> <span class="n">VarData_calculateNumShorts</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">optimize</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+
+<span class="n">ot</span><span class="o">.</span><span class="n">VarData</span><span class="o">.</span><span class="n">optimize</span> <span class="o">=</span> <span class="n">VarData_optimize</span>
+
+
+<div class="viewcode-block" id="buildVarData"><a class="viewcode-back" href="../../../varLib/builder.html#fontTools.ttLib.tables.otTables.buildVarData">[docs]</a><span class="k">def</span> <span class="nf">buildVarData</span><span class="p">(</span><span class="n">varRegionIndices</span><span class="p">,</span> <span class="n">items</span><span class="p">,</span> <span class="n">optimize</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+	<span class="bp">self</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">VarData</span><span class="p">()</span>
+	<span class="bp">self</span><span class="o">.</span><span class="n">VarRegionIndex</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">varRegionIndices</span><span class="p">)</span>
+	<span class="n">regionCount</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">VarRegionCount</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">VarRegionIndex</span><span class="p">)</span>
+	<span class="n">records</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Item</span> <span class="o">=</span> <span class="p">[]</span>
+	<span class="k">if</span> <span class="n">items</span><span class="p">:</span>
+		<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">items</span><span class="p">:</span>
+			<span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">item</span><span class="p">)</span> <span class="o">==</span> <span class="n">regionCount</span>
+			<span class="n">records</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">item</span><span class="p">))</span>
+	<span class="bp">self</span><span class="o">.</span><span class="n">ItemCount</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Item</span><span class="p">)</span>
+	<span class="bp">self</span><span class="o">.</span><span class="n">calculateNumShorts</span><span class="p">(</span><span class="n">optimize</span><span class="o">=</span><span class="n">optimize</span><span class="p">)</span>
+	<span class="k">return</span> <span class="bp">self</span></div>
+
+
+<div class="viewcode-block" id="buildVarStore"><a class="viewcode-back" href="../../../varLib/builder.html#fontTools.ttLib.tables.otTables.buildVarStore">[docs]</a><span class="k">def</span> <span class="nf">buildVarStore</span><span class="p">(</span><span class="n">varRegionList</span><span class="p">,</span> <span class="n">varDataList</span><span class="p">):</span>
+	<span class="bp">self</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">VarStore</span><span class="p">()</span>
+	<span class="bp">self</span><span class="o">.</span><span class="n">Format</span> <span class="o">=</span> <span class="mi">1</span>
+	<span class="bp">self</span><span class="o">.</span><span class="n">VarRegionList</span> <span class="o">=</span> <span class="n">varRegionList</span>
+	<span class="bp">self</span><span class="o">.</span><span class="n">VarData</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">varDataList</span><span class="p">)</span>
+	<span class="bp">self</span><span class="o">.</span><span class="n">VarDataCount</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">VarData</span><span class="p">)</span>
+	<span class="k">return</span> <span class="bp">self</span></div>
+
+
+<span class="c1"># Variation helpers</span>
+
+<div class="viewcode-block" id="buildVarIdxMap"><a class="viewcode-back" href="../../../varLib/builder.html#fontTools.ttLib.tables.otTables.buildVarIdxMap">[docs]</a><span class="k">def</span> <span class="nf">buildVarIdxMap</span><span class="p">(</span><span class="n">varIdxes</span><span class="p">,</span> <span class="n">glyphOrder</span><span class="p">):</span>
+	<span class="bp">self</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">VarIdxMap</span><span class="p">()</span>
+	<span class="bp">self</span><span class="o">.</span><span class="n">mapping</span> <span class="o">=</span> <span class="p">{</span><span class="n">g</span><span class="p">:</span><span class="n">v</span> <span class="k">for</span> <span class="n">g</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">glyphOrder</span><span class="p">,</span> <span class="n">varIdxes</span><span class="p">)}</span>
+	<span class="k">return</span> <span class="bp">self</span></div>
+
+<div class="viewcode-block" id="buildVarDevTable"><a class="viewcode-back" href="../../../varLib/builder.html#fontTools.ttLib.tables.otTables.buildVarDevTable">[docs]</a><span class="k">def</span> <span class="nf">buildVarDevTable</span><span class="p">(</span><span class="n">varIdx</span><span class="p">):</span>
+	<span class="bp">self</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Device</span><span class="p">()</span>
+	<span class="bp">self</span><span class="o">.</span><span class="n">DeltaFormat</span> <span class="o">=</span> <span class="mh">0x8000</span>
+	<span class="bp">self</span><span class="o">.</span><span class="n">StartSize</span> <span class="o">=</span> <span class="n">varIdx</span> <span class="o">&gt;&gt;</span> <span class="mi">16</span>
+	<span class="bp">self</span><span class="o">.</span><span class="n">EndSize</span> <span class="o">=</span> <span class="n">varIdx</span> <span class="o">&amp;</span> <span class="mh">0xFFFF</span>
+	<span class="k">return</span> <span class="bp">self</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Just van Rossum, Behdad Esfahbod, and the fontTools Authors. CC BY-SA 4.0
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

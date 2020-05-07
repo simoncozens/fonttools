@@ -1,0 +1,366 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>fontTools.pens.ttGlyphPen &mdash; fontTools Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> fontTools
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Library</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../afmLib.html">afmLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../agl.html">agl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cffLib/index.html">cffLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../colorLib/index.html">colorLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cu2qu/index.html">cu2qu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../designspaceLib/index.html">designspaceLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../encodings/index.html">encodings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../feaLib/index.html">feaLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../merge.html">merge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../misc/index.html">misc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../mtiLib.html">mtiLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../otlLib/index.html">otlLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pens/index.html">pens</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../subset/index.html">subset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../svgLib/index.html">svgLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../t1Lib.html">t1Lib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ttLib/index.html">ttLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ttx.html">ttx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ufoLib/index.html">ufoLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../unicode.html">unicode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../unicodedata/index.html">unicodedata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../varLib/index.html">varLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../voltLib.html">voltLib</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">fontTools</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>fontTools.pens.ttGlyphPen</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for fontTools.pens.ttGlyphPen</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">fontTools.misc.py23</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">array</span> <span class="k">import</span> <span class="n">array</span>
+<span class="kn">from</span> <span class="nn">fontTools.misc.fixedTools</span> <span class="k">import</span> <span class="n">MAX_F2DOT14</span><span class="p">,</span> <span class="n">otRound</span><span class="p">,</span> <span class="n">floatToFixedToFloat</span>
+<span class="kn">from</span> <span class="nn">fontTools.pens.basePen</span> <span class="k">import</span> <span class="n">LoggingPen</span>
+<span class="kn">from</span> <span class="nn">fontTools.pens.transformPen</span> <span class="k">import</span> <span class="n">TransformPen</span>
+<span class="kn">from</span> <span class="nn">fontTools.ttLib.tables</span> <span class="k">import</span> <span class="n">ttProgram</span>
+<span class="kn">from</span> <span class="nn">fontTools.ttLib.tables._g_l_y_f</span> <span class="k">import</span> <span class="n">Glyph</span>
+<span class="kn">from</span> <span class="nn">fontTools.ttLib.tables._g_l_y_f</span> <span class="k">import</span> <span class="n">GlyphComponent</span>
+<span class="kn">from</span> <span class="nn">fontTools.ttLib.tables._g_l_y_f</span> <span class="k">import</span> <span class="n">GlyphCoordinates</span>
+
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;TTGlyphPen&quot;</span><span class="p">]</span>
+
+
+<div class="viewcode-block" id="TTGlyphPen"><a class="viewcode-back" href="../../../pens/ttGlyphPen.html#fontTools.pens.ttGlyphPen.TTGlyphPen">[docs]</a><span class="k">class</span> <span class="nc">TTGlyphPen</span><span class="p">(</span><span class="n">LoggingPen</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Pen used for drawing to a TrueType glyph.</span>
+
+<span class="sd">    If `handleOverflowingTransforms` is True, the components&#39; transform values</span>
+<span class="sd">    are checked that they don&#39;t overflow the limits of a F2Dot14 number:</span>
+<span class="sd">    -2.0 &lt;= v &lt; +2.0. If any transform value exceeds these, the composite</span>
+<span class="sd">    glyph is decomposed.</span>
+<span class="sd">    An exception to this rule is done for values that are very close to +2.0</span>
+<span class="sd">    (both for consistency with the -2.0 case, and for the relative frequency</span>
+<span class="sd">    these occur in real fonts). When almost +2.0 values occur (and all other</span>
+<span class="sd">    values are within the range -2.0 &lt;= x &lt;= +2.0), they are clamped to the</span>
+<span class="sd">    maximum positive value that can still be encoded as an F2Dot14: i.e.</span>
+<span class="sd">    1.99993896484375.</span>
+<span class="sd">    If False, no check is done and all components are translated unmodified</span>
+<span class="sd">    into the glyf table, followed by an inevitable `struct.error` once an</span>
+<span class="sd">    attempt is made to compile them.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">glyphSet</span><span class="p">,</span> <span class="n">handleOverflowingTransforms</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">glyphSet</span> <span class="o">=</span> <span class="n">glyphSet</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">handleOverflowingTransforms</span> <span class="o">=</span> <span class="n">handleOverflowingTransforms</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+
+<div class="viewcode-block" id="TTGlyphPen.init"><a class="viewcode-back" href="../../../pens/ttGlyphPen.html#fontTools.pens.ttGlyphPen.TTGlyphPen.init">[docs]</a>    <span class="k">def</span> <span class="nf">init</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">points</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">endPts</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">types</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">components</span> <span class="o">=</span> <span class="p">[]</span></div>
+
+    <span class="k">def</span> <span class="nf">_addPoint</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pt</span><span class="p">,</span> <span class="n">onCurve</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">points</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pt</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">types</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">onCurve</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_popPoint</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">points</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">types</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">_isClosed</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span>
+            <span class="p">(</span><span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">points</span><span class="p">)</span> <span class="ow">or</span>
+            <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">endPts</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">endPts</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">points</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
+
+<div class="viewcode-block" id="TTGlyphPen.lineTo"><a class="viewcode-back" href="../../../pens/ttGlyphPen.html#fontTools.pens.ttGlyphPen.TTGlyphPen.lineTo">[docs]</a>    <span class="k">def</span> <span class="nf">lineTo</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pt</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_addPoint</span><span class="p">(</span><span class="n">pt</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="TTGlyphPen.moveTo"><a class="viewcode-back" href="../../../pens/ttGlyphPen.html#fontTools.pens.ttGlyphPen.TTGlyphPen.moveTo">[docs]</a>    <span class="k">def</span> <span class="nf">moveTo</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pt</span><span class="p">):</span>
+        <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">_isClosed</span><span class="p">(),</span> <span class="s1">&#39;&quot;move&quot;-type point must begin a new contour.&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_addPoint</span><span class="p">(</span><span class="n">pt</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="TTGlyphPen.qCurveTo"><a class="viewcode-back" href="../../../pens/ttGlyphPen.html#fontTools.pens.ttGlyphPen.TTGlyphPen.qCurveTo">[docs]</a>    <span class="k">def</span> <span class="nf">qCurveTo</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">points</span><span class="p">):</span>
+        <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">points</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">1</span>
+        <span class="k">for</span> <span class="n">pt</span> <span class="ow">in</span> <span class="n">points</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_addPoint</span><span class="p">(</span><span class="n">pt</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+        <span class="c1"># last point is None if there are no on-curve points</span>
+        <span class="k">if</span> <span class="n">points</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_addPoint</span><span class="p">(</span><span class="n">points</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="mi">1</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="TTGlyphPen.closePath"><a class="viewcode-back" href="../../../pens/ttGlyphPen.html#fontTools.pens.ttGlyphPen.TTGlyphPen.closePath">[docs]</a>    <span class="k">def</span> <span class="nf">closePath</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">endPt</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">points</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+
+        <span class="c1"># ignore anchors (one-point paths)</span>
+        <span class="k">if</span> <span class="n">endPt</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">endPts</span> <span class="ow">and</span> <span class="n">endPt</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">endPts</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_popPoint</span><span class="p">()</span>
+            <span class="k">return</span>
+
+        <span class="c1"># if first and last point on this path are the same, remove last</span>
+        <span class="n">startPt</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">endPts</span><span class="p">:</span>
+            <span class="n">startPt</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">endPts</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">points</span><span class="p">[</span><span class="n">startPt</span><span class="p">]</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">points</span><span class="p">[</span><span class="n">endPt</span><span class="p">]:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_popPoint</span><span class="p">()</span>
+            <span class="n">endPt</span> <span class="o">-=</span> <span class="mi">1</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">endPts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">endPt</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="TTGlyphPen.endPath"><a class="viewcode-back" href="../../../pens/ttGlyphPen.html#fontTools.pens.ttGlyphPen.TTGlyphPen.endPath">[docs]</a>    <span class="k">def</span> <span class="nf">endPath</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># TrueType contours are always &quot;closed&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">closePath</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="TTGlyphPen.addComponent"><a class="viewcode-back" href="../../../pens/ttGlyphPen.html#fontTools.pens.ttGlyphPen.TTGlyphPen.addComponent">[docs]</a>    <span class="k">def</span> <span class="nf">addComponent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">glyphName</span><span class="p">,</span> <span class="n">transformation</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">components</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">glyphName</span><span class="p">,</span> <span class="n">transformation</span><span class="p">))</span></div>
+
+    <span class="k">def</span> <span class="nf">_buildComponents</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">componentFlags</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">handleOverflowingTransforms</span><span class="p">:</span>
+            <span class="c1"># we can&#39;t encode transform values &gt; 2 or &lt; -2 in F2Dot14,</span>
+            <span class="c1"># so we must decompose the glyph if any transform exceeds these</span>
+            <span class="n">overflowing</span> <span class="o">=</span> <span class="nb">any</span><span class="p">(</span><span class="n">s</span> <span class="o">&gt;</span> <span class="mi">2</span> <span class="ow">or</span> <span class="n">s</span> <span class="o">&lt;</span> <span class="o">-</span><span class="mi">2</span>
+                              <span class="k">for</span> <span class="p">(</span><span class="n">glyphName</span><span class="p">,</span> <span class="n">transformation</span><span class="p">)</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">components</span>
+                              <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">transformation</span><span class="p">[:</span><span class="mi">4</span><span class="p">])</span>
+        <span class="n">components</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">glyphName</span><span class="p">,</span> <span class="n">transformation</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">components</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">glyphName</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">glyphSet</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">log</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+                    <span class="s2">&quot;skipped non-existing component &#39;</span><span class="si">%s</span><span class="s2">&#39;&quot;</span><span class="p">,</span> <span class="n">glyphName</span>
+                <span class="p">)</span>
+                <span class="k">continue</span>
+            <span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">points</span> <span class="ow">or</span>
+                    <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handleOverflowingTransforms</span> <span class="ow">and</span> <span class="n">overflowing</span><span class="p">)):</span>
+                <span class="c1"># can&#39;t have both coordinates and components, so decompose</span>
+                <span class="n">tpen</span> <span class="o">=</span> <span class="n">TransformPen</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">transformation</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">glyphSet</span><span class="p">[</span><span class="n">glyphName</span><span class="p">]</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">tpen</span><span class="p">)</span>
+                <span class="k">continue</span>
+
+            <span class="n">component</span> <span class="o">=</span> <span class="n">GlyphComponent</span><span class="p">()</span>
+            <span class="n">component</span><span class="o">.</span><span class="n">glyphName</span> <span class="o">=</span> <span class="n">glyphName</span>
+            <span class="n">component</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">component</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="n">otRound</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">transformation</span><span class="p">[</span><span class="mi">4</span><span class="p">:])</span>
+            <span class="c1"># quantize floats to F2Dot14 so we get same values as when decompiled</span>
+            <span class="c1"># from a binary glyf table</span>
+            <span class="n">transformation</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span>
+                <span class="n">floatToFixedToFloat</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="mi">14</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">transformation</span><span class="p">[:</span><span class="mi">4</span><span class="p">]</span>
+            <span class="p">)</span>
+            <span class="k">if</span> <span class="n">transformation</span> <span class="o">!=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
+                <span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handleOverflowingTransforms</span> <span class="ow">and</span>
+                        <span class="nb">any</span><span class="p">(</span><span class="n">MAX_F2DOT14</span> <span class="o">&lt;</span> <span class="n">s</span> <span class="o">&lt;=</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">transformation</span><span class="p">)):</span>
+                    <span class="c1"># clamp values ~= +2.0 so we can keep the component</span>
+                    <span class="n">transformation</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">MAX_F2DOT14</span> <span class="k">if</span> <span class="n">MAX_F2DOT14</span> <span class="o">&lt;</span> <span class="n">s</span> <span class="o">&lt;=</span> <span class="mi">2</span>
+                                           <span class="k">else</span> <span class="n">s</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">transformation</span><span class="p">)</span>
+                <span class="n">component</span><span class="o">.</span><span class="n">transform</span> <span class="o">=</span> <span class="p">(</span><span class="n">transformation</span><span class="p">[:</span><span class="mi">2</span><span class="p">],</span> <span class="n">transformation</span><span class="p">[</span><span class="mi">2</span><span class="p">:])</span>
+            <span class="n">component</span><span class="o">.</span><span class="n">flags</span> <span class="o">=</span> <span class="n">componentFlags</span>
+            <span class="n">components</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">component</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">components</span>
+
+<div class="viewcode-block" id="TTGlyphPen.glyph"><a class="viewcode-back" href="../../../pens/ttGlyphPen.html#fontTools.pens.ttGlyphPen.TTGlyphPen.glyph">[docs]</a>    <span class="k">def</span> <span class="nf">glyph</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">componentFlags</span><span class="o">=</span><span class="mh">0x4</span><span class="p">):</span>
+        <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">_isClosed</span><span class="p">(),</span> <span class="s2">&quot;Didn&#39;t close last contour.&quot;</span>
+
+        <span class="n">components</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_buildComponents</span><span class="p">(</span><span class="n">componentFlags</span><span class="p">)</span>
+
+        <span class="n">glyph</span> <span class="o">=</span> <span class="n">Glyph</span><span class="p">()</span>
+        <span class="n">glyph</span><span class="o">.</span><span class="n">coordinates</span> <span class="o">=</span> <span class="n">GlyphCoordinates</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">points</span><span class="p">)</span>
+        <span class="n">glyph</span><span class="o">.</span><span class="n">coordinates</span><span class="o">.</span><span class="n">toInt</span><span class="p">()</span>
+        <span class="n">glyph</span><span class="o">.</span><span class="n">endPtsOfContours</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">endPts</span>
+        <span class="n">glyph</span><span class="o">.</span><span class="n">flags</span> <span class="o">=</span> <span class="n">array</span><span class="p">(</span><span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">types</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="n">components</span><span class="p">:</span>
+            <span class="n">glyph</span><span class="o">.</span><span class="n">components</span> <span class="o">=</span> <span class="n">components</span>
+            <span class="n">glyph</span><span class="o">.</span><span class="n">numberOfContours</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">glyph</span><span class="o">.</span><span class="n">numberOfContours</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">glyph</span><span class="o">.</span><span class="n">endPtsOfContours</span><span class="p">)</span>
+            <span class="n">glyph</span><span class="o">.</span><span class="n">program</span> <span class="o">=</span> <span class="n">ttProgram</span><span class="o">.</span><span class="n">Program</span><span class="p">()</span>
+            <span class="n">glyph</span><span class="o">.</span><span class="n">program</span><span class="o">.</span><span class="n">fromBytecode</span><span class="p">(</span><span class="sa">b</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">glyph</span></div></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Just van Rossum, Behdad Esfahbod, and the fontTools Authors. CC BY-SA 4.0
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

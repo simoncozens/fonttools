@@ -1,0 +1,301 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>fontTools.varLib.interpolate_layout &mdash; fontTools Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> fontTools
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Library</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../afmLib.html">afmLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../agl.html">agl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cffLib/index.html">cffLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../colorLib/index.html">colorLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cu2qu/index.html">cu2qu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../designspaceLib/index.html">designspaceLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../encodings/index.html">encodings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../feaLib/index.html">feaLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../merge.html">merge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../misc/index.html">misc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../mtiLib.html">mtiLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../otlLib/index.html">otlLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pens/index.html">pens</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../subset/index.html">subset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../svgLib/index.html">svgLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../t1Lib.html">t1Lib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ttLib/index.html">ttLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ttx.html">ttx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ufoLib/index.html">ufoLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../unicode.html">unicode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../unicodedata/index.html">unicodedata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../varLib/index.html">varLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../voltLib.html">voltLib</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">fontTools</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../varLib.html">fontTools.varLib</a> &raquo;</li>
+        
+      <li>fontTools.varLib.interpolate_layout</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for fontTools.varLib.interpolate_layout</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Interpolate OpenType Layout tables (GDEF / GPOS / GSUB).</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">fontTools.ttLib</span> <span class="k">import</span> <span class="n">TTFont</span>
+<span class="kn">from</span> <span class="nn">fontTools.varLib</span> <span class="k">import</span> <span class="n">models</span><span class="p">,</span> <span class="n">VarLibError</span><span class="p">,</span> <span class="n">load_designspace</span><span class="p">,</span> <span class="n">load_masters</span>
+<span class="kn">from</span> <span class="nn">fontTools.varLib.merger</span> <span class="k">import</span> <span class="n">InstancerMerger</span>
+<span class="kn">import</span> <span class="nn">os.path</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">from</span> <span class="nn">copy</span> <span class="k">import</span> <span class="n">deepcopy</span>
+<span class="kn">from</span> <span class="nn">pprint</span> <span class="k">import</span> <span class="n">pformat</span>
+
+<span class="n">log</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s2">&quot;fontTools.varLib.interpolate_layout&quot;</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="interpolate_layout"><a class="viewcode-back" href="../../../varLib/interpolate_layout.html#fontTools.varLib.interpolate_layout.interpolate_layout">[docs]</a><span class="k">def</span> <span class="nf">interpolate_layout</span><span class="p">(</span><span class="n">designspace</span><span class="p">,</span> <span class="n">loc</span><span class="p">,</span> <span class="n">master_finder</span><span class="o">=</span><span class="k">lambda</span> <span class="n">s</span><span class="p">:</span><span class="n">s</span><span class="p">,</span> <span class="n">mapped</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	Interpolate GPOS from a designspace file and location.</span>
+
+<span class="sd">	If master_finder is set, it should be a callable that takes master</span>
+<span class="sd">	filename as found in designspace file and map it to master font</span>
+<span class="sd">	binary as to be opened (eg. .ttf or .otf).</span>
+
+<span class="sd">	If mapped is False (default), then location is mapped using the</span>
+<span class="sd">	map element of the axes in designspace file.  If mapped is True,</span>
+<span class="sd">	it is assumed that location is in designspace&#39;s internal space and</span>
+<span class="sd">	no mapping is performed.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">designspace</span><span class="p">,</span> <span class="s2">&quot;sources&quot;</span><span class="p">):</span>  <span class="c1"># Assume a DesignspaceDocument</span>
+		<span class="k">pass</span>
+	<span class="k">else</span><span class="p">:</span>  <span class="c1"># Assume a file path</span>
+		<span class="kn">from</span> <span class="nn">fontTools.designspaceLib</span> <span class="k">import</span> <span class="n">DesignSpaceDocument</span>
+		<span class="n">designspace</span> <span class="o">=</span> <span class="n">DesignSpaceDocument</span><span class="o">.</span><span class="n">fromfile</span><span class="p">(</span><span class="n">designspace</span><span class="p">)</span>
+
+	<span class="n">ds</span> <span class="o">=</span> <span class="n">load_designspace</span><span class="p">(</span><span class="n">designspace</span><span class="p">)</span>
+	<span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Building interpolated font&quot;</span><span class="p">)</span>
+
+	<span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Loading master fonts&quot;</span><span class="p">)</span>
+	<span class="n">master_fonts</span> <span class="o">=</span> <span class="n">load_masters</span><span class="p">(</span><span class="n">designspace</span><span class="p">,</span> <span class="n">master_finder</span><span class="p">)</span>
+	<span class="n">font</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="n">master_fonts</span><span class="p">[</span><span class="n">ds</span><span class="o">.</span><span class="n">base_idx</span><span class="p">])</span>
+
+	<span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Location: </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">pformat</span><span class="p">(</span><span class="n">loc</span><span class="p">))</span>
+	<span class="k">if</span> <span class="ow">not</span> <span class="n">mapped</span><span class="p">:</span>
+		<span class="n">loc</span> <span class="o">=</span> <span class="p">{</span><span class="n">name</span><span class="p">:</span> <span class="n">ds</span><span class="o">.</span><span class="n">axes</span><span class="p">[</span><span class="n">name</span><span class="p">]</span><span class="o">.</span><span class="n">map_forward</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">name</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">loc</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+	<span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Internal location: </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">pformat</span><span class="p">(</span><span class="n">loc</span><span class="p">))</span>
+	<span class="n">loc</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">normalizeLocation</span><span class="p">(</span><span class="n">loc</span><span class="p">,</span> <span class="n">ds</span><span class="o">.</span><span class="n">internal_axis_supports</span><span class="p">)</span>
+	<span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Normalized location: </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">pformat</span><span class="p">(</span><span class="n">loc</span><span class="p">))</span>
+
+	<span class="c1"># Assume single-model for now.</span>
+	<span class="n">model</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">VariationModel</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">normalized_master_locs</span><span class="p">)</span>
+	<span class="k">assert</span> <span class="mi">0</span> <span class="o">==</span> <span class="n">model</span><span class="o">.</span><span class="n">mapping</span><span class="p">[</span><span class="n">ds</span><span class="o">.</span><span class="n">base_idx</span><span class="p">]</span>
+
+	<span class="n">merger</span> <span class="o">=</span> <span class="n">InstancerMerger</span><span class="p">(</span><span class="n">font</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">loc</span><span class="p">)</span>
+
+	<span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Building interpolated tables&quot;</span><span class="p">)</span>
+	<span class="c1"># TODO GSUB/GDEF</span>
+	<span class="n">merger</span><span class="o">.</span><span class="n">mergeTables</span><span class="p">(</span><span class="n">font</span><span class="p">,</span> <span class="n">master_fonts</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;GPOS&#39;</span><span class="p">])</span>
+	<span class="k">return</span> <span class="n">font</span></div>
+
+
+<div class="viewcode-block" id="main"><a class="viewcode-back" href="../../../varLib/interpolate_layout.html#fontTools.varLib.interpolate_layout.main">[docs]</a><span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="n">args</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+	<span class="kn">from</span> <span class="nn">fontTools</span> <span class="k">import</span> <span class="n">configLogger</span>
+
+	<span class="kn">import</span> <span class="nn">sys</span>
+	<span class="k">if</span> <span class="n">args</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+		<span class="n">args</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+
+	<span class="n">designspace_filename</span> <span class="o">=</span> <span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+	<span class="n">locargs</span> <span class="o">=</span> <span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+	<span class="n">outfile</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">designspace_filename</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;-instance.ttf&#39;</span>
+
+	<span class="c1"># TODO: allow user to configure logging via command-line options</span>
+	<span class="n">configLogger</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="s2">&quot;INFO&quot;</span><span class="p">)</span>
+
+	<span class="n">finder</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">s</span><span class="p">:</span> <span class="n">s</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;master_ufo&#39;</span><span class="p">,</span> <span class="s1">&#39;master_ttf_interpolatable&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;.ufo&#39;</span><span class="p">,</span> <span class="s1">&#39;.ttf&#39;</span><span class="p">)</span>
+
+	<span class="n">loc</span> <span class="o">=</span> <span class="p">{}</span>
+	<span class="k">for</span> <span class="n">arg</span> <span class="ow">in</span> <span class="n">locargs</span><span class="p">:</span>
+		<span class="n">tag</span><span class="p">,</span><span class="n">val</span> <span class="o">=</span> <span class="n">arg</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;=&#39;</span><span class="p">)</span>
+		<span class="n">loc</span><span class="p">[</span><span class="n">tag</span><span class="p">]</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
+
+	<span class="n">font</span> <span class="o">=</span> <span class="n">interpolate_layout</span><span class="p">(</span><span class="n">designspace_filename</span><span class="p">,</span> <span class="n">loc</span><span class="p">,</span> <span class="n">finder</span><span class="p">)</span>
+	<span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Saving font </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">outfile</span><span class="p">)</span>
+	<span class="n">font</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">outfile</span><span class="p">)</span></div>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+	<span class="kn">import</span> <span class="nn">sys</span>
+	<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+		<span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
+	<span class="kn">import</span> <span class="nn">doctest</span>
+	<span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="n">doctest</span><span class="o">.</span><span class="n">testmod</span><span class="p">()</span><span class="o">.</span><span class="n">failed</span><span class="p">)</span>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Just van Rossum, Behdad Esfahbod, and the fontTools Authors. CC BY-SA 4.0
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

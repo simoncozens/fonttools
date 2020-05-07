@@ -1,0 +1,465 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>fontTools.pens.cu2quPen &mdash; fontTools Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> fontTools
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Library</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../afmLib.html">afmLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../agl.html">agl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cffLib/index.html">cffLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../colorLib/index.html">colorLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cu2qu/index.html">cu2qu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../designspaceLib/index.html">designspaceLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../encodings/index.html">encodings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../feaLib/index.html">feaLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../merge.html">merge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../misc/index.html">misc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../mtiLib.html">mtiLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../otlLib/index.html">otlLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pens/index.html">pens</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../subset/index.html">subset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../svgLib/index.html">svgLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../t1Lib.html">t1Lib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ttLib/index.html">ttLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ttx.html">ttx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ufoLib/index.html">ufoLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../unicode.html">unicode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../unicodedata/index.html">unicodedata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../varLib/index.html">varLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../voltLib.html">voltLib</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">fontTools</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>fontTools.pens.cu2quPen</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for fontTools.pens.cu2quPen</h1><div class="highlight"><pre>
+<span></span><span class="c1"># Copyright 2016 Google Inc. All Rights Reserved.</span>
+<span class="c1">#</span>
+<span class="c1"># Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span>
+<span class="c1"># you may not use this file except in compliance with the License.</span>
+<span class="c1"># You may obtain a copy of the License at</span>
+<span class="c1">#</span>
+<span class="c1">#     http://www.apache.org/licenses/LICENSE-2.0</span>
+<span class="c1">#</span>
+<span class="c1"># Unless required by applicable law or agreed to in writing, software</span>
+<span class="c1"># distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span>
+<span class="c1"># WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span>
+<span class="c1"># See the License for the specific language governing permissions and</span>
+<span class="c1"># limitations under the License.</span>
+
+<span class="kn">from</span> <span class="nn">fontTools.cu2qu</span> <span class="k">import</span> <span class="n">curve_to_quadratic</span>
+<span class="kn">from</span> <span class="nn">fontTools.pens.basePen</span> <span class="k">import</span> <span class="n">AbstractPen</span><span class="p">,</span> <span class="n">decomposeSuperBezierSegment</span>
+<span class="kn">from</span> <span class="nn">fontTools.pens.reverseContourPen</span> <span class="k">import</span> <span class="n">ReverseContourPen</span>
+<span class="kn">from</span> <span class="nn">fontTools.pens.pointPen</span> <span class="k">import</span> <span class="n">BasePointToSegmentPen</span>
+<span class="kn">from</span> <span class="nn">fontTools.pens.pointPen</span> <span class="k">import</span> <span class="n">ReverseContourPointPen</span>
+
+
+<div class="viewcode-block" id="Cu2QuPen"><a class="viewcode-back" href="../../../pens/cu2quPen.html#fontTools.pens.cu2quPen.Cu2QuPen">[docs]</a><span class="k">class</span> <span class="nc">Cu2QuPen</span><span class="p">(</span><span class="n">AbstractPen</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; A filter pen to convert cubic bezier curves to quadratic b-splines</span>
+<span class="sd">    using the FontTools SegmentPen protocol.</span>
+
+<span class="sd">    other_pen: another SegmentPen used to draw the transformed outline.</span>
+<span class="sd">    max_err: maximum approximation error in font units. For optimal results,</span>
+<span class="sd">        if you know the UPEM of the font, we recommend setting this to a</span>
+<span class="sd">        value equal, or close to UPEM / 1000.</span>
+<span class="sd">    reverse_direction: flip the contours&#39; direction but keep starting point.</span>
+<span class="sd">    stats: a dictionary counting the point numbers of quadratic segments.</span>
+<span class="sd">    ignore_single_points: don&#39;t emit contours containing only a single point</span>
+
+<span class="sd">    NOTE: The &quot;ignore_single_points&quot; argument is deprecated since v1.3.0,</span>
+<span class="sd">    which dropped Robofab subpport. It&#39;s no longer needed to special-case</span>
+<span class="sd">    UFO2-style anchors (aka &quot;named points&quot;) when using ufoLib &gt;= 2.0,</span>
+<span class="sd">    as these are no longer drawn onto pens as single-point contours,</span>
+<span class="sd">    but are handled separately as anchors.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other_pen</span><span class="p">,</span> <span class="n">max_err</span><span class="p">,</span> <span class="n">reverse_direction</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                 <span class="n">stats</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ignore_single_points</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">reverse_direction</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">pen</span> <span class="o">=</span> <span class="n">ReverseContourPen</span><span class="p">(</span><span class="n">other_pen</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">pen</span> <span class="o">=</span> <span class="n">other_pen</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">max_err</span> <span class="o">=</span> <span class="n">max_err</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">stats</span> <span class="o">=</span> <span class="n">stats</span>
+        <span class="k">if</span> <span class="n">ignore_single_points</span><span class="p">:</span>
+            <span class="kn">import</span> <span class="nn">warnings</span>
+            <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;ignore_single_points is deprecated and &quot;</span>
+                          <span class="s2">&quot;will be removed in future versions&quot;</span><span class="p">,</span>
+                          <span class="ne">UserWarning</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ignore_single_points</span> <span class="o">=</span> <span class="n">ignore_single_points</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">start_pt</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">current_pt</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="nf">_check_contour_is_open</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">current_pt</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">AssertionError</span><span class="p">(</span><span class="s2">&quot;moveTo is required&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_check_contour_is_closed</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">current_pt</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">AssertionError</span><span class="p">(</span><span class="s2">&quot;closePath or endPath is required&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_add_moveTo</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">start_pt</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">pen</span><span class="o">.</span><span class="n">moveTo</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">start_pt</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">start_pt</span> <span class="o">=</span> <span class="kc">None</span>
+
+<div class="viewcode-block" id="Cu2QuPen.moveTo"><a class="viewcode-back" href="../../../pens/cu2quPen.html#fontTools.pens.cu2quPen.Cu2QuPen.moveTo">[docs]</a>    <span class="k">def</span> <span class="nf">moveTo</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pt</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_check_contour_is_closed</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">start_pt</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">current_pt</span> <span class="o">=</span> <span class="n">pt</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">ignore_single_points</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_add_moveTo</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="Cu2QuPen.lineTo"><a class="viewcode-back" href="../../../pens/cu2quPen.html#fontTools.pens.cu2quPen.Cu2QuPen.lineTo">[docs]</a>    <span class="k">def</span> <span class="nf">lineTo</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pt</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_check_contour_is_open</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_add_moveTo</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pen</span><span class="o">.</span><span class="n">lineTo</span><span class="p">(</span><span class="n">pt</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">current_pt</span> <span class="o">=</span> <span class="n">pt</span></div>
+
+<div class="viewcode-block" id="Cu2QuPen.qCurveTo"><a class="viewcode-back" href="../../../pens/cu2quPen.html#fontTools.pens.cu2quPen.Cu2QuPen.qCurveTo">[docs]</a>    <span class="k">def</span> <span class="nf">qCurveTo</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">points</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_check_contour_is_open</span><span class="p">()</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">points</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">lineTo</span><span class="p">(</span><span class="n">points</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="k">elif</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_add_moveTo</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">pen</span><span class="o">.</span><span class="n">qCurveTo</span><span class="p">(</span><span class="o">*</span><span class="n">points</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">current_pt</span> <span class="o">=</span> <span class="n">points</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">AssertionError</span><span class="p">(</span><span class="s2">&quot;illegal qcurve segment point count: </span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">n</span><span class="p">)</span></div>
+
+    <span class="k">def</span> <span class="nf">_curve_to_quadratic</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pt1</span><span class="p">,</span> <span class="n">pt2</span><span class="p">,</span> <span class="n">pt3</span><span class="p">):</span>
+        <span class="n">curve</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">current_pt</span><span class="p">,</span> <span class="n">pt1</span><span class="p">,</span> <span class="n">pt2</span><span class="p">,</span> <span class="n">pt3</span><span class="p">)</span>
+        <span class="n">quadratic</span> <span class="o">=</span> <span class="n">curve_to_quadratic</span><span class="p">(</span><span class="n">curve</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">max_err</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">stats</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">n</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">quadratic</span><span class="p">)</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">stats</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">qCurveTo</span><span class="p">(</span><span class="o">*</span><span class="n">quadratic</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
+
+<div class="viewcode-block" id="Cu2QuPen.curveTo"><a class="viewcode-back" href="../../../pens/cu2quPen.html#fontTools.pens.cu2quPen.Cu2QuPen.curveTo">[docs]</a>    <span class="k">def</span> <span class="nf">curveTo</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">points</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_check_contour_is_open</span><span class="p">()</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">points</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+            <span class="c1"># this is the most common case, so we special-case it</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_curve_to_quadratic</span><span class="p">(</span><span class="o">*</span><span class="n">points</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">segment</span> <span class="ow">in</span> <span class="n">decomposeSuperBezierSegment</span><span class="p">(</span><span class="n">points</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_curve_to_quadratic</span><span class="p">(</span><span class="o">*</span><span class="n">segment</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">qCurveTo</span><span class="p">(</span><span class="o">*</span><span class="n">points</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">lineTo</span><span class="p">(</span><span class="n">points</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">AssertionError</span><span class="p">(</span><span class="s2">&quot;illegal curve segment point count: </span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">n</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Cu2QuPen.closePath"><a class="viewcode-back" href="../../../pens/cu2quPen.html#fontTools.pens.cu2quPen.Cu2QuPen.closePath">[docs]</a>    <span class="k">def</span> <span class="nf">closePath</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_check_contour_is_open</span><span class="p">()</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">start_pt</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="c1"># if &#39;start_pt&#39; is _not_ None, we are ignoring single-point paths</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">pen</span><span class="o">.</span><span class="n">closePath</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">current_pt</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">start_pt</span> <span class="o">=</span> <span class="kc">None</span></div>
+
+<div class="viewcode-block" id="Cu2QuPen.endPath"><a class="viewcode-back" href="../../../pens/cu2quPen.html#fontTools.pens.cu2quPen.Cu2QuPen.endPath">[docs]</a>    <span class="k">def</span> <span class="nf">endPath</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_check_contour_is_open</span><span class="p">()</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">start_pt</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">pen</span><span class="o">.</span><span class="n">endPath</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">current_pt</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">start_pt</span> <span class="o">=</span> <span class="kc">None</span></div>
+
+<div class="viewcode-block" id="Cu2QuPen.addComponent"><a class="viewcode-back" href="../../../pens/cu2quPen.html#fontTools.pens.cu2quPen.Cu2QuPen.addComponent">[docs]</a>    <span class="k">def</span> <span class="nf">addComponent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">glyphName</span><span class="p">,</span> <span class="n">transformation</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_check_contour_is_closed</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pen</span><span class="o">.</span><span class="n">addComponent</span><span class="p">(</span><span class="n">glyphName</span><span class="p">,</span> <span class="n">transformation</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="Cu2QuPointPen"><a class="viewcode-back" href="../../../pens/cu2quPen.html#fontTools.pens.cu2quPen.Cu2QuPointPen">[docs]</a><span class="k">class</span> <span class="nc">Cu2QuPointPen</span><span class="p">(</span><span class="n">BasePointToSegmentPen</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; A filter pen to convert cubic bezier curves to quadratic b-splines</span>
+<span class="sd">    using the RoboFab PointPen protocol.</span>
+
+<span class="sd">    other_point_pen: another PointPen used to draw the transformed outline.</span>
+<span class="sd">    max_err: maximum approximation error in font units. For optimal results,</span>
+<span class="sd">        if you know the UPEM of the font, we recommend setting this to a</span>
+<span class="sd">        value equal, or close to UPEM / 1000.</span>
+<span class="sd">    reverse_direction: reverse the winding direction of all contours.</span>
+<span class="sd">    stats: a dictionary counting the point numbers of quadratic segments.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other_point_pen</span><span class="p">,</span> <span class="n">max_err</span><span class="p">,</span> <span class="n">reverse_direction</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                 <span class="n">stats</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="n">BasePointToSegmentPen</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">reverse_direction</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">pen</span> <span class="o">=</span> <span class="n">ReverseContourPointPen</span><span class="p">(</span><span class="n">other_point_pen</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">pen</span> <span class="o">=</span> <span class="n">other_point_pen</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">max_err</span> <span class="o">=</span> <span class="n">max_err</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">stats</span> <span class="o">=</span> <span class="n">stats</span>
+
+    <span class="k">def</span> <span class="nf">_flushContour</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">segments</span><span class="p">):</span>
+        <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">segments</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">1</span>
+        <span class="n">closed</span> <span class="o">=</span> <span class="n">segments</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">&quot;move&quot;</span>
+        <span class="n">new_segments</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">prev_points</span> <span class="o">=</span> <span class="n">segments</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">prev_on_curve</span> <span class="o">=</span> <span class="n">prev_points</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">segment_type</span><span class="p">,</span> <span class="n">points</span> <span class="ow">in</span> <span class="n">segments</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">segment_type</span> <span class="o">==</span> <span class="s1">&#39;curve&#39;</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">sub_points</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_split_super_bezier_segments</span><span class="p">(</span><span class="n">points</span><span class="p">):</span>
+                    <span class="n">on_curve</span><span class="p">,</span> <span class="n">smooth</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">kwargs</span> <span class="o">=</span> <span class="n">sub_points</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+                    <span class="n">bcp1</span><span class="p">,</span> <span class="n">bcp2</span> <span class="o">=</span> <span class="n">sub_points</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">sub_points</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+                    <span class="n">cubic</span> <span class="o">=</span> <span class="p">[</span><span class="n">prev_on_curve</span><span class="p">,</span> <span class="n">bcp1</span><span class="p">,</span> <span class="n">bcp2</span><span class="p">,</span> <span class="n">on_curve</span><span class="p">]</span>
+                    <span class="n">quad</span> <span class="o">=</span> <span class="n">curve_to_quadratic</span><span class="p">(</span><span class="n">cubic</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">max_err</span><span class="p">)</span>
+                    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">stats</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                        <span class="n">n</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">quad</span><span class="p">)</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">stats</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+                    <span class="n">new_points</span> <span class="o">=</span> <span class="p">[(</span><span class="n">pt</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="p">{})</span> <span class="k">for</span> <span class="n">pt</span> <span class="ow">in</span> <span class="n">quad</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span>
+                    <span class="n">new_points</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">on_curve</span><span class="p">,</span> <span class="n">smooth</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">))</span>
+                    <span class="n">new_segments</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="s2">&quot;qcurve&quot;</span><span class="p">,</span> <span class="n">new_points</span><span class="p">])</span>
+                    <span class="n">prev_on_curve</span> <span class="o">=</span> <span class="n">sub_points</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">new_segments</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">segment_type</span><span class="p">,</span> <span class="n">points</span><span class="p">])</span>
+                <span class="n">prev_on_curve</span> <span class="o">=</span> <span class="n">points</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">closed</span><span class="p">:</span>
+            <span class="c1"># the BasePointToSegmentPen.endPath method that calls _flushContour</span>
+            <span class="c1"># rotates the point list of closed contours so that they end with</span>
+            <span class="c1"># the first on-curve point. We restore the original starting point.</span>
+            <span class="n">new_segments</span> <span class="o">=</span> <span class="n">new_segments</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">:]</span> <span class="o">+</span> <span class="n">new_segments</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_drawPoints</span><span class="p">(</span><span class="n">new_segments</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_split_super_bezier_segments</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">points</span><span class="p">):</span>
+        <span class="n">sub_segments</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="c1"># n is the number of control points</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">points</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="c1"># a simple bezier curve segment</span>
+            <span class="n">sub_segments</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">points</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="c1"># a &quot;super&quot; bezier; decompose it</span>
+            <span class="n">on_curve</span><span class="p">,</span> <span class="n">smooth</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">kwargs</span> <span class="o">=</span> <span class="n">points</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">num_sub_segments</span> <span class="o">=</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span>
+            <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">sub_points</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">decomposeSuperBezierSegment</span><span class="p">([</span>
+                    <span class="n">pt</span> <span class="k">for</span> <span class="n">pt</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">points</span><span class="p">])):</span>
+                <span class="n">new_segment</span> <span class="o">=</span> <span class="p">[]</span>
+                <span class="k">for</span> <span class="n">point</span> <span class="ow">in</span> <span class="n">sub_points</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+                    <span class="n">new_segment</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">point</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="p">{}))</span>
+                <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="p">(</span><span class="n">num_sub_segments</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+                    <span class="c1"># the last on-curve keeps its original attributes</span>
+                    <span class="n">new_segment</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">on_curve</span><span class="p">,</span> <span class="n">smooth</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">))</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="c1"># on-curves of sub-segments are always &quot;smooth&quot;</span>
+                    <span class="n">new_segment</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">sub_points</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="p">{}))</span>
+                <span class="n">sub_segments</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">new_segment</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">AssertionError</span><span class="p">(</span>
+                <span class="s2">&quot;expected 2 control points, found: </span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">n</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">sub_segments</span>
+
+    <span class="k">def</span> <span class="nf">_drawPoints</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">segments</span><span class="p">):</span>
+        <span class="n">pen</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pen</span>
+        <span class="n">pen</span><span class="o">.</span><span class="n">beginPath</span><span class="p">()</span>
+        <span class="n">last_offcurves</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">segment_type</span><span class="p">,</span> <span class="n">points</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">segments</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">segment_type</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;move&quot;</span><span class="p">,</span> <span class="s2">&quot;line&quot;</span><span class="p">):</span>
+                <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">points</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">,</span> <span class="p">(</span>
+                    <span class="s2">&quot;illegal line segment point count: </span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">points</span><span class="p">))</span>
+                <span class="n">pt</span><span class="p">,</span> <span class="n">smooth</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">kwargs</span> <span class="o">=</span> <span class="n">points</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="n">pen</span><span class="o">.</span><span class="n">addPoint</span><span class="p">(</span><span class="n">pt</span><span class="p">,</span> <span class="n">segment_type</span><span class="p">,</span> <span class="n">smooth</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">segment_type</span> <span class="o">==</span> <span class="s2">&quot;qcurve&quot;</span><span class="p">:</span>
+                <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">points</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">,</span> <span class="p">(</span>
+                    <span class="s2">&quot;illegal qcurve segment point count: </span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">points</span><span class="p">))</span>
+                <span class="n">offcurves</span> <span class="o">=</span> <span class="n">points</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+                <span class="k">if</span> <span class="n">offcurves</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                        <span class="c1"># any off-curve points preceding the first on-curve</span>
+                        <span class="c1"># will be appended at the end of the contour</span>
+                        <span class="n">last_offcurves</span> <span class="o">=</span> <span class="n">offcurves</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="k">for</span> <span class="p">(</span><span class="n">pt</span><span class="p">,</span> <span class="n">smooth</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span> <span class="ow">in</span> <span class="n">offcurves</span><span class="p">:</span>
+                            <span class="n">pen</span><span class="o">.</span><span class="n">addPoint</span><span class="p">(</span><span class="n">pt</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">smooth</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+                <span class="n">pt</span><span class="p">,</span> <span class="n">smooth</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">kwargs</span> <span class="o">=</span> <span class="n">points</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+                <span class="k">if</span> <span class="n">pt</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="c1"># special quadratic contour with no on-curve points:</span>
+                    <span class="c1"># we need to skip the &quot;None&quot; point. See also the Pen</span>
+                    <span class="c1"># protocol&#39;s qCurveTo() method and fontTools.pens.basePen</span>
+                    <span class="k">pass</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">pen</span><span class="o">.</span><span class="n">addPoint</span><span class="p">(</span><span class="n">pt</span><span class="p">,</span> <span class="n">segment_type</span><span class="p">,</span> <span class="n">smooth</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="c1"># &#39;curve&#39; segments must have been converted to &#39;qcurve&#39; by now</span>
+                <span class="k">raise</span> <span class="ne">AssertionError</span><span class="p">(</span>
+                    <span class="s2">&quot;unexpected segment type: </span><span class="si">%r</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">segment_type</span><span class="p">)</span>
+        <span class="k">for</span> <span class="p">(</span><span class="n">pt</span><span class="p">,</span> <span class="n">smooth</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span> <span class="ow">in</span> <span class="n">last_offcurves</span><span class="p">:</span>
+            <span class="n">pen</span><span class="o">.</span><span class="n">addPoint</span><span class="p">(</span><span class="n">pt</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">smooth</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="n">pen</span><span class="o">.</span><span class="n">endPath</span><span class="p">()</span>
+
+<div class="viewcode-block" id="Cu2QuPointPen.addComponent"><a class="viewcode-back" href="../../../pens/cu2quPen.html#fontTools.pens.cu2quPen.Cu2QuPointPen.addComponent">[docs]</a>    <span class="k">def</span> <span class="nf">addComponent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">baseGlyphName</span><span class="p">,</span> <span class="n">transformation</span><span class="p">):</span>
+        <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">currentPath</span> <span class="ow">is</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pen</span><span class="o">.</span><span class="n">addComponent</span><span class="p">(</span><span class="n">baseGlyphName</span><span class="p">,</span> <span class="n">transformation</span><span class="p">)</span></div></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Just van Rossum, Behdad Esfahbod, and the fontTools Authors. CC BY-SA 4.0
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

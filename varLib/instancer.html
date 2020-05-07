@@ -1,0 +1,617 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>instancer &mdash; fontTools Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="interpolatable" href="interpolatable.html" />
+    <link rel="prev" title="featureVars" href="featureVars.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> fontTools
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Library</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../afmLib.html">afmLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../agl.html">agl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cffLib/index.html">cffLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../colorLib/index.html">colorLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cu2qu/index.html">cu2qu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../designspaceLib/index.html">designspaceLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../encodings/index.html">encodings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../feaLib/index.html">feaLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../merge.html">merge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/index.html">misc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mtiLib.html">mtiLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../otlLib/index.html">otlLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pens/index.html">pens</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../subset/index.html">subset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svgLib/index.html">svgLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../t1Lib.html">t1Lib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ttLib/index.html">ttLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ttx.html">ttx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ufoLib/index.html">ufoLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unicode.html">unicode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unicodedata/index.html">unicodedata</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">varLib</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="builder.html">builder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cff.html">cff</a></li>
+<li class="toctree-l2"><a class="reference internal" href="errors.html">errors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="featureVars.html">featureVars</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">instancer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interpolatable.html">interpolatable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interpolate_layout.html">interpolate_layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iup.html">iup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="merger.html">merger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.html">models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mutator.html">mutator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mvar.html">mvar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plot.html">plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="varStore.html">varStore</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../voltLib.html">voltLib</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">fontTools</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">varLib</a> &raquo;</li>
+        
+      <li>instancer</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/varLib/instancer.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-fontTools.varLib.instancer">
+<span id="instancer"></span><h1>instancer<a class="headerlink" href="#module-fontTools.varLib.instancer" title="Permalink to this headline">¶</a></h1>
+<p>Partially instantiate a variable font.</p>
+<p>The module exports an <cite>instantiateVariableFont</cite> function and CLI that allow to
+create full instances (i.e. static fonts) from variable fonts, as well as “partial”
+variable fonts that only contain a subset of the original variation space.</p>
+<p>For example, if you wish to pin the width axis to a given location while also
+restricting the weight axis to 400..700 range, you can do:</p>
+<p>$ fonttools varLib.instancer ./NotoSans-VF.ttf wdth=85 wght=400:700</p>
+<p>See <cite>fonttools varLib.instancer –help</cite> for more info on the CLI options.</p>
+<p>The module’s entry point is the <cite>instantiateVariableFont</cite> function, which takes
+a TTFont object and a dict specifying either axis coodinates or (min, max) ranges,
+and returns a new TTFont representing either a partial VF, or full instance if all
+the VF axes were given an explicit coordinate.</p>
+<p>E.g. here’s how to pin the wght axis at a given location in a wght+wdth variable
+font, keeping only the deltas associated with the wdth axis:</p>
+<div class="line-block">
+<div class="line">&gt;&gt;&gt; from fontTools import ttLib</div>
+<div class="line">&gt;&gt;&gt; from fontTools.varLib import instancer</div>
+<div class="line">&gt;&gt;&gt; varfont = ttLib.TTFont(“path/to/MyVariableFont.ttf”)</div>
+<div class="line">&gt;&gt;&gt; [a.axisTag for a in varfont[“fvar”].axes]  # the varfont’s current axes</div>
+<div class="line">[‘wght’, ‘wdth’]</div>
+<div class="line">&gt;&gt;&gt; partial = instancer.instantiateVariableFont(varfont, {“wght”: 300})</div>
+<div class="line">&gt;&gt;&gt; [a.axisTag for a in partial[“fvar”].axes]  # axes left after pinning ‘wght’</div>
+<div class="line">[‘wdth’]</div>
+</div>
+<p>If the input location specifies all the axes, the resulting instance is no longer
+‘variable’ (same as using fontools varLib.mutator):</p>
+<div class="line-block">
+<div class="line">&gt;&gt;&gt; instance = instancer.instantiateVariableFont(</div>
+<div class="line">…     varfont, {“wght”: 700, “wdth”: 67.5}</div>
+<div class="line">… )</div>
+<div class="line">&gt;&gt;&gt; “fvar” not in instance</div>
+<div class="line">True</div>
+</div>
+<p>If one just want to drop an axis at the default location, without knowing in
+advance what the default value for that axis is, one can pass a <cite>None</cite> value:</p>
+<div class="line-block">
+<div class="line">&gt;&gt;&gt; instance = instancer.instantiateVariableFont(varfont, {“wght”: None})</div>
+<div class="line">&gt;&gt;&gt; len(varfont[“fvar”].axes)</div>
+<div class="line">1</div>
+</div>
+<p>From the console script, this is equivalent to passing <cite>wght=drop</cite> as input.</p>
+<p>This module is similar to fontTools.varLib.mutator, which it’s intended to supersede.
+Note that, unlike varLib.mutator, when an axis is not mentioned in the input
+location, the varLib.instancer will keep the axis and the corresponding deltas,
+whereas mutator implicitly drops the axis at its default coordinate.</p>
+<p>The module currently supports only the first three “levels” of partial instancing,
+with the rest planned to be implemented in the future, namely:
+L1) dropping one or more axes while leaving the default tables unmodified;
+L2) dropping one or more axes while pinning them at non-default locations;
+L3) restricting the range of variation of one or more axes, by setting either</p>
+<blockquote>
+<div><p>a new minimum or maximum, potentially – though not necessarily – dropping
+entire regions of variations that fall completely outside this new range.</p>
+</div></blockquote>
+<p>L4) moving the default location of an axis.</p>
+<p>Currently only TrueType-flavored variable fonts (i.e. containing ‘glyf’ table)
+are supported, but support for CFF2 variable fonts will be added soon.</p>
+<p>The discussion and implementation of these features are tracked at
+<a class="reference external" href="https://github.com/fonttools/fonttools/issues/1537">https://github.com/fonttools/fonttools/issues/1537</a></p>
+<dl class="py class">
+<dt id="fontTools.varLib.instancer.AxisRange">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.varLib.instancer.</code><code class="sig-name descname">AxisRange</code><a class="reference internal" href="../_modules/fontTools/varLib/instancer.html#AxisRange"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.instancer.AxisRange" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.varLib.instancer.AxisRange.count">
+<code class="sig-name descname">count</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.instancer.AxisRange.count" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return number of occurrences of value.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.instancer.AxisRange.index">
+<code class="sig-name descname">index</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.instancer.AxisRange.index" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return first index of value.</p>
+<p>Raises ValueError if the value is not present.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.instancer.AxisRange.maximum">
+<em class="property">property </em><code class="sig-name descname">maximum</code><a class="headerlink" href="#fontTools.varLib.instancer.AxisRange.maximum" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 1</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.instancer.AxisRange.minimum">
+<em class="property">property </em><code class="sig-name descname">minimum</code><a class="headerlink" href="#fontTools.varLib.instancer.AxisRange.minimum" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 0</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.varLib.instancer.NormalizedAxisRange">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.varLib.instancer.</code><code class="sig-name descname">NormalizedAxisRange</code><a class="reference internal" href="../_modules/fontTools/varLib/instancer.html#NormalizedAxisRange"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.instancer.NormalizedAxisRange" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.varLib.instancer.NormalizedAxisRange.count">
+<code class="sig-name descname">count</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.instancer.NormalizedAxisRange.count" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return number of occurrences of value.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.instancer.NormalizedAxisRange.index">
+<code class="sig-name descname">index</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.instancer.NormalizedAxisRange.index" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return first index of value.</p>
+<p>Raises ValueError if the value is not present.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.instancer.NormalizedAxisRange.maximum">
+<em class="property">property </em><code class="sig-name descname">maximum</code><a class="headerlink" href="#fontTools.varLib.instancer.NormalizedAxisRange.maximum" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 1</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.instancer.NormalizedAxisRange.minimum">
+<em class="property">property </em><code class="sig-name descname">minimum</code><a class="headerlink" href="#fontTools.varLib.instancer.NormalizedAxisRange.minimum" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 0</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.varLib.instancer.getVariationNameIDs">
+<code class="sig-prename descclassname">fontTools.varLib.instancer.</code><code class="sig-name descname">getVariationNameIDs</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">varfont</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/varLib/instancer.html#getVariationNameIDs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.instancer.getVariationNameIDs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.varLib.instancer.instantiateAvar">
+<code class="sig-prename descclassname">fontTools.varLib.instancer.</code><code class="sig-name descname">instantiateAvar</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">varfont</span></em>, <em class="sig-param"><span class="n">axisLimits</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/varLib/instancer.html#instantiateAvar"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.instancer.instantiateAvar" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.varLib.instancer.instantiateCvar">
+<code class="sig-prename descclassname">fontTools.varLib.instancer.</code><code class="sig-name descname">instantiateCvar</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">varfont</span></em>, <em class="sig-param"><span class="n">axisLimits</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/varLib/instancer.html#instantiateCvar"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.instancer.instantiateCvar" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.varLib.instancer.instantiateFeatureVariations">
+<code class="sig-prename descclassname">fontTools.varLib.instancer.</code><code class="sig-name descname">instantiateFeatureVariations</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">varfont</span></em>, <em class="sig-param"><span class="n">axisLimits</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/varLib/instancer.html#instantiateFeatureVariations"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.instancer.instantiateFeatureVariations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.varLib.instancer.instantiateFvar">
+<code class="sig-prename descclassname">fontTools.varLib.instancer.</code><code class="sig-name descname">instantiateFvar</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">varfont</span></em>, <em class="sig-param"><span class="n">axisLimits</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/varLib/instancer.html#instantiateFvar"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.instancer.instantiateFvar" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.varLib.instancer.instantiateGvar">
+<code class="sig-prename descclassname">fontTools.varLib.instancer.</code><code class="sig-name descname">instantiateGvar</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">varfont</span></em>, <em class="sig-param"><span class="n">axisLimits</span></em>, <em class="sig-param"><span class="n">optimize</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/varLib/instancer.html#instantiateGvar"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.instancer.instantiateGvar" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.varLib.instancer.instantiateGvarGlyph">
+<code class="sig-prename descclassname">fontTools.varLib.instancer.</code><code class="sig-name descname">instantiateGvarGlyph</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">varfont</span></em>, <em class="sig-param"><span class="n">glyphname</span></em>, <em class="sig-param"><span class="n">axisLimits</span></em>, <em class="sig-param"><span class="n">optimize</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/varLib/instancer.html#instantiateGvarGlyph"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.instancer.instantiateGvarGlyph" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.varLib.instancer.instantiateHVAR">
+<code class="sig-prename descclassname">fontTools.varLib.instancer.</code><code class="sig-name descname">instantiateHVAR</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">varfont</span></em>, <em class="sig-param"><span class="n">axisLimits</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/varLib/instancer.html#instantiateHVAR"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.instancer.instantiateHVAR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.varLib.instancer.instantiateItemVariationStore">
+<code class="sig-prename descclassname">fontTools.varLib.instancer.</code><code class="sig-name descname">instantiateItemVariationStore</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">itemVarStore</span></em>, <em class="sig-param"><span class="n">fvarAxes</span></em>, <em class="sig-param"><span class="n">axisLimits</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/varLib/instancer.html#instantiateItemVariationStore"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.instancer.instantiateItemVariationStore" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute deltas at partial location, and update varStore in-place.</p>
+<p>Remove regions in which all axes were instanced, or fall outside the new axis
+limits. Scale the deltas of the remaining regions where only some of the axes
+were instanced.</p>
+<p>The number of VarData subtables, and the number of items within each, are
+not modified, in order to keep the existing VariationIndex valid.
+One may call VarStore.optimize() method after this to further optimize those.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>varStore</strong> – An otTables.VarStore object (Item Variation Store)</p></li>
+<li><p><strong>fvarAxes</strong> – list of fvar’s Axis objects</p></li>
+<li><p><strong>axisLimits</strong> – Dict[str, float] mapping axis tags to normalized axis coordinates
+(float) or ranges for restricting an axis’ min/max (NormalizedAxisRange).
+May not specify coordinates/ranges for all the fvar axes.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>to be added to the default instance, of type dict of floats</dt><dd><p>keyed by VariationIndex compound values: i.e. (outer &lt;&lt; 16) + inner.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>defaultDeltas</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.varLib.instancer.instantiateMVAR">
+<code class="sig-prename descclassname">fontTools.varLib.instancer.</code><code class="sig-name descname">instantiateMVAR</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">varfont</span></em>, <em class="sig-param"><span class="n">axisLimits</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/varLib/instancer.html#instantiateMVAR"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.instancer.instantiateMVAR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.varLib.instancer.instantiateOTL">
+<code class="sig-prename descclassname">fontTools.varLib.instancer.</code><code class="sig-name descname">instantiateOTL</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">varfont</span></em>, <em class="sig-param"><span class="n">axisLimits</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/varLib/instancer.html#instantiateOTL"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.instancer.instantiateOTL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.varLib.instancer.instantiateSTAT">
+<code class="sig-prename descclassname">fontTools.varLib.instancer.</code><code class="sig-name descname">instantiateSTAT</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">varfont</span></em>, <em class="sig-param"><span class="n">axisLimits</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/varLib/instancer.html#instantiateSTAT"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.instancer.instantiateSTAT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.varLib.instancer.instantiateTupleVariationStore">
+<code class="sig-prename descclassname">fontTools.varLib.instancer.</code><code class="sig-name descname">instantiateTupleVariationStore</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">variations</span></em>, <em class="sig-param"><span class="n">axisLimits</span></em>, <em class="sig-param"><span class="n">origCoords</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">endPts</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/varLib/instancer.html#instantiateTupleVariationStore"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.instancer.instantiateTupleVariationStore" title="Permalink to this definition">¶</a></dt>
+<dd><p>Instantiate TupleVariation list at the given location, or limit axes’ min/max.</p>
+<p>The ‘variations’ list of TupleVariation objects is modified in-place.
+The ‘axisLimits’ (dict) maps axis tags (str) to either a single coordinate along the
+axis (float), or to minimum/maximum coordinates (NormalizedAxisRange).</p>
+<p>A ‘full’ instance (i.e. static font) is produced when all the axes are pinned to
+single coordinates; a ‘partial’ instance (i.e. a less variable font) is produced
+when some of the axes are omitted, or restricted with a new range.</p>
+<p>Tuples that do not participate are kept as they are. Those that have 0 influence
+at the given location are removed from the variation store.
+Those that are fully instantiated (i.e. all their axes are being pinned) are also
+removed from the variation store, their scaled deltas accummulated and returned, so
+that they can be added by the caller to the default instance’s coordinates.
+Tuples that are only partially instantiated (i.e. not all the axes that they
+participate in are being pinned) are kept in the store, and their deltas multiplied
+by the scalar support of the axes to be pinned at the desired location.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>variations</strong> – List[TupleVariation] from either ‘gvar’ or ‘cvar’.</p></li>
+<li><p><strong>axisLimits</strong> – Dict[str, Union[float, NormalizedAxisRange]]: axes’ coordinates for
+the full or partial instance, or ranges for restricting an axis’ min/max.</p></li>
+<li><p><strong>origCoords</strong> – GlyphCoordinates: default instance’s coordinates for computing ‘gvar’
+inferred points (cf. table__g_l_y_f.getCoordinatesAndControls).</p></li>
+<li><p><strong>endPts</strong> – List[int]: indices of contour end points, for inferring ‘gvar’ deltas.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the overall delta adjustment after applicable deltas were summed.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>List[float]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.varLib.instancer.instantiateVVAR">
+<code class="sig-prename descclassname">fontTools.varLib.instancer.</code><code class="sig-name descname">instantiateVVAR</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">varfont</span></em>, <em class="sig-param"><span class="n">axisLimits</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/varLib/instancer.html#instantiateVVAR"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.instancer.instantiateVVAR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.varLib.instancer.instantiateVariableFont">
+<code class="sig-prename descclassname">fontTools.varLib.instancer.</code><code class="sig-name descname">instantiateVariableFont</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">varfont</span></em>, <em class="sig-param"><span class="n">axisLimits</span></em>, <em class="sig-param"><span class="n">inplace</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">optimize</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">overlap</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/varLib/instancer.html#instantiateVariableFont"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.instancer.instantiateVariableFont" title="Permalink to this definition">¶</a></dt>
+<dd><p>Instantiate variable font, either fully or partially.</p>
+<p>Depending on whether the <cite>axisLimits</cite> dictionary references all or some of the
+input varfont’s axes, the output font will either be a full instance (static
+font) or a variable font with possibly less variation data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>varfont</strong> – a TTFont instance, which must contain at least an ‘fvar’ table.
+Note that variable fonts with ‘CFF2’ table are not supported yet.</p></li>
+<li><p><strong>axisLimits</strong> – a dict keyed by axis tags (str) containing the coordinates (float)
+along one or more axes where the desired instance will be located.
+If the value is <cite>None</cite>, the default coordinate as per ‘fvar’ table for
+that axis is used.
+The limit values can also be (min, max) tuples for restricting an
+axis’s variation range, but this is not implemented yet.</p></li>
+<li><p><strong>inplace</strong> (<em>bool</em>) – whether to modify input TTFont object in-place instead of
+returning a distinct object.</p></li>
+<li><p><strong>optimize</strong> (<em>bool</em>) – if False, do not perform IUP-delta optimization on the
+remaining ‘gvar’ table’s deltas. Possibly faster, and might work around
+rendering issues in some buggy environments, at the cost of a slightly
+larger file size.</p></li>
+<li><p><strong>overlap</strong> (<em>bool</em>) – variable fonts usually contain overlapping contours, and some
+font rendering engines on Apple platforms require that the <cite>OVERLAP_SIMPLE</cite>
+and <cite>OVERLAP_COMPOUND</cite> flags in the ‘glyf’ table be set to force rendering
+using a non-zero fill rule. Thus we always set these flags on all glyphs
+to maximise cross-compatibility of the generated instance. You can disable
+this by setting <cite>overalap</cite> to False.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.varLib.instancer.isInstanceWithinAxisRanges">
+<code class="sig-prename descclassname">fontTools.varLib.instancer.</code><code class="sig-name descname">isInstanceWithinAxisRanges</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">location</span></em>, <em class="sig-param"><span class="n">axisRanges</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/varLib/instancer.html#isInstanceWithinAxisRanges"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.instancer.isInstanceWithinAxisRanges" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.varLib.instancer.limitTupleVariationAxisRange">
+<code class="sig-prename descclassname">fontTools.varLib.instancer.</code><code class="sig-name descname">limitTupleVariationAxisRange</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">var</span></em>, <em class="sig-param"><span class="n">axisTag</span></em>, <em class="sig-param"><span class="n">axisRange</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/varLib/instancer.html#limitTupleVariationAxisRange"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.instancer.limitTupleVariationAxisRange" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.varLib.instancer.limitTupleVariationAxisRanges">
+<code class="sig-prename descclassname">fontTools.varLib.instancer.</code><code class="sig-name descname">limitTupleVariationAxisRanges</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">variations</span></em>, <em class="sig-param"><span class="n">axisRanges</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/varLib/instancer.html#limitTupleVariationAxisRanges"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.instancer.limitTupleVariationAxisRanges" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.varLib.instancer.main">
+<code class="sig-prename descclassname">fontTools.varLib.instancer.</code><code class="sig-name descname">main</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">args</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/varLib/instancer.html#main"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.instancer.main" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.varLib.instancer.normalize">
+<code class="sig-prename descclassname">fontTools.varLib.instancer.</code><code class="sig-name descname">normalize</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em>, <em class="sig-param"><span class="n">triple</span></em>, <em class="sig-param"><span class="n">avarMapping</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/varLib/instancer.html#normalize"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.instancer.normalize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.varLib.instancer.normalizeAxisLimits">
+<code class="sig-prename descclassname">fontTools.varLib.instancer.</code><code class="sig-name descname">normalizeAxisLimits</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">varfont</span></em>, <em class="sig-param"><span class="n">axisLimits</span></em>, <em class="sig-param"><span class="n">usingAvar</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/varLib/instancer.html#normalizeAxisLimits"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.instancer.normalizeAxisLimits" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.varLib.instancer.parseArgs">
+<code class="sig-prename descclassname">fontTools.varLib.instancer.</code><code class="sig-name descname">parseArgs</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">args</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/varLib/instancer.html#parseArgs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.instancer.parseArgs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse argv.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>3-tuple (infile, axisLimits, options)
+axisLimits is either a Dict[str, Optional[float]], for pinning variation axes
+to specific coordinates along those axes (with <cite>None</cite> as a placeholder for an
+axis’ default value); or a Dict[str, Tuple(float, float)], meaning limit this
+axis to min/max range.
+Axes locations are in user-space coordinates, as defined in the “fvar” table.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.varLib.instancer.parseLimits">
+<code class="sig-prename descclassname">fontTools.varLib.instancer.</code><code class="sig-name descname">parseLimits</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">limits</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/varLib/instancer.html#parseLimits"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.instancer.parseLimits" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.varLib.instancer.pinTupleVariationAxes">
+<code class="sig-prename descclassname">fontTools.varLib.instancer.</code><code class="sig-name descname">pinTupleVariationAxes</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">variations</span></em>, <em class="sig-param"><span class="n">location</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/varLib/instancer.html#pinTupleVariationAxes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.instancer.pinTupleVariationAxes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.varLib.instancer.populateAxisDefaults">
+<code class="sig-prename descclassname">fontTools.varLib.instancer.</code><code class="sig-name descname">populateAxisDefaults</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">varfont</span></em>, <em class="sig-param"><span class="n">axisLimits</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/varLib/instancer.html#populateAxisDefaults"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.instancer.populateAxisDefaults" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.varLib.instancer.pruningUnusedNames">
+<code class="sig-prename descclassname">fontTools.varLib.instancer.</code><code class="sig-name descname">pruningUnusedNames</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">varfont</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/varLib/instancer.html#pruningUnusedNames"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.instancer.pruningUnusedNames" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.varLib.instancer.sanityCheckVariableTables">
+<code class="sig-prename descclassname">fontTools.varLib.instancer.</code><code class="sig-name descname">sanityCheckVariableTables</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">varfont</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/varLib/instancer.html#sanityCheckVariableTables"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.instancer.sanityCheckVariableTables" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.varLib.instancer.setCvarDeltas">
+<code class="sig-prename descclassname">fontTools.varLib.instancer.</code><code class="sig-name descname">setCvarDeltas</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">cvt</span></em>, <em class="sig-param"><span class="n">deltas</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/varLib/instancer.html#setCvarDeltas"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.instancer.setCvarDeltas" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.varLib.instancer.setMacOverlapFlags">
+<code class="sig-prename descclassname">fontTools.varLib.instancer.</code><code class="sig-name descname">setMacOverlapFlags</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">glyfTable</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/varLib/instancer.html#setMacOverlapFlags"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.instancer.setMacOverlapFlags" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.varLib.instancer.setMvarDeltas">
+<code class="sig-prename descclassname">fontTools.varLib.instancer.</code><code class="sig-name descname">setMvarDeltas</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">varfont</span></em>, <em class="sig-param"><span class="n">deltas</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/varLib/instancer.html#setMvarDeltas"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.instancer.setMvarDeltas" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.varLib.instancer.splitAxisLocationAndRanges">
+<code class="sig-prename descclassname">fontTools.varLib.instancer.</code><code class="sig-name descname">splitAxisLocationAndRanges</code><span class="sig-paren">(</span><em class="sig-param">axisLimits</em>, <em class="sig-param">rangeType=&lt;class 'fontTools.varLib.instancer.AxisRange'&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/varLib/instancer.html#splitAxisLocationAndRanges"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.instancer.splitAxisLocationAndRanges" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="interpolatable.html" class="btn btn-neutral float-right" title="interpolatable" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="featureVars.html" class="btn btn-neutral float-left" title="featureVars" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Just van Rossum, Behdad Esfahbod, and the fontTools Authors. CC BY-SA 4.0
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,874 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>fontTools.varLib.cff &mdash; fontTools Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> fontTools
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Library</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../afmLib.html">afmLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../agl.html">agl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cffLib/index.html">cffLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../colorLib/index.html">colorLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cu2qu/index.html">cu2qu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../designspaceLib/index.html">designspaceLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../encodings/index.html">encodings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../feaLib/index.html">feaLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../merge.html">merge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../misc/index.html">misc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../mtiLib.html">mtiLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../otlLib/index.html">otlLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pens/index.html">pens</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../subset/index.html">subset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../svgLib/index.html">svgLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../t1Lib.html">t1Lib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ttLib/index.html">ttLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ttx.html">ttx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ufoLib/index.html">ufoLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../unicode.html">unicode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../unicodedata/index.html">unicodedata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../varLib/index.html">varLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../voltLib.html">voltLib</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">fontTools</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../varLib.html">fontTools.varLib</a> &raquo;</li>
+        
+      <li>fontTools.varLib.cff</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for fontTools.varLib.cff</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="k">import</span> <span class="n">namedtuple</span>
+<span class="kn">from</span> <span class="nn">fontTools.cffLib</span> <span class="k">import</span> <span class="p">(</span>
+	<span class="n">maxStackLimit</span><span class="p">,</span>
+	<span class="n">TopDictIndex</span><span class="p">,</span>
+	<span class="n">buildOrder</span><span class="p">,</span>
+	<span class="n">topDictOperators</span><span class="p">,</span>
+	<span class="n">topDictOperators2</span><span class="p">,</span>
+	<span class="n">privateDictOperators</span><span class="p">,</span>
+	<span class="n">privateDictOperators2</span><span class="p">,</span>
+	<span class="n">FDArrayIndex</span><span class="p">,</span>
+	<span class="n">FontDict</span><span class="p">,</span>
+	<span class="n">VarStoreData</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">io</span> <span class="k">import</span> <span class="n">BytesIO</span>
+<span class="kn">from</span> <span class="nn">fontTools.cffLib.specializer</span> <span class="k">import</span> <span class="p">(</span>
+	<span class="n">specializeCommands</span><span class="p">,</span> <span class="n">commandsToProgram</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">fontTools.ttLib</span> <span class="k">import</span> <span class="n">newTable</span>
+<span class="kn">from</span> <span class="nn">fontTools</span> <span class="k">import</span> <span class="n">varLib</span>
+<span class="kn">from</span> <span class="nn">fontTools.varLib.models</span> <span class="k">import</span> <span class="n">allEqual</span>
+<span class="kn">from</span> <span class="nn">fontTools.misc.psCharStrings</span> <span class="k">import</span> <span class="n">T2CharString</span><span class="p">,</span> <span class="n">T2OutlineExtractor</span>
+<span class="kn">from</span> <span class="nn">fontTools.pens.t2CharStringPen</span> <span class="k">import</span> <span class="n">T2CharStringPen</span><span class="p">,</span> <span class="n">t2c_round</span>
+
+<span class="kn">from</span> <span class="nn">.errors</span> <span class="k">import</span> <span class="n">VarLibCFFDictMergeError</span><span class="p">,</span> <span class="n">VarLibCFFPointTypeMergeError</span><span class="p">,</span> <span class="n">VarLibMergeError</span>
+
+
+<span class="c1"># Backwards compatibility</span>
+<span class="n">MergeDictError</span> <span class="o">=</span> <span class="n">VarLibCFFDictMergeError</span>
+<span class="n">MergeTypeError</span> <span class="o">=</span> <span class="n">VarLibCFFPointTypeMergeError</span>
+
+
+<div class="viewcode-block" id="addCFFVarStore"><a class="viewcode-back" href="../../../varLib/cff.html#fontTools.varLib.cff.addCFFVarStore">[docs]</a><span class="k">def</span> <span class="nf">addCFFVarStore</span><span class="p">(</span><span class="n">varFont</span><span class="p">,</span> <span class="n">varModel</span><span class="p">,</span> <span class="n">varDataList</span><span class="p">,</span> <span class="n">masterSupports</span><span class="p">):</span>
+	<span class="n">fvarTable</span> <span class="o">=</span> <span class="n">varFont</span><span class="p">[</span><span class="s1">&#39;fvar&#39;</span><span class="p">]</span>
+	<span class="n">axisKeys</span> <span class="o">=</span> <span class="p">[</span><span class="n">axis</span><span class="o">.</span><span class="n">axisTag</span> <span class="k">for</span> <span class="n">axis</span> <span class="ow">in</span> <span class="n">fvarTable</span><span class="o">.</span><span class="n">axes</span><span class="p">]</span>
+	<span class="n">varTupleList</span> <span class="o">=</span> <span class="n">varLib</span><span class="o">.</span><span class="n">builder</span><span class="o">.</span><span class="n">buildVarRegionList</span><span class="p">(</span><span class="n">masterSupports</span><span class="p">,</span> <span class="n">axisKeys</span><span class="p">)</span>
+	<span class="n">varStoreCFFV</span> <span class="o">=</span> <span class="n">varLib</span><span class="o">.</span><span class="n">builder</span><span class="o">.</span><span class="n">buildVarStore</span><span class="p">(</span><span class="n">varTupleList</span><span class="p">,</span> <span class="n">varDataList</span><span class="p">)</span>
+
+	<span class="n">topDict</span> <span class="o">=</span> <span class="n">varFont</span><span class="p">[</span><span class="s1">&#39;CFF2&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">cff</span><span class="o">.</span><span class="n">topDictIndex</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+	<span class="n">topDict</span><span class="o">.</span><span class="n">VarStore</span> <span class="o">=</span> <span class="n">VarStoreData</span><span class="p">(</span><span class="n">otVarStore</span><span class="o">=</span><span class="n">varStoreCFFV</span><span class="p">)</span>
+	<span class="k">if</span> <span class="n">topDict</span><span class="o">.</span><span class="n">FDArray</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">vstore</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+		<span class="n">fdArray</span> <span class="o">=</span> <span class="n">topDict</span><span class="o">.</span><span class="n">FDArray</span>
+		<span class="k">for</span> <span class="n">fontDict</span> <span class="ow">in</span> <span class="n">fdArray</span><span class="p">:</span>
+			<span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">fontDict</span><span class="p">,</span> <span class="s2">&quot;Private&quot;</span><span class="p">):</span>
+				<span class="n">fontDict</span><span class="o">.</span><span class="n">Private</span><span class="o">.</span><span class="n">vstore</span> <span class="o">=</span> <span class="n">topDict</span><span class="o">.</span><span class="n">VarStore</span></div>
+
+
+<div class="viewcode-block" id="lib_convertCFFToCFF2"><a class="viewcode-back" href="../../../varLib/cff.html#fontTools.varLib.cff.lib_convertCFFToCFF2">[docs]</a><span class="k">def</span> <span class="nf">lib_convertCFFToCFF2</span><span class="p">(</span><span class="n">cff</span><span class="p">,</span> <span class="n">otFont</span><span class="p">):</span>
+	<span class="c1"># This assumes a decompiled CFF table.</span>
+	<span class="n">cff2GetGlyphOrder</span> <span class="o">=</span> <span class="n">cff</span><span class="o">.</span><span class="n">otFont</span><span class="o">.</span><span class="n">getGlyphOrder</span>
+	<span class="n">topDictData</span> <span class="o">=</span> <span class="n">TopDictIndex</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">cff2GetGlyphOrder</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+	<span class="n">topDictData</span><span class="o">.</span><span class="n">items</span> <span class="o">=</span> <span class="n">cff</span><span class="o">.</span><span class="n">topDictIndex</span><span class="o">.</span><span class="n">items</span>
+	<span class="n">cff</span><span class="o">.</span><span class="n">topDictIndex</span> <span class="o">=</span> <span class="n">topDictData</span>
+	<span class="n">topDict</span> <span class="o">=</span> <span class="n">topDictData</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+	<span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">topDict</span><span class="p">,</span> <span class="s1">&#39;Private&#39;</span><span class="p">):</span>
+		<span class="n">privateDict</span> <span class="o">=</span> <span class="n">topDict</span><span class="o">.</span><span class="n">Private</span>
+	<span class="k">else</span><span class="p">:</span>
+		<span class="n">privateDict</span> <span class="o">=</span> <span class="kc">None</span>
+	<span class="n">opOrder</span> <span class="o">=</span> <span class="n">buildOrder</span><span class="p">(</span><span class="n">topDictOperators2</span><span class="p">)</span>
+	<span class="n">topDict</span><span class="o">.</span><span class="n">order</span> <span class="o">=</span> <span class="n">opOrder</span>
+	<span class="n">topDict</span><span class="o">.</span><span class="n">cff2GetGlyphOrder</span> <span class="o">=</span> <span class="n">cff2GetGlyphOrder</span>
+	<span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">topDict</span><span class="p">,</span> <span class="s2">&quot;FDArray&quot;</span><span class="p">):</span>
+		<span class="n">fdArray</span> <span class="o">=</span> <span class="n">topDict</span><span class="o">.</span><span class="n">FDArray</span> <span class="o">=</span> <span class="n">FDArrayIndex</span><span class="p">()</span>
+		<span class="n">fdArray</span><span class="o">.</span><span class="n">strings</span> <span class="o">=</span> <span class="kc">None</span>
+		<span class="n">fdArray</span><span class="o">.</span><span class="n">GlobalSubrs</span> <span class="o">=</span> <span class="n">topDict</span><span class="o">.</span><span class="n">GlobalSubrs</span>
+		<span class="n">topDict</span><span class="o">.</span><span class="n">GlobalSubrs</span><span class="o">.</span><span class="n">fdArray</span> <span class="o">=</span> <span class="n">fdArray</span>
+		<span class="n">charStrings</span> <span class="o">=</span> <span class="n">topDict</span><span class="o">.</span><span class="n">CharStrings</span>
+		<span class="k">if</span> <span class="n">charStrings</span><span class="o">.</span><span class="n">charStringsAreIndexed</span><span class="p">:</span>
+			<span class="n">charStrings</span><span class="o">.</span><span class="n">charStringsIndex</span><span class="o">.</span><span class="n">fdArray</span> <span class="o">=</span> <span class="n">fdArray</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="n">charStrings</span><span class="o">.</span><span class="n">fdArray</span> <span class="o">=</span> <span class="n">fdArray</span>
+		<span class="n">fontDict</span> <span class="o">=</span> <span class="n">FontDict</span><span class="p">()</span>
+		<span class="n">fontDict</span><span class="o">.</span><span class="n">setCFF2</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+		<span class="n">fdArray</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">fontDict</span><span class="p">)</span>
+		<span class="n">fontDict</span><span class="o">.</span><span class="n">Private</span> <span class="o">=</span> <span class="n">privateDict</span>
+		<span class="n">privateOpOrder</span> <span class="o">=</span> <span class="n">buildOrder</span><span class="p">(</span><span class="n">privateDictOperators2</span><span class="p">)</span>
+		<span class="k">if</span> <span class="n">privateDict</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="n">privateDictOperators</span><span class="p">:</span>
+				<span class="n">key</span> <span class="o">=</span> <span class="n">entry</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+				<span class="k">if</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">privateOpOrder</span><span class="p">:</span>
+					<span class="k">if</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">privateDict</span><span class="o">.</span><span class="n">rawDict</span><span class="p">:</span>
+						<span class="c1"># print &quot;Removing private dict&quot;, key</span>
+						<span class="k">del</span> <span class="n">privateDict</span><span class="o">.</span><span class="n">rawDict</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+					<span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">privateDict</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+						<span class="nb">delattr</span><span class="p">(</span><span class="n">privateDict</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
+						<span class="c1"># print &quot;Removing privateDict attr&quot;, key</span>
+	<span class="k">else</span><span class="p">:</span>
+		<span class="c1"># clean up the PrivateDicts in the fdArray</span>
+		<span class="n">fdArray</span> <span class="o">=</span> <span class="n">topDict</span><span class="o">.</span><span class="n">FDArray</span>
+		<span class="n">privateOpOrder</span> <span class="o">=</span> <span class="n">buildOrder</span><span class="p">(</span><span class="n">privateDictOperators2</span><span class="p">)</span>
+		<span class="k">for</span> <span class="n">fontDict</span> <span class="ow">in</span> <span class="n">fdArray</span><span class="p">:</span>
+			<span class="n">fontDict</span><span class="o">.</span><span class="n">setCFF2</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+			<span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">fontDict</span><span class="o">.</span><span class="n">rawDict</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
+				<span class="k">if</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">fontDict</span><span class="o">.</span><span class="n">order</span><span class="p">:</span>
+					<span class="k">del</span> <span class="n">fontDict</span><span class="o">.</span><span class="n">rawDict</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+					<span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">fontDict</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+						<span class="nb">delattr</span><span class="p">(</span><span class="n">fontDict</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
+
+			<span class="n">privateDict</span> <span class="o">=</span> <span class="n">fontDict</span><span class="o">.</span><span class="n">Private</span>
+			<span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="n">privateDictOperators</span><span class="p">:</span>
+				<span class="n">key</span> <span class="o">=</span> <span class="n">entry</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+				<span class="k">if</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">privateOpOrder</span><span class="p">:</span>
+					<span class="k">if</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">privateDict</span><span class="o">.</span><span class="n">rawDict</span><span class="p">:</span>
+						<span class="c1"># print &quot;Removing private dict&quot;, key</span>
+						<span class="k">del</span> <span class="n">privateDict</span><span class="o">.</span><span class="n">rawDict</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+					<span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">privateDict</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+						<span class="nb">delattr</span><span class="p">(</span><span class="n">privateDict</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
+						<span class="c1"># print &quot;Removing privateDict attr&quot;, key</span>
+	<span class="c1"># Now delete up the decrecated topDict operators from CFF 1.0</span>
+	<span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="n">topDictOperators</span><span class="p">:</span>
+		<span class="n">key</span> <span class="o">=</span> <span class="n">entry</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+		<span class="k">if</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">opOrder</span><span class="p">:</span>
+			<span class="k">if</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">topDict</span><span class="o">.</span><span class="n">rawDict</span><span class="p">:</span>
+				<span class="k">del</span> <span class="n">topDict</span><span class="o">.</span><span class="n">rawDict</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+			<span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">topDict</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+				<span class="nb">delattr</span><span class="p">(</span><span class="n">topDict</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
+
+	<span class="c1"># At this point, the Subrs and Charstrings are all still T2Charstring class</span>
+	<span class="c1"># easiest to fix this by compiling, then decompiling again</span>
+	<span class="n">cff</span><span class="o">.</span><span class="n">major</span> <span class="o">=</span> <span class="mi">2</span>
+	<span class="n">file</span> <span class="o">=</span> <span class="n">BytesIO</span><span class="p">()</span>
+	<span class="n">cff</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">otFont</span><span class="p">,</span> <span class="n">isCFF2</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+	<span class="n">file</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+	<span class="n">cff</span><span class="o">.</span><span class="n">decompile</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">otFont</span><span class="p">,</span> <span class="n">isCFF2</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="convertCFFtoCFF2"><a class="viewcode-back" href="../../../varLib/cff.html#fontTools.varLib.cff.convertCFFtoCFF2">[docs]</a><span class="k">def</span> <span class="nf">convertCFFtoCFF2</span><span class="p">(</span><span class="n">varFont</span><span class="p">):</span>
+	<span class="c1"># Convert base font to a single master CFF2 font.</span>
+	<span class="n">cffTable</span> <span class="o">=</span> <span class="n">varFont</span><span class="p">[</span><span class="s1">&#39;CFF &#39;</span><span class="p">]</span>
+	<span class="n">lib_convertCFFToCFF2</span><span class="p">(</span><span class="n">cffTable</span><span class="o">.</span><span class="n">cff</span><span class="p">,</span> <span class="n">varFont</span><span class="p">)</span>
+	<span class="n">newCFF2</span> <span class="o">=</span> <span class="n">newTable</span><span class="p">(</span><span class="s2">&quot;CFF2&quot;</span><span class="p">)</span>
+	<span class="n">newCFF2</span><span class="o">.</span><span class="n">cff</span> <span class="o">=</span> <span class="n">cffTable</span><span class="o">.</span><span class="n">cff</span>
+	<span class="n">varFont</span><span class="p">[</span><span class="s1">&#39;CFF2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">newCFF2</span>
+	<span class="k">del</span> <span class="n">varFont</span><span class="p">[</span><span class="s1">&#39;CFF &#39;</span><span class="p">]</span></div>
+
+
+<div class="viewcode-block" id="conv_to_int"><a class="viewcode-back" href="../../../varLib/cff.html#fontTools.varLib.cff.conv_to_int">[docs]</a><span class="k">def</span> <span class="nf">conv_to_int</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+	<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span> <span class="ow">and</span> <span class="n">num</span><span class="o">.</span><span class="n">is_integer</span><span class="p">():</span>
+		<span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+	<span class="k">return</span> <span class="n">num</span></div>
+
+
+<span class="n">pd_blend_fields</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;BlueValues&quot;</span><span class="p">,</span> <span class="s2">&quot;OtherBlues&quot;</span><span class="p">,</span> <span class="s2">&quot;FamilyBlues&quot;</span><span class="p">,</span>
+				   <span class="s2">&quot;FamilyOtherBlues&quot;</span><span class="p">,</span> <span class="s2">&quot;BlueScale&quot;</span><span class="p">,</span> <span class="s2">&quot;BlueShift&quot;</span><span class="p">,</span>
+				   <span class="s2">&quot;BlueFuzz&quot;</span><span class="p">,</span> <span class="s2">&quot;StdHW&quot;</span><span class="p">,</span> <span class="s2">&quot;StdVW&quot;</span><span class="p">,</span> <span class="s2">&quot;StemSnapH&quot;</span><span class="p">,</span>
+				   <span class="s2">&quot;StemSnapV&quot;</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="get_private"><a class="viewcode-back" href="../../../varLib/cff.html#fontTools.varLib.cff.get_private">[docs]</a><span class="k">def</span> <span class="nf">get_private</span><span class="p">(</span><span class="n">regionFDArrays</span><span class="p">,</span> <span class="n">fd_index</span><span class="p">,</span> <span class="n">ri</span><span class="p">,</span> <span class="n">fd_map</span><span class="p">):</span>
+	<span class="n">region_fdArray</span> <span class="o">=</span> <span class="n">regionFDArrays</span><span class="p">[</span><span class="n">ri</span><span class="p">]</span>
+	<span class="n">region_fd_map</span> <span class="o">=</span> <span class="n">fd_map</span><span class="p">[</span><span class="n">fd_index</span><span class="p">]</span>
+	<span class="k">if</span> <span class="n">ri</span> <span class="ow">in</span> <span class="n">region_fd_map</span><span class="p">:</span>
+		<span class="n">region_fdIndex</span> <span class="o">=</span> <span class="n">region_fd_map</span><span class="p">[</span><span class="n">ri</span><span class="p">]</span>
+		<span class="n">private</span> <span class="o">=</span> <span class="n">region_fdArray</span><span class="p">[</span><span class="n">region_fdIndex</span><span class="p">]</span><span class="o">.</span><span class="n">Private</span>
+	<span class="k">else</span><span class="p">:</span>
+		<span class="n">private</span> <span class="o">=</span> <span class="kc">None</span>
+	<span class="k">return</span> <span class="n">private</span></div>
+
+
+<div class="viewcode-block" id="merge_PrivateDicts"><a class="viewcode-back" href="../../../varLib/cff.html#fontTools.varLib.cff.merge_PrivateDicts">[docs]</a><span class="k">def</span> <span class="nf">merge_PrivateDicts</span><span class="p">(</span><span class="n">top_dicts</span><span class="p">,</span> <span class="n">vsindex_dict</span><span class="p">,</span> <span class="n">var_model</span><span class="p">,</span> <span class="n">fd_map</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	I step through the FontDicts in the FDArray of the varfont TopDict.</span>
+<span class="sd">	For each varfont FontDict:</span>
+<span class="sd">		step through each key in FontDict.Private.</span>
+<span class="sd">		For each key, step through each relevant source font Private dict, and</span>
+<span class="sd">		build a list of values to blend.</span>
+<span class="sd">	The &#39;relevant&#39; source fonts are selected by first getting the right</span>
+<span class="sd">	submodel using vsindex_dict[vsindex]. The indices of the</span>
+<span class="sd">	subModel.locations are mapped to source font list indices by</span>
+<span class="sd">	assuming the latter order is the same as the order of the</span>
+<span class="sd">	var_model.locations. I can then get the index of each subModel</span>
+<span class="sd">	location in the list of var_model.locations.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+
+	<span class="n">topDict</span> <span class="o">=</span> <span class="n">top_dicts</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+	<span class="n">region_top_dicts</span> <span class="o">=</span> <span class="n">top_dicts</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+	<span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">region_top_dicts</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s1">&#39;FDArray&#39;</span><span class="p">):</span>
+		<span class="n">regionFDArrays</span> <span class="o">=</span> <span class="p">[</span><span class="n">fdTopDict</span><span class="o">.</span><span class="n">FDArray</span> <span class="k">for</span> <span class="n">fdTopDict</span> <span class="ow">in</span> <span class="n">region_top_dicts</span><span class="p">]</span>
+	<span class="k">else</span><span class="p">:</span>
+		<span class="n">regionFDArrays</span> <span class="o">=</span> <span class="p">[[</span><span class="n">fdTopDict</span><span class="p">]</span> <span class="k">for</span> <span class="n">fdTopDict</span> <span class="ow">in</span> <span class="n">region_top_dicts</span><span class="p">]</span>
+	<span class="k">for</span> <span class="n">fd_index</span><span class="p">,</span> <span class="n">font_dict</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">topDict</span><span class="o">.</span><span class="n">FDArray</span><span class="p">):</span>
+		<span class="n">private_dict</span> <span class="o">=</span> <span class="n">font_dict</span><span class="o">.</span><span class="n">Private</span>
+		<span class="n">vsindex</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">private_dict</span><span class="p">,</span> <span class="s1">&#39;vsindex&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+		<span class="c1"># At the moment, no PrivateDict has a vsindex key, but let&#39;s support</span>
+		<span class="c1"># how it should work. See comment at end of</span>
+		<span class="c1"># merge_charstrings() - still need to optimize use of vsindex.</span>
+		<span class="n">sub_model</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">vsindex_dict</span><span class="p">[</span><span class="n">vsindex</span><span class="p">]</span>
+		<span class="n">master_indices</span> <span class="o">=</span> <span class="p">[]</span>
+		<span class="k">for</span> <span class="n">loc</span> <span class="ow">in</span> <span class="n">sub_model</span><span class="o">.</span><span class="n">locations</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>
+			<span class="n">i</span> <span class="o">=</span> <span class="n">var_model</span><span class="o">.</span><span class="n">locations</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">loc</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+			<span class="n">master_indices</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+		<span class="n">pds</span> <span class="o">=</span> <span class="p">[</span><span class="n">private_dict</span><span class="p">]</span>
+		<span class="n">last_pd</span> <span class="o">=</span> <span class="n">private_dict</span>
+		<span class="k">for</span> <span class="n">ri</span> <span class="ow">in</span> <span class="n">master_indices</span><span class="p">:</span>
+			<span class="n">pd</span> <span class="o">=</span> <span class="n">get_private</span><span class="p">(</span><span class="n">regionFDArrays</span><span class="p">,</span> <span class="n">fd_index</span><span class="p">,</span> <span class="n">ri</span><span class="p">,</span> <span class="n">fd_map</span><span class="p">)</span>
+			<span class="c1"># If the region font doesn&#39;t have this FontDict, just reference</span>
+			<span class="c1"># the last one used.</span>
+			<span class="k">if</span> <span class="n">pd</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+				<span class="n">pd</span> <span class="o">=</span> <span class="n">last_pd</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="n">last_pd</span> <span class="o">=</span> <span class="n">pd</span>
+			<span class="n">pds</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pd</span><span class="p">)</span>
+		<span class="n">num_masters</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">pds</span><span class="p">)</span>
+		<span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">private_dict</span><span class="o">.</span><span class="n">rawDict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+			<span class="n">dataList</span> <span class="o">=</span> <span class="p">[]</span>
+			<span class="k">if</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">pd_blend_fields</span><span class="p">:</span>
+				<span class="k">continue</span>
+			<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+				<span class="k">try</span><span class="p">:</span>
+					<span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">rawDict</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="k">for</span> <span class="n">pd</span> <span class="ow">in</span> <span class="n">pds</span><span class="p">]</span>
+				<span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+					<span class="nb">print</span><span class="p">(</span>
+						<span class="s2">&quot;Warning: </span><span class="si">{key}</span><span class="s2"> in default font Private dict is &quot;</span>
+						<span class="s2">&quot;missing from another font, and was &quot;</span>
+						<span class="s2">&quot;discarded.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">key</span><span class="p">))</span>
+					<span class="k">continue</span>
+				<span class="k">try</span><span class="p">:</span>
+					<span class="n">values</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">values</span><span class="p">)</span>
+				<span class="k">except</span> <span class="ne">IndexError</span><span class="p">:</span>
+					<span class="k">raise</span> <span class="n">VarLibCFFDictMergeError</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">values</span><span class="p">)</span>
+				<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">				Row 0 contains the first  value from each master.</span>
+<span class="sd">				Convert each row from absolute values to relative</span>
+<span class="sd">				values from the previous row.</span>
+<span class="sd">				e.g for three masters,	a list of values was:</span>
+<span class="sd">				master 0 OtherBlues = [-217,-205]</span>
+<span class="sd">				master 1 OtherBlues = [-234,-222]</span>
+<span class="sd">				master 1 OtherBlues = [-188,-176]</span>
+<span class="sd">				The call to zip() converts this to:</span>
+<span class="sd">				[(-217, -234, -188), (-205, -222, -176)]</span>
+<span class="sd">				and is converted finally to:</span>
+<span class="sd">				OtherBlues = [[-217, 17.0, 46.0], [-205, 0.0, 0.0]]</span>
+<span class="sd">				&quot;&quot;&quot;</span>
+				<span class="n">prev_val_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">num_masters</span>
+				<span class="n">any_points_differ</span> <span class="o">=</span> <span class="kc">False</span>
+				<span class="k">for</span> <span class="n">val_list</span> <span class="ow">in</span> <span class="n">values</span><span class="p">:</span>
+					<span class="n">rel_list</span> <span class="o">=</span> <span class="p">[(</span><span class="n">val</span> <span class="o">-</span> <span class="n">prev_val_list</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="k">for</span> <span class="p">(</span>
+							<span class="n">i</span><span class="p">,</span> <span class="n">val</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">val_list</span><span class="p">)]</span>
+					<span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="n">any_points_differ</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">allEqual</span><span class="p">(</span><span class="n">rel_list</span><span class="p">):</span>
+						<span class="n">any_points_differ</span> <span class="o">=</span> <span class="kc">True</span>
+					<span class="n">prev_val_list</span> <span class="o">=</span> <span class="n">val_list</span>
+					<span class="n">deltas</span> <span class="o">=</span> <span class="n">sub_model</span><span class="o">.</span><span class="n">getDeltas</span><span class="p">(</span><span class="n">rel_list</span><span class="p">)</span>
+					<span class="c1"># For PrivateDict BlueValues, the default font</span>
+					<span class="c1"># values are absolute, not relative to the prior value.</span>
+					<span class="n">deltas</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">val_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+					<span class="n">dataList</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">deltas</span><span class="p">)</span>
+				<span class="c1"># If there are no blend values,then</span>
+				<span class="c1"># we can collapse the blend lists.</span>
+				<span class="k">if</span> <span class="ow">not</span> <span class="n">any_points_differ</span><span class="p">:</span>
+					<span class="n">dataList</span> <span class="o">=</span> <span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">dataList</span><span class="p">]</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">rawDict</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="k">for</span> <span class="n">pd</span> <span class="ow">in</span> <span class="n">pds</span><span class="p">]</span>
+				<span class="k">if</span> <span class="ow">not</span> <span class="n">allEqual</span><span class="p">(</span><span class="n">values</span><span class="p">):</span>
+					<span class="n">dataList</span> <span class="o">=</span> <span class="n">sub_model</span><span class="o">.</span><span class="n">getDeltas</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
+				<span class="k">else</span><span class="p">:</span>
+					<span class="n">dataList</span> <span class="o">=</span> <span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+			<span class="c1"># Convert numbers with no decimal part to an int</span>
+			<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">dataList</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+				<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">dataList</span><span class="p">):</span>
+					<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+						<span class="k">for</span> <span class="n">j</span><span class="p">,</span> <span class="n">jtem</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">item</span><span class="p">):</span>
+							<span class="n">dataList</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">conv_to_int</span><span class="p">(</span><span class="n">jtem</span><span class="p">)</span>
+					<span class="k">else</span><span class="p">:</span>
+						<span class="n">dataList</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">conv_to_int</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="n">dataList</span> <span class="o">=</span> <span class="n">conv_to_int</span><span class="p">(</span><span class="n">dataList</span><span class="p">)</span>
+
+			<span class="n">private_dict</span><span class="o">.</span><span class="n">rawDict</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">dataList</span></div>
+
+
+<span class="k">def</span> <span class="nf">_cff_or_cff2</span><span class="p">(</span><span class="n">font</span><span class="p">):</span>
+	<span class="k">if</span> <span class="s2">&quot;CFF &quot;</span> <span class="ow">in</span> <span class="n">font</span><span class="p">:</span>
+		<span class="k">return</span> <span class="n">font</span><span class="p">[</span><span class="s2">&quot;CFF &quot;</span><span class="p">]</span>
+	<span class="k">return</span> <span class="n">font</span><span class="p">[</span><span class="s2">&quot;CFF2&quot;</span><span class="p">]</span>
+
+
+<div class="viewcode-block" id="getfd_map"><a class="viewcode-back" href="../../../varLib/cff.html#fontTools.varLib.cff.getfd_map">[docs]</a><span class="k">def</span> <span class="nf">getfd_map</span><span class="p">(</span><span class="n">varFont</span><span class="p">,</span> <span class="n">fonts_list</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot; Since a subset source font may have fewer FontDicts in their</span>
+<span class="sd">	FDArray than the default font, we have to match up the FontDicts in</span>
+<span class="sd">	the different fonts . We do this with the FDSelect array, and by</span>
+<span class="sd">	assuming that the same glyph will reference  matching FontDicts in</span>
+<span class="sd">	each source font. We return a mapping from fdIndex in the default</span>
+<span class="sd">	font to a dictionary which maps each master list index of each</span>
+<span class="sd">	region font to the equivalent fdIndex in the region font.&quot;&quot;&quot;</span>
+	<span class="n">fd_map</span> <span class="o">=</span> <span class="p">{}</span>
+	<span class="n">default_font</span> <span class="o">=</span> <span class="n">fonts_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+	<span class="n">region_fonts</span> <span class="o">=</span> <span class="n">fonts_list</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+	<span class="n">num_regions</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">region_fonts</span><span class="p">)</span>
+	<span class="n">topDict</span> <span class="o">=</span> <span class="n">_cff_or_cff2</span><span class="p">(</span><span class="n">default_font</span><span class="p">)</span><span class="o">.</span><span class="n">cff</span><span class="o">.</span><span class="n">topDictIndex</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+	<span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">topDict</span><span class="p">,</span> <span class="s1">&#39;FDSelect&#39;</span><span class="p">):</span>
+		<span class="c1"># All glyphs reference only one FontDict.</span>
+		<span class="c1"># Map the FD index for regions to index 0.</span>
+		<span class="n">fd_map</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="n">ri</span><span class="p">:</span><span class="mi">0</span> <span class="k">for</span> <span class="n">ri</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_regions</span><span class="p">)}</span>
+		<span class="k">return</span> <span class="n">fd_map</span>
+
+	<span class="n">gname_mapping</span> <span class="o">=</span> <span class="p">{}</span>
+	<span class="n">default_fdSelect</span> <span class="o">=</span> <span class="n">topDict</span><span class="o">.</span><span class="n">FDSelect</span>
+	<span class="n">glyphOrder</span> <span class="o">=</span> <span class="n">default_font</span><span class="o">.</span><span class="n">getGlyphOrder</span><span class="p">()</span>
+	<span class="k">for</span> <span class="n">gid</span><span class="p">,</span> <span class="n">fdIndex</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">default_fdSelect</span><span class="p">):</span>
+		<span class="n">gname_mapping</span><span class="p">[</span><span class="n">glyphOrder</span><span class="p">[</span><span class="n">gid</span><span class="p">]]</span> <span class="o">=</span> <span class="n">fdIndex</span>
+		<span class="k">if</span> <span class="n">fdIndex</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">fd_map</span><span class="p">:</span>
+			<span class="n">fd_map</span><span class="p">[</span><span class="n">fdIndex</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+	<span class="k">for</span> <span class="n">ri</span><span class="p">,</span> <span class="n">region_font</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">region_fonts</span><span class="p">):</span>
+		<span class="n">region_glyphOrder</span> <span class="o">=</span> <span class="n">region_font</span><span class="o">.</span><span class="n">getGlyphOrder</span><span class="p">()</span>
+		<span class="n">region_topDict</span> <span class="o">=</span> <span class="n">_cff_or_cff2</span><span class="p">(</span><span class="n">region_font</span><span class="p">)</span><span class="o">.</span><span class="n">cff</span><span class="o">.</span><span class="n">topDictIndex</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">region_topDict</span><span class="p">,</span> <span class="s1">&#39;FDSelect&#39;</span><span class="p">):</span>
+			<span class="c1"># All the glyphs share the same FontDict. Pick any glyph.</span>
+			<span class="n">default_fdIndex</span> <span class="o">=</span> <span class="n">gname_mapping</span><span class="p">[</span><span class="n">region_glyphOrder</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+			<span class="n">fd_map</span><span class="p">[</span><span class="n">default_fdIndex</span><span class="p">][</span><span class="n">ri</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="n">region_fdSelect</span> <span class="o">=</span> <span class="n">region_topDict</span><span class="o">.</span><span class="n">FDSelect</span>
+			<span class="k">for</span> <span class="n">gid</span><span class="p">,</span> <span class="n">fdIndex</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">region_fdSelect</span><span class="p">):</span>
+				<span class="n">default_fdIndex</span> <span class="o">=</span> <span class="n">gname_mapping</span><span class="p">[</span><span class="n">region_glyphOrder</span><span class="p">[</span><span class="n">gid</span><span class="p">]]</span>
+				<span class="n">region_map</span> <span class="o">=</span> <span class="n">fd_map</span><span class="p">[</span><span class="n">default_fdIndex</span><span class="p">]</span>
+				<span class="k">if</span> <span class="n">ri</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">region_map</span><span class="p">:</span>
+					<span class="n">region_map</span><span class="p">[</span><span class="n">ri</span><span class="p">]</span> <span class="o">=</span> <span class="n">fdIndex</span>
+	<span class="k">return</span> <span class="n">fd_map</span></div>
+
+
+<span class="n">CVarData</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span><span class="s1">&#39;CVarData&#39;</span><span class="p">,</span> <span class="s1">&#39;varDataList masterSupports vsindex_dict&#39;</span><span class="p">)</span>
+<div class="viewcode-block" id="merge_region_fonts"><a class="viewcode-back" href="../../../varLib/cff.html#fontTools.varLib.cff.merge_region_fonts">[docs]</a><span class="k">def</span> <span class="nf">merge_region_fonts</span><span class="p">(</span><span class="n">varFont</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">ordered_fonts_list</span><span class="p">,</span> <span class="n">glyphOrder</span><span class="p">):</span>
+	<span class="n">topDict</span> <span class="o">=</span> <span class="n">varFont</span><span class="p">[</span><span class="s1">&#39;CFF2&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">cff</span><span class="o">.</span><span class="n">topDictIndex</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+	<span class="n">top_dicts</span> <span class="o">=</span> <span class="p">[</span><span class="n">topDict</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span>
+					<span class="n">_cff_or_cff2</span><span class="p">(</span><span class="n">ttFont</span><span class="p">)</span><span class="o">.</span><span class="n">cff</span><span class="o">.</span><span class="n">topDictIndex</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+					<span class="k">for</span> <span class="n">ttFont</span> <span class="ow">in</span> <span class="n">ordered_fonts_list</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+					<span class="p">]</span>
+	<span class="n">num_masters</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">mapping</span><span class="p">)</span>
+	<span class="n">cvData</span> <span class="o">=</span> <span class="n">merge_charstrings</span><span class="p">(</span><span class="n">glyphOrder</span><span class="p">,</span> <span class="n">num_masters</span><span class="p">,</span> <span class="n">top_dicts</span><span class="p">,</span> <span class="n">model</span><span class="p">)</span>
+	<span class="n">fd_map</span> <span class="o">=</span> <span class="n">getfd_map</span><span class="p">(</span><span class="n">varFont</span><span class="p">,</span> <span class="n">ordered_fonts_list</span><span class="p">)</span>
+	<span class="n">merge_PrivateDicts</span><span class="p">(</span><span class="n">top_dicts</span><span class="p">,</span> <span class="n">cvData</span><span class="o">.</span><span class="n">vsindex_dict</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">fd_map</span><span class="p">)</span>
+	<span class="n">addCFFVarStore</span><span class="p">(</span><span class="n">varFont</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">cvData</span><span class="o">.</span><span class="n">varDataList</span><span class="p">,</span>
+		<span class="n">cvData</span><span class="o">.</span><span class="n">masterSupports</span><span class="p">)</span></div>
+
+
+<span class="k">def</span> <span class="nf">_get_cs</span><span class="p">(</span><span class="n">charstrings</span><span class="p">,</span> <span class="n">glyphName</span><span class="p">):</span>
+	<span class="k">if</span> <span class="n">glyphName</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">charstrings</span><span class="p">:</span>
+		<span class="k">return</span> <span class="kc">None</span>
+	<span class="k">return</span> <span class="n">charstrings</span><span class="p">[</span><span class="n">glyphName</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">_add_new_vsindex</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">masterSupports</span><span class="p">,</span> <span class="n">vsindex_dict</span><span class="p">,</span>
+		<span class="n">vsindex_by_key</span><span class="p">,</span> <span class="n">varDataList</span><span class="p">):</span>
+	<span class="n">varTupleIndexes</span> <span class="o">=</span> <span class="p">[]</span>
+	<span class="k">for</span> <span class="n">support</span> <span class="ow">in</span> <span class="n">model</span><span class="o">.</span><span class="n">supports</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>
+		<span class="k">if</span> <span class="n">support</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">masterSupports</span><span class="p">:</span>
+			<span class="n">masterSupports</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">support</span><span class="p">)</span>
+		<span class="n">varTupleIndexes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">masterSupports</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">support</span><span class="p">))</span>
+	<span class="n">var_data</span> <span class="o">=</span> <span class="n">varLib</span><span class="o">.</span><span class="n">builder</span><span class="o">.</span><span class="n">buildVarData</span><span class="p">(</span><span class="n">varTupleIndexes</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+	<span class="n">vsindex</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">vsindex_dict</span><span class="p">)</span>
+	<span class="n">vsindex_by_key</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">vsindex</span>
+	<span class="n">vsindex_dict</span><span class="p">[</span><span class="n">vsindex</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="p">[</span><span class="n">key</span><span class="p">])</span>
+	<span class="n">varDataList</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">var_data</span><span class="p">)</span>
+	<span class="k">return</span> <span class="n">vsindex</span>
+
+<div class="viewcode-block" id="merge_charstrings"><a class="viewcode-back" href="../../../varLib/cff.html#fontTools.varLib.cff.merge_charstrings">[docs]</a><span class="k">def</span> <span class="nf">merge_charstrings</span><span class="p">(</span><span class="n">glyphOrder</span><span class="p">,</span> <span class="n">num_masters</span><span class="p">,</span> <span class="n">top_dicts</span><span class="p">,</span> <span class="n">masterModel</span><span class="p">):</span>
+
+	<span class="n">vsindex_dict</span> <span class="o">=</span> <span class="p">{}</span>
+	<span class="n">vsindex_by_key</span> <span class="o">=</span> <span class="p">{}</span>
+	<span class="n">varDataList</span> <span class="o">=</span> <span class="p">[]</span>
+	<span class="n">masterSupports</span> <span class="o">=</span> <span class="p">[]</span>
+	<span class="n">default_charstrings</span> <span class="o">=</span> <span class="n">top_dicts</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">CharStrings</span>
+	<span class="k">for</span> <span class="n">gid</span><span class="p">,</span> <span class="n">gname</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">glyphOrder</span><span class="p">):</span>
+		<span class="n">all_cs</span> <span class="o">=</span> <span class="p">[</span>
+				<span class="n">_get_cs</span><span class="p">(</span><span class="n">td</span><span class="o">.</span><span class="n">CharStrings</span><span class="p">,</span> <span class="n">gname</span><span class="p">)</span>
+				<span class="k">for</span> <span class="n">td</span> <span class="ow">in</span> <span class="n">top_dicts</span><span class="p">]</span>
+		<span class="k">if</span> <span class="nb">len</span><span class="p">([</span><span class="n">gs</span> <span class="k">for</span> <span class="n">gs</span> <span class="ow">in</span> <span class="n">all_cs</span> <span class="k">if</span> <span class="n">gs</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">])</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+			<span class="k">continue</span>
+		<span class="n">model</span><span class="p">,</span> <span class="n">model_cs</span> <span class="o">=</span> <span class="n">masterModel</span><span class="o">.</span><span class="n">getSubModel</span><span class="p">(</span><span class="n">all_cs</span><span class="p">)</span>
+		<span class="c1"># create the first pass CFF2 charstring, from</span>
+		<span class="c1"># the default charstring.</span>
+		<span class="n">default_charstring</span> <span class="o">=</span> <span class="n">model_cs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+		<span class="n">var_pen</span> <span class="o">=</span> <span class="n">CFF2CharStringMergePen</span><span class="p">([],</span> <span class="n">gname</span><span class="p">,</span> <span class="n">num_masters</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+		<span class="c1"># We need to override outlineExtractor because these</span>
+		<span class="c1"># charstrings do have widths in the &#39;program&#39;; we need to drop these</span>
+		<span class="c1"># values rather than post assertion error for them.</span>
+		<span class="n">default_charstring</span><span class="o">.</span><span class="n">outlineExtractor</span> <span class="o">=</span> <span class="n">MergeOutlineExtractor</span>
+		<span class="n">default_charstring</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">var_pen</span><span class="p">)</span>
+
+		<span class="c1"># Add the coordinates from all the other regions to the</span>
+		<span class="c1"># blend lists in the CFF2 charstring.</span>
+		<span class="n">region_cs</span> <span class="o">=</span> <span class="n">model_cs</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+		<span class="k">for</span> <span class="n">region_idx</span><span class="p">,</span> <span class="n">region_charstring</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">region_cs</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+			<span class="n">var_pen</span><span class="o">.</span><span class="n">restart</span><span class="p">(</span><span class="n">region_idx</span><span class="p">)</span>
+			<span class="n">region_charstring</span><span class="o">.</span><span class="n">outlineExtractor</span> <span class="o">=</span> <span class="n">MergeOutlineExtractor</span>
+			<span class="n">region_charstring</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">var_pen</span><span class="p">)</span>
+
+		<span class="c1"># Collapse each coordinate list to a blend operator and its args.</span>
+		<span class="n">new_cs</span> <span class="o">=</span> <span class="n">var_pen</span><span class="o">.</span><span class="n">getCharString</span><span class="p">(</span>
+			<span class="n">private</span><span class="o">=</span><span class="n">default_charstring</span><span class="o">.</span><span class="n">private</span><span class="p">,</span>
+			<span class="n">globalSubrs</span><span class="o">=</span><span class="n">default_charstring</span><span class="o">.</span><span class="n">globalSubrs</span><span class="p">,</span>
+			<span class="n">var_model</span><span class="o">=</span><span class="n">model</span><span class="p">,</span> <span class="n">optimize</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+		<span class="n">default_charstrings</span><span class="p">[</span><span class="n">gname</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_cs</span>
+
+		<span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="n">var_pen</span><span class="o">.</span><span class="n">seen_moveto</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="s1">&#39;blend&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">new_cs</span><span class="o">.</span><span class="n">program</span><span class="p">):</span>
+			<span class="c1"># If this is not a marking glyph, or if there are no blend</span>
+			<span class="c1"># arguments, then we can use vsindex 0. No need to</span>
+			<span class="c1"># check if we need a new vsindex.</span>
+			<span class="k">continue</span>
+
+		<span class="c1"># If the charstring required a new model, create</span>
+		<span class="c1"># a VarData table to go with, and set vsindex.</span>
+		<span class="n">key</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">v</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">all_cs</span><span class="p">)</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="n">vsindex</span> <span class="o">=</span> <span class="n">vsindex_by_key</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+		<span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+			<span class="n">vsindex</span> <span class="o">=</span> <span class="n">_add_new_vsindex</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">masterSupports</span><span class="p">,</span> <span class="n">vsindex_dict</span><span class="p">,</span>
+				<span class="n">vsindex_by_key</span><span class="p">,</span> <span class="n">varDataList</span><span class="p">)</span>
+		<span class="c1"># We do not need to check for an existing new_cs.private.vsindex,</span>
+		<span class="c1"># as we know it doesn&#39;t exist yet.</span>
+		<span class="k">if</span> <span class="n">vsindex</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+			<span class="n">new_cs</span><span class="o">.</span><span class="n">program</span><span class="p">[:</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">vsindex</span><span class="p">,</span> <span class="s1">&#39;vsindex&#39;</span><span class="p">]</span>
+
+	<span class="c1"># If there is no variation in any of the charstrings, then vsindex_dict</span>
+	<span class="c1"># never gets built. This could still be needed if there is variation</span>
+	<span class="c1"># in the PrivatDict, so we will build the default data for vsindex = 0.</span>
+	<span class="k">if</span> <span class="ow">not</span> <span class="n">vsindex_dict</span><span class="p">:</span>
+		<span class="n">key</span> <span class="o">=</span> <span class="p">(</span><span class="kc">True</span><span class="p">,)</span> <span class="o">*</span> <span class="n">num_masters</span>
+		<span class="n">_add_new_vsindex</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">masterSupports</span><span class="p">,</span> <span class="n">vsindex_dict</span><span class="p">,</span>
+			<span class="n">vsindex_by_key</span><span class="p">,</span> <span class="n">varDataList</span><span class="p">)</span>
+	<span class="n">cvData</span> <span class="o">=</span> <span class="n">CVarData</span><span class="p">(</span><span class="n">varDataList</span><span class="o">=</span><span class="n">varDataList</span><span class="p">,</span> <span class="n">masterSupports</span><span class="o">=</span><span class="n">masterSupports</span><span class="p">,</span>
+						<span class="n">vsindex_dict</span><span class="o">=</span><span class="n">vsindex_dict</span><span class="p">)</span>
+	<span class="c1"># XXX To do: optimize use of vsindex between the PrivateDicts and</span>
+	<span class="c1"># charstrings</span>
+	<span class="k">return</span> <span class="n">cvData</span></div>
+
+
+<div class="viewcode-block" id="makeRoundNumberFunc"><a class="viewcode-back" href="../../../varLib/cff.html#fontTools.varLib.cff.makeRoundNumberFunc">[docs]</a><span class="k">def</span> <span class="nf">makeRoundNumberFunc</span><span class="p">(</span><span class="n">tolerance</span><span class="p">):</span>
+	<span class="k">if</span> <span class="n">tolerance</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+		<span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Rounding tolerance must be positive&quot;</span><span class="p">)</span>
+
+	<span class="k">def</span> <span class="nf">roundNumber</span><span class="p">(</span><span class="n">val</span><span class="p">):</span>
+		<span class="k">return</span> <span class="n">t2c_round</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="n">tolerance</span><span class="p">)</span>
+
+	<span class="k">return</span> <span class="n">roundNumber</span></div>
+
+
+<div class="viewcode-block" id="CFFToCFF2OutlineExtractor"><a class="viewcode-back" href="../../../varLib/cff.html#fontTools.varLib.cff.CFFToCFF2OutlineExtractor">[docs]</a><span class="k">class</span> <span class="nc">CFFToCFF2OutlineExtractor</span><span class="p">(</span><span class="n">T2OutlineExtractor</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot; This class is used to remove the initial width from the CFF</span>
+<span class="sd">	charstring without trying to add the width to self.nominalWidthX,</span>
+<span class="sd">	which is None. &quot;&quot;&quot;</span>
+<div class="viewcode-block" id="CFFToCFF2OutlineExtractor.popallWidth"><a class="viewcode-back" href="../../../varLib/cff.html#fontTools.varLib.cff.CFFToCFF2OutlineExtractor.popallWidth">[docs]</a>	<span class="k">def</span> <span class="nf">popallWidth</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">evenOdd</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+		<span class="n">args</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">popall</span><span class="p">()</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">gotWidth</span><span class="p">:</span>
+			<span class="k">if</span> <span class="n">evenOdd</span> <span class="o">^</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">%</span> <span class="mi">2</span><span class="p">):</span>
+				<span class="n">args</span> <span class="o">=</span> <span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">defaultWidthX</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">gotWidth</span> <span class="o">=</span> <span class="mi">1</span>
+		<span class="k">return</span> <span class="n">args</span></div></div>
+
+
+<div class="viewcode-block" id="MergeOutlineExtractor"><a class="viewcode-back" href="../../../varLib/cff.html#fontTools.varLib.cff.MergeOutlineExtractor">[docs]</a><span class="k">class</span> <span class="nc">MergeOutlineExtractor</span><span class="p">(</span><span class="n">CFFToCFF2OutlineExtractor</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot; Used to extract the charstring commands - including hints - from a</span>
+<span class="sd">	CFF charstring in order to merge it as another set of region data</span>
+<span class="sd">	into a CFF2 variable font charstring.&quot;&quot;&quot;</span>
+
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pen</span><span class="p">,</span> <span class="n">localSubrs</span><span class="p">,</span> <span class="n">globalSubrs</span><span class="p">,</span>
+			<span class="n">nominalWidthX</span><span class="p">,</span> <span class="n">defaultWidthX</span><span class="p">,</span> <span class="n">private</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+		<span class="nb">super</span><span class="p">(</span><span class="n">CFFToCFF2OutlineExtractor</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">pen</span><span class="p">,</span> <span class="n">localSubrs</span><span class="p">,</span>
+			<span class="n">globalSubrs</span><span class="p">,</span> <span class="n">nominalWidthX</span><span class="p">,</span> <span class="n">defaultWidthX</span><span class="p">,</span> <span class="n">private</span><span class="p">)</span>
+
+<div class="viewcode-block" id="MergeOutlineExtractor.countHints"><a class="viewcode-back" href="../../../varLib/cff.html#fontTools.varLib.cff.MergeOutlineExtractor.countHints">[docs]</a>	<span class="k">def</span> <span class="nf">countHints</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="n">args</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">popallWidth</span><span class="p">()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">hintCount</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">hintCount</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+		<span class="k">return</span> <span class="n">args</span></div>
+
+	<span class="k">def</span> <span class="nf">_hint_op</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">pen</span><span class="o">.</span><span class="n">add_hint</span><span class="p">(</span><span class="nb">type</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span>
+
+<div class="viewcode-block" id="MergeOutlineExtractor.op_hstem"><a class="viewcode-back" href="../../../varLib/cff.html#fontTools.varLib.cff.MergeOutlineExtractor.op_hstem">[docs]</a>	<span class="k">def</span> <span class="nf">op_hstem</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+		<span class="n">args</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">countHints</span><span class="p">()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_hint_op</span><span class="p">(</span><span class="s1">&#39;hstem&#39;</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="MergeOutlineExtractor.op_vstem"><a class="viewcode-back" href="../../../varLib/cff.html#fontTools.varLib.cff.MergeOutlineExtractor.op_vstem">[docs]</a>	<span class="k">def</span> <span class="nf">op_vstem</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+		<span class="n">args</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">countHints</span><span class="p">()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_hint_op</span><span class="p">(</span><span class="s1">&#39;vstem&#39;</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="MergeOutlineExtractor.op_hstemhm"><a class="viewcode-back" href="../../../varLib/cff.html#fontTools.varLib.cff.MergeOutlineExtractor.op_hstemhm">[docs]</a>	<span class="k">def</span> <span class="nf">op_hstemhm</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+		<span class="n">args</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">countHints</span><span class="p">()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_hint_op</span><span class="p">(</span><span class="s1">&#39;hstemhm&#39;</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="MergeOutlineExtractor.op_vstemhm"><a class="viewcode-back" href="../../../varLib/cff.html#fontTools.varLib.cff.MergeOutlineExtractor.op_vstemhm">[docs]</a>	<span class="k">def</span> <span class="nf">op_vstemhm</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+		<span class="n">args</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">countHints</span><span class="p">()</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_hint_op</span><span class="p">(</span><span class="s1">&#39;vstemhm&#39;</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span></div>
+
+	<span class="k">def</span> <span class="nf">_get_hintmask</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">hintMaskBytes</span><span class="p">:</span>
+			<span class="n">args</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">countHints</span><span class="p">()</span>
+			<span class="k">if</span> <span class="n">args</span><span class="p">:</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">_hint_op</span><span class="p">(</span><span class="s1">&#39;vstemhm&#39;</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">hintMaskBytes</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">hintCount</span> <span class="o">+</span> <span class="mi">7</span><span class="p">)</span> <span class="o">//</span> <span class="mi">8</span>
+		<span class="n">hintMaskBytes</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">callingStack</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">getBytes</span><span class="p">(</span><span class="n">index</span><span class="p">,</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">hintMaskBytes</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">index</span><span class="p">,</span> <span class="n">hintMaskBytes</span>
+
+<div class="viewcode-block" id="MergeOutlineExtractor.op_hintmask"><a class="viewcode-back" href="../../../varLib/cff.html#fontTools.varLib.cff.MergeOutlineExtractor.op_hintmask">[docs]</a>	<span class="k">def</span> <span class="nf">op_hintmask</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+		<span class="n">index</span><span class="p">,</span> <span class="n">hintMaskBytes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_hintmask</span><span class="p">(</span><span class="n">index</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">pen</span><span class="o">.</span><span class="n">add_hintmask</span><span class="p">(</span><span class="s1">&#39;hintmask&#39;</span><span class="p">,</span> <span class="p">[</span><span class="n">hintMaskBytes</span><span class="p">])</span>
+		<span class="k">return</span> <span class="n">hintMaskBytes</span><span class="p">,</span> <span class="n">index</span></div>
+
+<div class="viewcode-block" id="MergeOutlineExtractor.op_cntrmask"><a class="viewcode-back" href="../../../varLib/cff.html#fontTools.varLib.cff.MergeOutlineExtractor.op_cntrmask">[docs]</a>	<span class="k">def</span> <span class="nf">op_cntrmask</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+		<span class="n">index</span><span class="p">,</span> <span class="n">hintMaskBytes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_hintmask</span><span class="p">(</span><span class="n">index</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">pen</span><span class="o">.</span><span class="n">add_hintmask</span><span class="p">(</span><span class="s1">&#39;cntrmask&#39;</span><span class="p">,</span> <span class="p">[</span><span class="n">hintMaskBytes</span><span class="p">])</span>
+		<span class="k">return</span> <span class="n">hintMaskBytes</span><span class="p">,</span> <span class="n">index</span></div></div>
+
+
+<div class="viewcode-block" id="CFF2CharStringMergePen"><a class="viewcode-back" href="../../../varLib/cff.html#fontTools.varLib.cff.CFF2CharStringMergePen">[docs]</a><span class="k">class</span> <span class="nc">CFF2CharStringMergePen</span><span class="p">(</span><span class="n">T2CharStringPen</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Pen to merge Type 2 CharStrings.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span>
+				<span class="bp">self</span><span class="p">,</span> <span class="n">default_commands</span><span class="p">,</span> <span class="n">glyphName</span><span class="p">,</span> <span class="n">num_masters</span><span class="p">,</span> <span class="n">master_idx</span><span class="p">,</span>
+				<span class="n">roundTolerance</span><span class="o">=</span><span class="mf">0.5</span><span class="p">):</span>
+		<span class="nb">super</span><span class="p">(</span>
+			<span class="n">CFF2CharStringMergePen</span><span class="p">,</span>
+			<span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+							<span class="n">width</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+							<span class="n">glyphSet</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">CFF2</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+							<span class="n">roundTolerance</span><span class="o">=</span><span class="n">roundTolerance</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">pt_index</span> <span class="o">=</span> <span class="mi">0</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_commands</span> <span class="o">=</span> <span class="n">default_commands</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">m_index</span> <span class="o">=</span> <span class="n">master_idx</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">num_masters</span> <span class="o">=</span> <span class="n">num_masters</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">prev_move_idx</span> <span class="o">=</span> <span class="mi">0</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">seen_moveto</span> <span class="o">=</span> <span class="kc">False</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">glyphName</span> <span class="o">=</span> <span class="n">glyphName</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">roundNumber</span> <span class="o">=</span> <span class="n">makeRoundNumberFunc</span><span class="p">(</span><span class="n">roundTolerance</span><span class="p">)</span>
+
+<div class="viewcode-block" id="CFF2CharStringMergePen.add_point"><a class="viewcode-back" href="../../../varLib/cff.html#fontTools.varLib.cff.CFF2CharStringMergePen.add_point">[docs]</a>	<span class="k">def</span> <span class="nf">add_point</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">point_type</span><span class="p">,</span> <span class="n">pt_coords</span><span class="p">):</span>
+		<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">m_index</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_commands</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">point_type</span><span class="p">,</span> <span class="p">[</span><span class="n">pt_coords</span><span class="p">]])</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="n">cmd</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_commands</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">pt_index</span><span class="p">]</span>
+			<span class="k">if</span> <span class="n">cmd</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="n">point_type</span><span class="p">:</span>
+				<span class="k">raise</span> <span class="n">VarLibCFFPointTypeMergeError</span><span class="p">(</span>
+									<span class="n">point_type</span><span class="p">,</span>
+									<span class="bp">self</span><span class="o">.</span><span class="n">pt_index</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">cmd</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span>
+									<span class="n">cmd</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">glyphName</span><span class="p">)</span>
+			<span class="n">cmd</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pt_coords</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">pt_index</span> <span class="o">+=</span> <span class="mi">1</span></div>
+
+<div class="viewcode-block" id="CFF2CharStringMergePen.add_hint"><a class="viewcode-back" href="../../../varLib/cff.html#fontTools.varLib.cff.CFF2CharStringMergePen.add_hint">[docs]</a>	<span class="k">def</span> <span class="nf">add_hint</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hint_type</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
+		<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">m_index</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_commands</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">hint_type</span><span class="p">,</span> <span class="p">[</span><span class="n">args</span><span class="p">]])</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="n">cmd</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_commands</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">pt_index</span><span class="p">]</span>
+			<span class="k">if</span> <span class="n">cmd</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="n">hint_type</span><span class="p">:</span>
+				<span class="k">raise</span> <span class="n">VarLibCFFPointTypeMergeError</span><span class="p">(</span><span class="n">hint_type</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">pt_index</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">cmd</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span>
+					<span class="n">cmd</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">glyphName</span><span class="p">)</span>
+			<span class="n">cmd</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">pt_index</span> <span class="o">+=</span> <span class="mi">1</span></div>
+
+<div class="viewcode-block" id="CFF2CharStringMergePen.add_hintmask"><a class="viewcode-back" href="../../../varLib/cff.html#fontTools.varLib.cff.CFF2CharStringMergePen.add_hintmask">[docs]</a>	<span class="k">def</span> <span class="nf">add_hintmask</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hint_type</span><span class="p">,</span> <span class="n">abs_args</span><span class="p">):</span>
+		<span class="c1"># For hintmask, fonttools.cffLib.specializer.py expects</span>
+		<span class="c1"># each of these to be represented by two sequential commands:</span>
+		<span class="c1"># first holding only the operator name, with an empty arg list,</span>
+		<span class="c1"># second with an empty string as the op name, and  the mask arg list.</span>
+		<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">m_index</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_commands</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">hint_type</span><span class="p">,</span> <span class="p">[]])</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_commands</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="p">[</span><span class="n">abs_args</span><span class="p">]])</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="n">cmd</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_commands</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">pt_index</span><span class="p">]</span>
+			<span class="k">if</span> <span class="n">cmd</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="n">hint_type</span><span class="p">:</span>
+				<span class="k">raise</span> <span class="n">VarLibCFFPointTypeMergeError</span><span class="p">(</span><span class="n">hint_type</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">pt_index</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">cmd</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span>
+					<span class="n">cmd</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">glyphName</span><span class="p">)</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">pt_index</span> <span class="o">+=</span> <span class="mi">1</span>
+			<span class="n">cmd</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_commands</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">pt_index</span><span class="p">]</span>
+			<span class="n">cmd</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">abs_args</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">pt_index</span> <span class="o">+=</span> <span class="mi">1</span></div>
+
+	<span class="k">def</span> <span class="nf">_moveTo</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pt</span><span class="p">):</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">seen_moveto</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">seen_moveto</span> <span class="o">=</span> <span class="kc">True</span>
+		<span class="n">pt_coords</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_p</span><span class="p">(</span><span class="n">pt</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">add_point</span><span class="p">(</span><span class="s1">&#39;rmoveto&#39;</span><span class="p">,</span> <span class="n">pt_coords</span><span class="p">)</span>
+		<span class="c1"># I set prev_move_idx here because add_point()</span>
+		<span class="c1"># can change self.pt_index.</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">prev_move_idx</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pt_index</span> <span class="o">-</span> <span class="mi">1</span>
+
+	<span class="k">def</span> <span class="nf">_lineTo</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pt</span><span class="p">):</span>
+		<span class="n">pt_coords</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_p</span><span class="p">(</span><span class="n">pt</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">add_point</span><span class="p">(</span><span class="s1">&#39;rlineto&#39;</span><span class="p">,</span> <span class="n">pt_coords</span><span class="p">)</span>
+
+	<span class="k">def</span> <span class="nf">_curveToOne</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pt1</span><span class="p">,</span> <span class="n">pt2</span><span class="p">,</span> <span class="n">pt3</span><span class="p">):</span>
+		<span class="n">_p</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_p</span>
+		<span class="n">pt_coords</span> <span class="o">=</span> <span class="n">_p</span><span class="p">(</span><span class="n">pt1</span><span class="p">)</span><span class="o">+</span><span class="n">_p</span><span class="p">(</span><span class="n">pt2</span><span class="p">)</span><span class="o">+</span><span class="n">_p</span><span class="p">(</span><span class="n">pt3</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">add_point</span><span class="p">(</span><span class="s1">&#39;rrcurveto&#39;</span><span class="p">,</span> <span class="n">pt_coords</span><span class="p">)</span>
+
+	<span class="k">def</span> <span class="nf">_closePath</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">pass</span>
+
+	<span class="k">def</span> <span class="nf">_endPath</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">pass</span>
+
+<div class="viewcode-block" id="CFF2CharStringMergePen.restart"><a class="viewcode-back" href="../../../varLib/cff.html#fontTools.varLib.cff.CFF2CharStringMergePen.restart">[docs]</a>	<span class="k">def</span> <span class="nf">restart</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">region_idx</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">pt_index</span> <span class="o">=</span> <span class="mi">0</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">m_index</span> <span class="o">=</span> <span class="n">region_idx</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_p0</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="CFF2CharStringMergePen.getCommands"><a class="viewcode-back" href="../../../varLib/cff.html#fontTools.varLib.cff.CFF2CharStringMergePen.getCommands">[docs]</a>	<span class="k">def</span> <span class="nf">getCommands</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_commands</span></div>
+
+<div class="viewcode-block" id="CFF2CharStringMergePen.reorder_blend_args"><a class="viewcode-back" href="../../../varLib/cff.html#fontTools.varLib.cff.CFF2CharStringMergePen.reorder_blend_args">[docs]</a>	<span class="k">def</span> <span class="nf">reorder_blend_args</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">commands</span><span class="p">,</span> <span class="n">get_delta_func</span><span class="p">,</span> <span class="n">round_func</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">		We first re-order the master coordinate values.</span>
+<span class="sd">		For a moveto to lineto, the args are now arranged as:</span>
+<span class="sd">			[ [master_0 x,y], [master_1 x,y], [master_2 x,y] ]</span>
+<span class="sd">		We re-arrange this to</span>
+<span class="sd">		[	[master_0 x, master_1 x, master_2 x],</span>
+<span class="sd">			[master_0 y, master_1 y, master_2 y]</span>
+<span class="sd">		]</span>
+<span class="sd">		If the master values are all the same, we collapse the list to</span>
+<span class="sd">		as single value instead of a list.</span>
+
+<span class="sd">		We then convert this to:</span>
+<span class="sd">		[ [master_0 x] + [x delta tuple] + [numBlends=1]</span>
+<span class="sd">		  [master_0 y] + [y delta tuple] + [numBlends=1]</span>
+<span class="sd">		]</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="k">for</span> <span class="n">cmd</span> <span class="ow">in</span> <span class="n">commands</span><span class="p">:</span>
+			<span class="c1"># arg[i] is the set of arguments for this operator from master i.</span>
+			<span class="n">args</span> <span class="o">=</span> <span class="n">cmd</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+			<span class="n">m_args</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+			<span class="c1"># m_args[n] is now all num_master args for the i&#39;th argument</span>
+			<span class="c1"># for this operation.</span>
+			<span class="n">cmd</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">m_args</span><span class="p">)</span>
+		<span class="n">lastOp</span> <span class="o">=</span> <span class="kc">None</span>
+		<span class="k">for</span> <span class="n">cmd</span> <span class="ow">in</span> <span class="n">commands</span><span class="p">:</span>
+			<span class="n">op</span> <span class="o">=</span> <span class="n">cmd</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+			<span class="c1"># masks are represented by two cmd&#39;s: first has only op names,</span>
+			<span class="c1"># second has only args.</span>
+			<span class="k">if</span> <span class="n">lastOp</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;hintmask&#39;</span><span class="p">,</span> <span class="s1">&#39;cntrmask&#39;</span><span class="p">]:</span>
+				<span class="n">coord</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">cmd</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+				<span class="k">if</span> <span class="ow">not</span> <span class="n">allEqual</span><span class="p">(</span><span class="n">coord</span><span class="p">):</span>
+					<span class="k">raise</span> <span class="n">VarLibMergeError</span><span class="p">(</span><span class="s2">&quot;Hintmask values cannot differ between source fonts.&quot;</span><span class="p">)</span>
+				<span class="n">cmd</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">coord</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]]</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="n">coords</span> <span class="o">=</span> <span class="n">cmd</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+				<span class="n">new_coords</span> <span class="o">=</span> <span class="p">[]</span>
+				<span class="k">for</span> <span class="n">coord</span> <span class="ow">in</span> <span class="n">coords</span><span class="p">:</span>
+					<span class="k">if</span> <span class="n">allEqual</span><span class="p">(</span><span class="n">coord</span><span class="p">):</span>
+						<span class="n">new_coords</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">coord</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+					<span class="k">else</span><span class="p">:</span>
+						<span class="c1"># convert to deltas</span>
+						<span class="n">deltas</span> <span class="o">=</span> <span class="n">get_delta_func</span><span class="p">(</span><span class="n">coord</span><span class="p">)[</span><span class="mi">1</span><span class="p">:]</span>
+						<span class="k">if</span> <span class="n">round_func</span><span class="p">:</span>
+							<span class="n">deltas</span> <span class="o">=</span> <span class="p">[</span><span class="n">round_func</span><span class="p">(</span><span class="n">delta</span><span class="p">)</span> <span class="k">for</span> <span class="n">delta</span> <span class="ow">in</span> <span class="n">deltas</span><span class="p">]</span>
+						<span class="n">coord</span> <span class="o">=</span> <span class="p">[</span><span class="n">coord</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">+</span> <span class="n">deltas</span>
+						<span class="n">new_coords</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">coord</span><span class="p">)</span>
+				<span class="n">cmd</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_coords</span>
+			<span class="n">lastOp</span> <span class="o">=</span> <span class="n">op</span>
+		<span class="k">return</span> <span class="n">commands</span></div>
+
+<div class="viewcode-block" id="CFF2CharStringMergePen.getCharString"><a class="viewcode-back" href="../../../varLib/cff.html#fontTools.varLib.cff.CFF2CharStringMergePen.getCharString">[docs]</a>	<span class="k">def</span> <span class="nf">getCharString</span><span class="p">(</span>
+					<span class="bp">self</span><span class="p">,</span> <span class="n">private</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">globalSubrs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+					<span class="n">var_model</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">optimize</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+		<span class="n">commands</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_commands</span>
+		<span class="n">commands</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">reorder_blend_args</span><span class="p">(</span><span class="n">commands</span><span class="p">,</span> <span class="n">var_model</span><span class="o">.</span><span class="n">getDeltas</span><span class="p">,</span>
+											<span class="bp">self</span><span class="o">.</span><span class="n">roundNumber</span><span class="p">)</span>
+		<span class="k">if</span> <span class="n">optimize</span><span class="p">:</span>
+			<span class="n">commands</span> <span class="o">=</span> <span class="n">specializeCommands</span><span class="p">(</span>
+						<span class="n">commands</span><span class="p">,</span> <span class="n">generalizeFirst</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+						<span class="n">maxstack</span><span class="o">=</span><span class="n">maxStackLimit</span><span class="p">)</span>
+		<span class="n">program</span> <span class="o">=</span> <span class="n">commandsToProgram</span><span class="p">(</span><span class="n">commands</span><span class="p">)</span>
+		<span class="n">charString</span> <span class="o">=</span> <span class="n">T2CharString</span><span class="p">(</span>
+						<span class="n">program</span><span class="o">=</span><span class="n">program</span><span class="p">,</span> <span class="n">private</span><span class="o">=</span><span class="n">private</span><span class="p">,</span>
+						<span class="n">globalSubrs</span><span class="o">=</span><span class="n">globalSubrs</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">charString</span></div></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Just van Rossum, Behdad Esfahbod, and the fontTools Authors. CC BY-SA 4.0
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

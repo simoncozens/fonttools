@@ -1,0 +1,495 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>fontTools.ttLib.tables._k_e_r_n &mdash; fontTools Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> fontTools
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Library</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../afmLib.html">afmLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../agl.html">agl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../cffLib/index.html">cffLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../colorLib/index.html">colorLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../cu2qu/index.html">cu2qu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../designspaceLib/index.html">designspaceLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../encodings/index.html">encodings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../feaLib/index.html">feaLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../merge.html">merge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../misc/index.html">misc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../mtiLib.html">mtiLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../otlLib/index.html">otlLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../pens/index.html">pens</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../subset/index.html">subset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../svgLib/index.html">svgLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../t1Lib.html">t1Lib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../ttLib/index.html">ttLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../ttx.html">ttx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../ufoLib/index.html">ufoLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../unicode.html">unicode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../unicodedata/index.html">unicodedata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../varLib/index.html">varLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../voltLib.html">voltLib</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">fontTools</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../../ttLib.html">fontTools.ttLib</a> &raquo;</li>
+        
+      <li>fontTools.ttLib.tables._k_e_r_n</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for fontTools.ttLib.tables._k_e_r_n</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">fontTools.misc.py23</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">fontTools.ttLib</span> <span class="k">import</span> <span class="n">getSearchRange</span>
+<span class="kn">from</span> <span class="nn">fontTools.misc.textTools</span> <span class="k">import</span> <span class="n">safeEval</span><span class="p">,</span> <span class="n">readHex</span>
+<span class="kn">from</span> <span class="nn">fontTools.misc.fixedTools</span> <span class="k">import</span> <span class="p">(</span>
+	<span class="n">fixedToFloat</span> <span class="k">as</span> <span class="n">fi2fl</span><span class="p">,</span>
+	<span class="n">floatToFixed</span> <span class="k">as</span> <span class="n">fl2fi</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="k">import</span> <span class="n">DefaultTable</span>
+<span class="kn">import</span> <span class="nn">struct</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">array</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+
+
+<span class="n">log</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="table__k_e_r_n"><a class="viewcode-back" href="../../../../ttLib/tables.html#fontTools.ttLib.tables._k_e_r_n.table__k_e_r_n">[docs]</a><span class="k">class</span> <span class="nc">table__k_e_r_n</span><span class="p">(</span><span class="n">DefaultTable</span><span class="o">.</span><span class="n">DefaultTable</span><span class="p">):</span>
+
+<div class="viewcode-block" id="table__k_e_r_n.getkern"><a class="viewcode-back" href="../../../../ttLib/tables.html#fontTools.ttLib.tables._k_e_r_n.table__k_e_r_n.getkern">[docs]</a>	<span class="k">def</span> <span class="nf">getkern</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">format</span><span class="p">):</span>
+		<span class="k">for</span> <span class="n">subtable</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">kernTables</span><span class="p">:</span>
+			<span class="k">if</span> <span class="n">subtable</span><span class="o">.</span><span class="n">format</span> <span class="o">==</span> <span class="nb">format</span><span class="p">:</span>
+				<span class="k">return</span> <span class="n">subtable</span>
+		<span class="k">return</span> <span class="kc">None</span>  <span class="c1"># not found</span></div>
+
+<div class="viewcode-block" id="table__k_e_r_n.decompile"><a class="viewcode-back" href="../../../../ttLib/tables.html#fontTools.ttLib.tables._k_e_r_n.table__k_e_r_n.decompile">[docs]</a>	<span class="k">def</span> <span class="nf">decompile</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">ttFont</span><span class="p">):</span>
+		<span class="n">version</span><span class="p">,</span> <span class="n">nTables</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">unpack</span><span class="p">(</span><span class="s2">&quot;&gt;HH&quot;</span><span class="p">,</span> <span class="n">data</span><span class="p">[:</span><span class="mi">4</span><span class="p">])</span>
+		<span class="n">apple</span> <span class="o">=</span> <span class="kc">False</span>
+		<span class="k">if</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">8</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">version</span> <span class="o">==</span> <span class="mi">1</span><span class="p">):</span>
+			<span class="c1"># AAT Apple&#39;s &quot;new&quot; format. Hm.</span>
+			<span class="n">version</span><span class="p">,</span> <span class="n">nTables</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">unpack</span><span class="p">(</span><span class="s2">&quot;&gt;LL&quot;</span><span class="p">,</span> <span class="n">data</span><span class="p">[:</span><span class="mi">8</span><span class="p">])</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">version</span> <span class="o">=</span> <span class="n">fi2fl</span><span class="p">(</span><span class="n">version</span><span class="p">,</span> <span class="mi">16</span><span class="p">)</span>
+			<span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">8</span><span class="p">:]</span>
+			<span class="n">apple</span> <span class="o">=</span> <span class="kc">True</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">version</span> <span class="o">=</span> <span class="n">version</span>
+			<span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">4</span><span class="p">:]</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">kernTables</span> <span class="o">=</span> <span class="p">[]</span>
+		<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nTables</span><span class="p">):</span>
+			<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">version</span> <span class="o">==</span> <span class="mf">1.0</span><span class="p">:</span>
+				<span class="c1"># Apple</span>
+				<span class="n">length</span><span class="p">,</span> <span class="n">coverage</span><span class="p">,</span> <span class="n">subtableFormat</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">unpack</span><span class="p">(</span>
+					<span class="s2">&quot;&gt;LBB&quot;</span><span class="p">,</span> <span class="n">data</span><span class="p">[:</span><span class="mi">6</span><span class="p">])</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="c1"># in OpenType spec the &quot;version&quot; field refers to the common</span>
+				<span class="c1"># subtable header; the actual subtable format is stored in</span>
+				<span class="c1"># the 8-15 mask bits of &quot;coverage&quot; field.</span>
+				<span class="c1"># This &quot;version&quot; is always 0 so we ignore it here</span>
+				<span class="n">_</span><span class="p">,</span> <span class="n">length</span><span class="p">,</span> <span class="n">subtableFormat</span><span class="p">,</span> <span class="n">coverage</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">unpack</span><span class="p">(</span>
+					<span class="s2">&quot;&gt;HHBB&quot;</span><span class="p">,</span> <span class="n">data</span><span class="p">[:</span><span class="mi">6</span><span class="p">])</span>
+				<span class="k">if</span> <span class="n">nTables</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">subtableFormat</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+					<span class="c1"># The &quot;length&quot; value is ignored since some fonts</span>
+					<span class="c1"># (like OpenSans and Calibri) have a subtable larger than</span>
+					<span class="c1"># its value.</span>
+					<span class="n">nPairs</span><span class="p">,</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">unpack</span><span class="p">(</span><span class="s2">&quot;&gt;H&quot;</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="mi">6</span><span class="p">:</span><span class="mi">8</span><span class="p">])</span>
+					<span class="n">calculated_length</span> <span class="o">=</span> <span class="p">(</span><span class="n">nPairs</span> <span class="o">*</span> <span class="mi">6</span><span class="p">)</span> <span class="o">+</span> <span class="mi">14</span>
+					<span class="k">if</span> <span class="n">length</span> <span class="o">!=</span> <span class="n">calculated_length</span><span class="p">:</span>
+						<span class="n">log</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+							<span class="s2">&quot;&#39;kern&#39; subtable longer than defined: &quot;</span>
+							<span class="s2">&quot;</span><span class="si">%d</span><span class="s2"> bytes instead of </span><span class="si">%d</span><span class="s2"> bytes&quot;</span> <span class="o">%</span>
+							<span class="p">(</span><span class="n">calculated_length</span><span class="p">,</span> <span class="n">length</span><span class="p">)</span>
+						<span class="p">)</span>
+					<span class="n">length</span> <span class="o">=</span> <span class="n">calculated_length</span>
+			<span class="k">if</span> <span class="n">subtableFormat</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">kern_classes</span><span class="p">:</span>
+				<span class="n">subtable</span> <span class="o">=</span> <span class="n">KernTable_format_unkown</span><span class="p">(</span><span class="n">subtableFormat</span><span class="p">)</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="n">subtable</span> <span class="o">=</span> <span class="n">kern_classes</span><span class="p">[</span><span class="n">subtableFormat</span><span class="p">](</span><span class="n">apple</span><span class="p">)</span>
+			<span class="n">subtable</span><span class="o">.</span><span class="n">decompile</span><span class="p">(</span><span class="n">data</span><span class="p">[:</span><span class="n">length</span><span class="p">],</span> <span class="n">ttFont</span><span class="p">)</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">kernTables</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">subtable</span><span class="p">)</span>
+			<span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">length</span><span class="p">:]</span></div>
+
+<div class="viewcode-block" id="table__k_e_r_n.compile"><a class="viewcode-back" href="../../../../ttLib/tables.html#fontTools.ttLib.tables._k_e_r_n.table__k_e_r_n.compile">[docs]</a>	<span class="k">def</span> <span class="nf">compile</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ttFont</span><span class="p">):</span>
+		<span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;kernTables&quot;</span><span class="p">):</span>
+			<span class="n">nTables</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">kernTables</span><span class="p">)</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="n">nTables</span> <span class="o">=</span> <span class="mi">0</span>
+		<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">version</span> <span class="o">==</span> <span class="mf">1.0</span><span class="p">:</span>
+			<span class="c1"># AAT Apple&#39;s &quot;new&quot; format.</span>
+			<span class="n">data</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="s2">&quot;&gt;LL&quot;</span><span class="p">,</span> <span class="n">fl2fi</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">version</span><span class="p">,</span> <span class="mi">16</span><span class="p">),</span> <span class="n">nTables</span><span class="p">)</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="n">data</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="s2">&quot;&gt;HH&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">version</span><span class="p">,</span> <span class="n">nTables</span><span class="p">)</span>
+		<span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;kernTables&quot;</span><span class="p">):</span>
+			<span class="k">for</span> <span class="n">subtable</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">kernTables</span><span class="p">:</span>
+				<span class="n">data</span> <span class="o">=</span> <span class="n">data</span> <span class="o">+</span> <span class="n">subtable</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">ttFont</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">data</span></div>
+
+<div class="viewcode-block" id="table__k_e_r_n.toXML"><a class="viewcode-back" href="../../../../ttLib/tables.html#fontTools.ttLib.tables._k_e_r_n.table__k_e_r_n.toXML">[docs]</a>	<span class="k">def</span> <span class="nf">toXML</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">writer</span><span class="p">,</span> <span class="n">ttFont</span><span class="p">):</span>
+		<span class="n">writer</span><span class="o">.</span><span class="n">simpletag</span><span class="p">(</span><span class="s2">&quot;version&quot;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">version</span><span class="p">)</span>
+		<span class="n">writer</span><span class="o">.</span><span class="n">newline</span><span class="p">()</span>
+		<span class="k">for</span> <span class="n">subtable</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">kernTables</span><span class="p">:</span>
+			<span class="n">subtable</span><span class="o">.</span><span class="n">toXML</span><span class="p">(</span><span class="n">writer</span><span class="p">,</span> <span class="n">ttFont</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="table__k_e_r_n.fromXML"><a class="viewcode-back" href="../../../../ttLib/tables.html#fontTools.ttLib.tables._k_e_r_n.table__k_e_r_n.fromXML">[docs]</a>	<span class="k">def</span> <span class="nf">fromXML</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">attrs</span><span class="p">,</span> <span class="n">content</span><span class="p">,</span> <span class="n">ttFont</span><span class="p">):</span>
+		<span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;version&quot;</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">version</span> <span class="o">=</span> <span class="n">safeEval</span><span class="p">(</span><span class="n">attrs</span><span class="p">[</span><span class="s2">&quot;value&quot;</span><span class="p">])</span>
+			<span class="k">return</span>
+		<span class="k">if</span> <span class="n">name</span> <span class="o">!=</span> <span class="s2">&quot;kernsubtable&quot;</span><span class="p">:</span>
+			<span class="k">return</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;kernTables&quot;</span><span class="p">):</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">kernTables</span> <span class="o">=</span> <span class="p">[]</span>
+		<span class="nb">format</span> <span class="o">=</span> <span class="n">safeEval</span><span class="p">(</span><span class="n">attrs</span><span class="p">[</span><span class="s2">&quot;format&quot;</span><span class="p">])</span>
+		<span class="k">if</span> <span class="nb">format</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">kern_classes</span><span class="p">:</span>
+			<span class="n">subtable</span> <span class="o">=</span> <span class="n">KernTable_format_unkown</span><span class="p">(</span><span class="nb">format</span><span class="p">)</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="n">apple</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">version</span> <span class="o">==</span> <span class="mf">1.0</span>
+			<span class="n">subtable</span> <span class="o">=</span> <span class="n">kern_classes</span><span class="p">[</span><span class="nb">format</span><span class="p">](</span><span class="n">apple</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">kernTables</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">subtable</span><span class="p">)</span>
+		<span class="n">subtable</span><span class="o">.</span><span class="n">fromXML</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">attrs</span><span class="p">,</span> <span class="n">content</span><span class="p">,</span> <span class="n">ttFont</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="KernTable_format_0"><a class="viewcode-back" href="../../../../ttLib/tables.html#fontTools.ttLib.tables._k_e_r_n.KernTable_format_0">[docs]</a><span class="k">class</span> <span class="nc">KernTable_format_0</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+	<span class="c1"># &#39;version&#39; is kept for backward compatibility</span>
+	<span class="n">version</span> <span class="o">=</span> <span class="nb">format</span> <span class="o">=</span> <span class="mi">0</span>
+
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">apple</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">apple</span> <span class="o">=</span> <span class="n">apple</span>
+
+<div class="viewcode-block" id="KernTable_format_0.decompile"><a class="viewcode-back" href="../../../../ttLib/tables.html#fontTools.ttLib.tables._k_e_r_n.KernTable_format_0.decompile">[docs]</a>	<span class="k">def</span> <span class="nf">decompile</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">ttFont</span><span class="p">):</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">apple</span><span class="p">:</span>
+			<span class="n">version</span><span class="p">,</span> <span class="n">length</span><span class="p">,</span> <span class="n">subtableFormat</span><span class="p">,</span> <span class="n">coverage</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">unpack</span><span class="p">(</span>
+				<span class="s2">&quot;&gt;HHBB&quot;</span><span class="p">,</span> <span class="n">data</span><span class="p">[:</span><span class="mi">6</span><span class="p">])</span>
+			<span class="k">if</span> <span class="n">version</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+				<span class="kn">from</span> <span class="nn">fontTools.ttLib</span> <span class="k">import</span> <span class="n">TTLibError</span>
+				<span class="k">raise</span> <span class="n">TTLibError</span><span class="p">(</span>
+					<span class="s2">&quot;unsupported kern subtable version: </span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">version</span><span class="p">)</span>
+			<span class="n">tupleIndex</span> <span class="o">=</span> <span class="kc">None</span>
+			<span class="c1"># Should we also assert length == len(data)?</span>
+			<span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">6</span><span class="p">:]</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="n">length</span><span class="p">,</span> <span class="n">coverage</span><span class="p">,</span> <span class="n">subtableFormat</span><span class="p">,</span> <span class="n">tupleIndex</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">unpack</span><span class="p">(</span>
+				<span class="s2">&quot;&gt;LBBH&quot;</span><span class="p">,</span> <span class="n">data</span><span class="p">[:</span><span class="mi">8</span><span class="p">])</span>
+			<span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">8</span><span class="p">:]</span>
+		<span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">format</span> <span class="o">==</span> <span class="n">subtableFormat</span><span class="p">,</span> <span class="s2">&quot;unsupported format&quot;</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">coverage</span> <span class="o">=</span> <span class="n">coverage</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">tupleIndex</span> <span class="o">=</span> <span class="n">tupleIndex</span>
+
+		<span class="bp">self</span><span class="o">.</span><span class="n">kernTable</span> <span class="o">=</span> <span class="n">kernTable</span> <span class="o">=</span> <span class="p">{}</span>
+
+		<span class="n">nPairs</span><span class="p">,</span> <span class="n">searchRange</span><span class="p">,</span> <span class="n">entrySelector</span><span class="p">,</span> <span class="n">rangeShift</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">unpack</span><span class="p">(</span>
+			<span class="s2">&quot;&gt;HHHH&quot;</span><span class="p">,</span> <span class="n">data</span><span class="p">[:</span><span class="mi">8</span><span class="p">])</span>
+		<span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">8</span><span class="p">:]</span>
+
+		<span class="n">datas</span> <span class="o">=</span> <span class="n">array</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="s2">&quot;H&quot;</span><span class="p">,</span> <span class="n">data</span><span class="p">[:</span><span class="mi">6</span> <span class="o">*</span> <span class="n">nPairs</span><span class="p">])</span>
+		<span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">byteorder</span> <span class="o">!=</span> <span class="s2">&quot;big&quot;</span><span class="p">:</span> <span class="n">datas</span><span class="o">.</span><span class="n">byteswap</span><span class="p">()</span>
+		<span class="n">it</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">(</span><span class="n">datas</span><span class="p">)</span>
+		<span class="n">glyphOrder</span> <span class="o">=</span> <span class="n">ttFont</span><span class="o">.</span><span class="n">getGlyphOrder</span><span class="p">()</span>
+		<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nPairs</span><span class="p">):</span>
+			<span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">value</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">it</span><span class="p">),</span> <span class="nb">next</span><span class="p">(</span><span class="n">it</span><span class="p">),</span> <span class="nb">next</span><span class="p">(</span><span class="n">it</span><span class="p">)</span>
+			<span class="k">if</span> <span class="n">value</span> <span class="o">&gt;=</span> <span class="mi">32768</span><span class="p">:</span>
+				<span class="n">value</span> <span class="o">-=</span> <span class="mi">65536</span>
+			<span class="k">try</span><span class="p">:</span>
+				<span class="n">kernTable</span><span class="p">[(</span><span class="n">glyphOrder</span><span class="p">[</span><span class="n">left</span><span class="p">],</span> <span class="n">glyphOrder</span><span class="p">[</span><span class="n">right</span><span class="p">])]</span> <span class="o">=</span> <span class="n">value</span>
+			<span class="k">except</span> <span class="ne">IndexError</span><span class="p">:</span>
+				<span class="c1"># Slower, but will not throw an IndexError on an invalid</span>
+				<span class="c1"># glyph id.</span>
+				<span class="n">kernTable</span><span class="p">[(</span>
+					<span class="n">ttFont</span><span class="o">.</span><span class="n">getGlyphName</span><span class="p">(</span><span class="n">left</span><span class="p">),</span>
+					<span class="n">ttFont</span><span class="o">.</span><span class="n">getGlyphName</span><span class="p">(</span><span class="n">right</span><span class="p">))]</span> <span class="o">=</span> <span class="n">value</span>
+		<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">6</span> <span class="o">*</span> <span class="n">nPairs</span> <span class="o">+</span> <span class="mi">4</span><span class="p">:</span>  <span class="c1"># Ignore up to 4 bytes excess</span>
+			<span class="n">log</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+				<span class="s2">&quot;excess data in &#39;kern&#39; subtable: </span><span class="si">%d</span><span class="s2"> bytes&quot;</span><span class="p">,</span>
+				<span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">-</span> <span class="mi">6</span> <span class="o">*</span> <span class="n">nPairs</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="KernTable_format_0.compile"><a class="viewcode-back" href="../../../../ttLib/tables.html#fontTools.ttLib.tables._k_e_r_n.KernTable_format_0.compile">[docs]</a>	<span class="k">def</span> <span class="nf">compile</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ttFont</span><span class="p">):</span>
+		<span class="n">nPairs</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">kernTable</span><span class="p">)</span>
+		<span class="n">searchRange</span><span class="p">,</span> <span class="n">entrySelector</span><span class="p">,</span> <span class="n">rangeShift</span> <span class="o">=</span> <span class="n">getSearchRange</span><span class="p">(</span><span class="n">nPairs</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+		<span class="n">searchRange</span> <span class="o">&amp;=</span> <span class="mh">0xFFFF</span>
+		<span class="n">data</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span>
+			<span class="s2">&quot;&gt;HHHH&quot;</span><span class="p">,</span> <span class="n">nPairs</span><span class="p">,</span> <span class="n">searchRange</span><span class="p">,</span> <span class="n">entrySelector</span><span class="p">,</span> <span class="n">rangeShift</span><span class="p">)</span>
+
+		<span class="c1"># yeehee! (I mean, turn names into indices)</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="n">reverseOrder</span> <span class="o">=</span> <span class="n">ttFont</span><span class="o">.</span><span class="n">getReverseGlyphMap</span><span class="p">()</span>
+			<span class="n">kernTable</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span>
+				<span class="p">(</span><span class="n">reverseOrder</span><span class="p">[</span><span class="n">left</span><span class="p">],</span> <span class="n">reverseOrder</span><span class="p">[</span><span class="n">right</span><span class="p">],</span> <span class="n">value</span><span class="p">)</span>
+				<span class="k">for</span> <span class="p">((</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">),</span> <span class="n">value</span><span class="p">)</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">kernTable</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
+		<span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+			<span class="c1"># Slower, but will not throw KeyError on invalid glyph id.</span>
+			<span class="n">getGlyphID</span> <span class="o">=</span> <span class="n">ttFont</span><span class="o">.</span><span class="n">getGlyphID</span>
+			<span class="n">kernTable</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span>
+				<span class="p">(</span><span class="n">getGlyphID</span><span class="p">(</span><span class="n">left</span><span class="p">),</span> <span class="n">getGlyphID</span><span class="p">(</span><span class="n">right</span><span class="p">),</span> <span class="n">value</span><span class="p">)</span>
+				<span class="k">for</span> <span class="p">((</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">),</span> <span class="n">value</span><span class="p">)</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">kernTable</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
+
+		<span class="k">for</span> <span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">kernTable</span><span class="p">:</span>
+			<span class="n">data</span> <span class="o">=</span> <span class="n">data</span> <span class="o">+</span> <span class="n">struct</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="s2">&quot;&gt;HHh&quot;</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+
+		<span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">apple</span><span class="p">:</span>
+			<span class="n">version</span> <span class="o">=</span> <span class="mi">0</span>
+			<span class="n">length</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">+</span> <span class="mi">6</span>
+			<span class="k">if</span> <span class="n">length</span> <span class="o">&gt;=</span> <span class="mh">0x10000</span><span class="p">:</span>
+				<span class="n">log</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s1">&#39;&quot;kern&quot; subtable overflow, &#39;</span>
+							<span class="s1">&#39;truncating length value while preserving pairs.&#39;</span><span class="p">)</span>
+				<span class="n">length</span> <span class="o">&amp;=</span> <span class="mh">0xFFFF</span>
+			<span class="n">header</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span>
+				<span class="s2">&quot;&gt;HHBB&quot;</span><span class="p">,</span> <span class="n">version</span><span class="p">,</span> <span class="n">length</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">format</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">coverage</span><span class="p">)</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">tupleIndex</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+				<span class="c1"># sensible default when compiling a TTX from an old fonttools</span>
+				<span class="c1"># or when inserting a Windows-style format 0 subtable into an</span>
+				<span class="c1"># Apple version=1.0 kern table</span>
+				<span class="n">log</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;&#39;tupleIndex&#39; is None; default to 0&quot;</span><span class="p">)</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">tupleIndex</span> <span class="o">=</span> <span class="mi">0</span>
+			<span class="n">length</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">+</span> <span class="mi">8</span>
+			<span class="n">header</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span>
+				<span class="s2">&quot;&gt;LBBH&quot;</span><span class="p">,</span> <span class="n">length</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">coverage</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">format</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">tupleIndex</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">header</span> <span class="o">+</span> <span class="n">data</span></div>
+
+<div class="viewcode-block" id="KernTable_format_0.toXML"><a class="viewcode-back" href="../../../../ttLib/tables.html#fontTools.ttLib.tables._k_e_r_n.KernTable_format_0.toXML">[docs]</a>	<span class="k">def</span> <span class="nf">toXML</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">writer</span><span class="p">,</span> <span class="n">ttFont</span><span class="p">):</span>
+		<span class="n">attrs</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">coverage</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">coverage</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">format</span><span class="p">)</span>
+		<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">apple</span><span class="p">:</span>
+			<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">tupleIndex</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+				<span class="n">log</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;&#39;tupleIndex&#39; is None; default to 0&quot;</span><span class="p">)</span>
+				<span class="n">attrs</span><span class="p">[</span><span class="s2">&quot;tupleIndex&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="n">attrs</span><span class="p">[</span><span class="s2">&quot;tupleIndex&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">tupleIndex</span>
+		<span class="n">writer</span><span class="o">.</span><span class="n">begintag</span><span class="p">(</span><span class="s2">&quot;kernsubtable&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">attrs</span><span class="p">)</span>
+		<span class="n">writer</span><span class="o">.</span><span class="n">newline</span><span class="p">()</span>
+		<span class="n">items</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">kernTable</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
+		<span class="k">for</span> <span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">),</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">items</span><span class="p">:</span>
+			<span class="n">writer</span><span class="o">.</span><span class="n">simpletag</span><span class="p">(</span><span class="s2">&quot;pair&quot;</span><span class="p">,</span> <span class="p">[</span>
+				<span class="p">(</span><span class="s2">&quot;l&quot;</span><span class="p">,</span> <span class="n">left</span><span class="p">),</span>
+				<span class="p">(</span><span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">right</span><span class="p">),</span>
+				<span class="p">(</span><span class="s2">&quot;v&quot;</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+			<span class="p">])</span>
+			<span class="n">writer</span><span class="o">.</span><span class="n">newline</span><span class="p">()</span>
+		<span class="n">writer</span><span class="o">.</span><span class="n">endtag</span><span class="p">(</span><span class="s2">&quot;kernsubtable&quot;</span><span class="p">)</span>
+		<span class="n">writer</span><span class="o">.</span><span class="n">newline</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="KernTable_format_0.fromXML"><a class="viewcode-back" href="../../../../ttLib/tables.html#fontTools.ttLib.tables._k_e_r_n.KernTable_format_0.fromXML">[docs]</a>	<span class="k">def</span> <span class="nf">fromXML</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">attrs</span><span class="p">,</span> <span class="n">content</span><span class="p">,</span> <span class="n">ttFont</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">coverage</span> <span class="o">=</span> <span class="n">safeEval</span><span class="p">(</span><span class="n">attrs</span><span class="p">[</span><span class="s2">&quot;coverage&quot;</span><span class="p">])</span>
+		<span class="n">subtableFormat</span> <span class="o">=</span> <span class="n">safeEval</span><span class="p">(</span><span class="n">attrs</span><span class="p">[</span><span class="s2">&quot;format&quot;</span><span class="p">])</span>
+		<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">apple</span><span class="p">:</span>
+			<span class="k">if</span> <span class="s2">&quot;tupleIndex&quot;</span> <span class="ow">in</span> <span class="n">attrs</span><span class="p">:</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">tupleIndex</span> <span class="o">=</span> <span class="n">safeEval</span><span class="p">(</span><span class="n">attrs</span><span class="p">[</span><span class="s2">&quot;tupleIndex&quot;</span><span class="p">])</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="c1"># previous fontTools versions didn&#39;t export tupleIndex</span>
+				<span class="n">log</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+					<span class="s2">&quot;Apple kern subtable is missing &#39;tupleIndex&#39; attribute&quot;</span><span class="p">)</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">tupleIndex</span> <span class="o">=</span> <span class="kc">None</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">tupleIndex</span> <span class="o">=</span> <span class="kc">None</span>
+		<span class="k">assert</span> <span class="n">subtableFormat</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">format</span><span class="p">,</span> <span class="s2">&quot;unsupported format&quot;</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;kernTable&quot;</span><span class="p">):</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">kernTable</span> <span class="o">=</span> <span class="p">{}</span>
+		<span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">content</span><span class="p">:</span>
+			<span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">):</span>
+				<span class="k">continue</span>
+			<span class="n">name</span><span class="p">,</span> <span class="n">attrs</span><span class="p">,</span> <span class="n">content</span> <span class="o">=</span> <span class="n">element</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">kernTable</span><span class="p">[(</span><span class="n">attrs</span><span class="p">[</span><span class="s2">&quot;l&quot;</span><span class="p">],</span> <span class="n">attrs</span><span class="p">[</span><span class="s2">&quot;r&quot;</span><span class="p">])]</span> <span class="o">=</span> <span class="n">safeEval</span><span class="p">(</span><span class="n">attrs</span><span class="p">[</span><span class="s2">&quot;v&quot;</span><span class="p">])</span></div>
+
+	<span class="k">def</span> <span class="nf">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pair</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">kernTable</span><span class="p">[</span><span class="n">pair</span><span class="p">]</span>
+
+	<span class="k">def</span> <span class="nf">__setitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pair</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">kernTable</span><span class="p">[</span><span class="n">pair</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+
+	<span class="k">def</span> <span class="nf">__delitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pair</span><span class="p">):</span>
+		<span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">kernTable</span><span class="p">[</span><span class="n">pair</span><span class="p">]</span></div>
+
+
+<div class="viewcode-block" id="KernTable_format_unkown"><a class="viewcode-back" href="../../../../ttLib/tables.html#fontTools.ttLib.tables._k_e_r_n.KernTable_format_unkown">[docs]</a><span class="k">class</span> <span class="nc">KernTable_format_unkown</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">format</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">format</span> <span class="o">=</span> <span class="nb">format</span>
+
+<div class="viewcode-block" id="KernTable_format_unkown.decompile"><a class="viewcode-back" href="../../../../ttLib/tables.html#fontTools.ttLib.tables._k_e_r_n.KernTable_format_unkown.decompile">[docs]</a>	<span class="k">def</span> <span class="nf">decompile</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">ttFont</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span></div>
+
+<div class="viewcode-block" id="KernTable_format_unkown.compile"><a class="viewcode-back" href="../../../../ttLib/tables.html#fontTools.ttLib.tables._k_e_r_n.KernTable_format_unkown.compile">[docs]</a>	<span class="k">def</span> <span class="nf">compile</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ttFont</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span></div>
+
+<div class="viewcode-block" id="KernTable_format_unkown.toXML"><a class="viewcode-back" href="../../../../ttLib/tables.html#fontTools.ttLib.tables._k_e_r_n.KernTable_format_unkown.toXML">[docs]</a>	<span class="k">def</span> <span class="nf">toXML</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">writer</span><span class="p">,</span> <span class="n">ttFont</span><span class="p">):</span>
+		<span class="n">writer</span><span class="o">.</span><span class="n">begintag</span><span class="p">(</span><span class="s2">&quot;kernsubtable&quot;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">format</span><span class="p">)</span>
+		<span class="n">writer</span><span class="o">.</span><span class="n">newline</span><span class="p">()</span>
+		<span class="n">writer</span><span class="o">.</span><span class="n">comment</span><span class="p">(</span><span class="s2">&quot;unknown &#39;kern&#39; subtable format&quot;</span><span class="p">)</span>
+		<span class="n">writer</span><span class="o">.</span><span class="n">newline</span><span class="p">()</span>
+		<span class="n">writer</span><span class="o">.</span><span class="n">dumphex</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+		<span class="n">writer</span><span class="o">.</span><span class="n">endtag</span><span class="p">(</span><span class="s2">&quot;kernsubtable&quot;</span><span class="p">)</span>
+		<span class="n">writer</span><span class="o">.</span><span class="n">newline</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="KernTable_format_unkown.fromXML"><a class="viewcode-back" href="../../../../ttLib/tables.html#fontTools.ttLib.tables._k_e_r_n.KernTable_format_unkown.fromXML">[docs]</a>	<span class="k">def</span> <span class="nf">fromXML</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">attrs</span><span class="p">,</span> <span class="n">content</span><span class="p">,</span> <span class="n">ttFont</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">decompile</span><span class="p">(</span><span class="n">readHex</span><span class="p">(</span><span class="n">content</span><span class="p">),</span> <span class="n">ttFont</span><span class="p">)</span></div></div>
+
+
+<span class="n">kern_classes</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="n">KernTable_format_0</span><span class="p">}</span>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Just van Rossum, Behdad Esfahbod, and the fontTools Authors. CC BY-SA 4.0
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

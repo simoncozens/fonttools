@@ -1,0 +1,789 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>woff2 &mdash; fontTools Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="ttx" href="../ttx.html" />
+    <link rel="prev" title="ttFont" href="ttFont.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> fontTools
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Library</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../afmLib.html">afmLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../agl.html">agl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cffLib/index.html">cffLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../colorLib/index.html">colorLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cu2qu/index.html">cu2qu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../designspaceLib/index.html">designspaceLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../encodings/index.html">encodings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../feaLib/index.html">feaLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../merge.html">merge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/index.html">misc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mtiLib.html">mtiLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../otlLib/index.html">otlLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pens/index.html">pens</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../subset/index.html">subset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svgLib/index.html">svgLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../t1Lib.html">t1Lib</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">ttLib</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="macUtils.html">macUtils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sfnt.html">sfnt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="standardGlyphOrder.html">standardGlyphOrder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tables.html">tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ttCollection.html">ttCollection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ttFont.html">ttFont</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">woff2</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ttx.html">ttx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ufoLib/index.html">ufoLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unicode.html">unicode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unicodedata/index.html">unicodedata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../varLib/index.html">varLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../voltLib.html">voltLib</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">fontTools</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">ttLib</a> &raquo;</li>
+        
+      <li>woff2</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/ttLib/woff2.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-fontTools.ttLib.woff2">
+<span id="woff2"></span><h1>woff2<a class="headerlink" href="#module-fontTools.ttLib.woff2" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="fontTools.ttLib.woff2.WOFF2DirectoryEntry">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.ttLib.woff2.</code><code class="sig-name descname">WOFF2DirectoryEntry</code><a class="reference internal" href="../_modules/fontTools/ttLib/woff2.html#WOFF2DirectoryEntry"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ttLib.woff2.WOFF2DirectoryEntry" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.ttLib.woff2.WOFF2DirectoryEntry.decodeData">
+<code class="sig-name descname">decodeData</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">rawData</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.ttLib.woff2.WOFF2DirectoryEntry.decodeData" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ttLib.woff2.WOFF2DirectoryEntry.encodeData">
+<code class="sig-name descname">encodeData</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.ttLib.woff2.WOFF2DirectoryEntry.encodeData" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ttLib.woff2.WOFF2DirectoryEntry.fromFile">
+<code class="sig-name descname">fromFile</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">file</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ttLib/woff2.html#WOFF2DirectoryEntry.fromFile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ttLib.woff2.WOFF2DirectoryEntry.fromFile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ttLib.woff2.WOFF2DirectoryEntry.fromString">
+<code class="sig-name descname">fromString</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ttLib/woff2.html#WOFF2DirectoryEntry.fromString"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ttLib.woff2.WOFF2DirectoryEntry.fromString" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ttLib.woff2.WOFF2DirectoryEntry.loadData">
+<code class="sig-name descname">loadData</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">file</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.ttLib.woff2.WOFF2DirectoryEntry.loadData" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ttLib.woff2.WOFF2DirectoryEntry.saveData">
+<code class="sig-name descname">saveData</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">file</span></em>, <em class="sig-param"><span class="n">data</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.ttLib.woff2.WOFF2DirectoryEntry.saveData" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ttLib.woff2.WOFF2DirectoryEntry.toString">
+<code class="sig-name descname">toString</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ttLib/woff2.html#WOFF2DirectoryEntry.toString"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ttLib.woff2.WOFF2DirectoryEntry.toString" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ttLib.woff2.WOFF2DirectoryEntry.transformVersion">
+<em class="property">property </em><code class="sig-name descname">transformVersion</code><a class="headerlink" href="#fontTools.ttLib.woff2.WOFF2DirectoryEntry.transformVersion" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return bits 6-7 of table entry’s flags, which indicate the preprocessing
+transformation version number (between 0 and 3).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ttLib.woff2.WOFF2DirectoryEntry.transformed">
+<em class="property">property </em><code class="sig-name descname">transformed</code><a class="headerlink" href="#fontTools.ttLib.woff2.WOFF2DirectoryEntry.transformed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return True if the table has any transformation, else return False.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.ttLib.woff2.WOFF2FlavorData">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.ttLib.woff2.</code><code class="sig-name descname">WOFF2FlavorData</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">reader</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">data</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">transformedTables</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ttLib/woff2.html#WOFF2FlavorData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ttLib.woff2.WOFF2FlavorData" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py attribute">
+<dt id="fontTools.ttLib.woff2.WOFF2FlavorData.Flavor">
+<code class="sig-name descname">Flavor</code><em class="property"> = 'woff2'</em><a class="headerlink" href="#fontTools.ttLib.woff2.WOFF2FlavorData.Flavor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.ttLib.woff2.WOFF2GlyfTable">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.ttLib.woff2.</code><code class="sig-name descname">WOFF2GlyfTable</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ttLib/woff2.html#WOFF2GlyfTable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ttLib.woff2.WOFF2GlyfTable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decoder/Encoder for WOFF2 ‘glyf’ table transform.</p>
+<dl class="py method">
+<dt id="fontTools.ttLib.woff2.WOFF2GlyfTable.closure_glyphs">
+<code class="sig-name descname">closure_glyphs</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">s</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.ttLib.woff2.WOFF2GlyfTable.closure_glyphs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ttLib.woff2.WOFF2GlyfTable.compile">
+<code class="sig-name descname">compile</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ttFont</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.ttLib.woff2.WOFF2GlyfTable.compile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ttLib.woff2.WOFF2GlyfTable.decompile">
+<code class="sig-name descname">decompile</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">ttFont</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.ttLib.woff2.WOFF2GlyfTable.decompile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.ttLib.woff2.WOFF2GlyfTable.dependencies">
+<code class="sig-name descname">dependencies</code><em class="property"> = []</em><a class="headerlink" href="#fontTools.ttLib.woff2.WOFF2GlyfTable.dependencies" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ttLib.woff2.WOFF2GlyfTable.fromXML">
+<code class="sig-name descname">fromXML</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">attrs</span></em>, <em class="sig-param"><span class="n">content</span></em>, <em class="sig-param"><span class="n">ttFont</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.ttLib.woff2.WOFF2GlyfTable.fromXML" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ttLib.woff2.WOFF2GlyfTable.getCoordinatesAndControls">
+<code class="sig-name descname">getCoordinatesAndControls</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">glyphName</span></em>, <em class="sig-param"><span class="n">ttFont</span></em>, <em class="sig-param"><span class="n">defaultVerticalOrigin</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.ttLib.woff2.WOFF2GlyfTable.getCoordinatesAndControls" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return glyph coordinates and controls as expected by “gvar” table.</p>
+<p>The coordinates includes four “phantom points” for the glyph metrics,
+as mandated by the “gvar” spec.</p>
+<dl>
+<dt>The glyph controls is a namedtuple with the following attributes:</dt><dd><ul class="simple">
+<li><p>numberOfContours: -1 for composite glyphs.</p></li>
+<li><p>endPts: list of indices of end points for each contour in simple</p></li>
+</ul>
+<p>glyphs, or component indices in composite glyphs (used for IUP
+optimization).
+- flags: array of contour point flags for simple glyphs (None for
+composite glyphs).
+- components: list of base glyph names (str) for each component in
+composite glyphs (None for simple glyphs).</p>
+</dd>
+</dl>
+<p>The “ttFont” and “defaultVerticalOrigin” args are used to compute the
+“phantom points” (see “getPhantomPoints” method).</p>
+<p>Return None if the requested glyphName is not present.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ttLib.woff2.WOFF2GlyfTable.getGlyphID">
+<code class="sig-name descname">getGlyphID</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">glyphName</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.ttLib.woff2.WOFF2GlyfTable.getGlyphID" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ttLib.woff2.WOFF2GlyfTable.getGlyphName">
+<code class="sig-name descname">getGlyphName</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">glyphID</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.ttLib.woff2.WOFF2GlyfTable.getGlyphName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ttLib.woff2.WOFF2GlyfTable.getPhantomPoints">
+<code class="sig-name descname">getPhantomPoints</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">glyphName</span></em>, <em class="sig-param"><span class="n">ttFont</span></em>, <em class="sig-param"><span class="n">defaultVerticalOrigin</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.ttLib.woff2.WOFF2GlyfTable.getPhantomPoints" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the four “phantom points” for the given glyph from its bounding box
+and the horizontal and vertical advance widths and sidebearings stored in the
+ttFont’s “hmtx” and “vmtx” tables.</p>
+<p>If the ttFont doesn’t contain a “vmtx” table, the hhea.ascent is used as the
+vertical origin, and the head.unitsPerEm as the vertical advance.</p>
+<p>The “defaultVerticalOrigin” (Optional[int]) is needed when the ttFont contains
+neither a “vmtx” nor an “hhea” table, as may happen with ‘sparse’ masters.
+The value should be the hhea.ascent of the default master.</p>
+<p><a class="reference external" href="https://docs.microsoft.com/en-us/typography/opentype/spec/tt_instructing_glyphs#phantoms">https://docs.microsoft.com/en-us/typography/opentype/spec/tt_instructing_glyphs#phantoms</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ttLib.woff2.WOFF2GlyfTable.has_key">
+<code class="sig-name descname">has_key</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">glyphName</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.ttLib.woff2.WOFF2GlyfTable.has_key" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ttLib.woff2.WOFF2GlyfTable.keys">
+<code class="sig-name descname">keys</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.ttLib.woff2.WOFF2GlyfTable.keys" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ttLib.woff2.WOFF2GlyfTable.merge">
+<code class="sig-name descname">merge</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">m</span></em>, <em class="sig-param"><span class="n">tables</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.ttLib.woff2.WOFF2GlyfTable.merge" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.ttLib.woff2.WOFF2GlyfTable.mergeMap">
+<code class="sig-name descname">mergeMap</code><em class="property"> = {'glyphOrder': &lt;function sumLists&gt;, 'glyphs': &lt;function sumDicts&gt;, 'tableTag': &lt;function equal&gt;}</em><a class="headerlink" href="#fontTools.ttLib.woff2.WOFF2GlyfTable.mergeMap" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.ttLib.woff2.WOFF2GlyfTable.padding">
+<code class="sig-name descname">padding</code><em class="property"> = 1</em><a class="headerlink" href="#fontTools.ttLib.woff2.WOFF2GlyfTable.padding" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ttLib.woff2.WOFF2GlyfTable.prune_post_subset">
+<code class="sig-name descname">prune_post_subset</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">font</span></em>, <em class="sig-param"><span class="n">options</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.ttLib.woff2.WOFF2GlyfTable.prune_post_subset" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ttLib.woff2.WOFF2GlyfTable.prune_pre_subset">
+<code class="sig-name descname">prune_pre_subset</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">font</span></em>, <em class="sig-param"><span class="n">options</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.ttLib.woff2.WOFF2GlyfTable.prune_pre_subset" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ttLib.woff2.WOFF2GlyfTable.reconstruct">
+<code class="sig-name descname">reconstruct</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">ttFont</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ttLib/woff2.html#WOFF2GlyfTable.reconstruct"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ttLib.woff2.WOFF2GlyfTable.reconstruct" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decompile transformed ‘glyf’ data.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ttLib.woff2.WOFF2GlyfTable.removeHinting">
+<code class="sig-name descname">removeHinting</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.ttLib.woff2.WOFF2GlyfTable.removeHinting" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ttLib.woff2.WOFF2GlyfTable.setCoordinates">
+<code class="sig-name descname">setCoordinates</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">glyphName</span></em>, <em class="sig-param"><span class="n">coord</span></em>, <em class="sig-param"><span class="n">ttFont</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.ttLib.woff2.WOFF2GlyfTable.setCoordinates" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set coordinates and metrics for the given glyph.</p>
+<p>“coord” is an array of GlyphCoordinates which must include the “phantom
+points” as the last four coordinates.</p>
+<p>Both the horizontal/vertical advances and left/top sidebearings in “hmtx”
+and “vmtx” tables (if any) are updated from four phantom points and
+the glyph’s bounding boxes.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ttLib.woff2.WOFF2GlyfTable.setGlyphOrder">
+<code class="sig-name descname">setGlyphOrder</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">glyphOrder</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.ttLib.woff2.WOFF2GlyfTable.setGlyphOrder" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.ttLib.woff2.WOFF2GlyfTable.subStreams">
+<code class="sig-name descname">subStreams</code><em class="property"> = ('nContourStream', 'nPointsStream', 'flagStream', 'glyphStream', 'compositeStream', 'bboxStream', 'instructionStream')</em><a class="headerlink" href="#fontTools.ttLib.woff2.WOFF2GlyfTable.subStreams" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ttLib.woff2.WOFF2GlyfTable.subset_glyphs">
+<code class="sig-name descname">subset_glyphs</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">s</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.ttLib.woff2.WOFF2GlyfTable.subset_glyphs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ttLib.woff2.WOFF2GlyfTable.toXML">
+<code class="sig-name descname">toXML</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">writer</span></em>, <em class="sig-param"><span class="n">ttFont</span></em>, <em class="sig-param"><span class="n">splitGlyphs</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.ttLib.woff2.WOFF2GlyfTable.toXML" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ttLib.woff2.WOFF2GlyfTable.transform">
+<code class="sig-name descname">transform</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ttFont</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ttLib/woff2.html#WOFF2GlyfTable.transform"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ttLib.woff2.WOFF2GlyfTable.transform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return transformed ‘glyf’ data</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.ttLib.woff2.WOFF2HmtxTable">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.ttLib.woff2.</code><code class="sig-name descname">WOFF2HmtxTable</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ttLib/woff2.html#WOFF2HmtxTable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ttLib.woff2.WOFF2HmtxTable" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py attribute">
+<dt id="fontTools.ttLib.woff2.WOFF2HmtxTable.advanceName">
+<code class="sig-name descname">advanceName</code><em class="property"> = 'width'</em><a class="headerlink" href="#fontTools.ttLib.woff2.WOFF2HmtxTable.advanceName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ttLib.woff2.WOFF2HmtxTable.compile">
+<code class="sig-name descname">compile</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ttFont</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.ttLib.woff2.WOFF2HmtxTable.compile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ttLib.woff2.WOFF2HmtxTable.decompile">
+<code class="sig-name descname">decompile</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">ttFont</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.ttLib.woff2.WOFF2HmtxTable.decompile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.ttLib.woff2.WOFF2HmtxTable.dependencies">
+<code class="sig-name descname">dependencies</code><em class="property"> = []</em><a class="headerlink" href="#fontTools.ttLib.woff2.WOFF2HmtxTable.dependencies" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ttLib.woff2.WOFF2HmtxTable.fromXML">
+<code class="sig-name descname">fromXML</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">attrs</span></em>, <em class="sig-param"><span class="n">content</span></em>, <em class="sig-param"><span class="n">ttFont</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.ttLib.woff2.WOFF2HmtxTable.fromXML" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.ttLib.woff2.WOFF2HmtxTable.headerTag">
+<code class="sig-name descname">headerTag</code><em class="property"> = 'hhea'</em><a class="headerlink" href="#fontTools.ttLib.woff2.WOFF2HmtxTable.headerTag" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.ttLib.woff2.WOFF2HmtxTable.longMetricFormat">
+<code class="sig-name descname">longMetricFormat</code><em class="property"> = 'Hh'</em><a class="headerlink" href="#fontTools.ttLib.woff2.WOFF2HmtxTable.longMetricFormat" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ttLib.woff2.WOFF2HmtxTable.merge">
+<code class="sig-name descname">merge</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">m</span></em>, <em class="sig-param"><span class="n">tables</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.ttLib.woff2.WOFF2HmtxTable.merge" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.ttLib.woff2.WOFF2HmtxTable.mergeMap">
+<code class="sig-name descname">mergeMap</code><em class="property"> = {'metrics': &lt;function sumDicts&gt;, 'tableTag': &lt;function equal&gt;}</em><a class="headerlink" href="#fontTools.ttLib.woff2.WOFF2HmtxTable.mergeMap" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.ttLib.woff2.WOFF2HmtxTable.numberOfMetricsName">
+<code class="sig-name descname">numberOfMetricsName</code><em class="property"> = 'numberOfHMetrics'</em><a class="headerlink" href="#fontTools.ttLib.woff2.WOFF2HmtxTable.numberOfMetricsName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ttLib.woff2.WOFF2HmtxTable.reconstruct">
+<code class="sig-name descname">reconstruct</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">ttFont</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ttLib/woff2.html#WOFF2HmtxTable.reconstruct"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ttLib.woff2.WOFF2HmtxTable.reconstruct" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.ttLib.woff2.WOFF2HmtxTable.sideBearingName">
+<code class="sig-name descname">sideBearingName</code><em class="property"> = 'lsb'</em><a class="headerlink" href="#fontTools.ttLib.woff2.WOFF2HmtxTable.sideBearingName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ttLib.woff2.WOFF2HmtxTable.subset_glyphs">
+<code class="sig-name descname">subset_glyphs</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">s</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.ttLib.woff2.WOFF2HmtxTable.subset_glyphs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ttLib.woff2.WOFF2HmtxTable.toXML">
+<code class="sig-name descname">toXML</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">writer</span></em>, <em class="sig-param"><span class="n">ttFont</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.ttLib.woff2.WOFF2HmtxTable.toXML" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ttLib.woff2.WOFF2HmtxTable.transform">
+<code class="sig-name descname">transform</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ttFont</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ttLib/woff2.html#WOFF2HmtxTable.transform"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ttLib.woff2.WOFF2HmtxTable.transform" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.ttLib.woff2.WOFF2LocaTable">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.ttLib.woff2.</code><code class="sig-name descname">WOFF2LocaTable</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ttLib/woff2.html#WOFF2LocaTable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ttLib.woff2.WOFF2LocaTable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Same as parent class. The only difference is that it attempts to preserve
+the ‘indexFormat’ as encoded in the WOFF2 glyf table.</p>
+<dl class="py method">
+<dt id="fontTools.ttLib.woff2.WOFF2LocaTable.compile">
+<code class="sig-name descname">compile</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ttFont</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ttLib/woff2.html#WOFF2LocaTable.compile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ttLib.woff2.WOFF2LocaTable.compile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ttLib.woff2.WOFF2LocaTable.decompile">
+<code class="sig-name descname">decompile</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">ttFont</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.ttLib.woff2.WOFF2LocaTable.decompile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.ttLib.woff2.WOFF2LocaTable.dependencies">
+<code class="sig-name descname">dependencies</code><em class="property"> = ['glyf']</em><a class="headerlink" href="#fontTools.ttLib.woff2.WOFF2LocaTable.dependencies" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ttLib.woff2.WOFF2LocaTable.fromXML">
+<code class="sig-name descname">fromXML</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">attrs</span></em>, <em class="sig-param"><span class="n">content</span></em>, <em class="sig-param"><span class="n">ttFont</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.ttLib.woff2.WOFF2LocaTable.fromXML" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ttLib.woff2.WOFF2LocaTable.merge">
+<code class="sig-name descname">merge</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">m</span></em>, <em class="sig-param"><span class="n">tables</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.ttLib.woff2.WOFF2LocaTable.merge" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.ttLib.woff2.WOFF2LocaTable.mergeMap">
+<code class="sig-name descname">mergeMap</code><em class="property"> = {'*': &lt;function recalculate&gt;, 'tableTag': &lt;function equal&gt;}</em><a class="headerlink" href="#fontTools.ttLib.woff2.WOFF2LocaTable.mergeMap" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ttLib.woff2.WOFF2LocaTable.set">
+<code class="sig-name descname">set</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">locations</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.ttLib.woff2.WOFF2LocaTable.set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ttLib.woff2.WOFF2LocaTable.toXML">
+<code class="sig-name descname">toXML</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">writer</span></em>, <em class="sig-param"><span class="n">ttFont</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.ttLib.woff2.WOFF2LocaTable.toXML" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.ttLib.woff2.WOFF2Reader">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.ttLib.woff2.</code><code class="sig-name descname">WOFF2Reader</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">file</span></em>, <em class="sig-param"><span class="n">checkChecksums</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">fontNumber</span><span class="o">=</span><span class="default_value">- 1</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ttLib/woff2.html#WOFF2Reader"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ttLib.woff2.WOFF2Reader" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.ttLib.woff2.WOFF2Reader.close">
+<code class="sig-name descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.ttLib.woff2.WOFF2Reader.close" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.ttLib.woff2.WOFF2Reader.flavor">
+<code class="sig-name descname">flavor</code><em class="property"> = 'woff2'</em><a class="headerlink" href="#fontTools.ttLib.woff2.WOFF2Reader.flavor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ttLib.woff2.WOFF2Reader.has_key">
+<code class="sig-name descname">has_key</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.ttLib.woff2.WOFF2Reader.has_key" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ttLib.woff2.WOFF2Reader.keys">
+<code class="sig-name descname">keys</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.ttLib.woff2.WOFF2Reader.keys" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ttLib.woff2.WOFF2Reader.reconstructTable">
+<code class="sig-name descname">reconstructTable</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ttLib/woff2.html#WOFF2Reader.reconstructTable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ttLib.woff2.WOFF2Reader.reconstructTable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reconstruct table named ‘tag’ from transformed data.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.ttLib.woff2.WOFF2Writer">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.ttLib.woff2.</code><code class="sig-name descname">WOFF2Writer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">file</span></em>, <em class="sig-param"><span class="n">numTables</span></em>, <em class="sig-param"><span class="n">sfntVersion</span><span class="o">=</span><span class="default_value">'\x00\x01\x00\x00'</span></em>, <em class="sig-param"><span class="n">flavor</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">flavorData</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ttLib/woff2.html#WOFF2Writer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ttLib.woff2.WOFF2Writer" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.ttLib.woff2.WOFF2Writer.close">
+<code class="sig-name descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ttLib/woff2.html#WOFF2Writer.close"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ttLib.woff2.WOFF2Writer.close" title="Permalink to this definition">¶</a></dt>
+<dd><p>All tags must have been specified. Now write the table data and directory.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.ttLib.woff2.WOFF2Writer.flavor">
+<code class="sig-name descname">flavor</code><em class="property"> = 'woff2'</em><a class="headerlink" href="#fontTools.ttLib.woff2.WOFF2Writer.flavor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ttLib.woff2.WOFF2Writer.reordersTables">
+<code class="sig-name descname">reordersTables</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ttLib/woff2.html#WOFF2Writer.reordersTables"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ttLib.woff2.WOFF2Writer.reordersTables" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ttLib.woff2.WOFF2Writer.setEntry">
+<code class="sig-name descname">setEntry</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">entry</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.ttLib.woff2.WOFF2Writer.setEntry" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ttLib.woff2.WOFF2Writer.transformTable">
+<code class="sig-name descname">transformTable</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ttLib/woff2.html#WOFF2Writer.transformTable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ttLib.woff2.WOFF2Writer.transformTable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return transformed table data, or None if some pre-conditions aren’t
+met – in which case, the non-transformed table data will be used.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.ttLib.woff2.WOFF2Writer.writeMasterChecksum">
+<code class="sig-name descname">writeMasterChecksum</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ttLib/woff2.html#WOFF2Writer.writeMasterChecksum"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ttLib.woff2.WOFF2Writer.writeMasterChecksum" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write checkSumAdjustment to the transformBuffer.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.ttLib.woff2.base128Size">
+<code class="sig-prename descclassname">fontTools.ttLib.woff2.</code><code class="sig-name descname">base128Size</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">n</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ttLib/woff2.html#base128Size"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ttLib.woff2.base128Size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the length in bytes of a UIntBase128-encoded sequence with value n.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">base128Size</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="go">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">base128Size</span><span class="p">(</span><span class="mi">24567</span><span class="p">)</span>
+<span class="go">3</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">base128Size</span><span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="mi">32</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="go">5</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.ttLib.woff2.compress">
+<code class="sig-prename descclassname">fontTools.ttLib.woff2.</code><code class="sig-name descname">compress</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_file</span></em>, <em class="sig-param"><span class="n">output_file</span></em>, <em class="sig-param"><span class="n">transform_tables</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ttLib/woff2.html#compress"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ttLib.woff2.compress" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compress OpenType font to WOFF2.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>input_file</strong> – a file path, file or file-like object (open in binary mode)
+containing an OpenType font (either CFF- or TrueType-flavored).</p></li>
+<li><p><strong>output_file</strong> – a file path, file or file-like object where to save the
+compressed WOFF2 font.</p></li>
+<li><p><strong>transform_tables</strong> – Optional[Iterable[str]]: a set of table tags for which
+to enable preprocessing transformations. By default, only ‘glyf’
+and ‘loca’ tables are transformed. An empty set means disable all
+transformations.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.ttLib.woff2.decompress">
+<code class="sig-prename descclassname">fontTools.ttLib.woff2.</code><code class="sig-name descname">decompress</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_file</span></em>, <em class="sig-param"><span class="n">output_file</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ttLib/woff2.html#decompress"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ttLib.woff2.decompress" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decompress WOFF2 font to OpenType font.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>input_file</strong> – a file path, file or file-like object (open in binary mode)
+containing a compressed WOFF2 font.</p></li>
+<li><p><strong>output_file</strong> – a file path, file or file-like object where to save the
+decompressed OpenType font.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.ttLib.woff2.getKnownTagIndex">
+<code class="sig-prename descclassname">fontTools.ttLib.woff2.</code><code class="sig-name descname">getKnownTagIndex</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ttLib/woff2.html#getKnownTagIndex"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ttLib.woff2.getKnownTagIndex" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return index of ‘tag’ in woff2KnownTags list. Return 63 if not found.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.ttLib.woff2.main">
+<code class="sig-prename descclassname">fontTools.ttLib.woff2.</code><code class="sig-name descname">main</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">args</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ttLib/woff2.html#main"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ttLib.woff2.main" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.ttLib.woff2.pack255UShort">
+<code class="sig-prename descclassname">fontTools.ttLib.woff2.</code><code class="sig-name descname">pack255UShort</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ttLib/woff2.html#pack255UShort"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ttLib.woff2.pack255UShort" title="Permalink to this definition">¶</a></dt>
+<dd><p>Encode unsigned integer in range 0 to 65535 (inclusive) to a bytestring
+using 255UInt16 variable-length encoding.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pack255UShort</span><span class="p">(</span><span class="mi">252</span><span class="p">)</span> <span class="o">==</span> <span class="sa">b</span><span class="s1">&#39;</span><span class="se">\xfc</span><span class="s1">&#39;</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pack255UShort</span><span class="p">(</span><span class="mi">506</span><span class="p">)</span> <span class="o">==</span> <span class="sa">b</span><span class="s1">&#39;</span><span class="se">\xfe\x00</span><span class="s1">&#39;</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pack255UShort</span><span class="p">(</span><span class="mi">762</span><span class="p">)</span> <span class="o">==</span> <span class="sa">b</span><span class="s1">&#39;</span><span class="se">\xfd\x02\xfa</span><span class="s1">&#39;</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.ttLib.woff2.packBase128">
+<code class="sig-prename descclassname">fontTools.ttLib.woff2.</code><code class="sig-name descname">packBase128</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">n</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ttLib/woff2.html#packBase128"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ttLib.woff2.packBase128" title="Permalink to this definition">¶</a></dt>
+<dd><p>Encode unsigned integer in range 0 to 2**32-1 (inclusive) to a string of
+bytes using UIntBase128 variable-length encoding. Produce the shortest possible
+encoding.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">packBase128</span><span class="p">(</span><span class="mi">63</span><span class="p">)</span> <span class="o">==</span> <span class="sa">b</span><span class="s2">&quot;</span><span class="se">\x3f</span><span class="s2">&quot;</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">packBase128</span><span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="mi">32</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="sa">b</span><span class="s1">&#39;</span><span class="se">\x8f\xff\xff\xff\x7f</span><span class="s1">&#39;</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.ttLib.woff2.unpack255UShort">
+<code class="sig-prename descclassname">fontTools.ttLib.woff2.</code><code class="sig-name descname">unpack255UShort</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ttLib/woff2.html#unpack255UShort"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ttLib.woff2.unpack255UShort" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read one to three bytes from 255UInt16-encoded input string, and return a
+tuple containing the decoded integer plus any leftover data.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">unpack255UShort</span><span class="p">(</span><span class="n">bytechr</span><span class="p">(</span><span class="mi">252</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
+<span class="go">252</span>
+</pre></div>
+</div>
+<p>Note that some numbers (e.g. 506) can have multiple encodings:
+&gt;&gt;&gt; unpack255UShort(struct.pack(“BB”, 254, 0))[0]
+506
+&gt;&gt;&gt; unpack255UShort(struct.pack(“BB”, 255, 253))[0]
+506
+&gt;&gt;&gt; unpack255UShort(struct.pack(“BBB”, 253, 1, 250))[0]
+506</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.ttLib.woff2.unpackBase128">
+<code class="sig-prename descclassname">fontTools.ttLib.woff2.</code><code class="sig-name descname">unpackBase128</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/ttLib/woff2.html#unpackBase128"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.ttLib.woff2.unpackBase128" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read one to five bytes from UIntBase128-encoded input string, and return
+a tuple containing the decoded integer plus any leftover data.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">unpackBase128</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;</span><span class="se">\x3f\x00\x00</span><span class="s1">&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="p">(</span><span class="mi">63</span><span class="p">,</span> <span class="sa">b</span><span class="s2">&quot;</span><span class="se">\x00\x00</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">unpackBase128</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;</span><span class="se">\x8f\xff\xff\xff\x7f</span><span class="s1">&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="mi">4294967295</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">unpackBase128</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;</span><span class="se">\x80\x80\x3f</span><span class="s1">&#39;</span><span class="p">)</span>  
+<span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">?</span>
+<span class="gr">TTLibError</span>: <span class="n">UIntBase128 value must not start with leading zeros</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">unpackBase128</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;</span><span class="se">\x8f\xff\xff\xff\xff\x7f</span><span class="s1">&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>  
+<span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">?</span>
+<span class="gr">TTLibError</span>: <span class="n">UIntBase128-encoded sequence is longer than 5 bytes</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">unpackBase128</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;</span><span class="se">\x90\x80\x80\x80\x00</span><span class="s1">&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>  
+<span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">?</span>
+<span class="gr">TTLibError</span>: <span class="n">UIntBase128 value exceeds 2**32-1</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../ttx.html" class="btn btn-neutral float-right" title="ttx" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="ttFont.html" class="btn btn-neutral float-left" title="ttFont" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Just van Rossum, Behdad Esfahbod, and the fontTools Authors. CC BY-SA 4.0
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

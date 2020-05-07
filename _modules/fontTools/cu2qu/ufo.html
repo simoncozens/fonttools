@@ -1,0 +1,532 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>fontTools.cu2qu.ufo &mdash; fontTools Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> fontTools
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Library</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../afmLib.html">afmLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../agl.html">agl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cffLib/index.html">cffLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../colorLib/index.html">colorLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cu2qu/index.html">cu2qu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../designspaceLib/index.html">designspaceLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../encodings/index.html">encodings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../feaLib/index.html">feaLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../merge.html">merge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../misc/index.html">misc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../mtiLib.html">mtiLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../otlLib/index.html">otlLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pens/index.html">pens</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../subset/index.html">subset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../svgLib/index.html">svgLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../t1Lib.html">t1Lib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ttLib/index.html">ttLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ttx.html">ttx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ufoLib/index.html">ufoLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../unicode.html">unicode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../unicodedata/index.html">unicodedata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../varLib/index.html">varLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../voltLib.html">voltLib</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">fontTools</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>fontTools.cu2qu.ufo</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for fontTools.cu2qu.ufo</h1><div class="highlight"><pre>
+<span></span><span class="c1"># Copyright 2015 Google Inc. All Rights Reserved.</span>
+<span class="c1">#</span>
+<span class="c1"># Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span>
+<span class="c1"># you may not use this file except in compliance with the License.</span>
+<span class="c1"># You may obtain a copy of the License at</span>
+<span class="c1">#</span>
+<span class="c1">#     http://www.apache.org/licenses/LICENSE-2.0</span>
+<span class="c1">#</span>
+<span class="c1"># Unless required by applicable law or agreed to in writing, software</span>
+<span class="c1"># distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span>
+<span class="c1"># WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span>
+<span class="c1"># See the License for the specific language governing permissions and</span>
+<span class="c1"># limitations under the License.</span>
+
+
+<span class="sd">&quot;&quot;&quot;Converts cubic bezier curves to quadratic splines.</span>
+
+<span class="sd">Conversion is performed such that the quadratic splines keep the same end-curve</span>
+<span class="sd">tangents as the original cubics. The approach is iterative, increasing the</span>
+<span class="sd">number of segments for a spline until the error gets below a bound.</span>
+
+<span class="sd">Respective curves from multiple fonts will be converted at once to ensure that</span>
+<span class="sd">the resulting splines are interpolation-compatible.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">from</span> <span class="nn">fontTools.pens.basePen</span> <span class="k">import</span> <span class="n">AbstractPen</span>
+<span class="kn">from</span> <span class="nn">fontTools.pens.pointPen</span> <span class="k">import</span> <span class="n">PointToSegmentPen</span>
+<span class="kn">from</span> <span class="nn">fontTools.pens.reverseContourPen</span> <span class="k">import</span> <span class="n">ReverseContourPen</span>
+
+<span class="kn">from</span> <span class="nn">.</span> <span class="k">import</span> <span class="n">curves_to_quadratic</span>
+<span class="kn">from</span> <span class="nn">.errors</span> <span class="k">import</span> <span class="p">(</span>
+    <span class="n">UnequalZipLengthsError</span><span class="p">,</span> <span class="n">IncompatibleSegmentNumberError</span><span class="p">,</span>
+    <span class="n">IncompatibleSegmentTypesError</span><span class="p">,</span> <span class="n">IncompatibleGlyphsError</span><span class="p">,</span>
+    <span class="n">IncompatibleFontsError</span><span class="p">)</span>
+
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;fonts_to_quadratic&#39;</span><span class="p">,</span> <span class="s1">&#39;font_to_quadratic&#39;</span><span class="p">]</span>
+
+<span class="c1"># The default approximation error below is a relative value (1/1000 of the EM square).</span>
+<span class="c1"># Later on, we convert it to absolute font units by multiplying it by a font&#39;s UPEM</span>
+<span class="c1"># (see fonts_to_quadratic).</span>
+<span class="n">DEFAULT_MAX_ERR</span> <span class="o">=</span> <span class="mf">0.001</span>
+<span class="n">CURVE_TYPE_LIB_KEY</span> <span class="o">=</span> <span class="s2">&quot;com.github.googlei18n.cu2qu.curve_type&quot;</span>
+
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+
+<span class="n">_zip</span> <span class="o">=</span> <span class="nb">zip</span>
+<span class="k">def</span> <span class="nf">zip</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Ensure each argument to zip has the same length. Also make sure a list is</span>
+<span class="sd">    returned for python 2/3 compatibility.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">args</span><span class="p">))</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">UnequalZipLengthsError</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="n">_zip</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">))</span>
+
+
+<span class="k">class</span> <span class="nc">GetSegmentsPen</span><span class="p">(</span><span class="n">AbstractPen</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Pen to collect segments into lists of points for conversion.</span>
+
+<span class="sd">    Curves always include their initial on-curve point, so some points are</span>
+<span class="sd">    duplicated between segments.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_last_pt</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">segments</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">def</span> <span class="nf">_add_segment</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tag</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">tag</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;move&#39;</span><span class="p">,</span> <span class="s1">&#39;line&#39;</span><span class="p">,</span> <span class="s1">&#39;qcurve&#39;</span><span class="p">,</span> <span class="s1">&#39;curve&#39;</span><span class="p">]:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_last_pt</span> <span class="o">=</span> <span class="n">args</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">segments</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">tag</span><span class="p">,</span> <span class="n">args</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">moveTo</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pt</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_add_segment</span><span class="p">(</span><span class="s1">&#39;move&#39;</span><span class="p">,</span> <span class="n">pt</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">lineTo</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pt</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_add_segment</span><span class="p">(</span><span class="s1">&#39;line&#39;</span><span class="p">,</span> <span class="n">pt</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">qCurveTo</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">points</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_add_segment</span><span class="p">(</span><span class="s1">&#39;qcurve&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_last_pt</span><span class="p">,</span> <span class="o">*</span><span class="n">points</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">curveTo</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">points</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_add_segment</span><span class="p">(</span><span class="s1">&#39;curve&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_last_pt</span><span class="p">,</span> <span class="o">*</span><span class="n">points</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">closePath</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_add_segment</span><span class="p">(</span><span class="s1">&#39;close&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">endPath</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_add_segment</span><span class="p">(</span><span class="s1">&#39;end&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">addComponent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">glyphName</span><span class="p">,</span> <span class="n">transformation</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+
+<span class="k">def</span> <span class="nf">_get_segments</span><span class="p">(</span><span class="n">glyph</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Get a glyph&#39;s segments as extracted by GetSegmentsPen.&quot;&quot;&quot;</span>
+
+    <span class="n">pen</span> <span class="o">=</span> <span class="n">GetSegmentsPen</span><span class="p">()</span>
+    <span class="c1"># glyph.draw(pen)</span>
+    <span class="c1"># We can&#39;t simply draw the glyph with the pen, but we must initialize the</span>
+    <span class="c1"># PointToSegmentPen explicitly with outputImpliedClosingLine=True.</span>
+    <span class="c1"># By default PointToSegmentPen does not outputImpliedClosingLine -- unless</span>
+    <span class="c1"># last and first point on closed contour are duplicated. Because we are</span>
+    <span class="c1"># converting multiple glyphs at the same time, we want to make sure</span>
+    <span class="c1"># this function returns the same number of segments, whether or not</span>
+    <span class="c1"># the last and first point overlap.</span>
+    <span class="c1"># https://github.com/googlefonts/fontmake/issues/572</span>
+    <span class="c1"># https://github.com/fonttools/fonttools/pull/1720</span>
+    <span class="n">pointPen</span> <span class="o">=</span> <span class="n">PointToSegmentPen</span><span class="p">(</span><span class="n">pen</span><span class="p">,</span> <span class="n">outputImpliedClosingLine</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">glyph</span><span class="o">.</span><span class="n">drawPoints</span><span class="p">(</span><span class="n">pointPen</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">pen</span><span class="o">.</span><span class="n">segments</span>
+
+
+<span class="k">def</span> <span class="nf">_set_segments</span><span class="p">(</span><span class="n">glyph</span><span class="p">,</span> <span class="n">segments</span><span class="p">,</span> <span class="n">reverse_direction</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Draw segments as extracted by GetSegmentsPen back to a glyph.&quot;&quot;&quot;</span>
+
+    <span class="n">glyph</span><span class="o">.</span><span class="n">clearContours</span><span class="p">()</span>
+    <span class="n">pen</span> <span class="o">=</span> <span class="n">glyph</span><span class="o">.</span><span class="n">getPen</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">reverse_direction</span><span class="p">:</span>
+        <span class="n">pen</span> <span class="o">=</span> <span class="n">ReverseContourPen</span><span class="p">(</span><span class="n">pen</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">tag</span><span class="p">,</span> <span class="n">args</span> <span class="ow">in</span> <span class="n">segments</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">tag</span> <span class="o">==</span> <span class="s1">&#39;move&#39;</span><span class="p">:</span>
+            <span class="n">pen</span><span class="o">.</span><span class="n">moveTo</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">tag</span> <span class="o">==</span> <span class="s1">&#39;line&#39;</span><span class="p">:</span>
+            <span class="n">pen</span><span class="o">.</span><span class="n">lineTo</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">tag</span> <span class="o">==</span> <span class="s1">&#39;curve&#39;</span><span class="p">:</span>
+            <span class="n">pen</span><span class="o">.</span><span class="n">curveTo</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
+        <span class="k">elif</span> <span class="n">tag</span> <span class="o">==</span> <span class="s1">&#39;qcurve&#39;</span><span class="p">:</span>
+            <span class="n">pen</span><span class="o">.</span><span class="n">qCurveTo</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
+        <span class="k">elif</span> <span class="n">tag</span> <span class="o">==</span> <span class="s1">&#39;close&#39;</span><span class="p">:</span>
+            <span class="n">pen</span><span class="o">.</span><span class="n">closePath</span><span class="p">()</span>
+        <span class="k">elif</span> <span class="n">tag</span> <span class="o">==</span> <span class="s1">&#39;end&#39;</span><span class="p">:</span>
+            <span class="n">pen</span><span class="o">.</span><span class="n">endPath</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">AssertionError</span><span class="p">(</span><span class="s1">&#39;Unhandled segment type &quot;</span><span class="si">%s</span><span class="s1">&quot;&#39;</span> <span class="o">%</span> <span class="n">tag</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">_segments_to_quadratic</span><span class="p">(</span><span class="n">segments</span><span class="p">,</span> <span class="n">max_err</span><span class="p">,</span> <span class="n">stats</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Return quadratic approximations of cubic segments.&quot;&quot;&quot;</span>
+
+    <span class="k">assert</span> <span class="nb">all</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;curve&#39;</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">segments</span><span class="p">),</span> <span class="s1">&#39;Non-cubic given to convert&#39;</span>
+
+    <span class="n">new_points</span> <span class="o">=</span> <span class="n">curves_to_quadratic</span><span class="p">([</span><span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">segments</span><span class="p">],</span> <span class="n">max_err</span><span class="p">)</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">new_points</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="k">assert</span> <span class="nb">all</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">==</span> <span class="n">n</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">new_points</span><span class="p">[</span><span class="mi">1</span><span class="p">:]),</span> <span class="s1">&#39;Converted incompatibly&#39;</span>
+
+    <span class="n">spline_length</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="n">stats</span><span class="p">[</span><span class="n">spline_length</span><span class="p">]</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">spline_length</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+
+    <span class="k">return</span> <span class="p">[(</span><span class="s1">&#39;qcurve&#39;</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">new_points</span><span class="p">]</span>
+
+
+<span class="k">def</span> <span class="nf">_glyphs_to_quadratic</span><span class="p">(</span><span class="n">glyphs</span><span class="p">,</span> <span class="n">max_err</span><span class="p">,</span> <span class="n">reverse_direction</span><span class="p">,</span> <span class="n">stats</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Do the actual conversion of a set of compatible glyphs, after arguments</span>
+<span class="sd">    have been set up.</span>
+
+<span class="sd">    Return True if the glyphs were modified, else return False.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">segments_by_location</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="p">[</span><span class="n">_get_segments</span><span class="p">(</span><span class="n">g</span><span class="p">)</span> <span class="k">for</span> <span class="n">g</span> <span class="ow">in</span> <span class="n">glyphs</span><span class="p">])</span>
+    <span class="k">except</span> <span class="n">UnequalZipLengthsError</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">IncompatibleSegmentNumberError</span><span class="p">(</span><span class="n">glyphs</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">any</span><span class="p">(</span><span class="n">segments_by_location</span><span class="p">):</span>
+        <span class="k">return</span> <span class="kc">False</span>
+
+    <span class="c1"># always modify input glyphs if reverse_direction is True</span>
+    <span class="n">glyphs_modified</span> <span class="o">=</span> <span class="n">reverse_direction</span>
+
+    <span class="n">new_segments_by_location</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">incompatible</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">segments</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">segments_by_location</span><span class="p">):</span>
+        <span class="n">tag</span> <span class="o">=</span> <span class="n">segments</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">all</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">tag</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">segments</span><span class="p">[</span><span class="mi">1</span><span class="p">:]):</span>
+            <span class="n">incompatible</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">segments</span><span class="p">]</span>
+        <span class="k">elif</span> <span class="n">tag</span> <span class="o">==</span> <span class="s1">&#39;curve&#39;</span><span class="p">:</span>
+            <span class="n">segments</span> <span class="o">=</span> <span class="n">_segments_to_quadratic</span><span class="p">(</span><span class="n">segments</span><span class="p">,</span> <span class="n">max_err</span><span class="p">,</span> <span class="n">stats</span><span class="p">)</span>
+            <span class="n">glyphs_modified</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="n">new_segments_by_location</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">segments</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">glyphs_modified</span><span class="p">:</span>
+        <span class="n">new_segments_by_glyph</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">new_segments_by_location</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">glyph</span><span class="p">,</span> <span class="n">new_segments</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">glyphs</span><span class="p">,</span> <span class="n">new_segments_by_glyph</span><span class="p">):</span>
+            <span class="n">_set_segments</span><span class="p">(</span><span class="n">glyph</span><span class="p">,</span> <span class="n">new_segments</span><span class="p">,</span> <span class="n">reverse_direction</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">incompatible</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">IncompatibleSegmentTypesError</span><span class="p">(</span><span class="n">glyphs</span><span class="p">,</span> <span class="n">segments</span><span class="o">=</span><span class="n">incompatible</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">glyphs_modified</span>
+
+
+<span class="k">def</span> <span class="nf">glyphs_to_quadratic</span><span class="p">(</span>
+        <span class="n">glyphs</span><span class="p">,</span> <span class="n">max_err</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">reverse_direction</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">stats</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Convert the curves of a set of compatible of glyphs to quadratic.</span>
+
+<span class="sd">    All curves will be converted to quadratic at once, ensuring interpolation</span>
+<span class="sd">    compatibility. If this is not required, calling glyphs_to_quadratic with one</span>
+<span class="sd">    glyph at a time may yield slightly more optimized results.</span>
+
+<span class="sd">    Return True if glyphs were modified, else return False.</span>
+
+<span class="sd">    Raises IncompatibleGlyphsError if glyphs have non-interpolatable outlines.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">stats</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">stats</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">max_err</span><span class="p">:</span>
+        <span class="c1"># assume 1000 is the default UPEM</span>
+        <span class="n">max_err</span> <span class="o">=</span> <span class="n">DEFAULT_MAX_ERR</span> <span class="o">*</span> <span class="mi">1000</span>
+
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">max_err</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)):</span>
+        <span class="n">max_errors</span> <span class="o">=</span> <span class="n">max_err</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">max_errors</span> <span class="o">=</span> <span class="p">[</span><span class="n">max_err</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">glyphs</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">max_errors</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">glyphs</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">_glyphs_to_quadratic</span><span class="p">(</span><span class="n">glyphs</span><span class="p">,</span> <span class="n">max_errors</span><span class="p">,</span> <span class="n">reverse_direction</span><span class="p">,</span> <span class="n">stats</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="fonts_to_quadratic"><a class="viewcode-back" href="../../../cu2qu/ufo.html#fontTools.cu2qu.ufo.fonts_to_quadratic">[docs]</a><span class="k">def</span> <span class="nf">fonts_to_quadratic</span><span class="p">(</span>
+        <span class="n">fonts</span><span class="p">,</span> <span class="n">max_err_em</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">max_err</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">reverse_direction</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">stats</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dump_stats</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">remember_curve_type</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Convert the curves of a collection of fonts to quadratic.</span>
+
+<span class="sd">    All curves will be converted to quadratic at once, ensuring interpolation</span>
+<span class="sd">    compatibility. If this is not required, calling fonts_to_quadratic with one</span>
+<span class="sd">    font at a time may yield slightly more optimized results.</span>
+
+<span class="sd">    Return True if fonts were modified, else return False.</span>
+
+<span class="sd">    By default, cu2qu stores the curve type in the fonts&#39; lib, under a private</span>
+<span class="sd">    key &quot;com.github.googlei18n.cu2qu.curve_type&quot;, and will not try to convert</span>
+<span class="sd">    them again if the curve type is already set to &quot;quadratic&quot;.</span>
+<span class="sd">    Setting &#39;remember_curve_type&#39; to False disables this optimization.</span>
+
+<span class="sd">    Raises IncompatibleFontsError if same-named glyphs from different fonts</span>
+<span class="sd">    have non-interpolatable outlines.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="n">remember_curve_type</span><span class="p">:</span>
+        <span class="n">curve_types</span> <span class="o">=</span> <span class="p">{</span><span class="n">f</span><span class="o">.</span><span class="n">lib</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">CURVE_TYPE_LIB_KEY</span><span class="p">,</span> <span class="s2">&quot;cubic&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">fonts</span><span class="p">}</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">curve_types</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">curve_type</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="nb">iter</span><span class="p">(</span><span class="n">curve_types</span><span class="p">))</span>
+            <span class="k">if</span> <span class="n">curve_type</span> <span class="o">==</span> <span class="s2">&quot;quadratic&quot;</span><span class="p">:</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Curves already converted to quadratic&quot;</span><span class="p">)</span>
+                <span class="k">return</span> <span class="kc">False</span>
+            <span class="k">elif</span> <span class="n">curve_type</span> <span class="o">==</span> <span class="s2">&quot;cubic&quot;</span><span class="p">:</span>
+                <span class="k">pass</span>  <span class="c1"># keep converting</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="n">curve_type</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">curve_types</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="c1"># going to crash later if they do differ</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;fonts may contain different curve types&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">stats</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">stats</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="k">if</span> <span class="n">max_err_em</span> <span class="ow">and</span> <span class="n">max_err</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s1">&#39;Only one of max_err and max_err_em can be specified.&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">max_err_em</span> <span class="ow">or</span> <span class="n">max_err</span><span class="p">):</span>
+        <span class="n">max_err_em</span> <span class="o">=</span> <span class="n">DEFAULT_MAX_ERR</span>
+
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">max_err</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)):</span>
+        <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">max_err</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">fonts</span><span class="p">)</span>
+        <span class="n">max_errors</span> <span class="o">=</span> <span class="n">max_err</span>
+    <span class="k">elif</span> <span class="n">max_err</span><span class="p">:</span>
+        <span class="n">max_errors</span> <span class="o">=</span> <span class="p">[</span><span class="n">max_err</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">fonts</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">max_err_em</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)):</span>
+        <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">fonts</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">max_err_em</span><span class="p">)</span>
+        <span class="n">max_errors</span> <span class="o">=</span> <span class="p">[</span><span class="n">f</span><span class="o">.</span><span class="n">info</span><span class="o">.</span><span class="n">unitsPerEm</span> <span class="o">*</span> <span class="n">e</span>
+                      <span class="k">for</span> <span class="n">f</span><span class="p">,</span> <span class="n">e</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">fonts</span><span class="p">,</span> <span class="n">max_err_em</span><span class="p">)]</span>
+    <span class="k">elif</span> <span class="n">max_err_em</span><span class="p">:</span>
+        <span class="n">max_errors</span> <span class="o">=</span> <span class="p">[</span><span class="n">f</span><span class="o">.</span><span class="n">info</span><span class="o">.</span><span class="n">unitsPerEm</span> <span class="o">*</span> <span class="n">max_err_em</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">fonts</span><span class="p">]</span>
+
+    <span class="n">modified</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">glyph_errors</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="nb">set</span><span class="p">()</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="o">*</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">fonts</span><span class="p">)):</span>
+        <span class="n">glyphs</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">cur_max_errors</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">font</span><span class="p">,</span> <span class="n">error</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">fonts</span><span class="p">,</span> <span class="n">max_errors</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">font</span><span class="p">:</span>
+                <span class="n">glyphs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">font</span><span class="p">[</span><span class="n">name</span><span class="p">])</span>
+                <span class="n">cur_max_errors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">error</span><span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">modified</span> <span class="o">|=</span> <span class="n">_glyphs_to_quadratic</span><span class="p">(</span>
+                <span class="n">glyphs</span><span class="p">,</span> <span class="n">cur_max_errors</span><span class="p">,</span> <span class="n">reverse_direction</span><span class="p">,</span> <span class="n">stats</span><span class="p">)</span>
+        <span class="k">except</span> <span class="n">IncompatibleGlyphsError</span> <span class="k">as</span> <span class="n">exc</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">exc</span><span class="p">)</span>
+            <span class="n">glyph_errors</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">exc</span>
+
+    <span class="k">if</span> <span class="n">glyph_errors</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">IncompatibleFontsError</span><span class="p">(</span><span class="n">glyph_errors</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">modified</span> <span class="ow">and</span> <span class="n">dump_stats</span><span class="p">:</span>
+        <span class="n">spline_lengths</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">stats</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;New spline lengths: </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+                    <span class="s1">&#39;</span><span class="si">%s</span><span class="s1">: </span><span class="si">%d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="n">stats</span><span class="p">[</span><span class="n">l</span><span class="p">])</span> <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">spline_lengths</span><span class="p">)))</span>
+
+    <span class="k">if</span> <span class="n">remember_curve_type</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">font</span> <span class="ow">in</span> <span class="n">fonts</span><span class="p">:</span>
+            <span class="n">curve_type</span> <span class="o">=</span> <span class="n">font</span><span class="o">.</span><span class="n">lib</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">CURVE_TYPE_LIB_KEY</span><span class="p">,</span> <span class="s2">&quot;cubic&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">curve_type</span> <span class="o">!=</span> <span class="s2">&quot;quadratic&quot;</span><span class="p">:</span>
+                <span class="n">font</span><span class="o">.</span><span class="n">lib</span><span class="p">[</span><span class="n">CURVE_TYPE_LIB_KEY</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;quadratic&quot;</span>
+                <span class="n">modified</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="k">return</span> <span class="n">modified</span></div>
+
+
+<span class="k">def</span> <span class="nf">glyph_to_quadratic</span><span class="p">(</span><span class="n">glyph</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Convenience wrapper around glyphs_to_quadratic, for just one glyph.</span>
+<span class="sd">    Return True if the glyph was modified, else return False.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="n">glyphs_to_quadratic</span><span class="p">([</span><span class="n">glyph</span><span class="p">],</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="font_to_quadratic"><a class="viewcode-back" href="../../../cu2qu/ufo.html#fontTools.cu2qu.ufo.font_to_quadratic">[docs]</a><span class="k">def</span> <span class="nf">font_to_quadratic</span><span class="p">(</span><span class="n">font</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Convenience wrapper around fonts_to_quadratic, for just one font.</span>
+<span class="sd">    Return True if the font was modified, else return False.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="n">fonts_to_quadratic</span><span class="p">([</span><span class="n">font</span><span class="p">],</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Just van Rossum, Behdad Esfahbod, and the fontTools Authors. CC BY-SA 4.0
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

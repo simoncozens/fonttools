@@ -1,0 +1,819 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>etree &mdash; fontTools Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="filenames" href="filenames.html" />
+    <link rel="prev" title="encodingTools" href="encodingTools.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> fontTools
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Library</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../afmLib.html">afmLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../agl.html">agl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cffLib/index.html">cffLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../colorLib/index.html">colorLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cu2qu/index.html">cu2qu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../designspaceLib/index.html">designspaceLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../encodings/index.html">encodings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../feaLib/index.html">feaLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../merge.html">merge</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">misc</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="arrayTools.html">arrayTools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bezierTools.html">bezierTools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classifyTools.html">classifyTools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cliTools.html">cliTools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eexec.html">eexec</a></li>
+<li class="toctree-l2"><a class="reference internal" href="encodingTools.html">encodingTools</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">etree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="filenames.html">filenames</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fixedTools.html">fixedTools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intTools.html">intTools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="loggingTools.html">loggingTools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="macCreatorType.html">macCreatorType</a></li>
+<li class="toctree-l2"><a class="reference internal" href="macRes.html">macRes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psCharStrings.html">psCharStrings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psLib.html">psLib</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psOperators.html">psOperators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="py23.html">py23</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sstruct.html">sstruct</a></li>
+<li class="toctree-l2"><a class="reference internal" href="symfont.html">symfont</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testTools.html">testTools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="textTools.html">textTools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="timeTools.html">timeTools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transform.html">transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xmlReader.html">xmlReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xmlWriter.html">xmlWriter</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../mtiLib.html">mtiLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../otlLib/index.html">otlLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pens/index.html">pens</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../subset/index.html">subset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svgLib/index.html">svgLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../t1Lib.html">t1Lib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ttLib/index.html">ttLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ttx.html">ttx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ufoLib/index.html">ufoLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unicode.html">unicode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unicodedata/index.html">unicodedata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../varLib/index.html">varLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../voltLib.html">voltLib</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">fontTools</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">misc</a> &raquo;</li>
+        
+      <li>etree</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/misc/etree.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-fontTools.misc.etree">
+<span id="etree"></span><h1>etree<a class="headerlink" href="#module-fontTools.misc.etree" title="Permalink to this headline">¶</a></h1>
+<p>Shim module exporting the same ElementTree API for lxml and
+xml.etree backends.</p>
+<p>When lxml is installed, it is automatically preferred over the built-in
+xml.etree module.
+On Python 2.7, the cElementTree module is preferred over the pure-python
+ElementTree module.</p>
+<p>Besides exporting a unified interface, this also defines extra functions
+or subclasses built-in ElementTree classes to add features that are
+only availble in lxml, like OrderedDict for attributes, pretty_print and
+iterwalk.</p>
+<dl class="py function">
+<dt id="fontTools.misc.etree.Comment">
+<code class="sig-prename descclassname">fontTools.misc.etree.</code><code class="sig-name descname">Comment</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.etree.Comment" title="Permalink to this definition">¶</a></dt>
+<dd><p>Comment element factory. This factory function creates a special element that will
+be serialized as an XML comment.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.misc.etree.dump">
+<code class="sig-prename descclassname">fontTools.misc.etree.</code><code class="sig-name descname">dump</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">elem</span></em>, <em class="sig-param"><span class="n">pretty_print</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">with_tail</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.etree.dump" title="Permalink to this definition">¶</a></dt>
+<dd><p>Writes an element tree or element structure to sys.stdout. This function
+should be used for debugging only.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.misc.etree.Element">
+<code class="sig-prename descclassname">fontTools.misc.etree.</code><code class="sig-name descname">Element</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">_tag</span></em>, <em class="sig-param"><span class="n">attrib</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">nsmap</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">_extra</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.etree.Element" title="Permalink to this definition">¶</a></dt>
+<dd><p>Element factory.  This function returns an object implementing the
+Element interface.</p>
+<p>Also look at the <cite>_Element.makeelement()</cite> and
+<cite>_BaseParser.makeelement()</cite> methods, which provide a faster way to
+create an Element within a specific document or parser context.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.misc.etree.ElementTree">
+<code class="sig-prename descclassname">fontTools.misc.etree.</code><code class="sig-name descname">ElementTree</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">element</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">file</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">parser</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.etree.ElementTree" title="Permalink to this definition">¶</a></dt>
+<dd><p>ElementTree wrapper class.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.misc.etree.fromstring">
+<code class="sig-prename descclassname">fontTools.misc.etree.</code><code class="sig-name descname">fromstring</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text</span></em>, <em class="sig-param"><span class="n">parser</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">base_url</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.etree.fromstring" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parses an XML document or fragment from a string.  Returns the
+root node (or the result returned by a parser target).</p>
+<p>To override the default parser with a different parser you can pass it to
+the <code class="docutils literal notranslate"><span class="pre">parser</span></code> keyword argument.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">base_url</span></code> keyword argument allows to set the original base URL of
+the document to support relative Paths when looking up external entities
+(DTD, XInclude, …).</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.misc.etree.fromstringlist">
+<code class="sig-prename descclassname">fontTools.misc.etree.</code><code class="sig-name descname">fromstringlist</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">strings</span></em>, <em class="sig-param"><span class="n">parser</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.etree.fromstringlist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parses an XML document from a sequence of strings.  Returns the
+root node (or the result returned by a parser target).</p>
+<p>To override the default parser with a different parser you can pass it to
+the <code class="docutils literal notranslate"><span class="pre">parser</span></code> keyword argument.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.misc.etree.iselement">
+<code class="sig-prename descclassname">fontTools.misc.etree.</code><code class="sig-name descname">iselement</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">element</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.etree.iselement" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks if an object appears to be a valid element object.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.misc.etree.iterparse">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.misc.etree.</code><code class="sig-name descname">iterparse</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">source</span></em>, <em class="sig-param"><span class="n">events</span><span class="o">=</span><span class="default_value">'end'</span></em>, <em class="sig-param"><span class="n">tag</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">attribute_defaults</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">dtd_validation</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">load_dtd</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">no_network</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">remove_blank_text</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">remove_comments</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">remove_pis</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">encoding</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">html</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">recover</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">huge_tree</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">schema</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.etree.iterparse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Incremental parser.</p>
+<p>Parses XML into a tree and generates tuples (event, element) in a
+SAX-like fashion. <code class="docutils literal notranslate"><span class="pre">event</span></code> is any of ‘start’, ‘end’, ‘start-ns’,
+‘end-ns’.</p>
+<p>For ‘start’ and ‘end’, <code class="docutils literal notranslate"><span class="pre">element</span></code> is the Element that the parser just
+found opening or closing.  For ‘start-ns’, it is a tuple (prefix, URI) of
+a new namespace declaration.  For ‘end-ns’, it is simply None.  Note that
+all start and end events are guaranteed to be properly nested.</p>
+<p>The keyword argument <code class="docutils literal notranslate"><span class="pre">events</span></code> specifies a sequence of event type names
+that should be generated.  By default, only ‘end’ events will be
+generated.</p>
+<p>The additional <code class="docutils literal notranslate"><span class="pre">tag</span></code> argument restricts the ‘start’ and ‘end’ events to
+those elements that match the given tag.  The <code class="docutils literal notranslate"><span class="pre">tag</span></code> argument can also be
+a sequence of tags to allow matching more than one tag.  By default,
+events are generated for all elements.  Note that the ‘start-ns’ and
+‘end-ns’ events are not impacted by this restriction.</p>
+<p>The other keyword arguments in the constructor are mainly based on the
+libxml2 parser configuration.  A DTD will also be loaded if validation or
+attribute default values are requested.</p>
+<dl class="simple">
+<dt>Available boolean keyword arguments:</dt><dd><ul class="simple">
+<li><p>attribute_defaults: read default attributes from DTD</p></li>
+<li><p>dtd_validation: validate (if DTD is available)</p></li>
+<li><p>load_dtd: use DTD for parsing</p></li>
+<li><p>no_network: prevent network access for related files</p></li>
+<li><p>remove_blank_text: discard blank text nodes</p></li>
+<li><p>remove_comments: discard comments</p></li>
+<li><p>remove_pis: discard processing instructions</p></li>
+<li><p>strip_cdata: replace CDATA sections by normal text content (default: True)</p></li>
+<li><p>compact: safe memory for short text content (default: True)</p></li>
+<li><p>resolve_entities: replace entities by their text value (default: True)</p></li>
+<li><dl class="simple">
+<dt>huge_tree: disable security restrictions and support very deep trees</dt><dd><p>and very long text content (only affects libxml2 2.7+)</p>
+</dd>
+</dl>
+</li>
+<li><p>html: parse input as HTML (default: XML)</p></li>
+<li><dl class="simple">
+<dt>recover: try hard to parse through broken input (default: True for HTML,</dt><dd><p>False otherwise)</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+<dt>Other keyword arguments:</dt><dd><ul class="simple">
+<li><p>encoding: override the document encoding</p></li>
+<li><p>schema: an XMLSchema to validate against</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt id="fontTools.misc.etree.iterparse.error_log">
+<code class="sig-name descname">error_log</code><a class="headerlink" href="#fontTools.misc.etree.iterparse.error_log" title="Permalink to this definition">¶</a></dt>
+<dd><p>The error log of the last (or current) parser run.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.etree.iterparse.makeelement">
+<code class="sig-name descname">makeelement</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">_tag</span></em>, <em class="sig-param"><span class="n">attrib</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">nsmap</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">_extra</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.etree.iterparse.makeelement" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a new element associated with this parser.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.misc.etree.iterparse.resolvers">
+<code class="sig-name descname">resolvers</code><a class="headerlink" href="#fontTools.misc.etree.iterparse.resolvers" title="Permalink to this definition">¶</a></dt>
+<dd><p>The custom resolver registry of the last (or current) parser run.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.misc.etree.iterparse.root">
+<code class="sig-name descname">root</code><a class="headerlink" href="#fontTools.misc.etree.iterparse.root" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.etree.iterparse.set_element_class_lookup">
+<code class="sig-name descname">set_element_class_lookup</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">lookup</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.etree.iterparse.set_element_class_lookup" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set a lookup scheme for element classes generated from this parser.</p>
+<p>Reset it by passing None or nothing.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.misc.etree.iterparse.version">
+<code class="sig-name descname">version</code><a class="headerlink" href="#fontTools.misc.etree.iterparse.version" title="Permalink to this definition">¶</a></dt>
+<dd><p>The version of the underlying XML parser.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.misc.etree.parse">
+<code class="sig-prename descclassname">fontTools.misc.etree.</code><code class="sig-name descname">parse</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">source</span></em>, <em class="sig-param"><span class="n">parser</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">base_url</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.etree.parse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return an ElementTree object loaded with source elements.  If no parser
+is provided as second argument, the default parser is used.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">source</span></code> can be any of the following:</p>
+<ul class="simple">
+<li><p>a file name/path</p></li>
+<li><p>a file object</p></li>
+<li><p>a file-like object</p></li>
+<li><p>a URL using the HTTP or FTP protocol</p></li>
+</ul>
+<p>To parse from a string, use the <code class="docutils literal notranslate"><span class="pre">fromstring()</span></code> function instead.</p>
+<p>Note that it is generally faster to parse from a file path or URL
+than from an open file object or file-like object.  Transparent
+decompression from gzip compressed sources is supported (unless
+explicitly disabled in libxml2).</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">base_url</span></code> keyword allows setting a URL for the document
+when parsing from a file-like object.  This is needed when looking
+up external entities (DTD, XInclude, …) with relative paths.</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt id="fontTools.misc.etree.ParseError">
+<em class="property">exception </em><code class="sig-prename descclassname">fontTools.misc.etree.</code><code class="sig-name descname">ParseError</code><a class="headerlink" href="#fontTools.misc.etree.ParseError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Syntax error while parsing an XML document.</p>
+<p>For compatibility with ElementTree 1.3 and later.</p>
+<dl class="py attribute">
+<dt id="fontTools.misc.etree.ParseError.args">
+<code class="sig-name descname">args</code><a class="headerlink" href="#fontTools.misc.etree.ParseError.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.misc.etree.ParseError.filename">
+<code class="sig-name descname">filename</code><a class="headerlink" href="#fontTools.misc.etree.ParseError.filename" title="Permalink to this definition">¶</a></dt>
+<dd><p>exception filename</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.misc.etree.ParseError.lineno">
+<code class="sig-name descname">lineno</code><a class="headerlink" href="#fontTools.misc.etree.ParseError.lineno" title="Permalink to this definition">¶</a></dt>
+<dd><p>exception lineno</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.misc.etree.ParseError.msg">
+<code class="sig-name descname">msg</code><a class="headerlink" href="#fontTools.misc.etree.ParseError.msg" title="Permalink to this definition">¶</a></dt>
+<dd><p>exception msg</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.misc.etree.ParseError.offset">
+<code class="sig-name descname">offset</code><a class="headerlink" href="#fontTools.misc.etree.ParseError.offset" title="Permalink to this definition">¶</a></dt>
+<dd><p>exception offset</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.etree.ParseError.position">
+<em class="property">property </em><code class="sig-name descname">position</code><a class="headerlink" href="#fontTools.misc.etree.ParseError.position" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.misc.etree.ParseError.print_file_and_line">
+<code class="sig-name descname">print_file_and_line</code><a class="headerlink" href="#fontTools.misc.etree.ParseError.print_file_and_line" title="Permalink to this definition">¶</a></dt>
+<dd><p>exception print_file_and_line</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.misc.etree.ParseError.text">
+<code class="sig-name descname">text</code><a class="headerlink" href="#fontTools.misc.etree.ParseError.text" title="Permalink to this definition">¶</a></dt>
+<dd><p>exception text</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.etree.ParseError.with_traceback">
+<code class="sig-name descname">with_traceback</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.etree.ParseError.with_traceback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.misc.etree.PI">
+<code class="sig-prename descclassname">fontTools.misc.etree.</code><code class="sig-name descname">PI</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">target</span></em>, <em class="sig-param"><span class="n">text</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.etree.PI" title="Permalink to this definition">¶</a></dt>
+<dd><p>ProcessingInstruction(target, text=None)</p>
+<p>ProcessingInstruction element factory. This factory function creates a
+special element that will be serialized as an XML processing instruction.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.misc.etree.ProcessingInstruction">
+<code class="sig-prename descclassname">fontTools.misc.etree.</code><code class="sig-name descname">ProcessingInstruction</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">target</span></em>, <em class="sig-param"><span class="n">text</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.etree.ProcessingInstruction" title="Permalink to this definition">¶</a></dt>
+<dd><p>ProcessingInstruction element factory. This factory function creates a
+special element that will be serialized as an XML processing instruction.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.misc.etree.QName">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.misc.etree.</code><code class="sig-name descname">QName</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text_or_uri_or_element</span></em>, <em class="sig-param"><span class="n">tag</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.etree.QName" title="Permalink to this definition">¶</a></dt>
+<dd><p>QName wrapper for qualified XML names.</p>
+<p>Pass a tag name by itself or a namespace URI and a tag name to
+create a qualified name.  Alternatively, pass an Element to
+extract its tag name.  <code class="docutils literal notranslate"><span class="pre">None</span></code> as first argument is ignored in
+order to allow for generic 2-argument usage.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">text</span></code> property holds the qualified name in
+<code class="docutils literal notranslate"><span class="pre">{namespace}tagname</span></code> notation.  The <code class="docutils literal notranslate"><span class="pre">namespace</span></code> and
+<code class="docutils literal notranslate"><span class="pre">localname</span></code> properties hold the respective parts of the tag
+name.</p>
+<p>You can pass QName objects wherever a tag name is expected.  Also,
+setting Element text from a QName will resolve the namespace prefix
+on assignment and set a qualified text value.  This is helpful in XML
+languages like SOAP or XML-Schema that use prefixed tag names in
+their text content.</p>
+<dl class="py attribute">
+<dt id="fontTools.misc.etree.QName.localname">
+<code class="sig-name descname">localname</code><a class="headerlink" href="#fontTools.misc.etree.QName.localname" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.misc.etree.QName.namespace">
+<code class="sig-name descname">namespace</code><a class="headerlink" href="#fontTools.misc.etree.QName.namespace" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.misc.etree.QName.text">
+<code class="sig-name descname">text</code><a class="headerlink" href="#fontTools.misc.etree.QName.text" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.misc.etree.SubElement">
+<code class="sig-prename descclassname">fontTools.misc.etree.</code><code class="sig-name descname">SubElement</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">_parent</span></em>, <em class="sig-param"><span class="n">_tag</span></em>, <em class="sig-param"><span class="n">attrib</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">nsmap</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">_extra</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.etree.SubElement" title="Permalink to this definition">¶</a></dt>
+<dd><p>Subelement factory.  This function creates an element instance, and
+appends it to an existing element.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.misc.etree.tostring">
+<code class="sig-prename descclassname">fontTools.misc.etree.</code><code class="sig-name descname">tostring</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">element_or_tree</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">encoding</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">method</span><span class="o">=</span><span class="default_value">'xml'</span></em>, <em class="sig-param"><span class="n">xml_declaration</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">pretty_print</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">with_tail</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">standalone</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">doctype</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">exclusive</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">inclusive_ns_prefixes</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">with_comments</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">strip_text</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.etree.tostring" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>tostring(element_or_tree, encoding=None, method=”xml”,</dt><dd><p>xml_declaration=None, pretty_print=False, with_tail=True,
+standalone=None, doctype=None,
+exclusive=False, inclusive_ns_prefixes=None,
+with_comments=True, strip_text=False,
+)</p>
+</dd>
+</dl>
+<p>Serialize an element to an encoded string representation of its XML
+tree.</p>
+<p>Defaults to ASCII encoding without XML declaration.  This
+behaviour can be configured with the keyword arguments ‘encoding’
+(string) and ‘xml_declaration’ (bool).  Note that changing the
+encoding to a non UTF-8 compatible encoding will enable a
+declaration by default.</p>
+<p>You can also serialise to a Unicode string without declaration by
+passing the name <code class="docutils literal notranslate"><span class="pre">'unicode'</span></code> as encoding (or the <code class="docutils literal notranslate"><span class="pre">str</span></code> function
+in Py3 or <code class="docutils literal notranslate"><span class="pre">unicode</span></code> in Py2).  This changes the return value from
+a byte string to an unencoded unicode string.</p>
+<p>The keyword argument ‘pretty_print’ (bool) enables formatted XML.</p>
+<p>The keyword argument ‘method’ selects the output method: ‘xml’,
+‘html’, plain ‘text’ (text content without tags), ‘c14n’ or ‘c14n2’.
+Default is ‘xml’.</p>
+<p>With <code class="docutils literal notranslate"><span class="pre">method=&quot;c14n&quot;</span></code> (C14N version 1), the options <code class="docutils literal notranslate"><span class="pre">exclusive</span></code>,
+<code class="docutils literal notranslate"><span class="pre">with_comments</span></code> and <code class="docutils literal notranslate"><span class="pre">inclusive_ns_prefixes</span></code> request exclusive
+C14N, include comments, and list the inclusive prefixes respectively.</p>
+<p>With <code class="docutils literal notranslate"><span class="pre">method=&quot;c14n2&quot;</span></code> (C14N version 2), the <code class="docutils literal notranslate"><span class="pre">with_comments</span></code> and
+<code class="docutils literal notranslate"><span class="pre">strip_text</span></code> options control the output of comments and text space
+according to C14N 2.0.</p>
+<p>Passing a boolean value to the <code class="docutils literal notranslate"><span class="pre">standalone</span></code> option will output
+an XML declaration with the corresponding <code class="docutils literal notranslate"><span class="pre">standalone</span></code> flag.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">doctype</span></code> option allows passing in a plain string that will
+be serialised before the XML tree.  Note that passing in non
+well-formed content here will make the XML output non well-formed.
+Also, an existing doctype in the document tree will not be removed
+when serialising an ElementTree instance.</p>
+<p>You can prevent the tail text of the element from being serialised
+by passing the boolean <code class="docutils literal notranslate"><span class="pre">with_tail</span></code> option.  This has no impact
+on the tail text of children, which will always be serialised.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.misc.etree.tostringlist">
+<code class="sig-prename descclassname">fontTools.misc.etree.</code><code class="sig-name descname">tostringlist</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">element_or_tree</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.etree.tostringlist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Serialize an element to an encoded string representation of its XML
+tree, stored in a list of partial strings.</p>
+<p>This is purely for ElementTree 1.3 compatibility.  The result is a
+single string wrapped in a list.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.misc.etree.TreeBuilder">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.misc.etree.</code><code class="sig-name descname">TreeBuilder</code><a class="headerlink" href="#fontTools.misc.etree.TreeBuilder" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>TreeBuilder(self, element_factory=None, parser=None,</dt><dd><p>comment_factory=None, pi_factory=None,
+insert_comments=True, insert_pis=True)</p>
+</dd>
+</dl>
+<p>Parser target that builds a tree from parse event callbacks.</p>
+<p>The factory arguments can be used to influence the creation of
+elements, comments and processing instructions.</p>
+<p>By default, comments and processing instructions are inserted into
+the tree, but they can be ignored by passing the respective flags.</p>
+<p>The final tree is returned by the <code class="docutils literal notranslate"><span class="pre">close()</span></code> method.</p>
+<dl class="py method">
+<dt id="fontTools.misc.etree.TreeBuilder.close">
+<code class="sig-name descname">close</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.etree.TreeBuilder.close" title="Permalink to this definition">¶</a></dt>
+<dd><p>Flushes the builder buffers, and returns the toplevel document
+element.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.etree.TreeBuilder.comment">
+<code class="sig-name descname">comment</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">comment</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.etree.TreeBuilder.comment" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a comment using the factory, appends it (unless disabled)
+and returns it.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.etree.TreeBuilder.data">
+<code class="sig-name descname">data</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">data</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.etree.TreeBuilder.data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds text to the current element.  The value should be either an
+8-bit string containing ASCII text, or a Unicode string.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.etree.TreeBuilder.end">
+<code class="sig-name descname">end</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">tag</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.etree.TreeBuilder.end" title="Permalink to this definition">¶</a></dt>
+<dd><p>Closes the current element.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.etree.TreeBuilder.pi">
+<code class="sig-name descname">pi</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">target</span></em>, <em class="sig-param"><span class="n">data</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.etree.TreeBuilder.pi" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a processing instruction using the factory, appends it
+(unless disabled) and returns it.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.etree.TreeBuilder.start">
+<code class="sig-name descname">start</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">attrs</span></em>, <em class="sig-param"><span class="n">nsmap</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.etree.TreeBuilder.start" title="Permalink to this definition">¶</a></dt>
+<dd><p>Opens a new element.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.misc.etree.XML">
+<code class="sig-prename descclassname">fontTools.misc.etree.</code><code class="sig-name descname">XML</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text</span></em>, <em class="sig-param"><span class="n">parser</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">base_url</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.etree.XML" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parses an XML document or fragment from a string constant.
+Returns the root node (or the result returned by a parser target).
+This function can be used to embed “XML literals” in Python code,
+like in</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">root</span> <span class="o">=</span> <span class="n">XML</span><span class="p">(</span><span class="s2">&quot;&lt;root&gt;&lt;test/&gt;&lt;/root&gt;&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">tag</span><span class="p">)</span>
+<span class="go">root</span>
+</pre></div>
+</div>
+<p>To override the parser with a different <code class="docutils literal notranslate"><span class="pre">XMLParser</span></code> you can pass it to
+the <code class="docutils literal notranslate"><span class="pre">parser</span></code> keyword argument.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">base_url</span></code> keyword argument allows to set the original base URL of
+the document to support relative Paths when looking up external entities
+(DTD, XInclude, …).</p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.misc.etree.XMLParser">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.misc.etree.</code><code class="sig-name descname">XMLParser</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">encoding</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">attribute_defaults</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">dtd_validation</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">load_dtd</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">no_network</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">ns_clean</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">recover</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">schema</span><span class="p">:</span> <span class="n">XMLSchema</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">huge_tree</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">remove_blank_text</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">resolve_entities</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">remove_comments</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">remove_pis</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">strip_cdata</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">collect_ids</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">target</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">compact</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.etree.XMLParser" title="Permalink to this definition">¶</a></dt>
+<dd><p>The XML parser.</p>
+<p>Parsers can be supplied as additional argument to various parse
+functions of the lxml API.  A default parser is always available
+and can be replaced by a call to the global function
+‘set_default_parser’.  New parsers can be created at any time
+without a major run-time overhead.</p>
+<p>The keyword arguments in the constructor are mainly based on the
+libxml2 parser configuration.  A DTD will also be loaded if DTD
+validation or attribute default values are requested (unless you
+additionally provide an XMLSchema from which the default
+attributes can be read).</p>
+<p>Available boolean keyword arguments:</p>
+<ul class="simple">
+<li><p>attribute_defaults - inject default attributes from DTD or XMLSchema</p></li>
+<li><p>dtd_validation     - validate against a DTD referenced by the document</p></li>
+<li><p>load_dtd           - use DTD for parsing</p></li>
+<li><p>no_network         - prevent network access for related files (default: True)</p></li>
+<li><p>ns_clean           - clean up redundant namespace declarations</p></li>
+<li><p>recover            - try hard to parse through broken XML</p></li>
+<li><p>remove_blank_text  - discard blank text nodes that appear ignorable</p></li>
+<li><p>remove_comments    - discard comments</p></li>
+<li><p>remove_pis         - discard processing instructions</p></li>
+<li><p>strip_cdata        - replace CDATA sections by normal text content (default: True)</p></li>
+<li><p>compact            - save memory for short text content (default: True)</p></li>
+<li><p>collect_ids        - use a hash table of XML IDs for fast access (default: True, always True with DTD validation)</p></li>
+<li><p>resolve_entities   - replace entities by their text value (default: True)</p></li>
+<li><dl class="simple">
+<dt>huge_tree          - disable security restrictions and support very deep trees</dt><dd><p>and very long text content (only affects libxml2 2.7+)</p>
+</dd>
+</dl>
+</li>
+</ul>
+<p>Other keyword arguments:</p>
+<ul class="simple">
+<li><p>encoding - override the document encoding</p></li>
+<li><p>target   - a parser target object that will receive the parse events</p></li>
+<li><p>schema   - an XMLSchema to validate against</p></li>
+</ul>
+<p>Note that you should avoid sharing parsers between threads.  While this is
+not harmful, it is more efficient to use separate parsers.  This does not
+apply to the default parser.</p>
+<dl class="py method">
+<dt id="fontTools.misc.etree.XMLParser.close">
+<code class="sig-name descname">close</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.etree.XMLParser.close" title="Permalink to this definition">¶</a></dt>
+<dd><p>Terminates feeding data to this parser.  This tells the parser to
+process any remaining data in the feed buffer, and then returns the
+root Element of the tree that was parsed.</p>
+<p>This method must be called after passing the last chunk of data into
+the <code class="docutils literal notranslate"><span class="pre">feed()</span></code> method.  It should only be called when using the feed
+parser interface, all other usage is undefined.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.etree.XMLParser.copy">
+<code class="sig-name descname">copy</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.etree.XMLParser.copy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new parser with the same configuration.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.misc.etree.XMLParser.error_log">
+<code class="sig-name descname">error_log</code><a class="headerlink" href="#fontTools.misc.etree.XMLParser.error_log" title="Permalink to this definition">¶</a></dt>
+<dd><p>The error log of the last parser run.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.etree.XMLParser.feed">
+<code class="sig-name descname">feed</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">data</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.etree.XMLParser.feed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Feeds data to the parser.  The argument should be an 8-bit string
+buffer containing encoded data, although Unicode is supported as long
+as both string types are not mixed.</p>
+<p>This is the main entry point to the consumer interface of a
+parser.  The parser will parse as much of the XML stream as it
+can on each call.  To finish parsing or to reset the parser,
+call the <code class="docutils literal notranslate"><span class="pre">close()</span></code> method.  Both methods may raise
+ParseError if errors occur in the input data.  If an error is
+raised, there is no longer a need to call <code class="docutils literal notranslate"><span class="pre">close()</span></code>.</p>
+<p>The feed parser interface is independent of the normal parser
+usage.  You can use the same parser as a feed parser and in
+the <code class="docutils literal notranslate"><span class="pre">parse()</span></code> function concurrently.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.misc.etree.XMLParser.feed_error_log">
+<code class="sig-name descname">feed_error_log</code><a class="headerlink" href="#fontTools.misc.etree.XMLParser.feed_error_log" title="Permalink to this definition">¶</a></dt>
+<dd><p>The error log of the last (or current) run of the feed parser.</p>
+<p>Note that this is local to the feed parser and thus is
+different from what the <code class="docutils literal notranslate"><span class="pre">error_log</span></code> property returns.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.etree.XMLParser.makeelement">
+<code class="sig-name descname">makeelement</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">_tag</span></em>, <em class="sig-param"><span class="n">attrib</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">nsmap</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">_extra</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.etree.XMLParser.makeelement" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a new element associated with this parser.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.misc.etree.XMLParser.resolvers">
+<code class="sig-name descname">resolvers</code><a class="headerlink" href="#fontTools.misc.etree.XMLParser.resolvers" title="Permalink to this definition">¶</a></dt>
+<dd><p>The custom resolver registry of this parser.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.etree.XMLParser.setElementClassLookup">
+<code class="sig-name descname">setElementClassLookup</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lookup</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.etree.XMLParser.setElementClassLookup" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Deprecated</dt>
+<dd class="field-odd"><p>use <code class="docutils literal notranslate"><span class="pre">parser.set_element_class_lookup(lookup)</span></code> instead.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.misc.etree.XMLParser.set_element_class_lookup">
+<code class="sig-name descname">set_element_class_lookup</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">lookup</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.etree.XMLParser.set_element_class_lookup" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set a lookup scheme for element classes generated from this parser.</p>
+<p>Reset it by passing None or nothing.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.misc.etree.XMLParser.target">
+<code class="sig-name descname">target</code><a class="headerlink" href="#fontTools.misc.etree.XMLParser.target" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.misc.etree.XMLParser.version">
+<code class="sig-name descname">version</code><a class="headerlink" href="#fontTools.misc.etree.XMLParser.version" title="Permalink to this definition">¶</a></dt>
+<dd><p>The version of the underlying XML parser.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.misc.etree.register_namespace">
+<code class="sig-prename descclassname">fontTools.misc.etree.</code><code class="sig-name descname">register_namespace</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">prefix</span></em>, <em class="sig-param"><span class="n">uri</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.misc.etree.register_namespace" title="Permalink to this definition">¶</a></dt>
+<dd><p>Registers a namespace prefix that newly created Elements in that
+namespace will use.  The registry is global, and any existing
+mapping for either the given prefix or the namespace URI will be
+removed.</p>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="filenames.html" class="btn btn-neutral float-right" title="filenames" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="encodingTools.html" class="btn btn-neutral float-left" title="encodingTools" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Just van Rossum, Behdad Esfahbod, and the fontTools Authors. CC BY-SA 4.0
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

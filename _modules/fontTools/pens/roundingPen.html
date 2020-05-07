@@ -1,0 +1,320 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>fontTools.pens.roundingPen &mdash; fontTools Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> fontTools
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Library</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../afmLib.html">afmLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../agl.html">agl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cffLib/index.html">cffLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../colorLib/index.html">colorLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cu2qu/index.html">cu2qu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../designspaceLib/index.html">designspaceLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../encodings/index.html">encodings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../feaLib/index.html">feaLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../merge.html">merge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../misc/index.html">misc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../mtiLib.html">mtiLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../otlLib/index.html">otlLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pens/index.html">pens</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../subset/index.html">subset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../svgLib/index.html">svgLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../t1Lib.html">t1Lib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ttLib/index.html">ttLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ttx.html">ttx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ufoLib/index.html">ufoLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../unicode.html">unicode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../unicodedata/index.html">unicodedata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../varLib/index.html">varLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../voltLib.html">voltLib</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">fontTools</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>fontTools.pens.roundingPen</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for fontTools.pens.roundingPen</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">fontTools.misc.fixedTools</span> <span class="k">import</span> <span class="n">otRound</span>
+<span class="kn">from</span> <span class="nn">fontTools.misc.transform</span> <span class="k">import</span> <span class="n">Transform</span>
+<span class="kn">from</span> <span class="nn">fontTools.pens.filterPen</span> <span class="k">import</span> <span class="n">FilterPen</span><span class="p">,</span> <span class="n">FilterPointPen</span>
+
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;RoundingPen&quot;</span><span class="p">,</span> <span class="s2">&quot;RoundingPointPen&quot;</span><span class="p">]</span>
+
+
+<div class="viewcode-block" id="RoundingPen"><a class="viewcode-back" href="../../../pens/roundingPen.html#fontTools.pens.roundingPen.RoundingPen">[docs]</a><span class="k">class</span> <span class="nc">RoundingPen</span><span class="p">(</span><span class="n">FilterPen</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Filter pen that rounds point coordinates and component XY offsets to integer.</span>
+
+<span class="sd">    &gt;&gt;&gt; from fontTools.pens.recordingPen import RecordingPen</span>
+<span class="sd">    &gt;&gt;&gt; recpen = RecordingPen()</span>
+<span class="sd">    &gt;&gt;&gt; roundpen = RoundingPen(recpen)</span>
+<span class="sd">    &gt;&gt;&gt; roundpen.moveTo((0.4, 0.6))</span>
+<span class="sd">    &gt;&gt;&gt; roundpen.lineTo((1.6, 2.5))</span>
+<span class="sd">    &gt;&gt;&gt; roundpen.qCurveTo((2.4, 4.6), (3.3, 5.7), (4.9, 6.1))</span>
+<span class="sd">    &gt;&gt;&gt; roundpen.curveTo((6.4, 8.6), (7.3, 9.7), (8.9, 10.1))</span>
+<span class="sd">    &gt;&gt;&gt; roundpen.addComponent(&quot;a&quot;, (1.5, 0, 0, 1.5, 10.5, -10.5))</span>
+<span class="sd">    &gt;&gt;&gt; recpen.value == [</span>
+<span class="sd">    ...     (&#39;moveTo&#39;, ((0, 1),)),</span>
+<span class="sd">    ...     (&#39;lineTo&#39;, ((2, 3),)),</span>
+<span class="sd">    ...     (&#39;qCurveTo&#39;, ((2, 5), (3, 6), (5, 6))),</span>
+<span class="sd">    ...     (&#39;curveTo&#39;, ((6, 9), (7, 10), (9, 10))),</span>
+<span class="sd">    ...     (&#39;addComponent&#39;, (&#39;a&#39;, (1.5, 0, 0, 1.5, 11, -10))),</span>
+<span class="sd">    ... ]</span>
+<span class="sd">    True</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">outPen</span><span class="p">,</span> <span class="n">roundFunc</span><span class="o">=</span><span class="n">otRound</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">outPen</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">roundFunc</span> <span class="o">=</span> <span class="n">roundFunc</span>
+
+<div class="viewcode-block" id="RoundingPen.moveTo"><a class="viewcode-back" href="../../../pens/roundingPen.html#fontTools.pens.roundingPen.RoundingPen.moveTo">[docs]</a>    <span class="k">def</span> <span class="nf">moveTo</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pt</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_outPen</span><span class="o">.</span><span class="n">moveTo</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">roundFunc</span><span class="p">(</span><span class="n">pt</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="bp">self</span><span class="o">.</span><span class="n">roundFunc</span><span class="p">(</span><span class="n">pt</span><span class="p">[</span><span class="mi">1</span><span class="p">])))</span></div>
+
+<div class="viewcode-block" id="RoundingPen.lineTo"><a class="viewcode-back" href="../../../pens/roundingPen.html#fontTools.pens.roundingPen.RoundingPen.lineTo">[docs]</a>    <span class="k">def</span> <span class="nf">lineTo</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pt</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_outPen</span><span class="o">.</span><span class="n">lineTo</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">roundFunc</span><span class="p">(</span><span class="n">pt</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="bp">self</span><span class="o">.</span><span class="n">roundFunc</span><span class="p">(</span><span class="n">pt</span><span class="p">[</span><span class="mi">1</span><span class="p">])))</span></div>
+
+<div class="viewcode-block" id="RoundingPen.curveTo"><a class="viewcode-back" href="../../../pens/roundingPen.html#fontTools.pens.roundingPen.RoundingPen.curveTo">[docs]</a>    <span class="k">def</span> <span class="nf">curveTo</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">points</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_outPen</span><span class="o">.</span><span class="n">curveTo</span><span class="p">(</span>
+            <span class="o">*</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">roundFunc</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">roundFunc</span><span class="p">(</span><span class="n">y</span><span class="p">))</span> <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">points</span><span class="p">)</span>
+        <span class="p">)</span></div>
+
+<div class="viewcode-block" id="RoundingPen.qCurveTo"><a class="viewcode-back" href="../../../pens/roundingPen.html#fontTools.pens.roundingPen.RoundingPen.qCurveTo">[docs]</a>    <span class="k">def</span> <span class="nf">qCurveTo</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">points</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_outPen</span><span class="o">.</span><span class="n">qCurveTo</span><span class="p">(</span>
+            <span class="o">*</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">roundFunc</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">roundFunc</span><span class="p">(</span><span class="n">y</span><span class="p">))</span> <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">points</span><span class="p">)</span>
+        <span class="p">)</span></div>
+
+<div class="viewcode-block" id="RoundingPen.addComponent"><a class="viewcode-back" href="../../../pens/roundingPen.html#fontTools.pens.roundingPen.RoundingPen.addComponent">[docs]</a>    <span class="k">def</span> <span class="nf">addComponent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">glyphName</span><span class="p">,</span> <span class="n">transformation</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_outPen</span><span class="o">.</span><span class="n">addComponent</span><span class="p">(</span>
+            <span class="n">glyphName</span><span class="p">,</span>
+            <span class="n">Transform</span><span class="p">(</span>
+                <span class="o">*</span><span class="n">transformation</span><span class="p">[:</span><span class="mi">4</span><span class="p">],</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">roundFunc</span><span class="p">(</span><span class="n">transformation</span><span class="p">[</span><span class="mi">4</span><span class="p">]),</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">roundFunc</span><span class="p">(</span><span class="n">transformation</span><span class="p">[</span><span class="mi">5</span><span class="p">]),</span>
+            <span class="p">),</span>
+        <span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="RoundingPointPen"><a class="viewcode-back" href="../../../pens/roundingPen.html#fontTools.pens.roundingPen.RoundingPointPen">[docs]</a><span class="k">class</span> <span class="nc">RoundingPointPen</span><span class="p">(</span><span class="n">FilterPointPen</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Filter point pen that rounds point coordinates and component XY offsets to integer.</span>
+
+<span class="sd">    &gt;&gt;&gt; from fontTools.pens.recordingPen import RecordingPointPen</span>
+<span class="sd">    &gt;&gt;&gt; recpen = RecordingPointPen()</span>
+<span class="sd">    &gt;&gt;&gt; roundpen = RoundingPointPen(recpen)</span>
+<span class="sd">    &gt;&gt;&gt; roundpen.beginPath()</span>
+<span class="sd">    &gt;&gt;&gt; roundpen.addPoint((0.4, 0.6), &#39;line&#39;)</span>
+<span class="sd">    &gt;&gt;&gt; roundpen.addPoint((1.6, 2.5), &#39;line&#39;)</span>
+<span class="sd">    &gt;&gt;&gt; roundpen.addPoint((2.4, 4.6))</span>
+<span class="sd">    &gt;&gt;&gt; roundpen.addPoint((3.3, 5.7))</span>
+<span class="sd">    &gt;&gt;&gt; roundpen.addPoint((4.9, 6.1), &#39;qcurve&#39;)</span>
+<span class="sd">    &gt;&gt;&gt; roundpen.endPath()</span>
+<span class="sd">    &gt;&gt;&gt; roundpen.addComponent(&quot;a&quot;, (1.5, 0, 0, 1.5, 10.5, -10.5))</span>
+<span class="sd">    &gt;&gt;&gt; recpen.value == [</span>
+<span class="sd">    ...     (&#39;beginPath&#39;, (), {}),</span>
+<span class="sd">    ...     (&#39;addPoint&#39;, ((0, 1), &#39;line&#39;, False, None), {}),</span>
+<span class="sd">    ...     (&#39;addPoint&#39;, ((2, 3), &#39;line&#39;, False, None), {}),</span>
+<span class="sd">    ...     (&#39;addPoint&#39;, ((2, 5), None, False, None), {}),</span>
+<span class="sd">    ...     (&#39;addPoint&#39;, ((3, 6), None, False, None), {}),</span>
+<span class="sd">    ...     (&#39;addPoint&#39;, ((5, 6), &#39;qcurve&#39;, False, None), {}),</span>
+<span class="sd">    ...     (&#39;endPath&#39;, (), {}),</span>
+<span class="sd">    ...     (&#39;addComponent&#39;, (&#39;a&#39;, (1.5, 0, 0, 1.5, 11, -10)), {}),</span>
+<span class="sd">    ... ]</span>
+<span class="sd">    True</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">outPen</span><span class="p">,</span> <span class="n">roundFunc</span><span class="o">=</span><span class="n">otRound</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">outPen</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">roundFunc</span> <span class="o">=</span> <span class="n">roundFunc</span>
+
+<div class="viewcode-block" id="RoundingPointPen.addPoint"><a class="viewcode-back" href="../../../pens/roundingPen.html#fontTools.pens.roundingPen.RoundingPointPen.addPoint">[docs]</a>    <span class="k">def</span> <span class="nf">addPoint</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pt</span><span class="p">,</span> <span class="n">segmentType</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">smooth</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_outPen</span><span class="o">.</span><span class="n">addPoint</span><span class="p">(</span>
+            <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">roundFunc</span><span class="p">(</span><span class="n">pt</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="bp">self</span><span class="o">.</span><span class="n">roundFunc</span><span class="p">(</span><span class="n">pt</span><span class="p">[</span><span class="mi">1</span><span class="p">])),</span>
+            <span class="n">segmentType</span><span class="o">=</span><span class="n">segmentType</span><span class="p">,</span>
+            <span class="n">smooth</span><span class="o">=</span><span class="n">smooth</span><span class="p">,</span>
+            <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span>
+            <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+        <span class="p">)</span></div>
+
+<div class="viewcode-block" id="RoundingPointPen.addComponent"><a class="viewcode-back" href="../../../pens/roundingPen.html#fontTools.pens.roundingPen.RoundingPointPen.addComponent">[docs]</a>    <span class="k">def</span> <span class="nf">addComponent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">baseGlyphName</span><span class="p">,</span> <span class="n">transformation</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_outPen</span><span class="o">.</span><span class="n">addComponent</span><span class="p">(</span>
+            <span class="n">baseGlyphName</span><span class="p">,</span>
+            <span class="n">Transform</span><span class="p">(</span>
+                <span class="o">*</span><span class="n">transformation</span><span class="p">[:</span><span class="mi">4</span><span class="p">],</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">roundFunc</span><span class="p">(</span><span class="n">transformation</span><span class="p">[</span><span class="mi">4</span><span class="p">]),</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">roundFunc</span><span class="p">(</span><span class="n">transformation</span><span class="p">[</span><span class="mi">5</span><span class="p">]),</span>
+            <span class="p">),</span>
+            <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+        <span class="p">)</span></div></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Just van Rossum, Behdad Esfahbod, and the fontTools Authors. CC BY-SA 4.0
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

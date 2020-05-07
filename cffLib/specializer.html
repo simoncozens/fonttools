@@ -1,0 +1,293 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>specializer &mdash; fontTools Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="width" href="width.html" />
+    <link rel="prev" title="cffLib" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> fontTools
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Library</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../afmLib.html">afmLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../agl.html">agl</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">cffLib</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">specializer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="width.html">width</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../colorLib/index.html">colorLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cu2qu/index.html">cu2qu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../designspaceLib/index.html">designspaceLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../encodings/index.html">encodings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../feaLib/index.html">feaLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../merge.html">merge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/index.html">misc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mtiLib.html">mtiLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../otlLib/index.html">otlLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pens/index.html">pens</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../subset/index.html">subset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svgLib/index.html">svgLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../t1Lib.html">t1Lib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ttLib/index.html">ttLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ttx.html">ttx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ufoLib/index.html">ufoLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unicode.html">unicode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unicodedata/index.html">unicodedata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../varLib/index.html">varLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../voltLib.html">voltLib</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">fontTools</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">cffLib</a> &raquo;</li>
+        
+      <li>specializer</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/cffLib/specializer.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-fontTools.cffLib.specializer">
+<span id="specializer"></span><h1>specializer<a class="headerlink" href="#module-fontTools.cffLib.specializer" title="Permalink to this headline">¶</a></h1>
+<p>T2CharString operator specializer and generalizer.</p>
+<dl class="py function">
+<dt id="fontTools.cffLib.specializer.commandsToProgram">
+<code class="sig-prename descclassname">fontTools.cffLib.specializer.</code><code class="sig-name descname">commandsToProgram</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">commands</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/cffLib/specializer.html#commandsToProgram"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.cffLib.specializer.commandsToProgram" title="Permalink to this definition">¶</a></dt>
+<dd><p>Takes a commands list as returned by programToCommands() and converts
+it back to a T2CharString program list.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.cffLib.specializer.generalizeCommands">
+<code class="sig-prename descclassname">fontTools.cffLib.specializer.</code><code class="sig-name descname">generalizeCommands</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">commands</span></em>, <em class="sig-param"><span class="n">ignoreErrors</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/cffLib/specializer.html#generalizeCommands"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.cffLib.specializer.generalizeCommands" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.cffLib.specializer.generalizeProgram">
+<code class="sig-prename descclassname">fontTools.cffLib.specializer.</code><code class="sig-name descname">generalizeProgram</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">program</span></em>, <em class="sig-param"><span class="n">getNumRegions</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/cffLib/specializer.html#generalizeProgram"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.cffLib.specializer.generalizeProgram" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.cffLib.specializer.programToCommands">
+<code class="sig-prename descclassname">fontTools.cffLib.specializer.</code><code class="sig-name descname">programToCommands</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">program</span></em>, <em class="sig-param"><span class="n">getNumRegions</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/cffLib/specializer.html#programToCommands"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.cffLib.specializer.programToCommands" title="Permalink to this definition">¶</a></dt>
+<dd><p>Takes a T2CharString program list and returns list of commands.
+Each command is a two-tuple of commandname,arg-list.  The commandname might
+be empty string if no commandname shall be emitted (used for glyph width,
+hintmask/cntrmask argument, as well as stray arguments at the end of the
+program (¯_(ツ)_/¯).
+‘getNumRegions’ may be None, or a callable object. It must return the
+number of regions. ‘getNumRegions’ takes a single argument, vsindex. If
+the vsindex argument is None, getNumRegions returns the default number
+of regions for the charstring, else it returns the numRegions for
+the vsindex.
+The Charstring may or may not start with a width value. If the first
+non-blend operator has an odd number of arguments, then the first argument is
+a width, and is popped off. This is complicated with blend operators, as
+there may be more than one before the first hint or moveto operator, and each
+one reduces several arguments to just one list argument. We have to sum the
+number of arguments that are not part of the blend arguments, and all the
+‘numBlends’ values. We could instead have said that by definition, if there
+is a blend operator, there is no width value, since CFF2 Charstrings don’t
+have width values. I discussed this with Behdad, and we are allowing for an
+initial width value in this case because developers may assemble a CFF2
+charstring from CFF Charstrings, which could have width values.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.cffLib.specializer.programToString">
+<code class="sig-prename descclassname">fontTools.cffLib.specializer.</code><code class="sig-name descname">programToString</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">program</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/cffLib/specializer.html#programToString"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.cffLib.specializer.programToString" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.cffLib.specializer.specializeCommands">
+<code class="sig-prename descclassname">fontTools.cffLib.specializer.</code><code class="sig-name descname">specializeCommands</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">commands</span></em>, <em class="sig-param"><span class="n">ignoreErrors</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">generalizeFirst</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">preserveTopology</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">maxstack</span><span class="o">=</span><span class="default_value">48</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/cffLib/specializer.html#specializeCommands"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.cffLib.specializer.specializeCommands" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.cffLib.specializer.specializeProgram">
+<code class="sig-prename descclassname">fontTools.cffLib.specializer.</code><code class="sig-name descname">specializeProgram</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">program</span></em>, <em class="sig-param"><span class="n">getNumRegions</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/cffLib/specializer.html#specializeProgram"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.cffLib.specializer.specializeProgram" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.cffLib.specializer.stringToProgram">
+<code class="sig-prename descclassname">fontTools.cffLib.specializer.</code><code class="sig-name descname">stringToProgram</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">string</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/cffLib/specializer.html#stringToProgram"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.cffLib.specializer.stringToProgram" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="width.html" class="btn btn-neutral float-right" title="width" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="cffLib" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Just van Rossum, Behdad Esfahbod, and the fontTools Authors. CC BY-SA 4.0
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

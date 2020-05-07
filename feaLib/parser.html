@@ -1,0 +1,706 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>parser &mdash; fontTools Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="merge" href="../merge.html" />
+    <link rel="prev" title="lexer" href="lexer.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> fontTools
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Library</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../afmLib.html">afmLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../agl.html">agl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cffLib/index.html">cffLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../colorLib/index.html">colorLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cu2qu/index.html">cu2qu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../designspaceLib/index.html">designspaceLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../encodings/index.html">encodings</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">feaLib</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ast.html">ast</a></li>
+<li class="toctree-l2"><a class="reference internal" href="builder.html">builder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="error.html">error</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lexer.html">lexer</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">parser</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../merge.html">merge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/index.html">misc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mtiLib.html">mtiLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../otlLib/index.html">otlLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pens/index.html">pens</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../subset/index.html">subset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svgLib/index.html">svgLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../t1Lib.html">t1Lib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ttLib/index.html">ttLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ttx.html">ttx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ufoLib/index.html">ufoLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unicode.html">unicode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unicodedata/index.html">unicodedata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../varLib/index.html">varLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../voltLib.html">voltLib</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">fontTools</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">feaLib</a> &raquo;</li>
+        
+      <li>parser</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/feaLib/parser.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-fontTools.feaLib.parser">
+<span id="parser"></span><h1>parser<a class="headerlink" href="#module-fontTools.feaLib.parser" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="fontTools.feaLib.parser.Parser">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.feaLib.parser.</code><code class="sig-name descname">Parser</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">featurefile</span></em>, <em class="sig-param"><span class="n">glyphNames</span><span class="o">=</span><span class="default_value">()</span></em>, <em class="sig-param"><span class="n">followIncludes</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/parser.html#Parser"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.parser.Parser" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py attribute">
+<dt id="fontTools.feaLib.parser.Parser.CV_FEATURE_TAGS">
+<code class="sig-name descname">CV_FEATURE_TAGS</code><em class="property"> = {'cv01', 'cv02', 'cv03', 'cv04', 'cv05', 'cv06', 'cv07', 'cv08', 'cv09', 'cv10', 'cv11', 'cv12', 'cv13', 'cv14', 'cv15', 'cv16', 'cv17', 'cv18', 'cv19', 'cv20', 'cv21', 'cv22', 'cv23', 'cv24', 'cv25', 'cv26', 'cv27', 'cv28', 'cv29', 'cv30', 'cv31', 'cv32', 'cv33', 'cv34', 'cv35', 'cv36', 'cv37', 'cv38', 'cv39', 'cv40', 'cv41', 'cv42', 'cv43', 'cv44', 'cv45', 'cv46', 'cv47', 'cv48', 'cv49', 'cv50', 'cv51', 'cv52', 'cv53', 'cv54', 'cv55', 'cv56', 'cv57', 'cv58', 'cv59', 'cv60', 'cv61', 'cv62', 'cv63', 'cv64', 'cv65', 'cv66', 'cv67', 'cv68', 'cv69', 'cv70', 'cv71', 'cv72', 'cv73', 'cv74', 'cv75', 'cv76', 'cv77', 'cv78', 'cv79', 'cv80', 'cv81', 'cv82', 'cv83', 'cv84', 'cv85', 'cv86', 'cv87', 'cv88', 'cv89', 'cv90', 'cv91', 'cv92', 'cv93', 'cv94', 'cv95', 'cv96', 'cv97', 'cv98', 'cv99'}</em><a class="headerlink" href="#fontTools.feaLib.parser.Parser.CV_FEATURE_TAGS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.feaLib.parser.Parser.SS_FEATURE_TAGS">
+<code class="sig-name descname">SS_FEATURE_TAGS</code><em class="property"> = {'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08', 'ss09', 'ss10', 'ss11', 'ss12', 'ss13', 'ss14', 'ss15', 'ss16', 'ss17', 'ss18', 'ss19', 'ss20'}</em><a class="headerlink" href="#fontTools.feaLib.parser.Parser.SS_FEATURE_TAGS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.parser.Parser.advance_lexer_">
+<code class="sig-name descname">advance_lexer_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">comments</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/parser.html#Parser.advance_lexer_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.parser.Parser.advance_lexer_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.feaLib.parser.Parser.ast">
+<code class="sig-name descname">ast</code><em class="property"> = &lt;module 'fontTools.feaLib.ast' from '/Users/simon/others-repos/fonttools/Lib/fontTools/feaLib/ast.py'&gt;</em><a class="headerlink" href="#fontTools.feaLib.parser.Parser.ast" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.parser.Parser.check_glyph_name_in_glyph_set">
+<code class="sig-name descname">check_glyph_name_in_glyph_set</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">names</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/parser.html#Parser.check_glyph_name_in_glyph_set"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.parser.Parser.check_glyph_name_in_glyph_set" title="Permalink to this definition">¶</a></dt>
+<dd><p>Raises if glyph name (just <cite>start</cite>) or glyph names of a
+range (<cite>start</cite> and <cite>end</cite>) are not in the glyph set.</p>
+<p>If no glyph set is present, does nothing.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.parser.Parser.expect_any_number_">
+<code class="sig-name descname">expect_any_number_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/parser.html#Parser.expect_any_number_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.parser.Parser.expect_any_number_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.parser.Parser.expect_cid_">
+<code class="sig-name descname">expect_cid_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/parser.html#Parser.expect_cid_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.parser.Parser.expect_cid_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.parser.Parser.expect_class_name_">
+<code class="sig-name descname">expect_class_name_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/parser.html#Parser.expect_class_name_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.parser.Parser.expect_class_name_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.parser.Parser.expect_decipoint_">
+<code class="sig-name descname">expect_decipoint_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/parser.html#Parser.expect_decipoint_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.parser.Parser.expect_decipoint_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.parser.Parser.expect_filename_">
+<code class="sig-name descname">expect_filename_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/parser.html#Parser.expect_filename_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.parser.Parser.expect_filename_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.parser.Parser.expect_float_">
+<code class="sig-name descname">expect_float_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/parser.html#Parser.expect_float_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.parser.Parser.expect_float_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.parser.Parser.expect_glyph_">
+<code class="sig-name descname">expect_glyph_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/parser.html#Parser.expect_glyph_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.parser.Parser.expect_glyph_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.parser.Parser.expect_keyword_">
+<code class="sig-name descname">expect_keyword_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">keyword</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/parser.html#Parser.expect_keyword_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.parser.Parser.expect_keyword_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.parser.Parser.expect_language_tag_">
+<code class="sig-name descname">expect_language_tag_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/parser.html#Parser.expect_language_tag_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.parser.Parser.expect_language_tag_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.parser.Parser.expect_markClass_reference_">
+<code class="sig-name descname">expect_markClass_reference_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/parser.html#Parser.expect_markClass_reference_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.parser.Parser.expect_markClass_reference_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.parser.Parser.expect_name_">
+<code class="sig-name descname">expect_name_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/parser.html#Parser.expect_name_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.parser.Parser.expect_name_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.parser.Parser.expect_number_">
+<code class="sig-name descname">expect_number_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/parser.html#Parser.expect_number_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.parser.Parser.expect_number_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.parser.Parser.expect_script_tag_">
+<code class="sig-name descname">expect_script_tag_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/parser.html#Parser.expect_script_tag_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.parser.Parser.expect_script_tag_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.parser.Parser.expect_string_">
+<code class="sig-name descname">expect_string_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/parser.html#Parser.expect_string_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.parser.Parser.expect_string_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.parser.Parser.expect_symbol_">
+<code class="sig-name descname">expect_symbol_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">symbol</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/parser.html#Parser.expect_symbol_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.parser.Parser.expect_symbol_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.parser.Parser.expect_tag_">
+<code class="sig-name descname">expect_tag_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/parser.html#Parser.expect_tag_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.parser.Parser.expect_tag_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.feaLib.parser.Parser.extensions">
+<code class="sig-name descname">extensions</code><em class="property"> = {}</em><a class="headerlink" href="#fontTools.feaLib.parser.Parser.extensions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.parser.Parser.is_cur_keyword_">
+<code class="sig-name descname">is_cur_keyword_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">k</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/parser.html#Parser.is_cur_keyword_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.parser.Parser.is_cur_keyword_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.parser.Parser.is_next_value_">
+<code class="sig-name descname">is_next_value_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/parser.html#Parser.is_next_value_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.parser.Parser.is_next_value_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.parser.Parser.make_cid_range_">
+<code class="sig-name descname">make_cid_range_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">location</span></em>, <em class="sig-param"><span class="n">start</span></em>, <em class="sig-param"><span class="n">limit</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/parser.html#Parser.make_cid_range_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.parser.Parser.make_cid_range_" title="Permalink to this definition">¶</a></dt>
+<dd><p>(location, 999, 1001) –&gt; [“cid00999”, “cid01000”, “cid01001”]</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.parser.Parser.make_glyph_range_">
+<code class="sig-name descname">make_glyph_range_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">location</span></em>, <em class="sig-param"><span class="n">start</span></em>, <em class="sig-param"><span class="n">limit</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/parser.html#Parser.make_glyph_range_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.parser.Parser.make_glyph_range_" title="Permalink to this definition">¶</a></dt>
+<dd><p>(location, “a.sc”, “d.sc”) –&gt; [“a.sc”, “b.sc”, “c.sc”, “d.sc”]</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.parser.Parser.parse">
+<code class="sig-name descname">parse</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/parser.html#Parser.parse"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.parser.Parser.parse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.parser.Parser.parse_FontRevision_">
+<code class="sig-name descname">parse_FontRevision_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/parser.html#Parser.parse_FontRevision_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.parser.Parser.parse_FontRevision_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.parser.Parser.parse_GlyphClassDef_">
+<code class="sig-name descname">parse_GlyphClassDef_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/parser.html#Parser.parse_GlyphClassDef_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.parser.Parser.parse_GlyphClassDef_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parses ‘GlyphClassDef &#64;BASE, &#64;LIGATURES, &#64;MARKS, &#64;COMPONENTS;’</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.parser.Parser.parse_anchor_">
+<code class="sig-name descname">parse_anchor_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/parser.html#Parser.parse_anchor_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.parser.Parser.parse_anchor_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.parser.Parser.parse_anchor_marks_">
+<code class="sig-name descname">parse_anchor_marks_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/parser.html#Parser.parse_anchor_marks_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.parser.Parser.parse_anchor_marks_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parses a sequence of [&lt;anchor&gt; mark &#64;MARKCLASS]*.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.parser.Parser.parse_anchordef_">
+<code class="sig-name descname">parse_anchordef_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/parser.html#Parser.parse_anchordef_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.parser.Parser.parse_anchordef_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.parser.Parser.parse_anonymous_">
+<code class="sig-name descname">parse_anonymous_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/parser.html#Parser.parse_anonymous_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.parser.Parser.parse_anonymous_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.parser.Parser.parse_attach_">
+<code class="sig-name descname">parse_attach_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/parser.html#Parser.parse_attach_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.parser.Parser.parse_attach_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.parser.Parser.parse_base_script_list_">
+<code class="sig-name descname">parse_base_script_list_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">count</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/parser.html#Parser.parse_base_script_list_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.parser.Parser.parse_base_script_list_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.parser.Parser.parse_base_script_record_">
+<code class="sig-name descname">parse_base_script_record_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">count</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/parser.html#Parser.parse_base_script_record_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.parser.Parser.parse_base_script_record_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.parser.Parser.parse_base_tag_list_">
+<code class="sig-name descname">parse_base_tag_list_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/parser.html#Parser.parse_base_tag_list_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.parser.Parser.parse_base_tag_list_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.parser.Parser.parse_block_">
+<code class="sig-name descname">parse_block_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">block</span></em>, <em class="sig-param"><span class="n">vertical</span></em>, <em class="sig-param"><span class="n">stylisticset</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">size_feature</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">cv_feature</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/parser.html#Parser.parse_block_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.parser.Parser.parse_block_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.parser.Parser.parse_chain_context_">
+<code class="sig-name descname">parse_chain_context_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/parser.html#Parser.parse_chain_context_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.parser.Parser.parse_chain_context_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.parser.Parser.parse_class_name_">
+<code class="sig-name descname">parse_class_name_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/parser.html#Parser.parse_class_name_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.parser.Parser.parse_class_name_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.parser.Parser.parse_cvCharacter_">
+<code class="sig-name descname">parse_cvCharacter_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/parser.html#Parser.parse_cvCharacter_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.parser.Parser.parse_cvCharacter_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.parser.Parser.parse_cvNameIDs_">
+<code class="sig-name descname">parse_cvNameIDs_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">block_name</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/parser.html#Parser.parse_cvNameIDs_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.parser.Parser.parse_cvNameIDs_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.parser.Parser.parse_cvParameters_">
+<code class="sig-name descname">parse_cvParameters_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/parser.html#Parser.parse_cvParameters_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.parser.Parser.parse_cvParameters_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.parser.Parser.parse_device_">
+<code class="sig-name descname">parse_device_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/parser.html#Parser.parse_device_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.parser.Parser.parse_device_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.parser.Parser.parse_enumerate_">
+<code class="sig-name descname">parse_enumerate_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vertical</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/parser.html#Parser.parse_enumerate_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.parser.Parser.parse_enumerate_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.parser.Parser.parse_featureNames_">
+<code class="sig-name descname">parse_featureNames_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/parser.html#Parser.parse_featureNames_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.parser.Parser.parse_featureNames_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.parser.Parser.parse_feature_block_">
+<code class="sig-name descname">parse_feature_block_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/parser.html#Parser.parse_feature_block_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.parser.Parser.parse_feature_block_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.parser.Parser.parse_feature_reference_">
+<code class="sig-name descname">parse_feature_reference_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/parser.html#Parser.parse_feature_reference_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.parser.Parser.parse_feature_reference_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.parser.Parser.parse_glyph_pattern_">
+<code class="sig-name descname">parse_glyph_pattern_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vertical</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/parser.html#Parser.parse_glyph_pattern_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.parser.Parser.parse_glyph_pattern_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.parser.Parser.parse_glyphclass_">
+<code class="sig-name descname">parse_glyphclass_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">accept_glyphname</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/parser.html#Parser.parse_glyphclass_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.parser.Parser.parse_glyphclass_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.parser.Parser.parse_glyphclass_definition_">
+<code class="sig-name descname">parse_glyphclass_definition_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/parser.html#Parser.parse_glyphclass_definition_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.parser.Parser.parse_glyphclass_definition_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parses glyph class definitions such as <a class="reference external" href="mailto:'&#37;&#52;&#48;UPPERCASE">‘<span>&#64;</span>UPPERCASE</a> = [A-Z];’</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.parser.Parser.parse_ignore_">
+<code class="sig-name descname">parse_ignore_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/parser.html#Parser.parse_ignore_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.parser.Parser.parse_ignore_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.parser.Parser.parse_include_">
+<code class="sig-name descname">parse_include_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/parser.html#Parser.parse_include_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.parser.Parser.parse_include_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.parser.Parser.parse_language_">
+<code class="sig-name descname">parse_language_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/parser.html#Parser.parse_language_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.parser.Parser.parse_language_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.parser.Parser.parse_languagesystem_">
+<code class="sig-name descname">parse_languagesystem_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/parser.html#Parser.parse_languagesystem_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.parser.Parser.parse_languagesystem_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.parser.Parser.parse_ligatureCaretByIndex_">
+<code class="sig-name descname">parse_ligatureCaretByIndex_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/parser.html#Parser.parse_ligatureCaretByIndex_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.parser.Parser.parse_ligatureCaretByIndex_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.parser.Parser.parse_ligatureCaretByPos_">
+<code class="sig-name descname">parse_ligatureCaretByPos_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/parser.html#Parser.parse_ligatureCaretByPos_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.parser.Parser.parse_ligatureCaretByPos_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.parser.Parser.parse_lookup_">
+<code class="sig-name descname">parse_lookup_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vertical</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/parser.html#Parser.parse_lookup_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.parser.Parser.parse_lookup_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.parser.Parser.parse_lookupflag_">
+<code class="sig-name descname">parse_lookupflag_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/parser.html#Parser.parse_lookupflag_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.parser.Parser.parse_lookupflag_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.parser.Parser.parse_markClass_">
+<code class="sig-name descname">parse_markClass_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/parser.html#Parser.parse_markClass_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.parser.Parser.parse_markClass_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.parser.Parser.parse_name_">
+<code class="sig-name descname">parse_name_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/parser.html#Parser.parse_name_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.parser.Parser.parse_name_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.parser.Parser.parse_nameid_">
+<code class="sig-name descname">parse_nameid_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/parser.html#Parser.parse_nameid_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.parser.Parser.parse_nameid_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.parser.Parser.parse_position_">
+<code class="sig-name descname">parse_position_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">enumerated</span></em>, <em class="sig-param"><span class="n">vertical</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/parser.html#Parser.parse_position_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.parser.Parser.parse_position_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.parser.Parser.parse_position_base_">
+<code class="sig-name descname">parse_position_base_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">enumerated</span></em>, <em class="sig-param"><span class="n">vertical</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/parser.html#Parser.parse_position_base_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.parser.Parser.parse_position_base_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.parser.Parser.parse_position_cursive_">
+<code class="sig-name descname">parse_position_cursive_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">enumerated</span></em>, <em class="sig-param"><span class="n">vertical</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/parser.html#Parser.parse_position_cursive_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.parser.Parser.parse_position_cursive_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.parser.Parser.parse_position_ligature_">
+<code class="sig-name descname">parse_position_ligature_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">enumerated</span></em>, <em class="sig-param"><span class="n">vertical</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/parser.html#Parser.parse_position_ligature_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.parser.Parser.parse_position_ligature_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.parser.Parser.parse_position_mark_">
+<code class="sig-name descname">parse_position_mark_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">enumerated</span></em>, <em class="sig-param"><span class="n">vertical</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/parser.html#Parser.parse_position_mark_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.parser.Parser.parse_position_mark_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.parser.Parser.parse_script_">
+<code class="sig-name descname">parse_script_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/parser.html#Parser.parse_script_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.parser.Parser.parse_script_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.parser.Parser.parse_size_menuname_">
+<code class="sig-name descname">parse_size_menuname_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/parser.html#Parser.parse_size_menuname_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.parser.Parser.parse_size_menuname_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.parser.Parser.parse_size_parameters_">
+<code class="sig-name descname">parse_size_parameters_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/parser.html#Parser.parse_size_parameters_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.parser.Parser.parse_size_parameters_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.parser.Parser.parse_substitute_">
+<code class="sig-name descname">parse_substitute_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/parser.html#Parser.parse_substitute_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.parser.Parser.parse_substitute_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.parser.Parser.parse_subtable_">
+<code class="sig-name descname">parse_subtable_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/parser.html#Parser.parse_subtable_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.parser.Parser.parse_subtable_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.parser.Parser.parse_table_">
+<code class="sig-name descname">parse_table_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/parser.html#Parser.parse_table_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.parser.Parser.parse_table_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.parser.Parser.parse_table_BASE_">
+<code class="sig-name descname">parse_table_BASE_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">table</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/parser.html#Parser.parse_table_BASE_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.parser.Parser.parse_table_BASE_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.parser.Parser.parse_table_GDEF_">
+<code class="sig-name descname">parse_table_GDEF_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">table</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/parser.html#Parser.parse_table_GDEF_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.parser.Parser.parse_table_GDEF_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.parser.Parser.parse_table_OS_2_">
+<code class="sig-name descname">parse_table_OS_2_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">table</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/parser.html#Parser.parse_table_OS_2_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.parser.Parser.parse_table_OS_2_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.parser.Parser.parse_table_head_">
+<code class="sig-name descname">parse_table_head_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">table</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/parser.html#Parser.parse_table_head_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.parser.Parser.parse_table_head_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.parser.Parser.parse_table_hhea_">
+<code class="sig-name descname">parse_table_hhea_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">table</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/parser.html#Parser.parse_table_hhea_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.parser.Parser.parse_table_hhea_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.parser.Parser.parse_table_name_">
+<code class="sig-name descname">parse_table_name_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">table</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/parser.html#Parser.parse_table_name_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.parser.Parser.parse_table_name_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.parser.Parser.parse_table_vhea_">
+<code class="sig-name descname">parse_table_vhea_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">table</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/parser.html#Parser.parse_table_vhea_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.parser.Parser.parse_table_vhea_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.parser.Parser.parse_valuerecord_">
+<code class="sig-name descname">parse_valuerecord_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vertical</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/parser.html#Parser.parse_valuerecord_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.parser.Parser.parse_valuerecord_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.parser.Parser.parse_valuerecord_definition_">
+<code class="sig-name descname">parse_valuerecord_definition_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vertical</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/parser.html#Parser.parse_valuerecord_definition_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.parser.Parser.parse_valuerecord_definition_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.parser.Parser.reverse_string_">
+<em class="property">static </em><code class="sig-name descname">reverse_string_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">s</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/parser.html#Parser.reverse_string_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.parser.Parser.reverse_string_" title="Permalink to this definition">¶</a></dt>
+<dd><p>‘abc’ –&gt; ‘cba’</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.parser.Parser.split_glyph_range_">
+<code class="sig-name descname">split_glyph_range_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">location</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/parser.html#Parser.split_glyph_range_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.parser.Parser.split_glyph_range_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.parser.Parser.unescape_byte_">
+<em class="property">static </em><code class="sig-name descname">unescape_byte_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">match</span></em>, <em class="sig-param"><span class="n">encoding</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/parser.html#Parser.unescape_byte_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.parser.Parser.unescape_byte_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.parser.Parser.unescape_string_">
+<code class="sig-name descname">unescape_string_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">string</span></em>, <em class="sig-param"><span class="n">encoding</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/parser.html#Parser.unescape_string_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.parser.Parser.unescape_string_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.parser.Parser.unescape_unichr_">
+<em class="property">static </em><code class="sig-name descname">unescape_unichr_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">match</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/parser.html#Parser.unescape_unichr_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.parser.Parser.unescape_unichr_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.feaLib.parser.SymbolTable">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.feaLib.parser.</code><code class="sig-name descname">SymbolTable</code><a class="reference internal" href="../_modules/fontTools/feaLib/parser.html#SymbolTable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.parser.SymbolTable" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.feaLib.parser.SymbolTable.define">
+<code class="sig-name descname">define</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">item</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/parser.html#SymbolTable.define"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.parser.SymbolTable.define" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.parser.SymbolTable.enter_scope">
+<code class="sig-name descname">enter_scope</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/parser.html#SymbolTable.enter_scope"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.parser.SymbolTable.enter_scope" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.parser.SymbolTable.exit_scope">
+<code class="sig-name descname">exit_scope</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/parser.html#SymbolTable.exit_scope"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.parser.SymbolTable.exit_scope" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.parser.SymbolTable.resolve">
+<code class="sig-name descname">resolve</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/parser.html#SymbolTable.resolve"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.parser.SymbolTable.resolve" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../merge.html" class="btn btn-neutral float-right" title="merge" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="lexer.html" class="btn btn-neutral float-left" title="lexer" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Just van Rossum, Behdad Esfahbod, and the fontTools Authors. CC BY-SA 4.0
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

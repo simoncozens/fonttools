@@ -1,0 +1,456 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>builder &mdash; fontTools Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="pens" href="../pens/index.html" />
+    <link rel="prev" title="otlLib" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> fontTools
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Library</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../afmLib.html">afmLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../agl.html">agl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cffLib/index.html">cffLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../colorLib/index.html">colorLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cu2qu/index.html">cu2qu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../designspaceLib/index.html">designspaceLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../encodings/index.html">encodings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../feaLib/index.html">feaLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../merge.html">merge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/index.html">misc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mtiLib.html">mtiLib</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">otlLib</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">builder</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../pens/index.html">pens</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../subset/index.html">subset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svgLib/index.html">svgLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../t1Lib.html">t1Lib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ttLib/index.html">ttLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ttx.html">ttx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ufoLib/index.html">ufoLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unicode.html">unicode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unicodedata/index.html">unicodedata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../varLib/index.html">varLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../voltLib.html">voltLib</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">fontTools</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">otlLib</a> &raquo;</li>
+        
+      <li>builder</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/otlLib/builder.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-fontTools.otlLib.builder">
+<span id="builder"></span><h1>builder<a class="headerlink" href="#module-fontTools.otlLib.builder" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="fontTools.otlLib.builder.ClassDefBuilder">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.otlLib.builder.</code><code class="sig-name descname">ClassDefBuilder</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">useClass0</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/otlLib/builder.html#ClassDefBuilder"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.otlLib.builder.ClassDefBuilder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Helper for building ClassDef tables.</p>
+<dl class="py method">
+<dt id="fontTools.otlLib.builder.ClassDefBuilder.add">
+<code class="sig-name descname">add</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">glyphs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/otlLib/builder.html#ClassDefBuilder.add"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.otlLib.builder.ClassDefBuilder.add" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.otlLib.builder.ClassDefBuilder.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/otlLib/builder.html#ClassDefBuilder.build"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.otlLib.builder.ClassDefBuilder.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.otlLib.builder.ClassDefBuilder.canAdd">
+<code class="sig-name descname">canAdd</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">glyphs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/otlLib/builder.html#ClassDefBuilder.canAdd"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.otlLib.builder.ClassDefBuilder.canAdd" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.otlLib.builder.ClassDefBuilder.classes">
+<code class="sig-name descname">classes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/otlLib/builder.html#ClassDefBuilder.classes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.otlLib.builder.ClassDefBuilder.classes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.otlLib.builder.buildAlternateSubstSubtable">
+<code class="sig-prename descclassname">fontTools.otlLib.builder.</code><code class="sig-name descname">buildAlternateSubstSubtable</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mapping</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/otlLib/builder.html#buildAlternateSubstSubtable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.otlLib.builder.buildAlternateSubstSubtable" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.otlLib.builder.buildAnchor">
+<code class="sig-prename descclassname">fontTools.otlLib.builder.</code><code class="sig-name descname">buildAnchor</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">y</span></em>, <em class="sig-param"><span class="n">point</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">deviceX</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">deviceY</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/otlLib/builder.html#buildAnchor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.otlLib.builder.buildAnchor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.otlLib.builder.buildAttachList">
+<code class="sig-prename descclassname">fontTools.otlLib.builder.</code><code class="sig-name descname">buildAttachList</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">attachPoints</span></em>, <em class="sig-param"><span class="n">glyphMap</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/otlLib/builder.html#buildAttachList"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.otlLib.builder.buildAttachList" title="Permalink to this definition">¶</a></dt>
+<dd><p>{“glyphName”: [4, 23]} –&gt; otTables.AttachList, or None</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.otlLib.builder.buildAttachPoint">
+<code class="sig-prename descclassname">fontTools.otlLib.builder.</code><code class="sig-name descname">buildAttachPoint</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">points</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/otlLib/builder.html#buildAttachPoint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.otlLib.builder.buildAttachPoint" title="Permalink to this definition">¶</a></dt>
+<dd><p>[4, 23, 41] –&gt; otTables.AttachPoint</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.otlLib.builder.buildBaseArray">
+<code class="sig-prename descclassname">fontTools.otlLib.builder.</code><code class="sig-name descname">buildBaseArray</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">bases</span></em>, <em class="sig-param"><span class="n">numMarkClasses</span></em>, <em class="sig-param"><span class="n">glyphMap</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/otlLib/builder.html#buildBaseArray"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.otlLib.builder.buildBaseArray" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.otlLib.builder.buildBaseRecord">
+<code class="sig-prename descclassname">fontTools.otlLib.builder.</code><code class="sig-name descname">buildBaseRecord</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">anchors</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/otlLib/builder.html#buildBaseRecord"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.otlLib.builder.buildBaseRecord" title="Permalink to this definition">¶</a></dt>
+<dd><p>[otTables.Anchor, otTables.Anchor, …] –&gt; otTables.BaseRecord</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.otlLib.builder.buildCaretValueForCoord">
+<code class="sig-prename descclassname">fontTools.otlLib.builder.</code><code class="sig-name descname">buildCaretValueForCoord</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">coord</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/otlLib/builder.html#buildCaretValueForCoord"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.otlLib.builder.buildCaretValueForCoord" title="Permalink to this definition">¶</a></dt>
+<dd><p>500 –&gt; otTables.CaretValue, format 1</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.otlLib.builder.buildCaretValueForPoint">
+<code class="sig-prename descclassname">fontTools.otlLib.builder.</code><code class="sig-name descname">buildCaretValueForPoint</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">point</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/otlLib/builder.html#buildCaretValueForPoint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.otlLib.builder.buildCaretValueForPoint" title="Permalink to this definition">¶</a></dt>
+<dd><p>4 –&gt; otTables.CaretValue, format 2</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.otlLib.builder.buildComponentRecord">
+<code class="sig-prename descclassname">fontTools.otlLib.builder.</code><code class="sig-name descname">buildComponentRecord</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">anchors</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/otlLib/builder.html#buildComponentRecord"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.otlLib.builder.buildComponentRecord" title="Permalink to this definition">¶</a></dt>
+<dd><p>[otTables.Anchor, otTables.Anchor, …] –&gt; otTables.ComponentRecord</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.otlLib.builder.buildCoverage">
+<code class="sig-prename descclassname">fontTools.otlLib.builder.</code><code class="sig-name descname">buildCoverage</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">glyphs</span></em>, <em class="sig-param"><span class="n">glyphMap</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/otlLib/builder.html#buildCoverage"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.otlLib.builder.buildCoverage" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.otlLib.builder.buildCursivePosSubtable">
+<code class="sig-prename descclassname">fontTools.otlLib.builder.</code><code class="sig-name descname">buildCursivePosSubtable</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">attach</span></em>, <em class="sig-param"><span class="n">glyphMap</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/otlLib/builder.html#buildCursivePosSubtable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.otlLib.builder.buildCursivePosSubtable" title="Permalink to this definition">¶</a></dt>
+<dd><p>{“alef”: (entry, exit)} –&gt; otTables.CursivePos</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.otlLib.builder.buildDevice">
+<code class="sig-prename descclassname">fontTools.otlLib.builder.</code><code class="sig-name descname">buildDevice</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">deltas</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/otlLib/builder.html#buildDevice"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.otlLib.builder.buildDevice" title="Permalink to this definition">¶</a></dt>
+<dd><p>{8:+1, 10:-3, …} –&gt; otTables.Device</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.otlLib.builder.buildLigCaretList">
+<code class="sig-prename descclassname">fontTools.otlLib.builder.</code><code class="sig-name descname">buildLigCaretList</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">coords</span></em>, <em class="sig-param"><span class="n">points</span></em>, <em class="sig-param"><span class="n">glyphMap</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/otlLib/builder.html#buildLigCaretList"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.otlLib.builder.buildLigCaretList" title="Permalink to this definition">¶</a></dt>
+<dd><p>{“f_f_i”:[300,600]}, {“c_t”:[28]} –&gt; otTables.LigCaretList, or None</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.otlLib.builder.buildLigGlyph">
+<code class="sig-prename descclassname">fontTools.otlLib.builder.</code><code class="sig-name descname">buildLigGlyph</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">coords</span></em>, <em class="sig-param"><span class="n">points</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/otlLib/builder.html#buildLigGlyph"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.otlLib.builder.buildLigGlyph" title="Permalink to this definition">¶</a></dt>
+<dd><p>([500], [4]) –&gt; otTables.LigGlyph; None for empty coords/points</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.otlLib.builder.buildLigatureArray">
+<code class="sig-prename descclassname">fontTools.otlLib.builder.</code><code class="sig-name descname">buildLigatureArray</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ligs</span></em>, <em class="sig-param"><span class="n">numMarkClasses</span></em>, <em class="sig-param"><span class="n">glyphMap</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/otlLib/builder.html#buildLigatureArray"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.otlLib.builder.buildLigatureArray" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.otlLib.builder.buildLigatureAttach">
+<code class="sig-prename descclassname">fontTools.otlLib.builder.</code><code class="sig-name descname">buildLigatureAttach</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">components</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/otlLib/builder.html#buildLigatureAttach"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.otlLib.builder.buildLigatureAttach" title="Permalink to this definition">¶</a></dt>
+<dd><p>[[Anchor, Anchor], [Anchor, Anchor, Anchor]] –&gt; LigatureAttach</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.otlLib.builder.buildLigatureSubstSubtable">
+<code class="sig-prename descclassname">fontTools.otlLib.builder.</code><code class="sig-name descname">buildLigatureSubstSubtable</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mapping</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/otlLib/builder.html#buildLigatureSubstSubtable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.otlLib.builder.buildLigatureSubstSubtable" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.otlLib.builder.buildLookup">
+<code class="sig-prename descclassname">fontTools.otlLib.builder.</code><code class="sig-name descname">buildLookup</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">subtables</span></em>, <em class="sig-param"><span class="n">flags</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">markFilterSet</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/otlLib/builder.html#buildLookup"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.otlLib.builder.buildLookup" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.otlLib.builder.buildMark2Record">
+<code class="sig-prename descclassname">fontTools.otlLib.builder.</code><code class="sig-name descname">buildMark2Record</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">anchors</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/otlLib/builder.html#buildMark2Record"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.otlLib.builder.buildMark2Record" title="Permalink to this definition">¶</a></dt>
+<dd><p>[otTables.Anchor, otTables.Anchor, …] –&gt; otTables.Mark2Record</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.otlLib.builder.buildMarkArray">
+<code class="sig-prename descclassname">fontTools.otlLib.builder.</code><code class="sig-name descname">buildMarkArray</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">marks</span></em>, <em class="sig-param"><span class="n">glyphMap</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/otlLib/builder.html#buildMarkArray"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.otlLib.builder.buildMarkArray" title="Permalink to this definition">¶</a></dt>
+<dd><p>{“acute”: (markClass, otTables.Anchor)} –&gt; otTables.MarkArray</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.otlLib.builder.buildMarkBasePos">
+<code class="sig-prename descclassname">fontTools.otlLib.builder.</code><code class="sig-name descname">buildMarkBasePos</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">marks</span></em>, <em class="sig-param"><span class="n">bases</span></em>, <em class="sig-param"><span class="n">glyphMap</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/otlLib/builder.html#buildMarkBasePos"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.otlLib.builder.buildMarkBasePos" title="Permalink to this definition">¶</a></dt>
+<dd><p>Build a list of MarkBasePos subtables.</p>
+<p>a1, a2, a3, a4, a5 = buildAnchor(500, 100), …
+marks = {“acute”: (0, a1), “grave”: (0, a1), “cedilla”: (1, a2)}
+bases = {“a”: {0: a3, 1: a5}, “b”: {0: a4, 1: a5}}</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.otlLib.builder.buildMarkBasePosSubtable">
+<code class="sig-prename descclassname">fontTools.otlLib.builder.</code><code class="sig-name descname">buildMarkBasePosSubtable</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">marks</span></em>, <em class="sig-param"><span class="n">bases</span></em>, <em class="sig-param"><span class="n">glyphMap</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/otlLib/builder.html#buildMarkBasePosSubtable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.otlLib.builder.buildMarkBasePosSubtable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Build a single MarkBasePos subtable.</p>
+<p>a1, a2, a3, a4, a5 = buildAnchor(500, 100), …
+marks = {“acute”: (0, a1), “grave”: (0, a1), “cedilla”: (1, a2)}
+bases = {“a”: {0: a3, 1: a5}, “b”: {0: a4, 1: a5}}</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.otlLib.builder.buildMarkGlyphSetsDef">
+<code class="sig-prename descclassname">fontTools.otlLib.builder.</code><code class="sig-name descname">buildMarkGlyphSetsDef</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">markSets</span></em>, <em class="sig-param"><span class="n">glyphMap</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/otlLib/builder.html#buildMarkGlyphSetsDef"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.otlLib.builder.buildMarkGlyphSetsDef" title="Permalink to this definition">¶</a></dt>
+<dd><p>[{“acute”,”grave”}, {“caron”,”grave”}] –&gt; otTables.MarkGlyphSetsDef</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.otlLib.builder.buildMarkLigPos">
+<code class="sig-prename descclassname">fontTools.otlLib.builder.</code><code class="sig-name descname">buildMarkLigPos</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">marks</span></em>, <em class="sig-param"><span class="n">ligs</span></em>, <em class="sig-param"><span class="n">glyphMap</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/otlLib/builder.html#buildMarkLigPos"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.otlLib.builder.buildMarkLigPos" title="Permalink to this definition">¶</a></dt>
+<dd><p>Build a list of MarkLigPos subtables.</p>
+<p>a1, a2, a3, a4, a5 = buildAnchor(500, 100), …
+marks = {“acute”: (0, a1), “grave”: (0, a1), “cedilla”: (1, a2)}
+ligs = {“f_i”: [{0: a3, 1: a5},  {0: a4, 1: a5}], “c_t”: [{…}, {…}]}</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.otlLib.builder.buildMarkLigPosSubtable">
+<code class="sig-prename descclassname">fontTools.otlLib.builder.</code><code class="sig-name descname">buildMarkLigPosSubtable</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">marks</span></em>, <em class="sig-param"><span class="n">ligs</span></em>, <em class="sig-param"><span class="n">glyphMap</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/otlLib/builder.html#buildMarkLigPosSubtable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.otlLib.builder.buildMarkLigPosSubtable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Build a single MarkLigPos subtable.</p>
+<p>a1, a2, a3, a4, a5 = buildAnchor(500, 100), …
+marks = {“acute”: (0, a1), “grave”: (0, a1), “cedilla”: (1, a2)}
+ligs = {“f_i”: [{0: a3, 1: a5},  {0: a4, 1: a5}], “c_t”: [{…}, {…}]}</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.otlLib.builder.buildMarkRecord">
+<code class="sig-prename descclassname">fontTools.otlLib.builder.</code><code class="sig-name descname">buildMarkRecord</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">classID</span></em>, <em class="sig-param"><span class="n">anchor</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/otlLib/builder.html#buildMarkRecord"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.otlLib.builder.buildMarkRecord" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.otlLib.builder.buildMultipleSubstSubtable">
+<code class="sig-prename descclassname">fontTools.otlLib.builder.</code><code class="sig-name descname">buildMultipleSubstSubtable</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mapping</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/otlLib/builder.html#buildMultipleSubstSubtable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.otlLib.builder.buildMultipleSubstSubtable" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.otlLib.builder.buildPairPosClassesSubtable">
+<code class="sig-prename descclassname">fontTools.otlLib.builder.</code><code class="sig-name descname">buildPairPosClassesSubtable</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pairs</span></em>, <em class="sig-param"><span class="n">glyphMap</span></em>, <em class="sig-param"><span class="n">valueFormat1</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">valueFormat2</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/otlLib/builder.html#buildPairPosClassesSubtable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.otlLib.builder.buildPairPosClassesSubtable" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.otlLib.builder.buildPairPosGlyphs">
+<code class="sig-prename descclassname">fontTools.otlLib.builder.</code><code class="sig-name descname">buildPairPosGlyphs</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pairs</span></em>, <em class="sig-param"><span class="n">glyphMap</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/otlLib/builder.html#buildPairPosGlyphs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.otlLib.builder.buildPairPosGlyphs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.otlLib.builder.buildPairPosGlyphsSubtable">
+<code class="sig-prename descclassname">fontTools.otlLib.builder.</code><code class="sig-name descname">buildPairPosGlyphsSubtable</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pairs</span></em>, <em class="sig-param"><span class="n">glyphMap</span></em>, <em class="sig-param"><span class="n">valueFormat1</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">valueFormat2</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/otlLib/builder.html#buildPairPosGlyphsSubtable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.otlLib.builder.buildPairPosGlyphsSubtable" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.otlLib.builder.buildSinglePos">
+<code class="sig-prename descclassname">fontTools.otlLib.builder.</code><code class="sig-name descname">buildSinglePos</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mapping</span></em>, <em class="sig-param"><span class="n">glyphMap</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/otlLib/builder.html#buildSinglePos"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.otlLib.builder.buildSinglePos" title="Permalink to this definition">¶</a></dt>
+<dd><p>{“glyph”: ValueRecord} –&gt; [otTables.SinglePos*]</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.otlLib.builder.buildSinglePosSubtable">
+<code class="sig-prename descclassname">fontTools.otlLib.builder.</code><code class="sig-name descname">buildSinglePosSubtable</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">values</span></em>, <em class="sig-param"><span class="n">glyphMap</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/otlLib/builder.html#buildSinglePosSubtable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.otlLib.builder.buildSinglePosSubtable" title="Permalink to this definition">¶</a></dt>
+<dd><p>{glyphName: otBase.ValueRecord} –&gt; otTables.SinglePos</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.otlLib.builder.buildSingleSubstSubtable">
+<code class="sig-prename descclassname">fontTools.otlLib.builder.</code><code class="sig-name descname">buildSingleSubstSubtable</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mapping</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/otlLib/builder.html#buildSingleSubstSubtable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.otlLib.builder.buildSingleSubstSubtable" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.otlLib.builder.buildValue">
+<code class="sig-prename descclassname">fontTools.otlLib.builder.</code><code class="sig-name descname">buildValue</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/otlLib/builder.html#buildValue"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.otlLib.builder.buildValue" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../pens/index.html" class="btn btn-neutral float-right" title="pens" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="otlLib" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Just van Rossum, Behdad Esfahbod, and the fontTools Authors. CC BY-SA 4.0
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

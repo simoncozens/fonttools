@@ -1,0 +1,349 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>errors &mdash; fontTools Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="featureVars" href="featureVars.html" />
+    <link rel="prev" title="cff" href="cff.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> fontTools
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Library</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../afmLib.html">afmLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../agl.html">agl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cffLib/index.html">cffLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../colorLib/index.html">colorLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cu2qu/index.html">cu2qu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../designspaceLib/index.html">designspaceLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../encodings/index.html">encodings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../feaLib/index.html">feaLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../merge.html">merge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/index.html">misc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mtiLib.html">mtiLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../otlLib/index.html">otlLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pens/index.html">pens</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../subset/index.html">subset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svgLib/index.html">svgLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../t1Lib.html">t1Lib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ttLib/index.html">ttLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ttx.html">ttx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ufoLib/index.html">ufoLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unicode.html">unicode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unicodedata/index.html">unicodedata</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">varLib</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="builder.html">builder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cff.html">cff</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">errors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="featureVars.html">featureVars</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instancer.html">instancer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interpolatable.html">interpolatable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interpolate_layout.html">interpolate_layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iup.html">iup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="merger.html">merger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.html">models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mutator.html">mutator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mvar.html">mvar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plot.html">plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="varStore.html">varStore</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../voltLib.html">voltLib</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">fontTools</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">varLib</a> &raquo;</li>
+        
+      <li>errors</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/varLib/errors.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-fontTools.varLib.errors">
+<span id="errors"></span><h1>errors<a class="headerlink" href="#module-fontTools.varLib.errors" title="Permalink to this headline">¶</a></h1>
+<dl class="py exception">
+<dt id="fontTools.varLib.errors.VarLibCFFDictMergeError">
+<em class="property">exception </em><code class="sig-prename descclassname">fontTools.varLib.errors.</code><code class="sig-name descname">VarLibCFFDictMergeError</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">key</span></em>, <em class="sig-param"><span class="n">value</span></em>, <em class="sig-param"><span class="n">values</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/varLib/errors.html#VarLibCFFDictMergeError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.errors.VarLibCFFDictMergeError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Raised when a CFF PrivateDict cannot be merged.</p>
+<dl class="py attribute">
+<dt id="fontTools.varLib.errors.VarLibCFFDictMergeError.args">
+<code class="sig-name descname">args</code><a class="headerlink" href="#fontTools.varLib.errors.VarLibCFFDictMergeError.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.errors.VarLibCFFDictMergeError.with_traceback">
+<code class="sig-name descname">with_traceback</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.errors.VarLibCFFDictMergeError.with_traceback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt id="fontTools.varLib.errors.VarLibCFFPointTypeMergeError">
+<em class="property">exception </em><code class="sig-prename descclassname">fontTools.varLib.errors.</code><code class="sig-name descname">VarLibCFFPointTypeMergeError</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">point_type</span></em>, <em class="sig-param"><span class="n">pt_index</span></em>, <em class="sig-param"><span class="n">m_index</span></em>, <em class="sig-param"><span class="n">default_type</span></em>, <em class="sig-param"><span class="n">glyph_name</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/varLib/errors.html#VarLibCFFPointTypeMergeError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.errors.VarLibCFFPointTypeMergeError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Raised when a CFF glyph cannot be merged.</p>
+<dl class="py attribute">
+<dt id="fontTools.varLib.errors.VarLibCFFPointTypeMergeError.args">
+<code class="sig-name descname">args</code><a class="headerlink" href="#fontTools.varLib.errors.VarLibCFFPointTypeMergeError.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.errors.VarLibCFFPointTypeMergeError.with_traceback">
+<code class="sig-name descname">with_traceback</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.errors.VarLibCFFPointTypeMergeError.with_traceback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt id="fontTools.varLib.errors.VarLibError">
+<em class="property">exception </em><code class="sig-prename descclassname">fontTools.varLib.errors.</code><code class="sig-name descname">VarLibError</code><a class="reference internal" href="../_modules/fontTools/varLib/errors.html#VarLibError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.errors.VarLibError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Base exception for the varLib module.</p>
+<dl class="py attribute">
+<dt id="fontTools.varLib.errors.VarLibError.args">
+<code class="sig-name descname">args</code><a class="headerlink" href="#fontTools.varLib.errors.VarLibError.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.errors.VarLibError.with_traceback">
+<code class="sig-name descname">with_traceback</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.errors.VarLibError.with_traceback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt id="fontTools.varLib.errors.VarLibMergeError">
+<em class="property">exception </em><code class="sig-prename descclassname">fontTools.varLib.errors.</code><code class="sig-name descname">VarLibMergeError</code><a class="reference internal" href="../_modules/fontTools/varLib/errors.html#VarLibMergeError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.errors.VarLibMergeError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Raised when input data cannot be merged into a variable font.</p>
+<dl class="py attribute">
+<dt id="fontTools.varLib.errors.VarLibMergeError.args">
+<code class="sig-name descname">args</code><a class="headerlink" href="#fontTools.varLib.errors.VarLibMergeError.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.errors.VarLibMergeError.with_traceback">
+<code class="sig-name descname">with_traceback</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.errors.VarLibMergeError.with_traceback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt id="fontTools.varLib.errors.VarLibValidationError">
+<em class="property">exception </em><code class="sig-prename descclassname">fontTools.varLib.errors.</code><code class="sig-name descname">VarLibValidationError</code><a class="reference internal" href="../_modules/fontTools/varLib/errors.html#VarLibValidationError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.errors.VarLibValidationError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Raised when input data is invalid from varLib’s point of view.</p>
+<dl class="py attribute">
+<dt id="fontTools.varLib.errors.VarLibValidationError.args">
+<code class="sig-name descname">args</code><a class="headerlink" href="#fontTools.varLib.errors.VarLibValidationError.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.errors.VarLibValidationError.with_traceback">
+<code class="sig-name descname">with_traceback</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.errors.VarLibValidationError.with_traceback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt id="fontTools.varLib.errors.VariationModelError">
+<em class="property">exception </em><code class="sig-prename descclassname">fontTools.varLib.errors.</code><code class="sig-name descname">VariationModelError</code><a class="reference internal" href="../_modules/fontTools/varLib/errors.html#VariationModelError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.errors.VariationModelError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Raised when a variation model is faulty.</p>
+<dl class="py attribute">
+<dt id="fontTools.varLib.errors.VariationModelError.args">
+<code class="sig-name descname">args</code><a class="headerlink" href="#fontTools.varLib.errors.VariationModelError.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.errors.VariationModelError.with_traceback">
+<code class="sig-name descname">with_traceback</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.errors.VariationModelError.with_traceback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="featureVars.html" class="btn btn-neutral float-right" title="featureVars" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="cff.html" class="btn btn-neutral float-left" title="cff" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Just van Rossum, Behdad Esfahbod, and the fontTools Authors. CC BY-SA 4.0
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

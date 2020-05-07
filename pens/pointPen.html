@@ -1,0 +1,499 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pointPen &mdash; fontTools Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="qtPen" href="qtPen.html" />
+    <link rel="prev" title="pointInsidePen" href="pointInsidePen.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> fontTools
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Library</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../afmLib.html">afmLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../agl.html">agl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cffLib/index.html">cffLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../colorLib/index.html">colorLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cu2qu/index.html">cu2qu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../designspaceLib/index.html">designspaceLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../encodings/index.html">encodings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../feaLib/index.html">feaLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../merge.html">merge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/index.html">misc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mtiLib.html">mtiLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../otlLib/index.html">otlLib</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">pens</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="areaPen.html">areaPen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basePen.html">basePen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="boundsPen.html">boundsPen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cocoaPen.html">cocoaPen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cu2quPen.html">cu2quPen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="filterPen.html">filterPen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="momentsPen.html">momentsPen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="perimeterPen.html">perimeterPen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pointInsidePen.html">pointInsidePen</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">pointPen</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#pointpens">PointPens</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="qtPen.html">qtPen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="recordingPen.html">recordingPen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reportLabPen.html">reportLabPen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reverseContourPen.html">reverseContourPen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="roundingPen.html">roundingPen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="statisticsPen.html">statisticsPen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="svgPathPen.html">svgPathPen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="t2CharStringPen.html">t2CharStringPen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="teePen.html">teePen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transformPen.html">transformPen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ttGlyphPen.html">ttGlyphPen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wxPen.html">wxPen</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../subset/index.html">subset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svgLib/index.html">svgLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../t1Lib.html">t1Lib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ttLib/index.html">ttLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ttx.html">ttx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ufoLib/index.html">ufoLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unicode.html">unicode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unicodedata/index.html">unicodedata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../varLib/index.html">varLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../voltLib.html">voltLib</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">fontTools</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">pens</a> &raquo;</li>
+        
+      <li>pointPen</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/pens/pointPen.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-fontTools.pens.pointPen">
+<span id="pointpen"></span><h1>pointPen<a class="headerlink" href="#module-fontTools.pens.pointPen" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="pointpens">
+<h2>PointPens<a class="headerlink" href="#pointpens" title="Permalink to this headline">¶</a></h2>
+<p>Where <strong>SegmentPens</strong> have an intuitive approach to drawing
+(if you’re familiar with postscript anyway), the <strong>PointPen</strong>
+is geared towards accessing all the data in the contours of
+the glyph. A PointPen has a very simple interface, it just
+steps through all the points in a call from glyph.drawPoints().
+This allows the caller to provide more data for each point.
+For instance, whether or not a point is smooth, and its name.</p>
+<dl class="py class">
+<dt id="fontTools.pens.pointPen.AbstractPointPen">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.pens.pointPen.</code><code class="sig-name descname">AbstractPointPen</code><a class="reference internal" href="../_modules/fontTools/pens/pointPen.html#AbstractPointPen"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.pens.pointPen.AbstractPointPen" title="Permalink to this definition">¶</a></dt>
+<dd><p>Baseclass for all PointPens.</p>
+<dl class="py method">
+<dt id="fontTools.pens.pointPen.AbstractPointPen.addComponent">
+<code class="sig-name descname">addComponent</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">baseGlyphName</span></em>, <em class="sig-param"><span class="n">transformation</span></em>, <em class="sig-param"><span class="n">identifier</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/pens/pointPen.html#AbstractPointPen.addComponent"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.pens.pointPen.AbstractPointPen.addComponent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a sub glyph.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.pens.pointPen.AbstractPointPen.addPoint">
+<code class="sig-name descname">addPoint</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pt</span></em>, <em class="sig-param"><span class="n">segmentType</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">smooth</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">identifier</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/pens/pointPen.html#AbstractPointPen.addPoint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.pens.pointPen.AbstractPointPen.addPoint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a point to the current sub path.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.pens.pointPen.AbstractPointPen.beginPath">
+<code class="sig-name descname">beginPath</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">identifier</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/pens/pointPen.html#AbstractPointPen.beginPath"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.pens.pointPen.AbstractPointPen.beginPath" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start a new sub path.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.pens.pointPen.AbstractPointPen.endPath">
+<code class="sig-name descname">endPath</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/pens/pointPen.html#AbstractPointPen.endPath"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.pens.pointPen.AbstractPointPen.endPath" title="Permalink to this definition">¶</a></dt>
+<dd><p>End the current sub path.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.pens.pointPen.BasePointToSegmentPen">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.pens.pointPen.</code><code class="sig-name descname">BasePointToSegmentPen</code><a class="reference internal" href="../_modules/fontTools/pens/pointPen.html#BasePointToSegmentPen"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.pens.pointPen.BasePointToSegmentPen" title="Permalink to this definition">¶</a></dt>
+<dd><p>Base class for retrieving the outline in a segment-oriented
+way. The PointPen protocol is simple yet also a little tricky,
+so when you need an outline presented as segments but you have
+as points, do use this base implementation as it properly takes
+care of all the edge cases.</p>
+<dl class="py method">
+<dt id="fontTools.pens.pointPen.BasePointToSegmentPen.addComponent">
+<code class="sig-name descname">addComponent</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">baseGlyphName</span></em>, <em class="sig-param"><span class="n">transformation</span></em>, <em class="sig-param"><span class="n">identifier</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.pens.pointPen.BasePointToSegmentPen.addComponent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a sub glyph.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.pens.pointPen.BasePointToSegmentPen.addPoint">
+<code class="sig-name descname">addPoint</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pt</span></em>, <em class="sig-param"><span class="n">segmentType</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">smooth</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">identifier</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/pens/pointPen.html#BasePointToSegmentPen.addPoint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.pens.pointPen.BasePointToSegmentPen.addPoint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a point to the current sub path.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.pens.pointPen.BasePointToSegmentPen.beginPath">
+<code class="sig-name descname">beginPath</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">identifier</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/pens/pointPen.html#BasePointToSegmentPen.beginPath"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.pens.pointPen.BasePointToSegmentPen.beginPath" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start a new sub path.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.pens.pointPen.BasePointToSegmentPen.endPath">
+<code class="sig-name descname">endPath</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/pens/pointPen.html#BasePointToSegmentPen.endPath"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.pens.pointPen.BasePointToSegmentPen.endPath" title="Permalink to this definition">¶</a></dt>
+<dd><p>End the current sub path.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.pens.pointPen.PointToSegmentPen">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.pens.pointPen.</code><code class="sig-name descname">PointToSegmentPen</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">segmentPen</span></em>, <em class="sig-param"><span class="n">outputImpliedClosingLine</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/pens/pointPen.html#PointToSegmentPen"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.pens.pointPen.PointToSegmentPen" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adapter class that converts the PointPen protocol to the
+(Segment)Pen protocol.</p>
+<dl class="py method">
+<dt id="fontTools.pens.pointPen.PointToSegmentPen.addComponent">
+<code class="sig-name descname">addComponent</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">glyphName</span></em>, <em class="sig-param"><span class="n">transform</span></em>, <em class="sig-param"><span class="n">identifier</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/pens/pointPen.html#PointToSegmentPen.addComponent"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.pens.pointPen.PointToSegmentPen.addComponent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a sub glyph.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.pens.pointPen.PointToSegmentPen.addPoint">
+<code class="sig-name descname">addPoint</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pt</span></em>, <em class="sig-param"><span class="n">segmentType</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">smooth</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">identifier</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.pens.pointPen.PointToSegmentPen.addPoint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a point to the current sub path.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.pens.pointPen.PointToSegmentPen.beginPath">
+<code class="sig-name descname">beginPath</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">identifier</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.pens.pointPen.PointToSegmentPen.beginPath" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start a new sub path.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.pens.pointPen.PointToSegmentPen.endPath">
+<code class="sig-name descname">endPath</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.pens.pointPen.PointToSegmentPen.endPath" title="Permalink to this definition">¶</a></dt>
+<dd><p>End the current sub path.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.pens.pointPen.SegmentToPointPen">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.pens.pointPen.</code><code class="sig-name descname">SegmentToPointPen</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pointPen</span></em>, <em class="sig-param"><span class="n">guessSmooth</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/pens/pointPen.html#SegmentToPointPen"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.pens.pointPen.SegmentToPointPen" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adapter class that converts the (Segment)Pen protocol to the
+PointPen protocol.</p>
+<dl class="py method">
+<dt id="fontTools.pens.pointPen.SegmentToPointPen.addComponent">
+<code class="sig-name descname">addComponent</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">glyphName</span></em>, <em class="sig-param"><span class="n">transform</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/pens/pointPen.html#SegmentToPointPen.addComponent"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.pens.pointPen.SegmentToPointPen.addComponent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a sub glyph. The ‘transformation’ argument must be a 6-tuple
+containing an affine transformation, or a Transform object from the
+fontTools.misc.transform module. More precisely: it should be a
+sequence containing 6 numbers.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.pens.pointPen.SegmentToPointPen.closePath">
+<code class="sig-name descname">closePath</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/pens/pointPen.html#SegmentToPointPen.closePath"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.pens.pointPen.SegmentToPointPen.closePath" title="Permalink to this definition">¶</a></dt>
+<dd><p>Close the current sub path. You must call either pen.closePath()
+or pen.endPath() after each sub path.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.pens.pointPen.SegmentToPointPen.curveTo">
+<code class="sig-name descname">curveTo</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">pts</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/pens/pointPen.html#SegmentToPointPen.curveTo"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.pens.pointPen.SegmentToPointPen.curveTo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draw a cubic bezier with an arbitrary number of control points.</p>
+<p>The last point specified is on-curve, all others are off-curve
+(control) points. If the number of control points is &gt; 2, the
+segment is split into multiple bezier segments. This works
+like this:</p>
+<p>Let n be the number of control points (which is the number of
+arguments to this call minus 1). If n==2, a plain vanilla cubic
+bezier is drawn. If n==1, we fall back to a quadratic segment and
+if n==0 we draw a straight line. It gets interesting when n&gt;2:
+n-1 PostScript-style cubic segments will be drawn as if it were
+one curve. See decomposeSuperBezierSegment().</p>
+<p>The conversion algorithm used for n&gt;2 is inspired by NURB
+splines, and is conceptually equivalent to the TrueType “implied
+points” principle. See also decomposeQuadraticSegment().</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.pens.pointPen.SegmentToPointPen.endPath">
+<code class="sig-name descname">endPath</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/pens/pointPen.html#SegmentToPointPen.endPath"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.pens.pointPen.SegmentToPointPen.endPath" title="Permalink to this definition">¶</a></dt>
+<dd><p>End the current sub path, but don’t close it. You must call
+either pen.closePath() or pen.endPath() after each sub path.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.pens.pointPen.SegmentToPointPen.lineTo">
+<code class="sig-name descname">lineTo</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pt</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/pens/pointPen.html#SegmentToPointPen.lineTo"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.pens.pointPen.SegmentToPointPen.lineTo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draw a straight line from the current point to ‘pt’.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.pens.pointPen.SegmentToPointPen.moveTo">
+<code class="sig-name descname">moveTo</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pt</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/pens/pointPen.html#SegmentToPointPen.moveTo"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.pens.pointPen.SegmentToPointPen.moveTo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Begin a new sub path, set the current point to ‘pt’. You must
+end each sub path with a call to pen.closePath() or pen.endPath().</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.pens.pointPen.SegmentToPointPen.qCurveTo">
+<code class="sig-name descname">qCurveTo</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">pts</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/pens/pointPen.html#SegmentToPointPen.qCurveTo"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.pens.pointPen.SegmentToPointPen.qCurveTo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draw a whole string of quadratic curve segments.</p>
+<p>The last point specified is on-curve, all others are off-curve
+points.</p>
+<p>This method implements TrueType-style curves, breaking up curves
+using ‘implied points’: between each two consequtive off-curve points,
+there is one implied point exactly in the middle between them. See
+also decomposeQuadraticSegment().</p>
+<p>The last argument (normally the on-curve point) may be None.
+This is to support contours that have NO on-curve points (a rarely
+seen feature of TrueType outlines).</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.pens.pointPen.GuessSmoothPointPen">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.pens.pointPen.</code><code class="sig-name descname">GuessSmoothPointPen</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">outPen</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/pens/pointPen.html#GuessSmoothPointPen"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.pens.pointPen.GuessSmoothPointPen" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filtering PointPen that tries to determine whether an on-curve point
+should be “smooth”, ie. that it’s a “tangent” point or a “curve” point.</p>
+<dl class="py method">
+<dt id="fontTools.pens.pointPen.GuessSmoothPointPen.addComponent">
+<code class="sig-name descname">addComponent</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">glyphName</span></em>, <em class="sig-param"><span class="n">transformation</span></em>, <em class="sig-param"><span class="n">identifier</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/pens/pointPen.html#GuessSmoothPointPen.addComponent"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.pens.pointPen.GuessSmoothPointPen.addComponent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a sub glyph.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.pens.pointPen.GuessSmoothPointPen.addPoint">
+<code class="sig-name descname">addPoint</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pt</span></em>, <em class="sig-param"><span class="n">segmentType</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">smooth</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">identifier</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/pens/pointPen.html#GuessSmoothPointPen.addPoint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.pens.pointPen.GuessSmoothPointPen.addPoint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a point to the current sub path.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.pens.pointPen.GuessSmoothPointPen.beginPath">
+<code class="sig-name descname">beginPath</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">identifier</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/pens/pointPen.html#GuessSmoothPointPen.beginPath"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.pens.pointPen.GuessSmoothPointPen.beginPath" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start a new sub path.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.pens.pointPen.GuessSmoothPointPen.endPath">
+<code class="sig-name descname">endPath</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/pens/pointPen.html#GuessSmoothPointPen.endPath"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.pens.pointPen.GuessSmoothPointPen.endPath" title="Permalink to this definition">¶</a></dt>
+<dd><p>End the current sub path.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.pens.pointPen.ReverseContourPointPen">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.pens.pointPen.</code><code class="sig-name descname">ReverseContourPointPen</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">outputPointPen</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/pens/pointPen.html#ReverseContourPointPen"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.pens.pointPen.ReverseContourPointPen" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is a PointPen that passes outline data to another PointPen, but
+reversing the winding direction of all contours. Components are simply
+passed through unchanged.</p>
+<p>Closed contours are reversed in such a way that the first point remains
+the first point.</p>
+<dl class="py method">
+<dt id="fontTools.pens.pointPen.ReverseContourPointPen.addComponent">
+<code class="sig-name descname">addComponent</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">glyphName</span></em>, <em class="sig-param"><span class="n">transform</span></em>, <em class="sig-param"><span class="n">identifier</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/pens/pointPen.html#ReverseContourPointPen.addComponent"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.pens.pointPen.ReverseContourPointPen.addComponent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a sub glyph.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.pens.pointPen.ReverseContourPointPen.addPoint">
+<code class="sig-name descname">addPoint</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pt</span></em>, <em class="sig-param"><span class="n">segmentType</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">smooth</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/pens/pointPen.html#ReverseContourPointPen.addPoint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.pens.pointPen.ReverseContourPointPen.addPoint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a point to the current sub path.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.pens.pointPen.ReverseContourPointPen.beginPath">
+<code class="sig-name descname">beginPath</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">identifier</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/pens/pointPen.html#ReverseContourPointPen.beginPath"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.pens.pointPen.ReverseContourPointPen.beginPath" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start a new sub path.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.pens.pointPen.ReverseContourPointPen.endPath">
+<code class="sig-name descname">endPath</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/pens/pointPen.html#ReverseContourPointPen.endPath"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.pens.pointPen.ReverseContourPointPen.endPath" title="Permalink to this definition">¶</a></dt>
+<dd><p>End the current sub path.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="qtPen.html" class="btn btn-neutral float-right" title="qtPen" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="pointInsidePen.html" class="btn btn-neutral float-left" title="pointInsidePen" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Just van Rossum, Behdad Esfahbod, and the fontTools Authors. CC BY-SA 4.0
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

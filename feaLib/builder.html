@@ -1,0 +1,1666 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>builder &mdash; fontTools Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="error" href="error.html" />
+    <link rel="prev" title="ast" href="ast.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> fontTools
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Library</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../afmLib.html">afmLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../agl.html">agl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cffLib/index.html">cffLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../colorLib/index.html">colorLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cu2qu/index.html">cu2qu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../designspaceLib/index.html">designspaceLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../encodings/index.html">encodings</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">feaLib</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ast.html">ast</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">builder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="error.html">error</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lexer.html">lexer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="parser.html">parser</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../merge.html">merge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/index.html">misc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mtiLib.html">mtiLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../otlLib/index.html">otlLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pens/index.html">pens</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../subset/index.html">subset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svgLib/index.html">svgLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../t1Lib.html">t1Lib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ttLib/index.html">ttLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ttx.html">ttx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ufoLib/index.html">ufoLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unicode.html">unicode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unicodedata/index.html">unicodedata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../varLib/index.html">varLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../voltLib.html">voltLib</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">fontTools</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">feaLib</a> &raquo;</li>
+        
+      <li>builder</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/feaLib/builder.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-fontTools.feaLib.builder">
+<span id="builder"></span><h1>builder<a class="headerlink" href="#module-fontTools.feaLib.builder" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="fontTools.feaLib.builder.AlternateSubstBuilder">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.feaLib.builder.</code><code class="sig-name descname">AlternateSubstBuilder</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">font</span></em>, <em class="sig-param"><span class="n">location</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#AlternateSubstBuilder"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.AlternateSubstBuilder" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py attribute">
+<dt id="fontTools.feaLib.builder.AlternateSubstBuilder.SUBTABLE_BREAK_">
+<code class="sig-name descname">SUBTABLE_BREAK_</code><em class="property"> = 'SUBTABLE_BREAK'</em><a class="headerlink" href="#fontTools.feaLib.builder.AlternateSubstBuilder.SUBTABLE_BREAK_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.AlternateSubstBuilder.add_subtable_break">
+<code class="sig-name descname">add_subtable_break</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">location</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#AlternateSubstBuilder.add_subtable_break"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.AlternateSubstBuilder.add_subtable_break" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.AlternateSubstBuilder.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#AlternateSubstBuilder.build"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.AlternateSubstBuilder.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.AlternateSubstBuilder.buildLookup_">
+<code class="sig-name descname">buildLookup_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">subtables</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.AlternateSubstBuilder.buildLookup_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.AlternateSubstBuilder.buildMarkClasses_">
+<code class="sig-name descname">buildMarkClasses_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">marks</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.AlternateSubstBuilder.buildMarkClasses_" title="Permalink to this definition">¶</a></dt>
+<dd><p>{“cedilla”: (“BOTTOM”, ast.Anchor), …} –&gt; {“BOTTOM”:0, “TOP”:1}</p>
+<p>Helper for MarkBasePostBuilder, MarkLigPosBuilder, and
+MarkMarkPosBuilder. Seems to return the same numeric IDs
+for mark classes as the AFDKO makeotf tool.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.AlternateSubstBuilder.build_subst_subtables">
+<code class="sig-name descname">build_subst_subtables</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mapping</span></em>, <em class="sig-param"><span class="n">klass</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.AlternateSubstBuilder.build_subst_subtables" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.AlternateSubstBuilder.equals">
+<code class="sig-name descname">equals</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#AlternateSubstBuilder.equals"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.AlternateSubstBuilder.equals" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.AlternateSubstBuilder.getAlternateGlyphs">
+<code class="sig-name descname">getAlternateGlyphs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#AlternateSubstBuilder.getAlternateGlyphs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.AlternateSubstBuilder.getAlternateGlyphs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Helper for building ‘aalt’ features.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.AlternateSubstBuilder.inferGlyphClasses">
+<code class="sig-name descname">inferGlyphClasses</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.AlternateSubstBuilder.inferGlyphClasses" title="Permalink to this definition">¶</a></dt>
+<dd><p>Infers glyph glasses for the GDEF table, such as {“cedilla”:3}.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.AlternateSubstBuilder.setBacktrackCoverage_">
+<code class="sig-name descname">setBacktrackCoverage_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">prefix</span></em>, <em class="sig-param"><span class="n">subtable</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.AlternateSubstBuilder.setBacktrackCoverage_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.AlternateSubstBuilder.setInputCoverage_">
+<code class="sig-name descname">setInputCoverage_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">glyphs</span></em>, <em class="sig-param"><span class="n">subtable</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.AlternateSubstBuilder.setInputCoverage_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.AlternateSubstBuilder.setLookAheadCoverage_">
+<code class="sig-name descname">setLookAheadCoverage_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">suffix</span></em>, <em class="sig-param"><span class="n">subtable</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.AlternateSubstBuilder.setLookAheadCoverage_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.feaLib.builder.Builder">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.feaLib.builder.</code><code class="sig-name descname">Builder</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">font</span></em>, <em class="sig-param"><span class="n">featurefile</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#Builder"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.Builder" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.feaLib.builder.Builder.add_alternate_subst">
+<code class="sig-name descname">add_alternate_subst</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">location</span></em>, <em class="sig-param"><span class="n">prefix</span></em>, <em class="sig-param"><span class="n">glyph</span></em>, <em class="sig-param"><span class="n">suffix</span></em>, <em class="sig-param"><span class="n">replacement</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#Builder.add_alternate_subst"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.Builder.add_alternate_subst" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.Builder.add_attach_points">
+<code class="sig-name descname">add_attach_points</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">location</span></em>, <em class="sig-param"><span class="n">glyphs</span></em>, <em class="sig-param"><span class="n">contourPoints</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#Builder.add_attach_points"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.Builder.add_attach_points" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.Builder.add_chain_context_pos">
+<code class="sig-name descname">add_chain_context_pos</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">location</span></em>, <em class="sig-param"><span class="n">prefix</span></em>, <em class="sig-param"><span class="n">glyphs</span></em>, <em class="sig-param"><span class="n">suffix</span></em>, <em class="sig-param"><span class="n">lookups</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#Builder.add_chain_context_pos"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.Builder.add_chain_context_pos" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.Builder.add_chain_context_subst">
+<code class="sig-name descname">add_chain_context_subst</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">location</span></em>, <em class="sig-param"><span class="n">prefix</span></em>, <em class="sig-param"><span class="n">glyphs</span></em>, <em class="sig-param"><span class="n">suffix</span></em>, <em class="sig-param"><span class="n">lookups</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#Builder.add_chain_context_subst"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.Builder.add_chain_context_subst" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.Builder.add_class_pair_pos">
+<code class="sig-name descname">add_class_pair_pos</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">location</span></em>, <em class="sig-param"><span class="n">glyphclass1</span></em>, <em class="sig-param"><span class="n">value1</span></em>, <em class="sig-param"><span class="n">glyphclass2</span></em>, <em class="sig-param"><span class="n">value2</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#Builder.add_class_pair_pos"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.Builder.add_class_pair_pos" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.Builder.add_cursive_pos">
+<code class="sig-name descname">add_cursive_pos</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">location</span></em>, <em class="sig-param"><span class="n">glyphclass</span></em>, <em class="sig-param"><span class="n">entryAnchor</span></em>, <em class="sig-param"><span class="n">exitAnchor</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#Builder.add_cursive_pos"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.Builder.add_cursive_pos" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.Builder.add_cv_character">
+<code class="sig-name descname">add_cv_character</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">character</span></em>, <em class="sig-param"><span class="n">tag</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#Builder.add_cv_character"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.Builder.add_cv_character" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.Builder.add_cv_parameter">
+<code class="sig-name descname">add_cv_parameter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#Builder.add_cv_parameter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.Builder.add_cv_parameter" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.Builder.add_featureName">
+<code class="sig-name descname">add_featureName</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#Builder.add_featureName"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.Builder.add_featureName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.Builder.add_feature_reference">
+<code class="sig-name descname">add_feature_reference</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">location</span></em>, <em class="sig-param"><span class="n">featureName</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#Builder.add_feature_reference"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.Builder.add_feature_reference" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.Builder.add_glyphClassDef">
+<code class="sig-name descname">add_glyphClassDef</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">location</span></em>, <em class="sig-param"><span class="n">baseGlyphs</span></em>, <em class="sig-param"><span class="n">ligatureGlyphs</span></em>, <em class="sig-param"><span class="n">markGlyphs</span></em>, <em class="sig-param"><span class="n">componentGlyphs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#Builder.add_glyphClassDef"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.Builder.add_glyphClassDef" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.Builder.add_hhea_field">
+<code class="sig-name descname">add_hhea_field</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">key</span></em>, <em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#Builder.add_hhea_field"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.Builder.add_hhea_field" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.Builder.add_language_system">
+<code class="sig-name descname">add_language_system</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">location</span></em>, <em class="sig-param"><span class="n">script</span></em>, <em class="sig-param"><span class="n">language</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#Builder.add_language_system"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.Builder.add_language_system" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.Builder.add_ligatureCaretByIndex_">
+<code class="sig-name descname">add_ligatureCaretByIndex_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">location</span></em>, <em class="sig-param"><span class="n">glyphs</span></em>, <em class="sig-param"><span class="n">carets</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#Builder.add_ligatureCaretByIndex_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.Builder.add_ligatureCaretByIndex_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.Builder.add_ligatureCaretByPos_">
+<code class="sig-name descname">add_ligatureCaretByPos_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">location</span></em>, <em class="sig-param"><span class="n">glyphs</span></em>, <em class="sig-param"><span class="n">carets</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#Builder.add_ligatureCaretByPos_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.Builder.add_ligatureCaretByPos_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.Builder.add_ligature_subst">
+<code class="sig-name descname">add_ligature_subst</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">location</span></em>, <em class="sig-param"><span class="n">prefix</span></em>, <em class="sig-param"><span class="n">glyphs</span></em>, <em class="sig-param"><span class="n">suffix</span></em>, <em class="sig-param"><span class="n">replacement</span></em>, <em class="sig-param"><span class="n">forceChain</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#Builder.add_ligature_subst"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.Builder.add_ligature_subst" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.Builder.add_lookup_call">
+<code class="sig-name descname">add_lookup_call</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lookup_name</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#Builder.add_lookup_call"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.Builder.add_lookup_call" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.Builder.add_lookup_to_feature_">
+<code class="sig-name descname">add_lookup_to_feature_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lookup</span></em>, <em class="sig-param"><span class="n">feature_name</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#Builder.add_lookup_to_feature_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.Builder.add_lookup_to_feature_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.Builder.add_mark_base_pos">
+<code class="sig-name descname">add_mark_base_pos</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">location</span></em>, <em class="sig-param"><span class="n">bases</span></em>, <em class="sig-param"><span class="n">marks</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#Builder.add_mark_base_pos"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.Builder.add_mark_base_pos" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.Builder.add_mark_lig_pos">
+<code class="sig-name descname">add_mark_lig_pos</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">location</span></em>, <em class="sig-param"><span class="n">ligatures</span></em>, <em class="sig-param"><span class="n">components</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#Builder.add_mark_lig_pos"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.Builder.add_mark_lig_pos" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.Builder.add_mark_mark_pos">
+<code class="sig-name descname">add_mark_mark_pos</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">location</span></em>, <em class="sig-param"><span class="n">baseMarks</span></em>, <em class="sig-param"><span class="n">marks</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#Builder.add_mark_mark_pos"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.Builder.add_mark_mark_pos" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.Builder.add_marks_">
+<code class="sig-name descname">add_marks_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">location</span></em>, <em class="sig-param"><span class="n">lookupBuilder</span></em>, <em class="sig-param"><span class="n">marks</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#Builder.add_marks_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.Builder.add_marks_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Helper for add_mark_{base,liga,mark}_pos.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.Builder.add_multiple_subst">
+<code class="sig-name descname">add_multiple_subst</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">location</span></em>, <em class="sig-param"><span class="n">prefix</span></em>, <em class="sig-param"><span class="n">glyph</span></em>, <em class="sig-param"><span class="n">suffix</span></em>, <em class="sig-param"><span class="n">replacements</span></em>, <em class="sig-param"><span class="n">forceChain</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#Builder.add_multiple_subst"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.Builder.add_multiple_subst" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.Builder.add_name_record">
+<code class="sig-name descname">add_name_record</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">location</span></em>, <em class="sig-param"><span class="n">nameID</span></em>, <em class="sig-param"><span class="n">platformID</span></em>, <em class="sig-param"><span class="n">platEncID</span></em>, <em class="sig-param"><span class="n">langID</span></em>, <em class="sig-param"><span class="n">string</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#Builder.add_name_record"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.Builder.add_name_record" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.Builder.add_os2_field">
+<code class="sig-name descname">add_os2_field</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">key</span></em>, <em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#Builder.add_os2_field"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.Builder.add_os2_field" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.Builder.add_reverse_chain_single_subst">
+<code class="sig-name descname">add_reverse_chain_single_subst</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">location</span></em>, <em class="sig-param"><span class="n">old_prefix</span></em>, <em class="sig-param"><span class="n">old_suffix</span></em>, <em class="sig-param"><span class="n">mapping</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#Builder.add_reverse_chain_single_subst"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.Builder.add_reverse_chain_single_subst" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.Builder.add_single_pos">
+<code class="sig-name descname">add_single_pos</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">location</span></em>, <em class="sig-param"><span class="n">prefix</span></em>, <em class="sig-param"><span class="n">suffix</span></em>, <em class="sig-param"><span class="n">pos</span></em>, <em class="sig-param"><span class="n">forceChain</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#Builder.add_single_pos"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.Builder.add_single_pos" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.Builder.add_single_pos_chained_">
+<code class="sig-name descname">add_single_pos_chained_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">location</span></em>, <em class="sig-param"><span class="n">prefix</span></em>, <em class="sig-param"><span class="n">suffix</span></em>, <em class="sig-param"><span class="n">pos</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#Builder.add_single_pos_chained_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.Builder.add_single_pos_chained_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.Builder.add_single_subst">
+<code class="sig-name descname">add_single_subst</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">location</span></em>, <em class="sig-param"><span class="n">prefix</span></em>, <em class="sig-param"><span class="n">suffix</span></em>, <em class="sig-param"><span class="n">mapping</span></em>, <em class="sig-param"><span class="n">forceChain</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#Builder.add_single_subst"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.Builder.add_single_subst" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.Builder.add_single_subst_chained_">
+<code class="sig-name descname">add_single_subst_chained_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">location</span></em>, <em class="sig-param"><span class="n">prefix</span></em>, <em class="sig-param"><span class="n">suffix</span></em>, <em class="sig-param"><span class="n">mapping</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#Builder.add_single_subst_chained_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.Builder.add_single_subst_chained_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.Builder.add_specific_pair_pos">
+<code class="sig-name descname">add_specific_pair_pos</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">location</span></em>, <em class="sig-param"><span class="n">glyph1</span></em>, <em class="sig-param"><span class="n">value1</span></em>, <em class="sig-param"><span class="n">glyph2</span></em>, <em class="sig-param"><span class="n">value2</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#Builder.add_specific_pair_pos"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.Builder.add_specific_pair_pos" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.Builder.add_subtable_break">
+<code class="sig-name descname">add_subtable_break</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">location</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#Builder.add_subtable_break"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.Builder.add_subtable_break" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.Builder.add_to_cv_num_named_params">
+<code class="sig-name descname">add_to_cv_num_named_params</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#Builder.add_to_cv_num_named_params"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.Builder.add_to_cv_num_named_params" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds new items to <a href="#id1"><span class="problematic" id="id2">self.cv_num_named_params_</span></a>
+or increments the count of existing items.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.Builder.add_vhea_field">
+<code class="sig-name descname">add_vhea_field</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">key</span></em>, <em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#Builder.add_vhea_field"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.Builder.add_vhea_field" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.Builder.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tables</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#Builder.build"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.Builder.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.Builder.buildBASE">
+<code class="sig-name descname">buildBASE</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#Builder.buildBASE"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.Builder.buildBASE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.Builder.buildBASEAxis">
+<code class="sig-name descname">buildBASEAxis</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">axis</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#Builder.buildBASEAxis"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.Builder.buildBASEAxis" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.Builder.buildFeatureParams">
+<code class="sig-name descname">buildFeatureParams</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#Builder.buildFeatureParams"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.Builder.buildFeatureParams" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.Builder.buildGDEF">
+<code class="sig-name descname">buildGDEF</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#Builder.buildGDEF"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.Builder.buildGDEF" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.Builder.buildGDEFGlyphClassDef_">
+<code class="sig-name descname">buildGDEFGlyphClassDef_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#Builder.buildGDEFGlyphClassDef_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.Builder.buildGDEFGlyphClassDef_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.Builder.buildGDEFMarkAttachClassDef_">
+<code class="sig-name descname">buildGDEFMarkAttachClassDef_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#Builder.buildGDEFMarkAttachClassDef_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.Builder.buildGDEFMarkAttachClassDef_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.Builder.buildGDEFMarkGlyphSetsDef_">
+<code class="sig-name descname">buildGDEFMarkGlyphSetsDef_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#Builder.buildGDEFMarkGlyphSetsDef_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.Builder.buildGDEFMarkGlyphSetsDef_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.Builder.buildLookups_">
+<code class="sig-name descname">buildLookups_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#Builder.buildLookups_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.Builder.buildLookups_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.Builder.build_OS_2">
+<code class="sig-name descname">build_OS_2</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#Builder.build_OS_2"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.Builder.build_OS_2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.Builder.build_codepages_">
+<code class="sig-name descname">build_codepages_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pages</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#Builder.build_codepages_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.Builder.build_codepages_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.Builder.build_feature_aalt_">
+<code class="sig-name descname">build_feature_aalt_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#Builder.build_feature_aalt_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.Builder.build_feature_aalt_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.Builder.build_head">
+<code class="sig-name descname">build_head</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#Builder.build_head"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.Builder.build_head" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.Builder.build_hhea">
+<code class="sig-name descname">build_hhea</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#Builder.build_hhea"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.Builder.build_hhea" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.Builder.build_name">
+<code class="sig-name descname">build_name</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#Builder.build_name"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.Builder.build_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.Builder.build_vhea">
+<code class="sig-name descname">build_vhea</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#Builder.build_vhea"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.Builder.build_vhea" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.Builder.end_feature">
+<code class="sig-name descname">end_feature</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#Builder.end_feature"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.Builder.end_feature" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.Builder.end_lookup_block">
+<code class="sig-name descname">end_lookup_block</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#Builder.end_lookup_block"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.Builder.end_lookup_block" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.Builder.find_lookup_builders_">
+<code class="sig-name descname">find_lookup_builders_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lookups</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#Builder.find_lookup_builders_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.Builder.find_lookup_builders_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Helper for building chain contextual substitutions</p>
+<p>Given a list of lookup names, finds the LookupBuilder for each name.
+If an input name is None, it gets mapped to a None LookupBuilder.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.Builder.getMarkAttachClass_">
+<code class="sig-name descname">getMarkAttachClass_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">location</span></em>, <em class="sig-param"><span class="n">glyphs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#Builder.getMarkAttachClass_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.Builder.getMarkAttachClass_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.Builder.getMarkFilterSet_">
+<code class="sig-name descname">getMarkFilterSet_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">location</span></em>, <em class="sig-param"><span class="n">glyphs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#Builder.getMarkFilterSet_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.Builder.getMarkFilterSet_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.Builder.get_chained_lookup_">
+<code class="sig-name descname">get_chained_lookup_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">location</span></em>, <em class="sig-param"><span class="n">builder_class</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#Builder.get_chained_lookup_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.Builder.get_chained_lookup_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.Builder.get_default_language_systems_">
+<code class="sig-name descname">get_default_language_systems_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#Builder.get_default_language_systems_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.Builder.get_default_language_systems_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.Builder.get_lookup_">
+<code class="sig-name descname">get_lookup_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">location</span></em>, <em class="sig-param"><span class="n">builder_class</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#Builder.get_lookup_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.Builder.get_lookup_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.Builder.get_user_name_id">
+<code class="sig-name descname">get_user_name_id</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">table</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#Builder.get_user_name_id"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.Builder.get_user_name_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.Builder.makeTable">
+<code class="sig-name descname">makeTable</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#Builder.makeTable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.Builder.makeTable" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.Builder.setGlyphClass_">
+<code class="sig-name descname">setGlyphClass_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">location</span></em>, <em class="sig-param"><span class="n">glyph</span></em>, <em class="sig-param"><span class="n">glyphClass</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#Builder.setGlyphClass_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.Builder.setGlyphClass_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.Builder.set_base_axis">
+<code class="sig-name descname">set_base_axis</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">bases</span></em>, <em class="sig-param"><span class="n">scripts</span></em>, <em class="sig-param"><span class="n">vertical</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#Builder.set_base_axis"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.Builder.set_base_axis" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.Builder.set_font_revision">
+<code class="sig-name descname">set_font_revision</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">location</span></em>, <em class="sig-param"><span class="n">revision</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#Builder.set_font_revision"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.Builder.set_font_revision" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.Builder.set_language">
+<code class="sig-name descname">set_language</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">location</span></em>, <em class="sig-param"><span class="n">language</span></em>, <em class="sig-param"><span class="n">include_default</span></em>, <em class="sig-param"><span class="n">required</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#Builder.set_language"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.Builder.set_language" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.Builder.set_lookup_flag">
+<code class="sig-name descname">set_lookup_flag</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">location</span></em>, <em class="sig-param"><span class="n">value</span></em>, <em class="sig-param"><span class="n">markAttach</span></em>, <em class="sig-param"><span class="n">markFilter</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#Builder.set_lookup_flag"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.Builder.set_lookup_flag" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.Builder.set_script">
+<code class="sig-name descname">set_script</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">location</span></em>, <em class="sig-param"><span class="n">script</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#Builder.set_script"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.Builder.set_script" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.Builder.set_size_parameters">
+<code class="sig-name descname">set_size_parameters</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">location</span></em>, <em class="sig-param"><span class="n">DesignSize</span></em>, <em class="sig-param"><span class="n">SubfamilyID</span></em>, <em class="sig-param"><span class="n">RangeStart</span></em>, <em class="sig-param"><span class="n">RangeEnd</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#Builder.set_size_parameters"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.Builder.set_size_parameters" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.Builder.start_feature">
+<code class="sig-name descname">start_feature</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">location</span></em>, <em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#Builder.start_feature"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.Builder.start_feature" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.Builder.start_lookup_block">
+<code class="sig-name descname">start_lookup_block</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">location</span></em>, <em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#Builder.start_lookup_block"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.Builder.start_lookup_block" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.feaLib.builder.Builder.supportedTables">
+<code class="sig-name descname">supportedTables</code><em class="property"> = frozenset({'BASE', 'GDEF', 'GPOS', 'GSUB', 'OS/2', 'head', 'hhea', 'name', 'vhea'})</em><a class="headerlink" href="#fontTools.feaLib.builder.Builder.supportedTables" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.feaLib.builder.ChainContextPosBuilder">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.feaLib.builder.</code><code class="sig-name descname">ChainContextPosBuilder</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">font</span></em>, <em class="sig-param"><span class="n">location</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#ChainContextPosBuilder"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.ChainContextPosBuilder" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py attribute">
+<dt id="fontTools.feaLib.builder.ChainContextPosBuilder.SUBTABLE_BREAK_">
+<code class="sig-name descname">SUBTABLE_BREAK_</code><em class="property"> = 'SUBTABLE_BREAK'</em><a class="headerlink" href="#fontTools.feaLib.builder.ChainContextPosBuilder.SUBTABLE_BREAK_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.ChainContextPosBuilder.add_subtable_break">
+<code class="sig-name descname">add_subtable_break</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">location</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#ChainContextPosBuilder.add_subtable_break"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.ChainContextPosBuilder.add_subtable_break" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.ChainContextPosBuilder.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#ChainContextPosBuilder.build"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.ChainContextPosBuilder.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.ChainContextPosBuilder.buildLookup_">
+<code class="sig-name descname">buildLookup_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">subtables</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.ChainContextPosBuilder.buildLookup_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.ChainContextPosBuilder.buildMarkClasses_">
+<code class="sig-name descname">buildMarkClasses_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">marks</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.ChainContextPosBuilder.buildMarkClasses_" title="Permalink to this definition">¶</a></dt>
+<dd><p>{“cedilla”: (“BOTTOM”, ast.Anchor), …} –&gt; {“BOTTOM”:0, “TOP”:1}</p>
+<p>Helper for MarkBasePostBuilder, MarkLigPosBuilder, and
+MarkMarkPosBuilder. Seems to return the same numeric IDs
+for mark classes as the AFDKO makeotf tool.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.ChainContextPosBuilder.build_subst_subtables">
+<code class="sig-name descname">build_subst_subtables</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mapping</span></em>, <em class="sig-param"><span class="n">klass</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.ChainContextPosBuilder.build_subst_subtables" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.ChainContextPosBuilder.equals">
+<code class="sig-name descname">equals</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#ChainContextPosBuilder.equals"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.ChainContextPosBuilder.equals" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.ChainContextPosBuilder.find_chainable_single_pos">
+<code class="sig-name descname">find_chainable_single_pos</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lookups</span></em>, <em class="sig-param"><span class="n">glyphs</span></em>, <em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#ChainContextPosBuilder.find_chainable_single_pos"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.ChainContextPosBuilder.find_chainable_single_pos" title="Permalink to this definition">¶</a></dt>
+<dd><p>Helper for add_single_pos_chained_()</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.ChainContextPosBuilder.getAlternateGlyphs">
+<code class="sig-name descname">getAlternateGlyphs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.ChainContextPosBuilder.getAlternateGlyphs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Helper for building ‘aalt’ features.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.ChainContextPosBuilder.inferGlyphClasses">
+<code class="sig-name descname">inferGlyphClasses</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.ChainContextPosBuilder.inferGlyphClasses" title="Permalink to this definition">¶</a></dt>
+<dd><p>Infers glyph glasses for the GDEF table, such as {“cedilla”:3}.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.ChainContextPosBuilder.setBacktrackCoverage_">
+<code class="sig-name descname">setBacktrackCoverage_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">prefix</span></em>, <em class="sig-param"><span class="n">subtable</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.ChainContextPosBuilder.setBacktrackCoverage_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.ChainContextPosBuilder.setInputCoverage_">
+<code class="sig-name descname">setInputCoverage_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">glyphs</span></em>, <em class="sig-param"><span class="n">subtable</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.ChainContextPosBuilder.setInputCoverage_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.ChainContextPosBuilder.setLookAheadCoverage_">
+<code class="sig-name descname">setLookAheadCoverage_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">suffix</span></em>, <em class="sig-param"><span class="n">subtable</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.ChainContextPosBuilder.setLookAheadCoverage_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.feaLib.builder.ChainContextSubstBuilder">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.feaLib.builder.</code><code class="sig-name descname">ChainContextSubstBuilder</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">font</span></em>, <em class="sig-param"><span class="n">location</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#ChainContextSubstBuilder"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.ChainContextSubstBuilder" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py attribute">
+<dt id="fontTools.feaLib.builder.ChainContextSubstBuilder.SUBTABLE_BREAK_">
+<code class="sig-name descname">SUBTABLE_BREAK_</code><em class="property"> = 'SUBTABLE_BREAK'</em><a class="headerlink" href="#fontTools.feaLib.builder.ChainContextSubstBuilder.SUBTABLE_BREAK_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.ChainContextSubstBuilder.add_subtable_break">
+<code class="sig-name descname">add_subtable_break</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">location</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#ChainContextSubstBuilder.add_subtable_break"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.ChainContextSubstBuilder.add_subtable_break" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.ChainContextSubstBuilder.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#ChainContextSubstBuilder.build"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.ChainContextSubstBuilder.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.ChainContextSubstBuilder.buildLookup_">
+<code class="sig-name descname">buildLookup_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">subtables</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.ChainContextSubstBuilder.buildLookup_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.ChainContextSubstBuilder.buildMarkClasses_">
+<code class="sig-name descname">buildMarkClasses_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">marks</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.ChainContextSubstBuilder.buildMarkClasses_" title="Permalink to this definition">¶</a></dt>
+<dd><p>{“cedilla”: (“BOTTOM”, ast.Anchor), …} –&gt; {“BOTTOM”:0, “TOP”:1}</p>
+<p>Helper for MarkBasePostBuilder, MarkLigPosBuilder, and
+MarkMarkPosBuilder. Seems to return the same numeric IDs
+for mark classes as the AFDKO makeotf tool.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.ChainContextSubstBuilder.build_subst_subtables">
+<code class="sig-name descname">build_subst_subtables</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mapping</span></em>, <em class="sig-param"><span class="n">klass</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.ChainContextSubstBuilder.build_subst_subtables" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.ChainContextSubstBuilder.equals">
+<code class="sig-name descname">equals</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#ChainContextSubstBuilder.equals"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.ChainContextSubstBuilder.equals" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.ChainContextSubstBuilder.find_chainable_single_subst">
+<code class="sig-name descname">find_chainable_single_subst</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">glyphs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#ChainContextSubstBuilder.find_chainable_single_subst"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.ChainContextSubstBuilder.find_chainable_single_subst" title="Permalink to this definition">¶</a></dt>
+<dd><p>Helper for add_single_subst_chained_()</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.ChainContextSubstBuilder.getAlternateGlyphs">
+<code class="sig-name descname">getAlternateGlyphs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#ChainContextSubstBuilder.getAlternateGlyphs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.ChainContextSubstBuilder.getAlternateGlyphs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Helper for building ‘aalt’ features.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.ChainContextSubstBuilder.inferGlyphClasses">
+<code class="sig-name descname">inferGlyphClasses</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.ChainContextSubstBuilder.inferGlyphClasses" title="Permalink to this definition">¶</a></dt>
+<dd><p>Infers glyph glasses for the GDEF table, such as {“cedilla”:3}.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.ChainContextSubstBuilder.setBacktrackCoverage_">
+<code class="sig-name descname">setBacktrackCoverage_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">prefix</span></em>, <em class="sig-param"><span class="n">subtable</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.ChainContextSubstBuilder.setBacktrackCoverage_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.ChainContextSubstBuilder.setInputCoverage_">
+<code class="sig-name descname">setInputCoverage_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">glyphs</span></em>, <em class="sig-param"><span class="n">subtable</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.ChainContextSubstBuilder.setInputCoverage_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.ChainContextSubstBuilder.setLookAheadCoverage_">
+<code class="sig-name descname">setLookAheadCoverage_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">suffix</span></em>, <em class="sig-param"><span class="n">subtable</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.ChainContextSubstBuilder.setLookAheadCoverage_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.feaLib.builder.ClassPairPosSubtableBuilder">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.feaLib.builder.</code><code class="sig-name descname">ClassPairPosSubtableBuilder</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builder</span></em>, <em class="sig-param"><span class="n">valueFormat1</span></em>, <em class="sig-param"><span class="n">valueFormat2</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#ClassPairPosSubtableBuilder"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.ClassPairPosSubtableBuilder" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.feaLib.builder.ClassPairPosSubtableBuilder.addPair">
+<code class="sig-name descname">addPair</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">gc1</span></em>, <em class="sig-param"><span class="n">value1</span></em>, <em class="sig-param"><span class="n">gc2</span></em>, <em class="sig-param"><span class="n">value2</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#ClassPairPosSubtableBuilder.addPair"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.ClassPairPosSubtableBuilder.addPair" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.ClassPairPosSubtableBuilder.addSubtableBreak">
+<code class="sig-name descname">addSubtableBreak</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#ClassPairPosSubtableBuilder.addSubtableBreak"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.ClassPairPosSubtableBuilder.addSubtableBreak" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.ClassPairPosSubtableBuilder.flush_">
+<code class="sig-name descname">flush_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#ClassPairPosSubtableBuilder.flush_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.ClassPairPosSubtableBuilder.flush_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.ClassPairPosSubtableBuilder.subtables">
+<code class="sig-name descname">subtables</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#ClassPairPosSubtableBuilder.subtables"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.ClassPairPosSubtableBuilder.subtables" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.feaLib.builder.CursivePosBuilder">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.feaLib.builder.</code><code class="sig-name descname">CursivePosBuilder</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">font</span></em>, <em class="sig-param"><span class="n">location</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#CursivePosBuilder"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.CursivePosBuilder" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py attribute">
+<dt id="fontTools.feaLib.builder.CursivePosBuilder.SUBTABLE_BREAK_">
+<code class="sig-name descname">SUBTABLE_BREAK_</code><em class="property"> = 'SUBTABLE_BREAK'</em><a class="headerlink" href="#fontTools.feaLib.builder.CursivePosBuilder.SUBTABLE_BREAK_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.CursivePosBuilder.add_attachment">
+<code class="sig-name descname">add_attachment</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">location</span></em>, <em class="sig-param"><span class="n">glyphs</span></em>, <em class="sig-param"><span class="n">entryAnchor</span></em>, <em class="sig-param"><span class="n">exitAnchor</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#CursivePosBuilder.add_attachment"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.CursivePosBuilder.add_attachment" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.CursivePosBuilder.add_subtable_break">
+<code class="sig-name descname">add_subtable_break</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">location</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.CursivePosBuilder.add_subtable_break" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.CursivePosBuilder.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#CursivePosBuilder.build"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.CursivePosBuilder.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.CursivePosBuilder.buildLookup_">
+<code class="sig-name descname">buildLookup_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">subtables</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.CursivePosBuilder.buildLookup_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.CursivePosBuilder.buildMarkClasses_">
+<code class="sig-name descname">buildMarkClasses_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">marks</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.CursivePosBuilder.buildMarkClasses_" title="Permalink to this definition">¶</a></dt>
+<dd><p>{“cedilla”: (“BOTTOM”, ast.Anchor), …} –&gt; {“BOTTOM”:0, “TOP”:1}</p>
+<p>Helper for MarkBasePostBuilder, MarkLigPosBuilder, and
+MarkMarkPosBuilder. Seems to return the same numeric IDs
+for mark classes as the AFDKO makeotf tool.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.CursivePosBuilder.build_subst_subtables">
+<code class="sig-name descname">build_subst_subtables</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mapping</span></em>, <em class="sig-param"><span class="n">klass</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.CursivePosBuilder.build_subst_subtables" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.CursivePosBuilder.equals">
+<code class="sig-name descname">equals</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#CursivePosBuilder.equals"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.CursivePosBuilder.equals" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.CursivePosBuilder.getAlternateGlyphs">
+<code class="sig-name descname">getAlternateGlyphs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.CursivePosBuilder.getAlternateGlyphs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Helper for building ‘aalt’ features.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.CursivePosBuilder.inferGlyphClasses">
+<code class="sig-name descname">inferGlyphClasses</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.CursivePosBuilder.inferGlyphClasses" title="Permalink to this definition">¶</a></dt>
+<dd><p>Infers glyph glasses for the GDEF table, such as {“cedilla”:3}.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.CursivePosBuilder.setBacktrackCoverage_">
+<code class="sig-name descname">setBacktrackCoverage_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">prefix</span></em>, <em class="sig-param"><span class="n">subtable</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.CursivePosBuilder.setBacktrackCoverage_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.CursivePosBuilder.setInputCoverage_">
+<code class="sig-name descname">setInputCoverage_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">glyphs</span></em>, <em class="sig-param"><span class="n">subtable</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.CursivePosBuilder.setInputCoverage_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.CursivePosBuilder.setLookAheadCoverage_">
+<code class="sig-name descname">setLookAheadCoverage_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">suffix</span></em>, <em class="sig-param"><span class="n">subtable</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.CursivePosBuilder.setLookAheadCoverage_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.feaLib.builder.LigatureSubstBuilder">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.feaLib.builder.</code><code class="sig-name descname">LigatureSubstBuilder</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">font</span></em>, <em class="sig-param"><span class="n">location</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#LigatureSubstBuilder"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.LigatureSubstBuilder" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py attribute">
+<dt id="fontTools.feaLib.builder.LigatureSubstBuilder.SUBTABLE_BREAK_">
+<code class="sig-name descname">SUBTABLE_BREAK_</code><em class="property"> = 'SUBTABLE_BREAK'</em><a class="headerlink" href="#fontTools.feaLib.builder.LigatureSubstBuilder.SUBTABLE_BREAK_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.LigatureSubstBuilder.add_subtable_break">
+<code class="sig-name descname">add_subtable_break</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">location</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#LigatureSubstBuilder.add_subtable_break"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.LigatureSubstBuilder.add_subtable_break" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.LigatureSubstBuilder.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#LigatureSubstBuilder.build"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.LigatureSubstBuilder.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.LigatureSubstBuilder.buildLookup_">
+<code class="sig-name descname">buildLookup_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">subtables</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.LigatureSubstBuilder.buildLookup_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.LigatureSubstBuilder.buildMarkClasses_">
+<code class="sig-name descname">buildMarkClasses_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">marks</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.LigatureSubstBuilder.buildMarkClasses_" title="Permalink to this definition">¶</a></dt>
+<dd><p>{“cedilla”: (“BOTTOM”, ast.Anchor), …} –&gt; {“BOTTOM”:0, “TOP”:1}</p>
+<p>Helper for MarkBasePostBuilder, MarkLigPosBuilder, and
+MarkMarkPosBuilder. Seems to return the same numeric IDs
+for mark classes as the AFDKO makeotf tool.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.LigatureSubstBuilder.build_subst_subtables">
+<code class="sig-name descname">build_subst_subtables</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mapping</span></em>, <em class="sig-param"><span class="n">klass</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.LigatureSubstBuilder.build_subst_subtables" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.LigatureSubstBuilder.equals">
+<code class="sig-name descname">equals</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#LigatureSubstBuilder.equals"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.LigatureSubstBuilder.equals" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.LigatureSubstBuilder.getAlternateGlyphs">
+<code class="sig-name descname">getAlternateGlyphs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.LigatureSubstBuilder.getAlternateGlyphs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Helper for building ‘aalt’ features.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.LigatureSubstBuilder.inferGlyphClasses">
+<code class="sig-name descname">inferGlyphClasses</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.LigatureSubstBuilder.inferGlyphClasses" title="Permalink to this definition">¶</a></dt>
+<dd><p>Infers glyph glasses for the GDEF table, such as {“cedilla”:3}.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.LigatureSubstBuilder.setBacktrackCoverage_">
+<code class="sig-name descname">setBacktrackCoverage_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">prefix</span></em>, <em class="sig-param"><span class="n">subtable</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.LigatureSubstBuilder.setBacktrackCoverage_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.LigatureSubstBuilder.setInputCoverage_">
+<code class="sig-name descname">setInputCoverage_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">glyphs</span></em>, <em class="sig-param"><span class="n">subtable</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.LigatureSubstBuilder.setInputCoverage_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.LigatureSubstBuilder.setLookAheadCoverage_">
+<code class="sig-name descname">setLookAheadCoverage_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">suffix</span></em>, <em class="sig-param"><span class="n">subtable</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.LigatureSubstBuilder.setLookAheadCoverage_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.feaLib.builder.LookupBuilder">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.feaLib.builder.</code><code class="sig-name descname">LookupBuilder</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">font</span></em>, <em class="sig-param"><span class="n">location</span></em>, <em class="sig-param"><span class="n">table</span></em>, <em class="sig-param"><span class="n">lookup_type</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#LookupBuilder"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.LookupBuilder" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py attribute">
+<dt id="fontTools.feaLib.builder.LookupBuilder.SUBTABLE_BREAK_">
+<code class="sig-name descname">SUBTABLE_BREAK_</code><em class="property"> = 'SUBTABLE_BREAK'</em><a class="headerlink" href="#fontTools.feaLib.builder.LookupBuilder.SUBTABLE_BREAK_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.LookupBuilder.add_subtable_break">
+<code class="sig-name descname">add_subtable_break</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">location</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#LookupBuilder.add_subtable_break"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.LookupBuilder.add_subtable_break" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.LookupBuilder.buildLookup_">
+<code class="sig-name descname">buildLookup_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">subtables</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#LookupBuilder.buildLookup_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.LookupBuilder.buildLookup_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.LookupBuilder.buildMarkClasses_">
+<code class="sig-name descname">buildMarkClasses_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">marks</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#LookupBuilder.buildMarkClasses_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.LookupBuilder.buildMarkClasses_" title="Permalink to this definition">¶</a></dt>
+<dd><p>{“cedilla”: (“BOTTOM”, ast.Anchor), …} –&gt; {“BOTTOM”:0, “TOP”:1}</p>
+<p>Helper for MarkBasePostBuilder, MarkLigPosBuilder, and
+MarkMarkPosBuilder. Seems to return the same numeric IDs
+for mark classes as the AFDKO makeotf tool.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.LookupBuilder.build_subst_subtables">
+<code class="sig-name descname">build_subst_subtables</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mapping</span></em>, <em class="sig-param"><span class="n">klass</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#LookupBuilder.build_subst_subtables"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.LookupBuilder.build_subst_subtables" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.LookupBuilder.equals">
+<code class="sig-name descname">equals</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#LookupBuilder.equals"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.LookupBuilder.equals" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.LookupBuilder.getAlternateGlyphs">
+<code class="sig-name descname">getAlternateGlyphs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#LookupBuilder.getAlternateGlyphs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.LookupBuilder.getAlternateGlyphs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Helper for building ‘aalt’ features.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.LookupBuilder.inferGlyphClasses">
+<code class="sig-name descname">inferGlyphClasses</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#LookupBuilder.inferGlyphClasses"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.LookupBuilder.inferGlyphClasses" title="Permalink to this definition">¶</a></dt>
+<dd><p>Infers glyph glasses for the GDEF table, such as {“cedilla”:3}.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.LookupBuilder.setBacktrackCoverage_">
+<code class="sig-name descname">setBacktrackCoverage_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">prefix</span></em>, <em class="sig-param"><span class="n">subtable</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#LookupBuilder.setBacktrackCoverage_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.LookupBuilder.setBacktrackCoverage_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.LookupBuilder.setInputCoverage_">
+<code class="sig-name descname">setInputCoverage_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">glyphs</span></em>, <em class="sig-param"><span class="n">subtable</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#LookupBuilder.setInputCoverage_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.LookupBuilder.setInputCoverage_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.LookupBuilder.setLookAheadCoverage_">
+<code class="sig-name descname">setLookAheadCoverage_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">suffix</span></em>, <em class="sig-param"><span class="n">subtable</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#LookupBuilder.setLookAheadCoverage_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.LookupBuilder.setLookAheadCoverage_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.feaLib.builder.MarkBasePosBuilder">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.feaLib.builder.</code><code class="sig-name descname">MarkBasePosBuilder</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">font</span></em>, <em class="sig-param"><span class="n">location</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#MarkBasePosBuilder"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.MarkBasePosBuilder" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py attribute">
+<dt id="fontTools.feaLib.builder.MarkBasePosBuilder.SUBTABLE_BREAK_">
+<code class="sig-name descname">SUBTABLE_BREAK_</code><em class="property"> = 'SUBTABLE_BREAK'</em><a class="headerlink" href="#fontTools.feaLib.builder.MarkBasePosBuilder.SUBTABLE_BREAK_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.MarkBasePosBuilder.add_subtable_break">
+<code class="sig-name descname">add_subtable_break</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">location</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.MarkBasePosBuilder.add_subtable_break" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.MarkBasePosBuilder.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#MarkBasePosBuilder.build"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.MarkBasePosBuilder.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.MarkBasePosBuilder.buildLookup_">
+<code class="sig-name descname">buildLookup_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">subtables</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.MarkBasePosBuilder.buildLookup_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.MarkBasePosBuilder.buildMarkClasses_">
+<code class="sig-name descname">buildMarkClasses_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">marks</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.MarkBasePosBuilder.buildMarkClasses_" title="Permalink to this definition">¶</a></dt>
+<dd><p>{“cedilla”: (“BOTTOM”, ast.Anchor), …} –&gt; {“BOTTOM”:0, “TOP”:1}</p>
+<p>Helper for MarkBasePostBuilder, MarkLigPosBuilder, and
+MarkMarkPosBuilder. Seems to return the same numeric IDs
+for mark classes as the AFDKO makeotf tool.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.MarkBasePosBuilder.build_subst_subtables">
+<code class="sig-name descname">build_subst_subtables</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mapping</span></em>, <em class="sig-param"><span class="n">klass</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.MarkBasePosBuilder.build_subst_subtables" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.MarkBasePosBuilder.equals">
+<code class="sig-name descname">equals</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#MarkBasePosBuilder.equals"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.MarkBasePosBuilder.equals" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.MarkBasePosBuilder.getAlternateGlyphs">
+<code class="sig-name descname">getAlternateGlyphs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.MarkBasePosBuilder.getAlternateGlyphs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Helper for building ‘aalt’ features.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.MarkBasePosBuilder.inferGlyphClasses">
+<code class="sig-name descname">inferGlyphClasses</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#MarkBasePosBuilder.inferGlyphClasses"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.MarkBasePosBuilder.inferGlyphClasses" title="Permalink to this definition">¶</a></dt>
+<dd><p>Infers glyph glasses for the GDEF table, such as {“cedilla”:3}.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.MarkBasePosBuilder.setBacktrackCoverage_">
+<code class="sig-name descname">setBacktrackCoverage_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">prefix</span></em>, <em class="sig-param"><span class="n">subtable</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.MarkBasePosBuilder.setBacktrackCoverage_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.MarkBasePosBuilder.setInputCoverage_">
+<code class="sig-name descname">setInputCoverage_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">glyphs</span></em>, <em class="sig-param"><span class="n">subtable</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.MarkBasePosBuilder.setInputCoverage_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.MarkBasePosBuilder.setLookAheadCoverage_">
+<code class="sig-name descname">setLookAheadCoverage_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">suffix</span></em>, <em class="sig-param"><span class="n">subtable</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.MarkBasePosBuilder.setLookAheadCoverage_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.feaLib.builder.MarkLigPosBuilder">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.feaLib.builder.</code><code class="sig-name descname">MarkLigPosBuilder</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">font</span></em>, <em class="sig-param"><span class="n">location</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#MarkLigPosBuilder"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.MarkLigPosBuilder" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py attribute">
+<dt id="fontTools.feaLib.builder.MarkLigPosBuilder.SUBTABLE_BREAK_">
+<code class="sig-name descname">SUBTABLE_BREAK_</code><em class="property"> = 'SUBTABLE_BREAK'</em><a class="headerlink" href="#fontTools.feaLib.builder.MarkLigPosBuilder.SUBTABLE_BREAK_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.MarkLigPosBuilder.add_subtable_break">
+<code class="sig-name descname">add_subtable_break</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">location</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.MarkLigPosBuilder.add_subtable_break" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.MarkLigPosBuilder.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#MarkLigPosBuilder.build"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.MarkLigPosBuilder.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.MarkLigPosBuilder.buildLookup_">
+<code class="sig-name descname">buildLookup_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">subtables</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.MarkLigPosBuilder.buildLookup_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.MarkLigPosBuilder.buildMarkClasses_">
+<code class="sig-name descname">buildMarkClasses_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">marks</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.MarkLigPosBuilder.buildMarkClasses_" title="Permalink to this definition">¶</a></dt>
+<dd><p>{“cedilla”: (“BOTTOM”, ast.Anchor), …} –&gt; {“BOTTOM”:0, “TOP”:1}</p>
+<p>Helper for MarkBasePostBuilder, MarkLigPosBuilder, and
+MarkMarkPosBuilder. Seems to return the same numeric IDs
+for mark classes as the AFDKO makeotf tool.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.MarkLigPosBuilder.build_subst_subtables">
+<code class="sig-name descname">build_subst_subtables</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mapping</span></em>, <em class="sig-param"><span class="n">klass</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.MarkLigPosBuilder.build_subst_subtables" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.MarkLigPosBuilder.equals">
+<code class="sig-name descname">equals</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#MarkLigPosBuilder.equals"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.MarkLigPosBuilder.equals" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.MarkLigPosBuilder.getAlternateGlyphs">
+<code class="sig-name descname">getAlternateGlyphs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.MarkLigPosBuilder.getAlternateGlyphs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Helper for building ‘aalt’ features.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.MarkLigPosBuilder.inferGlyphClasses">
+<code class="sig-name descname">inferGlyphClasses</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#MarkLigPosBuilder.inferGlyphClasses"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.MarkLigPosBuilder.inferGlyphClasses" title="Permalink to this definition">¶</a></dt>
+<dd><p>Infers glyph glasses for the GDEF table, such as {“cedilla”:3}.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.MarkLigPosBuilder.setBacktrackCoverage_">
+<code class="sig-name descname">setBacktrackCoverage_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">prefix</span></em>, <em class="sig-param"><span class="n">subtable</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.MarkLigPosBuilder.setBacktrackCoverage_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.MarkLigPosBuilder.setInputCoverage_">
+<code class="sig-name descname">setInputCoverage_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">glyphs</span></em>, <em class="sig-param"><span class="n">subtable</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.MarkLigPosBuilder.setInputCoverage_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.MarkLigPosBuilder.setLookAheadCoverage_">
+<code class="sig-name descname">setLookAheadCoverage_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">suffix</span></em>, <em class="sig-param"><span class="n">subtable</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.MarkLigPosBuilder.setLookAheadCoverage_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.feaLib.builder.MarkMarkPosBuilder">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.feaLib.builder.</code><code class="sig-name descname">MarkMarkPosBuilder</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">font</span></em>, <em class="sig-param"><span class="n">location</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#MarkMarkPosBuilder"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.MarkMarkPosBuilder" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py attribute">
+<dt id="fontTools.feaLib.builder.MarkMarkPosBuilder.SUBTABLE_BREAK_">
+<code class="sig-name descname">SUBTABLE_BREAK_</code><em class="property"> = 'SUBTABLE_BREAK'</em><a class="headerlink" href="#fontTools.feaLib.builder.MarkMarkPosBuilder.SUBTABLE_BREAK_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.MarkMarkPosBuilder.add_subtable_break">
+<code class="sig-name descname">add_subtable_break</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">location</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.MarkMarkPosBuilder.add_subtable_break" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.MarkMarkPosBuilder.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#MarkMarkPosBuilder.build"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.MarkMarkPosBuilder.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.MarkMarkPosBuilder.buildLookup_">
+<code class="sig-name descname">buildLookup_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">subtables</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.MarkMarkPosBuilder.buildLookup_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.MarkMarkPosBuilder.buildMarkClasses_">
+<code class="sig-name descname">buildMarkClasses_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">marks</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.MarkMarkPosBuilder.buildMarkClasses_" title="Permalink to this definition">¶</a></dt>
+<dd><p>{“cedilla”: (“BOTTOM”, ast.Anchor), …} –&gt; {“BOTTOM”:0, “TOP”:1}</p>
+<p>Helper for MarkBasePostBuilder, MarkLigPosBuilder, and
+MarkMarkPosBuilder. Seems to return the same numeric IDs
+for mark classes as the AFDKO makeotf tool.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.MarkMarkPosBuilder.build_subst_subtables">
+<code class="sig-name descname">build_subst_subtables</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mapping</span></em>, <em class="sig-param"><span class="n">klass</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.MarkMarkPosBuilder.build_subst_subtables" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.MarkMarkPosBuilder.equals">
+<code class="sig-name descname">equals</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#MarkMarkPosBuilder.equals"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.MarkMarkPosBuilder.equals" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.MarkMarkPosBuilder.getAlternateGlyphs">
+<code class="sig-name descname">getAlternateGlyphs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.MarkMarkPosBuilder.getAlternateGlyphs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Helper for building ‘aalt’ features.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.MarkMarkPosBuilder.inferGlyphClasses">
+<code class="sig-name descname">inferGlyphClasses</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#MarkMarkPosBuilder.inferGlyphClasses"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.MarkMarkPosBuilder.inferGlyphClasses" title="Permalink to this definition">¶</a></dt>
+<dd><p>Infers glyph glasses for the GDEF table, such as {“cedilla”:3}.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.MarkMarkPosBuilder.setBacktrackCoverage_">
+<code class="sig-name descname">setBacktrackCoverage_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">prefix</span></em>, <em class="sig-param"><span class="n">subtable</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.MarkMarkPosBuilder.setBacktrackCoverage_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.MarkMarkPosBuilder.setInputCoverage_">
+<code class="sig-name descname">setInputCoverage_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">glyphs</span></em>, <em class="sig-param"><span class="n">subtable</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.MarkMarkPosBuilder.setInputCoverage_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.MarkMarkPosBuilder.setLookAheadCoverage_">
+<code class="sig-name descname">setLookAheadCoverage_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">suffix</span></em>, <em class="sig-param"><span class="n">subtable</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.MarkMarkPosBuilder.setLookAheadCoverage_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.feaLib.builder.MultipleSubstBuilder">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.feaLib.builder.</code><code class="sig-name descname">MultipleSubstBuilder</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">font</span></em>, <em class="sig-param"><span class="n">location</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#MultipleSubstBuilder"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.MultipleSubstBuilder" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py attribute">
+<dt id="fontTools.feaLib.builder.MultipleSubstBuilder.SUBTABLE_BREAK_">
+<code class="sig-name descname">SUBTABLE_BREAK_</code><em class="property"> = 'SUBTABLE_BREAK'</em><a class="headerlink" href="#fontTools.feaLib.builder.MultipleSubstBuilder.SUBTABLE_BREAK_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.MultipleSubstBuilder.add_subtable_break">
+<code class="sig-name descname">add_subtable_break</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">location</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#MultipleSubstBuilder.add_subtable_break"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.MultipleSubstBuilder.add_subtable_break" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.MultipleSubstBuilder.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#MultipleSubstBuilder.build"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.MultipleSubstBuilder.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.MultipleSubstBuilder.buildLookup_">
+<code class="sig-name descname">buildLookup_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">subtables</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.MultipleSubstBuilder.buildLookup_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.MultipleSubstBuilder.buildMarkClasses_">
+<code class="sig-name descname">buildMarkClasses_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">marks</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.MultipleSubstBuilder.buildMarkClasses_" title="Permalink to this definition">¶</a></dt>
+<dd><p>{“cedilla”: (“BOTTOM”, ast.Anchor), …} –&gt; {“BOTTOM”:0, “TOP”:1}</p>
+<p>Helper for MarkBasePostBuilder, MarkLigPosBuilder, and
+MarkMarkPosBuilder. Seems to return the same numeric IDs
+for mark classes as the AFDKO makeotf tool.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.MultipleSubstBuilder.build_subst_subtables">
+<code class="sig-name descname">build_subst_subtables</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mapping</span></em>, <em class="sig-param"><span class="n">klass</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.MultipleSubstBuilder.build_subst_subtables" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.MultipleSubstBuilder.equals">
+<code class="sig-name descname">equals</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#MultipleSubstBuilder.equals"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.MultipleSubstBuilder.equals" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.MultipleSubstBuilder.getAlternateGlyphs">
+<code class="sig-name descname">getAlternateGlyphs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.MultipleSubstBuilder.getAlternateGlyphs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Helper for building ‘aalt’ features.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.MultipleSubstBuilder.inferGlyphClasses">
+<code class="sig-name descname">inferGlyphClasses</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.MultipleSubstBuilder.inferGlyphClasses" title="Permalink to this definition">¶</a></dt>
+<dd><p>Infers glyph glasses for the GDEF table, such as {“cedilla”:3}.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.MultipleSubstBuilder.setBacktrackCoverage_">
+<code class="sig-name descname">setBacktrackCoverage_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">prefix</span></em>, <em class="sig-param"><span class="n">subtable</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.MultipleSubstBuilder.setBacktrackCoverage_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.MultipleSubstBuilder.setInputCoverage_">
+<code class="sig-name descname">setInputCoverage_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">glyphs</span></em>, <em class="sig-param"><span class="n">subtable</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.MultipleSubstBuilder.setInputCoverage_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.MultipleSubstBuilder.setLookAheadCoverage_">
+<code class="sig-name descname">setLookAheadCoverage_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">suffix</span></em>, <em class="sig-param"><span class="n">subtable</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.MultipleSubstBuilder.setLookAheadCoverage_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.feaLib.builder.PairPosBuilder">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.feaLib.builder.</code><code class="sig-name descname">PairPosBuilder</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">font</span></em>, <em class="sig-param"><span class="n">location</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#PairPosBuilder"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.PairPosBuilder" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py attribute">
+<dt id="fontTools.feaLib.builder.PairPosBuilder.SUBTABLE_BREAK_">
+<code class="sig-name descname">SUBTABLE_BREAK_</code><em class="property"> = 'SUBTABLE_BREAK'</em><a class="headerlink" href="#fontTools.feaLib.builder.PairPosBuilder.SUBTABLE_BREAK_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.PairPosBuilder.addClassPair">
+<code class="sig-name descname">addClassPair</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">location</span></em>, <em class="sig-param"><span class="n">glyphclass1</span></em>, <em class="sig-param"><span class="n">value1</span></em>, <em class="sig-param"><span class="n">glyphclass2</span></em>, <em class="sig-param"><span class="n">value2</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#PairPosBuilder.addClassPair"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.PairPosBuilder.addClassPair" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.PairPosBuilder.addGlyphPair">
+<code class="sig-name descname">addGlyphPair</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">location</span></em>, <em class="sig-param"><span class="n">glyph1</span></em>, <em class="sig-param"><span class="n">value1</span></em>, <em class="sig-param"><span class="n">glyph2</span></em>, <em class="sig-param"><span class="n">value2</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#PairPosBuilder.addGlyphPair"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.PairPosBuilder.addGlyphPair" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.PairPosBuilder.add_subtable_break">
+<code class="sig-name descname">add_subtable_break</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">location</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#PairPosBuilder.add_subtable_break"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.PairPosBuilder.add_subtable_break" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.PairPosBuilder.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#PairPosBuilder.build"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.PairPosBuilder.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.PairPosBuilder.buildLookup_">
+<code class="sig-name descname">buildLookup_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">subtables</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.PairPosBuilder.buildLookup_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.PairPosBuilder.buildMarkClasses_">
+<code class="sig-name descname">buildMarkClasses_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">marks</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.PairPosBuilder.buildMarkClasses_" title="Permalink to this definition">¶</a></dt>
+<dd><p>{“cedilla”: (“BOTTOM”, ast.Anchor), …} –&gt; {“BOTTOM”:0, “TOP”:1}</p>
+<p>Helper for MarkBasePostBuilder, MarkLigPosBuilder, and
+MarkMarkPosBuilder. Seems to return the same numeric IDs
+for mark classes as the AFDKO makeotf tool.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.PairPosBuilder.build_subst_subtables">
+<code class="sig-name descname">build_subst_subtables</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mapping</span></em>, <em class="sig-param"><span class="n">klass</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.PairPosBuilder.build_subst_subtables" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.PairPosBuilder.equals">
+<code class="sig-name descname">equals</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#PairPosBuilder.equals"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.PairPosBuilder.equals" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.PairPosBuilder.getAlternateGlyphs">
+<code class="sig-name descname">getAlternateGlyphs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.PairPosBuilder.getAlternateGlyphs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Helper for building ‘aalt’ features.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.PairPosBuilder.inferGlyphClasses">
+<code class="sig-name descname">inferGlyphClasses</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.PairPosBuilder.inferGlyphClasses" title="Permalink to this definition">¶</a></dt>
+<dd><p>Infers glyph glasses for the GDEF table, such as {“cedilla”:3}.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.PairPosBuilder.setBacktrackCoverage_">
+<code class="sig-name descname">setBacktrackCoverage_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">prefix</span></em>, <em class="sig-param"><span class="n">subtable</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.PairPosBuilder.setBacktrackCoverage_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.PairPosBuilder.setInputCoverage_">
+<code class="sig-name descname">setInputCoverage_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">glyphs</span></em>, <em class="sig-param"><span class="n">subtable</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.PairPosBuilder.setInputCoverage_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.PairPosBuilder.setLookAheadCoverage_">
+<code class="sig-name descname">setLookAheadCoverage_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">suffix</span></em>, <em class="sig-param"><span class="n">subtable</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.PairPosBuilder.setLookAheadCoverage_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.feaLib.builder.ReverseChainSingleSubstBuilder">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.feaLib.builder.</code><code class="sig-name descname">ReverseChainSingleSubstBuilder</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">font</span></em>, <em class="sig-param"><span class="n">location</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#ReverseChainSingleSubstBuilder"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.ReverseChainSingleSubstBuilder" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py attribute">
+<dt id="fontTools.feaLib.builder.ReverseChainSingleSubstBuilder.SUBTABLE_BREAK_">
+<code class="sig-name descname">SUBTABLE_BREAK_</code><em class="property"> = 'SUBTABLE_BREAK'</em><a class="headerlink" href="#fontTools.feaLib.builder.ReverseChainSingleSubstBuilder.SUBTABLE_BREAK_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.ReverseChainSingleSubstBuilder.add_subtable_break">
+<code class="sig-name descname">add_subtable_break</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">location</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#ReverseChainSingleSubstBuilder.add_subtable_break"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.ReverseChainSingleSubstBuilder.add_subtable_break" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.ReverseChainSingleSubstBuilder.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#ReverseChainSingleSubstBuilder.build"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.ReverseChainSingleSubstBuilder.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.ReverseChainSingleSubstBuilder.buildLookup_">
+<code class="sig-name descname">buildLookup_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">subtables</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.ReverseChainSingleSubstBuilder.buildLookup_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.ReverseChainSingleSubstBuilder.buildMarkClasses_">
+<code class="sig-name descname">buildMarkClasses_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">marks</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.ReverseChainSingleSubstBuilder.buildMarkClasses_" title="Permalink to this definition">¶</a></dt>
+<dd><p>{“cedilla”: (“BOTTOM”, ast.Anchor), …} –&gt; {“BOTTOM”:0, “TOP”:1}</p>
+<p>Helper for MarkBasePostBuilder, MarkLigPosBuilder, and
+MarkMarkPosBuilder. Seems to return the same numeric IDs
+for mark classes as the AFDKO makeotf tool.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.ReverseChainSingleSubstBuilder.build_subst_subtables">
+<code class="sig-name descname">build_subst_subtables</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mapping</span></em>, <em class="sig-param"><span class="n">klass</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.ReverseChainSingleSubstBuilder.build_subst_subtables" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.ReverseChainSingleSubstBuilder.equals">
+<code class="sig-name descname">equals</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#ReverseChainSingleSubstBuilder.equals"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.ReverseChainSingleSubstBuilder.equals" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.ReverseChainSingleSubstBuilder.getAlternateGlyphs">
+<code class="sig-name descname">getAlternateGlyphs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.ReverseChainSingleSubstBuilder.getAlternateGlyphs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Helper for building ‘aalt’ features.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.ReverseChainSingleSubstBuilder.inferGlyphClasses">
+<code class="sig-name descname">inferGlyphClasses</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.ReverseChainSingleSubstBuilder.inferGlyphClasses" title="Permalink to this definition">¶</a></dt>
+<dd><p>Infers glyph glasses for the GDEF table, such as {“cedilla”:3}.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.ReverseChainSingleSubstBuilder.setBacktrackCoverage_">
+<code class="sig-name descname">setBacktrackCoverage_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">prefix</span></em>, <em class="sig-param"><span class="n">subtable</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.ReverseChainSingleSubstBuilder.setBacktrackCoverage_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.ReverseChainSingleSubstBuilder.setInputCoverage_">
+<code class="sig-name descname">setInputCoverage_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">glyphs</span></em>, <em class="sig-param"><span class="n">subtable</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.ReverseChainSingleSubstBuilder.setInputCoverage_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.ReverseChainSingleSubstBuilder.setLookAheadCoverage_">
+<code class="sig-name descname">setLookAheadCoverage_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">suffix</span></em>, <em class="sig-param"><span class="n">subtable</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.ReverseChainSingleSubstBuilder.setLookAheadCoverage_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.feaLib.builder.SinglePosBuilder">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.feaLib.builder.</code><code class="sig-name descname">SinglePosBuilder</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">font</span></em>, <em class="sig-param"><span class="n">location</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#SinglePosBuilder"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.SinglePosBuilder" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py attribute">
+<dt id="fontTools.feaLib.builder.SinglePosBuilder.SUBTABLE_BREAK_">
+<code class="sig-name descname">SUBTABLE_BREAK_</code><em class="property"> = 'SUBTABLE_BREAK'</em><a class="headerlink" href="#fontTools.feaLib.builder.SinglePosBuilder.SUBTABLE_BREAK_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.SinglePosBuilder.add_pos">
+<code class="sig-name descname">add_pos</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">location</span></em>, <em class="sig-param"><span class="n">glyph</span></em>, <em class="sig-param"><span class="n">valueRecord</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#SinglePosBuilder.add_pos"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.SinglePosBuilder.add_pos" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.SinglePosBuilder.add_subtable_break">
+<code class="sig-name descname">add_subtable_break</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">location</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.SinglePosBuilder.add_subtable_break" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.SinglePosBuilder.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#SinglePosBuilder.build"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.SinglePosBuilder.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.SinglePosBuilder.buildLookup_">
+<code class="sig-name descname">buildLookup_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">subtables</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.SinglePosBuilder.buildLookup_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.SinglePosBuilder.buildMarkClasses_">
+<code class="sig-name descname">buildMarkClasses_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">marks</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.SinglePosBuilder.buildMarkClasses_" title="Permalink to this definition">¶</a></dt>
+<dd><p>{“cedilla”: (“BOTTOM”, ast.Anchor), …} –&gt; {“BOTTOM”:0, “TOP”:1}</p>
+<p>Helper for MarkBasePostBuilder, MarkLigPosBuilder, and
+MarkMarkPosBuilder. Seems to return the same numeric IDs
+for mark classes as the AFDKO makeotf tool.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.SinglePosBuilder.build_subst_subtables">
+<code class="sig-name descname">build_subst_subtables</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mapping</span></em>, <em class="sig-param"><span class="n">klass</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.SinglePosBuilder.build_subst_subtables" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.SinglePosBuilder.can_add">
+<code class="sig-name descname">can_add</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">glyph</span></em>, <em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#SinglePosBuilder.can_add"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.SinglePosBuilder.can_add" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.SinglePosBuilder.equals">
+<code class="sig-name descname">equals</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#SinglePosBuilder.equals"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.SinglePosBuilder.equals" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.SinglePosBuilder.getAlternateGlyphs">
+<code class="sig-name descname">getAlternateGlyphs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.SinglePosBuilder.getAlternateGlyphs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Helper for building ‘aalt’ features.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.SinglePosBuilder.inferGlyphClasses">
+<code class="sig-name descname">inferGlyphClasses</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.SinglePosBuilder.inferGlyphClasses" title="Permalink to this definition">¶</a></dt>
+<dd><p>Infers glyph glasses for the GDEF table, such as {“cedilla”:3}.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.SinglePosBuilder.setBacktrackCoverage_">
+<code class="sig-name descname">setBacktrackCoverage_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">prefix</span></em>, <em class="sig-param"><span class="n">subtable</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.SinglePosBuilder.setBacktrackCoverage_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.SinglePosBuilder.setInputCoverage_">
+<code class="sig-name descname">setInputCoverage_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">glyphs</span></em>, <em class="sig-param"><span class="n">subtable</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.SinglePosBuilder.setInputCoverage_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.SinglePosBuilder.setLookAheadCoverage_">
+<code class="sig-name descname">setLookAheadCoverage_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">suffix</span></em>, <em class="sig-param"><span class="n">subtable</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.SinglePosBuilder.setLookAheadCoverage_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.feaLib.builder.SingleSubstBuilder">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.feaLib.builder.</code><code class="sig-name descname">SingleSubstBuilder</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">font</span></em>, <em class="sig-param"><span class="n">location</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#SingleSubstBuilder"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.SingleSubstBuilder" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py attribute">
+<dt id="fontTools.feaLib.builder.SingleSubstBuilder.SUBTABLE_BREAK_">
+<code class="sig-name descname">SUBTABLE_BREAK_</code><em class="property"> = 'SUBTABLE_BREAK'</em><a class="headerlink" href="#fontTools.feaLib.builder.SingleSubstBuilder.SUBTABLE_BREAK_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.SingleSubstBuilder.add_subtable_break">
+<code class="sig-name descname">add_subtable_break</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">location</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#SingleSubstBuilder.add_subtable_break"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.SingleSubstBuilder.add_subtable_break" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.SingleSubstBuilder.build">
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#SingleSubstBuilder.build"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.SingleSubstBuilder.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.SingleSubstBuilder.buildLookup_">
+<code class="sig-name descname">buildLookup_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">subtables</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.SingleSubstBuilder.buildLookup_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.SingleSubstBuilder.buildMarkClasses_">
+<code class="sig-name descname">buildMarkClasses_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">marks</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.SingleSubstBuilder.buildMarkClasses_" title="Permalink to this definition">¶</a></dt>
+<dd><p>{“cedilla”: (“BOTTOM”, ast.Anchor), …} –&gt; {“BOTTOM”:0, “TOP”:1}</p>
+<p>Helper for MarkBasePostBuilder, MarkLigPosBuilder, and
+MarkMarkPosBuilder. Seems to return the same numeric IDs
+for mark classes as the AFDKO makeotf tool.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.SingleSubstBuilder.build_subst_subtables">
+<code class="sig-name descname">build_subst_subtables</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mapping</span></em>, <em class="sig-param"><span class="n">klass</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.SingleSubstBuilder.build_subst_subtables" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.SingleSubstBuilder.equals">
+<code class="sig-name descname">equals</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#SingleSubstBuilder.equals"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.SingleSubstBuilder.equals" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.SingleSubstBuilder.getAlternateGlyphs">
+<code class="sig-name descname">getAlternateGlyphs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#SingleSubstBuilder.getAlternateGlyphs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.SingleSubstBuilder.getAlternateGlyphs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Helper for building ‘aalt’ features.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.SingleSubstBuilder.inferGlyphClasses">
+<code class="sig-name descname">inferGlyphClasses</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.SingleSubstBuilder.inferGlyphClasses" title="Permalink to this definition">¶</a></dt>
+<dd><p>Infers glyph glasses for the GDEF table, such as {“cedilla”:3}.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.SingleSubstBuilder.setBacktrackCoverage_">
+<code class="sig-name descname">setBacktrackCoverage_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">prefix</span></em>, <em class="sig-param"><span class="n">subtable</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.SingleSubstBuilder.setBacktrackCoverage_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.SingleSubstBuilder.setInputCoverage_">
+<code class="sig-name descname">setInputCoverage_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">glyphs</span></em>, <em class="sig-param"><span class="n">subtable</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.SingleSubstBuilder.setInputCoverage_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.feaLib.builder.SingleSubstBuilder.setLookAheadCoverage_">
+<code class="sig-name descname">setLookAheadCoverage_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">suffix</span></em>, <em class="sig-param"><span class="n">subtable</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.feaLib.builder.SingleSubstBuilder.setLookAheadCoverage_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.feaLib.builder.addOpenTypeFeatures">
+<code class="sig-prename descclassname">fontTools.feaLib.builder.</code><code class="sig-name descname">addOpenTypeFeatures</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">font</span></em>, <em class="sig-param"><span class="n">featurefile</span></em>, <em class="sig-param"><span class="n">tables</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#addOpenTypeFeatures"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.addOpenTypeFeatures" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.feaLib.builder.addOpenTypeFeaturesFromString">
+<code class="sig-prename descclassname">fontTools.feaLib.builder.</code><code class="sig-name descname">addOpenTypeFeaturesFromString</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">font</span></em>, <em class="sig-param"><span class="n">features</span></em>, <em class="sig-param"><span class="n">filename</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">tables</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#addOpenTypeFeaturesFromString"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.addOpenTypeFeaturesFromString" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.feaLib.builder.makeOpenTypeAnchor">
+<code class="sig-prename descclassname">fontTools.feaLib.builder.</code><code class="sig-name descname">makeOpenTypeAnchor</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">anchor</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#makeOpenTypeAnchor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.makeOpenTypeAnchor" title="Permalink to this definition">¶</a></dt>
+<dd><p>ast.Anchor –&gt; otTables.Anchor</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.feaLib.builder.makeOpenTypeValueRecord">
+<code class="sig-prename descclassname">fontTools.feaLib.builder.</code><code class="sig-name descname">makeOpenTypeValueRecord</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">v</span></em>, <em class="sig-param"><span class="n">pairPosContext</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/feaLib/builder.html#makeOpenTypeValueRecord"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.feaLib.builder.makeOpenTypeValueRecord" title="Permalink to this definition">¶</a></dt>
+<dd><p>ast.ValueRecord –&gt; (otBase.ValueRecord, int ValueFormat)</p>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="error.html" class="btn btn-neutral float-right" title="error" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="ast.html" class="btn btn-neutral float-left" title="ast" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Just van Rossum, Behdad Esfahbod, and the fontTools Authors. CC BY-SA 4.0
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

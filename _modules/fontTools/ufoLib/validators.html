@@ -1,0 +1,1270 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>fontTools.ufoLib.validators &mdash; fontTools Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> fontTools
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Library</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../afmLib.html">afmLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../agl.html">agl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cffLib/index.html">cffLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../colorLib/index.html">colorLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cu2qu/index.html">cu2qu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../designspaceLib/index.html">designspaceLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../encodings/index.html">encodings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../feaLib/index.html">feaLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../merge.html">merge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../misc/index.html">misc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../mtiLib.html">mtiLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../otlLib/index.html">otlLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pens/index.html">pens</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../subset/index.html">subset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../svgLib/index.html">svgLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../t1Lib.html">t1Lib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ttLib/index.html">ttLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ttx.html">ttx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ufoLib/index.html">ufoLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../unicode.html">unicode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../unicodedata/index.html">unicodedata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../varLib/index.html">varLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../voltLib.html">voltLib</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">fontTools</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../ufoLib.html">fontTools.ufoLib</a> &raquo;</li>
+        
+      <li>fontTools.ufoLib.validators</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for fontTools.ufoLib.validators</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;Various low level data validators.&quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">calendar</span>
+<span class="kn">from</span> <span class="nn">io</span> <span class="k">import</span> <span class="nb">open</span>
+<span class="kn">import</span> <span class="nn">fs.base</span>
+<span class="kn">import</span> <span class="nn">fs.osfs</span>
+
+<span class="kn">from</span> <span class="nn">collections.abc</span> <span class="k">import</span> <span class="n">Mapping</span>
+<span class="kn">from</span> <span class="nn">fontTools.ufoLib.utils</span> <span class="k">import</span> <span class="n">numberTypes</span>
+
+
+<span class="c1"># -------</span>
+<span class="c1"># Generic</span>
+<span class="c1"># -------</span>
+
+<div class="viewcode-block" id="isDictEnough"><a class="viewcode-back" href="../../../ufoLib/validators.html#fontTools.ufoLib.validators.isDictEnough">[docs]</a><span class="k">def</span> <span class="nf">isDictEnough</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Some objects will likely come in that aren&#39;t</span>
+<span class="sd">    dicts but are dict-ish enough.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">Mapping</span><span class="p">):</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">for</span> <span class="n">attr</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;keys&quot;</span><span class="p">,</span> <span class="s2">&quot;values&quot;</span><span class="p">,</span> <span class="s2">&quot;items&quot;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">attr</span><span class="p">):</span>
+            <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">return</span> <span class="kc">True</span></div>
+
+<div class="viewcode-block" id="genericTypeValidator"><a class="viewcode-back" href="../../../ufoLib/validators.html#fontTools.ufoLib.validators.genericTypeValidator">[docs]</a><span class="k">def</span> <span class="nf">genericTypeValidator</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">typ</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	Generic. (Added at version 2.)</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="k">return</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">typ</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="genericIntListValidator"><a class="viewcode-back" href="../../../ufoLib/validators.html#fontTools.ufoLib.validators.genericIntListValidator">[docs]</a><span class="k">def</span> <span class="nf">genericIntListValidator</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">validValues</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	Generic. (Added at version 2.)</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)):</span>
+		<span class="k">return</span> <span class="kc">False</span>
+	<span class="n">valuesSet</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
+	<span class="n">validValuesSet</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">validValues</span><span class="p">)</span>
+	<span class="k">if</span> <span class="n">valuesSet</span> <span class="o">-</span> <span class="n">validValuesSet</span><span class="p">:</span>
+		<span class="k">return</span> <span class="kc">False</span>
+	<span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">values</span><span class="p">:</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+			<span class="k">return</span> <span class="kc">False</span>
+	<span class="k">return</span> <span class="kc">True</span></div>
+
+<div class="viewcode-block" id="genericNonNegativeIntValidator"><a class="viewcode-back" href="../../../ufoLib/validators.html#fontTools.ufoLib.validators.genericNonNegativeIntValidator">[docs]</a><span class="k">def</span> <span class="nf">genericNonNegativeIntValidator</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	Generic. (Added at version 3.)</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+		<span class="k">return</span> <span class="kc">False</span>
+	<span class="k">if</span> <span class="n">value</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+		<span class="k">return</span> <span class="kc">False</span>
+	<span class="k">return</span> <span class="kc">True</span></div>
+
+<div class="viewcode-block" id="genericNonNegativeNumberValidator"><a class="viewcode-back" href="../../../ufoLib/validators.html#fontTools.ufoLib.validators.genericNonNegativeNumberValidator">[docs]</a><span class="k">def</span> <span class="nf">genericNonNegativeNumberValidator</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	Generic. (Added at version 3.)</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">numberTypes</span><span class="p">):</span>
+		<span class="k">return</span> <span class="kc">False</span>
+	<span class="k">if</span> <span class="n">value</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+		<span class="k">return</span> <span class="kc">False</span>
+	<span class="k">return</span> <span class="kc">True</span></div>
+
+<div class="viewcode-block" id="genericDictValidator"><a class="viewcode-back" href="../../../ufoLib/validators.html#fontTools.ufoLib.validators.genericDictValidator">[docs]</a><span class="k">def</span> <span class="nf">genericDictValidator</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">prototype</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	Generic. (Added at version 3.)</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="c1"># not a dict</span>
+	<span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">Mapping</span><span class="p">):</span>
+		<span class="k">return</span> <span class="kc">False</span>
+	<span class="c1"># missing required keys</span>
+	<span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="p">(</span><span class="n">typ</span><span class="p">,</span> <span class="n">required</span><span class="p">)</span> <span class="ow">in</span> <span class="n">prototype</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="n">required</span><span class="p">:</span>
+			<span class="k">continue</span>
+		<span class="k">if</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">value</span><span class="p">:</span>
+			<span class="k">return</span> <span class="kc">False</span>
+	<span class="c1"># unknown keys</span>
+	<span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">value</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+		<span class="k">if</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">prototype</span><span class="p">:</span>
+			<span class="k">return</span> <span class="kc">False</span>
+	<span class="c1"># incorrect types</span>
+	<span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">value</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+		<span class="n">prototypeType</span><span class="p">,</span> <span class="n">required</span> <span class="o">=</span> <span class="n">prototype</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+		<span class="k">if</span> <span class="n">v</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">required</span><span class="p">:</span>
+			<span class="k">continue</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">prototypeType</span><span class="p">):</span>
+			<span class="k">return</span> <span class="kc">False</span>
+	<span class="k">return</span> <span class="kc">True</span></div>
+
+<span class="c1"># --------------</span>
+<span class="c1"># fontinfo.plist</span>
+<span class="c1"># --------------</span>
+
+<span class="c1"># Data Validators</span>
+
+<div class="viewcode-block" id="fontInfoStyleMapStyleNameValidator"><a class="viewcode-back" href="../../../ufoLib/validators.html#fontTools.ufoLib.validators.fontInfoStyleMapStyleNameValidator">[docs]</a><span class="k">def</span> <span class="nf">fontInfoStyleMapStyleNameValidator</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	Version 2+.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="n">options</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;regular&quot;</span><span class="p">,</span> <span class="s2">&quot;italic&quot;</span><span class="p">,</span> <span class="s2">&quot;bold&quot;</span><span class="p">,</span> <span class="s2">&quot;bold italic&quot;</span><span class="p">]</span>
+	<span class="k">return</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">options</span></div>
+
+<div class="viewcode-block" id="fontInfoOpenTypeGaspRangeRecordsValidator"><a class="viewcode-back" href="../../../ufoLib/validators.html#fontTools.ufoLib.validators.fontInfoOpenTypeGaspRangeRecordsValidator">[docs]</a><span class="k">def</span> <span class="nf">fontInfoOpenTypeGaspRangeRecordsValidator</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	Version 3+.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+		<span class="k">return</span> <span class="kc">False</span>
+	<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+		<span class="k">return</span> <span class="kc">True</span>
+	<span class="n">validBehaviors</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+	<span class="n">dictPrototype</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">rangeMaxPPEM</span><span class="o">=</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="kc">True</span><span class="p">),</span> <span class="n">rangeGaspBehavior</span><span class="o">=</span><span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="kc">True</span><span class="p">))</span>
+	<span class="n">ppemOrder</span> <span class="o">=</span> <span class="p">[]</span>
+	<span class="k">for</span> <span class="n">rangeRecord</span> <span class="ow">in</span> <span class="n">value</span><span class="p">:</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="n">genericDictValidator</span><span class="p">(</span><span class="n">rangeRecord</span><span class="p">,</span> <span class="n">dictPrototype</span><span class="p">):</span>
+			<span class="k">return</span> <span class="kc">False</span>
+		<span class="n">ppem</span> <span class="o">=</span> <span class="n">rangeRecord</span><span class="p">[</span><span class="s2">&quot;rangeMaxPPEM&quot;</span><span class="p">]</span>
+		<span class="n">behavior</span> <span class="o">=</span> <span class="n">rangeRecord</span><span class="p">[</span><span class="s2">&quot;rangeGaspBehavior&quot;</span><span class="p">]</span>
+		<span class="n">ppemValidity</span> <span class="o">=</span> <span class="n">genericNonNegativeIntValidator</span><span class="p">(</span><span class="n">ppem</span><span class="p">)</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="n">ppemValidity</span><span class="p">:</span>
+			<span class="k">return</span> <span class="kc">False</span>
+		<span class="n">behaviorValidity</span> <span class="o">=</span> <span class="n">genericIntListValidator</span><span class="p">(</span><span class="n">behavior</span><span class="p">,</span> <span class="n">validBehaviors</span><span class="p">)</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="n">behaviorValidity</span><span class="p">:</span>
+			<span class="k">return</span> <span class="kc">False</span>
+		<span class="n">ppemOrder</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ppem</span><span class="p">)</span>
+	<span class="k">if</span> <span class="n">ppemOrder</span> <span class="o">!=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">ppemOrder</span><span class="p">):</span>
+		<span class="k">return</span> <span class="kc">False</span>
+	<span class="k">return</span> <span class="kc">True</span></div>
+
+<div class="viewcode-block" id="fontInfoOpenTypeHeadCreatedValidator"><a class="viewcode-back" href="../../../ufoLib/validators.html#fontTools.ufoLib.validators.fontInfoOpenTypeHeadCreatedValidator">[docs]</a><span class="k">def</span> <span class="nf">fontInfoOpenTypeHeadCreatedValidator</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	Version 2+.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="c1"># format: 0000/00/00 00:00:00</span>
+	<span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+		<span class="k">return</span> <span class="kc">False</span>
+	<span class="c1"># basic formatting</span>
+	<span class="k">if</span> <span class="ow">not</span> <span class="nb">len</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="o">==</span> <span class="mi">19</span><span class="p">:</span>
+		<span class="k">return</span> <span class="kc">False</span>
+	<span class="k">if</span> <span class="n">value</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">:</span>
+		<span class="k">return</span> <span class="kc">False</span>
+	<span class="n">date</span><span class="p">,</span> <span class="n">time</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+	<span class="k">if</span> <span class="n">date</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">2</span><span class="p">:</span>
+		<span class="k">return</span> <span class="kc">False</span>
+	<span class="k">if</span> <span class="n">time</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">&quot;:&quot;</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">2</span><span class="p">:</span>
+		<span class="k">return</span> <span class="kc">False</span>
+	<span class="c1"># date</span>
+	<span class="n">year</span><span class="p">,</span> <span class="n">month</span><span class="p">,</span> <span class="n">day</span> <span class="o">=</span> <span class="n">date</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)</span>
+	<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">year</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">4</span><span class="p">:</span>
+		<span class="k">return</span> <span class="kc">False</span>
+	<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">month</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">2</span><span class="p">:</span>
+		<span class="k">return</span> <span class="kc">False</span>
+	<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">day</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">2</span><span class="p">:</span>
+		<span class="k">return</span> <span class="kc">False</span>
+	<span class="k">try</span><span class="p">:</span>
+		<span class="n">year</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">year</span><span class="p">)</span>
+		<span class="n">month</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">month</span><span class="p">)</span>
+		<span class="n">day</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">day</span><span class="p">)</span>
+	<span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+		<span class="k">return</span> <span class="kc">False</span>
+	<span class="k">if</span> <span class="n">month</span> <span class="o">&lt;</span> <span class="mi">1</span> <span class="ow">or</span> <span class="n">month</span> <span class="o">&gt;</span> <span class="mi">12</span><span class="p">:</span>
+		<span class="k">return</span> <span class="kc">False</span>
+	<span class="n">monthMaxDay</span> <span class="o">=</span> <span class="n">calendar</span><span class="o">.</span><span class="n">monthrange</span><span class="p">(</span><span class="n">year</span><span class="p">,</span> <span class="n">month</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+	<span class="k">if</span> <span class="n">day</span> <span class="o">&lt;</span> <span class="mi">1</span> <span class="ow">or</span> <span class="n">day</span> <span class="o">&gt;</span> <span class="n">monthMaxDay</span><span class="p">:</span>
+		<span class="k">return</span> <span class="kc">False</span>
+	<span class="c1"># time</span>
+	<span class="n">hour</span><span class="p">,</span> <span class="n">minute</span><span class="p">,</span> <span class="n">second</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;:&quot;</span><span class="p">)</span>
+	<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">hour</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">2</span><span class="p">:</span>
+		<span class="k">return</span> <span class="kc">False</span>
+	<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">minute</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">2</span><span class="p">:</span>
+		<span class="k">return</span> <span class="kc">False</span>
+	<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">second</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">2</span><span class="p">:</span>
+		<span class="k">return</span> <span class="kc">False</span>
+	<span class="k">try</span><span class="p">:</span>
+		<span class="n">hour</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">hour</span><span class="p">)</span>
+		<span class="n">minute</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">minute</span><span class="p">)</span>
+		<span class="n">second</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">second</span><span class="p">)</span>
+	<span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+		<span class="k">return</span> <span class="kc">False</span>
+	<span class="k">if</span> <span class="n">hour</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">hour</span> <span class="o">&gt;</span> <span class="mi">23</span><span class="p">:</span>
+		<span class="k">return</span> <span class="kc">False</span>
+	<span class="k">if</span> <span class="n">minute</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">minute</span> <span class="o">&gt;</span> <span class="mi">59</span><span class="p">:</span>
+		<span class="k">return</span> <span class="kc">False</span>
+	<span class="k">if</span> <span class="n">second</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">second</span> <span class="o">&gt;</span> <span class="mi">59</span><span class="p">:</span>
+		<span class="k">return</span> <span class="kc">False</span>
+	<span class="c1"># fallback</span>
+	<span class="k">return</span> <span class="kc">True</span></div>
+
+<div class="viewcode-block" id="fontInfoOpenTypeNameRecordsValidator"><a class="viewcode-back" href="../../../ufoLib/validators.html#fontTools.ufoLib.validators.fontInfoOpenTypeNameRecordsValidator">[docs]</a><span class="k">def</span> <span class="nf">fontInfoOpenTypeNameRecordsValidator</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	Version 3+.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+		<span class="k">return</span> <span class="kc">False</span>
+	<span class="n">dictPrototype</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">nameID</span><span class="o">=</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="kc">True</span><span class="p">),</span> <span class="n">platformID</span><span class="o">=</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="kc">True</span><span class="p">),</span> <span class="n">encodingID</span><span class="o">=</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="kc">True</span><span class="p">),</span> <span class="n">languageID</span><span class="o">=</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="kc">True</span><span class="p">),</span> <span class="n">string</span><span class="o">=</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="kc">True</span><span class="p">))</span>
+	<span class="k">for</span> <span class="n">nameRecord</span> <span class="ow">in</span> <span class="n">value</span><span class="p">:</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="n">genericDictValidator</span><span class="p">(</span><span class="n">nameRecord</span><span class="p">,</span> <span class="n">dictPrototype</span><span class="p">):</span>
+			<span class="k">return</span> <span class="kc">False</span>
+	<span class="k">return</span> <span class="kc">True</span></div>
+
+<div class="viewcode-block" id="fontInfoOpenTypeOS2WeightClassValidator"><a class="viewcode-back" href="../../../ufoLib/validators.html#fontTools.ufoLib.validators.fontInfoOpenTypeOS2WeightClassValidator">[docs]</a><span class="k">def</span> <span class="nf">fontInfoOpenTypeOS2WeightClassValidator</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	Version 2+.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+		<span class="k">return</span> <span class="kc">False</span>
+	<span class="k">if</span> <span class="n">value</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+		<span class="k">return</span> <span class="kc">False</span>
+	<span class="k">return</span> <span class="kc">True</span></div>
+
+<div class="viewcode-block" id="fontInfoOpenTypeOS2WidthClassValidator"><a class="viewcode-back" href="../../../ufoLib/validators.html#fontTools.ufoLib.validators.fontInfoOpenTypeOS2WidthClassValidator">[docs]</a><span class="k">def</span> <span class="nf">fontInfoOpenTypeOS2WidthClassValidator</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	Version 2+.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+		<span class="k">return</span> <span class="kc">False</span>
+	<span class="k">if</span> <span class="n">value</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+		<span class="k">return</span> <span class="kc">False</span>
+	<span class="k">if</span> <span class="n">value</span> <span class="o">&gt;</span> <span class="mi">9</span><span class="p">:</span>
+		<span class="k">return</span> <span class="kc">False</span>
+	<span class="k">return</span> <span class="kc">True</span></div>
+
+<div class="viewcode-block" id="fontInfoVersion2OpenTypeOS2PanoseValidator"><a class="viewcode-back" href="../../../ufoLib/validators.html#fontTools.ufoLib.validators.fontInfoVersion2OpenTypeOS2PanoseValidator">[docs]</a><span class="k">def</span> <span class="nf">fontInfoVersion2OpenTypeOS2PanoseValidator</span><span class="p">(</span><span class="n">values</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	Version 2.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)):</span>
+		<span class="k">return</span> <span class="kc">False</span>
+	<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">values</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">10</span><span class="p">:</span>
+		<span class="k">return</span> <span class="kc">False</span>
+	<span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">values</span><span class="p">:</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+			<span class="k">return</span> <span class="kc">False</span>
+	<span class="c1"># XXX further validation?</span>
+	<span class="k">return</span> <span class="kc">True</span></div>
+
+<div class="viewcode-block" id="fontInfoVersion3OpenTypeOS2PanoseValidator"><a class="viewcode-back" href="../../../ufoLib/validators.html#fontTools.ufoLib.validators.fontInfoVersion3OpenTypeOS2PanoseValidator">[docs]</a><span class="k">def</span> <span class="nf">fontInfoVersion3OpenTypeOS2PanoseValidator</span><span class="p">(</span><span class="n">values</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	Version 3+.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)):</span>
+		<span class="k">return</span> <span class="kc">False</span>
+	<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">values</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">10</span><span class="p">:</span>
+		<span class="k">return</span> <span class="kc">False</span>
+	<span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">values</span><span class="p">:</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+			<span class="k">return</span> <span class="kc">False</span>
+		<span class="k">if</span> <span class="n">value</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+			<span class="k">return</span> <span class="kc">False</span>
+	<span class="c1"># XXX further validation?</span>
+	<span class="k">return</span> <span class="kc">True</span></div>
+
+<div class="viewcode-block" id="fontInfoOpenTypeOS2FamilyClassValidator"><a class="viewcode-back" href="../../../ufoLib/validators.html#fontTools.ufoLib.validators.fontInfoOpenTypeOS2FamilyClassValidator">[docs]</a><span class="k">def</span> <span class="nf">fontInfoOpenTypeOS2FamilyClassValidator</span><span class="p">(</span><span class="n">values</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	Version 2+.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)):</span>
+		<span class="k">return</span> <span class="kc">False</span>
+	<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">values</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">2</span><span class="p">:</span>
+		<span class="k">return</span> <span class="kc">False</span>
+	<span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">values</span><span class="p">:</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+			<span class="k">return</span> <span class="kc">False</span>
+	<span class="n">classID</span><span class="p">,</span> <span class="n">subclassID</span> <span class="o">=</span> <span class="n">values</span>
+	<span class="k">if</span> <span class="n">classID</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">classID</span> <span class="o">&gt;</span> <span class="mi">14</span><span class="p">:</span>
+		<span class="k">return</span> <span class="kc">False</span>
+	<span class="k">if</span> <span class="n">subclassID</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">subclassID</span> <span class="o">&gt;</span> <span class="mi">15</span><span class="p">:</span>
+		<span class="k">return</span> <span class="kc">False</span>
+	<span class="k">return</span> <span class="kc">True</span></div>
+
+<div class="viewcode-block" id="fontInfoPostscriptBluesValidator"><a class="viewcode-back" href="../../../ufoLib/validators.html#fontTools.ufoLib.validators.fontInfoPostscriptBluesValidator">[docs]</a><span class="k">def</span> <span class="nf">fontInfoPostscriptBluesValidator</span><span class="p">(</span><span class="n">values</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	Version 2+.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)):</span>
+		<span class="k">return</span> <span class="kc">False</span>
+	<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">values</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">14</span><span class="p">:</span>
+		<span class="k">return</span> <span class="kc">False</span>
+	<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">values</span><span class="p">)</span> <span class="o">%</span> <span class="mi">2</span><span class="p">:</span>
+		<span class="k">return</span> <span class="kc">False</span>
+	<span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">values</span><span class="p">:</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">numberTypes</span><span class="p">):</span>
+			<span class="k">return</span> <span class="kc">False</span>
+	<span class="k">return</span> <span class="kc">True</span></div>
+
+<div class="viewcode-block" id="fontInfoPostscriptOtherBluesValidator"><a class="viewcode-back" href="../../../ufoLib/validators.html#fontTools.ufoLib.validators.fontInfoPostscriptOtherBluesValidator">[docs]</a><span class="k">def</span> <span class="nf">fontInfoPostscriptOtherBluesValidator</span><span class="p">(</span><span class="n">values</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	Version 2+.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)):</span>
+		<span class="k">return</span> <span class="kc">False</span>
+	<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">values</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">:</span>
+		<span class="k">return</span> <span class="kc">False</span>
+	<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">values</span><span class="p">)</span> <span class="o">%</span> <span class="mi">2</span><span class="p">:</span>
+		<span class="k">return</span> <span class="kc">False</span>
+	<span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">values</span><span class="p">:</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">numberTypes</span><span class="p">):</span>
+			<span class="k">return</span> <span class="kc">False</span>
+	<span class="k">return</span> <span class="kc">True</span></div>
+
+<div class="viewcode-block" id="fontInfoPostscriptStemsValidator"><a class="viewcode-back" href="../../../ufoLib/validators.html#fontTools.ufoLib.validators.fontInfoPostscriptStemsValidator">[docs]</a><span class="k">def</span> <span class="nf">fontInfoPostscriptStemsValidator</span><span class="p">(</span><span class="n">values</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	Version 2+.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)):</span>
+		<span class="k">return</span> <span class="kc">False</span>
+	<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">values</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">12</span><span class="p">:</span>
+		<span class="k">return</span> <span class="kc">False</span>
+	<span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">values</span><span class="p">:</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">numberTypes</span><span class="p">):</span>
+			<span class="k">return</span> <span class="kc">False</span>
+	<span class="k">return</span> <span class="kc">True</span></div>
+
+<div class="viewcode-block" id="fontInfoPostscriptWindowsCharacterSetValidator"><a class="viewcode-back" href="../../../ufoLib/validators.html#fontTools.ufoLib.validators.fontInfoPostscriptWindowsCharacterSetValidator">[docs]</a><span class="k">def</span> <span class="nf">fontInfoPostscriptWindowsCharacterSetValidator</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	Version 2+.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="n">validValues</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">21</span><span class="p">))</span>
+	<span class="k">if</span> <span class="n">value</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">validValues</span><span class="p">:</span>
+		<span class="k">return</span> <span class="kc">False</span>
+	<span class="k">return</span> <span class="kc">True</span></div>
+
+<div class="viewcode-block" id="fontInfoWOFFMetadataUniqueIDValidator"><a class="viewcode-back" href="../../../ufoLib/validators.html#fontTools.ufoLib.validators.fontInfoWOFFMetadataUniqueIDValidator">[docs]</a><span class="k">def</span> <span class="nf">fontInfoWOFFMetadataUniqueIDValidator</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	Version 3+.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="n">dictPrototype</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="kc">True</span><span class="p">))</span>
+	<span class="k">if</span> <span class="ow">not</span> <span class="n">genericDictValidator</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">dictPrototype</span><span class="p">):</span>
+		<span class="k">return</span> <span class="kc">False</span>
+	<span class="k">return</span> <span class="kc">True</span></div>
+
+<div class="viewcode-block" id="fontInfoWOFFMetadataVendorValidator"><a class="viewcode-back" href="../../../ufoLib/validators.html#fontTools.ufoLib.validators.fontInfoWOFFMetadataVendorValidator">[docs]</a><span class="k">def</span> <span class="nf">fontInfoWOFFMetadataVendorValidator</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	Version 3+.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="n">dictPrototype</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="kc">True</span><span class="p">),</span> <span class="s2">&quot;url&quot;</span> <span class="p">:</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span> <span class="s2">&quot;dir&quot;</span> <span class="p">:</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span> <span class="s2">&quot;class&quot;</span> <span class="p">:</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="kc">False</span><span class="p">)}</span>
+	<span class="k">if</span> <span class="ow">not</span> <span class="n">genericDictValidator</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">dictPrototype</span><span class="p">):</span>
+		<span class="k">return</span> <span class="kc">False</span>
+	<span class="k">if</span> <span class="s2">&quot;dir&quot;</span> <span class="ow">in</span> <span class="n">value</span> <span class="ow">and</span> <span class="n">value</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;dir&quot;</span><span class="p">)</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;ltr&quot;</span><span class="p">,</span> <span class="s2">&quot;rtl&quot;</span><span class="p">):</span>
+		<span class="k">return</span> <span class="kc">False</span>
+	<span class="k">return</span> <span class="kc">True</span></div>
+
+<div class="viewcode-block" id="fontInfoWOFFMetadataCreditsValidator"><a class="viewcode-back" href="../../../ufoLib/validators.html#fontTools.ufoLib.validators.fontInfoWOFFMetadataCreditsValidator">[docs]</a><span class="k">def</span> <span class="nf">fontInfoWOFFMetadataCreditsValidator</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	Version 3+.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="n">dictPrototype</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">credits</span><span class="o">=</span><span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="kc">True</span><span class="p">))</span>
+	<span class="k">if</span> <span class="ow">not</span> <span class="n">genericDictValidator</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">dictPrototype</span><span class="p">):</span>
+		<span class="k">return</span> <span class="kc">False</span>
+	<span class="k">if</span> <span class="ow">not</span> <span class="nb">len</span><span class="p">(</span><span class="n">value</span><span class="p">[</span><span class="s2">&quot;credits&quot;</span><span class="p">]):</span>
+		<span class="k">return</span> <span class="kc">False</span>
+	<span class="n">dictPrototype</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="kc">True</span><span class="p">),</span> <span class="s2">&quot;url&quot;</span> <span class="p">:</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span> <span class="s2">&quot;role&quot;</span> <span class="p">:</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span> <span class="s2">&quot;dir&quot;</span> <span class="p">:</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span> <span class="s2">&quot;class&quot;</span> <span class="p">:</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="kc">False</span><span class="p">)}</span>
+	<span class="k">for</span> <span class="n">credit</span> <span class="ow">in</span> <span class="n">value</span><span class="p">[</span><span class="s2">&quot;credits&quot;</span><span class="p">]:</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="n">genericDictValidator</span><span class="p">(</span><span class="n">credit</span><span class="p">,</span> <span class="n">dictPrototype</span><span class="p">):</span>
+			<span class="k">return</span> <span class="kc">False</span>
+		<span class="k">if</span> <span class="s2">&quot;dir&quot;</span> <span class="ow">in</span> <span class="n">credit</span> <span class="ow">and</span> <span class="n">credit</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;dir&quot;</span><span class="p">)</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;ltr&quot;</span><span class="p">,</span> <span class="s2">&quot;rtl&quot;</span><span class="p">):</span>
+			<span class="k">return</span> <span class="kc">False</span>
+	<span class="k">return</span> <span class="kc">True</span></div>
+
+<div class="viewcode-block" id="fontInfoWOFFMetadataDescriptionValidator"><a class="viewcode-back" href="../../../ufoLib/validators.html#fontTools.ufoLib.validators.fontInfoWOFFMetadataDescriptionValidator">[docs]</a><span class="k">def</span> <span class="nf">fontInfoWOFFMetadataDescriptionValidator</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	Version 3+.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="n">dictPrototype</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span> <span class="n">text</span><span class="o">=</span><span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="kc">True</span><span class="p">))</span>
+	<span class="k">if</span> <span class="ow">not</span> <span class="n">genericDictValidator</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">dictPrototype</span><span class="p">):</span>
+		<span class="k">return</span> <span class="kc">False</span>
+	<span class="k">for</span> <span class="n">text</span> <span class="ow">in</span> <span class="n">value</span><span class="p">[</span><span class="s2">&quot;text&quot;</span><span class="p">]:</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="n">fontInfoWOFFMetadataTextValue</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+			<span class="k">return</span> <span class="kc">False</span>
+	<span class="k">return</span> <span class="kc">True</span></div>
+
+<div class="viewcode-block" id="fontInfoWOFFMetadataLicenseValidator"><a class="viewcode-back" href="../../../ufoLib/validators.html#fontTools.ufoLib.validators.fontInfoWOFFMetadataLicenseValidator">[docs]</a><span class="k">def</span> <span class="nf">fontInfoWOFFMetadataLicenseValidator</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	Version 3+.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="n">dictPrototype</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span> <span class="n">text</span><span class="o">=</span><span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span> <span class="nb">id</span><span class="o">=</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="kc">False</span><span class="p">))</span>
+	<span class="k">if</span> <span class="ow">not</span> <span class="n">genericDictValidator</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">dictPrototype</span><span class="p">):</span>
+		<span class="k">return</span> <span class="kc">False</span>
+	<span class="k">if</span> <span class="s2">&quot;text&quot;</span> <span class="ow">in</span> <span class="n">value</span><span class="p">:</span>
+		<span class="k">for</span> <span class="n">text</span> <span class="ow">in</span> <span class="n">value</span><span class="p">[</span><span class="s2">&quot;text&quot;</span><span class="p">]:</span>
+			<span class="k">if</span> <span class="ow">not</span> <span class="n">fontInfoWOFFMetadataTextValue</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+				<span class="k">return</span> <span class="kc">False</span>
+	<span class="k">return</span> <span class="kc">True</span></div>
+
+<div class="viewcode-block" id="fontInfoWOFFMetadataTrademarkValidator"><a class="viewcode-back" href="../../../ufoLib/validators.html#fontTools.ufoLib.validators.fontInfoWOFFMetadataTrademarkValidator">[docs]</a><span class="k">def</span> <span class="nf">fontInfoWOFFMetadataTrademarkValidator</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	Version 3+.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="n">dictPrototype</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="kc">True</span><span class="p">))</span>
+	<span class="k">if</span> <span class="ow">not</span> <span class="n">genericDictValidator</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">dictPrototype</span><span class="p">):</span>
+		<span class="k">return</span> <span class="kc">False</span>
+	<span class="k">for</span> <span class="n">text</span> <span class="ow">in</span> <span class="n">value</span><span class="p">[</span><span class="s2">&quot;text&quot;</span><span class="p">]:</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="n">fontInfoWOFFMetadataTextValue</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+			<span class="k">return</span> <span class="kc">False</span>
+	<span class="k">return</span> <span class="kc">True</span></div>
+
+<div class="viewcode-block" id="fontInfoWOFFMetadataCopyrightValidator"><a class="viewcode-back" href="../../../ufoLib/validators.html#fontTools.ufoLib.validators.fontInfoWOFFMetadataCopyrightValidator">[docs]</a><span class="k">def</span> <span class="nf">fontInfoWOFFMetadataCopyrightValidator</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	Version 3+.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="n">dictPrototype</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="kc">True</span><span class="p">))</span>
+	<span class="k">if</span> <span class="ow">not</span> <span class="n">genericDictValidator</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">dictPrototype</span><span class="p">):</span>
+		<span class="k">return</span> <span class="kc">False</span>
+	<span class="k">for</span> <span class="n">text</span> <span class="ow">in</span> <span class="n">value</span><span class="p">[</span><span class="s2">&quot;text&quot;</span><span class="p">]:</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="n">fontInfoWOFFMetadataTextValue</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+			<span class="k">return</span> <span class="kc">False</span>
+	<span class="k">return</span> <span class="kc">True</span></div>
+
+<div class="viewcode-block" id="fontInfoWOFFMetadataLicenseeValidator"><a class="viewcode-back" href="../../../ufoLib/validators.html#fontTools.ufoLib.validators.fontInfoWOFFMetadataLicenseeValidator">[docs]</a><span class="k">def</span> <span class="nf">fontInfoWOFFMetadataLicenseeValidator</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	Version 3+.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="n">dictPrototype</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="kc">True</span><span class="p">),</span> <span class="s2">&quot;dir&quot;</span> <span class="p">:</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span> <span class="s2">&quot;class&quot;</span> <span class="p">:</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="kc">False</span><span class="p">)}</span>
+	<span class="k">if</span> <span class="ow">not</span> <span class="n">genericDictValidator</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">dictPrototype</span><span class="p">):</span>
+		<span class="k">return</span> <span class="kc">False</span>
+	<span class="k">if</span> <span class="s2">&quot;dir&quot;</span> <span class="ow">in</span> <span class="n">value</span> <span class="ow">and</span> <span class="n">value</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;dir&quot;</span><span class="p">)</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;ltr&quot;</span><span class="p">,</span> <span class="s2">&quot;rtl&quot;</span><span class="p">):</span>
+		<span class="k">return</span> <span class="kc">False</span>
+	<span class="k">return</span> <span class="kc">True</span></div>
+
+<div class="viewcode-block" id="fontInfoWOFFMetadataTextValue"><a class="viewcode-back" href="../../../ufoLib/validators.html#fontTools.ufoLib.validators.fontInfoWOFFMetadataTextValue">[docs]</a><span class="k">def</span> <span class="nf">fontInfoWOFFMetadataTextValue</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	Version 3+.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="n">dictPrototype</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;text&quot;</span> <span class="p">:</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="kc">True</span><span class="p">),</span> <span class="s2">&quot;language&quot;</span> <span class="p">:</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span> <span class="s2">&quot;dir&quot;</span> <span class="p">:</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span> <span class="s2">&quot;class&quot;</span> <span class="p">:</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="kc">False</span><span class="p">)}</span>
+	<span class="k">if</span> <span class="ow">not</span> <span class="n">genericDictValidator</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">dictPrototype</span><span class="p">):</span>
+		<span class="k">return</span> <span class="kc">False</span>
+	<span class="k">if</span> <span class="s2">&quot;dir&quot;</span> <span class="ow">in</span> <span class="n">value</span> <span class="ow">and</span> <span class="n">value</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;dir&quot;</span><span class="p">)</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;ltr&quot;</span><span class="p">,</span> <span class="s2">&quot;rtl&quot;</span><span class="p">):</span>
+		<span class="k">return</span> <span class="kc">False</span>
+	<span class="k">return</span> <span class="kc">True</span></div>
+
+<div class="viewcode-block" id="fontInfoWOFFMetadataExtensionsValidator"><a class="viewcode-back" href="../../../ufoLib/validators.html#fontTools.ufoLib.validators.fontInfoWOFFMetadataExtensionsValidator">[docs]</a><span class="k">def</span> <span class="nf">fontInfoWOFFMetadataExtensionsValidator</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	Version 3+.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+		<span class="k">return</span> <span class="kc">False</span>
+	<span class="k">if</span> <span class="ow">not</span> <span class="n">value</span><span class="p">:</span>
+		<span class="k">return</span> <span class="kc">False</span>
+	<span class="k">for</span> <span class="n">extension</span> <span class="ow">in</span> <span class="n">value</span><span class="p">:</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="n">fontInfoWOFFMetadataExtensionValidator</span><span class="p">(</span><span class="n">extension</span><span class="p">):</span>
+			<span class="k">return</span> <span class="kc">False</span>
+	<span class="k">return</span> <span class="kc">True</span></div>
+
+<div class="viewcode-block" id="fontInfoWOFFMetadataExtensionValidator"><a class="viewcode-back" href="../../../ufoLib/validators.html#fontTools.ufoLib.validators.fontInfoWOFFMetadataExtensionValidator">[docs]</a><span class="k">def</span> <span class="nf">fontInfoWOFFMetadataExtensionValidator</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	Version 3+.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="n">dictPrototype</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">names</span><span class="o">=</span><span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span> <span class="n">items</span><span class="o">=</span><span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="kc">True</span><span class="p">),</span> <span class="nb">id</span><span class="o">=</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="kc">False</span><span class="p">))</span>
+	<span class="k">if</span> <span class="ow">not</span> <span class="n">genericDictValidator</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">dictPrototype</span><span class="p">):</span>
+		<span class="k">return</span> <span class="kc">False</span>
+	<span class="k">if</span> <span class="s2">&quot;names&quot;</span> <span class="ow">in</span> <span class="n">value</span><span class="p">:</span>
+		<span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">value</span><span class="p">[</span><span class="s2">&quot;names&quot;</span><span class="p">]:</span>
+			<span class="k">if</span> <span class="ow">not</span> <span class="n">fontInfoWOFFMetadataExtensionNameValidator</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+				<span class="k">return</span> <span class="kc">False</span>
+	<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">value</span><span class="p">[</span><span class="s2">&quot;items&quot;</span><span class="p">]:</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="n">fontInfoWOFFMetadataExtensionItemValidator</span><span class="p">(</span><span class="n">item</span><span class="p">):</span>
+			<span class="k">return</span> <span class="kc">False</span>
+	<span class="k">return</span> <span class="kc">True</span></div>
+
+<div class="viewcode-block" id="fontInfoWOFFMetadataExtensionItemValidator"><a class="viewcode-back" href="../../../ufoLib/validators.html#fontTools.ufoLib.validators.fontInfoWOFFMetadataExtensionItemValidator">[docs]</a><span class="k">def</span> <span class="nf">fontInfoWOFFMetadataExtensionItemValidator</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	Version 3+.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="n">dictPrototype</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span> <span class="n">names</span><span class="o">=</span><span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="kc">True</span><span class="p">),</span> <span class="n">values</span><span class="o">=</span><span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="kc">True</span><span class="p">))</span>
+	<span class="k">if</span> <span class="ow">not</span> <span class="n">genericDictValidator</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">dictPrototype</span><span class="p">):</span>
+		<span class="k">return</span> <span class="kc">False</span>
+	<span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">value</span><span class="p">[</span><span class="s2">&quot;names&quot;</span><span class="p">]:</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="n">fontInfoWOFFMetadataExtensionNameValidator</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+			<span class="k">return</span> <span class="kc">False</span>
+	<span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">value</span><span class="p">[</span><span class="s2">&quot;values&quot;</span><span class="p">]:</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="n">fontInfoWOFFMetadataExtensionValueValidator</span><span class="p">(</span><span class="n">val</span><span class="p">):</span>
+			<span class="k">return</span> <span class="kc">False</span>
+	<span class="k">return</span> <span class="kc">True</span></div>
+
+<div class="viewcode-block" id="fontInfoWOFFMetadataExtensionNameValidator"><a class="viewcode-back" href="../../../ufoLib/validators.html#fontTools.ufoLib.validators.fontInfoWOFFMetadataExtensionNameValidator">[docs]</a><span class="k">def</span> <span class="nf">fontInfoWOFFMetadataExtensionNameValidator</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	Version 3+.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="n">dictPrototype</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;text&quot;</span> <span class="p">:</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="kc">True</span><span class="p">),</span> <span class="s2">&quot;language&quot;</span> <span class="p">:</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span> <span class="s2">&quot;dir&quot;</span> <span class="p">:</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span> <span class="s2">&quot;class&quot;</span> <span class="p">:</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="kc">False</span><span class="p">)}</span>
+	<span class="k">if</span> <span class="ow">not</span> <span class="n">genericDictValidator</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">dictPrototype</span><span class="p">):</span>
+		<span class="k">return</span> <span class="kc">False</span>
+	<span class="k">if</span> <span class="s2">&quot;dir&quot;</span> <span class="ow">in</span> <span class="n">value</span> <span class="ow">and</span> <span class="n">value</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;dir&quot;</span><span class="p">)</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;ltr&quot;</span><span class="p">,</span> <span class="s2">&quot;rtl&quot;</span><span class="p">):</span>
+		<span class="k">return</span> <span class="kc">False</span>
+	<span class="k">return</span> <span class="kc">True</span></div>
+
+<div class="viewcode-block" id="fontInfoWOFFMetadataExtensionValueValidator"><a class="viewcode-back" href="../../../ufoLib/validators.html#fontTools.ufoLib.validators.fontInfoWOFFMetadataExtensionValueValidator">[docs]</a><span class="k">def</span> <span class="nf">fontInfoWOFFMetadataExtensionValueValidator</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	Version 3+.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="n">dictPrototype</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;text&quot;</span> <span class="p">:</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="kc">True</span><span class="p">),</span> <span class="s2">&quot;language&quot;</span> <span class="p">:</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span> <span class="s2">&quot;dir&quot;</span> <span class="p">:</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span> <span class="s2">&quot;class&quot;</span> <span class="p">:</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="kc">False</span><span class="p">)}</span>
+	<span class="k">if</span> <span class="ow">not</span> <span class="n">genericDictValidator</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">dictPrototype</span><span class="p">):</span>
+		<span class="k">return</span> <span class="kc">False</span>
+	<span class="k">if</span> <span class="s2">&quot;dir&quot;</span> <span class="ow">in</span> <span class="n">value</span> <span class="ow">and</span> <span class="n">value</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;dir&quot;</span><span class="p">)</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;ltr&quot;</span><span class="p">,</span> <span class="s2">&quot;rtl&quot;</span><span class="p">):</span>
+		<span class="k">return</span> <span class="kc">False</span>
+	<span class="k">return</span> <span class="kc">True</span></div>
+
+<span class="c1"># ----------</span>
+<span class="c1"># Guidelines</span>
+<span class="c1"># ----------</span>
+
+<div class="viewcode-block" id="guidelinesValidator"><a class="viewcode-back" href="../../../ufoLib/validators.html#fontTools.ufoLib.validators.guidelinesValidator">[docs]</a><span class="k">def</span> <span class="nf">guidelinesValidator</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">identifiers</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	Version 3+.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+		<span class="k">return</span> <span class="kc">False</span>
+	<span class="k">if</span> <span class="n">identifiers</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+		<span class="n">identifiers</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+	<span class="k">for</span> <span class="n">guide</span> <span class="ow">in</span> <span class="n">value</span><span class="p">:</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="n">guidelineValidator</span><span class="p">(</span><span class="n">guide</span><span class="p">):</span>
+			<span class="k">return</span> <span class="kc">False</span>
+		<span class="n">identifier</span> <span class="o">=</span> <span class="n">guide</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;identifier&quot;</span><span class="p">)</span>
+		<span class="k">if</span> <span class="n">identifier</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="k">if</span> <span class="n">identifier</span> <span class="ow">in</span> <span class="n">identifiers</span><span class="p">:</span>
+				<span class="k">return</span> <span class="kc">False</span>
+			<span class="n">identifiers</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">identifier</span><span class="p">)</span>
+	<span class="k">return</span> <span class="kc">True</span></div>
+
+<span class="n">_guidelineDictPrototype</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+	<span class="n">x</span><span class="o">=</span><span class="p">((</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">),</span> <span class="kc">False</span><span class="p">),</span> <span class="n">y</span><span class="o">=</span><span class="p">((</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">),</span> <span class="kc">False</span><span class="p">),</span> <span class="n">angle</span><span class="o">=</span><span class="p">((</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">),</span> <span class="kc">False</span><span class="p">),</span>
+	<span class="n">name</span><span class="o">=</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span> <span class="n">identifier</span><span class="o">=</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+<span class="p">)</span>
+
+<div class="viewcode-block" id="guidelineValidator"><a class="viewcode-back" href="../../../ufoLib/validators.html#fontTools.ufoLib.validators.guidelineValidator">[docs]</a><span class="k">def</span> <span class="nf">guidelineValidator</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	Version 3+.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="k">if</span> <span class="ow">not</span> <span class="n">genericDictValidator</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">_guidelineDictPrototype</span><span class="p">):</span>
+		<span class="k">return</span> <span class="kc">False</span>
+	<span class="n">x</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
+	<span class="n">y</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;y&quot;</span><span class="p">)</span>
+	<span class="n">angle</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;angle&quot;</span><span class="p">)</span>
+	<span class="c1"># x or y must be present</span>
+	<span class="k">if</span> <span class="n">x</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">y</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+		<span class="k">return</span> <span class="kc">False</span>
+	<span class="c1"># if x or y are None, angle must not be present</span>
+	<span class="k">if</span> <span class="n">x</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">y</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+		<span class="k">if</span> <span class="n">angle</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="k">return</span> <span class="kc">False</span>
+	<span class="c1"># if x and y are defined, angle must be defined</span>
+	<span class="k">if</span> <span class="n">x</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">y</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">angle</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+		<span class="k">return</span> <span class="kc">False</span>
+	<span class="c1"># angle must be between 0 and 360</span>
+	<span class="k">if</span> <span class="n">angle</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+		<span class="k">if</span> <span class="n">angle</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+			<span class="k">return</span> <span class="kc">False</span>
+		<span class="k">if</span> <span class="n">angle</span> <span class="o">&gt;</span> <span class="mi">360</span><span class="p">:</span>
+			<span class="k">return</span> <span class="kc">False</span>
+	<span class="c1"># identifier must be 1 or more characters</span>
+	<span class="n">identifier</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;identifier&quot;</span><span class="p">)</span>
+	<span class="k">if</span> <span class="n">identifier</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">identifierValidator</span><span class="p">(</span><span class="n">identifier</span><span class="p">):</span>
+		<span class="k">return</span> <span class="kc">False</span>
+	<span class="c1"># color must follow the proper format</span>
+	<span class="n">color</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;color&quot;</span><span class="p">)</span>
+	<span class="k">if</span> <span class="n">color</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">colorValidator</span><span class="p">(</span><span class="n">color</span><span class="p">):</span>
+		<span class="k">return</span> <span class="kc">False</span>
+	<span class="k">return</span> <span class="kc">True</span></div>
+
+<span class="c1"># -------</span>
+<span class="c1"># Anchors</span>
+<span class="c1"># -------</span>
+
+<div class="viewcode-block" id="anchorsValidator"><a class="viewcode-back" href="../../../ufoLib/validators.html#fontTools.ufoLib.validators.anchorsValidator">[docs]</a><span class="k">def</span> <span class="nf">anchorsValidator</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">identifiers</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	Version 3+.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+		<span class="k">return</span> <span class="kc">False</span>
+	<span class="k">if</span> <span class="n">identifiers</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+		<span class="n">identifiers</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+	<span class="k">for</span> <span class="n">anchor</span> <span class="ow">in</span> <span class="n">value</span><span class="p">:</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="n">anchorValidator</span><span class="p">(</span><span class="n">anchor</span><span class="p">):</span>
+			<span class="k">return</span> <span class="kc">False</span>
+		<span class="n">identifier</span> <span class="o">=</span> <span class="n">anchor</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;identifier&quot;</span><span class="p">)</span>
+		<span class="k">if</span> <span class="n">identifier</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="k">if</span> <span class="n">identifier</span> <span class="ow">in</span> <span class="n">identifiers</span><span class="p">:</span>
+				<span class="k">return</span> <span class="kc">False</span>
+			<span class="n">identifiers</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">identifier</span><span class="p">)</span>
+	<span class="k">return</span> <span class="kc">True</span></div>
+
+<span class="n">_anchorDictPrototype</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+	<span class="n">x</span><span class="o">=</span><span class="p">((</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">),</span> <span class="kc">False</span><span class="p">),</span> <span class="n">y</span><span class="o">=</span><span class="p">((</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">),</span> <span class="kc">False</span><span class="p">),</span>
+	<span class="n">name</span><span class="o">=</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span>
+	<span class="n">identifier</span><span class="o">=</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+<span class="p">)</span>
+
+<div class="viewcode-block" id="anchorValidator"><a class="viewcode-back" href="../../../ufoLib/validators.html#fontTools.ufoLib.validators.anchorValidator">[docs]</a><span class="k">def</span> <span class="nf">anchorValidator</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	Version 3+.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="k">if</span> <span class="ow">not</span> <span class="n">genericDictValidator</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">_anchorDictPrototype</span><span class="p">):</span>
+		<span class="k">return</span> <span class="kc">False</span>
+	<span class="n">x</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
+	<span class="n">y</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;y&quot;</span><span class="p">)</span>
+	<span class="c1"># x and y must be present</span>
+	<span class="k">if</span> <span class="n">x</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">y</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+		<span class="k">return</span> <span class="kc">False</span>
+	<span class="c1"># identifier must be 1 or more characters</span>
+	<span class="n">identifier</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;identifier&quot;</span><span class="p">)</span>
+	<span class="k">if</span> <span class="n">identifier</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">identifierValidator</span><span class="p">(</span><span class="n">identifier</span><span class="p">):</span>
+		<span class="k">return</span> <span class="kc">False</span>
+	<span class="c1"># color must follow the proper format</span>
+	<span class="n">color</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;color&quot;</span><span class="p">)</span>
+	<span class="k">if</span> <span class="n">color</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">colorValidator</span><span class="p">(</span><span class="n">color</span><span class="p">):</span>
+		<span class="k">return</span> <span class="kc">False</span>
+	<span class="k">return</span> <span class="kc">True</span></div>
+
+<span class="c1"># ----------</span>
+<span class="c1"># Identifier</span>
+<span class="c1"># ----------</span>
+
+<div class="viewcode-block" id="identifierValidator"><a class="viewcode-back" href="../../../ufoLib/validators.html#fontTools.ufoLib.validators.identifierValidator">[docs]</a><span class="k">def</span> <span class="nf">identifierValidator</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	Version 3+.</span>
+
+<span class="sd">	&gt;&gt;&gt; identifierValidator(&quot;a&quot;)</span>
+<span class="sd">	True</span>
+<span class="sd">	&gt;&gt;&gt; identifierValidator(&quot;&quot;)</span>
+<span class="sd">	False</span>
+<span class="sd">	&gt;&gt;&gt; identifierValidator(&quot;a&quot; * 101)</span>
+<span class="sd">	False</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="n">validCharactersMin</span> <span class="o">=</span> <span class="mh">0x20</span>
+	<span class="n">validCharactersMax</span> <span class="o">=</span> <span class="mh">0x7E</span>
+	<span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+		<span class="k">return</span> <span class="kc">False</span>
+	<span class="k">if</span> <span class="ow">not</span> <span class="n">value</span><span class="p">:</span>
+		<span class="k">return</span> <span class="kc">False</span>
+	<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="p">:</span>
+		<span class="k">return</span> <span class="kc">False</span>
+	<span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">value</span><span class="p">:</span>
+		<span class="n">c</span> <span class="o">=</span> <span class="nb">ord</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+		<span class="k">if</span> <span class="n">c</span> <span class="o">&lt;</span> <span class="n">validCharactersMin</span> <span class="ow">or</span> <span class="n">c</span> <span class="o">&gt;</span> <span class="n">validCharactersMax</span><span class="p">:</span>
+			<span class="k">return</span> <span class="kc">False</span>
+	<span class="k">return</span> <span class="kc">True</span></div>
+
+<span class="c1"># -----</span>
+<span class="c1"># Color</span>
+<span class="c1"># -----</span>
+
+<div class="viewcode-block" id="colorValidator"><a class="viewcode-back" href="../../../ufoLib/validators.html#fontTools.ufoLib.validators.colorValidator">[docs]</a><span class="k">def</span> <span class="nf">colorValidator</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	Version 3+.</span>
+
+<span class="sd">	&gt;&gt;&gt; colorValidator(&quot;0,0,0,0&quot;)</span>
+<span class="sd">	True</span>
+<span class="sd">	&gt;&gt;&gt; colorValidator(&quot;.5,.5,.5,.5&quot;)</span>
+<span class="sd">	True</span>
+<span class="sd">	&gt;&gt;&gt; colorValidator(&quot;0.5,0.5,0.5,0.5&quot;)</span>
+<span class="sd">	True</span>
+<span class="sd">	&gt;&gt;&gt; colorValidator(&quot;1,1,1,1&quot;)</span>
+<span class="sd">	True</span>
+
+<span class="sd">	&gt;&gt;&gt; colorValidator(&quot;2,0,0,0&quot;)</span>
+<span class="sd">	False</span>
+<span class="sd">	&gt;&gt;&gt; colorValidator(&quot;0,2,0,0&quot;)</span>
+<span class="sd">	False</span>
+<span class="sd">	&gt;&gt;&gt; colorValidator(&quot;0,0,2,0&quot;)</span>
+<span class="sd">	False</span>
+<span class="sd">	&gt;&gt;&gt; colorValidator(&quot;0,0,0,2&quot;)</span>
+<span class="sd">	False</span>
+
+<span class="sd">	&gt;&gt;&gt; colorValidator(&quot;1r,1,1,1&quot;)</span>
+<span class="sd">	False</span>
+<span class="sd">	&gt;&gt;&gt; colorValidator(&quot;1,1g,1,1&quot;)</span>
+<span class="sd">	False</span>
+<span class="sd">	&gt;&gt;&gt; colorValidator(&quot;1,1,1b,1&quot;)</span>
+<span class="sd">	False</span>
+<span class="sd">	&gt;&gt;&gt; colorValidator(&quot;1,1,1,1a&quot;)</span>
+<span class="sd">	False</span>
+
+<span class="sd">	&gt;&gt;&gt; colorValidator(&quot;1 1 1 1&quot;)</span>
+<span class="sd">	False</span>
+<span class="sd">	&gt;&gt;&gt; colorValidator(&quot;1 1,1,1&quot;)</span>
+<span class="sd">	False</span>
+<span class="sd">	&gt;&gt;&gt; colorValidator(&quot;1,1 1,1&quot;)</span>
+<span class="sd">	False</span>
+<span class="sd">	&gt;&gt;&gt; colorValidator(&quot;1,1,1 1&quot;)</span>
+<span class="sd">	False</span>
+
+<span class="sd">	&gt;&gt;&gt; colorValidator(&quot;1, 1, 1, 1&quot;)</span>
+<span class="sd">	True</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+		<span class="k">return</span> <span class="kc">False</span>
+	<span class="n">parts</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
+	<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">parts</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">4</span><span class="p">:</span>
+		<span class="k">return</span> <span class="kc">False</span>
+	<span class="k">for</span> <span class="n">part</span> <span class="ow">in</span> <span class="n">parts</span><span class="p">:</span>
+		<span class="n">part</span> <span class="o">=</span> <span class="n">part</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+		<span class="n">converted</span> <span class="o">=</span> <span class="kc">False</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="n">part</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">part</span><span class="p">)</span>
+			<span class="n">converted</span> <span class="o">=</span> <span class="kc">True</span>
+		<span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+			<span class="k">pass</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="n">converted</span><span class="p">:</span>
+			<span class="k">try</span><span class="p">:</span>
+				<span class="n">part</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">part</span><span class="p">)</span>
+				<span class="n">converted</span> <span class="o">=</span> <span class="kc">True</span>
+			<span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+				<span class="k">pass</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="n">converted</span><span class="p">:</span>
+			<span class="k">return</span> <span class="kc">False</span>
+		<span class="k">if</span> <span class="n">part</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+			<span class="k">return</span> <span class="kc">False</span>
+		<span class="k">if</span> <span class="n">part</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+			<span class="k">return</span> <span class="kc">False</span>
+	<span class="k">return</span> <span class="kc">True</span></div>
+
+<span class="c1"># -----</span>
+<span class="c1"># image</span>
+<span class="c1"># -----</span>
+
+<span class="n">pngSignature</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;</span><span class="se">\x89</span><span class="s2">PNG</span><span class="se">\r\n\x1a\n</span><span class="s2">&quot;</span>
+
+<span class="n">_imageDictPrototype</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+	<span class="n">fileName</span><span class="o">=</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="kc">True</span><span class="p">),</span>
+	<span class="n">xScale</span><span class="o">=</span><span class="p">((</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">),</span> <span class="kc">False</span><span class="p">),</span> <span class="n">xyScale</span><span class="o">=</span><span class="p">((</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">),</span> <span class="kc">False</span><span class="p">),</span>
+	<span class="n">yxScale</span><span class="o">=</span><span class="p">((</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">),</span> <span class="kc">False</span><span class="p">),</span> <span class="n">yScale</span><span class="o">=</span><span class="p">((</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">),</span> <span class="kc">False</span><span class="p">),</span>
+	<span class="n">xOffset</span><span class="o">=</span><span class="p">((</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">),</span> <span class="kc">False</span><span class="p">),</span> <span class="n">yOffset</span><span class="o">=</span><span class="p">((</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">),</span> <span class="kc">False</span><span class="p">),</span>
+	<span class="n">color</span><span class="o">=</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+<span class="p">)</span>
+
+<div class="viewcode-block" id="imageValidator"><a class="viewcode-back" href="../../../ufoLib/validators.html#fontTools.ufoLib.validators.imageValidator">[docs]</a><span class="k">def</span> <span class="nf">imageValidator</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	Version 3+.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="k">if</span> <span class="ow">not</span> <span class="n">genericDictValidator</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">_imageDictPrototype</span><span class="p">):</span>
+		<span class="k">return</span> <span class="kc">False</span>
+	<span class="c1"># fileName must be one or more characters</span>
+	<span class="k">if</span> <span class="ow">not</span> <span class="n">value</span><span class="p">[</span><span class="s2">&quot;fileName&quot;</span><span class="p">]:</span>
+		<span class="k">return</span> <span class="kc">False</span>
+	<span class="c1"># color must follow the proper format</span>
+	<span class="n">color</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;color&quot;</span><span class="p">)</span>
+	<span class="k">if</span> <span class="n">color</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">colorValidator</span><span class="p">(</span><span class="n">color</span><span class="p">):</span>
+		<span class="k">return</span> <span class="kc">False</span>
+	<span class="k">return</span> <span class="kc">True</span></div>
+
+<div class="viewcode-block" id="pngValidator"><a class="viewcode-back" href="../../../ufoLib/validators.html#fontTools.ufoLib.validators.pngValidator">[docs]</a><span class="k">def</span> <span class="nf">pngValidator</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fileObj</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	Version 3+.</span>
+
+<span class="sd">	This checks the signature of the image data.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="k">assert</span> <span class="n">path</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">data</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">fileObj</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+	<span class="k">if</span> <span class="n">path</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+		<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+			<span class="n">signature</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
+	<span class="k">elif</span> <span class="n">data</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+		<span class="n">signature</span> <span class="o">=</span> <span class="n">data</span><span class="p">[:</span><span class="mi">8</span><span class="p">]</span>
+	<span class="k">elif</span> <span class="n">fileObj</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+		<span class="n">pos</span> <span class="o">=</span> <span class="n">fileObj</span><span class="o">.</span><span class="n">tell</span><span class="p">()</span>
+		<span class="n">signature</span> <span class="o">=</span> <span class="n">fileObj</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
+		<span class="n">fileObj</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="n">pos</span><span class="p">)</span>
+	<span class="k">if</span> <span class="n">signature</span> <span class="o">!=</span> <span class="n">pngSignature</span><span class="p">:</span>
+		<span class="k">return</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;Image does not begin with the PNG signature.&quot;</span>
+	<span class="k">return</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">None</span></div>
+
+<span class="c1"># -------------------</span>
+<span class="c1"># layercontents.plist</span>
+<span class="c1"># -------------------</span>
+
+<div class="viewcode-block" id="layerContentsValidator"><a class="viewcode-back" href="../../../ufoLib/validators.html#fontTools.ufoLib.validators.layerContentsValidator">[docs]</a><span class="k">def</span> <span class="nf">layerContentsValidator</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">ufoPathOrFileSystem</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	Check the validity of layercontents.plist.</span>
+<span class="sd">	Version 3+.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">ufoPathOrFileSystem</span><span class="p">,</span> <span class="n">fs</span><span class="o">.</span><span class="n">base</span><span class="o">.</span><span class="n">FS</span><span class="p">):</span>
+		<span class="n">fileSystem</span> <span class="o">=</span> <span class="n">ufoPathOrFileSystem</span>
+	<span class="k">else</span><span class="p">:</span>
+		<span class="n">fileSystem</span> <span class="o">=</span> <span class="n">fs</span><span class="o">.</span><span class="n">osfs</span><span class="o">.</span><span class="n">OSFS</span><span class="p">(</span><span class="n">ufoPathOrFileSystem</span><span class="p">)</span>
+
+	<span class="n">bogusFileMessage</span> <span class="o">=</span> <span class="s2">&quot;layercontents.plist in not in the correct format.&quot;</span>
+	<span class="c1"># file isn&#39;t in the right format</span>
+	<span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+		<span class="k">return</span> <span class="kc">False</span><span class="p">,</span> <span class="n">bogusFileMessage</span>
+	<span class="c1"># work through each entry</span>
+	<span class="n">usedLayerNames</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+	<span class="n">usedDirectories</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+	<span class="n">contents</span> <span class="o">=</span> <span class="p">{}</span>
+	<span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="n">value</span><span class="p">:</span>
+		<span class="c1"># layer entry in the incorrect format</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">entry</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+			<span class="k">return</span> <span class="kc">False</span><span class="p">,</span> <span class="n">bogusFileMessage</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="nb">len</span><span class="p">(</span><span class="n">entry</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+			<span class="k">return</span> <span class="kc">False</span><span class="p">,</span> <span class="n">bogusFileMessage</span>
+		<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">entry</span><span class="p">:</span>
+			<span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+				<span class="k">return</span> <span class="kc">False</span><span class="p">,</span> <span class="n">bogusFileMessage</span>
+		<span class="n">layerName</span><span class="p">,</span> <span class="n">directoryName</span> <span class="o">=</span> <span class="n">entry</span>
+		<span class="c1"># check directory naming</span>
+		<span class="k">if</span> <span class="n">directoryName</span> <span class="o">!=</span> <span class="s2">&quot;glyphs&quot;</span><span class="p">:</span>
+			<span class="k">if</span> <span class="ow">not</span> <span class="n">directoryName</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;glyphs.&quot;</span><span class="p">):</span>
+				<span class="k">return</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;Invalid directory name (</span><span class="si">%s</span><span class="s2">) in layercontents.plist.&quot;</span> <span class="o">%</span> <span class="n">directoryName</span>
+		<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">layerName</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+			<span class="k">return</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;Empty layer name in layercontents.plist.&quot;</span>
+		<span class="c1"># directory doesn&#39;t exist</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="n">fileSystem</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">directoryName</span><span class="p">):</span>
+			<span class="k">return</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;A glyphset does not exist at </span><span class="si">%s</span><span class="s2">.&quot;</span> <span class="o">%</span> <span class="n">directoryName</span>
+		<span class="c1"># default layer name</span>
+		<span class="k">if</span> <span class="n">layerName</span> <span class="o">==</span> <span class="s2">&quot;public.default&quot;</span> <span class="ow">and</span> <span class="n">directoryName</span> <span class="o">!=</span> <span class="s2">&quot;glyphs&quot;</span><span class="p">:</span>
+			<span class="k">return</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;The name public.default is being used by a layer that is not the default.&quot;</span>
+		<span class="c1"># check usage</span>
+		<span class="k">if</span> <span class="n">layerName</span> <span class="ow">in</span> <span class="n">usedLayerNames</span><span class="p">:</span>
+			<span class="k">return</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;The layer name </span><span class="si">%s</span><span class="s2"> is used by more than one layer.&quot;</span> <span class="o">%</span> <span class="n">layerName</span>
+		<span class="n">usedLayerNames</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">layerName</span><span class="p">)</span>
+		<span class="k">if</span> <span class="n">directoryName</span> <span class="ow">in</span> <span class="n">usedDirectories</span><span class="p">:</span>
+			<span class="k">return</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;The directory </span><span class="si">%s</span><span class="s2"> is used by more than one layer.&quot;</span> <span class="o">%</span> <span class="n">directoryName</span>
+		<span class="n">usedDirectories</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">directoryName</span><span class="p">)</span>
+		<span class="c1"># store</span>
+		<span class="n">contents</span><span class="p">[</span><span class="n">layerName</span><span class="p">]</span> <span class="o">=</span> <span class="n">directoryName</span>
+	<span class="c1"># missing default layer</span>
+	<span class="n">foundDefault</span> <span class="o">=</span> <span class="s2">&quot;glyphs&quot;</span> <span class="ow">in</span> <span class="n">contents</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
+	<span class="k">if</span> <span class="ow">not</span> <span class="n">foundDefault</span><span class="p">:</span>
+		<span class="k">return</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;The required default glyph set is not in the UFO.&quot;</span>
+	<span class="k">return</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">None</span></div>
+
+<span class="c1"># ------------</span>
+<span class="c1"># groups.plist</span>
+<span class="c1"># ------------</span>
+
+<div class="viewcode-block" id="groupsValidator"><a class="viewcode-back" href="../../../ufoLib/validators.html#fontTools.ufoLib.validators.groupsValidator">[docs]</a><span class="k">def</span> <span class="nf">groupsValidator</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	Check the validity of the groups.</span>
+<span class="sd">	Version 3+ (though it&#39;s backwards compatible with UFO 1 and UFO 2).</span>
+
+<span class="sd">	&gt;&gt;&gt; groups = {&quot;A&quot; : [&quot;A&quot;, &quot;A&quot;], &quot;A2&quot; : [&quot;A&quot;]}</span>
+<span class="sd">	&gt;&gt;&gt; groupsValidator(groups)</span>
+<span class="sd">	(True, None)</span>
+
+<span class="sd">	&gt;&gt;&gt; groups = {&quot;&quot; : [&quot;A&quot;]}</span>
+<span class="sd">	&gt;&gt;&gt; valid, msg = groupsValidator(groups)</span>
+<span class="sd">	&gt;&gt;&gt; valid</span>
+<span class="sd">	False</span>
+<span class="sd">	&gt;&gt;&gt; print(msg)</span>
+<span class="sd">	A group has an empty name.</span>
+
+<span class="sd">	&gt;&gt;&gt; groups = {&quot;public.awesome&quot; : [&quot;A&quot;]}</span>
+<span class="sd">	&gt;&gt;&gt; groupsValidator(groups)</span>
+<span class="sd">	(True, None)</span>
+
+<span class="sd">	&gt;&gt;&gt; groups = {&quot;public.kern1.&quot; : [&quot;A&quot;]}</span>
+<span class="sd">	&gt;&gt;&gt; valid, msg = groupsValidator(groups)</span>
+<span class="sd">	&gt;&gt;&gt; valid</span>
+<span class="sd">	False</span>
+<span class="sd">	&gt;&gt;&gt; print(msg)</span>
+<span class="sd">	The group data contains a kerning group with an incomplete name.</span>
+<span class="sd">	&gt;&gt;&gt; groups = {&quot;public.kern2.&quot; : [&quot;A&quot;]}</span>
+<span class="sd">	&gt;&gt;&gt; valid, msg = groupsValidator(groups)</span>
+<span class="sd">	&gt;&gt;&gt; valid</span>
+<span class="sd">	False</span>
+<span class="sd">	&gt;&gt;&gt; print(msg)</span>
+<span class="sd">	The group data contains a kerning group with an incomplete name.</span>
+
+<span class="sd">	&gt;&gt;&gt; groups = {&quot;public.kern1.A&quot; : [&quot;A&quot;], &quot;public.kern2.A&quot; : [&quot;A&quot;]}</span>
+<span class="sd">	&gt;&gt;&gt; groupsValidator(groups)</span>
+<span class="sd">	(True, None)</span>
+
+<span class="sd">	&gt;&gt;&gt; groups = {&quot;public.kern1.A1&quot; : [&quot;A&quot;], &quot;public.kern1.A2&quot; : [&quot;A&quot;]}</span>
+<span class="sd">	&gt;&gt;&gt; valid, msg = groupsValidator(groups)</span>
+<span class="sd">	&gt;&gt;&gt; valid</span>
+<span class="sd">	False</span>
+<span class="sd">	&gt;&gt;&gt; print(msg)</span>
+<span class="sd">	The glyph &quot;A&quot; occurs in too many kerning groups.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="n">bogusFormatMessage</span> <span class="o">=</span> <span class="s2">&quot;The group data is not in the correct format.&quot;</span>
+	<span class="k">if</span> <span class="ow">not</span> <span class="n">isDictEnough</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+		<span class="k">return</span> <span class="kc">False</span><span class="p">,</span> <span class="n">bogusFormatMessage</span>
+	<span class="n">firstSideMapping</span> <span class="o">=</span> <span class="p">{}</span>
+	<span class="n">secondSideMapping</span> <span class="o">=</span> <span class="p">{}</span>
+	<span class="k">for</span> <span class="n">groupName</span><span class="p">,</span> <span class="n">glyphList</span> <span class="ow">in</span> <span class="n">value</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">groupName</span><span class="p">,</span> <span class="p">(</span><span class="nb">str</span><span class="p">)):</span>
+			<span class="k">return</span> <span class="kc">False</span><span class="p">,</span> <span class="n">bogusFormatMessage</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">glyphList</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)):</span>
+			<span class="k">return</span> <span class="kc">False</span><span class="p">,</span> <span class="n">bogusFormatMessage</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="n">groupName</span><span class="p">:</span>
+			<span class="k">return</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;A group has an empty name.&quot;</span>
+		<span class="k">if</span> <span class="n">groupName</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;public.&quot;</span><span class="p">):</span>
+			<span class="k">if</span> <span class="ow">not</span> <span class="n">groupName</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;public.kern1.&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">groupName</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;public.kern2.&quot;</span><span class="p">):</span>
+				<span class="c1"># unknown public.* name. silently skip.</span>
+				<span class="k">continue</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="s2">&quot;public.kernN.&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">groupName</span><span class="p">):</span>
+					<span class="k">return</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;The group data contains a kerning group with an incomplete name.&quot;</span>
+			<span class="k">if</span> <span class="n">groupName</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;public.kern1.&quot;</span><span class="p">):</span>
+				<span class="n">d</span> <span class="o">=</span> <span class="n">firstSideMapping</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="n">d</span> <span class="o">=</span> <span class="n">secondSideMapping</span>
+			<span class="k">for</span> <span class="n">glyphName</span> <span class="ow">in</span> <span class="n">glyphList</span><span class="p">:</span>
+				<span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">glyphName</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+					<span class="k">return</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;The group data </span><span class="si">%s</span><span class="s2"> contains an invalid member.&quot;</span> <span class="o">%</span> <span class="n">groupName</span>
+				<span class="k">if</span> <span class="n">glyphName</span> <span class="ow">in</span> <span class="n">d</span><span class="p">:</span>
+					<span class="k">return</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;The glyph </span><span class="se">\&quot;</span><span class="si">%s</span><span class="se">\&quot;</span><span class="s2"> occurs in too many kerning groups.&quot;</span> <span class="o">%</span> <span class="n">glyphName</span>
+				<span class="n">d</span><span class="p">[</span><span class="n">glyphName</span><span class="p">]</span> <span class="o">=</span> <span class="n">groupName</span>
+	<span class="k">return</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">None</span></div>
+
+<span class="c1"># -------------</span>
+<span class="c1"># kerning.plist</span>
+<span class="c1"># -------------</span>
+
+<div class="viewcode-block" id="kerningValidator"><a class="viewcode-back" href="../../../ufoLib/validators.html#fontTools.ufoLib.validators.kerningValidator">[docs]</a><span class="k">def</span> <span class="nf">kerningValidator</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	Check the validity of the kerning data structure.</span>
+<span class="sd">	Version 3+ (though it&#39;s backwards compatible with UFO 1 and UFO 2).</span>
+
+<span class="sd">	&gt;&gt;&gt; kerning = {&quot;A&quot; : {&quot;B&quot; : 100}}</span>
+<span class="sd">	&gt;&gt;&gt; kerningValidator(kerning)</span>
+<span class="sd">	(True, None)</span>
+
+<span class="sd">	&gt;&gt;&gt; kerning = {&quot;A&quot; : [&quot;B&quot;]}</span>
+<span class="sd">	&gt;&gt;&gt; valid, msg = kerningValidator(kerning)</span>
+<span class="sd">	&gt;&gt;&gt; valid</span>
+<span class="sd">	False</span>
+<span class="sd">	&gt;&gt;&gt; print(msg)</span>
+<span class="sd">	The kerning data is not in the correct format.</span>
+
+<span class="sd">	&gt;&gt;&gt; kerning = {&quot;A&quot; : {&quot;B&quot; : &quot;100&quot;}}</span>
+<span class="sd">	&gt;&gt;&gt; valid, msg = kerningValidator(kerning)</span>
+<span class="sd">	&gt;&gt;&gt; valid</span>
+<span class="sd">	False</span>
+<span class="sd">	&gt;&gt;&gt; print(msg)</span>
+<span class="sd">	The kerning data is not in the correct format.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="n">bogusFormatMessage</span> <span class="o">=</span> <span class="s2">&quot;The kerning data is not in the correct format.&quot;</span>
+	<span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">Mapping</span><span class="p">):</span>
+		<span class="k">return</span> <span class="kc">False</span><span class="p">,</span> <span class="n">bogusFormatMessage</span>
+	<span class="k">for</span> <span class="n">first</span><span class="p">,</span> <span class="n">secondDict</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">first</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+			<span class="k">return</span> <span class="kc">False</span><span class="p">,</span> <span class="n">bogusFormatMessage</span>
+		<span class="k">elif</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">secondDict</span><span class="p">,</span> <span class="n">Mapping</span><span class="p">):</span>
+			<span class="k">return</span> <span class="kc">False</span><span class="p">,</span> <span class="n">bogusFormatMessage</span>
+		<span class="k">for</span> <span class="n">second</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">secondDict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+			<span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">second</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+				<span class="k">return</span> <span class="kc">False</span><span class="p">,</span> <span class="n">bogusFormatMessage</span>
+			<span class="k">elif</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">numberTypes</span><span class="p">):</span>
+				<span class="k">return</span> <span class="kc">False</span><span class="p">,</span> <span class="n">bogusFormatMessage</span>
+	<span class="k">return</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">None</span></div>
+
+<span class="c1"># -------------</span>
+<span class="c1"># lib.plist/lib</span>
+<span class="c1"># -------------</span>
+
+<span class="n">_bogusLibFormatMessage</span> <span class="o">=</span> <span class="s2">&quot;The lib data is not in the correct format: </span><span class="si">%s</span><span class="s2">&quot;</span>
+
+<div class="viewcode-block" id="fontLibValidator"><a class="viewcode-back" href="../../../ufoLib/validators.html#fontTools.ufoLib.validators.fontLibValidator">[docs]</a><span class="k">def</span> <span class="nf">fontLibValidator</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	Check the validity of the lib.</span>
+<span class="sd">	Version 3+ (though it&#39;s backwards compatible with UFO 1 and UFO 2).</span>
+
+<span class="sd">	&gt;&gt;&gt; lib = {&quot;foo&quot; : &quot;bar&quot;}</span>
+<span class="sd">	&gt;&gt;&gt; fontLibValidator(lib)</span>
+<span class="sd">	(True, None)</span>
+
+<span class="sd">	&gt;&gt;&gt; lib = {&quot;public.awesome&quot; : &quot;hello&quot;}</span>
+<span class="sd">	&gt;&gt;&gt; fontLibValidator(lib)</span>
+<span class="sd">	(True, None)</span>
+
+<span class="sd">	&gt;&gt;&gt; lib = {&quot;public.glyphOrder&quot; : [&quot;A&quot;, &quot;C&quot;, &quot;B&quot;]}</span>
+<span class="sd">	&gt;&gt;&gt; fontLibValidator(lib)</span>
+<span class="sd">	(True, None)</span>
+
+<span class="sd">	&gt;&gt;&gt; lib = &quot;hello&quot;</span>
+<span class="sd">	&gt;&gt;&gt; valid, msg = fontLibValidator(lib)</span>
+<span class="sd">	&gt;&gt;&gt; valid</span>
+<span class="sd">	False</span>
+<span class="sd">	&gt;&gt;&gt; print(msg)  # doctest: +ELLIPSIS</span>
+<span class="sd">	The lib data is not in the correct format: expected a dictionary, ...</span>
+
+<span class="sd">	&gt;&gt;&gt; lib = {1: &quot;hello&quot;}</span>
+<span class="sd">	&gt;&gt;&gt; valid, msg = fontLibValidator(lib)</span>
+<span class="sd">	&gt;&gt;&gt; valid</span>
+<span class="sd">	False</span>
+<span class="sd">	&gt;&gt;&gt; print(msg)</span>
+<span class="sd">	The lib key is not properly formatted: expected str, found int: 1</span>
+
+<span class="sd">	&gt;&gt;&gt; lib = {&quot;public.glyphOrder&quot; : &quot;hello&quot;}</span>
+<span class="sd">	&gt;&gt;&gt; valid, msg = fontLibValidator(lib)</span>
+<span class="sd">	&gt;&gt;&gt; valid</span>
+<span class="sd">	False</span>
+<span class="sd">	&gt;&gt;&gt; print(msg)  # doctest: +ELLIPSIS</span>
+<span class="sd">	public.glyphOrder is not properly formatted: expected list or tuple,...</span>
+
+<span class="sd">	&gt;&gt;&gt; lib = {&quot;public.glyphOrder&quot; : [&quot;A&quot;, 1, &quot;B&quot;]}</span>
+<span class="sd">	&gt;&gt;&gt; valid, msg = fontLibValidator(lib)</span>
+<span class="sd">	&gt;&gt;&gt; valid</span>
+<span class="sd">	False</span>
+<span class="sd">	&gt;&gt;&gt; print(msg)  # doctest: +ELLIPSIS</span>
+<span class="sd">	public.glyphOrder is not properly formatted: expected str,...</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="k">if</span> <span class="ow">not</span> <span class="n">isDictEnough</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+		<span class="n">reason</span> <span class="o">=</span> <span class="s2">&quot;expected a dictionary, found </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="nb">type</span><span class="p">(</span><span class="n">value</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span>
+		<span class="k">return</span> <span class="kc">False</span><span class="p">,</span> <span class="n">_bogusLibFormatMessage</span> <span class="o">%</span> <span class="n">reason</span>
+	<span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">value</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+			<span class="k">return</span> <span class="kc">False</span><span class="p">,</span> <span class="p">(</span>
+				<span class="s2">&quot;The lib key is not properly formatted: expected str, found </span><span class="si">%s</span><span class="s2">: </span><span class="si">%r</span><span class="s2">&quot;</span> <span class="o">%</span>
+				<span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">key</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span> <span class="n">key</span><span class="p">))</span>
+		<span class="c1"># public.glyphOrder</span>
+		<span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="s2">&quot;public.glyphOrder&quot;</span><span class="p">:</span>
+			<span class="n">bogusGlyphOrderMessage</span> <span class="o">=</span> <span class="s2">&quot;public.glyphOrder is not properly formatted: </span><span class="si">%s</span><span class="s2">&quot;</span>
+			<span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)):</span>
+				<span class="n">reason</span> <span class="o">=</span> <span class="s2">&quot;expected list or tuple, found </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="nb">type</span><span class="p">(</span><span class="n">value</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span>
+				<span class="k">return</span> <span class="kc">False</span><span class="p">,</span> <span class="n">bogusGlyphOrderMessage</span> <span class="o">%</span> <span class="n">reason</span>
+			<span class="k">for</span> <span class="n">glyphName</span> <span class="ow">in</span> <span class="n">value</span><span class="p">:</span>
+				<span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">glyphName</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+					<span class="n">reason</span> <span class="o">=</span> <span class="s2">&quot;expected str, found </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="nb">type</span><span class="p">(</span><span class="n">glyphName</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span>
+					<span class="k">return</span> <span class="kc">False</span><span class="p">,</span> <span class="n">bogusGlyphOrderMessage</span> <span class="o">%</span> <span class="n">reason</span>
+	<span class="k">return</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">None</span></div>
+
+<span class="c1"># --------</span>
+<span class="c1"># GLIF lib</span>
+<span class="c1"># --------</span>
+
+<div class="viewcode-block" id="glyphLibValidator"><a class="viewcode-back" href="../../../ufoLib/validators.html#fontTools.ufoLib.validators.glyphLibValidator">[docs]</a><span class="k">def</span> <span class="nf">glyphLibValidator</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	Check the validity of the lib.</span>
+<span class="sd">	Version 3+ (though it&#39;s backwards compatible with UFO 1 and UFO 2).</span>
+
+<span class="sd">	&gt;&gt;&gt; lib = {&quot;foo&quot; : &quot;bar&quot;}</span>
+<span class="sd">	&gt;&gt;&gt; glyphLibValidator(lib)</span>
+<span class="sd">	(True, None)</span>
+
+<span class="sd">	&gt;&gt;&gt; lib = {&quot;public.awesome&quot; : &quot;hello&quot;}</span>
+<span class="sd">	&gt;&gt;&gt; glyphLibValidator(lib)</span>
+<span class="sd">	(True, None)</span>
+
+<span class="sd">	&gt;&gt;&gt; lib = {&quot;public.markColor&quot; : &quot;1,0,0,0.5&quot;}</span>
+<span class="sd">	&gt;&gt;&gt; glyphLibValidator(lib)</span>
+<span class="sd">	(True, None)</span>
+
+<span class="sd">	&gt;&gt;&gt; lib = {&quot;public.markColor&quot; : 1}</span>
+<span class="sd">	&gt;&gt;&gt; valid, msg = glyphLibValidator(lib)</span>
+<span class="sd">	&gt;&gt;&gt; valid</span>
+<span class="sd">	False</span>
+<span class="sd">	&gt;&gt;&gt; print(msg)</span>
+<span class="sd">	public.markColor is not properly formatted.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="k">if</span> <span class="ow">not</span> <span class="n">isDictEnough</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+		<span class="n">reason</span> <span class="o">=</span> <span class="s2">&quot;expected a dictionary, found </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="nb">type</span><span class="p">(</span><span class="n">value</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span>
+		<span class="k">return</span> <span class="kc">False</span><span class="p">,</span> <span class="n">_bogusLibFormatMessage</span> <span class="o">%</span> <span class="n">reason</span>
+	<span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">value</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+			<span class="n">reason</span> <span class="o">=</span> <span class="s2">&quot;key (</span><span class="si">%s</span><span class="s2">) should be a string&quot;</span> <span class="o">%</span> <span class="n">key</span>
+			<span class="k">return</span> <span class="kc">False</span><span class="p">,</span> <span class="n">_bogusLibFormatMessage</span> <span class="o">%</span> <span class="n">reason</span>
+		<span class="c1"># public.markColor</span>
+		<span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="s2">&quot;public.markColor&quot;</span><span class="p">:</span>
+			<span class="k">if</span> <span class="ow">not</span> <span class="n">colorValidator</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+				<span class="k">return</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;public.markColor is not properly formatted.&quot;</span>
+	<span class="k">return</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">None</span></div>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+	<span class="kn">import</span> <span class="nn">doctest</span>
+	<span class="n">doctest</span><span class="o">.</span><span class="n">testmod</span><span class="p">()</span>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Just van Rossum, Behdad Esfahbod, and the fontTools Authors. CC BY-SA 4.0
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

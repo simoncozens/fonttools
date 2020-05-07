@@ -1,0 +1,699 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>fontTools.varLib.featureVars &mdash; fontTools Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> fontTools
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Library</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../afmLib.html">afmLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../agl.html">agl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cffLib/index.html">cffLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../colorLib/index.html">colorLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cu2qu/index.html">cu2qu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../designspaceLib/index.html">designspaceLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../encodings/index.html">encodings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../feaLib/index.html">feaLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../merge.html">merge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../misc/index.html">misc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../mtiLib.html">mtiLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../otlLib/index.html">otlLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pens/index.html">pens</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../subset/index.html">subset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../svgLib/index.html">svgLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../t1Lib.html">t1Lib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ttLib/index.html">ttLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ttx.html">ttx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ufoLib/index.html">ufoLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../unicode.html">unicode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../unicodedata/index.html">unicodedata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../varLib/index.html">varLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../voltLib.html">voltLib</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">fontTools</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../varLib.html">fontTools.varLib</a> &raquo;</li>
+        
+      <li>fontTools.varLib.featureVars</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for fontTools.varLib.featureVars</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;Module to build FeatureVariation tables:</span>
+<span class="sd">https://docs.microsoft.com/en-us/typography/opentype/spec/chapter2#featurevariations-table</span>
+
+<span class="sd">NOTE: The API is experimental and subject to change.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">fontTools.misc.dictTools</span> <span class="k">import</span> <span class="n">hashdict</span>
+<span class="kn">from</span> <span class="nn">fontTools.misc.intTools</span> <span class="k">import</span> <span class="n">popCount</span>
+<span class="kn">from</span> <span class="nn">fontTools.ttLib</span> <span class="k">import</span> <span class="n">newTable</span>
+<span class="kn">from</span> <span class="nn">fontTools.ttLib.tables</span> <span class="k">import</span> <span class="n">otTables</span> <span class="k">as</span> <span class="n">ot</span>
+<span class="kn">from</span> <span class="nn">fontTools.otlLib.builder</span> <span class="k">import</span> <span class="n">buildLookup</span><span class="p">,</span> <span class="n">buildSingleSubstSubtable</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="k">import</span> <span class="n">OrderedDict</span>
+
+<span class="kn">from</span> <span class="nn">.errors</span> <span class="k">import</span> <span class="n">VarLibValidationError</span>
+
+
+<div class="viewcode-block" id="addFeatureVariations"><a class="viewcode-back" href="../../../varLib/featureVars.html#fontTools.varLib.featureVars.addFeatureVariations">[docs]</a><span class="k">def</span> <span class="nf">addFeatureVariations</span><span class="p">(</span><span class="n">font</span><span class="p">,</span> <span class="n">conditionalSubstitutions</span><span class="p">,</span> <span class="n">featureTag</span><span class="o">=</span><span class="s1">&#39;rvrn&#39;</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Add conditional substitutions to a Variable Font.</span>
+
+<span class="sd">    The `conditionalSubstitutions` argument is a list of (Region, Substitutions)</span>
+<span class="sd">    tuples.</span>
+
+<span class="sd">    A Region is a list of Boxes. A Box is a dict mapping axisTags to</span>
+<span class="sd">    (minValue, maxValue) tuples. Irrelevant axes may be omitted and they are</span>
+<span class="sd">    interpretted as extending to end of axis in each direction.  A Box represents</span>
+<span class="sd">    an orthogonal &#39;rectangular&#39; subset of an N-dimensional design space.</span>
+<span class="sd">    A Region represents a more complex subset of an N-dimensional design space,</span>
+<span class="sd">    ie. the union of all the Boxes in the Region.</span>
+<span class="sd">    For efficiency, Boxes within a Region should ideally not overlap, but</span>
+<span class="sd">    functionality is not compromised if they do.</span>
+
+<span class="sd">    The minimum and maximum values are expressed in normalized coordinates.</span>
+
+<span class="sd">    A Substitution is a dict mapping source glyph names to substitute glyph names.</span>
+
+<span class="sd">    Example:</span>
+
+<span class="sd">    # &gt;&gt;&gt; f = TTFont(srcPath)</span>
+<span class="sd">    # &gt;&gt;&gt; condSubst = [</span>
+<span class="sd">    # ...     # A list of (Region, Substitution) tuples.</span>
+<span class="sd">    # ...     ([{&quot;wdth&quot;: (0.5, 1.0)}], {&quot;cent&quot;: &quot;cent.rvrn&quot;}),</span>
+<span class="sd">    # ...     ([{&quot;wght&quot;: (0.5, 1.0)}], {&quot;dollar&quot;: &quot;dollar.rvrn&quot;}),</span>
+<span class="sd">    # ... ]</span>
+<span class="sd">    # &gt;&gt;&gt; addFeatureVariations(f, condSubst)</span>
+<span class="sd">    # &gt;&gt;&gt; f.save(dstPath)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">addFeatureVariationsRaw</span><span class="p">(</span><span class="n">font</span><span class="p">,</span>
+                            <span class="n">overlayFeatureVariations</span><span class="p">(</span><span class="n">conditionalSubstitutions</span><span class="p">),</span>
+                            <span class="n">featureTag</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="overlayFeatureVariations"><a class="viewcode-back" href="../../../varLib/featureVars.html#fontTools.varLib.featureVars.overlayFeatureVariations">[docs]</a><span class="k">def</span> <span class="nf">overlayFeatureVariations</span><span class="p">(</span><span class="n">conditionalSubstitutions</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Compute overlaps between all conditional substitutions.</span>
+
+<span class="sd">    The `conditionalSubstitutions` argument is a list of (Region, Substitutions)</span>
+<span class="sd">    tuples.</span>
+
+<span class="sd">    A Region is a list of Boxes. A Box is a dict mapping axisTags to</span>
+<span class="sd">    (minValue, maxValue) tuples. Irrelevant axes may be omitted and they are</span>
+<span class="sd">    interpretted as extending to end of axis in each direction.  A Box represents</span>
+<span class="sd">    an orthogonal &#39;rectangular&#39; subset of an N-dimensional design space.</span>
+<span class="sd">    A Region represents a more complex subset of an N-dimensional design space,</span>
+<span class="sd">    ie. the union of all the Boxes in the Region.</span>
+<span class="sd">    For efficiency, Boxes within a Region should ideally not overlap, but</span>
+<span class="sd">    functionality is not compromised if they do.</span>
+
+<span class="sd">    The minimum and maximum values are expressed in normalized coordinates.</span>
+
+<span class="sd">    A Substitution is a dict mapping source glyph names to substitute glyph names.</span>
+
+<span class="sd">    Returns data is in similar but different format.  Overlaps of distinct</span>
+<span class="sd">    substitution Boxes (*not* Regions) are explicitly listed as distinct rules,</span>
+<span class="sd">    and rules with the same Box merged.  The more specific rules appear earlier</span>
+<span class="sd">    in the resulting list.  Moreover, instead of just a dictionary of substitutions,</span>
+<span class="sd">    a list of dictionaries is returned for substitutions corresponding to each</span>
+<span class="sd">    unique space, with each dictionary being identical to one of the input</span>
+<span class="sd">    substitution dictionaries.  These dictionaries are not merged to allow data</span>
+<span class="sd">    sharing when they are converted into font tables.</span>
+
+<span class="sd">    Example:</span>
+<span class="sd">    &gt;&gt;&gt; condSubst = [</span>
+<span class="sd">    ...     # A list of (Region, Substitution) tuples.</span>
+<span class="sd">    ...     ([{&quot;wght&quot;: (0.5, 1.0)}], {&quot;dollar&quot;: &quot;dollar.rvrn&quot;}),</span>
+<span class="sd">    ...     ([{&quot;wght&quot;: (0.5, 1.0)}], {&quot;dollar&quot;: &quot;dollar.rvrn&quot;}),</span>
+<span class="sd">    ...     ([{&quot;wdth&quot;: (0.5, 1.0)}], {&quot;cent&quot;: &quot;cent.rvrn&quot;}),</span>
+<span class="sd">    ... ]</span>
+<span class="sd">    &gt;&gt;&gt; from pprint import pprint</span>
+<span class="sd">    &gt;&gt;&gt; pprint(overlayFeatureVariations(condSubst))</span>
+<span class="sd">    [({&#39;wdth&#39;: (0.5, 1.0), &#39;wght&#39;: (0.5, 1.0)},</span>
+<span class="sd">      [{&#39;dollar&#39;: &#39;dollar.rvrn&#39;}, {&#39;cent&#39;: &#39;cent.rvrn&#39;}]),</span>
+<span class="sd">     ({&#39;wdth&#39;: (0.5, 1.0)}, [{&#39;cent&#39;: &#39;cent.rvrn&#39;}]),</span>
+<span class="sd">     ({&#39;wght&#39;: (0.5, 1.0)}, [{&#39;dollar&#39;: &#39;dollar.rvrn&#39;}])]</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># Merge same-substitutions rules, as this creates fewer number oflookups.</span>
+    <span class="n">merged</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">value</span><span class="p">,</span><span class="n">key</span> <span class="ow">in</span> <span class="n">conditionalSubstitutions</span><span class="p">:</span>
+        <span class="n">key</span> <span class="o">=</span> <span class="n">hashdict</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">merged</span><span class="p">:</span>
+            <span class="n">merged</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">merged</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+    <span class="n">conditionalSubstitutions</span> <span class="o">=</span> <span class="p">[(</span><span class="n">v</span><span class="p">,</span><span class="nb">dict</span><span class="p">(</span><span class="n">k</span><span class="p">))</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">merged</span><span class="o">.</span><span class="n">items</span><span class="p">()]</span>
+    <span class="k">del</span> <span class="n">merged</span>
+
+    <span class="c1"># Merge same-region rules, as this is cheaper.</span>
+    <span class="c1"># Also convert boxes to hashdict()</span>
+    <span class="c1">#</span>
+    <span class="c1"># Reversing is such that earlier entries win in case of conflicting substitution</span>
+    <span class="c1"># rules for the same region.</span>
+    <span class="n">merged</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">key</span><span class="p">,</span><span class="n">value</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">conditionalSubstitutions</span><span class="p">):</span>
+        <span class="n">key</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="nb">sorted</span><span class="p">((</span><span class="n">hashdict</span><span class="p">(</span><span class="n">cleanupBox</span><span class="p">(</span><span class="n">k</span><span class="p">))</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">key</span><span class="p">),</span>
+                           <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">d</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">items</span><span class="p">()))))</span>
+        <span class="k">if</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">merged</span><span class="p">:</span>
+            <span class="n">merged</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">merged</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+    <span class="n">conditionalSubstitutions</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">reversed</span><span class="p">(</span><span class="n">merged</span><span class="o">.</span><span class="n">items</span><span class="p">()))</span>
+    <span class="k">del</span> <span class="n">merged</span>
+
+    <span class="c1"># Overlay</span>
+    <span class="c1">#</span>
+    <span class="c1"># Rank is the bit-set of the index of all contributing layers.</span>
+    <span class="n">initMapInit</span> <span class="o">=</span> <span class="p">((</span><span class="n">hashdict</span><span class="p">(),</span><span class="mi">0</span><span class="p">),)</span> <span class="c1"># Initializer representing the entire space</span>
+    <span class="n">boxMap</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">(</span><span class="n">initMapInit</span><span class="p">)</span> <span class="c1"># Map from Box to Rank</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,(</span><span class="n">currRegion</span><span class="p">,</span><span class="n">_</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">conditionalSubstitutions</span><span class="p">):</span>
+        <span class="n">newMap</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">(</span><span class="n">initMapInit</span><span class="p">)</span>
+        <span class="n">currRank</span> <span class="o">=</span> <span class="mi">1</span><span class="o">&lt;&lt;</span><span class="n">i</span>
+        <span class="k">for</span> <span class="n">box</span><span class="p">,</span><span class="n">rank</span> <span class="ow">in</span> <span class="n">boxMap</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">for</span> <span class="n">currBox</span> <span class="ow">in</span> <span class="n">currRegion</span><span class="p">:</span>
+                <span class="n">intersection</span><span class="p">,</span> <span class="n">remainder</span> <span class="o">=</span> <span class="n">overlayBox</span><span class="p">(</span><span class="n">currBox</span><span class="p">,</span> <span class="n">box</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">intersection</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">intersection</span> <span class="o">=</span> <span class="n">hashdict</span><span class="p">(</span><span class="n">intersection</span><span class="p">)</span>
+                    <span class="n">newMap</span><span class="p">[</span><span class="n">intersection</span><span class="p">]</span> <span class="o">=</span> <span class="n">newMap</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">intersection</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">|</span> <span class="n">rank</span><span class="o">|</span><span class="n">currRank</span>
+                <span class="k">if</span> <span class="n">remainder</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">remainder</span> <span class="o">=</span> <span class="n">hashdict</span><span class="p">(</span><span class="n">remainder</span><span class="p">)</span>
+                    <span class="n">newMap</span><span class="p">[</span><span class="n">remainder</span><span class="p">]</span> <span class="o">=</span> <span class="n">newMap</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">remainder</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">|</span> <span class="n">rank</span>
+        <span class="n">boxMap</span> <span class="o">=</span> <span class="n">newMap</span>
+    <span class="k">del</span> <span class="n">boxMap</span><span class="p">[</span><span class="n">hashdict</span><span class="p">()]</span>
+
+    <span class="c1"># Generate output</span>
+    <span class="n">items</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">box</span><span class="p">,</span><span class="n">rank</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">boxMap</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span>
+                           <span class="n">key</span><span class="o">=</span><span class="p">(</span><span class="k">lambda</span> <span class="n">BoxAndRank</span><span class="p">:</span> <span class="o">-</span><span class="n">popCount</span><span class="p">(</span><span class="n">BoxAndRank</span><span class="p">[</span><span class="mi">1</span><span class="p">]))):</span>
+        <span class="n">substsList</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">while</span> <span class="n">rank</span><span class="p">:</span>
+          <span class="k">if</span> <span class="n">rank</span> <span class="o">&amp;</span> <span class="mi">1</span><span class="p">:</span>
+              <span class="n">substsList</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">conditionalSubstitutions</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
+          <span class="n">rank</span> <span class="o">&gt;&gt;=</span> <span class="mi">1</span>
+          <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">items</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="nb">dict</span><span class="p">(</span><span class="n">box</span><span class="p">),</span><span class="n">substsList</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">items</span></div>
+
+
+<span class="c1">#</span>
+<span class="c1"># Terminology:</span>
+<span class="c1">#</span>
+<span class="c1"># A &#39;Box&#39; is a dict representing an orthogonal &quot;rectangular&quot; bit of N-dimensional space.</span>
+<span class="c1"># The keys in the dict are axis tags, the values are (minValue, maxValue) tuples.</span>
+<span class="c1"># Missing dimensions (keys) are substituted by the default min and max values</span>
+<span class="c1"># from the corresponding axes.</span>
+<span class="c1">#</span>
+
+<div class="viewcode-block" id="overlayBox"><a class="viewcode-back" href="../../../varLib/featureVars.html#fontTools.varLib.featureVars.overlayBox">[docs]</a><span class="k">def</span> <span class="nf">overlayBox</span><span class="p">(</span><span class="n">top</span><span class="p">,</span> <span class="n">bot</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Overlays `top` box on top of `bot` box.</span>
+
+<span class="sd">    Returns two items:</span>
+<span class="sd">    - Box for intersection of `top` and `bot`, or None if they don&#39;t intersect.</span>
+<span class="sd">    - Box for remainder of `bot`.  Remainder box might not be exact (since the</span>
+<span class="sd">      remainder might not be a simple box), but is inclusive of the exact</span>
+<span class="sd">      remainder.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># Intersection</span>
+    <span class="n">intersection</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">intersection</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">top</span><span class="p">)</span>
+    <span class="n">intersection</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">bot</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">axisTag</span> <span class="ow">in</span> <span class="nb">set</span><span class="p">(</span><span class="n">top</span><span class="p">)</span> <span class="o">&amp;</span> <span class="nb">set</span><span class="p">(</span><span class="n">bot</span><span class="p">):</span>
+        <span class="n">min1</span><span class="p">,</span> <span class="n">max1</span> <span class="o">=</span> <span class="n">top</span><span class="p">[</span><span class="n">axisTag</span><span class="p">]</span>
+        <span class="n">min2</span><span class="p">,</span> <span class="n">max2</span> <span class="o">=</span> <span class="n">bot</span><span class="p">[</span><span class="n">axisTag</span><span class="p">]</span>
+        <span class="n">minimum</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">min1</span><span class="p">,</span> <span class="n">min2</span><span class="p">)</span>
+        <span class="n">maximum</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">max1</span><span class="p">,</span> <span class="n">max2</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">minimum</span> <span class="o">&lt;</span> <span class="n">maximum</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span><span class="p">,</span> <span class="n">bot</span> <span class="c1"># Do not intersect</span>
+        <span class="n">intersection</span><span class="p">[</span><span class="n">axisTag</span><span class="p">]</span> <span class="o">=</span> <span class="n">minimum</span><span class="p">,</span><span class="n">maximum</span>
+
+    <span class="c1"># Remainder</span>
+    <span class="c1">#</span>
+    <span class="c1"># Remainder is empty if bot&#39;s each axis range lies within that of intersection.</span>
+    <span class="c1">#</span>
+    <span class="c1"># Remainder is shrank if bot&#39;s each, except for exactly one, axis range lies</span>
+    <span class="c1"># within that of intersection, and that one axis, it spills out of the</span>
+    <span class="c1"># intersection only on one side.</span>
+    <span class="c1">#</span>
+    <span class="c1"># Bot is returned in full as remainder otherwise, as true remainder is not</span>
+    <span class="c1"># representable as a single box.</span>
+
+    <span class="n">remainder</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">bot</span><span class="p">)</span>
+    <span class="n">exactlyOne</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">fullyInside</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="k">for</span> <span class="n">axisTag</span> <span class="ow">in</span> <span class="n">bot</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">axisTag</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">intersection</span><span class="p">:</span>
+            <span class="n">fullyInside</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="k">continue</span> <span class="c1"># Axis range lies fully within</span>
+        <span class="n">min1</span><span class="p">,</span> <span class="n">max1</span> <span class="o">=</span> <span class="n">intersection</span><span class="p">[</span><span class="n">axisTag</span><span class="p">]</span>
+        <span class="n">min2</span><span class="p">,</span> <span class="n">max2</span> <span class="o">=</span> <span class="n">bot</span><span class="p">[</span><span class="n">axisTag</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">min1</span> <span class="o">&lt;=</span> <span class="n">min2</span> <span class="ow">and</span> <span class="n">max2</span> <span class="o">&lt;=</span> <span class="n">max1</span><span class="p">:</span>
+            <span class="k">continue</span> <span class="c1"># Axis range lies fully within</span>
+
+        <span class="c1"># Bot&#39;s range doesn&#39;t fully lie within that of top&#39;s for this axis.</span>
+        <span class="c1"># We know they intersect, so it cannot lie fully without either; so they</span>
+        <span class="c1"># overlap.</span>
+
+        <span class="c1"># If we have had an overlapping axis before, remainder is not</span>
+        <span class="c1"># representable as a box, so return full bottom and go home.</span>
+        <span class="k">if</span> <span class="n">exactlyOne</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">intersection</span><span class="p">,</span> <span class="n">bot</span>
+        <span class="n">exactlyOne</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="n">fullyInside</span> <span class="o">=</span> <span class="kc">False</span>
+
+        <span class="c1"># Otherwise, cut remainder on this axis and continue.</span>
+        <span class="k">if</span> <span class="n">min1</span> <span class="o">&lt;=</span> <span class="n">min2</span><span class="p">:</span>
+            <span class="c1"># Right side survives.</span>
+            <span class="n">minimum</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">max1</span><span class="p">,</span> <span class="n">min2</span><span class="p">)</span>
+            <span class="n">maximum</span> <span class="o">=</span> <span class="n">max2</span>
+        <span class="k">elif</span> <span class="n">max2</span> <span class="o">&lt;=</span> <span class="n">max1</span><span class="p">:</span>
+            <span class="c1"># Left side survives.</span>
+            <span class="n">minimum</span> <span class="o">=</span> <span class="n">min2</span>
+            <span class="n">maximum</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">min1</span><span class="p">,</span> <span class="n">max2</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># Remainder leaks out from both sides.  Can&#39;t cut either.</span>
+            <span class="k">return</span> <span class="n">intersection</span><span class="p">,</span> <span class="n">bot</span>
+
+        <span class="n">remainder</span><span class="p">[</span><span class="n">axisTag</span><span class="p">]</span> <span class="o">=</span> <span class="n">minimum</span><span class="p">,</span><span class="n">maximum</span>
+
+    <span class="k">if</span> <span class="n">fullyInside</span><span class="p">:</span>
+        <span class="c1"># bot is fully within intersection.  Remainder is empty.</span>
+        <span class="k">return</span> <span class="n">intersection</span><span class="p">,</span> <span class="kc">None</span>
+
+    <span class="k">return</span> <span class="n">intersection</span><span class="p">,</span> <span class="n">remainder</span></div>
+
+<div class="viewcode-block" id="cleanupBox"><a class="viewcode-back" href="../../../varLib/featureVars.html#fontTools.varLib.featureVars.cleanupBox">[docs]</a><span class="k">def</span> <span class="nf">cleanupBox</span><span class="p">(</span><span class="n">box</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Return a sparse copy of `box`, without redundant (default) values.</span>
+
+<span class="sd">        &gt;&gt;&gt; cleanupBox({})</span>
+<span class="sd">        {}</span>
+<span class="sd">        &gt;&gt;&gt; cleanupBox({&#39;wdth&#39;: (0.0, 1.0)})</span>
+<span class="sd">        {&#39;wdth&#39;: (0.0, 1.0)}</span>
+<span class="sd">        &gt;&gt;&gt; cleanupBox({&#39;wdth&#39;: (-1.0, 1.0)})</span>
+<span class="sd">        {}</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">{</span><span class="n">tag</span><span class="p">:</span> <span class="n">limit</span> <span class="k">for</span> <span class="n">tag</span><span class="p">,</span> <span class="n">limit</span> <span class="ow">in</span> <span class="n">box</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">limit</span> <span class="o">!=</span> <span class="p">(</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)}</span></div>
+
+
+<span class="c1">#</span>
+<span class="c1"># Low level implementation</span>
+<span class="c1">#</span>
+
+<div class="viewcode-block" id="addFeatureVariationsRaw"><a class="viewcode-back" href="../../../varLib/featureVars.html#fontTools.varLib.featureVars.addFeatureVariationsRaw">[docs]</a><span class="k">def</span> <span class="nf">addFeatureVariationsRaw</span><span class="p">(</span><span class="n">font</span><span class="p">,</span> <span class="n">conditionalSubstitutions</span><span class="p">,</span> <span class="n">featureTag</span><span class="o">=</span><span class="s1">&#39;rvrn&#39;</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Low level implementation of addFeatureVariations that directly</span>
+<span class="sd">    models the possibilities of the FeatureVariations table.&quot;&quot;&quot;</span>
+
+    <span class="c1">#</span>
+    <span class="c1"># if there is no &lt;featureTag&gt; feature:</span>
+    <span class="c1">#     make empty &lt;featureTag&gt; feature</span>
+    <span class="c1">#     sort features, get &lt;featureTag&gt; feature index</span>
+    <span class="c1">#     add &lt;featureTag&gt; feature to all scripts</span>
+    <span class="c1"># make lookups</span>
+    <span class="c1"># add feature variations</span>
+    <span class="c1">#</span>
+
+    <span class="k">if</span> <span class="s2">&quot;GSUB&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">font</span><span class="p">:</span>
+        <span class="n">font</span><span class="p">[</span><span class="s2">&quot;GSUB&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">buildGSUB</span><span class="p">()</span>
+
+    <span class="n">gsub</span> <span class="o">=</span> <span class="n">font</span><span class="p">[</span><span class="s2">&quot;GSUB&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">table</span>
+
+    <span class="k">if</span> <span class="n">gsub</span><span class="o">.</span><span class="n">Version</span> <span class="o">&lt;</span> <span class="mh">0x00010001</span><span class="p">:</span>
+        <span class="n">gsub</span><span class="o">.</span><span class="n">Version</span> <span class="o">=</span> <span class="mh">0x00010001</span>  <span class="c1"># allow gsub.FeatureVariations</span>
+
+    <span class="n">gsub</span><span class="o">.</span><span class="n">FeatureVariations</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># delete any existing FeatureVariations</span>
+
+    <span class="n">varFeatureIndices</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">feature</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">gsub</span><span class="o">.</span><span class="n">FeatureList</span><span class="o">.</span><span class="n">FeatureRecord</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">feature</span><span class="o">.</span><span class="n">FeatureTag</span> <span class="o">==</span> <span class="n">featureTag</span><span class="p">:</span>
+            <span class="n">varFeatureIndices</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">index</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">varFeatureIndices</span><span class="p">:</span>
+        <span class="n">varFeature</span> <span class="o">=</span> <span class="n">buildFeatureRecord</span><span class="p">(</span><span class="n">featureTag</span><span class="p">,</span> <span class="p">[])</span>
+        <span class="n">gsub</span><span class="o">.</span><span class="n">FeatureList</span><span class="o">.</span><span class="n">FeatureRecord</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">varFeature</span><span class="p">)</span>
+        <span class="n">gsub</span><span class="o">.</span><span class="n">FeatureList</span><span class="o">.</span><span class="n">FeatureCount</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">gsub</span><span class="o">.</span><span class="n">FeatureList</span><span class="o">.</span><span class="n">FeatureRecord</span><span class="p">)</span>
+
+        <span class="n">sortFeatureList</span><span class="p">(</span><span class="n">gsub</span><span class="p">)</span>
+        <span class="n">varFeatureIndex</span> <span class="o">=</span> <span class="n">gsub</span><span class="o">.</span><span class="n">FeatureList</span><span class="o">.</span><span class="n">FeatureRecord</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">varFeature</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">scriptRecord</span> <span class="ow">in</span> <span class="n">gsub</span><span class="o">.</span><span class="n">ScriptList</span><span class="o">.</span><span class="n">ScriptRecord</span><span class="p">:</span>
+            <span class="n">langSystems</span> <span class="o">=</span> <span class="p">[</span><span class="n">lsr</span><span class="o">.</span><span class="n">LangSys</span> <span class="k">for</span> <span class="n">lsr</span> <span class="ow">in</span> <span class="n">scriptRecord</span><span class="o">.</span><span class="n">Script</span><span class="o">.</span><span class="n">LangSysRecord</span><span class="p">]</span>
+            <span class="k">for</span> <span class="n">langSys</span> <span class="ow">in</span> <span class="p">[</span><span class="n">scriptRecord</span><span class="o">.</span><span class="n">Script</span><span class="o">.</span><span class="n">DefaultLangSys</span><span class="p">]</span> <span class="o">+</span> <span class="n">langSystems</span><span class="p">:</span>
+                <span class="n">langSys</span><span class="o">.</span><span class="n">FeatureIndex</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">varFeatureIndex</span><span class="p">)</span>
+
+        <span class="n">varFeatureIndices</span> <span class="o">=</span> <span class="p">[</span><span class="n">varFeatureIndex</span><span class="p">]</span>
+
+    <span class="c1"># setup lookups</span>
+
+    <span class="c1"># turn substitution dicts into tuples of tuples, so they are hashable</span>
+    <span class="n">conditionalSubstitutions</span><span class="p">,</span> <span class="n">allSubstitutions</span> <span class="o">=</span> <span class="n">makeSubstitutionsHashable</span><span class="p">(</span><span class="n">conditionalSubstitutions</span><span class="p">)</span>
+
+    <span class="n">lookupMap</span> <span class="o">=</span> <span class="n">buildSubstitutionLookups</span><span class="p">(</span><span class="n">gsub</span><span class="p">,</span> <span class="n">allSubstitutions</span><span class="p">)</span>
+
+    <span class="n">axisIndices</span> <span class="o">=</span> <span class="p">{</span><span class="n">axis</span><span class="o">.</span><span class="n">axisTag</span><span class="p">:</span> <span class="n">axisIndex</span> <span class="k">for</span> <span class="n">axisIndex</span><span class="p">,</span> <span class="n">axis</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">font</span><span class="p">[</span><span class="s2">&quot;fvar&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">axes</span><span class="p">)}</span>
+
+    <span class="n">featureVariationRecords</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">conditionSet</span><span class="p">,</span> <span class="n">substitutions</span> <span class="ow">in</span> <span class="n">conditionalSubstitutions</span><span class="p">:</span>
+        <span class="n">conditionTable</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">axisTag</span><span class="p">,</span> <span class="p">(</span><span class="n">minValue</span><span class="p">,</span> <span class="n">maxValue</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">conditionSet</span><span class="o">.</span><span class="n">items</span><span class="p">()):</span>
+            <span class="k">if</span> <span class="n">minValue</span> <span class="o">&gt;</span> <span class="n">maxValue</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">VarLibValidationError</span><span class="p">(</span>
+                    <span class="s2">&quot;A condition set has a minimum value above the maximum value.&quot;</span>
+                <span class="p">)</span>
+            <span class="n">ct</span> <span class="o">=</span> <span class="n">buildConditionTable</span><span class="p">(</span><span class="n">axisIndices</span><span class="p">[</span><span class="n">axisTag</span><span class="p">],</span> <span class="n">minValue</span><span class="p">,</span> <span class="n">maxValue</span><span class="p">)</span>
+            <span class="n">conditionTable</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ct</span><span class="p">)</span>
+
+        <span class="n">lookupIndices</span> <span class="o">=</span> <span class="p">[</span><span class="n">lookupMap</span><span class="p">[</span><span class="n">subst</span><span class="p">]</span> <span class="k">for</span> <span class="n">subst</span> <span class="ow">in</span> <span class="n">substitutions</span><span class="p">]</span>
+        <span class="n">records</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">varFeatureIndex</span> <span class="ow">in</span> <span class="n">varFeatureIndices</span><span class="p">:</span>
+            <span class="n">existingLookupIndices</span> <span class="o">=</span> <span class="n">gsub</span><span class="o">.</span><span class="n">FeatureList</span><span class="o">.</span><span class="n">FeatureRecord</span><span class="p">[</span><span class="n">varFeatureIndex</span><span class="p">]</span><span class="o">.</span><span class="n">Feature</span><span class="o">.</span><span class="n">LookupListIndex</span>
+            <span class="n">records</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">buildFeatureTableSubstitutionRecord</span><span class="p">(</span><span class="n">varFeatureIndex</span><span class="p">,</span> <span class="n">existingLookupIndices</span> <span class="o">+</span> <span class="n">lookupIndices</span><span class="p">))</span>
+        <span class="n">featureVariationRecords</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">buildFeatureVariationRecord</span><span class="p">(</span><span class="n">conditionTable</span><span class="p">,</span> <span class="n">records</span><span class="p">))</span>
+
+    <span class="n">gsub</span><span class="o">.</span><span class="n">FeatureVariations</span> <span class="o">=</span> <span class="n">buildFeatureVariations</span><span class="p">(</span><span class="n">featureVariationRecords</span><span class="p">)</span></div>
+
+
+<span class="c1">#</span>
+<span class="c1"># Building GSUB/FeatureVariations internals</span>
+<span class="c1">#</span>
+
+<div class="viewcode-block" id="buildGSUB"><a class="viewcode-back" href="../../../varLib/featureVars.html#fontTools.varLib.featureVars.buildGSUB">[docs]</a><span class="k">def</span> <span class="nf">buildGSUB</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Build a GSUB table from scratch.&quot;&quot;&quot;</span>
+    <span class="n">fontTable</span> <span class="o">=</span> <span class="n">newTable</span><span class="p">(</span><span class="s2">&quot;GSUB&quot;</span><span class="p">)</span>
+    <span class="n">gsub</span> <span class="o">=</span> <span class="n">fontTable</span><span class="o">.</span><span class="n">table</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">GSUB</span><span class="p">()</span>
+    <span class="n">gsub</span><span class="o">.</span><span class="n">Version</span> <span class="o">=</span> <span class="mh">0x00010001</span>  <span class="c1"># allow gsub.FeatureVariations</span>
+
+    <span class="n">gsub</span><span class="o">.</span><span class="n">ScriptList</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">ScriptList</span><span class="p">()</span>
+    <span class="n">gsub</span><span class="o">.</span><span class="n">ScriptList</span><span class="o">.</span><span class="n">ScriptRecord</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">gsub</span><span class="o">.</span><span class="n">FeatureList</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">FeatureList</span><span class="p">()</span>
+    <span class="n">gsub</span><span class="o">.</span><span class="n">FeatureList</span><span class="o">.</span><span class="n">FeatureRecord</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">gsub</span><span class="o">.</span><span class="n">LookupList</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">LookupList</span><span class="p">()</span>
+    <span class="n">gsub</span><span class="o">.</span><span class="n">LookupList</span><span class="o">.</span><span class="n">Lookup</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="n">srec</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">ScriptRecord</span><span class="p">()</span>
+    <span class="n">srec</span><span class="o">.</span><span class="n">ScriptTag</span> <span class="o">=</span> <span class="s1">&#39;DFLT&#39;</span>
+    <span class="n">srec</span><span class="o">.</span><span class="n">Script</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Script</span><span class="p">()</span>
+    <span class="n">srec</span><span class="o">.</span><span class="n">Script</span><span class="o">.</span><span class="n">DefaultLangSys</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">srec</span><span class="o">.</span><span class="n">Script</span><span class="o">.</span><span class="n">LangSysRecord</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="n">langrec</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">LangSysRecord</span><span class="p">()</span>
+    <span class="n">langrec</span><span class="o">.</span><span class="n">LangSys</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">LangSys</span><span class="p">()</span>
+    <span class="n">langrec</span><span class="o">.</span><span class="n">LangSys</span><span class="o">.</span><span class="n">ReqFeatureIndex</span> <span class="o">=</span> <span class="mh">0xFFFF</span>
+    <span class="n">langrec</span><span class="o">.</span><span class="n">LangSys</span><span class="o">.</span><span class="n">FeatureIndex</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">srec</span><span class="o">.</span><span class="n">Script</span><span class="o">.</span><span class="n">DefaultLangSys</span> <span class="o">=</span> <span class="n">langrec</span><span class="o">.</span><span class="n">LangSys</span>
+
+    <span class="n">gsub</span><span class="o">.</span><span class="n">ScriptList</span><span class="o">.</span><span class="n">ScriptRecord</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">srec</span><span class="p">)</span>
+    <span class="n">gsub</span><span class="o">.</span><span class="n">ScriptList</span><span class="o">.</span><span class="n">ScriptCount</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">gsub</span><span class="o">.</span><span class="n">FeatureVariations</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">return</span> <span class="n">fontTable</span></div>
+
+
+<div class="viewcode-block" id="makeSubstitutionsHashable"><a class="viewcode-back" href="../../../varLib/featureVars.html#fontTools.varLib.featureVars.makeSubstitutionsHashable">[docs]</a><span class="k">def</span> <span class="nf">makeSubstitutionsHashable</span><span class="p">(</span><span class="n">conditionalSubstitutions</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Turn all the substitution dictionaries in sorted tuples of tuples so</span>
+<span class="sd">    they are hashable, to detect duplicates so we don&#39;t write out redundant</span>
+<span class="sd">    data.&quot;&quot;&quot;</span>
+    <span class="n">allSubstitutions</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+    <span class="n">condSubst</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">conditionSet</span><span class="p">,</span> <span class="n">substitutionMaps</span> <span class="ow">in</span> <span class="n">conditionalSubstitutions</span><span class="p">:</span>
+        <span class="n">substitutions</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">substitutionMap</span> <span class="ow">in</span> <span class="n">substitutionMaps</span><span class="p">:</span>
+            <span class="n">subst</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">substitutionMap</span><span class="o">.</span><span class="n">items</span><span class="p">()))</span>
+            <span class="n">substitutions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">subst</span><span class="p">)</span>
+            <span class="n">allSubstitutions</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">subst</span><span class="p">)</span>
+        <span class="n">condSubst</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">conditionSet</span><span class="p">,</span> <span class="n">substitutions</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">condSubst</span><span class="p">,</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">allSubstitutions</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="buildSubstitutionLookups"><a class="viewcode-back" href="../../../varLib/featureVars.html#fontTools.varLib.featureVars.buildSubstitutionLookups">[docs]</a><span class="k">def</span> <span class="nf">buildSubstitutionLookups</span><span class="p">(</span><span class="n">gsub</span><span class="p">,</span> <span class="n">allSubstitutions</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Build the lookups for the glyph substitutions, return a dict mapping</span>
+<span class="sd">    the substitution to lookup indices.&quot;&quot;&quot;</span>
+    <span class="n">firstIndex</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">gsub</span><span class="o">.</span><span class="n">LookupList</span><span class="o">.</span><span class="n">Lookup</span><span class="p">)</span>
+    <span class="n">lookupMap</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">substitutionMap</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">allSubstitutions</span><span class="p">):</span>
+        <span class="n">lookupMap</span><span class="p">[</span><span class="n">substitutionMap</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="n">firstIndex</span>
+
+    <span class="k">for</span> <span class="n">subst</span> <span class="ow">in</span> <span class="n">allSubstitutions</span><span class="p">:</span>
+        <span class="n">substMap</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">subst</span><span class="p">)</span>
+        <span class="n">lookup</span> <span class="o">=</span> <span class="n">buildLookup</span><span class="p">([</span><span class="n">buildSingleSubstSubtable</span><span class="p">(</span><span class="n">substMap</span><span class="p">)])</span>
+        <span class="n">gsub</span><span class="o">.</span><span class="n">LookupList</span><span class="o">.</span><span class="n">Lookup</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">lookup</span><span class="p">)</span>
+        <span class="k">assert</span> <span class="n">gsub</span><span class="o">.</span><span class="n">LookupList</span><span class="o">.</span><span class="n">Lookup</span><span class="p">[</span><span class="n">lookupMap</span><span class="p">[</span><span class="n">subst</span><span class="p">]]</span> <span class="ow">is</span> <span class="n">lookup</span>
+    <span class="n">gsub</span><span class="o">.</span><span class="n">LookupList</span><span class="o">.</span><span class="n">LookupCount</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">gsub</span><span class="o">.</span><span class="n">LookupList</span><span class="o">.</span><span class="n">Lookup</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">lookupMap</span></div>
+
+
+<div class="viewcode-block" id="buildFeatureVariations"><a class="viewcode-back" href="../../../varLib/featureVars.html#fontTools.varLib.featureVars.buildFeatureVariations">[docs]</a><span class="k">def</span> <span class="nf">buildFeatureVariations</span><span class="p">(</span><span class="n">featureVariationRecords</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Build the FeatureVariations subtable.&quot;&quot;&quot;</span>
+    <span class="n">fv</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">FeatureVariations</span><span class="p">()</span>
+    <span class="n">fv</span><span class="o">.</span><span class="n">Version</span> <span class="o">=</span> <span class="mh">0x00010000</span>
+    <span class="n">fv</span><span class="o">.</span><span class="n">FeatureVariationRecord</span> <span class="o">=</span> <span class="n">featureVariationRecords</span>
+    <span class="k">return</span> <span class="n">fv</span></div>
+
+
+<div class="viewcode-block" id="buildFeatureRecord"><a class="viewcode-back" href="../../../varLib/featureVars.html#fontTools.varLib.featureVars.buildFeatureRecord">[docs]</a><span class="k">def</span> <span class="nf">buildFeatureRecord</span><span class="p">(</span><span class="n">featureTag</span><span class="p">,</span> <span class="n">lookupListIndices</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Build a FeatureRecord.&quot;&quot;&quot;</span>
+    <span class="n">fr</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">FeatureRecord</span><span class="p">()</span>
+    <span class="n">fr</span><span class="o">.</span><span class="n">FeatureTag</span> <span class="o">=</span> <span class="n">featureTag</span>
+    <span class="n">fr</span><span class="o">.</span><span class="n">Feature</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Feature</span><span class="p">()</span>
+    <span class="n">fr</span><span class="o">.</span><span class="n">Feature</span><span class="o">.</span><span class="n">LookupListIndex</span> <span class="o">=</span> <span class="n">lookupListIndices</span>
+    <span class="n">fr</span><span class="o">.</span><span class="n">Feature</span><span class="o">.</span><span class="n">populateDefaults</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">fr</span></div>
+
+
+<div class="viewcode-block" id="buildFeatureVariationRecord"><a class="viewcode-back" href="../../../varLib/featureVars.html#fontTools.varLib.featureVars.buildFeatureVariationRecord">[docs]</a><span class="k">def</span> <span class="nf">buildFeatureVariationRecord</span><span class="p">(</span><span class="n">conditionTable</span><span class="p">,</span> <span class="n">substitutionRecords</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Build a FeatureVariationRecord.&quot;&quot;&quot;</span>
+    <span class="n">fvr</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">FeatureVariationRecord</span><span class="p">()</span>
+    <span class="n">fvr</span><span class="o">.</span><span class="n">ConditionSet</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">ConditionSet</span><span class="p">()</span>
+    <span class="n">fvr</span><span class="o">.</span><span class="n">ConditionSet</span><span class="o">.</span><span class="n">ConditionTable</span> <span class="o">=</span> <span class="n">conditionTable</span>
+    <span class="n">fvr</span><span class="o">.</span><span class="n">FeatureTableSubstitution</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">FeatureTableSubstitution</span><span class="p">()</span>
+    <span class="n">fvr</span><span class="o">.</span><span class="n">FeatureTableSubstitution</span><span class="o">.</span><span class="n">Version</span> <span class="o">=</span> <span class="mh">0x00010000</span>
+    <span class="n">fvr</span><span class="o">.</span><span class="n">FeatureTableSubstitution</span><span class="o">.</span><span class="n">SubstitutionRecord</span> <span class="o">=</span> <span class="n">substitutionRecords</span>
+    <span class="k">return</span> <span class="n">fvr</span></div>
+
+
+<div class="viewcode-block" id="buildFeatureTableSubstitutionRecord"><a class="viewcode-back" href="../../../varLib/featureVars.html#fontTools.varLib.featureVars.buildFeatureTableSubstitutionRecord">[docs]</a><span class="k">def</span> <span class="nf">buildFeatureTableSubstitutionRecord</span><span class="p">(</span><span class="n">featureIndex</span><span class="p">,</span> <span class="n">lookupListIndices</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Build a FeatureTableSubstitutionRecord.&quot;&quot;&quot;</span>
+    <span class="n">ftsr</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">FeatureTableSubstitutionRecord</span><span class="p">()</span>
+    <span class="n">ftsr</span><span class="o">.</span><span class="n">FeatureIndex</span> <span class="o">=</span> <span class="n">featureIndex</span>
+    <span class="n">ftsr</span><span class="o">.</span><span class="n">Feature</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Feature</span><span class="p">()</span>
+    <span class="n">ftsr</span><span class="o">.</span><span class="n">Feature</span><span class="o">.</span><span class="n">LookupListIndex</span> <span class="o">=</span> <span class="n">lookupListIndices</span>
+    <span class="k">return</span> <span class="n">ftsr</span></div>
+
+
+<div class="viewcode-block" id="buildConditionTable"><a class="viewcode-back" href="../../../varLib/featureVars.html#fontTools.varLib.featureVars.buildConditionTable">[docs]</a><span class="k">def</span> <span class="nf">buildConditionTable</span><span class="p">(</span><span class="n">axisIndex</span><span class="p">,</span> <span class="n">filterRangeMinValue</span><span class="p">,</span> <span class="n">filterRangeMaxValue</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Build a ConditionTable.&quot;&quot;&quot;</span>
+    <span class="n">ct</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">ConditionTable</span><span class="p">()</span>
+    <span class="n">ct</span><span class="o">.</span><span class="n">Format</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">ct</span><span class="o">.</span><span class="n">AxisIndex</span> <span class="o">=</span> <span class="n">axisIndex</span>
+    <span class="n">ct</span><span class="o">.</span><span class="n">FilterRangeMinValue</span> <span class="o">=</span> <span class="n">filterRangeMinValue</span>
+    <span class="n">ct</span><span class="o">.</span><span class="n">FilterRangeMaxValue</span> <span class="o">=</span> <span class="n">filterRangeMaxValue</span>
+    <span class="k">return</span> <span class="n">ct</span></div>
+
+
+<div class="viewcode-block" id="sortFeatureList"><a class="viewcode-back" href="../../../varLib/featureVars.html#fontTools.varLib.featureVars.sortFeatureList">[docs]</a><span class="k">def</span> <span class="nf">sortFeatureList</span><span class="p">(</span><span class="n">table</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Sort the feature list by feature tag, and remap the feature indices</span>
+<span class="sd">    elsewhere. This is needed after the feature list has been modified.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># decorate, sort, undecorate, because we need to make an index remapping table</span>
+    <span class="n">tagIndexFea</span> <span class="o">=</span> <span class="p">[(</span><span class="n">fea</span><span class="o">.</span><span class="n">FeatureTag</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">fea</span><span class="p">)</span> <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">fea</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">table</span><span class="o">.</span><span class="n">FeatureList</span><span class="o">.</span><span class="n">FeatureRecord</span><span class="p">)]</span>
+    <span class="n">tagIndexFea</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+    <span class="n">table</span><span class="o">.</span><span class="n">FeatureList</span><span class="o">.</span><span class="n">FeatureRecord</span> <span class="o">=</span> <span class="p">[</span><span class="n">fea</span> <span class="k">for</span> <span class="n">tag</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">fea</span> <span class="ow">in</span> <span class="n">tagIndexFea</span><span class="p">]</span>
+    <span class="n">featureRemap</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">([</span><span class="n">index</span> <span class="k">for</span> <span class="n">tag</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">fea</span> <span class="ow">in</span> <span class="n">tagIndexFea</span><span class="p">],</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">tagIndexFea</span><span class="p">))))</span>
+
+    <span class="c1"># Remap the feature indices</span>
+    <span class="n">remapFeatures</span><span class="p">(</span><span class="n">table</span><span class="p">,</span> <span class="n">featureRemap</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="remapFeatures"><a class="viewcode-back" href="../../../varLib/featureVars.html#fontTools.varLib.featureVars.remapFeatures">[docs]</a><span class="k">def</span> <span class="nf">remapFeatures</span><span class="p">(</span><span class="n">table</span><span class="p">,</span> <span class="n">featureRemap</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Go through the scripts list, and remap feature indices.&quot;&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">scriptIndex</span><span class="p">,</span> <span class="n">script</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">table</span><span class="o">.</span><span class="n">ScriptList</span><span class="o">.</span><span class="n">ScriptRecord</span><span class="p">):</span>
+        <span class="n">defaultLangSys</span> <span class="o">=</span> <span class="n">script</span><span class="o">.</span><span class="n">Script</span><span class="o">.</span><span class="n">DefaultLangSys</span>
+        <span class="k">if</span> <span class="n">defaultLangSys</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">_remapLangSys</span><span class="p">(</span><span class="n">defaultLangSys</span><span class="p">,</span> <span class="n">featureRemap</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">langSysRecordIndex</span><span class="p">,</span> <span class="n">langSysRec</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">script</span><span class="o">.</span><span class="n">Script</span><span class="o">.</span><span class="n">LangSysRecord</span><span class="p">):</span>
+            <span class="n">langSys</span> <span class="o">=</span> <span class="n">langSysRec</span><span class="o">.</span><span class="n">LangSys</span>
+            <span class="n">_remapLangSys</span><span class="p">(</span><span class="n">langSys</span><span class="p">,</span> <span class="n">featureRemap</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">table</span><span class="p">,</span> <span class="s2">&quot;FeatureVariations&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="n">table</span><span class="o">.</span><span class="n">FeatureVariations</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">fvr</span> <span class="ow">in</span> <span class="n">table</span><span class="o">.</span><span class="n">FeatureVariations</span><span class="o">.</span><span class="n">FeatureVariationRecord</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">ftsr</span> <span class="ow">in</span> <span class="n">fvr</span><span class="o">.</span><span class="n">FeatureTableSubstitution</span><span class="o">.</span><span class="n">SubstitutionRecord</span><span class="p">:</span>
+                <span class="n">ftsr</span><span class="o">.</span><span class="n">FeatureIndex</span> <span class="o">=</span> <span class="n">featureRemap</span><span class="p">[</span><span class="n">ftsr</span><span class="o">.</span><span class="n">FeatureIndex</span><span class="p">]</span></div>
+
+
+<span class="k">def</span> <span class="nf">_remapLangSys</span><span class="p">(</span><span class="n">langSys</span><span class="p">,</span> <span class="n">featureRemap</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">langSys</span><span class="o">.</span><span class="n">ReqFeatureIndex</span> <span class="o">!=</span> <span class="mh">0xffff</span><span class="p">:</span>
+        <span class="n">langSys</span><span class="o">.</span><span class="n">ReqFeatureIndex</span> <span class="o">=</span> <span class="n">featureRemap</span><span class="p">[</span><span class="n">langSys</span><span class="o">.</span><span class="n">ReqFeatureIndex</span><span class="p">]</span>
+    <span class="n">langSys</span><span class="o">.</span><span class="n">FeatureIndex</span> <span class="o">=</span> <span class="p">[</span><span class="n">featureRemap</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="n">langSys</span><span class="o">.</span><span class="n">FeatureIndex</span><span class="p">]</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="kn">import</span> <span class="nn">doctest</span><span class="o">,</span> <span class="nn">sys</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="n">doctest</span><span class="o">.</span><span class="n">testmod</span><span class="p">()</span><span class="o">.</span><span class="n">failed</span><span class="p">)</span>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Just van Rossum, Behdad Esfahbod, and the fontTools Authors. CC BY-SA 4.0
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

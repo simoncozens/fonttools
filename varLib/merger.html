@@ -1,0 +1,455 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>merger &mdash; fontTools Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="models" href="models.html" />
+    <link rel="prev" title="iup" href="iup.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> fontTools
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Library</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../afmLib.html">afmLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../agl.html">agl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cffLib/index.html">cffLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../colorLib/index.html">colorLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cu2qu/index.html">cu2qu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../designspaceLib/index.html">designspaceLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../encodings/index.html">encodings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../feaLib/index.html">feaLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../merge.html">merge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/index.html">misc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mtiLib.html">mtiLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../otlLib/index.html">otlLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pens/index.html">pens</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../subset/index.html">subset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../svgLib/index.html">svgLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../t1Lib.html">t1Lib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ttLib/index.html">ttLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ttx.html">ttx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ufoLib/index.html">ufoLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unicode.html">unicode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unicodedata/index.html">unicodedata</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">varLib</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="builder.html">builder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cff.html">cff</a></li>
+<li class="toctree-l2"><a class="reference internal" href="errors.html">errors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="featureVars.html">featureVars</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instancer.html">instancer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interpolatable.html">interpolatable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interpolate_layout.html">interpolate_layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iup.html">iup</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">merger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.html">models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mutator.html">mutator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mvar.html">mvar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plot.html">plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="varStore.html">varStore</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../voltLib.html">voltLib</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">fontTools</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">varLib</a> &raquo;</li>
+        
+      <li>merger</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/varLib/merger.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-fontTools.varLib.merger">
+<span id="merger"></span><h1>merger<a class="headerlink" href="#module-fontTools.varLib.merger" title="Permalink to this headline">¶</a></h1>
+<p>Merge OpenType Layout tables (GDEF / GPOS / GSUB).</p>
+<dl class="py class">
+<dt id="fontTools.varLib.merger.AligningMerger">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.varLib.merger.</code><code class="sig-name descname">AligningMerger</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">font</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/varLib/merger.html#AligningMerger"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.merger.AligningMerger" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.varLib.merger.AligningMerger.mergeLists">
+<code class="sig-name descname">mergeLists</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">out</span></em>, <em class="sig-param"><span class="n">lst</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.merger.AligningMerger.mergeLists" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.merger.AligningMerger.mergeObjects">
+<code class="sig-name descname">mergeObjects</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">out</span></em>, <em class="sig-param"><span class="n">lst</span></em>, <em class="sig-param"><span class="n">exclude</span><span class="o">=</span><span class="default_value">()</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.merger.AligningMerger.mergeObjects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.merger.AligningMerger.mergeTables">
+<code class="sig-name descname">mergeTables</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">font</span></em>, <em class="sig-param"><span class="n">master_ttfs</span></em>, <em class="sig-param"><span class="n">tableTags</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.merger.AligningMerger.mergeTables" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.merger.AligningMerger.mergeThings">
+<code class="sig-name descname">mergeThings</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">out</span></em>, <em class="sig-param"><span class="n">lst</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.merger.AligningMerger.mergeThings" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.merger.AligningMerger.merger">
+<em class="property">classmethod </em><code class="sig-name descname">merger</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">clazzes</span></em>, <em class="sig-param"><span class="n">attrs</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.merger.AligningMerger.merger" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.varLib.merger.AligningMerger.mergers">
+<code class="sig-name descname">mergers</code><em class="property"> = {&lt;class 'fontTools.ttLib.tables.otTables.GDEF'&gt;: {'GlyphClassDef': &lt;function merge&gt;}, &lt;class 'fontTools.ttLib.tables.otTables.SinglePos'&gt;: {None: &lt;function merge&gt;}, &lt;class 'fontTools.ttLib.tables.otTables.PairSet'&gt;: {None: &lt;function merge&gt;}, &lt;class 'fontTools.ttLib.tables.otTables.PairPos'&gt;: {None: &lt;function merge&gt;}, &lt;class 'fontTools.ttLib.tables.otTables.MarkBasePos'&gt;: {None: &lt;function merge&gt;}, &lt;class 'fontTools.ttLib.tables.otTables.MarkMarkPos'&gt;: {None: &lt;function merge&gt;}, &lt;class 'fontTools.ttLib.tables.otTables.Lookup'&gt;: {None: &lt;function merge&gt;}}</em><a class="headerlink" href="#fontTools.varLib.merger.AligningMerger.mergers" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.merger.AligningMerger.mergersFor">
+<em class="property">classmethod </em><code class="sig-name descname">mergersFor</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">thing</span></em>, <em class="sig-param"><span class="n">_default</span><span class="o">=</span><span class="default_value">{}</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.merger.AligningMerger.mergersFor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.varLib.merger.InstancerMerger">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.varLib.merger.</code><code class="sig-name descname">InstancerMerger</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">font</span></em>, <em class="sig-param"><span class="n">model</span></em>, <em class="sig-param"><span class="n">location</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/varLib/merger.html#InstancerMerger"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.merger.InstancerMerger" title="Permalink to this definition">¶</a></dt>
+<dd><p>A merger that takes multiple master fonts, and instantiates
+an instance.</p>
+<dl class="py method">
+<dt id="fontTools.varLib.merger.InstancerMerger.mergeLists">
+<code class="sig-name descname">mergeLists</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">out</span></em>, <em class="sig-param"><span class="n">lst</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.merger.InstancerMerger.mergeLists" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.merger.InstancerMerger.mergeObjects">
+<code class="sig-name descname">mergeObjects</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">out</span></em>, <em class="sig-param"><span class="n">lst</span></em>, <em class="sig-param"><span class="n">exclude</span><span class="o">=</span><span class="default_value">()</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.merger.InstancerMerger.mergeObjects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.merger.InstancerMerger.mergeTables">
+<code class="sig-name descname">mergeTables</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">font</span></em>, <em class="sig-param"><span class="n">master_ttfs</span></em>, <em class="sig-param"><span class="n">tableTags</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.merger.InstancerMerger.mergeTables" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.merger.InstancerMerger.mergeThings">
+<code class="sig-name descname">mergeThings</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">out</span></em>, <em class="sig-param"><span class="n">lst</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.merger.InstancerMerger.mergeThings" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.merger.InstancerMerger.merger">
+<em class="property">classmethod </em><code class="sig-name descname">merger</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">clazzes</span></em>, <em class="sig-param"><span class="n">attrs</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.merger.InstancerMerger.merger" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.varLib.merger.InstancerMerger.mergers">
+<code class="sig-name descname">mergers</code><em class="property"> = {&lt;class 'fontTools.ttLib.tables.otTables.CaretValue'&gt;: {None: &lt;function merge&gt;}, &lt;class 'fontTools.ttLib.tables.otTables.Anchor'&gt;: {None: &lt;function merge&gt;}, &lt;class 'fontTools.ttLib.tables.otBase.ValueRecord'&gt;: {None: &lt;function merge&gt;}}</em><a class="headerlink" href="#fontTools.varLib.merger.InstancerMerger.mergers" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.merger.InstancerMerger.mergersFor">
+<em class="property">classmethod </em><code class="sig-name descname">mergersFor</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">thing</span></em>, <em class="sig-param"><span class="n">_default</span><span class="o">=</span><span class="default_value">{}</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.merger.InstancerMerger.mergersFor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.varLib.merger.Merger">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.varLib.merger.</code><code class="sig-name descname">Merger</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">font</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/varLib/merger.html#Merger"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.merger.Merger" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="fontTools.varLib.merger.Merger.mergeLists">
+<code class="sig-name descname">mergeLists</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">out</span></em>, <em class="sig-param"><span class="n">lst</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/varLib/merger.html#Merger.mergeLists"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.merger.Merger.mergeLists" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.merger.Merger.mergeObjects">
+<code class="sig-name descname">mergeObjects</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">out</span></em>, <em class="sig-param"><span class="n">lst</span></em>, <em class="sig-param"><span class="n">exclude</span><span class="o">=</span><span class="default_value">()</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/varLib/merger.html#Merger.mergeObjects"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.merger.Merger.mergeObjects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.merger.Merger.mergeTables">
+<code class="sig-name descname">mergeTables</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">font</span></em>, <em class="sig-param"><span class="n">master_ttfs</span></em>, <em class="sig-param"><span class="n">tableTags</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/varLib/merger.html#Merger.mergeTables"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.merger.Merger.mergeTables" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.merger.Merger.mergeThings">
+<code class="sig-name descname">mergeThings</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">out</span></em>, <em class="sig-param"><span class="n">lst</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/varLib/merger.html#Merger.mergeThings"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.merger.Merger.mergeThings" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.merger.Merger.merger">
+<em class="property">classmethod </em><code class="sig-name descname">merger</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">clazzes</span></em>, <em class="sig-param"><span class="n">attrs</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/varLib/merger.html#Merger.merger"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.merger.Merger.merger" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.merger.Merger.mergersFor">
+<em class="property">classmethod </em><code class="sig-name descname">mergersFor</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">thing</span></em>, <em class="sig-param"><span class="n">_default</span><span class="o">=</span><span class="default_value">{}</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/varLib/merger.html#Merger.mergersFor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.merger.Merger.mergersFor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.varLib.merger.MutatorMerger">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.varLib.merger.</code><code class="sig-name descname">MutatorMerger</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">font</span></em>, <em class="sig-param"><span class="n">instancer</span></em>, <em class="sig-param"><span class="n">deleteVariations</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/varLib/merger.html#MutatorMerger"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.merger.MutatorMerger" title="Permalink to this definition">¶</a></dt>
+<dd><p>A merger that takes a variable font, and instantiates
+an instance.  While there’s no “merging” to be done per se,
+the operation can benefit from many operations that the
+aligning merger does.</p>
+<dl class="py method">
+<dt id="fontTools.varLib.merger.MutatorMerger.mergeLists">
+<code class="sig-name descname">mergeLists</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">out</span></em>, <em class="sig-param"><span class="n">lst</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.merger.MutatorMerger.mergeLists" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.merger.MutatorMerger.mergeObjects">
+<code class="sig-name descname">mergeObjects</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">out</span></em>, <em class="sig-param"><span class="n">lst</span></em>, <em class="sig-param"><span class="n">exclude</span><span class="o">=</span><span class="default_value">()</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.merger.MutatorMerger.mergeObjects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.merger.MutatorMerger.mergeTables">
+<code class="sig-name descname">mergeTables</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">font</span></em>, <em class="sig-param"><span class="n">master_ttfs</span></em>, <em class="sig-param"><span class="n">tableTags</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.merger.MutatorMerger.mergeTables" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.merger.MutatorMerger.mergeThings">
+<code class="sig-name descname">mergeThings</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">out</span></em>, <em class="sig-param"><span class="n">lst</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.merger.MutatorMerger.mergeThings" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.merger.MutatorMerger.merger">
+<em class="property">classmethod </em><code class="sig-name descname">merger</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">clazzes</span></em>, <em class="sig-param"><span class="n">attrs</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.merger.MutatorMerger.merger" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.varLib.merger.MutatorMerger.mergers">
+<code class="sig-name descname">mergers</code><em class="property"> = {&lt;class 'fontTools.ttLib.tables.otTables.CaretValue'&gt;: {None: &lt;function merge&gt;}, &lt;class 'fontTools.ttLib.tables.otTables.Anchor'&gt;: {None: &lt;function merge&gt;}, &lt;class 'fontTools.ttLib.tables.otBase.ValueRecord'&gt;: {None: &lt;function merge&gt;}}</em><a class="headerlink" href="#fontTools.varLib.merger.MutatorMerger.mergers" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.merger.MutatorMerger.mergersFor">
+<em class="property">classmethod </em><code class="sig-name descname">mergersFor</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">thing</span></em>, <em class="sig-param"><span class="n">_default</span><span class="o">=</span><span class="default_value">{}</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.merger.MutatorMerger.mergersFor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fontTools.varLib.merger.VariationMerger">
+<em class="property">class </em><code class="sig-prename descclassname">fontTools.varLib.merger.</code><code class="sig-name descname">VariationMerger</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">model</span></em>, <em class="sig-param"><span class="n">axisTags</span></em>, <em class="sig-param"><span class="n">font</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/varLib/merger.html#VariationMerger"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.merger.VariationMerger" title="Permalink to this definition">¶</a></dt>
+<dd><p>A merger that takes multiple master fonts, and builds a
+variable font.</p>
+<dl class="py method">
+<dt id="fontTools.varLib.merger.VariationMerger.mergeLists">
+<code class="sig-name descname">mergeLists</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">out</span></em>, <em class="sig-param"><span class="n">lst</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.merger.VariationMerger.mergeLists" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.merger.VariationMerger.mergeObjects">
+<code class="sig-name descname">mergeObjects</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">out</span></em>, <em class="sig-param"><span class="n">lst</span></em>, <em class="sig-param"><span class="n">exclude</span><span class="o">=</span><span class="default_value">()</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.merger.VariationMerger.mergeObjects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.merger.VariationMerger.mergeTables">
+<code class="sig-name descname">mergeTables</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">font</span></em>, <em class="sig-param"><span class="n">master_ttfs</span></em>, <em class="sig-param"><span class="n">tableTags</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.merger.VariationMerger.mergeTables" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.merger.VariationMerger.mergeThings">
+<code class="sig-name descname">mergeThings</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">out</span></em>, <em class="sig-param"><span class="n">lst</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/varLib/merger.html#VariationMerger.mergeThings"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.merger.VariationMerger.mergeThings" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.merger.VariationMerger.merger">
+<em class="property">classmethod </em><code class="sig-name descname">merger</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">clazzes</span></em>, <em class="sig-param"><span class="n">attrs</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.merger.VariationMerger.merger" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="fontTools.varLib.merger.VariationMerger.mergers">
+<code class="sig-name descname">mergers</code><em class="property"> = {&lt;class 'fontTools.ttLib.tables.otTables.BaseCoord'&gt;: {None: &lt;function merge&gt;}, &lt;class 'fontTools.ttLib.tables.otTables.CaretValue'&gt;: {None: &lt;function merge&gt;}, &lt;class 'fontTools.ttLib.tables.otTables.Anchor'&gt;: {None: &lt;function merge&gt;}, &lt;class 'fontTools.ttLib.tables.otBase.ValueRecord'&gt;: {None: &lt;function merge&gt;}}</em><a class="headerlink" href="#fontTools.varLib.merger.VariationMerger.mergers" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.merger.VariationMerger.mergersFor">
+<em class="property">classmethod </em><code class="sig-name descname">mergersFor</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">thing</span></em>, <em class="sig-param"><span class="n">_default</span><span class="o">=</span><span class="default_value">{}</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontTools.varLib.merger.VariationMerger.mergersFor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="fontTools.varLib.merger.VariationMerger.setModel">
+<code class="sig-name descname">setModel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">model</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/varLib/merger.html#VariationMerger.setModel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.merger.VariationMerger.setModel" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt id="fontTools.varLib.merger.buildVarDevTable">
+<code class="sig-prename descclassname">fontTools.varLib.merger.</code><code class="sig-name descname">buildVarDevTable</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">store_builder</span></em>, <em class="sig-param"><span class="n">master_values</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fontTools/varLib/merger.html#buildVarDevTable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fontTools.varLib.merger.buildVarDevTable" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="models.html" class="btn btn-neutral float-right" title="models" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="iup.html" class="btn btn-neutral float-left" title="iup" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Just van Rossum, Behdad Esfahbod, and the fontTools Authors. CC BY-SA 4.0
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
