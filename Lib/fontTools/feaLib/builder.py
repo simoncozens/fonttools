@@ -1280,6 +1280,11 @@ class ChainContextPosBuilder(LookupBuilder):
                 self.rules == other.rules)
 
     def build(self):
+        classes = otl.classContextIsWorthwhile(self.rules)
+        if classes:
+            st = otl.buildClassBased(self.rules, classes, self.glyphMap, "pos")
+            return self.buildLookup_([ st ])
+
         subtables = []
         for (prefix, glyphs, suffix, lookups) in self.rules:
             if prefix == self.SUBTABLE_BREAK_:
@@ -1319,6 +1324,12 @@ class ChainContextSubstBuilder(LookupBuilder):
                 self.substitutions == other.substitutions)
 
     def build(self):
+        classes = otl.classContextIsWorthwhile(self.substitutions)
+        if classes:
+            st = otl.buildClassBased(self.substitutions, classes,
+                self.glyphMap, "sub")
+            return self.buildLookup_([ st ])
+
         subtables = []
         for (prefix, input, suffix, lookups) in self.substitutions:
             if prefix == self.SUBTABLE_BREAK_:
