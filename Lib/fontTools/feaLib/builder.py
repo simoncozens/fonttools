@@ -1282,7 +1282,8 @@ class ChainContextPosBuilder(LookupBuilder):
     def build(self):
         classes = otl.classContextIsWorthwhile(self.rules)
         if classes:
-            st = otl.buildClassBased(self.rules, classes, self.glyphMap, "pos")
+            st = otl.buildClassBased(self.rules, classes, self.glyphMap,
+                "pos", self.location)
             return self.buildLookup_([ st ])
 
         subtables = []
@@ -1295,7 +1296,7 @@ class ChainContextPosBuilder(LookupBuilder):
             self.setBacktrackCoverage_(prefix, st)
             self.setLookAheadCoverage_(suffix, st)
             self.setInputCoverage_(glyphs, st)
-            otl.buildLookupRecords(lookups, st, "pos")
+            otl.buildLookupRecords(lookups, st, "pos", self.location)
         return self.buildLookup_(subtables)
 
     def find_chainable_single_pos(self, lookups, glyphs, value):
@@ -1327,7 +1328,7 @@ class ChainContextSubstBuilder(LookupBuilder):
         classes = otl.classContextIsWorthwhile(self.substitutions)
         if classes:
             st = otl.buildClassBased(self.substitutions, classes,
-                self.glyphMap, "sub")
+                self.glyphMap, "sub", self.location)
             return self.buildLookup_([ st ])
 
         subtables = []
@@ -1340,7 +1341,7 @@ class ChainContextSubstBuilder(LookupBuilder):
             self.setBacktrackCoverage_(prefix, st)
             self.setLookAheadCoverage_(suffix, st)
             self.setInputCoverage_(input, st)
-            otl.buildLookupRecords(lookups, st, "sub")
+            otl.buildLookupRecords(lookups, st, "sub", self.location)
         return self.buildLookup_(subtables)
 
     def getAlternateGlyphs(self):

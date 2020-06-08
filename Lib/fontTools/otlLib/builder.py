@@ -3,6 +3,7 @@ from fontTools.misc.fixedTools import fixedToFloat
 from fontTools import ttLib
 from fontTools.ttLib.tables import otTables as ot
 from fontTools.ttLib.tables.otBase import ValueRecord, valueRecordFormatDict
+from fontTools.feaLib.error import FeatureLibError
 
 
 def buildCoverage(glyphs, glyphMap):
@@ -511,7 +512,7 @@ def _classWorthwhileForContext(context):
 
     return classdefbuilder, classdefglyphcount, totalglyphcount
 
-def buildLookupRecords(lookups, st, pos_or_sub):
+def buildLookupRecords(lookups, st, pos_or_sub, location):
     assert(pos_or_sub == "sub" or pos_or_sub == "pos")
     if pos_or_sub == "sub":
         rectype = ot.SubstLookupRecord
@@ -530,8 +531,8 @@ def buildLookupRecords(lookups, st, pos_or_sub):
                     othertype = "positioning"
                     if pos_or_sub == "pos": othertype = "substitution"
                     raise FeatureLibError('Missing index of the specified '
-                        'lookup, might be a %s lookup',
-                        ( self.location, othertype))
+                        'lookup, might be a %s lookup' % othertype,
+                        location)
                 rec = rectype()
                 rec.SequenceIndex = sequenceIndex
                 rec.LookupListIndex = l.lookup_index
@@ -544,7 +545,7 @@ def buildLookupRecords(lookups, st, pos_or_sub):
         st.PosLookupRecord = records
 
 
-def buildClassBased(rules, classdefs, glyphMap, pos_or_sub):
+def buildClassBased(rules, classdefs, glyphMap, pos_or_sub, location):
     assert(pos_or_sub == "sub" or pos_or_sub == "pos")
     if pos_or_sub == "pos":
         subtable = ot.ChainContextPos()
@@ -576,7 +577,7 @@ def buildClassBased(rules, classdefs, glyphMap, pos_or_sub):
         rule.Backtrack   = [ btClasses.index(x) for x in prefix ]
         rule.Input       = [ inClasses.index(x) for x in inputs[1:] ]
         rule.LookAhead   = [ laClasses.index(x) for x in suffix ]
-        buildLookupRecords(lookups, rule, pos_or_sub)
+        buildLookupRecords(lookups, rule, pos_or_sub, location)
         setForThisRule = classsets[ inClasses.index(inputs[0]) ]
         coverage |= set(inputs[0])
         if pos_or_sub == "pos":
