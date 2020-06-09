@@ -1,37 +1,33 @@
-@uc1 = [A B C D E F G];
-@uc2 = [H I J K L M N];
+@uc1 = [A B C D E];
+@uc2 = [F G H I J K L];
 @lc1 = [a b c d e f g h];
 @lc2 = [i j k l m n o p];
 @lc3 = [q r s t u v w x];
 
-lookup ucswash1 {
-	sub @uc1 by [A.swash - G.swash];
-	sub @uc2 by [H.swash - N.swash];
-} ucswash1;
+lookup lookup1 {
+    sub a by a;
+} lookup1;
 
-lookup ucswash2 {
-	sub @uc1 by [O.swash - U.swash];
-	sub @uc2 by [V.swash - Z.swash one two];
-} ucswash2;
+lookup lookup2 {
+    sub b by b;
+} lookup2;
 
-lookup ucswash3 {
-	sub @uc1 by [three four five six seven eight nine];
-	sub @uc2 by [zero period comma a b c d];
-
-} ucswash3;
+lookup lookup3 {
+    sub c by c;
+} lookup3;
 
 feature rlig {
-    sub @uc1' lookup ucswash1 @lc1 @lc1;
-    sub @uc1' lookup ucswash2 @lc1 @lc2;
-    sub @uc1' lookup ucswash3 @lc1 @lc3;
-    sub @uc1' lookup ucswash2 @lc2 @lc1;
-    sub @uc1' lookup ucswash3 @lc2 @lc2;
-    sub @uc1' lookup ucswash1 @lc2 @lc3;
+    sub @uc1' lookup lookup1 @lc1 @lc1;
+    sub @uc1' lookup lookup2 @lc1 @lc2;
+    sub @uc1' lookup lookup3 @lc1 @lc3;
+    sub @uc1' lookup lookup2 @lc2 @lc1;
+    sub @uc1' lookup lookup3 @lc2 @lc2;
+    sub @uc1' lookup lookup1 @lc2 @lc3;
  
-    sub @uc2' lookup ucswash3 @lc1 @lc1;
-    sub @uc2' lookup ucswash1 @lc1 @lc2;
-    sub @uc2' lookup ucswash2 @lc1 @lc3;
-    sub @uc2' lookup ucswash3 @lc2 @lc1;
-    sub @uc2' lookup ucswash1 @lc2 @lc2;
-    sub @uc2' lookup ucswash2 @lc2 @lc3;
+    sub @uc2' lookup lookup3 @lc1 @lc1;
+    sub @uc2' lookup lookup1 @lc1 @lc2;
+    sub @uc2' lookup lookup2 @lc1 @lc3;
+    sub @uc2' lookup lookup3 @lc2 @lc1;
+    sub @uc2' lookup lookup1 @lc2 @lc2;
+    sub @uc2' lookup lookup2 @lc2 @lc3;
 } rlig;
