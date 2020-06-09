@@ -562,7 +562,7 @@ def buildClassBased(rules, classdefs, glyphMap, pos_or_sub, location):
     subtable.BacktrackClassDef, subtable.InputClassDef, \
         subtable.LookAheadClassDef = [ c.build() for c in classdefs ]
 
-    btClasses, inClasses, laClasses = [ c.classes() for c in classdefs ]
+    inClasses = classdefs[1].classes()
 
     classsets = []
     for _ in inClasses:
@@ -577,11 +577,11 @@ def buildClassBased(rules, classdefs, glyphMap, pos_or_sub, location):
         rule.BacktrackGlyphCount = len(prefix)
         rule.InputGlyphCount     = len(inputs)
         rule.LookAheadGlyphCount = len(suffix)
-        rule.Backtrack   = [ btClasses.index(x) for x in prefix ]
-        rule.Input       = [ inClasses.index(x) for x in inputs[1:] ]
-        rule.LookAhead   = [ laClasses.index(x) for x in suffix ]
+        rule.Backtrack   = [ classdefs[0].indexOf(x) for x in prefix ]
+        rule.Input       = [ classdefs[1].indexOf(x) for x in inputs[1:] ]
+        rule.LookAhead   = [ classdefs[2].indexOf(x) for x in suffix ]
         buildLookupRecords(lookups, rule, pos_or_sub, location)
-        setForThisRule = classsets[ inClasses.index(inputs[0]) ]
+        setForThisRule = classsets[ classdefs[1].indexOf(inputs[0]) ]
         coverage |= set(inputs[0])
         if pos_or_sub == "pos":
             setForThisRule.ChainPosClassRule.append(rule)
