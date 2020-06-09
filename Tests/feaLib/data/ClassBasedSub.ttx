@@ -89,14 +89,14 @@
             <ClassDef glyph="L" class="1"/>
           </InputClassDef>
           <LookAheadClassDef>
-            <ClassDef glyph="a" class="1"/>
-            <ClassDef glyph="b" class="1"/>
-            <ClassDef glyph="c" class="1"/>
-            <ClassDef glyph="d" class="1"/>
-            <ClassDef glyph="e" class="1"/>
-            <ClassDef glyph="f" class="1"/>
-            <ClassDef glyph="g" class="1"/>
-            <ClassDef glyph="h" class="1"/>
+            <ClassDef glyph="a" class="3"/>
+            <ClassDef glyph="b" class="3"/>
+            <ClassDef glyph="c" class="3"/>
+            <ClassDef glyph="d" class="3"/>
+            <ClassDef glyph="e" class="3"/>
+            <ClassDef glyph="f" class="3"/>
+            <ClassDef glyph="g" class="3"/>
+            <ClassDef glyph="h" class="3"/>
             <ClassDef glyph="i" class="2"/>
             <ClassDef glyph="j" class="2"/>
             <ClassDef glyph="k" class="2"/>
@@ -105,14 +105,14 @@
             <ClassDef glyph="n" class="2"/>
             <ClassDef glyph="o" class="2"/>
             <ClassDef glyph="p" class="2"/>
-            <ClassDef glyph="q" class="3"/>
-            <ClassDef glyph="r" class="3"/>
-            <ClassDef glyph="s" class="3"/>
-            <ClassDef glyph="t" class="3"/>
-            <ClassDef glyph="u" class="3"/>
-            <ClassDef glyph="v" class="3"/>
-            <ClassDef glyph="w" class="3"/>
-            <ClassDef glyph="x" class="3"/>
+            <ClassDef glyph="q" class="1"/>
+            <ClassDef glyph="r" class="1"/>
+            <ClassDef glyph="s" class="1"/>
+            <ClassDef glyph="t" class="1"/>
+            <ClassDef glyph="u" class="1"/>
+            <ClassDef glyph="v" class="1"/>
+            <ClassDef glyph="w" class="1"/>
+            <ClassDef glyph="x" class="1"/>
           </LookAheadClassDef>
           <!-- ChainSubClassSetCount=3 -->
           <ChainSubClassSet index="0">
@@ -124,8 +124,8 @@
               <!-- BacktrackGlyphCount=0 -->
               <!-- InputGlyphCount=1 -->
               <!-- LookAheadGlyphCount=2 -->
-              <LookAhead index="0" value="1"/>
-              <LookAhead index="1" value="1"/>
+              <LookAhead index="0" value="3"/>
+              <LookAhead index="1" value="3"/>
               <!-- SubstCount=1 -->
               <SubstLookupRecord index="0">
                 <SequenceIndex value="0"/>
@@ -136,7 +136,7 @@
               <!-- BacktrackGlyphCount=0 -->
               <!-- InputGlyphCount=1 -->
               <!-- LookAheadGlyphCount=2 -->
-              <LookAhead index="0" value="1"/>
+              <LookAhead index="0" value="3"/>
               <LookAhead index="1" value="2"/>
               <!-- SubstCount=1 -->
               <SubstLookupRecord index="0">
@@ -148,8 +148,8 @@
               <!-- BacktrackGlyphCount=0 -->
               <!-- InputGlyphCount=1 -->
               <!-- LookAheadGlyphCount=2 -->
-              <LookAhead index="0" value="1"/>
-              <LookAhead index="1" value="3"/>
+              <LookAhead index="0" value="3"/>
+              <LookAhead index="1" value="1"/>
               <!-- SubstCount=1 -->
               <SubstLookupRecord index="0">
                 <SequenceIndex value="0"/>
@@ -161,7 +161,7 @@
               <!-- InputGlyphCount=1 -->
               <!-- LookAheadGlyphCount=2 -->
               <LookAhead index="0" value="2"/>
-              <LookAhead index="1" value="1"/>
+              <LookAhead index="1" value="3"/>
               <!-- SubstCount=1 -->
               <SubstLookupRecord index="0">
                 <SequenceIndex value="0"/>
@@ -185,7 +185,7 @@
               <!-- InputGlyphCount=1 -->
               <!-- LookAheadGlyphCount=2 -->
               <LookAhead index="0" value="2"/>
-              <LookAhead index="1" value="3"/>
+              <LookAhead index="1" value="1"/>
               <!-- SubstCount=1 -->
               <SubstLookupRecord index="0">
                 <SequenceIndex value="0"/>
@@ -199,8 +199,8 @@
               <!-- BacktrackGlyphCount=0 -->
               <!-- InputGlyphCount=1 -->
               <!-- LookAheadGlyphCount=2 -->
-              <LookAhead index="0" value="1"/>
-              <LookAhead index="1" value="1"/>
+              <LookAhead index="0" value="3"/>
+              <LookAhead index="1" value="3"/>
               <!-- SubstCount=1 -->
               <SubstLookupRecord index="0">
                 <SequenceIndex value="0"/>
@@ -211,7 +211,7 @@
               <!-- BacktrackGlyphCount=0 -->
               <!-- InputGlyphCount=1 -->
               <!-- LookAheadGlyphCount=2 -->
-              <LookAhead index="0" value="1"/>
+              <LookAhead index="0" value="3"/>
               <LookAhead index="1" value="2"/>
               <!-- SubstCount=1 -->
               <SubstLookupRecord index="0">
@@ -223,8 +223,8 @@
               <!-- BacktrackGlyphCount=0 -->
               <!-- InputGlyphCount=1 -->
               <!-- LookAheadGlyphCount=2 -->
-              <LookAhead index="0" value="1"/>
-              <LookAhead index="1" value="3"/>
+              <LookAhead index="0" value="3"/>
+              <LookAhead index="1" value="1"/>
               <!-- SubstCount=1 -->
               <SubstLookupRecord index="0">
                 <SequenceIndex value="0"/>
@@ -236,7 +236,7 @@
               <!-- InputGlyphCount=1 -->
               <!-- LookAheadGlyphCount=2 -->
               <LookAhead index="0" value="2"/>
-              <LookAhead index="1" value="1"/>
+              <LookAhead index="1" value="3"/>
               <!-- SubstCount=1 -->
               <SubstLookupRecord index="0">
                 <SequenceIndex value="0"/>
@@ -260,7 +260,7 @@
               <!-- InputGlyphCount=1 -->
               <!-- LookAheadGlyphCount=2 -->
               <LookAhead index="0" value="2"/>
-              <LookAhead index="1" value="3"/>
+              <LookAhead index="1" value="1"/>
               <!-- SubstCount=1 -->
               <SubstLookupRecord index="0">
                 <SequenceIndex value="0"/>
