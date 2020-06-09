@@ -1,11 +1,13 @@
 from fontTools.ttLib.tables import otTables as ot
+from itertools import groupby
 
 class ClassDefBuilder(object):
     """Helper for building ClassDef tables."""
-    def __init__(self, useClass0):
+    def __init__(self, useClass0, glyphset = None):
         self.classes_ = set()
         self.glyphs_ = {}
         self.useClass0_ = useClass0
+        self.glyphset = glyphset
 
     def canAdd(self, glyphs):
         if isinstance(glyphs, (set, frozenset)):
@@ -39,6 +41,14 @@ class ClassDefBuilder(object):
             return None
         raise KeyError
 
+    def sizeOfClass(self, glyphs):
+        glyphs = sorted([ self.glyphset.index(g) for g in glyphs ])
+        size = 0
+        for i, els in groupby(enumerate(glyphs), lambda i: i[0]-i[1]):
+            size += 1
+            if len(list(els)) > 1: size += 1
+        return size
+
     def classes(self):
         # In ClassDef1 tables, class id #0 does not need to be encoded
         # because zero is the default. Therefore, we use id #0 for the
@@ -46,14 +56,10 @@ class ClassDefBuilder(object):
         # in other tables than ClassDef1, 0 means "every other glyph"
         # so we should not use that ID for any real glyph classes;
         # we implement this by inserting an empty set at position 0.
-        #
-        # TODO: Instead of counting the number of glyphs in each class,
-        # we should determine the encoded size. If the glyphs in a large
-        # class form a contiguous range, the encoding is actually quite
-        # compact, whereas a non-contiguous set might need a lot of bytes
-        # in the output file. We don't get this right with the key below.
-        # XXX: This key is also not stable
-        result = sorted(self.classes_, key=lambda s: (len(s), s), reverse=True)
+        if self.glyphset:
+            result = sorted(self.classes_, key=lambda s: self.sizeOfClass(s), reverse=True)
+        else:
+            result = sorted(self.classes_, key=lambda s: (len(s), s), reverse=True)
         if not self.useClass0_:
             result.insert(0, frozenset())
         return result
