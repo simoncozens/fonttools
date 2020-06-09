@@ -4,7 +4,6 @@ from fontTools.misc.fixedTools import floatToFixed
 from fontTools.misc.testTools import getXML
 from fontTools.otlLib import builder
 from fontTools import ttLib
-from fontTools.ttLib.tables import otTables
 import pytest
 
 
@@ -1068,46 +1067,6 @@ class BuilderTest(object):
         assert keyA1 != keyB
         assert hash(keyA1) != hash(keyB)
 
-
-class ClassDefBuilderTest(object):
-    def test_build_usingClass0(self):
-        b = builder.ClassDefBuilder(useClass0=True)
-        b.add({"aa", "bb"})
-        b.add({"a", "b"})
-        b.add({"c"})
-        b.add({"e", "f", "g", "h"})
-        cdef = b.build()
-        assert isinstance(cdef, otTables.ClassDef)
-        assert cdef.classDefs == {"a": 2, "b": 2, "c": 3, "aa": 1, "bb": 1}
-
-    def test_build_notUsingClass0(self):
-        b = builder.ClassDefBuilder(useClass0=False)
-        b.add({"a", "b"})
-        b.add({"c"})
-        b.add({"e", "f", "g", "h"})
-        cdef = b.build()
-        assert isinstance(cdef, otTables.ClassDef)
-        assert cdef.classDefs == {
-            "a": 2,
-            "b": 2,
-            "c": 3,
-            "e": 1,
-            "f": 1,
-            "g": 1,
-            "h": 1,
-        }
-
-    def test_canAdd(self):
-        b = builder.ClassDefBuilder(useClass0=True)
-        b.add({"a", "b", "c", "d"})
-        b.add({"e", "f"})
-        assert b.canAdd({"a", "b", "c", "d"})
-        assert b.canAdd({"e", "f"})
-        assert b.canAdd({"g", "h", "i"})
-        assert not b.canAdd({"b", "c", "d"})
-        assert not b.canAdd({"a", "b", "c", "d", "e", "f"})
-        assert not b.canAdd({"d", "e", "f"})
-        assert not b.canAdd({"f"})
 
 
 buildStatTable_test_data = [
