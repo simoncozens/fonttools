@@ -57,7 +57,7 @@ class ClassDefBuilder(object):
         # so we should not use that ID for any real glyph classes;
         # we implement this by inserting an empty set at position 0.
         if self.glyphset:
-            result = sorted(self.classes_, key=lambda s: self.sizeOfClass(s), reverse=True)
+            result = sorted(self.classes_, key=lambda s: (self.sizeOfClass(s),s), reverse=True)
         else:
             result = sorted(self.classes_, key=lambda s: (len(s), s), reverse=True)
         if not self.useClass0_:
