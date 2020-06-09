@@ -1573,13 +1573,16 @@ class SingleSubstBuilder(LookupBuilder):
 
 
 class ClassPairPosSubtableBuilder(object):
-    def __init__(self, builder, valueFormat1, valueFormat2):
+    def __init__(self, builder, valueFormat1, valueFormat2, font=None):
         self.builder_ = builder
         self.classDef1_, self.classDef2_ = None, None
         self.values_ = {}  # (glyphclass1, glyphclass2) --> (value1, value2)
         self.valueFormat1_, self.valueFormat2_ = valueFormat1, valueFormat2
         self.forceSubtableBreak_ = False
         self.subtables_ = []
+        self.glyphset = None
+        if font:
+            self.glyphset = font.getGlyphOrder()
 
     def addPair(self, gc1, value1, gc2, value2):
         mergeable = (not self.forceSubtableBreak_ and
@@ -1589,8 +1592,8 @@ class ClassPairPosSubtableBuilder(object):
                      self.classDef2_.canAdd(gc2))
         if not mergeable:
             self.flush_()
-            self.classDef1_ = otl.ClassDefBuilder(useClass0=True)
-            self.classDef2_ = otl.ClassDefBuilder(useClass0=False)
+            self.classDef1_ = otl.ClassDefBuilder(useClass0=True, glyphset=self.glyphset)
+            self.classDef2_ = otl.ClassDefBuilder(useClass0=False, glyphset=self.glyphset)
             self.values_ = {}
         self.classDef1_.add(gc1)
         self.classDef2_.add(gc2)
@@ -1665,7 +1668,7 @@ class PairPosBuilder(LookupBuilder):
             builder = builders.get((valFormat1, valFormat2))
             if builder is None:
                 builder = ClassPairPosSubtableBuilder(
-                    self, valFormat1, valFormat2)
+                    self, valFormat1, valFormat2, font=self.font)
                 builders[(valFormat1, valFormat2)] = builder
             builder.addPair(glyphclass1, val1, glyphclass2, val2)
         subtables = []

@@ -327,8 +327,9 @@ def _getValueFormat(f, values, i):
 def buildPairPosClassesSubtable(pairs, glyphMap,
                                 valueFormat1=None, valueFormat2=None):
     coverage = set()
-    classDef1 = ClassDefBuilder(useClass0=True)
-    classDef2 = ClassDefBuilder(useClass0=False)
+    glyphset = list(glyphMap.keys())
+    classDef1 = ClassDefBuilder(useClass0=True, glyphset=glyphset)
+    classDef2 = ClassDefBuilder(useClass0=False, glyphset=glyphset)
     for gc1, gc2 in sorted(pairs):
         coverage.update(gc1)
         classDef1.add(gc1)
