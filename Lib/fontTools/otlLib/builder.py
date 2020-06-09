@@ -4,7 +4,7 @@ from fontTools import ttLib
 from fontTools.ttLib.tables import otTables as ot
 from fontTools.ttLib.tables.otBase import ValueRecord, valueRecordFormatDict
 from fontTools.feaLib.error import FeatureLibError
-
+import fontTools.feaLib.builder as builder
 
 def buildCoverage(glyphs, glyphMap):
     if not glyphs:
@@ -483,8 +483,11 @@ def classContextIsWorthwhile(rules):
     classdefglyphcount = 0
     totalglyphcount = 0
     for ix in range(0,3):
-        # XXX Skip subtable breaks
-        context = [r[ix] for r in rules]
+        context = []
+        for r in rules:
+            if r[0] == builder.LookupBuilder.SUBTABLE_BREAK_:
+                continue
+            context.append(r[ix])
         classes, c, cv = _classWorthwhileForContext(context)
         if not classes:
             return None
