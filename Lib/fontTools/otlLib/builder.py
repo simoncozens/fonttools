@@ -879,6 +879,46 @@ class MarkMarkPosBuilder(LookupBuilder):
         return self.buildLookup_([st])
 
 
+class ReverseChainSinglePosBuilder(LookupBuilder):
+    """Builds a Reverse Chaining Contextual Single Positioning (GPOS10) lookup.
+
+    Attributes:
+        font (``fontTools.TTLib.TTFont``): A font object.
+        location: A string or tuple representing the location in the original
+            source which produced this lookup.
+        lookupflag (int): The lookup's flag
+    """
+
+    def __init__(self, font, location):
+        LookupBuilder.__init__(self, font, location, "GPOS", 10)
+        self.rules = []  # (prefix, suffix, positioning)
+
+    def equals(self, other):
+        return LookupBuilder.equals(self, other) and self.rules == other.rules
+
+    def build(self):
+        """Build the lookup.
+
+        Returns:
+            An ``otTables.Lookup`` object representing the chained
+            contextual positioning lookup.
+        """
+        subtables = []
+        for prefix, suffix, positioning in self.rules:
+            st = ot.ReverseChainSinglePos()
+            st.Format = 1
+            self.setBacktrackCoverage_(prefix, st)
+            self.setLookAheadCoverage_(suffix, st)
+            st.Coverage = buildCoverage(positioning[0], self.glyphMap)
+            st.Value = positioning[1]
+            st.ValueFormat = st.Value.getFormat()
+            subtables.append(st)
+        return self.buildLookup_(subtables)
+
+    def add_subtable_break(self, location):
+        # Nothing to do here, each positioning is in its own subtable.
+        pass
+
 class ReverseChainSingleSubstBuilder(LookupBuilder):
     """Builds a Reverse Chaining Contextual Single Substitution (GSUB8) lookup.
 
