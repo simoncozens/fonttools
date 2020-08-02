@@ -1684,6 +1684,7 @@ def _buildClasses():
 			7: ContextPos,
 			8: ChainContextPos,
 			9: ExtensionPos,
+			10: ReverseChainSinglePos
 		},
 		'mort': {
 			4: NoncontextualMorph,

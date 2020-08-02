@@ -396,6 +396,17 @@ otData = [
 		('LOffset', 'ExtSubTable', None, None, 'Offset to SubTable'),
 	]),
 
+	('ReverseChainSinglePosFormat1', [
+		('uint16', 'PosFormat', None, None, 'Format identifier-format = 1'),
+		('Offset', 'Coverage', None, 0, 'Offset to Coverage table - from beginning of Substitution table'),
+		('uint16', 'BacktrackGlyphCount', None, None, 'Number of glyphs in the backtracking sequence'),
+		('Offset', 'BacktrackCoverage', 'BacktrackGlyphCount', 0, 'Array of offsets to coverage tables in backtracking sequence, in glyph sequence order'),
+		('uint16', 'LookAheadGlyphCount', None, None, 'Number of glyphs in lookahead sequence'),
+		('Offset', 'LookAheadCoverage', 'LookAheadGlyphCount', 0, 'Array of offsets to coverage tables in lookahead sequence, in glyph sequence order'),
+		('uint16', 'ValueFormat', None, None, 'Defines the types of data in the ValueRecord'),
+		('ValueRecord', 'Value', None, None, 'Defines positioning value(s)-applied to all glyphs in the Coverage table'),
+	]),
+
 #	('ValueRecord', [
 #		('int16', 'XPlacement', None, None, 'Horizontal adjustment for placement-in design units'),
 #		('int16', 'YPlacement', None, None, 'Vertical adjustment for placement-in design units'),
