@@ -678,7 +678,9 @@ class Parser(object):
         return mcdef
 
     def parse_position_(self, enumerated, vertical):
-        assert self.cur_token_ in {"position", "pos"}
+        assert self.cur_token_ in {"position", "pos", "reverseposition", "rpos"}
+        reverse = self.cur_token_ in {"reversepos", "rpos"}
+
         if self.next_token_ == "cursive":  # GPOS type 3
             return self.parse_position_cursive_(enumerated, vertical)
         elif self.next_token_ == "base":  # GPOS type 4
@@ -693,6 +695,26 @@ class Parser(object):
             vertical
         )
         self.expect_symbol_(";")
+
+        if reverse:
+            # GPOS type 10: Reverse chaining contextual single positioning
+            if any(lookups):
+                raise FeatureLibError(
+                    'Reverse chaining single positioning does not support lookups', location
+                )
+            if len(glyphs) != 1:
+                raise FeatureLibError(
+                    "In reverse chaining single positioning, "
+                    "only a single glyph or glyph class can be positioned",
+                    location,
+                )
+            return self.ast.ReverseChainSinglePosStatement(
+                (glyphs[0], values[0]),
+                prefix,
+                suffix,
+                forceChain=hasMarks,
+                location=location,
+            )
 
         if any(lookups):
             # GPOS type 8: Chaining contextual positioning; explicit lookups
@@ -1626,7 +1648,7 @@ class Parser(object):
                 statements.append(self.parse_lookupflag_())
             elif self.is_cur_keyword_("markClass"):
                 statements.append(self.parse_markClass_())
-            elif self.is_cur_keyword_({"pos", "position"}):
+            elif self.is_cur_keyword_({"pos", "position", "rpos", "reversepos"}):
                 statements.append(
                     self.parse_position_(enumerated=False, vertical=vertical)
                 )

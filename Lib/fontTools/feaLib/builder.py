@@ -18,6 +18,7 @@ from fontTools.otlLib.builder import (
     MarkBasePosBuilder,
     MarkLigPosBuilder,
     MarkMarkPosBuilder,
+    ReverseChainSinglePosBuilder,
     ReverseChainSingleSubstBuilder,
     SingleSubstBuilder,
     ClassPairPosSubtableBuilder,
@@ -1065,6 +1066,12 @@ class Builder(object):
                     'Already defined substitution for glyph "%s"' % glyph, location
                 )
         lookup.mapping[glyph] = replacements
+
+    def add_reverse_chain_single_pos(self, location, prefix, suffix, positioning):
+        lookup = self.get_lookup_(location, ReverseChainSinglePosBuilder)
+        value = positioning[1]
+        otValueRecord = makeOpenTypeValueRecord(value, pairPosContext=False)
+        lookup.rules.append((prefix, suffix, (positioning[0],otValueRecord)))
 
     def add_reverse_chain_single_subst(self, location, old_prefix, old_suffix, mapping):
         lookup = self.get_lookup_(location, ReverseChainSingleSubstBuilder)

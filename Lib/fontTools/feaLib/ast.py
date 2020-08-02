@@ -57,6 +57,7 @@ __all__ = [
     "OS2Field",
     "PairPosStatement",
     "ReverseChainSingleSubstStatement",
+    "ReverseChainSinglePosStatement",
     "ScriptStatement",
     "SinglePosStatement",
     "SingleSubstStatement",
@@ -114,7 +115,9 @@ fea_keywords = set(
         "position",
         "required",
         "righttoleft",
+        "reversepos",
         "reversesub",
+        "rpos",
         "rsub",
         "script",
         "sub",
@@ -1326,6 +1329,35 @@ class PairPosStatement(Statement):
             res += "pos {} {} {};".format(
                 self.glyphs1.asFea(), self.glyphs2.asFea(), self.valuerecord1.asFea()
             )
+        return res
+
+class ReverseChainSinglePosStatement(Statement):
+    """A reverse chaining single positioning statement. They don't even *exist*. """
+    def __init__(self, pos, prefix, suffix, forceChain, location=None):
+        Statement.__init__(self, location)
+        self.pos, self.prefix, self.suffix = pos, prefix, suffix
+        self.forceChain = forceChain
+
+    def build(self, builder):
+        """Calls the builder object's ``add_reverse_chain_single_pos`` callback."""
+        prefix = [p.glyphSet() for p in self.prefix]
+        suffix = [s.glyphSet() for s in self.suffix]
+        pos = (self.pos[0].glyphSet(), self.pos[1])
+        builder.add_reverse_chain_single_pos(self.location, prefix, suffix, pos)
+
+    def asFea(self, indent=""):
+        res = "rpos "
+        if len(self.prefix) or len(self.suffix) or self.forceChain:
+            if len(self.prefix):
+                res += " ".join(map(asFea, self.prefix)) + " "
+            res += asFea(self.pos[0]) + "' " + self.pos[1].asFea()
+            if len(self.suffix):
+                res += " " + " ".join(map(asFea, self.suffix))
+        else:
+            res += " ".join(
+                [asFea(x[0]) + " " + (x[1].asFea() if x[1] else "") for x in self.pos]
+            )
+        res += ";"
         return res
 
 
